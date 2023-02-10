@@ -1,7 +1,6 @@
 local M = {
   -- General
-  -- Set the shiftwidth to 2
-  shiftwidth = 2,
+  shiftwidth = 2, -- Set the indents to 2.
   number = true, -- Enable line numbers
   undofile = true, -- Enable persistent undo's
   -- Don't store backup when overwriting the file,
