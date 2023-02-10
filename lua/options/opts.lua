@@ -17,7 +17,17 @@ local M = {
   termguicolors = true, -- Enable GUI colors.
   showmode = false, -- Don't show the mode in the CLI.
 
-  wrap = false -- Show long lines as one big line.
+  wrap = false, -- Show long lines as one big line.
+
+  signcolumn = "yes", -- Always show sign columns.
+  fillchars = "eob: ", -- Don't show the "~" outside of the buffers
+
+  -- Editing
+  ignorecase = true, -- Ignore case when searching.
+  incsearch = true, -- Show search results whilst searching.
+  infercase = true -- Infer letter cases.
+  smartcase = trye -- Don't ignore case if the pattern has an uppercase letter in it.
+  smartcase = true -- Get smart idents.
 }
 
 return M
