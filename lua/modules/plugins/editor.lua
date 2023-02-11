@@ -9,6 +9,7 @@ table.insert(editor, {
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "windwp/nvim-ts-autotag" },
     { "nvim-treesitter/nvim-treesitter-refactor" },
+    { "p00f/nvim-ts-rainbow" }
   },
 })
 
