@@ -49,5 +49,5 @@ local opts = {
   listchars = "eol:↴,space:⋅", -- Couldn't think about it.
 }
 
-local async = require("util.async")
-async(opts)
+local async = require("util.setoptions")
+async(vim.opt, opts)
