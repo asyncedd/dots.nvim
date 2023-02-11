@@ -3,6 +3,7 @@
   "catppuccin": { "branch": "main", "commit": "c5ed88194ae1d581d3083725a0dc7c90dd3446be" },
   "indent-blankline.nvim": { "branch": "master", "commit": "8299fe7703dfff4b1752aeed271c3b95281a952d" },
   "mini.indentscope": { "branch": "main", "commit": "cbabbf3be4a59c7f23725b74ed15e0fba951e328" },
+  "mini.map": { "branch": "main", "commit": "91975163a19540028d14327ad5f03817a07ad0fc" },
   "nvim-autopairs": { "branch": "master", "commit": "45ae3122a4c7744db41298b41f9f5a3f092123e6" },
   "nvim-treesitter": { "branch": "master", "commit": "f6df07be122de665fb363476cc3680c90f5bdf05" },
   "nvim-ts-autotag": { "branch": "main", "commit": "fdefe46c6807441460f11f11a167a2baf8e4534b" },
