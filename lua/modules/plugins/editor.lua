@@ -7,6 +7,7 @@ table.insert(editor, {
   dependencies = {
     { "andymass/vim-matchup" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
+    { "windwp/nvim-ts-autotag" }
   },
 })
 
@@ -14,6 +15,12 @@ table.insert(editor, {
   "numToStr/Comment.nvim",
   event = "VeryLazy",
   config = require("modules.configs.editor.comment")
+})
+
+table.insert(editor, {
+  "windwp/nvim-autopairs",
+  event = "InsertEnter",
+  config = require("modules.configs.editor.autopairs")
 })
 
 return editor
