@@ -18,4 +18,10 @@ table.insert(ui, {
   config = require("modules.configs.ui.indentscope")
 })
 
+table.insert(ui, {
+  "lewis6991/gitsigns.nvim",
+  event = "BufReadPost",
+  config = require("modules.configs.ui.gitsigns")
+})
+
 return ui
