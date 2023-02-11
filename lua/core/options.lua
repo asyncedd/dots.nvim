@@ -1,37 +1,32 @@
-local opts = {
-  { name = "mapleader", value = " ", modifier = vim.g },
-  { name = "shiftwidth", value = 2, modifier = vim.o },
-  { name = "undofile", value = true, modifier = vim.o },
-  { name = "backup", value = false, modifier = vim.o },
-  { name = "writebackup", value = false, modifier = vim.o },
-  { name = "mouse", value = "a", modifier = vim.o },
-  { name = "swapfile", value = false, modifier = vim.o },
-  { name = "hidden", value = true, modifier = vim.o },
-  { name = "clipboard", value = "unnamed,unnamedplus", modifier = vim.o },
-  { name = "expandtab", value = true, modifier = vim.o },
-  { name = "breakindent", value = true, modifier = vim.o },
-  { name = "cursorline", value = true, modifier = vim.o },
-  { name = "linebreak", value = true, modifier = vim.o },
-  { name = "number", value = true, modifier = vim.o },
-  { name = "splitbelow", value = true, modifier = vim.o },
-  { name = "splitright", value = true, modifier = vim.o },
-  { name = "termguicolors", value = true, modifier = vim.o },
-  { name = "showmode", value = false, modifier = vim.o },
-  { name = "wrap", value = false, modifier = vim.o },
-  { name = "signcolumn", value = "yes", modifier = vim.o },
-  { name = "fillchars", value = "eob: ", modifier = vim.o },
-  { name = "ignorecase", value = true, modifier = vim.o },
-  { name = "incsearch", value = true, modifier = vim.o },
-  { name = "infercase", value = true, modifier = vim.o },
-  { name = "smartcase", value = true, modifier = vim.o },
-  { name = "smartindent", value = true, modifier = vim.o },
-  { name = "completeopt", value = "menuone,noinsert,noselect", modifier = vim.o },
-  { name = "virtualedit", value = "onemore", modifier = vim.o },
-  { name = "formatoptions", value = "qjl1", modifier = vim.o },
-  { name = "splitkeep", value = "screen", modifier = vim.o },
-  { name = "list", value = true, modifier = vim.o },
-  { name = "listchars", value = "eol:↴,space:⋅", modifier = vim.o }
-}
-
-local async = require("util.setoptions")
-async(opts)
+vim.g.mapleader = " "
+vim.o.shiftwidth = 2
+vim.o.undofile = true
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.mouse = "a"
+vim.o.swapfile = false
+vim.o.hidden = true
+vim.o.clipboard = "unnamed,unnamedplus"
+vim.o.expandtab = true
+vim.o.breakindent = true
+vim.o.cursorline = true
+vim.o.linebreak = true
+vim.o.number = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.termguicolors = true
+vim.o.showmode = false
+vim.o.wrap = false
+vim.o.signcolumn = "yes"
+vim.o.fillchars = "eob: "
+vim.o.ignorecase = true
+vim.o.incsearch = true
+vim.o.infercase = true
+vim.o.smartcase = true
+vim.o.smartindent = true
+vim.o.completeopt = "menuone,noinsert,noselect"
+vim.o.virtualedit = "onemore"
+vim.o.formatoptions = "qjl1"
+vim.o.splitkeep = "screen"
+vim.o.list = true
+vim.o.listchars = "eol:↴,space:⋅"
