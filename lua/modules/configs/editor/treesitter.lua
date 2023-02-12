@@ -20,9 +20,9 @@ return function()
     autotag = {
       enable = true,
     },
-    rainbow = {
-      enable = true,
-    },
+    -- rainbow = {
+    --   enable = true,
+    -- },
     refactor = {
       highlight_definitions = {
         enable = true,

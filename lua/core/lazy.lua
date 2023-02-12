@@ -13,20 +13,27 @@ function Lazy:load_plugins()
   local plugins_list = vim.split(fn.glob(modules_dir .. "/plugins/*.lua"), "\n")  -- Get the list of all plugin files
 
   local function cache_plugins(operation)  -- Function to load or save plugins from/to cache
+    local cache_content
     local f = io.open(cache_file, "r")
     if operation == "load" and f then  -- If cache file exists and we want to load plugins
-      local content = f:read("*all")
+      cache_content = f:read("*all")
       f:close()
-      local success, result = pcall(load(content))  -- Load the content of the cache file
-      if success then
-        self.modules = result  -- Assign the loaded content to `self.modules`
-        return true  -- Return `true` if the content was successfully loaded
-      end
     elseif operation == "save" then  -- If we want to save plugins
+      cache_content = "return " .. vim.inspect(self.modules)
       f = io.open(cache_file, "w")
       if f then  -- If cache file was successfully opened for writing
-        f:write("return " .. vim.inspect(self.modules))  -- Write the contents of `self.modules` to the cache file
+        f:write(cache_content)  -- Write the contents of `self.modules` to the cache file
         f:close()  -- Close the cache file
+      end
+    end
+
+    if cache_content then
+      local success, result = pcall(load(cache_content))  -- Load the content of the cache file
+      if success then
+        if operation == "load" then
+          self.modules = result  -- Assign the loaded content to `self.modules`
+        end
+        return true  -- Return `true` if the content was successfully loaded
       end
     end
     return false  -- Return `false` if the cache file doesn't exist or there was an error while loading the content
@@ -47,7 +54,7 @@ function Lazy:load_plugins()
   local loaded_from_cache = cache_plugins("load")
   if not loaded_from_cache then  -- If plugins couldn't be loaded from cache
     for _, m in ipairs(plugins_list) do  -- Loop through the plugin files
-      coroutine.wrap(function() load_module(m) end)()
+      load_module(m)
     end
     cache_plugins("save")  -- Save the plugins to cache after they have been loaded
   end
@@ -59,7 +66,11 @@ function Lazy:load_lazy()
     local lazy_repo = "https://github.com/folke/lazy.nvim.git "
     api.nvim_command("!git clone --filter=blob:none --branch=stable " .. lazy_repo .. lazy_path)
   end
+  -- local start_time = os.clock()
   self:load_plugins()
+  -- local end_time = os.clock()
+  -- local elapsed_time = end_time - start_time
+  -- print("Elapsed time: " .. elapsed_time .. " seconds")
   vim.opt.rtp:prepend(lazy_path)
 
   local lazy_settings = {
@@ -92,4 +103,8 @@ function Lazy:load_lazy()
   require("lazy").setup(self.modules, lazy_settings)
 end
 
+-- local start_time = os.clock()
 Lazy:load_lazy()
+-- local end_time = os.clock()
+-- local elapsed_time = end_time - start_time
+-- print("Elapsed time:" .. elapsed_time .. "seconds")
