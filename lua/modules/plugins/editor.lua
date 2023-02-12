@@ -1,7 +1,6 @@
 local editor = {}
 
-table.insert(editor, {
-  "nvim-treesitter/nvim-treesitter",
+editor["nvim-treesitter/nvim-treesitter"] = {
   event = "BufReadPost",
   config = require("modules.configs.editor.treesitter"),
   dependencies = {
@@ -11,38 +10,31 @@ table.insert(editor, {
     { "nvim-treesitter/nvim-treesitter-refactor" },
     { "p00f/nvim-ts-rainbow" }
   },
-})
+}
 
-table.insert(editor, {
-  "numToStr/Comment.nvim",
+editor["numToStr/Comment.nvim"] = {
   event = "VeryLazy",
-  config = require("modules.configs.editor.comment")
-})
+  config = require("editor.comment")
+}
 
-table.insert(editor, {
-  "windwp/nvim-autopairs",
+editor["windwp/nvim-autopairs"] = {
   event = "InsertEnter",
-  config = require("modules.configs.editor.autopairs")
-})
+  config = require("editor.autopairs")
+}
 
-table.insert(editor, {
-  "folke/twilight.nvim",
+editor["folke/twilight.nvim"] = {
   event = "BufReadPost",
   config = require("modules.configs.editor.twilight")
-})
+}
 
-table.insert(editor, {
-  "RRethy/vim-illuminate",
+editor["RRethy/vim-illuminate"] = {
   event = "BufReadPost"
-})
+}
 
 
-table.insert(editor, {
-  "lewis6991/gitsigns.nvim",
+editor["lewis6991/gitsigns.nvim"] = {
   event = "BufReadPost",
   config = require("modules.configs.editor.gitsigns")
-})
-
-
+}
 
 return editor
