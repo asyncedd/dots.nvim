@@ -32,19 +32,22 @@ function Lazy:load_plugins()
     return false  -- Return `false` if the cache file doesn't exist or there was an error while loading the content
   end
 
+  local function load_module(file)
+    local modules = require(file:sub(#modules_dir - 6, -5))  -- Load the plugin file
+    if type(modules) == "table" then  -- If the loaded plugin is a table
+      for name, conf in pairs(modules) do  -- Loop through the table
+        self.modules[#self.modules + 1] = vim.tbl_extend("force", { name }, conf)  -- Add the plugin to `self.modules`
+      end
+    end
+  end
+
   -- 📁 Update the package path to include the directories for configs
-    package.path = package.path
-    .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
+    package.path = package.path .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
 
   local loaded_from_cache = cache_plugins("load")
   if not loaded_from_cache then  -- If plugins couldn't be loaded from cache
     for _, m in ipairs(plugins_list) do  -- Loop through the plugin files
-      local modules = require(m:sub(#modules_dir - 6, -5))  -- Load the plugin file
-      if type(modules) == "table" then  -- If the loaded plugin is a table
-        for name, conf in pairs(modules) do  -- Loop through the table
-          self.modules[#self.modules + 1] = vim.tbl_extend("force", { name }, conf)  -- Add the plugin to `self.modules`
-        end
-      end
+      coroutine.wrap(function() load_module(m) end)()
     end
     cache_plugins("save")  -- Save the plugins to cache after they have been loaded
   end
