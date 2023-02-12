@@ -41,7 +41,7 @@ function Lazy:load_plugins()
     return list
   end
 
-  -- ⏰️💾 This function reads data from a cache file (cache_file) and tries to load it as a Lua chunk. If reading the file and loading the data is successful, the data is stored in self.modules. If there's any error in the process, it returns false.
+  -- 🔍 Reads data from cache file: "💾 cache file" -> "💼 self.modules". If successful: "✅ yes" else: "❌ no".
   local function load_plugins_from_cache()
     -- 🔄 Try to open the cache file for reading
     local f = io.open(cache_file, "r")

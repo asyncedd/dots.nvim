@@ -2,7 +2,7 @@ local editor = {}
 
 editor["nvim-treesitter/nvim-treesitter"] = {
   event = "BufReadPost",
-  config = require("modules.configs.editor.treesitter"),
+  config = require("editor.treesitter"),
   dependencies = {
     { "andymass/vim-matchup" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
@@ -24,7 +24,7 @@ editor["windwp/nvim-autopairs"] = {
 
 editor["folke/twilight.nvim"] = {
   event = "BufReadPost",
-  config = require("modules.configs.editor.twilight")
+  config = require("editor.twilight")
 }
 
 editor["RRethy/vim-illuminate"] = {
@@ -33,7 +33,7 @@ editor["RRethy/vim-illuminate"] = {
 
 editor["lewis6991/gitsigns.nvim"] = {
   event = "BufReadPost",
-  config = require("modules.configs.editor.gitsigns")
+  config = require("editor.gitsigns")
 }
 
 return editor
