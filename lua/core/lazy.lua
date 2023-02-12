@@ -66,11 +66,11 @@ function Lazy:load_lazy()
     local lazy_repo = "https://github.com/folke/lazy.nvim.git "
     api.nvim_command("!git clone --filter=blob:none --branch=stable " .. lazy_repo .. lazy_path)
   end
-  -- local start_time = os.clock()
+  local start_time = os.clock()
   self:load_plugins()
-  -- local end_time = os.clock()
-  -- local elapsed_time = end_time - start_time
-  -- print("Elapsed time: " .. elapsed_time .. " seconds")
+  local end_time = os.clock()
+  local elapsed_time = end_time - start_time
+  print("Elapsed time: " .. elapsed_time .. " seconds")
   vim.opt.rtp:prepend(lazy_path)
 
   local lazy_settings = {
