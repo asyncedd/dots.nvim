@@ -1,27 +1,23 @@
 local ui = {}
 
-table.insert(ui, {
-  "catppuccin/nvim",
+ui["catppuccin/nvim"] = {
   name = "catppuccin",
-  config = require("modules.configs.ui.catppuccin")
-})
+  -- config = require("ui.catppuccin")
+}
 
-table.insert(ui, {
-  "lukas-reineke/indent-blankline.nvim",
+ui["lukas-reineke/indent-blanklines.nvim"] = {
   event = "BufReadPost",
-  config = require("modules.configs.ui.indent_blankline")
-})
+  config = require("ui.indent_blanklines")
+}
 
-table.insert(ui, {
-  "echasnovski/mini.indentscope",
+ui["echasnovski/mini.indentscope"] = {
   event = "BufReadPost",
-  config = require("modules.configs.ui.indentscope")
-})
+  config = require("ui.indentscope")
+}
 
-table.insert(ui, {
-  "nvim-lualine/lualine.nvim",
+ui["nvim-lualine/lualine.nvim"] = {
   event = "BufReadPost",
-  config = require("modules.configs.ui.lualine")
-})
+  config = require("ui.lualine")
+}
 
 return ui
