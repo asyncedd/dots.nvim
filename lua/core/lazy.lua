@@ -21,58 +21,14 @@ function Lazy:load_plugins()
     end
   end
 
-  local function cache_plugins(operation)
-    local cache_content
-    local f = io.open(cache_file, "r")
-    if operation == "load" and f then
-      cache_content = f:read("*all")
-      f:close()
-    elseif operation == "save" then
-      if not vim.fn.isdirectory(cache_dir) then
-        os.execute("mkdir -p " .. cache_dir)
-      end
-      cache_content = ""
-      local file_names = vim.split(fn.glob(modules_dir .. "/plugins/*.lua"), "\n")
-      for _, file in pairs(file_names) do
-        local modules = load_module(file)
-        if type(modules) == "table" then
-          for name, conf in pairs(modules) do
-            self.modules[#self.modules + 1] = vim.tbl_extend("force", { name }, conf)
-          end
-        end
-      end
-      -- Write the updated `self.modules` to the cache file
-      local f = io.open(cache_file, "w")
-      f:write(vim.inspect(self.modules))
-      f:close()
-      f = io.open(cache_file, "w")
-      if f then
-        f:write(cache_content)
-        f:close()
-      end
-    end
-
-    if cache_content then
-      if operation == "load" then
-        local func = load(cache_content)
-        func()
-      end
-      return true
-    end
-    return false
-  end
-
   
   -- 📁 Update the package path to include the directories for configs
     package.path = package.path .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
-
-  cache_plugins("load")
 
   for _, m in ipairs(plugins_list) do  -- Loop through the plugin files
     load_module(m)
   end
 
-  cache_plugins("save")  -- Save the plugins to cache after they have been loaded
 end
 
 
