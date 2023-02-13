@@ -31,7 +31,6 @@ function Lazy:load_plugins()
 
 end
 
-
 function Lazy:load_lazy()
   if not vim.loop.fs_stat(lazy_path) then
     local lazy_repo = "https://github.com/folke/lazy.nvim.git "
