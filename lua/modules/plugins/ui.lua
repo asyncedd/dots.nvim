@@ -15,9 +15,9 @@ ui["echasnovski/mini.indentscope"] = {
   config = require("ui.indentscope")
 }
 
-ui["nvim-lualine/lualine.nvim"] = {
+ui["rebelot/heirline.nvim"] = {
   event = "BufReadPost",
-  config = require("ui.lualine")
+  config = require("ui.heirline")
 }
 
 return ui

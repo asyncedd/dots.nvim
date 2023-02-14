@@ -2,6 +2,7 @@ local o = vim.opt
 local g = vim.g
 
 g.mapleader = " "
+g.maplocalleader = " " 
 o.shiftwidth = 2
 o.undofile = true
 o.backup = false
@@ -34,3 +35,4 @@ o.formatoptions = "qjl1"
 o.splitkeep = "screen"
 o.list = true
 o.listchars = "eol:↴,space:⋅"
+o.tabstop = 2
