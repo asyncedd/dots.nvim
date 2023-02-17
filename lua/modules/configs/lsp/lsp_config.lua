@@ -9,6 +9,8 @@ local icons = {
 
 function M.setup(config)
   -- local navic = require("nvim-navic")
+  require("neodev").setup()
+
   for server, server_config in pairs(config) do
     local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
