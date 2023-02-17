@@ -26,8 +26,19 @@ editor["folke/twilight.nvim"] = {
   config = require("editor.twilight"),
 }
 
-editor["RRethy/vim-illuminate"] = {
+-- editor["RRethy/vim-illuminate"] = {
+--   event = "BufReadPost",
+-- }
+
+-- editor["tzachar/local-highlight.nvim"] = {
+  -- event = "BufReadPost",
+--   config = require("editor.local_highlight"),
+--   lazy = false
+-- }
+
+editor["echasnovski/mini.cursorword"] = {
   event = "BufReadPost",
+  config = require("editor.cursorword")
 }
 
 editor["lewis6991/gitsigns.nvim"] = {
