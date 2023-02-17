@@ -31,4 +31,8 @@ ui["glepnir/dashboard-nvim"] = {
   config = require("ui.dashboard")
 }
 
+ui["rebelot/kanagawa.nvim"] = {}
+ui["ellisonleao/gruvbox.nvim"] = {}
+ui["folke/tokyonight.nvim"] = {}
+
 return ui

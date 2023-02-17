@@ -10,6 +10,7 @@ return function()
   local ruler = require("ui.heirline.ruler")
   local scrollbar = require("ui.heirline.scrollbar")
   local lspactive = require("ui.heirline.lsp")
+  -- local navic = require("ui.heirline.navic")
   require("heirline").load_colors(colors())
   local Space = { provider = " " }
   local Align = { provider = "%=" }
