@@ -2,22 +2,33 @@ local ui = {}
 
 ui["catppuccin/nvim"] = {
   name = "catppuccin",
-  config = require("ui.catppuccin")
+  config = require("ui.catppuccin"),
 }
 
-ui["lukas-reineke/indent-blankline.nvim"]= {
+ui["lukas-reineke/indent-blankline.nvim"] = {
   event = "BufReadPost",
-  config = require("ui.indent_blankline")
+  config = require("ui.indent_blankline"),
 }
 
 ui["echasnovski/mini.indentscope"] = {
   event = "BufReadPost",
-  config = require("ui.indentscope")
+  config = require("ui.indentscope"),
 }
 
 ui["rebelot/heirline.nvim"] = {
   event = "BufReadPost",
-  config = require("ui.heirline")
+  config = require("ui.heirline"),
+  dependencies = {
+    {"nvim-tree/nvim-web-devicons"}
+  }
+}
+
+ui["glepnir/dashboard-nvim"] = {
+  event = "VimEnter",
+  dependencies = {
+    { "nvim-tree/nvim-web-devicons" },
+  },
+  config = require("ui.dashboard")
 }
 
 return ui

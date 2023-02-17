@@ -5,7 +5,7 @@ M.setup = function()
   require("core.options")
   require("core.lazy")
 
-  require "impatient"
+  require("impatient")
 
   -- Set some mappings for Neovim.
   require("core.keymaps")
@@ -14,7 +14,6 @@ M.setup = function()
   local colorscheme = require("core.settings").colorscheme
 
   vim.api.nvim_command("colorscheme " .. colorscheme)
-
 end
 
 return M

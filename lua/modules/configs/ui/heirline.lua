@@ -1,26 +1,33 @@
 return function()
   local conditions = require("heirline.conditions")
-  local utils = require("heirline.utils")
 
-  local colors = {
-    bright_bg = utils.get_highlight("Folded").bg,
-    bright_fg = utils.get_highlight("Folded").fg,
-    red = utils.get_highlight("DiagnosticError").fg,
-    dark_red = utils.get_highlight("DiffDelete").bg,
-    green = utils.get_highlight("String").fg,
-    blue = utils.get_highlight("Function").fg,
-    gray = utils.get_highlight("NonText").fg,
-    orange = utils.get_highlight("Constant").fg,
-    purple = utils.get_highlight("Statement").fg,
-    cyan = utils.get_highlight("Special").fg,
-    diag_warn = utils.get_highlight("DiagnosticWarn").fg,
-    diag_error = utils.get_highlight("DiagnosticError").fg,
-    diag_hint = utils.get_highlight("DiagnosticHint").fg,
-    diag_info = utils.get_highlight("DiagnosticInfo").fg,
-    -- git_del = utils.get_highlight("diffDeleted").fg,
-    -- git_add = utils.get_highlight("diffAdded").fg,
-    -- git_change = utils.get_highlight("diffChanged").fg,
+  local colors = require("ui.heirline.colors")
+  local ViMode = require("ui.heirline.vimode")
+  local filename = require("ui.heirline.filename")
+  local filetype = require("ui.heirline.filetype")
+  require("heirline").load_colors(colors())
+  local Space = { provider = " " }
+  local Align = { provider = "%=" }
+
+  local DefaultStatusLine = {
+    ViMode, Space, filename, Align,
+    Align,
+    filetype
   }
-  require("heirline").load_colors(colors)
-  -- require("heirline").setup()
+
+  local StatusLines = {
+
+    hl = function()
+      if conditions.is_active() then
+        return "StatusLine"
+      else
+        return "StatusLineNC"
+      end
+    end,
+
+    fallthrough = false,
+
+    DefaultStatusLine
+  }
+  require("heirline").setup({ statusline = StatusLines })
 end
