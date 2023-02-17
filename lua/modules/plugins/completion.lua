@@ -20,10 +20,10 @@ completion["hrsh7th/nvim-cmp"] = {
 completion["L3MON4D3/LuaSnip"] = {
   event = "BufReadPost",
   dependencies = {
-    {
-      "rafamadriz/friendly-snippets",
-      config = require("completion.friendly_snippets")
-    }
+    -- {
+    --   "rafamadriz/friendly-snippets",
+    --   config = require("completion.friendly_snippets")
+    -- }
   },
   config = require("completion.luasnip")
 }
