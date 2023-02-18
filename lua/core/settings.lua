@@ -1,5 +1,5 @@
 local M = {}
 
-M.colorscheme = "tokyonight-night"
+M.colorscheme = "catppuccin-mocha"
 
 return M
