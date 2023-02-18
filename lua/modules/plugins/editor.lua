@@ -7,7 +7,7 @@ editor["nvim-treesitter/nvim-treesitter"] = {
     { "andymass/vim-matchup" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "windwp/nvim-ts-autotag" },
-    -- { "p00f/nvim-ts-rainbow" }
+    { "p00f/nvim-ts-rainbow" }
   },
 }
 
