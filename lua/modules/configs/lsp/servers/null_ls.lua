@@ -13,5 +13,11 @@ return {
       workspaceWord = true,
       callSnippet = "Replace",
     },
+    codeLens = {
+      enable = true,
+    },
   },
+  runtime = {
+    version  = "LuaJIT"
+  }
 }
