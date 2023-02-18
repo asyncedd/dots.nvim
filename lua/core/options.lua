@@ -39,6 +39,8 @@ o.foldcolumn = "1"
 o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
+o.timeout = true
+o.timeoutlen = 300
 vim.diagnostic.config({
   underline = true,
   update_in_insert = false,

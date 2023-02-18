@@ -7,7 +7,8 @@ editor["nvim-treesitter/nvim-treesitter"] = {
     { "andymass/vim-matchup" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "windwp/nvim-ts-autotag" },
-    -- { "p00f/nvim-ts-rainbow" }
+    -- { "p00f/nvim-ts-rainbow" },
+  { "nvim-treesitter/playground" }
   },
 }
 
@@ -42,6 +43,11 @@ editor["kevinhwang91/nvim-ufo"] = {
   dependencies = {
     "kevinhwang91/promise-async",
   },
+}
+
+editor["folke/which-key.nvim"] = {
+  event = "InsertCharPre",
+  config = require("editor.which_key")
 }
 
 return editor
