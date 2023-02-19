@@ -10,13 +10,14 @@ return function()
   local ruler = require("ui.heirline.ruler")
   local scrollbar = require("ui.heirline.scrollbar")
   local lspactive = require("ui.heirline.lsp")
+  local diagnostics = require("ui.heirline.diagnostics")
   -- local navic = require("ui.heirline.navic")
   require("heirline").load_colors(colors())
   local Space = { provider = " " }
   local Align = { provider = "%=" }
 
   local DefaultStatusLine = {
-    ViMode, Space, filename, Space, lspactive, Align,
+    utils.surround({ "", "" }, "bright_bg", {ViMode, Space, filename, Space, diagnostics, Space, lspactive}), Align,
     Align,
     Align, ruler, Space, scrollbar, Space, filetype, Space
   }
