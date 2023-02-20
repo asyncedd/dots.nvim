@@ -55,4 +55,9 @@ editor["ggandor/leap.nvim"] = {
   config = require("editor.leap")
 }
 
+editor["ggandor/flit.nvim"] = {
+  event = "VeryLazy",
+  config = require("editor.flit")
+}
+
 return editor
