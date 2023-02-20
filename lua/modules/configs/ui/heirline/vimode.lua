@@ -41,7 +41,7 @@ local ViMode = {
   },
 
   provider = function(self)
-    return " %2(" .. self.mode_names[vim.fn.mode(1)] .. "%)"
+    return "%2(" .. self.mode_names[vim.fn.mode(1)] .. "%)"
   end,
   hl = function(self)
     local color = self:mode_color() -- here!

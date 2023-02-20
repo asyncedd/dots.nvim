@@ -16,6 +16,7 @@ return function()
   local Bufferline = require("ui.heirline.bufferline")
   local Tabpage = require("ui.heirline.tablist")
   local winbar = require("ui.heirline.winbar")
+  local search_results = require("ui.heirline.search_results")
   require("ui.heirline.tablinepicker")
   -- local navic = require("ui.heirline.navic")
   require("heirline").load_colors(colors())
@@ -26,6 +27,7 @@ return function()
   local DefaultStatusLine = {
     utils.surround({ "", "" }, "bright_bg", {
       ViMode, Space,
+      search_results, Space,
       filename, Space,
       git, Space,
       diagnostics, Space,
