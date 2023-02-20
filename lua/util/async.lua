@@ -3,21 +3,22 @@ local M = {}
 -- Run a function asynchronously
 function M.async(func)
   return function(...)
-    local co = coroutine.create(func)
+    local co = coroutine.wrap(func)
     local nargs = select("#", ...)
     local args = {...}
     return {
       await = function()
-        local ok, result = coroutine.resume(co, unpack(args, 1, nargs))
-        if ok then
-          return result
+        local result = {co(table.unpack(args, 1, nargs))}
+        if result[1] then
+          return table.unpack(result, 2)
         else
-          error(result)
+          error(result[2])
         end
       end
     }
   end
 end
+
 
 -- Run a table of functions asynchronously in parallel
 function M.parallel(funcs)
