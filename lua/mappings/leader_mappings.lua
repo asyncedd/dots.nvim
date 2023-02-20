@@ -23,3 +23,4 @@ map("n", "<leader><space>", ":nohlsearch<CR>", { silent = true })
 -- Toggle spellcheck
 map("n", "<leader>sp", ":setlocal spell!<CR>", { silent = true })
 
+map("n", "<leader>tr", ":NvimTreeToggle<CR>", {})
