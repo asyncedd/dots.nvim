@@ -4,10 +4,10 @@ local M = {}
 function M.async(func)
   return function(...)
     local co = coroutine.create(func)
-    local args = {...}
+    local args = table.pack(...)
     return {
       await = function()
-        local ok, result = coroutine.resume(co, table.unpack(args))
+        local ok, result = coroutine.resume(co, table.unpack(args, 1, args.n))
         if ok then
           return result
         else
@@ -18,31 +18,30 @@ function M.async(func)
   end
 end
 
-
 -- Run a table of functions asynchronously in parallel
 function M.parallel(funcs)
-  local co_results = {}
-  for i, func in ipairs(funcs) do
-    co_results[i] = coroutine.create(function()
-      local result = func()
-      coroutine.yield(result)
-    end)
-  end
+  local co = coroutine.create(function()
+    local results = {}
+    for i, func in ipairs(funcs) do
+      results[i] = M.async(func)()
+    end
+    coroutine.yield(results)
+  end)
   return {
     await = function()
-      local final_results = {}
-      for i, co in ipairs(co_results) do
-        local ok, result = coroutine.resume(co)
-        if ok then
-          final_results[i] = result
-        else
-          error(result)
+      local ok, results = coroutine.resume(co)
+      if ok then
+        local final_results = {}
+        for i, result in ipairs(results) do
+          final_results[i] = result.await()
         end
+        return final_results
+      else
+        error(results)
       end
-      return final_results
     end
   }
 end
 
-
 return M
+
