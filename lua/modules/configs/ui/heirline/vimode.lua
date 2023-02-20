@@ -1,8 +1,8 @@
 local utils = require("heirline.utils")
 
 local ViMode = {
-  init = function(self)
-    local mode_names = {
+  static = {
+    mode_names = {
       n = "N",
       no = "N?",
       nov = "N?",
@@ -38,51 +38,17 @@ local ViMode = {
       ["!"] = "!",
       t = "T",
     }
-
-    local mode_colors = {
-      n = "red" ,
-      i = "green",
-      v = "cyan",
-      V =  "cyan",
-      ["\22"] =  "cyan",
-      c =  "orange",
-      s =  "purple",
-      S =  "purple",
-      ["\19"] =  "purple",
-      R =  "orange",
-      r =  "orange",
-      ["!"] =  "red",
-      t =  "red",
-    }
-
-    local mode = vim.fn.mode(1)
-
-    if not self.once then
-      vim.api.nvim_create_autocmd("ModeChanged", {
-        pattern = "*:*o",
-        command = 'redrawstatus'
-      })
-      self.once = true
-    end
-
-    self.mode = mode
-    self.mode_names = mode_names
-    self.mode_colors = mode_colors
-  end,
+  },
 
   provider = function(self)
-    local mode = self.mode:sub(1, 1)
-    return " %2("..self.mode_names[mode].."%)"
+    return " %2(" .. self.mode_names[vim.fn.mode(1)] .. "%)"
   end,
-
   hl = function(self)
-    local mode = self.mode:sub(1, 1)
-    return { fg = self.mode_colors[mode], bold = true }
+    local color = self:mode_color() -- here!
+    return { fg = color, bold = true }
   end,
-
-  update = "ModeChanged"
 }
 
-local ViMode = utils.surround({ "", "" }, "bright_bg", { ViMode })
+ViMode = utils.surround({ "", "" }, "bright_bg", { ViMode })
 
 return ViMode

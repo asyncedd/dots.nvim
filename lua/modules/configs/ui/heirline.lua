@@ -18,9 +18,15 @@ return function()
   local Align = { provider = "%=" }
 
   local DefaultStatusLine = {
-    utils.surround({ "", "" }, "bright_bg", {ViMode, Space, filename, Space, git, Space, diagnostics, Space, lspactive}), Align,
+    utils.surround({ "", "" }, "bright_bg", {ViMode, Space,
+      filename, Space,
+      git, Space,
+      diagnostics, Space,
+      lspactive
+    }), Align,
     Align,
-    Align, ruler, Space, scrollbar, Space, filetype, Space
+    Align, Space, utils.surround({ "", "" }, function(self) return self:mode_color() end, {ruler, hl = {fg = 'black'}} ), Space, 
+    scrollbar, Space, filetype, Space
   }
 
   local StatusLines = {
@@ -32,10 +38,31 @@ return function()
         return "StatusLineNC"
       end
     end,
+    static = {
+      mode_colors_map = {
+        n = "red",
+        i = "green",
+        v = "cyan",
+        V = "cyan",
+        ["\22"] = "cyan",
+        c = "orange",
+        s = "purple",
+        S = "purple",
+        ["\19"] = "purple",
+        R = "orange",
+        r = "orange",
+        ["!"] = "red",
+        t = "green",
+      },
+      mode_color = function(self)
+        local mode = conditions.is_active() and vim.fn.mode() or "n"
+        return self.mode_colors_map[mode]
+      end,
+    },
 
-    fallthrough = false,
+  fallthrough = false,
 
-    DefaultStatusLine
-  }
+  DefaultStatusLine
+}
   require("heirline").setup({ statusline = StatusLines })
 end
