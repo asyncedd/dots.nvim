@@ -62,11 +62,16 @@ function Lazy:load_lazy()
     api.nvim_command("!git clone --filter=blob:none --branch=stable " .. lazy_repo .. lazy_path)
   end
   -- local start_time = os.clock()
-  self:load_plugins()
+  -- self:load_plugins()
   -- local end_time = os.clock()
   -- local elapsed_time = end_time - start_time
   -- print("Elapsed time: " .. elapsed_time .. " seconds")
   vim.opt.rtp:prepend(lazy_path)
+  package.path = package.path .. ";" .. table.concat({
+    modules_dir .. "/configs/?.lua",
+    modules_dir .. "/configs/?/init.lua",
+  }, ";")
+
 
   local colors = require("core.settings").colorscheme
   local lazy_settings = {
@@ -104,7 +109,7 @@ function Lazy:load_lazy()
     },
   }
 
-  require("lazy").setup(self.modules, lazy_settings)
+  require("lazy").setup({import = "modules.plugins"}, lazy_settings)
 end
 
 -- local start_time = os.clock()
