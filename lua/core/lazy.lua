@@ -8,30 +8,53 @@ local Lazy = {}
 
 function Lazy:load_plugins()
   self.modules = {}
-  local plugins_list = vim.fn.glob(modules_dir .. "/plugins/*.lua")
-  local plugins_list = vim.split(plugins_list, "\n")
 
-  package.path = package.path
-  .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
+  local handle = io.popen('find ' .. modules_dir .. '/plugins -type f -name "*.lua"')
+  local plugins_list = {}
+  for filename in handle:lines() do
+    table.insert(plugins_list, filename)
+  end
+  handle:close()
 
-  local load_plugins = {}
+
+  package.path = package.path .. ";" .. table.concat({
+    modules_dir .. "/configs/?.lua",
+    modules_dir .. "/configs/?/init.lua",
+  }, ";")
+
   for _, m in ipairs(plugins_list) do
     local modules = require(m:sub(#modules_dir - 6, -5))
-    if type(modules) == 'table' then
+    if type(modules) == "table" then
       for name, conf in pairs(modules) do
-        self.modules[#self.modules + 1] = vim.tbl_extend('force', { name }, conf)
+        table.insert(self.modules, vim.tbl_extend("force", { name }, conf))
       end
     end
   end
 
-
-  local results = async.parallel(load_plugins):await()
-  for _, plugin_configs in ipairs(results) do
-    for _, config in ipairs(plugin_configs) do
-      table.insert(self.modules, config)
+  -- Create a coroutine to load the plugins
+  local co = coroutine.create(function()
+    local results = {}
+    for _, m in ipairs(plugins_list) do
+      local modules = require(m:sub(#modules_dir - 6, -5))
+      if type(modules) == "table" then
+        for name, conf in pairs(modules) do
+          table.insert(results, vim.tbl_extend("force", { name }, conf))
+        end
+      end
     end
+    coroutine.yield(results)
+  end)
+
+  -- Await the coroutine and add the results to the self.modules table
+  local ok, results = coroutine.resume(co)
+  if not ok then
+    error(results)
+  end
+  for _, config in ipairs(results) do
+    table.insert(self.modules, config)
   end
 end
+
 
 function Lazy:load_lazy()
   if not vim.loop.fs_stat(lazy_path) then
