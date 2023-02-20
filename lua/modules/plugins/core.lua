@@ -1,10 +1,6 @@
-local core = {}
-
-table.insert(core, {
+return {
   {
     "lewis6991/impatient.nvim",
     lazy = true,
   },
-})
-
-return core
+}

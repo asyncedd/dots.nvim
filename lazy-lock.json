@@ -46,6 +46,5 @@
   "telescope.nvim": { "branch": "master", "commit": "443e5a6802849f9e4611a2d91db01b8a37350524" },
   "tokyonight.nvim": { "branch": "main", "commit": "a0abe53df53616d13da327636cb0bcac3ea7f5af" },
   "twilight.nvim": { "branch": "main", "commit": "9410252bed96887ca5a86bf16435a3a51a0e6ce5" },
-  "vim-matchup": { "branch": "master", "commit": "a1a9c1d52e392295a0d5e48fdd3f603198fb51d7" },
-  "which-key.nvim": { "branch": "main", "commit": "5224c261825263f46f6771f1b644cae33cd06995" }
+  "vim-matchup": { "branch": "master", "commit": "a1a9c1d52e392295a0d5e48fdd3f603198fb51d7" }
 }
