@@ -17,7 +17,6 @@ return function()
   local Tabpage = require("ui.heirline.tablist")
   local winbar = require("ui.heirline.winbar")
   local search_results = require("ui.heirline.search_results")
-  require("ui.heirline.tablinepicker")
   -- local navic = require("ui.heirline.navic")
   require("heirline").load_colors(colors())
   local Space = { provider = " " }
@@ -31,7 +30,7 @@ return function()
       filename, Space,
       git, Space,
       diagnostics,
-    }), Align,
+    }), Space, Space, Space,
     utils.surround({ "", "" }, "bright_bg", { lspactive }), Space,
     Align, Space, ruler, Space, scrollbar, Space,
     Space, filetype, Space

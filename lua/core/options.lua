@@ -21,7 +21,7 @@ o.splitbelow = true
 o.splitright = true
 o.termguicolors = true
 o.showmode = false
-o.wrap = false
+o.wrap = true
 o.signcolumn = "yes"
 o.fillchars:append "eob: "
 o.ignorecase = true

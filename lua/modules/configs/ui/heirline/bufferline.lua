@@ -1,3 +1,4 @@
+local tablinepicker = require("ui.heirline.tablinepicker")
 local utils = require("heirline.utils")
 
 local TablineBufnr = {
@@ -125,7 +126,7 @@ local TablineBufferBlock = utils.surround({ "", "" }, function(self)
   else
     return utils.get_highlight("TabLine").bg
   end
-end, { TablineFileNameBlock, TablineCloseButton })
+end, { tablinepicker, TablineFileNameBlock, TablineCloseButton })
 
 -- and here we go
 local BufferLine = utils.make_buflist(

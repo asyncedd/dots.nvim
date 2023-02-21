@@ -37,3 +37,5 @@ vim.keymap.set("n", "gbp", function()
   buflist._show_picker = false
   vim.cmd.redrawtabline()
 end)
+
+return TablinePicker
