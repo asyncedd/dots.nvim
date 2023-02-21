@@ -17,6 +17,7 @@ return function()
   local Tabpage = require("ui.heirline.tablist")
   local winbar = require("ui.heirline.winbar")
   local search_results = require("ui.heirline.search_results")
+  local TerminalName = require("ui.heirline.terminalname")
   -- local navic = require("ui.heirline.navic")
   require("heirline").load_colors(colors())
   local Space = { provider = " " }
@@ -34,6 +35,23 @@ return function()
     utils.surround({ "", "" }, "bright_bg", { lspactive }), Space,
     Align, Space, ruler, Space, scrollbar, Space,
     Space, filetype, Space
+  }
+
+  local InactiveStatusline = {
+    condition = conditions.is_not_active,
+    filetype, Space, filename, Align,
+  }
+
+  local TerminalStatusline = {
+
+    condition = function()
+      return conditions.buffer_matches({ buftype = { "terminal" } })
+    end,
+
+    hl = { bg = "dark_red" },
+
+    -- Quickly add a condition to the ViMode to only show it when buffer is active!
+    { condition = conditions.is_active, ViMode, Space }, FileType, Space, TerminalName, Align,
   }
 
   local Tabline = {
@@ -75,7 +93,9 @@ return function()
 
     fallthrough = false,
 
-    DefaultStatusLine
+    DefaultStatusLine,
+    InactiveStatusline,
+    TerminalStatusline,
   }
   require("heirline").setup({
     statusline = StatusLines,
