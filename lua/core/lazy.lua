@@ -9,12 +9,45 @@ local Lazy = {}
 function Lazy:load_plugins()
   self.modules = {}
 
-  local handle = io.popen('find ' .. modules_dir .. '/plugins -type f -name "*.lua"')
-  local plugins_list = {}
-  for filename in handle:lines() do
-    table.insert(plugins_list, filename)
+  local cache_file = vim.fn.stdpath('cache') .. '/plugins_list.lua'
+
+  local function load_plugins_list()
+    local plugins_list = {}
+    for _, filename in ipairs(vim.fn.glob(modules_dir .. '/plugins/*.lua', false, true)) do
+      if vim.loop.fs_stat(filename).type == "file" then
+        table.insert(plugins_list, filename)
+      end
+    end
+    return plugins_list
   end
-  handle:close()
+
+  local function save_plugins_list(plugins_list)
+    local file = io.open(cache_file, 'w')
+    if file then
+      file:write("return {\n")
+      for i = 1, #plugins_list do
+        file:write(string.format("  '%s',\n", plugins_list[i]))
+      end
+      file:write("}\n")
+      file:close()
+    end
+  end
+
+  local function read_plugins_list_from_cache()
+    local plugins_list = {}
+    local chunk = loadfile(cache_file)
+    if chunk then
+      plugins_list = chunk()
+    end
+    return plugins_list
+  end
+
+  local plugins_list = read_plugins_list_from_cache()
+  if #plugins_list == 0 then
+    plugins_list = load_plugins_list()
+    save_plugins_list(plugins_list)
+  end
+
 
   -- Add config paths to package.path
   package.path = package.path .. ";" .. table.concat({
@@ -34,7 +67,7 @@ function Lazy:load_plugins()
   -- Create a coroutine to load the plugins
   local co = coroutine.create(function()
     local results = {}
-    for _, m in ipairs(plugins_list) do
+    for _, m in pairs(plugins_list) do
       local modules = require(m:sub(#modules_dir - 6, -5))
       if type(modules) == "table" then
         for name, conf in pairs(modules) do
