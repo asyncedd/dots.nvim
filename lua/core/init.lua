@@ -2,7 +2,7 @@ local M = {}
 
 M.setup = function()
   require("core.options")
-  require("mappigns")
+  require("mappings")
 end
 
 return M
