@@ -19,3 +19,16 @@ It had optimized my workspace and, improve my productivity.
 * [mini.ai 🤖](https://github.com/echasnovski/mini.ai) - Better `a`/`i` textobjects.
 * [indent-blanklines.nvim 🤔](https://github.com/lukas-reineke/indent-blanklines.nvim) - Add indentation guides to all lines.
 * [mini.indentscope 🔫](https://github.com/echasnovski/mini.indentscope) - Show the current indent scope in a very fancy way.
+
+## 🤨 Crash course: Installing
+To install this configuration, you need a Neovim build. You can use your favorite package manager or, [Install from source](https://dev.to/asyncedd/building-neovim-from-source-1794).
+Then clone this repository.
+For *Nix (Linux/MacOS) systems:
+```bash
+mkdir ~/.config/nvim/
+git clone https://github.com/asycnedd/nvim.git ~/.config/nvim/
+```
+For Windows systems:
+```bash
+git clone https://github.com/asyncedd/nvim.git ~/AppData/Local/nvim/
+```
