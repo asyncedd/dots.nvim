@@ -10,6 +10,8 @@ It had optimized my workspace and, improve my productivity.
 **Wait less, do more.**
 
 ## 🧱 A list of plugins
+* **[lazy.nvim 💤](https://github.com/folke/lazy.nvim)** - A featureful plugin manager. Post modern `vim-plug`!
+
 * [Catppuccin](https://github.com/catppuccin/nvim) - A *beautiful*, colorful colorscheme.
 * [Nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - An additional abstract layer on top on the original Treesitter
 * [leap.nvim](https://github.com/ggandor/leap.nvim) - Super fast motion plugin! Leap across your code!
