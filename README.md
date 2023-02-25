@@ -13,3 +13,4 @@ It had optimized my workspace and, improve my productivity.
 * [Catppuccin](https://github.com/catppuccin/nvim) - A *beautiful*, colorful colorscheme.
 * [Nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - An additional abstract layer on top on the original Treesitter
 * [leap.nvim](https://github.com/ggandor/leap.nvim) - Super fast motion plugin! Leap across your code!
+* [flit.nvim](https://github.com/ggandor/flit.nvim) - `f`/`F`/`t`/`T` motions on steriods. Built on [leap.nvim](https://github.com/ggandor/leap.nvim)
