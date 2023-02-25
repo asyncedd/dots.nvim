@@ -36,4 +36,4 @@ Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim). T
 Then once it finished, you're done! (actually)
 
 ## 😰 Quitting Nvim.
-You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
+You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D *(hint: you gotta be tpope level to quit Neovim.)*
