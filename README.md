@@ -11,7 +11,9 @@ It had optimized my workspace and, improve my productivity.
 
 ## ⁉ Q&A
 ### Why did you make this?
-A I started creating nvim configs when I figured none of the "distros" doesn't provide support for Windows. Made a configuration and dopamine did rest of the work!
+I started creating nvim configs when I figured none of the "distros" doesn't provide support for Windows. Made a configuration and dopamine did rest of the work!
+### Why would your configuration when I could use others and possibly make my own?
+You don't have to. I just made this as a personal configuration that is dead simple.
 
 ## 🧱 A list of plugins
 * [lazy.nvim 💤](https://github.com/folke/lazy.nvim) - A featureful plugin manager. Post modern `vim-plug`!
