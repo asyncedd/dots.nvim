@@ -1,0 +1,30 @@
+@document.meta
+  title: TODO
+  description: Some TODO stuff that I can MEMO
+  author: asyncedd
+  categories: MEMO
+  created: 2023-02-25
+  version: 0.1
+@end
+
+= TOC
+
+* MEMO.
+  I'll be breaking this out into categories.
+
+** Arch-based TODOs
+   Arch stands for "Architecture" btw. I don't have ANY faith in myself spelling that right :P
+
+   - [ ] /**A user first interface**/ I'm the core maintainer of this project. I just wanted a super good interface for editing. Edit with ease and without mental strain. `leap.nvim` is a great plugin for that!
+
+   - [ ] /**Customize EVERYTHING**/ I want end-users to have the ability to customize EVERYTHING. (First seat support). Although, this is my personal configuration. :P
+
+** ⚡ Speed related TODOs
+   I have a quite old machine so, speed matters alot to me.
+   But:
+   - Lua is single threaded.
+   - Using external libraries usually hurts performance than help.
+   - Also using external libraries requires other users that may or may not be interested need to install it.
+   - Better performance may come at a cost of customization.
+   - I've tried caching but it's too difficult or slow.
+   - Tradeoffs of performance and features are difficult for me to decide.
