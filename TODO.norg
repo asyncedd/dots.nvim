@@ -19,7 +19,7 @@ version: 0.1
 
    - [ ] /**Customize EVERYTHING**/ I want end-users to have the ability to customize EVERYTHING. (First seat support). Although, this is my personal configuration. :P
 
-** ⚡ Speed related TODOs
+** ⚡ Speed related TODO
    I have a quite old machine so, speed matters alot to me.
    But:
    - Lua is single threaded.
