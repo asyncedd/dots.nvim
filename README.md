@@ -39,5 +39,4 @@ Then once it finished, you're done! (actually)
 You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
 
 ## 😭 Problems.
-There's some problems that I will need to tackle. Lazy loading the plugin loader, ruined everything, but shows off the perfect 0ms! Neorg doesn't work properly etc...
-One solution is to bring all the plugin configs outside the specs.
+I tried "re-working" everything for "better performance" but yo! it doesn't do anything!
