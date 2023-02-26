@@ -8,6 +8,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
   callback = function()
     vim.defer_fn(function()
       require("configs.editor.treesitter")
+      require'colorizer'.setup()
     end, 0)
   end
 })
