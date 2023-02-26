@@ -16,6 +16,7 @@ M.setup = function()
     require("core.options")
     -- simulate some heavy plugin loading
     require("mappings.movement")
+    require("core.load_other_plugins")
   end, 0)
 
 end
