@@ -7,7 +7,7 @@
   "lazy.nvim": { "branch": "main", "commit": "8077428e63feb0f3bf795d53b23ba1695b28ab0e" },
   "leap-spooky.nvim": { "branch": "main", "commit": "0bb68f00a02f16085aad6a2b2cea9e53781fb05a" },
   "leap.nvim": { "branch": "main", "commit": "9a69febb2e5a4f5f5a55dd2d7173098fde917bc5" },
-  "markid": { "branch": "main", "commit": "98d410c243499d726c382d0928b59d974ed94438" },
+  "markid": { "branch": "main", "commit": "2542911737b7b7281922cb6b67aa2cc02039ab8d" },
   "matchparen.nvim": { "branch": "main", "commit": "dc511ea561bb34c99d0fad9a6fd08bb0e4187a5e" },
   "mini.ai": { "branch": "main", "commit": "ce822c6e6fe3aaf7cb29874e669b2d96febc97e5" },
   "mini.animate": { "branch": "main", "commit": "43122cbcfba32e4ecba6685c1ad9fa276c7b15c1" },
