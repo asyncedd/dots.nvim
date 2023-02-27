@@ -1,5 +1,9 @@
 return {
+  "numToStr/Comment.nvim",
   {
-    "numToStr/Comment.nvim",
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async"
+    }
   }
 }
