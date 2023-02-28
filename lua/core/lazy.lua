@@ -72,7 +72,8 @@ require("lazy").setup(
           "shada",
           "spellfile",
           "matchit",
-          "matchparen"
+          "matchparen",
+          "shada"
         },
       },
     },
