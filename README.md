@@ -36,7 +36,7 @@ Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim). T
 Then once it finished, you're done! (actually)
 
 ## ⚡ Performance
-* `nvim --clean`:
+* `nvim --clean` - [source](https://github.com/asyncedd/dots.nvim/blob/master/normal.log):
 ```
 159.604  000.143: VimEnter autocommands
 159.610  000.006: UIEnter autocommands
@@ -44,7 +44,7 @@ Then once it finished, you're done! (actually)
 163.176  003.559: first screen update
 163.185  000.009: --- NVIM STARTED ---
 ```
-* `nvim`:
+* `nvim` - [source](https://github.com/asyncedd/dots.nvim/blob/master/clean.log):
 ```
 096.204  000.017: VimEnter autocommands
 096.328  000.124: UIEnter autocommands
