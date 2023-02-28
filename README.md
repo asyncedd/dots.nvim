@@ -35,6 +35,23 @@ git clone https://github.com/asyncedd/nvim.git ~/AppData/Local/nvim/
 Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim). Then you can get a cup of [mocha ☕](https://github.com/catppuccin/nvim) while you wait. (Not that long btw)
 Then once it finished, you're done! (actually)
 
+## ⚡ Performance
+* `nvim --clean`: ```
+159.604  000.143: VimEnter autocommands
+159.610  000.006: UIEnter autocommands
+159.617  000.007: before starting main loop
+163.176  003.559: first screen update
+163.185  000.009: --- NVIM STARTED ---
+```
+* `nvim`:
+```
+096.204  000.017: VimEnter autocommands
+096.328  000.124: UIEnter autocommands
+096.338  000.011: before starting main loop
+101.168  004.830: first screen update
+101.302  000.134: --- NVIM STARTED ---
+```
+
 ## 😰 Quitting Nvim.
 You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
 
