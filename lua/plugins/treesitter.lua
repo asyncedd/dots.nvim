@@ -1,4 +1,4 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  "asyncedd/markid",
+  "David-Kunz/markid"
 }
