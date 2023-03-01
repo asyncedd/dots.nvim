@@ -1,21 +1,20 @@
 local status, leap = pcall(require, "leap")
+local status1, flit = pcall(require, "flit")
+local status2, miniai = pcall(require, "mini.ai")
+local status3, spooky = pcall(require, "leap-spooky")
 if (not status) then return end
+if (not status1) then return end
+if (not status2) then return end
+if (not status3) then return end
+
 
 leap.add_default_mappings()
 
-require("flit").setup({
-  keys = { f = 'f', F = 'F', t = 't', T = 'T' },
-  -- A string like "nv", "nvo", "o", etc.
-  labeled_modes = "v",
-  multiline = true,
-  -- Like `leap`s similar argument (call-specific overrides).
-  -- E.g.: opts = { equivalence_classes = {} }
-  opts = {}
-})
+flit.setup()
 
-require("mini.ai").setup()
+miniai.setup()
 
-require("leap-spooky").setup()
+spooky.setup()
 
 -- The below settings make Leap's highlighting closer to what you've been
 -- used to in Lightspeed.
