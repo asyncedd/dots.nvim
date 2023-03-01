@@ -3,14 +3,14 @@ local status1, conditions = pcall(require, "heirline.conditions")
 local status2, colors = pcall(require, "configs.ui.heirline.colors")
 local status3, ViMode = pcall(require, "configs.ui.heirline.vimode")
 local status4, FileName = pcall(require, "configs.ui.heirline.filename")
--- local status5, Git = pcall(require, "configs.ui.heirline.git")
-local Gitsigns = require("configs.ui.heirline.git")
+local status5, Gitsigns = pcall(require, "configs.ui.heirline.git")
+-- local Gitsigns = require("configs.ui.heirline.git")
 if (not status) then return end
 if (not status1) then return end
 if (not status2) then return end
 if (not status3) then return end
 if (not status4) then return end
--- if (not status5) then return end
+if (not status5) then return end
 
 heirline.load_colors(colors)
 
