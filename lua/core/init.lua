@@ -12,10 +12,11 @@ M.setup = function()
 
   require("core.lazy")
   require("core.pluginLoader.ui_plugins")
-  vim.defer_fn(function ()
+  vim.schedule(function()
     require("core.options")
-    -- simulate some heavy plugin loading
     require("mappings.movement")
+  end)
+  vim.defer_fn(function ()
     require("core.pluginLoader.other_plugins")
   end, 0)
 
