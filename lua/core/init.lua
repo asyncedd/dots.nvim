@@ -3,6 +3,8 @@ local o = vim.api.nvim_set_option_value
 
 local M = {}
 
+-- I am alive
+
 M.setup = function()
   vim.g.mapleader = " "
   o("number", true, {}) -- Enable Line numbers
