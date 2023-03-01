@@ -19,6 +19,7 @@ table.insert(threads, coroutine.create(function()
       local module_names = {
         "configs.editor.treesitter",
         "configs.ui.indent",
+        "configs.editor.gitsigns",
         "configs.ui.heirline",
         "configs.editor.ufo",
         -- "configs.ui.animate"
