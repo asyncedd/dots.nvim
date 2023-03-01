@@ -1,4 +1,6 @@
-local ufo = require("ufo")
+local status, ufo = pcall(require, "ufo")
+if (not status) then return end
+
 local vim = vim
 local o = vim.api.nvim_set_option_value
 
