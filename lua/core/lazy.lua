@@ -20,8 +20,8 @@ require("lazy").setup(
     "echasnovski/mini.indentscope",
     "monkoose/matchparen.nvim",
     "norcalli/nvim-colorizer.lua",
-    "echasnovski/mini.animate",
-    "tamton-aquib/flirt.nvim",
+    -- "echasnovski/mini.animate",
+    -- "tamton-aquib/flirt.nvim",
     "catppuccin/nvim",
     "rebelot/kanagawa.nvim",
     "folke/tokyonight.nvim",
@@ -41,7 +41,9 @@ require("lazy").setup(
     "nvim-treesitter/nvim-treesitter",
     "David-Kunz/markid",
     -- Core plugins
-    "nvim-tree/nvim-web-devicons"
+    "nvim-tree/nvim-web-devicons",
+    -- Git plugins
+    "lewis6991/gitsigns.nvim",
   }, 
   {
     performance = {
@@ -76,6 +78,14 @@ require("lazy").setup(
           "shada"
         },
       },
+    },
+    ui = {
+      -- size = { width = 0.8, height = 0.8 },
+      -- border = "solid",
+      icons = {
+        lazy = "鈴",
+      },
+      -- throttle = 50,
     },
     install = {
       colorscheme = { "catppuccin", "tokyonight", "habamx" },
