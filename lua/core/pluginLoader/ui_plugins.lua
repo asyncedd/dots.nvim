@@ -9,15 +9,16 @@ end
 local threads = {}
 
 table.insert(threads, coroutine.create(function()
-  -- api.nvim_command("colorscheme catppuccin")
-  vim.g.enfocado_style = "nature"
-  vim.g.enfocado_plugin = {
-    "gitsigns",
-    "lazy",
-    "indent-blankline",
-    "heirline"
-  }
-  api.nvim_command("colorscheme enfocado")
+  api.nvim_command("colorscheme catppuccin")
+  -- vim.g.enfocado_style = "nature"
+  -- vim.g.enfocado_style = "neon"
+  -- vim.g.enfocado_plugin = {
+  --   "gitsigns",
+  --   "lazy",
+  --   "indent-blankline",
+  --   "heirline"
+  -- }
+  -- api.nvim_command("colorscheme enfocado")
 end))
 
 table.insert(threads, coroutine.create(function()
