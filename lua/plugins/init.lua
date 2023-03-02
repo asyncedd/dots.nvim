@@ -7,6 +7,7 @@ return {
   "echasnovski/mini.animate",
   "tamton-aquib/flirt.nvim",
   "catppuccin/nvim",
+  "wuelnerdotexe/vim-enfocado",
   "rebelot/kanagawa.nvim",
   "folke/tokyonight.nvim",
   "EdenEast/nightfox.nvim",
