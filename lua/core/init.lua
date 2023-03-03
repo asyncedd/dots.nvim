@@ -12,12 +12,9 @@ M.setup = function()
   o("termguicolors", true, {})
 
   require("core.lazy")
+  require("core.options")
   vim.api.nvim_command("colorscheme catppuccin")
-  vim.schedule(function()
-    require("core.options")
-    require("mappings.movement")
-  end)
-
+  require("mappings.movement")
 end
 
 return M
