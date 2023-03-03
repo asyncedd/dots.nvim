@@ -12,7 +12,7 @@ local ViMode = {
     if not self.once then
       vim.api.nvim_create_autocmd("ModeChanged", {
         pattern = "*:*o",
-        command = 'redrawstatus'
+        command = "redrawstatus",
       })
       self.once = true
     end
@@ -58,20 +58,20 @@ local ViMode = {
       t = "T",
     },
     mode_colors = {
-      n = "red" ,
+      n = "red",
       i = "green",
       v = "cyan",
-      V =  "cyan",
-      ["\22"] =  "cyan",
-      c =  "orange",
-      s =  "purple",
-      S =  "purple",
-      ["\19"] =  "purple",
-      R =  "orange",
-      r =  "orange",
-      ["!"] =  "red",
-      t =  "red",
-    }
+      V = "cyan",
+      ["\22"] = "cyan",
+      c = "orange",
+      s = "purple",
+      S = "purple",
+      ["\19"] = "purple",
+      R = "orange",
+      r = "orange",
+      ["!"] = "red",
+      t = "red",
+    },
   },
   -- We can now access the value of mode() that, by now, would have been
   -- computed by `init()` and use it to index our strings dictionary.
@@ -81,12 +81,12 @@ local ViMode = {
   -- control the padding and make sure our string is always at least 2
   -- characters long. Plus a nice Icon.
   provider = function(self)
-    return " %2("..self.mode_names[self.mode].."%)"
+    return " %2(" .. self.mode_names[self.mode] .. "%)"
   end,
   -- Same goes for the highlight. Now the foreground will change according to the current mode.
   hl = function(self)
     local mode = self.mode:sub(1, 1) -- get only the first mode character
-    return { fg = self.mode_colors[mode], bold = true, }
+    return { fg = self.mode_colors[mode], bold = true }
   end,
   -- Re-evaluate the component only on ModeChanged event!
   -- This is not required in any way, but it's there, and it's a small

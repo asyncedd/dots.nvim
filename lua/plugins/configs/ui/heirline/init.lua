@@ -14,9 +14,20 @@ return function()
   local Space = { provider = " " }
 
   local DefaultStatusLine = {
-    ViMode, Space, FileName.WorkDir, Space, FileName.FileNameBlock , Space, Gitsigns,
+    ViMode,
+    Space,
+    FileName.WorkDir,
+    Space,
+    FileName.FileNameBlock,
+    Space,
+    Gitsigns,
     Align,
-    Align, File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar,
+    Align,
+    File.FileType,
+    Space,
+    Scrollbar.Ruler,
+    Space,
+    Scrollbar.ScrollBar,
   }
 
   local StatusLines = {
@@ -55,10 +66,10 @@ return function()
     -- think of it as a switch case with breaks to stop fallthrough.
     fallthrough = false,
 
-    DefaultStatusLine
+    DefaultStatusLine,
   }
 
   heirline.setup({
-    statusline = StatusLines
+    statusline = StatusLines,
   })
 end

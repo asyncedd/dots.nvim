@@ -57,7 +57,9 @@ require("lazy").setup({
     },
     -- throttle = 50,
   },
+
   install = {
+
     colorscheme = { "catppuccin", "tokyonight", "habamx" },
   },
   defaults = {

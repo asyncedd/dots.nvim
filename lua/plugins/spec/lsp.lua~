@@ -1,0 +1,12 @@
+local M = {}
+
+M = {
+  {
+    "wesleimp/stylua.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim"
+    },
+  },
+}
+
+return M

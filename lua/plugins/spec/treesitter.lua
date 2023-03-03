@@ -3,10 +3,10 @@ local M = {
     "nvim-treesitter/nvim-treesitter",
     config = require("plugins.configs.editor.treesitter"),
     dependencies = {
-      "David-Kunz/markid"
+      "David-Kunz/markid",
     },
-    event = "BufReadPre"
-  }
+    event = "BufReadPre",
+  },
 }
 
 return M
