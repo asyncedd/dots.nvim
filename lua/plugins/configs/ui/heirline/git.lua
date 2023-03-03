@@ -10,19 +10,18 @@ local Git = {
 
   hl = { fg = "orange" },
 
-
-  {   -- git branch name
+  { -- git branch name
     provider = function(self)
       return " " .. self.status_dict.head
     end,
-    hl = { bold = true }
+    hl = { bold = true },
   },
   -- You could handle delimiters, icons and counts similar to Diagnostics
   {
     condition = function(self)
       return self.has_changes
     end,
-    provider = "("
+    provider = "(",
   },
   {
     provider = function(self)
