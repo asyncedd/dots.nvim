@@ -34,7 +34,6 @@ git clone https://github.com/asyncedd/nvim.git ~/AppData/Local/nvim/
 ```
 Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim). Then you can get a cup of [mocha ☕](https://github.com/catppuccin/nvim) while you wait. (Not that long btw)
 Then once it finished, you're done! (actually)
-Just run a `nvim` in your terminal :D
 
 ## ⚡ Performance
 * `nvim --clean` - [source](https://github.com/asyncedd/dots.nvim/blob/master/clean.log):
