@@ -12,14 +12,11 @@ M.setup = function()
   o("termguicolors", true, {})
 
   require("core.lazy")
-  require("core.pluginLoader.ui_plugins")
+  vim.api.nvim_command("colorscheme catppuccin")
   vim.schedule(function()
     require("core.options")
     require("mappings.movement")
   end)
-  vim.defer_fn(function ()
-    require("core.pluginLoader.other_plugins")
-  end, 0)
 
 end
 
