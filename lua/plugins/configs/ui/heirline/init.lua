@@ -1,13 +1,15 @@
 return function()
-  local heirline = require("heirline")
-  local conditions = require("heirline.conditions")
+  local lazy_require = require("snips.lazy-require").require_on_index
+  local heirline = lazy_require("heirline")
+  local conditions = lazy_require("heirline.conditions")
   local ViMode = require("plugins.configs.ui.heirline.vimode")
-  local FileName = require("plugins.configs.ui.heirline.filename")
-  local Gitsigns = require("plugins.configs.ui.heirline.git")
-  local Scrollbar = require("plugins.configs.ui.heirline.scrollbar")
-  local File = require("plugins.configs.ui.heirline.file")
-  local LSP = require("plugins.configs.ui.heirline.lsp")
-  local Bufferline = require("plugins.configs.ui.heirline.bufferline")
+  -- Unfortunately lazy_requiring ViMode doesn't work ;-;
+  local FileName = lazy_require("plugins.configs.ui.heirline.filename")
+  local Gitsigns = lazy_require("plugins.configs.ui.heirline.git")
+  local Scrollbar = lazy_require("plugins.configs.ui.heirline.scrollbar")
+  local File = lazy_require("plugins.configs.ui.heirline.file")
+  local LSP = lazy_require("plugins.configs.ui.heirline.lsp")
+  local Bufferline = lazy_require("plugins.configs.ui.heirline.bufferline")
 
   require("plugins.configs.ui.heirline.colors")
 
