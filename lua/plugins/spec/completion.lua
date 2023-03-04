@@ -5,7 +5,8 @@ local M = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
-      "windwp/nvim-autopairs"
+      "hrsh7th/cmp-cmdline",
+      "windwp/nvim-autopairs",
     },
     event = "VeryLazy",
     config = require("plugins.configs.completion.cmp")
