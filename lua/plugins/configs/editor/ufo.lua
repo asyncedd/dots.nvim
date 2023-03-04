@@ -4,9 +4,6 @@ return function()
     return
   end
 
-  local vim = vim
-  local o = vim.api.nvim_set_option_value
-
   ufo.setup({
     provider_selector = function(bufnr, filetype, buftype)
       return { "treesitter", "indent" }

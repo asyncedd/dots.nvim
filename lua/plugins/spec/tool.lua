@@ -1,4 +1,4 @@
-local M = {
+return {
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
@@ -10,5 +10,3 @@ local M = {
     }
   }
 }
-
-return M
