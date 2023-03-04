@@ -1,5 +1,8 @@
 local M = {
-  "catppuccin/nvim", -- ☕ Mocha!
+  {
+    "catppuccin/nvim", -- ☕ Mocha!
+    piority = 1000,
+  },
   "wuelnerdotexe/vim-enfocado", -- 🧠 Great philosphy
   "folke/tokyonight.nvim", -- 🌆 If you're around RGB
   "EdenEast/nightfox.nvim", -- 🦊 OwO
