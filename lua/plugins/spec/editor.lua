@@ -1,4 +1,4 @@
-local M = {
+return {
   {
     "numToStr/Comment.nvim",
     config = require("plugins.configs.editor.comment"),
@@ -19,7 +19,13 @@ local M = {
       { "gp", "<Plug>(YankyGPutAfter)" },
       { "gP", "<Plug>(YankyGPutBefore)" },
     }
-  }
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    config = require("plugins.configs.editor.ufo"),
+    event = "BufReadPost",
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
+  },
 }
-
-return M
