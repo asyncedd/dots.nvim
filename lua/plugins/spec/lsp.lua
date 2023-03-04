@@ -14,11 +14,14 @@ M = {
     }
   },
   {
-    "wesleimp/stylua.nvim",
+    "glepnir/lspsaga.nvim",
+    event = "BufRead",
+    config = true,
     dependencies = {
-      "nvim-lua/plenary.nvim"
+      "nvim-tree/nvim-web-devicons",
+      "nvim-treesitter/nvim-treesitter",
     },
-  },
+  }
 }
 
 return M
