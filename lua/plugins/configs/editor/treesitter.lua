@@ -1,5 +1,5 @@
 return function()
-  local lazyrequire = require("snips.lazy-require").lazy_require
+  local lazyrequire = require("snips.lazy-require").require_on_exported_call
   -- Checking if nvim-treesitter is installed properly.
   local status, treesitter = pcall(lazyrequire, "nvim-treesitter.configs")
 
