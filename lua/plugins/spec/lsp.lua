@@ -1,4 +1,4 @@
-local M = {}
+local M
 
 M = {
   {
@@ -18,6 +18,15 @@ M = {
   {
     "glepnir/lspsaga.nvim",
     event = "BufRead",
+    opts = {
+      ui = {
+        theme = 'round',
+        title = true,
+        -- border type can be single,double,rounded,solid,shadow.
+        border = 'rounded',
+        winblend = 0,
+      }
+    },
     config = true,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
