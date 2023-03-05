@@ -14,11 +14,6 @@ return {
     config = true,
   },
   {
-    "monkoose/matchparen.nvim",
-    event = "BufReadPost",
-    config = true,
-  },
-  {
     "NvChad/nvim-colorizer.lua",
     event = "BufReadPost",
     config = true,
