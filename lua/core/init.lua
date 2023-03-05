@@ -3,8 +3,6 @@
 local vim = vim -- Avoid expensive global searching.
 local o = vim.api.nvim_set_option_value
 
-local M = {}
-
 vim.g.mapleader = " "
 o("number", true, {}) -- Enable Line numbers
 o("cursorline", true, {})
@@ -23,20 +21,21 @@ local loadModule = async.wrap(function(moduleName, step)
 end)
 
 require("core.lazy")
+
 vim.api.nvim_command("colorscheme catppuccin")
 
-async.sync(loadModule("core.autocmd"), function() end)
+vim.defer_fn(function()
+  async.sync(loadModule("core.autocmd"), function() end)
 
-async.sync(loadModule("mappings.movement"), function() end)
+  async.sync(loadModule("mappings.movement"), function() end)
 
-async.sync(loadModule("mappings.lspsaga"), function() end)
+  async.sync(loadModule("mappings.lspsaga"), function() end)
 
-require("core.autocmd")
-vim.defer_fn(function ()
-  require("mappings.movement")
-end, 10)
-vim.defer_fn(function ()
-  require("mappings.lspsaga")
-end, 10)
-
-return M
+  require("core.autocmd")
+  vim.defer_fn(function ()
+    require("mappings.movement")
+  end, 10)
+  vim.defer_fn(function ()
+    require("mappings.lspsaga")
+  end, 10)
+end, 0)
