@@ -9,8 +9,10 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
     },
-    event = "VeryLazy",
-    config = require("plugins.configs.completion.cmp")
+    event = "InsertEnter",
+    config = function()
+      require("plugins.configs.completion.cmp")
+    end,
   },
   {
     "L3MON4D3/LuaSnip",
@@ -29,5 +31,8 @@ return {
       { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
+    config = function()
+      require("plugins.configs.completion.luasnip")
+    end,
   }
 }

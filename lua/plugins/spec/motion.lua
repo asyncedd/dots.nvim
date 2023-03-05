@@ -1,7 +1,9 @@
 return {
   {
     "ggandor/leap.nvim",
-    config = require("plugins.configs.editor.motion"),
+    config = function()
+      require("plugins.configs.editor.motion")
+    end,
     dependencies = {
       {
         "ggandor/flit.nvim",
