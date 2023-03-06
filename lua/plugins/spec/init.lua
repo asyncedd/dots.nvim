@@ -138,7 +138,7 @@ return {
     config = function()
       require("plugins.configs.editor.treesitter")
     end,
-    event = "BufReadPre",
+    event = "BufReadPost",
   },
   {
     "lukas-reineke/indent-blankline.nvim",
