@@ -25,4 +25,9 @@ return {
       require("plugins.configs.ui.heirline")
     end
   },
+  {
+    "monkoose/matchparen.nvim",
+    event = "BufReadPost",
+    config = true,
+  }
 }

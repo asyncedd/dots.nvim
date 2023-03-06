@@ -1,14 +1,14 @@
 -- require("snips.impatient")
 
 local vim = vim -- Avoid expensive global searching.
-local o = vim.api.nvim_set_option_value
+local g = vim.g
+-- local o = vim.api.nvim_set_option_value
 
-vim.g.mapleader = " "
+g.mapleader = " "
 
 require("core.options")
 
 local async = require "snips.async"
-
 
 local loadModule = async.wrap(function(moduleName, step)
     local module = require(moduleName)
