@@ -4,9 +4,9 @@ return {
     config = function()
       require("plugins.configs.editor.treesitter")
     end,
-    dependencies = {
-      "David-Kunz/markid",
-    },
-    event = "BufReadPost",
+    -- dependencies = {
+    --   "David-Kunz/markid",
+    -- },
+    event = "BufReadPre",
   },
 }
