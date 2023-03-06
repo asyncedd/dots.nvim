@@ -24,7 +24,7 @@ return {
         config = true,
       },
       "folke/neodev.nvim",
-      "jose-elias-alvarez/null-ls.nvim",
+      -- "jose-elias-alvarez/null-ls.nvim",
     }
   },
   {

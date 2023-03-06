@@ -9,7 +9,7 @@ local mason_lspconfig = require("mason-lspconfig")
 local mason = require("mason")
 local lspconfig = require("lspconfig")
 local neodev = require("neodev")
-local nullls = require("null-ls")
+-- local nullls = require("null-ls")
 
 neodev.setup()
 
@@ -44,9 +44,9 @@ vim.diagnostic.config({
   }
 })
 
-nullls.setup({
-  sources = {
-    nullls.builtins.formatting.stylua,
-  },
-})
+-- nullls.setup({
+--   sources = {
+--     nullls.builtins.formatting.stylua,
+--   },
+-- })
 
