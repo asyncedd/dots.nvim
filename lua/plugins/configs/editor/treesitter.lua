@@ -1,7 +1,6 @@
 -- Checking if nvim-treesitter is installed properly.
 local status, treesitter = pcall(require, "nvim-treesitter.configs")
 
-local o = vim.api.nvim_set_option_value
 
 -- If it isn't, then return.
 if not status then

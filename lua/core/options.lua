@@ -45,6 +45,8 @@ o("wrap", true, {}) -- Show long lines as multiple lines.
 o("foldmethod", "expr", {})
 o("foldexpr", "nvim_treesitter#foldexpr()", {})
 o("foldenable", false, {})
+o("foldlevelstart", 0, {})
+o("foldlevel", 0, {})
 
 -- =======================================
 -- 3. UI related options.
