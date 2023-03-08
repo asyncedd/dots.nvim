@@ -143,9 +143,9 @@ return {
     config = function()
       require("plugins.configs.editor.treesitter")
     end,
-    -- dependencies = {
-    --   "andymass/vim-matchup",
-    -- },
+    dependencies = {
+      "andymass/vim-matchup",
+    },
     event = "BufReadPost",
   },
   {
@@ -174,9 +174,9 @@ return {
       require("plugins.configs.ui.heirline")
     end
   },
-  {
-    "monkoose/matchparen.nvim",
-    event = "BufReadPost",
-    config = true,
-  }
+  -- {
+  --   "monkoose/matchparen.nvim",
+  --   event = "BufReadPost",
+  --   config = true,
+  -- }
 }

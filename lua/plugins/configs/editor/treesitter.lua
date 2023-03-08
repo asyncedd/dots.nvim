@@ -49,9 +49,9 @@ treesitter.setup({
   --   colors = markid_config.bright,
   -- },
   
-  -- matchup = {
-  --   enable = true,
-  -- },
+  matchup = {
+    enable = true,
+  },
 
   incremental_selection = {
     enable = true,

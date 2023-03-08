@@ -43,9 +43,8 @@ require("lazy").setup({
           "tutor",
           -- "shada",
           "spellfile",
-          "matchit",
-          "matchparen",
-          -- "shada",
+          -- "matchit",
+          -- "matchparen",
         },
       },
       cache = {
