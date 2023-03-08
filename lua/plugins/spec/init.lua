@@ -11,6 +11,11 @@ return {
       "windwp/nvim-autopairs",
       {
         "L3MON4D3/LuaSnip",
+        opts = {
+          history = true,
+          delete_check_events = "TextChanged",
+        },
+        config = true,
         keys = {
           {
             "<tab>",
@@ -156,7 +161,7 @@ return {
   },
   {
     "NvChad/nvim-colorizer.lua",
-    event = "BufReadPre",
+    event = "BufReadPost",
     config = true,
   },
   {
@@ -168,7 +173,7 @@ return {
   },
   {
     "monkoose/matchparen.nvim",
-    event = "BufReadPre",
+    event = "BufReadPost",
     config = true,
   }
 }
