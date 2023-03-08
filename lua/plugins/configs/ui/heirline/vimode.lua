@@ -84,10 +84,9 @@ local ViMode = {
     return " %2(" .. self.mode_names[self.mode] .. "%)"
   end,
   -- Same goes for the highlight. Now the foreground will change according to the current mode.
-  hl = function(self)
-    local mode = self.mode:sub(1, 1) -- get only the first mode character
-    return { fg = self.mode_colors[mode], bold = true }
-  end,
+  hl = {
+    fg = "bright_bg", bold = true
+  },
   -- Re-evaluate the component only on ModeChanged event!
   -- This is not required in any way, but it's there, and it's a small
   -- performance improvement.
@@ -96,6 +95,6 @@ local ViMode = {
   },
 }
 
-ViMode = utils.surround({ "", "" }, "bright_bg", { ViMode })
+ViMode = utils.surround({ "", "" }, function(self) return self:mode_color() end, { ViMode })
 
 return ViMode
