@@ -42,11 +42,12 @@ o("tabstop", 2, {}) -- Insert two tabs per <TAB>
 o("wrap", true, {}) -- Show long lines as multiple lines.
 
 -- 2.4 Folding.
-o("foldmethod", "expr", {})
-o("foldexpr", "nvim_treesitter#foldexpr()", {})
-o("foldenable", false, {})
-o("foldlevelstart", 0, {})
-o("foldlevel", 0, {})
+-- o("foldmethod", "expr", {})
+-- o("foldexpr", "nvim_treesitter#foldexpr()", {})
+o("foldcolumn", "1", {})
+o("foldmethod", "manual", {})
+o("foldlevelstart", 99, {})
+o("foldlevel", 99, {})
 
 -- =======================================
 -- 3. UI related options.
