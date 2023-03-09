@@ -13,6 +13,7 @@ vim.defer_fn(function()
   require("core.autocmd")
   require("mappings.movement")
   require("mappings.lspsaga")
+  require("mappings.plugins")
 
   o("shadafile", "", {})
 end, 0)

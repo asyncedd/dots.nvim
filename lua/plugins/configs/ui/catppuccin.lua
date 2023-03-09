@@ -38,6 +38,14 @@ require("catppuccin").setup({
       crust = "#161320",
     },
   },
+  intergrations = {
+    mason = false,
+    -- cmp = true,
+    mini = true,
+    -- telescope = true,
+    -- gitsigns = true,
+    treesitter = true,
+  },
   highlight_overrides = {
     mocha = function(cp)
       return {
