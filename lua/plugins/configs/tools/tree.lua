@@ -6,5 +6,9 @@ require("nvim-tree").setup({
     indent_markers = {
       enable = true,
     },
+    highlight_git = true,
   },
+  diagnostics = {
+    enable = true,
+  }
 })
