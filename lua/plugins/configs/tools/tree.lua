@@ -7,13 +7,4 @@ require("nvim-tree").setup({
       enable = true,
     },
   },
-  icons = {
-    git_placement = "signcolumn",
-    show = {
-      file = true,
-      folder = true,
-      folder_arrow = true,
-      git = true
-    }
-  }
 })
