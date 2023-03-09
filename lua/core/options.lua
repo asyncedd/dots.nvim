@@ -19,8 +19,11 @@ o("clipboard", "unnamed,unnamedplus", {}) -- Let's sync clipboards across platfo
 o("showtabline", 2, {})
 vim.api.nvim_command([[au FileType * if index(['wipe', 'delete'], &bufhidden) >= 0 | set nobuflisted | endif]])
 
--- For vim-matchup
+-- 1.5 Vim-matchup
 vim.g.matchup_matchparen_offscreen = { method = "popup" }
+
+-- Set the shell to bash.
+-- o("shell", "/bin/bash", {}) -- Fish is a bit buggy on Neovim.
 
 -- =======================================
 -- 2. Editing options.
