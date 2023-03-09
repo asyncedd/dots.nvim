@@ -50,7 +50,7 @@ require("catppuccin").setup({
     mocha = function(cp)
       return {
         -- For base configs.
-        -- NormalFloat = { fg = cp.text, bg = cp.base },
+        NormalFloat = { fg = cp.text, bg = cp.base },
         CursorLineNr = { fg = cp.green },
         Search = { bg = cp.surface1, fg = cp.pink, style = { "bold" } },
         IncSearch = { bg = cp.pink, fg = cp.surface1 },
@@ -58,10 +58,6 @@ require("catppuccin").setup({
         Type = { fg = cp.blue },
         Typedef = { fg = cp.yellow },
         StorageClass = { fg = cp.red, style = { "italic" } },
-
-        -- For fidget.
-        FidgetTask = { bg = cp.none, fg = cp.surface2 },
-        FidgetTitle = { fg = cp.blue, style = { "bold" } },
 
         -- For trouble.nvim
         TroubleNormal = { bg = cp.base },
