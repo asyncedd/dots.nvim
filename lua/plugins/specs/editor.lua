@@ -72,6 +72,6 @@ return {
       "andymass/vim-matchup",
     },
     -- event = "BufReadPost",
-    event = { "CursorHold", "CursorHoldI" }
+    event = "VeryLazy",
   },
 }
