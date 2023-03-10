@@ -36,7 +36,7 @@ return {
   -- LSP.
   {
     "neovim/nvim-lspconfig",
-    event = "BufReadPost",
+    event = "BufReadPre",
     config = function()
       require("plugins.configs.lsp.lspconfig")
     end,
@@ -68,24 +68,23 @@ return {
         config = true
       }
     },
-  },
-  -- LSPSaga
-  {
-    "glepnir/lspsaga.nvim",
-    event = "BufRead",
-    opts = {
-      ui = {
-        theme = 'round',
-        title = true,
-        -- border type can be single,double,rounded,solid,shadow.
-        border = 'rounded',
-        winblend = 0,
-      }
-    },
-    config = true,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-      "nvim-treesitter/nvim-treesitter",
+    {
+      "glepnir/lspsaga.nvim",
+      event = "BufRead",
+      opts = {
+        ui = {
+          theme = 'round',
+          title = true,
+          -- border type can be single,double,rounded,solid,shadow.
+          border = 'rounded',
+          winblend = 0,
+        }
+      },
+      config = true,
+      dependencies = {
+        "nvim-tree/nvim-web-devicons",
+        "nvim-treesitter/nvim-treesitter",
+      },
     },
   },
 }
