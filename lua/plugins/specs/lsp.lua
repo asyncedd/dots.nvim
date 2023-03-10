@@ -38,7 +38,7 @@ return {
   -- LSP.
   {
     "neovim/nvim-lspconfig",
-    event = "BufReadPre",
+    event = "BufReadPost",
     config = function()
       require("plugins.configs.lsp.lspconfig")
     end,
