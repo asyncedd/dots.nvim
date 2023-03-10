@@ -20,7 +20,11 @@ local Space = { provider = " " }
 
 local DefaultStatusLine = {
   Lazy, Space, ViMode, Space, SearchResults,
-  FileName.WorkDir, Space, FileName.FileNameBlock,
+  utils.surround({ "", "" }, "bright_bg", {
+    FileName.WorkDir,
+    Space,
+    utils.surround({ "", "" }, "red", { FileName.FileNameBlock }),
+  }),
   Space,
   Gitsigns,
   Space,
