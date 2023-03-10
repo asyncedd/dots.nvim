@@ -49,42 +49,44 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
-      {
-        "j-hui/fidget.nvim",
-        opts = {
-          text = {
-            spinner = "dots"
-          }
-        },
-        config = true,
-      },
-      {
-        "folke/trouble.nvim",
-        config = true,
-      },
       "folke/neodev.nvim",
       {
         "ray-x/lsp_signature.nvim",
         config = true
+      },
+    },
+  },
+  {
+    "j-hui/fidget.nvim",
+    event = "VeryLazy",
+    opts = {
+      text = {
+        spinner = "dots"
       }
     },
-    {
-      "glepnir/lspsaga.nvim",
-      event = "BufRead",
-      opts = {
-        ui = {
-          theme = 'round',
-          title = true,
-          -- border type can be single,double,rounded,solid,shadow.
-          border = 'rounded',
-          winblend = 0,
-        }
-      },
-      config = true,
-      dependencies = {
-        "nvim-tree/nvim-web-devicons",
-        "nvim-treesitter/nvim-treesitter",
-      },
+    config = true,
+  },
+  {
+    "folke/trouble.nvim",
+    event = "VeryLazy",
+    config = true,
+  },
+  {
+    "glepnir/lspsaga.nvim",
+    event = "BufReadPost",
+    opts = {
+      ui = {
+        theme = 'round',
+        title = true,
+        -- border type can be single,double,rounded,solid,shadow.
+        border = 'rounded',
+        winblend = 0,
+      }
+    },
+    config = true,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "nvim-treesitter/nvim-treesitter",
     },
   },
 }
