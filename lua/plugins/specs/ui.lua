@@ -11,8 +11,6 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
-      show_current_context = true,
-      show_current_context_start = true,
       show_end_of_line = true,
       space_char_blankline = " ",
       enabled = true,
@@ -58,5 +56,17 @@ return {
     config = function(_, opts)
       require("mini.cursorword").setup(opts)
     end
+  },
+  -- Indentscope
+  {
+    "echasnovski/mini.indentscope",
+    opts = {
+      symbol = "│",
+      options = { try_as_border = true },
+    },
+    config = function (_, opts)
+      require("mini.indentscope").setup(opts)
+    end,
+    event = "BufReadPost",
   }
 }
