@@ -26,9 +26,7 @@ local kind_icons = {
   TypeParameter = ""
 }
 
-local lazy_require = require("snips.lazy-require").require_on_exported_call
 local cmp = require("cmp")
-local luasnip = lazy_require("luasnip")
 
 vim.defer_fn(function()
   require("nvim-autopairs").setup()
@@ -44,6 +42,8 @@ cmp.setup({
     completion = {
       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
       winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
+      max_height = 20,
+      max_width = 80,
     },
     documentation = {
       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
@@ -59,6 +59,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
+    { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
   }),
@@ -86,7 +87,7 @@ cmp.setup({
         nvim_lsp = "[LSP]",
         luasnip = "[LuaSnip]",
         nvim_lua = "[Lua]",
-        latex_symbols = "[LaTeX]",
+        -- latex_symbols = "[LaTeX]",
       })[entry.source.name]
       return vim_item
     end
