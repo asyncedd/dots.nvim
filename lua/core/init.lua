@@ -7,6 +7,8 @@ require("core.options")
 
 require("core.lazy")
 
+require("plugins.loader")
+
 vim.api.nvim_command("colorscheme catppuccin")
 
 vim.defer_fn(function()
@@ -14,7 +16,6 @@ vim.defer_fn(function()
   require("mappings.movement")
   require("mappings.lspsaga")
   require("mappings.plugins")
-  require("plugins.loader")
 
   o("shadafile", "", {})
 end, 0)
