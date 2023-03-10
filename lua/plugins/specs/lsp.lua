@@ -5,6 +5,7 @@ return {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-nvim-lua",
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
       {
@@ -62,7 +63,11 @@ return {
         config = true,
       },
       "folke/neodev.nvim",
-    }
+      {
+        "ray-x/lsp_signature.nvim",
+        config = true
+      }
+    },
   },
   -- LSPSaga
   {
