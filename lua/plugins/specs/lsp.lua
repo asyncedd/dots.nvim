@@ -21,9 +21,11 @@ return {
             function()
               return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
             end,
-            expr = true, silent = true, mode = "i",
+            expr = true,
+            silent = true,
+            mode = "i",
           },
-          { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
+          { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
           { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
         },
       },
@@ -49,30 +51,31 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
-      {
-        "j-hui/fidget.nvim",
-        opts = {
-          text = {
-            spinner = "dots"
-          }
-        },
-        config = true,
-      },
-      {
-        "folke/trouble.nvim",
-        config = true,
-      },
       "folke/neodev.nvim",
       {
         "ray-x/lsp_signature.nvim",
         config = true
-      }
+      },
     },
   },
-  -- LSPSaga
+  {
+    "j-hui/fidget.nvim",
+    event = "VeryLazy",
+    opts = {
+      text = {
+        spinner = "dots"
+      }
+    },
+    config = true,
+  },
+  {
+    "folke/trouble.nvim",
+    event = "VeryLazy",
+    config = true,
+  },
   {
     "glepnir/lspsaga.nvim",
-    event = "BufRead",
+    event = "BufReadPost",
     opts = {
       ui = {
         theme = 'round',
