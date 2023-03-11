@@ -1,3 +1,5 @@
+vim.g.codeium_disable_bindings = 1
+
 return {
   -- Completion
   {
@@ -95,4 +97,9 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
+  {
+    "mhartington/formatter.nvim",
+    event = "VeryLazy",
+    config = true,
+  }
 }
