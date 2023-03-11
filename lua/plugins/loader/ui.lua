@@ -28,8 +28,10 @@ cats_in_line(function ()
   require("mini.indentscope").setup(indentscope_opts)
 
   -- Colorizer is a beautiful color-code visualizer that is blazingly fast, if the Primeagen were to say it.
-  -- TODO Add CCC.nvim
   require("colorizer").setup({})
+
+  -- CCCC.nvim is a powerful color picker for those that are picky! (me)
+  require("ccc").setup()
 
   -- Pretty-fold.nvim is a clean and cute, aesthetically pleasing alternative to the ugly builtin visualizer.
 

@@ -5,6 +5,8 @@ return {
   "lukas-reineke/indent-blankline.nvim",
   -- Colorizer
   "NvChad/nvim-colorizer.lua",
+  -- CCC.nvim
+  "uga-rosa/ccc.nvim",
   -- Heirline
   "rebelot/heirline.nvim",
   -- Folding
