@@ -1,3 +1,4 @@
+-- Avoid expensive global variable searching, we already have it at home!
 local maps = vim.api.nvim_set_keymap
 
 -- Open NvimTree via `<leader>tr`
