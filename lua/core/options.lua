@@ -16,7 +16,7 @@ o("writebackup", false, {}) -- Don't write backups.
 o("clipboard", "unnamed,unnamedplus", {}) -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
 
 -- 1.4 Tabline
-o("showtabline", 2, {})
+-- o("showtabline", 2, {})
 vim.api.nvim_command([[au FileType * if index(['wipe', 'delete'], &bufhidden) >= 0 | set nobuflisted | endif]])
 
 -- 1.5 Vim-matchup
