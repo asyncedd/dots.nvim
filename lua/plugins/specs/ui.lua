@@ -1,62 +1,16 @@
 return {
   -- Colorscheme
-  {
-    "catppuccin/nvim",
-    config = function ()
-      require("plugins.configs.ui.catppuccin")
-    end,
-    lazy = false,
-  },
+  "catppuccin/nvim",
   -- Indent blanklines
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      show_current_context = true,
-      show_current_context_start = true,
-      show_end_of_line = true,
-      space_char_blankline = " ",
-      enabled = true,
-      colored_indent_levels = false,
-      show_trailing_blankline_indent = true,
-    },
-    event = "BufReadPost",
-    config = true,
-  },
+  "lukas-reineke/indent-blankline.nvim",
   -- Colorizer
-  {
-    "NvChad/nvim-colorizer.lua",
-    event = "BufReadPost",
-    config = true,
-  },
+  "NvChad/nvim-colorizer.lua",
   -- Heirline
-  {
-    "rebelot/heirline.nvim",
-    event = "BufReadPost",
-    config = function ()
-      require("plugins.configs.ui.heirline")
-    end
-  },
+  "rebelot/heirline.nvim",
   -- Folding
-  {
-    "anuvyklack/pretty-fold.nvim",
-    config = true,
-    event = "BufReadPost",
-    dependencies = {
-      {'anuvyklack/fold-preview.nvim',
-        dependencies = { 'anuvyklack/keymap-amend.nvim' },
-        config = true,
-      }
-    }
-  },
+  "anuvyklack/pretty-fold.nvim",
   -- Cursorword
-  {
-    "echasnovski/mini.cursorword",
-    event = "BufReadPost",
-    opts = {
-      delay = 50
-    },
-    config = function(_, opts)
-      require("mini.cursorword").setup(opts)
-    end
-  }
+  "echasnovski/mini.cursorword",
+  -- Indentscope
+  "echasnovski/mini.indentscope",
 }

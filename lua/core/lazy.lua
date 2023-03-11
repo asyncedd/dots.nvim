@@ -1,6 +1,10 @@
 -- Bootstrap lazy.nvim
-
+-- This should be quite straight-foward:
+-- If lazy isn't installed, install it.
+--
+-- Check if it exists
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- If it doesn't, clone it.
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -11,13 +15,19 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
+-- And then, prepend it the runtime plugins list.
 vim.opt.rtp:prepend(lazypath)
 
+-- Now we're going to initalize lazy.nvim
 require("lazy").setup({
+  -- First, we're going to get the specs table from a directory.
   { import = "plugins.specs" }
+  -- Next is the options for lazy.nvim
 }, {
     performance = {
       rtp = {
+        -- We're going to disable some runtime plugins that we don't need.
         disabled_plugins = {
           "2html_plugin",
           -- "getscript",
@@ -47,22 +57,26 @@ require("lazy").setup({
           -- "matchparen",
         },
       },
-      cache = {
-        enabled = true,
-      },
-      reset_packpath = true,
     },
     ui = {
       -- size = { width = 0.8, height = 0.8 },
-      -- border = "solid",
+      -- We're gonna make the GUI (actually, it's a TUI) curved!
+      -- Look at those curves! (WTF. Add +1 to the WTF/Min)
+      border = "rounded",
+      -- I dunno, lazy.nvim doesn't really seem to find this so here, uwu!
       icons = {
         lazy = "鈴",
       },
       -- throttle = 50,
     },
     install = {
+      -- When we're installing plugins it'll default to the habamax colorscheme but, we like our catppuccino mocha catppuccin so we're going to default to that.
+      -- And also Tokyonight.nvim, even though we don't have it installed (+1 WTF/min)
       colorscheme = { "catppuccin", "tokyonight", "habamx" },
     },
+    -- Oh yeah, we're going to lazy-laod every plugin by default.
+    -- because I'm too lazy to add that 12 characters!
+    -- (+1 WTF/Min)
     defaults = {
       lazy = true,
     },

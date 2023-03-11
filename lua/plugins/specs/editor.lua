@@ -1,10 +1,6 @@
 return {
   -- Comment
-  {
-    "numToStr/Comment.nvim",
-    config = true,
-    event = "VeryLazy"
-  },
+  "numToStr/Comment.nvim",
   -- UFO
   -- {
   --   "kevinhwang91/nvim-ufo",
@@ -65,13 +61,9 @@ return {
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("plugins.configs.editor.treesitter")
-    end,
     dependencies = {
       "andymass/vim-matchup",
     },
     -- event = "BufReadPost",
-    event = "VeryLazy",
   },
 }
