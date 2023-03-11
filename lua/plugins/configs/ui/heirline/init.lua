@@ -12,6 +12,7 @@ local LSP = lazy_require("plugins.configs.ui.heirline.lsp")
 local Lazy = lazy_require("plugins.configs.ui.heirline.lazy")
 local SearchResults = require("plugins.configs.ui.heirline.search")
 local Bufferline = lazy_require("plugins.configs.ui.heirline.bufferline")
+-- local StatusColumn = require("plugins.configs.ui.heirline.statuscolumn")
 
 require("plugins.configs.ui.heirline.colors")
 
@@ -88,7 +89,15 @@ local StatusLines = {
   DefaultStatusLine,
 }
 
+-- local statuscolumn = {
+--
+--   -- StatusColumn.diagnostic_signs,
+--   StatusColumn.line_number,
+--   StatusColumn.gitsigns_or_bar,
+-- }
+
 heirline.setup({
   statusline = StatusLines,
   tabline = bufferline,
+  -- statuscolumn = statuscolumn,
 })
