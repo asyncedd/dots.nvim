@@ -10,6 +10,7 @@ return {
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-path",
+      "petertriho/cmp-git",
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
       {

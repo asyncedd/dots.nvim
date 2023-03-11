@@ -19,3 +19,5 @@ require("plugins.loader.ui")
 -- }
 --
 require("plugins.loader.editor")
+
+require("plugins.loader.cmp_cmd")
