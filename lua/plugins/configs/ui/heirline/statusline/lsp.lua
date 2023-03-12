@@ -1,5 +1,6 @@
 local M = {}
 local conditions = require("heirline.conditions")
+local icons = require("core.utils.icons.diagnostics")
 
 M.LSPActive = {
   condition = conditions.lsp_attached,
@@ -24,10 +25,10 @@ M.Diagnostics = {
   condition = conditions.has_diagnostics,
 
   static = {
-    error_icon = " ",
-    warn_icon = " ",
-    info_icon = " ",
-    hint_icon = " "
+    error_icon = icons.Error,
+    warn_icon = icons.Warn,
+    info_icon = icons.Info,
+    hint_icon = icons.Hint,
   },
 
   init = function(self)
