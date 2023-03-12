@@ -19,6 +19,8 @@ end
 -- And then, prepend it the runtime plugins list.
 vim.opt.rtp:prepend(lazypath)
 
+local icons = require("core.utils.icons.lazy")
+
 -- Now we're going to initalize lazy.nvim
 require("lazy").setup({
   -- First, we're going to get the specs table from a directory.
@@ -65,7 +67,7 @@ require("lazy").setup({
       border = "rounded",
       -- I dunno, lazy.nvim doesn't really seem to find this so here, uwu!
       icons = {
-        lazy = "鈴",
+        lazy = icons.lazy,
       },
       -- throttle = 50,
     },
