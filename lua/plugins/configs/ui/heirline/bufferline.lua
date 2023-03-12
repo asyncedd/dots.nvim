@@ -1,11 +1,11 @@
 local utils = require("heirline.utils")
-local FileIcon = require("plugins.configs.ui.heirline.filename").FileIcon
+local FileIcon = require("plugins.configs.ui.heirline.statusline.filename").FileIcon
 
 local TablineBufnr = {
   provider = function(self)
     return tostring(self.bufnr) .. ". "
   end,
-  hl = "Comment",
+  h = "Comment",
 }
 
 -- we redefine the filename component, as we probably only want the tail and not the relative path
