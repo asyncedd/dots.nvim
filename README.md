@@ -1,6 +1,8 @@
 ## 🏗️ DotsDotNvim (dots.nvim)
 My personal Neovim configuration
 
+![Size](https://img.shields.io/github/repo-size/asyncedd/dots.nvim?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)
+
 ## 👋 Introduction
 This is my personal Neovim configuration as, I said.
 Well I've structured the file architecture to be easy as possible to maintain.
