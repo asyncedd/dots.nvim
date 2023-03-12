@@ -57,11 +57,7 @@ local bufferline = {
 local StatusLines = {
 
   hl = function()
-    if conditions.is_active() then
-      return "StatusLine"
-    else
-      return "StatusLineNC"
-    end
+    return conditions.is_active() and "StatusLine" or "StatusLineNC"
   end,
 
   static = {

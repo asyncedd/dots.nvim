@@ -67,7 +67,7 @@ require("lazy").setup({
       border = "rounded",
       -- I dunno, lazy.nvim doesn't really seem to find this so here, uwu!
       icons = {
-        icons.lazy,
+        lazy = icons.lazy,
       },
       -- throttle = 50,
     },
