@@ -18,20 +18,23 @@ require("plugins.configs.ui.heirline.colors")
 
 local Align = { provider = "%=", hl = { bg = "normal" } }
 local Space = { provider = " ", hl = { bg = "normal" } }
-local Space1 = { provider = "                 ", hl = { bg = "normal" } }
+
+local surround = function (color, item)
+  return utils.surround({ "", "" }, color, item)
+end
 
 local DefaultStatusLine = {
   Lazy, Space, ViMode, Space, SearchResults,
-  utils.surround({ "", "" }, "bright_bg", {
+  surround("bright_bg", {
     FileName.WorkDir,
-    utils.surround({ "", "" }, function(self) return self:mode_color() end, { FileName.FileNameBlock }),
+    surround(function(self) return self:mode_color() end, { FileName.FileNameBlock }),
   }),
   Space,
   {
     Gitsigns,
     hl = { bg = "normal" }
   },
-  Space1,
+  Space,
   {
     LSP.LSPActive,
     hl = { bg = "normal" }
