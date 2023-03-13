@@ -24,6 +24,10 @@ local indentscope_opts = {
 
 cats_in_line(function ()
 
+  -- Heirline.nvim is a true minimalisitc statusline for Neovim.
+
+  require("plugins.configs.ui.heirline")
+
   -- Load indent_blankline and mini.indentscope for a clean and, aesthestically pleasing indent visualizer.
   require("indent_blankline").setup()
 
@@ -45,10 +49,3 @@ cats_in_line(function ()
 
 end)
 
-cats_in_line(function ()
-
-  -- Heirline.nvim is a true minimalisitc statusline for Neovim.
-
-  require("plugins.configs.ui.heirline")
-
-end)
