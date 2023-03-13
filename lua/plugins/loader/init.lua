@@ -12,6 +12,7 @@
 --  indent-blankline + mini.indentscope (Indent visualizers)
 -- }
 --
+
 require("plugins.loader.ui")
 
 -- Setting some funny LSP stuff.
@@ -33,3 +34,4 @@ require("plugins.loader.cmp_cmd")
 -- Setting up a autocmd to load nvim-cmp once the user enters insert mode.
 
 require("plugins.loader.cmp")
+
