@@ -9,6 +9,13 @@
 
 -- Setup LSP signature later. The chances of this being used is unlikely, since the lsp should be busy doing stuff with the lspserver.
 
+
+-- vim.api.nvim_create_autocmd("BufReadPre", {
+--   callback = function()
+--     require("plugins.configs.lsp.lspconfig")
+--   end
+-- })
+
 vim.schedule(function ()
   require("lsp_signature").setup()
 end)
@@ -30,19 +37,3 @@ vim.schedule(function ()
 
 end)
 
--- So, LSPSaga. We don't nest B)
-local lspsaga_opts = {
-  ui = {
-    theme = 'round',
-    title = true,
-    -- border type can be single,double,rounded,solid,shadow.
-    border = 'rounded',
-    winblend = 0,
-  }
-}
-
-vim.api.nvim_create_autocmd("BufReadPost", {
-  callback = function ()
-    require("lspsaga").setup(lspsaga_opts)
-  end
-})
