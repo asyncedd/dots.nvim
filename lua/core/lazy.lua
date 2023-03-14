@@ -57,6 +57,7 @@ require("lazy").setup({
           "spellfile",
           -- "matchit",
           -- "matchparen",
+          "man",
         },
       },
     },

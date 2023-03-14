@@ -25,9 +25,4 @@ return {
     event = "VeryLazy",
     config = true,
   },
-  {
-    "stevearc/overseer.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
 }
