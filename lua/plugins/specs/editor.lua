@@ -59,4 +59,10 @@ return {
     end,
     event = "BufReadPost",
   },
+  -- TrailBlazer.nvim
+  {
+    "LeonHeidelbach/trailblazer.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
