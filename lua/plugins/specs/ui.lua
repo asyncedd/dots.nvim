@@ -38,6 +38,10 @@ return {
   -- Indentscope
   {
     "echasnovski/mini.indentscope",
+    opts = {
+      symbol = "│",
+      options = { try_as_border = true },
+    },
     config = function ()
       require("mini.indentscope").setup()
     end,
