@@ -1,6 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "8d3aa5c22c2d45e788c7a5fe13ad77368b783c20" },
   "LuaSnip": { "branch": "master", "commit": "a835e3d680c5940b61780c6af07885db95382478" },
+  "alpha-nvim": { "branch": "main", "commit": "3847d6baf74da61e57a13e071d8ca185f104dc96" },
   "ccc.nvim": { "branch": "main", "commit": "4bfa7f89eb14d665f929219560a3406ec074bba5" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-cmdline": { "branch": "main", "commit": "8fcc934a52af96120fe26358985c10c035984b53" },
@@ -13,7 +14,6 @@
   "flit.nvim": { "branch": "main", "commit": "4c1739137acd3e7f03e2065a7be8a4dc41c7e461" },
   "gitsigns.nvim": { "branch": "main", "commit": "b1f9cf7c5c5639c006c937fc1819e09f358210fc" },
   "heirline.nvim": { "branch": "master", "commit": "3677262fba12c2bc915afb8be150cec70392e678" },
-  "impatient.nvim": { "branch": "main", "commit": "c90e273f7b8c50a02f956c24ce4804a47f18162e" },
   "indent-blankline.nvim": { "branch": "master", "commit": "018bd04d80c9a73d399c1061fa0c3b14a7614399" },
   "lazy.nvim": { "branch": "main", "commit": "623e00cabbc908f635150e73d4250cf4f241d919" },
   "leap.nvim": { "branch": "main", "commit": "2ff8eac67bed41005ea2032728a0336c784de611" },
