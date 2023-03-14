@@ -1,21 +1,10 @@
 return {
   -- Comment
-  "numToStr/Comment.nvim",
-  -- UFO
-  -- {
-  --   "kevinhwang91/nvim-ufo",
-  --   opts = {
-  --     provider_selector = function(bufnr, filetype, buftype)
-  --       return {"treesitter", "indent"}
-  --     end
-  --   },
-  --   config = true,
-  --   dependencies = {
-  --     "kevinhwang91/promise-async"
-  --   },
-  --   event = "BufReadPost",
-  -- },
-
+  {
+    "numToStr/Comment.nvim",
+    config = true,
+    event = "BufReadPost",
+  },
   -- Gitsigns!
   {
     "lewis6991/gitsigns.nvim",
@@ -65,6 +54,9 @@ return {
       "andymass/vim-matchup",
       "David-Kunz/markid",
     },
-    -- event = "BufReadPost",
+    config = function ()
+      require("plugins.configs.editor.treesitter")
+    end,
+    event = "BufReadPost",
   },
 }

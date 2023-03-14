@@ -9,5 +9,3 @@
 -- Add some autocmds and keymaps
 
 require("core")
-
-
