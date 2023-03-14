@@ -5,6 +5,9 @@ return {
     init = function ()
       vim.cmd("colorscheme catppuccin")
     end,
+    config = function ()
+      require("plugins.configs.ui.catppuccin")
+    end,
     lazy = false,
   },
   -- Indent blanklines
@@ -16,12 +19,6 @@ return {
   -- Colorizer
   {
     "NvChad/nvim-colorizer.lua",
-    config = true,
-    event = "BufReadPost"
-  },
-  -- CCC.nvim
-  {
-    "uga-rosa/ccc.nvim",
     config = true,
     event = "BufReadPost"
   },
