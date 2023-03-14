@@ -20,9 +20,4 @@ return {
     end,
     event = "VeryLazy"
   },
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    config = true,
-  },
 }
