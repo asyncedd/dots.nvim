@@ -1,13 +1,6 @@
-local M = {}
+local M
 
-M.diagnostics_icons = {
-  Error = " ",
-  Warn = " ",
-  Hint = " ",
-  Info = " ",
-}
-
-M.kind_icons = {
+M = {
   Text = "",
   Method = "",
   Function = "",
@@ -33,10 +26,6 @@ M.kind_icons = {
   Event = "",
   Operator = "",
   TypeParameter = ""
-}
-
-M.lazy_icons = {
-  lazy = "鈴",
 }
 
 return M
