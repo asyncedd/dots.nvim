@@ -2,10 +2,10 @@ return {
   -- Colorscheme
   {
     "catppuccin/nvim",
-    config = function ()
+    init = function ()
       vim.cmd("colorscheme catppuccin")
     end,
-    event = "VimEnter"
+    lazy = false,
   },
   -- Indent blanklines
   {
