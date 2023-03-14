@@ -83,10 +83,4 @@ return {
     end,
     event = "VeryLazy"
   },
-  -- HLArgs.
-  {
-    "m-demare/hlargs.nvim",
-    config = true,
-    event = "BufReadPost",
-  },
 }
