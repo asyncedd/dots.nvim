@@ -1,6 +1,9 @@
 return {
   -- Colorscheme
-  "catppuccin/nvim",
+  {
+    "catppuccin/nvim",
+    priority = 1000,
+  },
   -- Indent blanklines
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -56,6 +59,9 @@ return {
         -- config
       }
     end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    dependencies = {
+      {'nvim-tree/nvim-web-devicons'}
+    },
+    priority = 1000,
   },
 }
