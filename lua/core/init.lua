@@ -6,6 +6,9 @@
 -- Quite useful ain't it? :)
 vim.g.mapleader = " "
 
+-- Disable builtin plugins (Using the g.loaded method so it's not real :()
+require("core.disableBuiltinPlugins")
+
 -- Set some options.
 -- Now, we can use shortcuts like `<leader>ff` to open Telescope.nvim.
 -- This will make out lives much easier! :D
