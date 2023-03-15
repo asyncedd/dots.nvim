@@ -33,9 +33,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
     },
-    config = function ()
-      require("plugins.configs.completion.cmp")
-    end
+    config = require("plugins.configs.completion.cmp"),
   },
   -- LSP.
   {
@@ -58,7 +56,7 @@ return {
   },
   {
     "folke/trouble.nvim",
-    config = true,
+    config = require("plugins.configs.lsp.trouble"),
     event = "BufReadPost"
   },
   {
