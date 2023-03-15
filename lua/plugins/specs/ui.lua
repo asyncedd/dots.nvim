@@ -29,12 +29,6 @@ return {
     config = true,
     event = "BufReadPost"
   },
-  -- CCC.nvim
-  {
-    "uga-rosa/ccc.nvim",
-    config = true,
-    event = "BufReadPost"
-  },
   -- Heirline
   {
     "rebelot/heirline.nvim",
