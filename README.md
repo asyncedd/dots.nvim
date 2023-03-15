@@ -41,6 +41,7 @@ Then once it finished, you're done! (actually)
 Just run a `nvim` in your terminal :D
 
 ## ⚡ Performance
+TODO Redo it once ~~I get it to be more faster (troll)~~ Unlazy
 * `nvim --clean` - [source](https://github.com/asyncedd/dots.nvim/blob/master/clean.log):
 ```
 073.952  000.021: editing files in windows
