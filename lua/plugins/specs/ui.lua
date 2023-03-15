@@ -2,10 +2,10 @@ return {
   -- Colorscheme
   {
     "catppuccin/nvim",
-    config = function ()
+    init = function ()
       vim.cmd("colorscheme catppuccin")
     end,
-    init = function ()
+    config = function ()
       require("plugins.configs.ui.catppuccin")
     end,
     lazy = false,
