@@ -21,19 +21,36 @@ require("core.lazy")
 
 vim.cmd("colorscheme catppuccin")
 
--- vim.cmd("colorscheme catppuccin")
+-- Load components in parallel using coroutines and thunks
+local function load_components(components)
+  local thunks = {}
+  for _, component in ipairs(components) do
+    table.insert(thunks, function()
+      require(component)
+    end)
+  end
+  local co = coroutine.create(function()
+    for _, thunk in ipairs(thunks) do
+      thunk()
+      coroutine.yield()
+    end
+  end)
+  while coroutine.resume(co) do
+  end
+end
 
--- Do some stuff that aren't required in our UI. (mappings, autocmd etc...)
--- Also without blocking the main thread for the maximum efficiency.
+-- Load components in parallel
 vim.schedule(function()
-  -- Add some autocmds.
-  -- Check it out, it's quite neat!
-  require("core.autocmd")
-  -- Add some mappings... We need these more maximum productivity!
-  -- TODO merge `mappings.lspsaga` with `mappings.plugins`
-  require("mappings.movement")
-  require("mappings.lspsaga")
-  require("mappings.plugins")
+  load_components({
+    "core.autocmd",
+    "mappings.movement",
+    "mappings.lspsaga",
+    "mappings.plugins",
+  })
 end)
 
+-- Load options that don't require any UI
+vim.schedule(function()
+  vim.o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
+end)
 
