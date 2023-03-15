@@ -88,8 +88,8 @@ return {
     "smjonas/inc-rename.nvim",
     config = function ()
       require("inc_rename").setup()
-      vim.keymap.set("v", "<leader>rn", ":IncRename ")
     end,
     event = "VeryLazy",
+    keys = { "n", "<leader>rn", ":IncRename " }
   },
 }
