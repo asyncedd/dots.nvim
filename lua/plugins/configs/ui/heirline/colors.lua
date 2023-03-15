@@ -1,26 +1,27 @@
 local heirline = require("heirline")
 local utils = require("heirline.utils")
+local get_highlight = utils.get_highlight
 
 local colors = {
-  normal = utils.get_highlight("Normal").bg,
-  bright_bg = utils.get_highlight("Folded").bg,
-  bright_fg = utils.get_highlight("Folded").fg,
-  red = utils.get_highlight("DiagnosticError").fg,
-  dark_red = utils.get_highlight("DiffDelete").bg,
-  green = utils.get_highlight("String").fg,
-  blue = utils.get_highlight("Function").fg,
-  gray = utils.get_highlight("NonText").fg,
-  orange = utils.get_highlight("Constant").fg,
-  purple = utils.get_highlight("Statement").fg,
-  cyan = utils.get_highlight("Special").fg,
-  diag_warn = utils.get_highlight("DiagnosticWarn").fg,
-  diag_error = utils.get_highlight("DiagnosticError").fg,
-  diag_hint = utils.get_highlight("DiagnosticHint").fg,
-  diag_info = utils.get_highlight("DiagnosticInfo").fg,
-  git_del = utils.get_highlight("diffRemoved").fg,
-  -- git_del = utils.get_highlight("diffDelete").fg,
-  git_add = utils.get_highlight("diffAdded").fg,
-  git_change = utils.get_highlight("diffChanged").fg,
+  normal = get_highlight("Normal").bg,
+  bright_bg = get_highlight("Folded").bg,
+  bright_fg = get_highlight("Folded").fg,
+  red = get_highlight("DiagnosticError").fg,
+  dark_red = get_highlight("DiffDelete").bg,
+  green = get_highlight("String").fg,
+  blue = get_highlight("Function").fg,
+  gray = get_highlight("NonText").fg,
+  orange = get_highlight("Constant").fg,
+  purple = get_highlight("Statement").fg,
+  cyan = get_highlight("Special").fg,
+  diag_warn = get_highlight("DiagnosticWarn").fg,
+  diag_error = get_highlight("DiagnosticError").fg,
+  diag_hint = get_highlight("DiagnosticHint").fg,
+  diag_info = get_highlight("DiagnosticInfo").fg,
+  git_del = get_highlight("diffRemoved").fg,
+  git_add = get_highlight("diffAdded").fg,
+  git_change = get_highlight("diffChanged").fg,
 }
 
 heirline.load_colors(colors)
+
