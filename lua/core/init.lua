@@ -2,8 +2,6 @@
 -- This is the place where the magic happens!
 
 -- Our ms-jpq's async.
-local a = require("snips.async")
-
 -- Set the <leader> key to: <Space>
 -- So we can go for ex. -> `<leader>ff` to open Telescope.nvim.
 -- Quite useful ain't it? :)
@@ -20,6 +18,8 @@ require("core.options")
 -- Initalize the plugin manager, lazy.nvim.
 -- We're gonna use the best tools for the job!
 require("core.lazy")
+
+vim.cmd("colorscheme catppuccin")
 
 -- vim.cmd("colorscheme catppuccin")
 
