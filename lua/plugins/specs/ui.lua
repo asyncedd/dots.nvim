@@ -2,10 +2,10 @@ return {
   -- Colorscheme
   {
     "catppuccin/nvim",
-    init = function ()
+    config = function ()
       vim.cmd("colorscheme catppuccin")
     end,
-    config = function ()
+    init = function ()
       require("plugins.configs.ui.catppuccin")
     end,
     lazy = false,
@@ -19,6 +19,12 @@ return {
   -- Colorizer
   {
     "NvChad/nvim-colorizer.lua",
+    config = true,
+    event = "BufReadPost"
+  },
+  -- CCC.nvim
+  {
+    "uga-rosa/ccc.nvim",
     config = true,
     event = "BufReadPost"
   },
