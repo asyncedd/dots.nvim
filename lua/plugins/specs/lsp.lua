@@ -42,6 +42,7 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "jay-babu/mason-null-ls.nvim",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
       "folke/neodev.nvim",
@@ -77,5 +78,11 @@ return {
     "ray-x/lsp_signature.nvim",
     config = require("plugins.configs.lsp.signature"),
     event = "BufReadPost",
-  }
+  },
+  -- NullLs - Do some non-LSP stuff as LSP.
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = require("plugins.configs.lsp.nullLs"),
+    event = "BufReadPost"
+  },
 }
