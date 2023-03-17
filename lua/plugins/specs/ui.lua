@@ -3,49 +3,49 @@ return {
   {
     "catppuccin/nvim",
     priority = 1000,
-    config = function ()
+    config = function()
       require("plugins.configs.ui.catppuccin")
-    end
+    end,
   },
   -- Indent blanklines
   {
     "lukas-reineke/indent-blankline.nvim",
     config = require("plugins.configs.ui.indentBlankline"),
-    event = "BufReadPost"
+    event = "BufReadPost",
   },
   -- Colorizer
   {
     "NvChad/nvim-colorizer.lua",
     config = true,
-    event = "BufReadPost"
+    event = "BufReadPost",
   },
   -- Heirline
   {
     "rebelot/heirline.nvim",
-    config = function ()
+    config = function()
       require("plugins.configs.ui.heirline")
     end,
-    event = { "BufReadPost", "VeryLazy" }
+    event = { "BufReadPost", "VeryLazy" },
   },
   -- Cursorword
   {
     "echasnovski/mini.cursorword",
-    config = function ()
+    config = function()
       require("mini.cursorword").setup()
     end,
     event = "BufReadPost",
   },
   -- Dashboard
   {
-    'glepnir/dashboard-nvim',
-    event = 'VimEnter',
+    "glepnir/dashboard-nvim",
+    event = "VimEnter",
     config = function()
-      require('dashboard').setup {
+      require("dashboard").setup({
         -- config
-      }
+      })
     end,
     dependencies = {
-      {'nvim-tree/nvim-web-devicons'}
+      { "nvim-tree/nvim-web-devicons" },
     },
     priority = 1000,
   },
