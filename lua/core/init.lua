@@ -22,12 +22,17 @@ require("core.user")
 -- We're gonna use the best tools for the job!
 require("core.lazy")
 
-vim.cmd("colorscheme catppuccin")
+-- Set up a colorscheme.
+-- You can change the colorscheme you use at:
+-- `lua/user/settings/init.lua`.
+local colorscheme = require("user.settings").colorscheme
+
+vim.cmd("colorscheme " .. colorscheme)
 
 -- Initalize the Heirline.nvim color stuff since we need it.
 -- require("plugins.configs.ui.heirline.colors")
 
-vim.schedule_wrap(function()
+vim.schedule(function()
   --   -- Load components in parallel using coroutines and thunks
   local function load_components(components)
     local thunks = {}

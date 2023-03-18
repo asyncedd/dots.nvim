@@ -23,6 +23,12 @@ local M = {
     lazy = true,
     -- This ^^^
   },
+  -- Edge.nvim
+  {
+    "sainnhe/edge",
+    config = require("plugins.configs.ui.edge"),
+    lazy = true,
+  }
 }
 
 return M

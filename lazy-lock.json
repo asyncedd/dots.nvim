@@ -9,6 +9,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "dashboard-nvim": { "branch": "master", "commit": "937524714999c3c5a096f839dc22dd77344e1567" },
+  "edge": { "branch": "master", "commit": "bc581eccc5a5f7f2cebbe48df23080f2178f32bc" },
   "fidget.nvim": { "branch": "main", "commit": "688b4fec4517650e29c3e63cfbb6e498b3112ba1" },
   "gitsigns.nvim": { "branch": "main", "commit": "b1f9cf7c5c5639c006c937fc1819e09f358210fc" },
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
