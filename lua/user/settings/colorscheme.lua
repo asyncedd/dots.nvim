@@ -3,12 +3,14 @@
 -- You can see an example here!
 
 local M = {
+  -- Catppuccin - A truly vibrant and beautiful colorscheme.
   {
     "catppuccin/nvim",
     config = require("plugins.configs.ui.catppuccin"),
     priority = 1000,
     lazy = false,
   },
+  -- Tokyonight.nvim - the colorschemes for people surrounded in RGB.
   {
     "folke/tokyonight.nvim",
     config = require("plugins.configs.ui.tokyonight"),
