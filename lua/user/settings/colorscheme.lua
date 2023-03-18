@@ -8,7 +8,11 @@ local M = {
     "catppuccin/nvim",
     config = require("plugins.configs.ui.catppuccin"),
     priority = 1000,
-    lazy = false,
+    lazy = function ()
+      if ("catppuccin" == require("user.settings").colorscheme) then
+        return false
+      end
+    end,
   },
   -- Tokyonight.nvim - the colorschemes for people surrounded in RGB.
   {
@@ -20,7 +24,11 @@ local M = {
     -- (Hint: nvim lua/configs/ui/heirline/colors.lua)
     -- If you get an error about "gitDiff not found" or something,
     -- Change it to "gitDeleted" ig.
-    lazy = true,
+    lazy = function ()
+      if ("tokyonight" == require("user.settings").colorscheme) then
+        return false
+      end
+    end,
     -- This ^^^
   },
   -- -- Edge.nvim
