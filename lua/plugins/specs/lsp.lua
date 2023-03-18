@@ -16,8 +16,20 @@ return {
         silent = true,
         mode = "i",
       },
-      { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
-      { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+      {
+        "<tab>",
+        function()
+          require("luasnip").jump(1)
+        end,
+        mode = "s",
+      },
+      {
+        "<s-tab>",
+        function()
+          require("luasnip").jump(-1)
+        end,
+        mode = { "i", "s" },
+      },
     },
   },
   -- Completion
@@ -55,13 +67,13 @@ return {
   {
     "j-hui/fidget.nvim",
     config = require("plugins.configs.lsp.fidget"),
-    event = "BufReadPost"
+    event = "BufReadPost",
   },
   -- Trouble.nvim - a plugin to show some LSP diagnostics in a tree menu!
   {
     "folke/trouble.nvim",
     config = require("plugins.configs.lsp.trouble"),
-    event = "BufReadPost"
+    event = "BufReadPost",
   },
   -- LSPSaga - some cool stuff for LSP.
   {
@@ -83,6 +95,6 @@ return {
   {
     "jose-elias-alvarez/null-ls.nvim",
     config = require("plugins.configs.lsp.nullLs"),
-    event = "BufReadPost"
+    event = "BufReadPost",
   },
 }

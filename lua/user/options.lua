@@ -19,7 +19,6 @@ local opts = {
   -- d = d <-- This!
   -- e = e,
   --
-
 }
 
 -- EOL

@@ -11,6 +11,6 @@ return function()
     },
     diagnostics = {
       enable = true,
-    }
+    },
   })
 end

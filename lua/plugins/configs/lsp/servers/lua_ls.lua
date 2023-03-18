@@ -24,7 +24,7 @@ local M = {
       -- Make the LS (langauge sever) aware of Neovim runtime files.
       library = {
         vim.api.nvim_get_runtime_file("", true),
-        [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
+        [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
       },
       -- "Cache" files for fast loading.
       -- Oh yeah we allow 100 MB of cache. No more than that.
@@ -38,7 +38,7 @@ local M = {
     },
     -- Get the LS (language server) to reconize the "vim" global.
     globals = {
-      "vim"
+      "vim",
     },
   },
 }
