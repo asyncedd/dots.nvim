@@ -61,4 +61,13 @@ return {
     config = require("plugins.configs.editor.surround"),
     event = "VeryLazy",
   },
+  -- Refactor.nvim - a thePrimeagen plugin :)
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter"
+    },
+    config = true,
+  }
 }
