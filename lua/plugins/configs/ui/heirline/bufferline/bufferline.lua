@@ -1,5 +1,5 @@
 local utils = require("heirline.utils")
-local FileIcon = require("plugins.configs.ui.heirline.statusline.filename").FileIcon
+local FileIcon = require("ui.heirline.statusline.filename").FileIcon
 
 local TablineBufnr = {
   provider = function(self)
