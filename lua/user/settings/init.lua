@@ -8,6 +8,6 @@ local M = {}
 -- If you want to use some other colorscheme, you gotta include it in the plugins spec.
 -- At: `lua/user/settings/colorscheme`.
 -- The Default is "catppuccin".
-M.colorscheme = "tokyonight"
+M.colorscheme = "catppuccin"
 
 return M
