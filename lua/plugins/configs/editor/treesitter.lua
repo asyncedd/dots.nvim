@@ -35,15 +35,17 @@ local setupTreesitter = function()
     },
 
     -- Configure Markid.
-    markid = {
-      enable = true,
-      colors = markid_config.bright,
-    },
+    -- markid = {
+    --   enable = true,
+    --   colors = markid_config.bright,
+    -- },
 
+    -- Configure matchup!
     matchup = {
       enable = true,
     },
 
+    -- Enable smarty head selection 
     incremental_selection = {
       enable = true,
       keymaps = {
