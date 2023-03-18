@@ -10,6 +10,10 @@ vim.g.mapleader = " "
 -- Disable builtin plugins (Using the g.loaded method so it's not real :()
 require("core.disableBuiltinPlugins")
 
+-- Set the package.path.
+-- Allow searching in `lua/plugins/configs/x.lua` or `lua/plugins/configs/x/init.lua`
+package.path = string.format(";%s;%s", vim.fn.stdpath("config") .. "/lua/plugins/configs/?.lua", vim.fn.stdpath("config") .. "/lua/plugins/configs/?/init.lua")
+
 -- Set some options.
 -- Now, we can use shortcuts like `<leader>ff` to open Telescope.nvim.
 -- This will make out lives much easier! :D
