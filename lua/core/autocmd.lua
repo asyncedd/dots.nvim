@@ -11,7 +11,7 @@ local autocmd = api.nvim_create_autocmd
 autocmd({ "InsertEnter" }, {
   callback = function()
     o("relativenumber", false, {})
-  end
+  end,
 })
 
 -- This enables relativenumbers when we exisited insert mode.
@@ -19,7 +19,7 @@ autocmd({ "InsertEnter" }, {
 autocmd({ "InsertLeave" }, {
   callback = function()
     o("relativenumber", true, {})
-  end
+  end,
 })
 
 -- This is about it!

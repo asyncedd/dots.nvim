@@ -8,7 +8,7 @@ local map = vim.api.nvim_set_keymap
 map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", {})
 
 -- Code action
-vim.keymap.set({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", {})
+vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", {})
 
 -- Rename all occurrences of the hovered word for the entire file
 map("n", "gr", "<cmd>Lspsaga rename<CR>", {})
@@ -24,7 +24,7 @@ map("n", "gr", "<cmd>Lspsaga rename ++project<CR>", {})
 map("n", "gd", "<cmd>Lspsaga peek_definition<CR>", {})
 
 -- Go to definition
-map("n","gd", "<cmd>Lspsaga goto_definition<CR>", {})
+map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", {})
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
@@ -34,8 +34,7 @@ map("n","gd", "<cmd>Lspsaga goto_definition<CR>", {})
 map("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>", {})
 
 -- Go to type definition
-map("n","gt", "<cmd>Lspsaga goto_type_definition<CR>", {})
-
+map("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>", {})
 
 -- Show line diagnostics
 -- You can pass argument ++unfocus to
@@ -63,7 +62,7 @@ vim.keymap.set("n", "]E", function()
 end)
 
 -- Toggle outline
-map("n","<leader>o", "<cmd>Lspsaga outline<CR>", {})
+map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", {})
 
 -- Hover Doc
 -- If there is no hover doc,
@@ -85,4 +84,4 @@ map("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>", {})
 map("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>", {})
 
 -- Floating terminal
-vim.keymap.set({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>", {})
+vim.keymap.set({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>", {})

@@ -9,7 +9,7 @@ local Tabpages = lazy_require("plugins.configs.ui.heirline.bufferline.tablist").
 M = {
   tablineoffset,
   Bufferline,
-  Tabpages
+  Tabpages,
 }
 
 return M
