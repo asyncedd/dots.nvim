@@ -45,8 +45,6 @@ return {
       "petertriho/cmp-git",
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
-      "hrsh7th/cmp-nvim-lsp-document-symbol",
-      "davidsierradz/cmp-conventionalcommits",
       "ray-x/cmp-treesitter",
     },
     config = require("completion.cmp"),
