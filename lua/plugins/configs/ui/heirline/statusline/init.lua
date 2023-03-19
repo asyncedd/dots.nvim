@@ -16,6 +16,7 @@ local SearchResults = require("ui.heirline.statusline.search")
 
 local Align = { provider = "%=", hl = { bg = "normal" } }
 local Space = { provider = " ", hl = { bg = "normal" } }
+local NormalSpace = { provider = " " }
 local surround = function(color, obj)
   return utils.surround({ "", "" }, color, { obj })
 end
@@ -52,7 +53,7 @@ local DefaultStatusLine = {
     hl = { bg = "normal" },
   },
   Align,
-  surround("bright_bg", { File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar })
+  surround("bright_bg", { File.FileType, NormalSpace, Scrollbar.Ruler, NormalSpace, Scrollbar.ScrollBar })
 }
 
 local StatusLines = {
