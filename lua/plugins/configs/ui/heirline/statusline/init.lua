@@ -16,6 +16,7 @@ local SearchResults = require("ui.heirline.statusline.search")
 
 local Align = { provider = "%=", hl = { bg = "normal" } }
 local Space = { provider = " ", hl = { bg = "normal" } }
+local NormalSpace = { provider = " " }
 local surround = function(color, obj)
   return utils.surround({ "", "" }, color, { obj })
 end
@@ -52,7 +53,7 @@ local DefaultStatusLine = {
     hl = { bg = "normal" },
   },
   Align,
-  { { File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar }, hl = { bg = "normal" } },
+  surround("bright_bg", { File.FileType, NormalSpace, surround(function(self) return self:mode_color() end, { Scrollbar.Ruler, Scrollbar.ScrollBar }) })
 }
 
 local StatusLines = {
@@ -85,6 +86,23 @@ local StatusLines = {
       local mode = conditions.is_active() and vim.fn.mode() or "n"
       return self.mode_colors_map[mode]
     end,
+    scrollbarHL = function()
+      local position = math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
+      local color
+
+      if position <= 5 then
+        color = "aqua"
+        -- style = "bold"
+      elseif position >= 95 then
+        color = "red"
+        -- style = "bold"
+      else
+        color = "purple"
+        -- style = nil
+      end
+
+      return color
+    end
   },
 
   -- the first statusline with no condition, or which condition returns true is used.
