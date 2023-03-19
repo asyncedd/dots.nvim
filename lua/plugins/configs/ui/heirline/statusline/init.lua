@@ -53,7 +53,7 @@ local DefaultStatusLine = {
     hl = { bg = "normal" },
   },
   Align,
-  surround("bright_bg", { File.FileType, NormalSpace, Scrollbar.Ruler, NormalSpace, Scrollbar.ScrollBar })
+  surround("bright_bg", { File.FileType, NormalSpace, surround(function(self) return self:mode_color() end, { Scrollbar.Ruler, Scrollbar.ScrollBar }) })
 }
 
 local StatusLines = {
