@@ -75,7 +75,7 @@ local ViMode = {
   end,
   -- Same goes for the highlight. Now the foreground will change according to the current mode.
   hl = {
-    fg = "bright_bg",
+    fg = "normal",
     bold = true,
   },
   -- Re-evaluate the component only on ModeChanged event!
