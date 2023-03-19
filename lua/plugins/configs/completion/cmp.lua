@@ -5,13 +5,6 @@ return function()
 
   require("nvim-autopairs").setup()
 
-  require'cmp'.setup.buffer {
-    sources = require'cmp'.config.sources(
-      {{ name = 'conventionalcommits' }},
-      {{ name = 'buffer' }}
-    ),
-  }
-
   cmp.setup({
     snippet = {
       expand = function(args)
@@ -111,8 +104,8 @@ return function()
     sources = cmp.config.sources({
       { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
     }, {
-      { name = "buffer" },
-    }),
+        { name = "buffer" },
+      }),
   })
 
   -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
@@ -148,7 +141,14 @@ return function()
     sources = cmp.config.sources({
       { name = "path" },
     }, {
-      { name = "cmdline" },
-    }),
+        { name = "cmdline" },
+      }),
   })
+
+  require'cmp'.setup.buffer {
+    sources = require'cmp'.config.sources(
+      {{ name = 'conventionalcommits' }},
+      {{ name = 'buffer' }}
+    ),
+  }
 end
