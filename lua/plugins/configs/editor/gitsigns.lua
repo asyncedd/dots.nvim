@@ -11,7 +11,7 @@ return function()
     signcolumn = true,
     numhl = true,
     linehl = true,
-    word_diff = true,
+    word_diff = false,
     watch_gitdir = {
       interval = 1000,
       follow_files = true,
@@ -38,7 +38,7 @@ return function()
       col = 1
     },
     yadm = {
-      enable = false
+      enable = false,
     },
   })
 end
