@@ -13,9 +13,6 @@ o.undofile = true -- Persistent undo's across all sessions
 o.backup = false -- Don't write backups. (For better performance and, unneeded non-sense
 o.writebackup = false -- Don't write backups.
 
--- 1.3 Clipboard related options.
-o.clipboard = "" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
-
 -- 1.4 Tabline
 -- o("showtabline", 2, {})
 vim.api.nvim_command([[au FileType * if index(['wipe', 'delete'], &bufhidden) >= 0 | set nobuflisted | endif]])
