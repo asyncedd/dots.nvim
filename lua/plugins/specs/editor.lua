@@ -12,7 +12,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     config = require("editor.gitsigns"),
-    event = "BufReadPost",
+    event = "VeryLazy",
   },
   -- Leap!
   {
