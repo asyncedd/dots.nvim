@@ -3,7 +3,7 @@ local disabledPlugins = require("user.builtinPlugins")
 
 plugins[1] = {
   "catppuccin/nvim",
-  config = require("plugins.configs.ui.catppuccin"),
+  -- config = require("plugins.configs.ui.catppuccin"),
 }
 
 plugins[2] = {
