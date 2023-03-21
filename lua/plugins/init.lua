@@ -106,6 +106,15 @@ plugins[13] = {
   init = lazyLoad("mini.ai"),
 }
 
+plugins[14] = {
+  "nvim-telescope/telescope.nvim",
+  config = require("tools.telescope"),
+  lazy = false,
+  dependencies = {
+    "nvim-lua/plenary.nvim"
+  }
+}
+
 require("lazy").setup({
   plugins,
 }, {
