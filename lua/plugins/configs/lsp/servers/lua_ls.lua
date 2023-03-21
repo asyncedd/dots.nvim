@@ -15,6 +15,7 @@ return {
     },
     workspace = {
       library = {
+	vim.api.nvim_get_runtime_file("", true),
 	[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 	[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
 	[vim.fn.expand("data" .. "/lazy/lazy.nvim/lua/lazy")] = true,
