@@ -1,20 +1,11 @@
 return function()
   local icons = require("core.utils.icons.diagnostics")
 
-  local mason_lspconfig = require("mason-lspconfig")
-  local mason = require("mason")
   local lspconfig = require("lspconfig")
   local neodev = require("neodev")
-  local masonNullLs = require("mason-null-ls")
   -- local nullls = require("null-ls")
 
   neodev.setup()
-
-  mason.setup()
-
-  masonNullLs.setup({
-    automatic_setup = true,
-  })
 
   mason_lspconfig.setup({
     ensure_installed = {
