@@ -26,4 +26,5 @@ return {
   "compiler",
   "bugreport",
   "ftplugin",
+  "tohtml",
 }

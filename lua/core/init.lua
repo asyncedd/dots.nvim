@@ -12,3 +12,5 @@ require("core.bootstrap")
 -- Set the options.
 require("user.options")
 
+-- Initalize lazy.nvim
+require("core.lazy")
