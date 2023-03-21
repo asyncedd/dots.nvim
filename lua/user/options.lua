@@ -1,34 +1,27 @@
--- Set some options for Neovim.
--- If you want a low-overhead version of this, directly set it in `core.options`.
--- I meant, you should really do it.
+-- lua/user/options
+-- Options for Neovim.
 
-local opts = {
+local o = vim.opt
+local g = vim.g
 
-  -- Set options by: (ex)
-  -- numbers = true,
-  -- To enable line numbers
-  -- https://neovim.io/doc/user/options.html
-  -- Btw, K1SS. (Keep it simple, stupid)
-  --
-  -- Some tips for troubleshooting.
-  -- - Does all lines ends with ","?
-  -- For ex.
-  -- a = a,
-  -- b = b,
-  -- c = c,
-  -- d = d <-- This!
-  -- e = e,
-  -- listchars = { -- See Spaces and eol's as a character.
-  --   eol = "↴",
-  --   space = "⋅",
-  --   tab = "▶ ",
-  --   -- trail = "•",
-  --   precedes = "«",
-  --   extends = "»",
-  --   nbsp = "␣",
-  -- }
-}
+-- 1. IMPORTANT STUF
+-- 1.1 Set the mapleader key to <Space>
+g.mapleader = " "
+-- 1.2 Persistent undos, across sessions.
+o.undofile = true
 
--- EOL
--- DO NOT "HACK" this line!
-return opts
+-- 2. Editor stuff.
+-- 2.1 Indentations.
+-- As, 0.2x Devs, we need our 2 space indentation
+o.shiftwidth = 2
+-- Spaces are for wannable hackers so, screw you spaces! How dare you take one more floppy disk!
+o.expandtab = true
+
+-- 3. UI stuff
+-- 3.1 Enable line numbers.
+-- Set lines numbers.
+o.number = true
+-- 3.2 Enable TermGUIColors.
+-- Have those glorious 24 bit colors! Take that Windows XP!
+o.termguicolors = true
+

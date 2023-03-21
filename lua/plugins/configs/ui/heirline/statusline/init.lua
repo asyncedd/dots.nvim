@@ -1,17 +1,16 @@
 local M
 
-local lazy_require = require("snips.lazy-require").require_on_index
-local heirline = lazy_require("heirline")
-local conditions = lazy_require("heirline.conditions")
-local utils = lazy_require("heirline.utils")
+local heirline = require("heirline")
+local conditions = require("heirline.conditions")
+local utils = require("heirline.utils")
 local ViMode = require("ui.heirline.statusline.vimode")
 -- Unfortunately lazy_requiring ViMode doesn't work ;-;
-local FileName = lazy_require("ui.heirline.statusline.filename")
+local FileName = require("ui.heirline.statusline.filename")
 local Gitsigns = require("ui.heirline.statusline.git")
-local Scrollbar = lazy_require("ui.heirline.statusline.scrollbar")
-local File = lazy_require("ui.heirline.statusline.file")
-local LSP = lazy_require("ui.heirline.statusline.lsp")
-local Lazy = lazy_require("ui.heirline.statusline.lazy")
+local Scrollbar = require("ui.heirline.statusline.scrollbar")
+local File = require("ui.heirline.statusline.file")
+local LSP = require("ui.heirline.statusline.lsp")
+local Lazy = require("ui.heirline.statusline.lazy")
 local SearchResults = require("ui.heirline.statusline.search")
 
 local Align = { provider = "%=", hl = { bg = "normal" } }
