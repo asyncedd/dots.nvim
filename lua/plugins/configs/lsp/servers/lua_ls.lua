@@ -1,5 +1,15 @@
 return {
   Lua = {
+    runtime = {
+      -- Tell the LS (langauge server) that we're using LuaJIT!
+      version = "LuaJIT",
+      path = {
+	vim.split(package.path, ";"),
+	"lua/?.lua",
+	"lua/?/init.lua",
+      },
+      pathStrict = false,
+    },
     diagnostics = {
       globals = { "vim" },
     },
@@ -12,5 +22,6 @@ return {
       MaxPreload = 100000,
       preloadFileSize = 10000,
     },
-  }
+    telemetry = { enable = false },
+  },
 }
