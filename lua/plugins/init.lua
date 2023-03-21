@@ -100,6 +100,12 @@ plugins[12] = {
   init = lazyLoad("trailblazer.nvim"),
 }
 
+plugins[13] = {
+  "echasnovski/mini.ai",
+  config = require("editor.miniai"),
+  init = lazyLoad("mini.ai"),
+}
+
 require("lazy").setup({
   plugins,
 }, {
