@@ -53,7 +53,9 @@ plugins[5] = {
 }
 
 plugins[6] = {
-  "windwp/nvim-autopairs", config = true, event = "InsertEnter",
+  "windwp/nvim-autopairs",
+  config = true,
+  event = "InsertEnter",
 }
 
 plugins[7] = {
@@ -86,6 +88,9 @@ plugins[10] = {
 plugins[11] = {
   "ggandor/leap.nvim",
   init = lazyLoad("leap.nvim"),
+  dependencies = {
+    "ggandor/flit.nvim",
+  },
   config = require("editor.leap"),
 }
 
