@@ -69,13 +69,6 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = true,
       },
-      {
-        "jay-babu/mason-null-ls.nvim",
-        opts = {
-          automatic_setup = true,
-        },
-        config = true,
-      },
     },
     opts = {
       ensure_installed = {
