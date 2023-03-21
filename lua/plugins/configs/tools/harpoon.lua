@@ -1,7 +1,7 @@
 return function()
   local keymap = vim.keymap.set
 
-  keymap("n", "<leader>hn", require("harpoon.mark").add_file)
+  keymap("n", "<leader>af", require("harpoon.mark").add_file)
 
   local hui = require("harpoon.ui")
   keymap("n", "<leader>mn", hui.toggle_quick_menu)
