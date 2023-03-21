@@ -7,14 +7,6 @@ return function()
 
   neodev.setup()
 
-  mason_lspconfig.setup({
-    ensure_installed = {
-      "lua_ls",
-      "rust_analyzer",
-    },
-    automatic_installation = true,
-  })
-
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
   capabilities.textDocument.completion.completionItem = {
