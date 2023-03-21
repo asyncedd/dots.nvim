@@ -6,8 +6,8 @@ ui["catppuccin/nvim"] = {
 
 local lazy = {}
 
-for repo, config in pairs(ui) do
-  table.insert(lazy, vim.tbl_extend("force", { repo }, config))
+for repo, _ in pairs(ui) do
+  lazy[#lazy+1] = {repo, lazy=true}
 end
 
 return lazy
