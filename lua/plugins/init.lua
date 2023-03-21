@@ -29,7 +29,7 @@ plugins[3] = {
 	"williamboman/mason-lspconfig.nvim",
       },
       config = require("lsp.mason"),
-      event = "BufRead",
+      event = "BufReadPost",
     }
   }
 }
