@@ -6,5 +6,9 @@ local config = require("user.settings")
 -- Disable builtin Plugins.
 require("core.disableBuiltinPlugins")
 
+-- Bootstrap Lazy.nvim
+require("core.bootstrap")
+
 -- Set the options.
 require("user.options")
+
