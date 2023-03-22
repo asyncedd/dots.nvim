@@ -80,7 +80,7 @@ M.FileFlags = {
       return vim.bo.modified
     end,
     provider = "[+]",
-    hl = { fg = "green" },
+    hl = { fg = "normal" },
   },
   {
     condition = function()
