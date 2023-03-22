@@ -92,9 +92,6 @@ plugins[11] = {
 plugins[12] = {
   "ggandor/leap.nvim",
   init = lazyLoad("leap.nvim"),
-  dependencies = {
-    "ggandor/flit.nvim",
-  },
   config = require("editor.leap"),
 }
 
