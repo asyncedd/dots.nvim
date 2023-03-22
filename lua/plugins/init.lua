@@ -6,8 +6,7 @@ plugins[1] = {
   "catppuccin/nvim",
   name = "catppuccin",
   init = lazyLoad("catppuccin"),
-  config = require("ui.catppuccin"),
-}
+  config = require("ui.catppuccin"), }
 
 plugins[2] = {
   "nvim-treesitter/nvim-treesitter",
@@ -121,6 +120,12 @@ plugins[15] = {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  event = "VeryLazy",
+}
+
+plugins[16] = {
+  'gorbit99/codewindow.nvim',
+  config = require("ui.minimap"),
   event = "VeryLazy",
 }
 
