@@ -72,7 +72,14 @@ plugins[9] = {
   init = lazyLoad("mini.indentscope")
 }
 
+
 plugins[10] = {
+  "lewis6991/gitsigns.nvim",
+  config = require("editor.gitsigns"),
+  init = lazyLoad("gitsigns.nvim"),
+}
+
+plugins[11] = {
   "rebelot/heirline.nvim",
   init = lazyLoad("heirline.nvim"),
   config = require("ui.heirline"),
@@ -81,7 +88,7 @@ plugins[10] = {
   },
 }
 
-plugins[11] = {
+plugins[12] = {
   "ggandor/leap.nvim",
   init = lazyLoad("leap.nvim"),
   dependencies = {
@@ -90,19 +97,19 @@ plugins[11] = {
   config = require("editor.leap"),
 }
 
-plugins[12] = {
+plugins[13] = {
   "LeonHeidelbach/trailblazer.nvim",
   config = require("editor.trailblazer"),
   init = lazyLoad("trailblazer.nvim"),
 }
 
-plugins[13] = {
+plugins[14] = {
   "echasnovski/mini.ai",
   config = require("editor.miniai"),
   init = lazyLoad("mini.ai"),
 }
 
-plugins[14] = {
+plugins[15] = {
   "nvim-telescope/telescope.nvim",
   config = require("tools.telescope"),
   dependencies = {
@@ -111,7 +118,7 @@ plugins[14] = {
   event = "VeryLazy"
 }
 
-plugins[15] = {
+plugins[16] = {
   "thePrimeagen/harpoon",
   config = require("tools.harpoon"),
   dependencies = {
