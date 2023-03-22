@@ -133,6 +133,12 @@ plugins[17] = {
   init = lazyLoad("mini.cursorword"),
 }
 
+plugins[18] = {
+  "echasnovski/mini.splitjoin",
+  config = require("editor.splitjoin"),
+  init = lazyLoad("mini.splitjoin"),
+}
+
 require("lazy").setup({
   plugins,
 }, {
