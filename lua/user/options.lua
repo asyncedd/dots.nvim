@@ -14,8 +14,8 @@ o.undofile = true
 -- 2.1 Indentations.
 -- As, 0.2x Devs, we need our 2 space indentation
 o.shiftwidth = 2
--- Spaces are for wannable hackers so, screw you spaces! How dare you take one more floppy disk!
-o.expandtab = true
+-- Tabs on Neovim are weird :/
+o.expandtab = false
 
 -- 3. UI stuff
 -- 3.1 Enable line numbers.
