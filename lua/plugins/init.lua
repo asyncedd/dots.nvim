@@ -3,7 +3,7 @@ local disabledPlugins = require("user.builtinPlugins")
 local lazyLoad = require("core.utils.lazyLoad")
 
 plugins[1] = {
-  "catppuccin/nvim",
+  require("user.colorschemes")
 }
 
 plugins[2] = {
