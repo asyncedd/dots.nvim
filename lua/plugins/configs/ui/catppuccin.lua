@@ -42,5 +42,7 @@ require("catppuccin").setup({
   },
   integrations = {
     mini = true,
+    cmp = false,
+    telescope = false,
   },
 })
