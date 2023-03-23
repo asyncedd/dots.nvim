@@ -140,6 +140,11 @@ plugins[18] = {
   init = lazyLoad("mini.nvim"),
 }
 
+plugins[19] = {
+  "lewis6991/impatient.nvim",
+  event = "VimEnter",
+}
+
 require("lazy").setup({
   plugins,
 }, {
