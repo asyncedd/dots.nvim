@@ -162,6 +162,13 @@ plugins[18] = {
   },
 }
 
+plugins[19] = {
+  "lewis6991/impatient.nvim",
+  init = function ()
+    require("impatient")
+  end
+}
+
 require("lazy").setup({
   plugins,
 }, {
