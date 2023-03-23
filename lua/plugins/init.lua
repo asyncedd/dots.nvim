@@ -9,7 +9,9 @@ plugins[1] = {
 plugins[2] = {
   "nvim-treesitter/nvim-treesitter",
   init = lazyLoad("nvim-treesitter"),
-  config = require("editor.treesitter"),
+  config = function()
+    require("editor.treesitter")
+  end,
   build = ":TSUpdate",
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
 }
@@ -17,14 +19,18 @@ plugins[2] = {
 plugins[3] = {
   "neovim/nvim-lspconfig",
   init = lazyLoad("nvim-lspconfig"),
-  config = require("lsp.config"),
+  config = function()
+    require("lsp.config")
+  end,
   dependencies = {
     {
       "williamboman/mason.nvim",
       dependencies = {
         "williamboman/mason-lspconfig.nvim",
       },
-      config = require("lsp.mason"),
+      config = function()
+        require("lsp.mason")
+      end,
     },
     "folke/neodev.nvim",
   }
@@ -50,7 +56,9 @@ plugins[5] = {
     "saadparwaiz1/cmp_luasnip",
     "hrsh7th/cmp-buffer",
   },
-  config = require("completion.cmp"),
+  config = function()
+    require("completion.cmp")
+  end,
 }
 
 plugins[6] = {
@@ -67,20 +75,24 @@ plugins[7] = {
 
 plugins[8] = {
   "lukas-reineke/indent-blankline.nvim",
-  config = require("ui.blankline"),
+  config = true, 
   init = lazyLoad("indent-blankline.nvim")
 }
 
 plugins[9] = {
   "lewis6991/gitsigns.nvim",
-  config = require("editor.gitsigns"),
+  config = function()
+    require("editor.gitsigns")
+  end,
   init = lazyLoad("gitsigns.nvim"),
 }
 
 plugins[10] = {
   "rebelot/heirline.nvim",
   init = lazyLoad("heirline.nvim"),
-  config = require("ui.heirline"),
+  config = function()
+    require("ui.heirline")
+  end,
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
@@ -89,18 +101,22 @@ plugins[10] = {
 plugins[11] = {
   "ggandor/leap.nvim",
   init = lazyLoad("leap.nvim"),
-  config = require("editor.leap"),
+  config = function()
+    require("editor.leap")
+  end,
 }
 
 plugins[12] = {
   "LeonHeidelbach/trailblazer.nvim",
-  config = require("editor.trailblazer"),
+  config = true, 
   init = lazyLoad("trailblazer.nvim"),
 }
 
 plugins[13] = {
   "nvim-telescope/telescope.nvim",
-  config = require("tools.telescope"),
+  config = function()
+    require("tools.telescope")
+  end,
   dependencies = {
     "nvim-lua/plenary.nvim"
   },
@@ -109,7 +125,9 @@ plugins[13] = {
 
 plugins[14] = {
   "thePrimeagen/harpoon",
-  config = require("tools.harpoon"),
+  config = function()
+    require("tools.harpoon")
+  end,
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
@@ -130,7 +148,9 @@ plugins[16] = {
 
 plugins[17] = {
   "echasnovski/mini.nvim",
-  config = require("mini"),
+  config = function()
+    require("plugins.configs.mini")
+  end,
   init = lazyLoad("mini.nvim"),
 }
 
