@@ -4,7 +4,6 @@ local lazyLoad = require("core.utils.lazyLoad")
 
 plugins[1] = {
   "catppuccin/nvim",
-  -- branch = "C"
 }
 
 plugins[2] = {
