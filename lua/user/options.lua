@@ -9,12 +9,14 @@ local g = vim.g
 g.mapleader = " "
 
 -- 1.2 Fix markdown indentations.
-vim.g.markdown_recommended_style = 0
+g.markdown_recommended_style = 0
 
 -- 2. Editor stuff.
 -- 2.1 Indentations.
 -- As, 0.2x Devs, we need our 2 space indentation
 o.shiftwidth = 2
+-- I don't know. QUick fix I guess.
+o.expandtab = false
 
 -- 3. UI stuff
 -- 3.1 Enable line numbers.
