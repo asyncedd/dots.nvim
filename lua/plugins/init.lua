@@ -16,6 +16,15 @@ local plugins = {
         vim.g.enfocado_style = "nature" -- You can go for "neon" too.
       end,
     },
+    {
+      "folke/tokyonight.nvim",
+      config = function()
+        require("ui.tokyonight")
+      end,
+    },
+    {
+      "rebelot/kanagawa.nvim",
+    }
   },
 
   {
