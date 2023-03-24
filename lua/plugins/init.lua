@@ -179,6 +179,9 @@ plugins[20] = {
     "NvimTreeToggle",
     "NvimTreeFocus",
   },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons"
+  }
 }
 
 plugins[21] = {
