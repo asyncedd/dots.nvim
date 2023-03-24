@@ -3,7 +3,7 @@ local conditions = require("heirline.conditions")
 
 M.LSPActive = {
   condition = conditions.lsp_attached,
-  update = { "LspAttach", "LspDetach" },
+  update = { "LspAttach", "LspDetach", "ModeChanged" },
 
   -- You can keep it simple,
   -- provider = " [LSP]",
@@ -16,7 +16,12 @@ M.LSPActive = {
     end
     return " [" .. table.concat(names, " ") .. "]"
   end,
-  hl = { fg = "bright_fg", bold = true },
+  hl = function(self)
+    return {
+      fg = self:mode_color(),
+      bold = true,
+    }
+  end,
 }
 
 M.Diagnostics = {
