@@ -25,9 +25,6 @@ plugins[3] = {
   dependencies = {
     {
       "williamboman/mason.nvim",
-      dependencies = {
-        "williamboman/mason-lspconfig.nvim",
-      },
       config = function()
         require("lsp.mason")
       end,
@@ -69,18 +66,12 @@ plugins[6] = {
 }
 
 plugins[7] = {
-  "numToStr/Comment.nvim",
-  config = true,
-  event = "VeryLazy",
-}
-
-plugins[8] = {
   "lukas-reineke/indent-blankline.nvim",
   config = true,
   init = lazyLoad("indent-blankline.nvim")
 }
 
-plugins[9] = {
+plugins[8] = {
   "lewis6991/gitsigns.nvim",
   config = function()
     require("editor.gitsigns")
@@ -88,7 +79,7 @@ plugins[9] = {
   init = lazyLoad("gitsigns.nvim"),
 }
 
-plugins[10] = {
+plugins[9] = {
   "rebelot/heirline.nvim",
   init = lazyLoad("heirline.nvim"),
   config = function()
@@ -99,7 +90,7 @@ plugins[10] = {
   },
 }
 
-plugins[11] = {
+plugins[10] = {
   "ggandor/leap.nvim",
   init = lazyLoad("leap.nvim"),
   config = function()
@@ -107,13 +98,13 @@ plugins[11] = {
   end,
 }
 
-plugins[12] = {
+plugins[11] = {
   "LeonHeidelbach/trailblazer.nvim",
   config = true,
   init = lazyLoad("trailblazer.nvim"),
 }
 
-plugins[13] = {
+plugins[12] = {
   "nvim-telescope/telescope.nvim",
   config = function()
     require("tools.telescope")
@@ -124,7 +115,7 @@ plugins[13] = {
   event = "VeryLazy"
 }
 
-plugins[14] = {
+plugins[13] = {
   "thePrimeagen/harpoon",
   config = function()
     require("tools.harpoon")
@@ -135,19 +126,19 @@ plugins[14] = {
   event = "VeryLazy",
 }
 
-plugins[15] = {
+plugins[14] = {
   "NvChad/nvim-colorizer.lua",
   config = true,
   event = "VeryLazy",
 }
 
-plugins[16] = {
+plugins[15] = {
   "glepnir/lspsaga.nvim",
   config = true,
   init = lazyLoad("lspsaga.nvim"),
 }
 
-plugins[17] = {
+plugins[16] = {
   "echasnovski/mini.nvim",
   config = function()
     require("plugins.configs.mini")
@@ -155,7 +146,7 @@ plugins[17] = {
   init = lazyLoad("mini.nvim"),
 }
 
-plugins[18] = {
+plugins[17] = {
   "lukas-reineke/headlines.nvim",
   config = true,
   ft = {
@@ -163,14 +154,14 @@ plugins[18] = {
   },
 }
 
-plugins[19] = {
+plugins[18] = {
   "lewis6991/impatient.nvim",
   init = function ()
     require("impatient")
   end
 }
 
-plugins[20] = {
+plugins[19] = {
   "nvim-tree/nvim-tree.lua",
   config = function()
     require("tools.nvimtree")
@@ -187,7 +178,7 @@ plugins[20] = {
   },
 }
 
-plugins[21] = {
+plugins[20] = {
   "glepnir/dashboard-nvim",
   config = true,
   init = function()
@@ -204,7 +195,7 @@ plugins[21] = {
   end
 }
 
-plugins[22] = {
+plugins[21] = {
   "folke/trouble.nvim",
   config = true,
   keys = {
@@ -217,7 +208,7 @@ plugins[22] = {
   }
 }
 
-plugins[23] = {
+plugins[22] = {
   "simrat39/symbols-outline.nvim",
   config = true,
   keys = {
