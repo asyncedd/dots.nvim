@@ -52,9 +52,9 @@ require("catppuccin").setup({
       },
       underlines = {
         errors = { "undercurl" },
-        hints = { "undercurl" },
+        hints = { "underline" },
         warnings = { "undercurl" },
-        information = { "undercurl" },
+        information = { "underline" },
       },
     },
   },
