@@ -238,6 +238,10 @@ require("lazy").setup({
     rtp = {
       disabled_plugins = disabledPlugins
     },
+    reset_packpath = true,
+    cache = {
+      enabled = true,
+    },
   },
   install = {
     colorscheme = { "catppuccin" }
