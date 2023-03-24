@@ -1,8 +1,8 @@
 -- Neoinit v.0.1
 local o = vim.opt
 
--- Load the configuration file.
-local config = require("user.settings")
+-- Even though, we don't need to load it at the top, but it should be a good idea to load it ASAP
+require("user.autocmd")
 
 -- Disable builtin Plugins.
 require("core.disableBuiltinPlugins")
