@@ -3,7 +3,19 @@ local disabledPlugins = require("user.builtinPlugins")
 local lazyLoad = require("core.utils.lazyLoad")
 
 plugins[1] = {
-  require("user.colorschemes")
+  {
+    "catppuccin/nvim",
+    config = function()
+      require("ui.catppuccin")
+    end,
+  },
+  "FrenzyExists/aquarium-vim",
+  {
+    "wuelnerdotexe/vim-enfocado",
+    config = function ()
+      vim.g.enfocado_style = "nature" -- You can go for "neon" too.
+    end,
+  },
 }
 
 plugins[2] = {
