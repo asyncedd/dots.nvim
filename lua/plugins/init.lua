@@ -80,7 +80,7 @@ plugins[6] = {
 plugins[7] = {
   "lukas-reineke/indent-blankline.nvim",
   config = true,
-  init = lazyLoad("indent-blankline.nvim")
+  init = lazyLoad("indent-blankline.nvim"),
 }
 
 plugins[8] = {
@@ -93,7 +93,7 @@ plugins[8] = {
 
 plugins[9] = {
   "rebelot/heirline.nvim",
-  init = lazyLoad("heirline.nvim"),
+  event = "BufReadPost",
   config = function()
     require("ui.heirline")
   end,
@@ -104,7 +104,7 @@ plugins[9] = {
 
 plugins[10] = {
   "ggandor/leap.nvim",
-  init = lazyLoad("leap.nvim"),
+  event = "VeryLazy",
   config = function()
     require("editor.leap")
   end,
@@ -113,7 +113,7 @@ plugins[10] = {
 plugins[11] = {
   "LeonHeidelbach/trailblazer.nvim",
   config = true,
-  init = lazyLoad("trailblazer.nvim"),
+  event = "VeryLazy",
 }
 
 plugins[12] = {
@@ -167,13 +167,6 @@ plugins[17] = {
 }
 
 plugins[18] = {
-  "lewis6991/impatient.nvim",
-  init = function ()
-    require("impatient")
-  end
-}
-
-plugins[19] = {
   "nvim-tree/nvim-tree.lua",
   config = function()
     require("tools.nvimtree")
@@ -190,7 +183,7 @@ plugins[19] = {
   },
 }
 
-plugins[20] = {
+plugins[19] = {
   "glepnir/dashboard-nvim",
   config = true,
   init = function()
@@ -207,7 +200,7 @@ plugins[20] = {
   end
 }
 
-plugins[21] = {
+plugins[20] = {
   "folke/trouble.nvim",
   config = true,
   keys = {
@@ -220,7 +213,7 @@ plugins[21] = {
   }
 }
 
-plugins[22] = {
+plugins[21] = {
   "simrat39/symbols-outline.nvim",
   config = true,
   keys = {
