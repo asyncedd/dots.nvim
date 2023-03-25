@@ -166,6 +166,9 @@ local plugins = {
     config = function()
       require("plugins.configs.mini")
     end,
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
     init = lazyLoad("mini.nvim"),
   },
   {
