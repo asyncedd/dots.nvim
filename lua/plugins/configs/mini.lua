@@ -16,6 +16,11 @@ require("mini.surround").setup({
     suffix_last = 'l', -- Suffix to search with "prev" method
     suffix_next = 'n', -- Suffix to search with "next" method
   },
+  hooks = {
+    pre = function()
+      require("ts_context_commentstring.internal").update_commentstring({})
+    end,
+  },
 })
 -- Enable AI.
 require("mini.ai").setup()
