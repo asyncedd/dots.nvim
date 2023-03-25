@@ -256,28 +256,6 @@ local plugins = {
     "TimUntersberger/neogit",
     cmd = { "Neogit" },
   },
-  {
-    "giusgad/pets.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "giusgad/hologram.nvim",
-    },
-    config = true,
-    cmd = {
-      "PetsNew",
-      "PetsNewCustom",
-      "PetsList",
-      "PetsKill",
-      "PetsKillAll",
-      "PetsRemove",
-      "PetsRemoveAll",
-      "PetsPauseToggle",
-      "PetsHideToggle",
-      "PetsIdleToggle",
-      "PetsSleepToggle",
-    },
-    enabled = false,
-  },
 }
 
 require("lazy").setup({
