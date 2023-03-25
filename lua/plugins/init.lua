@@ -88,6 +88,7 @@ local plugins = {
               require("luasnip.loaders.from_vscode").lazy_load()
             end,
           },
+          "onsails/lspkind.nvim"
         },
       },
       "saadparwaiz1/cmp_luasnip",
