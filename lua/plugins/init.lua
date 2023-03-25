@@ -81,9 +81,14 @@ local plugins = {
       "hrsh7th/cmp-nvim-lsp",
       {
         "L3MON4D3/LuaSnip",
-        keys = function()
-          return {}
-        end,
+        dependencies = {
+          {
+            "rafamadriz/friendly-snippets",
+            config = function ()
+              require("luasnip.loaders.from_vscode").lazy_load()
+            end,
+          },
+        },
       },
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-buffer",
