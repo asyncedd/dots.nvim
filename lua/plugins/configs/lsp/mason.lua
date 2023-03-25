@@ -1,6 +1,6 @@
 require("mason").setup({
   ensure_installed = {
-    "lua=language-server",
+    "lua-language-server",
     "stylua",
   }
 })
