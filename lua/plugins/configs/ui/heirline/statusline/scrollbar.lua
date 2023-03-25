@@ -13,6 +13,7 @@ M.Ruler = {
     return {
       fg = self:mode_color(),
       bold = true,
+      bg = "normal",
     }
   end,
 }
