@@ -59,6 +59,13 @@ local plugins = {
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   },
   {
+    "andymass/vim-matchup",
+    config = function()
+     require("editor.matchup")
+    end,
+    init = lazyLoad("vim-matchup"),
+  },
+  {
     "neovim/nvim-lspconfig",
     init = lazyLoad("nvim-lspconfig"),
     config = function()
@@ -241,13 +248,6 @@ local plugins = {
     },
   },
   {
-    "simrat39/symbols-outline.nvim",
-    config = true,
-    keys = {
-      { "<leader>so", "<cmd>SymbolsOutline<cr>" }
-    },
-  },
-  {
     "mfussenegger/nvim-dap",
     dependencies = {
       "jbyuki/one-small-step-for-vimkind",
@@ -278,7 +278,7 @@ local plugins = {
   {
     "TimUntersberger/neogit",
     cmd = { "Neogit" },
-  }
+  },
 }
 
 require("lazy").setup({
