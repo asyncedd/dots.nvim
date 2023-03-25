@@ -53,9 +53,6 @@ local plugins = {
     config = function()
       require("editor.treesitter")
     end,
-    dependencies = {
-      "HiPhish/nvim-ts-rainbow2",
-    },
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   },
