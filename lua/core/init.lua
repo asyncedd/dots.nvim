@@ -22,14 +22,13 @@ require("plugins")
 local colorscheme = require("user.settings").colorscheme
 vim.api.nvim_command("colorscheme " .. colorscheme)
 
--- Set some icons
-require("core.setIcons")
-
 vim.schedule(function ()
+  -- Set some icons
+  require("core.setIcons")
   -- We can defer keymaps :/
   require("user.keymaps")
   -- Load options that don't require any UI
-  o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
+  o.clipboard = "unnamedplus,unnamed" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
   -- 1.2 Persistent undos, across sessions.
   o.undofile = true
 end)
