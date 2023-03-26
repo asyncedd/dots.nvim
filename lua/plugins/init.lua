@@ -122,11 +122,6 @@ local plugins = {
     end,
   },
   {
-    "windwp/nvim-autopairs",
-    config = true,
-    event = "InsertEnter",
-  },
-  {
     "lukas-reineke/indent-blankline.nvim",
     config = true,
     init = lazyLoad("indent-blankline.nvim"),
@@ -194,6 +189,7 @@ local plugins = {
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
     init = lazyLoad("mini.nvim"),
+    event = "InsertEnter",
   },
   {
     "lukas-reineke/headlines.nvim",
@@ -223,10 +219,10 @@ local plugins = {
     config = true,
     init = function()
       local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.")
-      vim.api.nvim_create_autocmd({ "VimEnter" }, {
+      vim.api.nvim_create_autocmd("VimEnter", {
         callback = function ()
           if("" == filename) then
-            require("lazy").load({ plugins = "dashboard-nvim" })
+            require("lazy").load({ plugins =  { "dashboard-nvim" } })
           else
             return
           end
@@ -256,6 +252,9 @@ local plugins = {
   {
     "TimUntersberger/neogit",
     cmd = { "Neogit" },
+    keys = {
+      { "<leader>gt", "<cmd>Neogit<cr>" },
+    },
   },
 }
 
