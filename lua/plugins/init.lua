@@ -77,7 +77,7 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     init = lazyLoad("nvim-treesitter"),
     config = function()
-      require("editor.treesitter")
+      vim.loader.find("editor.treesitter")
     end,
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
