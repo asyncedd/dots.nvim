@@ -7,4 +7,4 @@ end
 
 o.spell = false
 o.undofile = false
-o.shadafile = "no"
+

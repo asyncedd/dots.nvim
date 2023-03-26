@@ -32,7 +32,5 @@ vim.schedule(function ()
   o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
   -- 1.2 Persistent undos, across sessions.
   o.undofile = true
-  -- 1.3 Shada is cool.
-  o.shada = ""
 end)
 
