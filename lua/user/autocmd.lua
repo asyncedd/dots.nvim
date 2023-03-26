@@ -38,6 +38,7 @@ local o = vim.opt
 autocmd("InsertEnter", {
   callback = function ()
     o.relativenumber = false
+    o.number = true
   end
 })
 
