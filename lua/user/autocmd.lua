@@ -32,17 +32,17 @@ autocmd("BufReadPost", {
   end,
 })
 
-local relativenumber = vim.opt.relativenumber
+local o = vim.opt
 
 -- Change relative numbers according to the mode.
 autocmd("InsertEnter", {
   callback = function ()
-    relativenumber = false
+    o.relativenumber = false
   end
 })
 
 autocmd("InsertLeave", {
   callback = function ()
-    relativenumber = true
+    o.relativenumber = true
   end
 })
