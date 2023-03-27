@@ -77,7 +77,7 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     init = lazyLoad("nvim-treesitter"),
     config = function()
-      vim.loader.find("editor.treesitter")
+      require("editor.treesitter")
     end,
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
@@ -266,6 +266,16 @@ local plugins = {
     config = function()
       vim.g.startuptime_tries = 10
     end,
+  },
+  {
+    "chrisgrieser/nvim-spider",
+    event = "VeryLazy",
+    keys = {
+      { "w", function() require("spider").motion("w") end, { "n", "o", "x" } },
+      { "e", function() require("spider").motion("e") end, { "n", "o", "x" } },
+      { "b", function() require("spider").motion("b") end, { "n", "o", "x" } },
+      { "ge", function() require("spider").motion("ge") end, { "n", "o", "x" } },
+    },
   },
 }
 
