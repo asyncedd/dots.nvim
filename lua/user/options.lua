@@ -15,8 +15,10 @@ g.markdown_recommended_style = 0
 -- 2.1 Indentations.
 -- As, 0.2x Devs, we need our 2 space indentation
 o.shiftwidth = 2
--- I don't know. QUick fix I guess.
-o.expandtab = true
+-- Automagically indents based on the previous line.
+o.autoindent = true
+-- Smartly indents based on the current syntax and filetype.
+o.smartindent = true
 
 -- 3. UI stuff
 -- 3.1 Enable line numbers.
