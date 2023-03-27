@@ -282,6 +282,14 @@ local plugins = {
       { "ge", function() require("spider").motion("ge") end, { "n", "o", "x" } },
     },
   },
+  {
+    "glepnir/dashboard-nvim",
+    config = true,
+    event = "VimEnter",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 }
 
 require("lazy").setup({
@@ -293,10 +301,14 @@ require("lazy").setup({
     },
   },
   install = {
-    colorscheme = { "catppuccin" }
+    colorscheme = {
+      "catppuccin",
+      "habamax",
+    }
   },
   defaults = {
     lazy = true,
+    version = false,
   },
 })
 
