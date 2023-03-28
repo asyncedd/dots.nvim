@@ -18,9 +18,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 local disabledPlugins = require("user.builtinPlugins")
 local lazyLoad = function(plugin) -- Stole this from NvChad, hehe.
-  vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
-    group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),
-    callback = function()
+  vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, { group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}), callback = function()
       local file = vim.fn.expand "%"
       local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
 
@@ -93,7 +91,10 @@ local plugins = {
           require("lsp.mason")
         end,
         init = lazyLoad("mason.nvim"),
-        build = ":Mason",
+        build = "<cmd>Mason<cmd>",
+        cmd = {
+          "Mason",
+        },
         -- event = "BufReadPre",
       },
       "folke/neodev.nvim",
@@ -114,6 +115,12 @@ local plugins = {
     "j-hui/fidget.nvim",
     config = true,
     init = lazyLoad("fidget.nvim"),
+    opts = {
+      window = {
+        blend = 0,
+      },
+      -- ... the rest of your fidget config
+    },
   },
   {
     "hrsh7th/nvim-cmp",
@@ -156,9 +163,7 @@ local plugins = {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
-    config = function ()
-      require("ui.blankline")
-    end,
+    config = true,
     init = lazyLoad("indent-blankline.nvim"),
   },
   {
@@ -302,7 +307,6 @@ local plugins = {
     "VidocqH/lsp-lens.nvim",
     config = function()
       require("lsp-lens").setup({})
-      vim.api.nvim_command("LspLensOn")
     end,
     init = lazyLoad("lsp-lens.nvim")
   },
