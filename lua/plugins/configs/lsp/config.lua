@@ -38,3 +38,4 @@ lspconfig.marksman.setup({
   end,
   capabilities = capabilities,
 })
+
