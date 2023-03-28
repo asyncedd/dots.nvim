@@ -11,10 +11,5 @@ require("nvim-treesitter.configs").setup({
     enable = true,
     use_languagetree = true,
   },
-
-  -- Have treesitter based indentation.
-  indent = {
-    enable = true,
-  },
 })
 
