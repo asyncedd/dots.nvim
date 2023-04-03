@@ -31,4 +31,3 @@ vim.schedule(function ()
   require("core.after")
 end)
 
-

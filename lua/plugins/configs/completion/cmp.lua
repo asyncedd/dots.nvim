@@ -17,8 +17,6 @@ cmp.setup({
     completion = {
       scrollbar = true,
       winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-      col_offset = -3,
-      side_padding = 0,
     },
   },
   mapping = cmp.mapping.preset.insert({
@@ -49,9 +47,9 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lua" },
     { name = "nvim_lsp" },
+    { name = "luasnip" },
     { name = "codeium" },
     { name = "cmp_tabnine" },
-    { name = "luasnip" },
     { name = "buffer" },
   }),
   formatting = {
