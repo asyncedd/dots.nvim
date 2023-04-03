@@ -40,6 +40,10 @@ function Lazy:load_lazy()
 
   local colors = require("core.settings").colorscheme
   local lazy_settings = {
+    defaults = {
+      lazy = true,
+      version = false
+    },
     install = {
       missing = true,
       colorscheme = { colors, "catppuccin", "tokyonight" },

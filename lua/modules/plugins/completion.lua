@@ -25,7 +25,8 @@ completion["L3MON4D3/LuaSnip"] = {
     --   config = require("completion.friendly_snippets")
     -- }
   },
-  config = require("completion.luasnip")
+  config = require("completion.luasnip"),
+  keys = require("completion.luasnip_keys")
 }
 
 return completion
