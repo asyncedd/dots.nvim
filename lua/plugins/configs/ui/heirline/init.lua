@@ -1,6 +1,7 @@
 local lazy_require = require("snips.lazy-require").require_on_index
 local heirline = lazy_require("heirline")
 local conditions = lazy_require("heirline.conditions")
+local utils = lazy_require("heirline.utils")
 local ViMode = require("plugins.configs.ui.heirline.vimode")
 -- Unfortunately lazy_requiring ViMode doesn't work ;-;
 local FileName = lazy_require("plugins.configs.ui.heirline.filename")
@@ -18,8 +19,15 @@ local Align = { provider = "%=" }
 local Space = { provider = " " }
 
 local DefaultStatusLine = {
-  Lazy, Space, ViMode, Space, SearchResults, FileName.WorkDir, Space, FileName.FileNameBlock, Space, Gitsigns, Space,
-  LSP.LSPActive, LSP.Diagnostics, Align,
+  Lazy, Space, ViMode, Space, SearchResults,
+  FileName.WorkDir, Space, FileName.FileNameBlock,
+  Space,
+  Gitsigns,
+  Space,
+  LSP.LSPActive,
+  Space,
+  LSP.Diagnostics,
+  Align,
   File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar,
 }
 

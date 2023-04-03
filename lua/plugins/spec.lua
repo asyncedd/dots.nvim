@@ -1,6 +1,11 @@
 return {
   -- Colorscheme.
-  "catppuccin/nvim",
+  {
+    "catppuccin/nvim",
+    config = function()
+      require("plugins.configs.ui.catppuccin")
+    end
+  },
   -- Completion.
   {
     "hrsh7th/nvim-cmp",
