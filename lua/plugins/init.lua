@@ -145,6 +145,12 @@ plugins[19] = {
   init = lazyLoad("mini.surround"),
 }
 
+plugins[20] = {
+  "NvChad/nvim-colorizer.lua",
+  config = true,
+  init = lazyLoad("nvim-colorizer.lua")
+}
+
 require("lazy").setup({
   plugins,
 }, {
