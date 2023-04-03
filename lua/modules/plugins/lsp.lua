@@ -24,4 +24,9 @@ lsp["j-hui/fidget.nvim"] = {
   config = require("lsp.fidget")
 }
 
+lsp["SmiteshP/nvim-navic"] = {
+  event = "BufReadPost",
+  -- config = require("lsp.navic")
+}
+
 return lsp
