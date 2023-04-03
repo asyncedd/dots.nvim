@@ -7,6 +7,8 @@ return {
         vim.split(package.path, ";"),
         "lua/?.lua",
         "lua/?/init.lua",
+        vim.fn.expand("~/.luarocks/share/lua/5.4/?.lua"),
+        vim.fn.expand("~/.luarocks/share/lua/5.4/?/init.lua"),
       },
       pathStrict = false,
     },
@@ -17,10 +19,12 @@ return {
     },
     workspace = {
       library = {
+        vim.fn.expand("~/.luarocks/share/lua/5.4"),
         vim.api.nvim_get_runtime_file("", true),
         [vim.fn.expand("$VIMRUNTIME/lua")] = true,
         [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
         [vim.fn.expand("data" .. "/lazy/lazy.nvim/lua/lazy")] = true,
+        [vim.fn.stdpath("config")] = true,
       },
       checkThirdParty = false,
       MaxPreload = 100000,
@@ -28,9 +32,6 @@ return {
     },
     telemetry = {
       enable = false,
-    },
-    hint = {
-      enable = true,
     },
   },
 }
