@@ -29,6 +29,9 @@ o.sw = 2 -- sw = shiftwidth
 -- Expand tabs.
 o.et = true -- et = expand tab
 
+-- 2.2 This is for Whichkey.
+o.timeoutlen = 500
+
 --  +----------------------------------------------------------+
 --  |                       3. UI stuff                        |
 --  +----------------------------------------------------------+

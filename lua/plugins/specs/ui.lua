@@ -127,4 +127,9 @@ return {
     event = "CursorMoved",
     config = true,
   },
+  {
+    "folke/which-key.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
