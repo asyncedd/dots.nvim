@@ -3,7 +3,7 @@ return {
   {
     "numToStr/Comment.nvim",
     config = true,
-    event = "BufReadPost",
+    event = "VeryLazy",
   },
   -- Gitsigns!
   {
@@ -93,4 +93,12 @@ return {
     event = "VeryLazy",
     keys = { "n", "<leader>rn", ":IncRename " }
   },
+  -- Splitjoin
+  {
+    "echasnovski/mini.splitjoin",
+    config = function ()
+      require("mini.splitjoin").setup()
+    end,
+    event = "VeryLazy",
+  }
 }
