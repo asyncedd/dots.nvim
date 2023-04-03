@@ -1,3 +1,1 @@
-return function()
-  require("indent_blankline").setup()
-end
+require("indent_blankline").setup()
