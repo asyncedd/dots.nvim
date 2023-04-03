@@ -18,3 +18,5 @@ autocmd({ "InsertLeave" }, {
     o("relativenumber", true, {})
   end
 })
+
+
