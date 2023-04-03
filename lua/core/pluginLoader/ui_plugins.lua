@@ -20,7 +20,6 @@ table.insert(threads, coroutine.create(function()
         "configs.editor.treesitter",
         "configs.ui.indent",
         "configs.ui.heirline",
-        "colorizer",
         "configs.editor.ufo",
         -- "configs.ui.animate"
       }
@@ -31,6 +30,7 @@ table.insert(threads, coroutine.create(function()
           pcall(require, name)
         end)
       end
+      require("colorizer").setup()
     end
   })
 end))
