@@ -32,3 +32,5 @@ require("mini.indentscope").setup({
 
 -- Comments
 require("mini.comment").setup()
+
+require("mini.pairs").setup()
