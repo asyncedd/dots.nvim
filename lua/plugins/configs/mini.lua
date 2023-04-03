@@ -26,7 +26,9 @@ require("mini.ai").setup()
 
 require("mini.indentscope").setup({
   symbol = "│",
-  options = { try_as_border = true },
+  options = {
+    try_as_border = true,
+  },
 })
 
 require("mini.comment").setup()
@@ -34,3 +36,16 @@ require("mini.comment").setup()
 require("mini.pairs").setup()
 
 require("mini.move").setup()
+
+local map = require("mini.map")
+local integration = map.gen_integration
+
+map.setup({
+  integrations = {
+    integration.builtin_search(),
+    integration.gitsigns(),
+    integration.diagnostic(),
+  },
+})
+
+map.toggle()
