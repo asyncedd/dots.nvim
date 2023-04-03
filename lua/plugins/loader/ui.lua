@@ -2,7 +2,6 @@
 -- Where we load our eye-candy.
 
 -- Avoid expensive global searching, we already have it at home!
-local coroutineList = {}
 
 -- Load the colorscheme and Treesitter first.
 -- We love catppuccin, catppuccin is life.
@@ -15,7 +14,11 @@ require("plugins.configs.ui.catppuccin")
 vim.cmd("colorscheme catppuccin")
 
 -- Nvim.treesitter makes our highlighting beautiful.
-table.insert(coroutineList, coroutine.create(function() return require("plugins.configs.editor.treesitter") end))
+vim.api.nvim_create_autocmd({ "BufReadPre" }, {
+  callback = function ()
+    require("plugins.configs.editor.treesitter")
+  end
+})
 
 -- These are the options for mini.indentscope.
 local indentscope_opts = {
@@ -75,13 +78,4 @@ vim.api.nvim_create_autocmd("BufReadPre", {
     require("mini.cursorword").setup({})
   end
 })
-
-local results = {}
-for _, co in ipairs(coroutineList) do
-  local ok, result = coroutine.resume(co)
-  if not ok then
-    error(result)
-  end
-  table.insert(results, result)
-end
 
