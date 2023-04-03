@@ -63,6 +63,7 @@
   "one-small-step-for-vimkind": { "branch": "main", "commit": "aef1bdbb8347e6daaf33d5109002f3df243ebfe9" },
   "onedarkpro.nvim": { "branch": "main", "commit": "c4a4a1120c89665b2e4bfd4bc7dcbd96dd87b1ee" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
+  "possession.nvim": { "branch": "master", "commit": "6ae82ac3f06a60dba25275f475108a6897b4a802" },
   "sniprun": { "branch": "master", "commit": "52ecf6ad06304e46722118af2aaea5647b157ab8" },
   "statuscol.nvim": { "branch": "main", "commit": "34ac644463743438c6a0cf008170c7fcd47aadc7" },
   "telescope-undo.nvim": { "branch": "main", "commit": "231b5ebb4328d2768c830c9a8d1b9c696116848d" },
