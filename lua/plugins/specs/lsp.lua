@@ -21,9 +21,11 @@ return {
             function()
               return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
             end,
-            expr = true, silent = true, mode = "i",
+            expr = true,
+            silent = true,
+            mode = "i",
           },
-          { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
+          { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
           { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
         },
       },
@@ -88,14 +90,5 @@ return {
       "nvim-tree/nvim-web-devicons",
       "nvim-treesitter/nvim-treesitter",
     },
-  },
-  {
-    'ray-x/navigator.lua',
-    dependencies = {
-      { 'ray-x/guihua.lua', build = 'cd lua/fzy && make' },
-      { 'neovim/nvim-lspconfig' },
-    },
-    event = "VeryLazy",
-    config = true,
   },
 }
