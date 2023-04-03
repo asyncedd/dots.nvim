@@ -5,12 +5,18 @@ require("telescope").setup({
     },
   },
 })
+
 require("telescope").load_extension("undo")
+require("telescope").load_extension("yank_history")
+
+local keymap = vim.keymap.set
 
 -- then use it on whatever picker you want
 -- ex:
-vim.keymap.set("n", "<leader>ff", function()
+keymap("n", "<leader>ff", function()
   require("telescope.builtin").find_files()
 end)
 
-vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+keymap("n", "<leader>u", "<cmd>Telescope undo<cr>")
+
+keymap("n", "<leader>yh", "<cmd>Telescope yank_history<cr>")

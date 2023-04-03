@@ -146,5 +146,17 @@ return {
     end,
     event = "InsertEnter",
   },
+  {
+    "gbprod/yanky.nvim",
+    keys = {
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
+      { "<c-n>", "<Plug>(YankyCycleForward)", mode = { "n", "x" } },
+      { "<c-p>", "<Plug>(YankyCycleBackward)", mode = { "n", "x" } },
+    },
+    config = true,
+  }
 }
 
