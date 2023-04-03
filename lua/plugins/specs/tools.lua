@@ -133,5 +133,8 @@ return {
     cmd = {
       "Octo",
     },
+    keys = {
+      { "<leader>gh", ":Octo " },
+    },
   },
 }
