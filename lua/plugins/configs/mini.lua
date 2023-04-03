@@ -48,4 +48,6 @@ map.setup({
 
 map.toggle()
 
-require("mini.animate").setup()
+if (not vim.g.neovide) then
+  require("mini.animate").setup()
+end

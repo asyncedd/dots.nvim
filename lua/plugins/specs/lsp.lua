@@ -42,11 +42,6 @@ return {
       },
     },
   },
-  -- {
-  --   "j-hui/fidget.nvim",
-  --   config = true,
-  --   init = lazyLoad("fidget.nvim"),
-  -- },
   {
     "jose-elias-alvarez/null-ls.nvim",
     init = lazyLoad("null-ls.nvim"),
@@ -63,6 +58,11 @@ return {
     keys = {
       { "<leader>rn", ":IncRename " },
     },
+  },
+  {
+    "chikko80/error-lens.nvim",
+    event = "VeryLazy",
+    config = true,
   },
 }
 

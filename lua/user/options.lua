@@ -83,3 +83,32 @@ o.ic = true -- ic = ignore case.
 o.sc= true -- sc = smart case.
 -- Highlight whilst you search.
 o.is = true -- is = incsearch.
+
+--  +----------------------------------------------------------+
+--  |                        6. Neovide                        |
+--  +----------------------------------------------------------+
+
+-- Check if we're using Neovide or not.
+if vim.g.neovide then
+  -- Put anything you want to happen only in Neovide here
+  -- 6.1 Cursor related settigns.
+  -- Set the cursor particles to be "railgun".
+  g.neovide_cursor_vfx_mode = "railgun"
+
+  -- 6.2 Neovide windows settings.
+  -- Make Neovide slightly transparent.
+  g.neovide_transparency = 0.9
+
+  -- Make floating windows a little bit blurry.
+  g.neovide_floating_blur_amount_x = 1.1
+
+  g.neovide_floating_blur_amount_y = 1.1
+
+  -- 6.3 Neovide zoom settings.
+  -- Make Neovide not too zoomed in.
+  g.neovide_scale_factor = 0.5
+
+  -- Also have this setting just in case.
+  g.neovide_zoom = 0.3
+
+end
