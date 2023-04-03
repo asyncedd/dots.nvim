@@ -75,7 +75,7 @@ plugins[7] = {
 
 plugins[8] = {
   "lukas-reineke/indent-blankline.nvim",
-  config = true, 
+  config = true,
   init = lazyLoad("indent-blankline.nvim")
 }
 
@@ -108,7 +108,7 @@ plugins[11] = {
 
 plugins[12] = {
   "LeonHeidelbach/trailblazer.nvim",
-  config = true, 
+  config = true,
   init = lazyLoad("trailblazer.nvim"),
 }
 
@@ -195,3 +195,4 @@ require("lazy").setup({
     lazy = true,
   },
 })
+
