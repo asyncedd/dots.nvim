@@ -14,9 +14,9 @@ return function()
     tagSupport = { valueSet = { 1 } },
     resolveSupport = {
       properties = {
-	"documentation",
-	"detail",
-	"additionalTextEdits",
+        "documentation",
+        "detail",
+        "additionalTextEdits",
       },
     },
   }
@@ -29,4 +29,3 @@ return function()
   })
 
 end
-
