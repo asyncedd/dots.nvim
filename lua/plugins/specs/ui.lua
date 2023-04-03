@@ -85,7 +85,6 @@ return {
         require("ui.kanagawa")
       end,
     },
-    "VonHeikemen/little-wonder",
   },
   {
     "folke/drop.nvim",
