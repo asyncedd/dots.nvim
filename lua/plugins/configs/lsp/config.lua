@@ -32,3 +32,9 @@ lspconfig.lua_ls.setup({
   settings = require("plugins.configs.lsp.servers.lua_ls")
 })
 
+lspconfig.marksman.setup({
+  on_attach = function(_, bufnr)
+    require("lsp_signature").on_attach(require("lsp_signature").setup(), bufnr)  -- Note: add in lsp client on-attach
+  end,
+  capabilities = capabilities,
+})
