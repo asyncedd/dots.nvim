@@ -153,5 +153,12 @@ return {
       { "<leader>fml", "<cmd>CellularAutomaton make_it_rain<cr>" },
     },
   },
+  {
+    "gen740/SmoothCursor.nvim",
+    event = "CursorMoved",
+    config = function()
+      require("ui.smoothcursor")
+    end,
+  },
 }
 

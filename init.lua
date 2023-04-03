@@ -4,11 +4,11 @@ vim.loader.enable()
 
 require("user.autocmd")
 
-local disableBuiltinPlugins = require("user.builtinPlugins")
-
-for _, plugin in ipairs(disableBuiltinPlugins) do
-  vim.g["loaded_" .. plugin] = 1
-end
+-- local disableBuiltinPlugins = require("user.builtinPlugins")
+--
+-- for _, plugin in ipairs(disableBuiltinPlugins) do
+--   vim.g["loaded_" .. plugin] = 1
+-- end
 
 require("user.options")
 
