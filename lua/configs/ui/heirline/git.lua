@@ -1,4 +1,6 @@
-local Git = {
+local conditions = require("heirline.conditions")
+
+return {
   condition = conditions.is_git_repo,
 
   init = function(self)
@@ -51,4 +53,4 @@ local Git = {
   },
 }
 
-return Git
+-- return Git
