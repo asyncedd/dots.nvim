@@ -61,12 +61,12 @@ autocmd("FileType", {
 autocmd("InsertEnter", {
   callback = function()
     vim.opt_local.relativenumber = false
-  end
+  end,
 })
 
 autocmd("InsertLeave", {
   pattern = "*",
   callback = function()
     vim.opt_local.relativenumber = true
-  end
+  end,
 })

@@ -1,28 +1,17 @@
+local runtime = vim.api.nvim_get_runtime_file
+
 return {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-        DiagnosticSign = {
-          Error = " ",
-          Warn = " ",
-          Hint = " ",
-          Info = " ",
-        },
-        underline = true,
-        update_in_insert = false,
-        virutal_text = { spacing = 4, prefix = "●" },
-        severity_sort = true,
-      },
-      workspace = {
-        workspace = {
-          checkThirdParty = false
-        }
-      },
-      completion = {
-        workspaceWord = true,
-        callSnippet = "Both",
-      },
-    }
-  }
+  Lua = {
+    diagnostics= {
+      globals = { "vim" },
+    },
+    workspace = {
+      checkThirdParty = false,
+      library = runtime("", true)
+    },
+    completion = {
+      workspaceWord = true,
+      callSnippet = "Both",
+    },
+  },
 }

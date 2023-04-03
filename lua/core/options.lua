@@ -2,7 +2,7 @@ local o = vim.opt
 local g = vim.g
 
 g.mapleader = " "
-g.maplocalleader = " " 
+g.maplocalleader = " "
 o.shiftwidth = 2
 o.undofile = true
 o.backup = false
@@ -44,5 +44,5 @@ vim.diagnostic.config({
   underline = true,
   update_in_insert = false,
   virtual_text = { spacing = 4, prefix = "●" },
-  severity_sort = true
+  severity_sort = true,
 })
