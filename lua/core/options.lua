@@ -42,7 +42,7 @@ local opts = {
   splitkeep = "screen", -- Reduce scroll if the window splits.
 
   -- o.pumbleend = 10 -- Make the builtin completion menu slightly transparent
-  pumhieght = 10, -- Make it smaller
+  -- pumhieght = 10, -- Make it smaller
   -- o.winblend = 10 -- floating windows are sightly transparent.
 
   list = true, -- Show them.
