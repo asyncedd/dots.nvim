@@ -1,53 +1,37 @@
 local opts = {
-  -- General
-  -- g.mapleader = " ",
-  shiftwidth = 2, -- Set the indents to 2.
-  undofile = true, -- Enable persistent undo's
-  -- Don't store backup when overwriting the file,
-  backup = false,
-  writebackup = false,
-  --
-  mouse = "a", -- Enable mouse for all modes
-  swapfile = false, -- Disable Swap files.
-  hidden = true, -- Don't automatically save whilst changing buffers.
-  clipboard = "unnamed,unnamedplus", -- Register the clipboard with Windows, Mac OS X And Linux (*Unix) clipboards.
-  expandtab = true, -- Insert spaces instead of tabs when pressing the <Tab> key.
-
-  -- Apperance
-  breakindent = true, -- Indent wrapped lines to match line start
-  cursorline = true, -- Highlight the line we're currently editting.
-  linebreak = true, -- Break long lines into multiple. visually.
-  number = true, -- Enable line numbers
-  splitbelow = true, -- Splits below.
-  splitright = true, -- Splits right.
-  termguicolors = true, -- Enable GUI colors.
-  showmode = false, -- Don't show the mode in the CLI.
-
-  wrap = false, -- Show long lines as one big line.
-
-  signcolumn = "yes", -- Always show sign columns.
-  fillchars = "eob: ", -- Don't show the "~" outside of the buffers
-
-  -- Editing
-  ignorecase = true, -- Ignore case when searching.
-  incsearch = true, -- Show search results whilst searching.
-  infercase = true, -- Infer letter cases.
-  smartcase = true, -- Don't ignore case if the pattern has an uppercase letter in it.
-  smartindent = true, -- Get smart indents.
-
-  completeopt = "menuone,noinsert,noselect", -- This is mainly for hrsh7th/nvim-cmp.
-  virtualedit = "onemore", -- Allow going one more.
-  formatoptions = "qjl1", -- Don't autoformat commands.
-
-  splitkeep = "screen", -- Reduce scroll if the window splits.
-
-  -- o.pumbleend = 10 -- Make the builtin completion menu slightly transparent
-  -- pumhieght = 10, -- Make it smaller
-  -- o.winblend = 10 -- floating windows are sightly transparent.
-
-  list = true, -- Show them.
-  listchars = "eol:↴,space:⋅", -- Couldn't think about it.
+  { name = "mapleader", value = " ", modifier = vim.g },
+  { name = "shiftwidth", value = 2, modifier = vim.o },
+  { name = "undofile", value = true, modifier = vim.o },
+  { name = "backup", value = false, modifier = vim.o },
+  { name = "writebackup", value = false, modifier = vim.o },
+  { name = "mouse", value = "a", modifier = vim.o },
+  { name = "swapfile", value = false, modifier = vim.o },
+  { name = "hidden", value = true, modifier = vim.o },
+  { name = "clipboard", value = "unnamed,unnamedplus", modifier = vim.o },
+  { name = "expandtab", value = true, modifier = vim.o },
+  { name = "breakindent", value = true, modifier = vim.o },
+  { name = "cursorline", value = true, modifier = vim.o },
+  { name = "linebreak", value = true, modifier = vim.o },
+  { name = "number", value = true, modifier = vim.o },
+  { name = "splitbelow", value = true, modifier = vim.o },
+  { name = "splitright", value = true, modifier = vim.o },
+  { name = "termguicolors", value = true, modifier = vim.o },
+  { name = "showmode", value = false, modifier = vim.o },
+  { name = "wrap", value = false, modifier = vim.o },
+  { name = "signcolumn", value = "yes", modifier = vim.o },
+  { name = "fillchars", value = "eob: ", modifier = vim.o },
+  { name = "ignorecase", value = true, modifier = vim.o },
+  { name = "incsearch", value = true, modifier = vim.o },
+  { name = "infercase", value = true, modifier = vim.o },
+  { name = "smartcase", value = true, modifier = vim.o },
+  { name = "smartindent", value = true, modifier = vim.o },
+  { name = "completeopt", value = "menuone,noinsert,noselect", modifier = vim.o },
+  { name = "virtualedit", value = "onemore", modifier = vim.o },
+  { name = "formatoptions", value = "qjl1", modifier = vim.o },
+  { name = "splitkeep", value = "screen", modifier = vim.o },
+  { name = "list", value = true, modifier = vim.o },
+  { name = "listchars", value = "eol:↴,space:⋅", modifier = vim.o }
 }
 
 local async = require("util.setoptions")
-async(vim.opt, opts)
+async(opts)
