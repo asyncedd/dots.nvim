@@ -1,8 +1,8 @@
 {
-  "Codegeex.nvim": { "branch": "main", "commit": "da48f06123803ef0d9b77a61031443ac434c82b9" },
   "LuaSnip": { "branch": "master", "commit": "025886915e7a1442019f467e0ae2847a7cf6bf1a" },
   "aquarium-vim": { "branch": "develop", "commit": "d09b1feda1148797aa5ff0dbca8d8e3256d028d5" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
+  "cmp-clippy": { "branch": "main", "commit": "eb501c9fa429c5852f8f420e71a9f565f4852c8f" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "cmp-nvim-lua": { "branch": "main", "commit": "f3491638d123cfd2c8048aefaf66d246ff250ca6" },
   "cmp-tabnine": { "branch": "main", "commit": "4c8a0db92e75c848fb066edd280072389db80d24" },
