@@ -34,5 +34,8 @@ return function()
     text = {
       spinner = spinner,
     },
+    timer = {
+      spinner_rate = 250,
+    },
   })
 end
