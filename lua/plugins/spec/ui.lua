@@ -1,13 +1,22 @@
-local M = {
+return {
   {
     "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      show_current_context = true,
+      show_current_context_start = true,
+      show_end_of_line = true,
+      space_char_blankline = " ",
+      enabled = true,
+      colored_indent_levels = false,
+      show_trailing_blankline_indent = true,
+    },
     event = "BufReadPost",
-    config = require("plugins.configs.ui.indent"),
+    config = true,
   },
   {
     "monkoose/matchparen.nvim",
     event = "BufReadPost",
-    config = require("plugins.configs.ui.matcher"),
+    config = true,
   },
   {
     "NvChad/nvim-colorizer.lua",
@@ -20,5 +29,3 @@ local M = {
     config = require("plugins.configs.ui.heirline"),
   },
 }
-
-return M

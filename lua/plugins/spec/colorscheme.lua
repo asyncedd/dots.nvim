@@ -1,4 +1,4 @@
-local M = {
+return {
   {
     "catppuccin/nvim", -- ☕ Mocha!
     piority = 1000,
@@ -8,5 +8,3 @@ local M = {
   "EdenEast/nightfox.nvim", -- 🦊 OwO
   "rebelot/kanagawa.nvim", -- 🌊 Famous!
 }
-
-return M
