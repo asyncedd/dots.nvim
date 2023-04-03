@@ -26,4 +26,8 @@ vim.schedule(function ()
   -- Completion for the command line.
 
   require("plugins.loader.cmp_cmd")
+
+  -- Setting up a autocmd to load nvim-cmp once the user enters insert mode.
+
+  require("plugins.loader.cmp")
 end)
