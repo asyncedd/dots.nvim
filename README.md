@@ -43,19 +43,27 @@ Just run a `nvim` in your terminal :D
 TODO Redo it once ~~I get it to be more faster (troll)~~ Unlazy
 * `nvim --clean` - [source](https://github.com/asyncedd/dots.nvim/blob/master/clean.log):
 ```
-009.424  000.083: VimEnter autocommands
-009.426  000.002: UIEnter autocommands
-009.428  000.001: before starting main loop
-010.292  000.864: first screen update
-010.295  000.003: --- NVIM STARTED ---
+012.370  000.076: VimEnter autocommands
+012.373  000.003: UIEnter autocommands
+012.374  000.001: before starting main loop
+013.192  000.818: first screen update
+013.202  000.010: --- NVIM STARTED ---
 ```
 * `nvim` - [source](https://github.com/asyncedd/dots.nvim/blob/master/normal.log):
 ```
-028.411  000.140  000.140: require('dashboard.theme.hyper')
-028.664  001.769: UIEnter autocommands
-028.667  000.003: before starting main loop
-029.327  000.660: first screen update
-029.330  000.003: --- NVIM STARTED ---
+026.451  000.384  000.384: require('dashboard.theme.hyper')
+026.779  001.861: UIEnter autocommands
+026.782  000.003: before starting main loop
+027.179  000.397: first screen update
+027.181  000.002: --- NVIM STARTED ---
+```
+* `nvim init.lua --clean` - [source](https://github.com/asyncedd/dots.nvim/blob/master/cleanedit.log)
+```
+029.448  000.080: VimEnter autocommands
+029.451  000.003: UIEnter autocommands
+029.452  000.001: before starting main loop
+030.247  000.795: first screen update
+030.250  000.003: --- NVIM STARTED ---
 ```
 * `nvim init.lua` - [source](https://github.com/asyncedd/dots.nvim/blob/master/edit.log)
 ```
