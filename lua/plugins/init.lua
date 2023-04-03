@@ -102,6 +102,7 @@ local plugins = {
           require("lsp.mason")
         end,
         init = lazyLoad("mason.nvim"),
+        build = ":Mason",
         -- event = "BufReadPre",
       },
       "folke/neodev.nvim",
