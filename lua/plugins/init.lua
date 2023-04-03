@@ -24,6 +24,9 @@ local plugins = {
     },
     {
       "rebelot/kanagawa.nvim",
+      config = function()
+        require("ui.kanagawa")
+      end
     },
   },
   {
