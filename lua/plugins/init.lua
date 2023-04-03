@@ -124,12 +124,6 @@ plugins[15] = {
   event = "VeryLazy",
 }
 
-plugins[16] = {
-  'gorbit99/codewindow.nvim',
-  config = require("ui.minimap"),
-  event = "VeryLazy",
-}
-
 require("lazy").setup({
   plugins,
 }, {
