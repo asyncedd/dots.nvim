@@ -42,7 +42,7 @@ return function()
         n = "red",
         i = "green",
         v = "cyan",
-        V = "cyan",
+        V ="cyan",
         ["\22"] = "cyan",
         c = "orange",
         s = "purple",
