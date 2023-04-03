@@ -20,6 +20,7 @@ return {
         [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
         [vim.fn.expand("data" .. "/lazy/lazy.nvim/lua/lazy")] = true,
       },
+      checkThirdParty = false,
       MaxPreload = 100000,
       preloadFileSize = 10000,
     },
