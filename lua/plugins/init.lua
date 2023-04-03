@@ -242,6 +242,13 @@ local plugins = {
       }
     end,
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    init = lazyLoad("null-ls.nvim"),
+    config = function ()
+      require("lsp.null")
+    end,
+  },
 }
 
 require("lazy").setup({
