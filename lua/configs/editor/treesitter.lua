@@ -15,8 +15,8 @@ treesitter.setup({
   indent = {
     enable = true
   },
-  markid = {
-    enable = true,
-    colors = markid.colors.bright
-  }
+  -- markid = {
+  --   enable = true,
+  --   colors = markid.colors.bright
+  -- }
 })

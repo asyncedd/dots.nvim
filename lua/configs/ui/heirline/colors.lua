@@ -1,7 +1,9 @@
 local utils = require("heirline.utils")
 
 local colors = {
-  bright_bg = utils.get_highlight("Folded").bg,
+  -- bright_bg = utils.get_highlight("Folded").bg,
+  -- bright_fg = utils.get_highlight("Folded").fg,
+  bright_bg = utils.get_highlight("Folded").fg,
   bright_fg = utils.get_highlight("Folded").fg,
   red = utils.get_highlight("DiagnosticError").fg,
   dark_red = utils.get_highlight("DiffDelete").bg,
@@ -15,7 +17,8 @@ local colors = {
   diag_error = utils.get_highlight("DiagnosticError").fg,
   diag_hint = utils.get_highlight("DiagnosticHint").fg,
   diag_info = utils.get_highlight("DiagnosticInfo").fg,
-  git_del = utils.get_highlight("diffRemoved").fg,
+  -- git_del = utils.get_highlight("diffRemoved").fg,
+  git_del = utils.get_highlight("diffDelete").fg,
   git_add = utils.get_highlight("diffAdded").fg,
   git_change = utils.get_highlight("diffChanged").fg,
 }

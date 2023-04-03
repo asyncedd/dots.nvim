@@ -20,5 +20,6 @@
   "nvim-web-devicons": { "branch": "master", "commit": "c2c2317f356c8b7da0252f5da758f71bb60bb6b2" },
   "promise-async": { "branch": "main", "commit": "7fa127fa80e7d4d447e0e2c78e99af4355f4247b" },
   "tokyonight.nvim": { "branch": "main", "commit": "588a8a27163478fd183037cc0f2e59ee39ad90f1" },
+  "vim-enfocado": { "branch": "main", "commit": "e941a4491baf40c5a2ab4146ad38193c362097d7" },
   "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
 }
