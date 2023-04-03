@@ -19,6 +19,10 @@ return {
         },
         config = true,
       },
+      {
+        "folke/trouble.nvim",
+        config = true,
+      },
       "folke/neodev.nvim",
       "jose-elias-alvarez/null-ls.nvim",
     }
