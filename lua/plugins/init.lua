@@ -150,6 +150,7 @@ local plugins = {
           "hrsh7th/nvim-cmp",
         },
       },
+      "hrsh7th/cmp-nvim-lua",
     },
     config = function()
       require("completion.cmp")
