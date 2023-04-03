@@ -14,6 +14,7 @@ vim.defer_fn(function()
   require("mappings.movement")
   require("mappings.lspsaga")
   require("mappings.plugins")
+  require("plugins.loader")
 
   o("shadafile", "", {})
 end, 0)
