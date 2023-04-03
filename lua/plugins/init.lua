@@ -155,6 +155,12 @@ plugins[21] = {
   init = lazyLoad("lspsaga.nvim"),
 }
 
+plugins[22] = {
+  "goolord/alpha-nvim",
+  config = require("ui.alpha"),
+  event = "VimEnter",
+}
+
 require("lazy").setup({
   plugins,
 }, {
