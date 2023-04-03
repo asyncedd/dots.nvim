@@ -21,6 +21,7 @@ return {
         dependencies = {
           "williamboman/mason-lspconfig.nvim",
         },
+        cond = vim.g.bootstrap,
         -- event = "BufReadPre",
       },
       "folke/neodev.nvim",
