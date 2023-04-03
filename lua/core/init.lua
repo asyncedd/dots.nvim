@@ -4,12 +4,7 @@ local vim = vim -- Avoid expensive global searching.
 local o = vim.api.nvim_set_option_value
 
 vim.g.mapleader = " "
-o("number", true, {}) -- Enable Line numbers
-o("cursorline", true, {})
-o("list", true, {})
-o("listchars", "eol:↴,space:⋅", {})
-o("termguicolors", true, {})
-o("expandtab", true, {})
+
 require("core.options")
 
 local async = require "snips.async"

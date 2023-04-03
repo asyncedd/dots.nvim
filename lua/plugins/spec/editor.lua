@@ -35,7 +35,9 @@ return {
   },
   {
     "kevinhwang91/nvim-ufo",
-    config = require("plugins.configs.editor.ufo"),
+    config = function()
+      require("plugins.configs.editor.ufo")
+    end,
     event = "BufReadPost",
     dependencies = {
       "kevinhwang91/promise-async",
