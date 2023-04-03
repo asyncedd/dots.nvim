@@ -1,4 +1,7 @@
 require("catppuccin").setup({
+  dim_inactive = {
+    enabled = true,
+  },
   custom_highlights = function(cp)
     return {
       NormalFloat = { bg = cp.crust },
