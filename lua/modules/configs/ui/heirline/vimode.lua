@@ -45,10 +45,9 @@ local ViMode = {
   end,
   hl = function(self)
     local color = self:mode_color() -- here!
-    return { fg = color, bold = true }
+    return { fg = "bright_bg", bg = color, bold = true }
   end,
 }
 
-ViMode = utils.surround({ "", "" }, "bright_bg", { ViMode })
 
 return ViMode
