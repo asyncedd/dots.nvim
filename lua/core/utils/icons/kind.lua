@@ -1,6 +1,4 @@
-local M
-
-M = {
+local kindIcons = {
   Text = "",
   Method = "",
   Function = "",
@@ -25,7 +23,7 @@ M = {
   Struct = "",
   Event = "",
   Operator = "",
-  TypeParameter = "",
+  TypeParameter = ""
 }
 
-return M
+return kindIcons
