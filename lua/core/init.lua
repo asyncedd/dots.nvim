@@ -15,6 +15,7 @@ M.setup = function()
   require("core.options")
   vim.api.nvim_command("colorscheme catppuccin")
   require("mappings.movement")
+  require("mappings.lspsaga")
   require("core.autocmd")
 end
 
