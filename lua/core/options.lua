@@ -14,7 +14,7 @@ o.backup = false -- Don't write backups. (For better performance and, unneeded n
 o.writebackup = false -- Don't write backups.
 
 -- 1.3 Clipboard related options.
-o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
+o.clipboard = "" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
 
 -- 1.4 Tabline
 -- o("showtabline", 2, {})
