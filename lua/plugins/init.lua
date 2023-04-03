@@ -18,10 +18,6 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 local disabledPlugins = require("user.builtinPlugins")
 
-if(require("user.settings").builtins.disable == false) then
-  disabledPlugins = {}
-end
-
 require("lazy").setup({
   { import = "plugins.specs" },
 }, {
@@ -33,6 +29,8 @@ require("lazy").setup({
   install = {
     colorscheme = {
       "catppuccin",
+      "kanagawa",
+      "tokyonight",
       "habamax",
     },
   },

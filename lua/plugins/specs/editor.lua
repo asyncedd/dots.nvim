@@ -9,9 +9,6 @@ return {
     end,
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    dependencies = {
-      "HiPhish/nvim-ts-rainbow2",
-    },
   },
   {
     "andymass/vim-matchup",
@@ -126,5 +123,12 @@ return {
     "LeonHeidelbach/trailblazer.nvim",
     config = true,
     event = "VeryLazy",
+  },
+  {
+    "LudoPinelli/comment-box.nvim",
+    config = true,
+    keys = {
+      { "<leader>cb", function() require("comment-box").lcbox(10) end },
+    },
   },
 }
