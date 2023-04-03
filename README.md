@@ -18,7 +18,9 @@ It had optimized my workspace and, improve my productivity.
 * [leap-spooky.nvim 👻](https://github.com/ggandor/leap-spooky.nvim) - Remotely operate from far away! Spooky! Built on [leap.nvim](https://github.com/ggandor/leap.nvim)
 * [mini.ai 🤖](https://github.com/echasnovski/mini.ai) - Better `a`/`i` textobjects.
 * [indent-blanklines.nvim 🤔](https://github.com/lukas-reineke/indent-blanklines.nvim) - Add indentation guides to all lines.
-* [mini.indentscope 🔫](https://github.com/echasnovski/mini.indentscope) - Show the current indent scope in a very fancy way.
+* [LSPconfig 🧠](https://github.com/neovim/nvim-lspconfig) - Configure LSP servers.
+* [nvim-cmp 🤓](https://github.com/hrsh7th/nvim-cmp) - Auto completion!
+* [LSPsaga ⚡](https://github.com/glepnir/lspsaga) - LSP Saga'd.
 
 ## 🤨 Crash course: Installing
 To install this configuration, you need a Neovim build. You can use your favorite package manager or, [Install from source](https://dev.to/asyncedd/building-neovim-from-source-1794).
