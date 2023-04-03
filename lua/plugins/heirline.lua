@@ -1,5 +1,3 @@
 return {
-  {
-    "rebelot/heirline.nvim",
-  }
+  "rebelot/heirline.nvim",
 }
