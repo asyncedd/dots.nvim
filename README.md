@@ -11,4 +11,4 @@ It had optimized my workspace and, improve my productivity.
 
 ## 🧱 A list of plugins
 * [Catppuccin](https://github.com/catppuccin/nvim) - A *beautiful*, colorful colorscheme.
-* [Nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Add a additional abstract layer on top on the original Treesitter
+* [Nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - An additional abstract layer on top on the original Treesitter
