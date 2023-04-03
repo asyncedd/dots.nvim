@@ -15,7 +15,7 @@ require("core.options")
 -- We're gonna use the best tools for the job!
 require("core.lazy")
 
-vim.cmd("colorscheme catppuccin")
+-- vim.cmd("colorscheme catppuccin")
 
 -- Do some stuff that aren't required in our UI. (mappings, autocmd etc...)
 -- Also without blocking the main thread for the maximum efficiency.
