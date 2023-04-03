@@ -1,7 +1,15 @@
+-- lua/plugins/loader/ui.lua
+-- Where we load our eye-candy.
+
+-- Avoid expensive global searching, we already have it at home!
+local schedule = vim.schedule
+
 -- Load the colorscheme and Treesitter first.
 -- We love catppuccin, catppuccin is life.
+
 require("plugins.configs.ui.catppuccin")
 -- Nvim.treesitter makes our highlighting beautiful.
+
 require("plugins.configs.editor.treesitter")
 
 -- These are the options for mini.indentscope.
@@ -12,27 +20,31 @@ local indentscope_opts = {
   options = { try_as_border = true },
 }
 
-vim.schedule(function ()
-  -- Load indent_blankline and mini.indentscope.
-  -- Indent_blankline is indent-line visualizer.
-  -- Mini.indentscope is a current-indent-line visualizer.
+schedule(function ()
+
+  -- Load indent_blankline and mini.indentscope for a clean and, aesthestically pleasing indent visualizer.
   require("indent_blankline").setup()
+
   require("mini.indentscope").setup(indentscope_opts)
-  -- NvChad/Colorizer.nvim is a modern maintained fork of the original colorizer.
-  -- It visualizes what color a color code is.
-  -- It's blazingly fast.
+
+  -- Colorizer is a beautiful color-code visualizer that is blazingly fast, if the Primeagen were to say it.
   -- TODO Add CCC.nvim
   require("colorizer").setup({})
-  -- Pretty-fold.nvim is a clean aesthetically pleasing alternative to the ugly builtin visualizer.
-  -- It's quite clean!
+
+  -- Pretty-fold.nvim is a clean and cute, aesthetically pleasing alternative to the ugly builtin visualizer.
+
   require("pretty-fold").setup({})
+
   -- Mini.cursorword which visualizes the current word under the cursor.
-  -- We can easily find where the occurnace of it is located!
+
   require("mini.cursorword").setup({})
+
 end)
 
-vim.schedule(function ()
-  -- I love heirline.nvim so it can load faster. (What is the logic behind this?)
+schedule(function ()
+
   -- Heirline.nvim is a true minimalisitc statusline for Neovim.
+
   require("plugins.configs.ui.heirline")
+
 end)
