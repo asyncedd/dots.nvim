@@ -16,9 +16,9 @@ return {
         end,
         opts = { labeled_modes = "nx" },
       },
-      "ggandor/leap-spooky.nvim",
+      -- "ggandor/leap-spooky.nvim",
       "tpope/vim-repeat",
-      "echasnovski/mini.ai",
+      -- "echasnovski/mini.ai",
     },
     event = "VeryLazy",
     keys = {
@@ -27,19 +27,19 @@ return {
       { "gs", mode = { "n", "x", "o" }, desc = "Leap from windows" },
     },
   },
-  {
-    "LeonHeidelbach/trailblazer.nvim",
-    opts = {
-      keymaps = {
-        -- Jump to next mark
-        next_mark = '<leader>l',
-        -- Jump to previous mark
-        prev_mark = '<leader>h',
-        -- Toggle clairvoyant mode
-        clairvoyant_mode = '<leader>c',
-      },
-    },
-    config = true,
-    event = "VeryLazy",
-  }
+  -- {
+  --   "LeonHeidelbach/trailblazer.nvim",
+  --   opts = {
+  --     keymaps = {
+  --       -- Jump to next mark
+  --       next_mark = '<leader>l',
+  --       -- Jump to previous mark
+  --       prev_mark = '<leader>h',
+  --       -- Toggle clairvoyant mode
+  --       clairvoyant_mode = '<leader>c',
+  --     },
+  --   },
+  --   config = true,
+  --   event = "VeryLazy",
+  -- }
 }
