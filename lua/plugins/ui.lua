@@ -7,4 +7,9 @@ return {
       { "echasnovski/mini.indentscope", version = "*" }
     }
   },
+  {
+    "monkoose/matchparen.nvim",
+    event = "BufReadPost",
+    config = require("configs.ui.matcher")
+  }
 }
