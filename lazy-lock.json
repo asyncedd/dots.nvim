@@ -26,6 +26,7 @@
   "mini.ai": { "branch": "main", "commit": "d5a9f6b50fc6285fb876667e67394bbee2d5c70c" },
   "mini.cursorword": { "branch": "main", "commit": "9c35fa83fae327c458643a8431f1a4a03c78e7ea" },
   "mini.splitjoin": { "branch": "main", "commit": "b95c1b7a4c38eb039322e9aaa16f8d1f9f76fc36" },
+  "mini.surround": { "branch": "main", "commit": "b450a3aff91b4108c0e9ba9e82633d65deb5802b" },
   "neodev.nvim": { "branch": "main", "commit": "abdc346ff59c414698de551f876bcf3f223ed224" },
   "null-ls.nvim": { "branch": "main", "commit": "2fcc10637b325e656d45a760901e1e05170e36c9" },
   "nvim": { "branch": "main", "commit": "128af65c3a23c94b324dc8d7f02a34feee8722d4" },
