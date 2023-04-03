@@ -127,6 +127,12 @@ plugins[16] = {
   event = "VeryLazy",
 }
 
+plugins[17] = {
+  "echasnovski/mini.cursorword",
+  config = require("editor.cursorword"),
+  init = lazyLoad("mini.cursorword"),
+}
+
 require("lazy").setup({
   plugins,
 }, {
@@ -142,4 +148,3 @@ require("lazy").setup({
     lazy = true,
   },
 })
-
