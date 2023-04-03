@@ -45,9 +45,9 @@ editor["kevinhwang91/nvim-ufo"] = {
   },
 }
 
-editor["folke/which-key.nvim"] = {
-  event = "VeryLazy",
-  config = require("editor.which_key")
-}
+-- editor["folke/which-key.nvim"] = {
+--   event = "VeryLazy",
+--   config = require("editor.which_key")
+-- }
 
 return editor
