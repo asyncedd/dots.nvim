@@ -25,8 +25,8 @@ capabilities.textDocument.completion.completionItem = {
 local lspconfig = require("lspconfig")
 
 lspconfig.lua_ls.setup({
-  on_attach = function(client, bufnr)
-    require "lsp_signature".on_attach(require("lsp_signature").setup(), bufnr)  -- Note: add in lsp client on-attach
+  on_attach = function(_, bufnr)
+    require("lsp_signature").on_attach(require("lsp_signature").setup(), bufnr)  -- Note: add in lsp client on-attach
   end,
   capabilities = capabilities,
   settings = require("plugins.configs.lsp.servers.lua_ls")
