@@ -9,6 +9,7 @@ return {
       },
       "nvim-treesitter/nvim-treesitter",
       "folke/neodev.nvim",
+      "jbyuki/one-small-step-for-vimkind",
       {
         "jay-babu/mason-nvim-dap.nvim",
         dependencies = "nvim-dap",
