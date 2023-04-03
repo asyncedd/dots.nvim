@@ -53,9 +53,7 @@ plugins[5] = {
 }
 
 plugins[6] = {
-  "windwp/nvim-autopairs",
-  config = true,
-  event = "InsertEnter",
+  "windwp/nvim-autopairs", config = true, event = "InsertEnter",
 }
 
 plugins[7] = {
