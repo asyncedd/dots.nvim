@@ -48,6 +48,11 @@ treesitter.setup({
   --   enable = true,
   --   colors = markid_config.bright,
   -- },
+  
+  -- matchup = {
+  --   enable = true,
+  -- },
+
   incremental_selection = {
     enable = true,
     keymaps = {
