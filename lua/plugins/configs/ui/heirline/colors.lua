@@ -9,10 +9,6 @@ local git_del = function ()
     return get_highlight("diffRemoved").fg
   end
 
-  if ("edge" == colorscheme) then
-    return get_highlight("diffDelete").fg
-  end
-
   if ("kanagawa" == colorscheme) then
     return get_highlight("diffDeleted").fg
   end
