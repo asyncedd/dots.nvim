@@ -1,8 +1,10 @@
 return function()
   local status, leap = pcall(require, "leap")
-  local status, flit = pcall(require, "flit")
+  local status2, flit = pcall(require, "flit")
+  local status3, ai = pcall(require, "mini.ai")
   if (not status) then return end
-  if (not status) then return end
+  if (not status2) then return end
+  if (not status3) then return end
 
   leap.add_default_mappings()
 
