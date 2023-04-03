@@ -14,5 +14,3 @@ indent_blankline.setup({
 require("mini.indentscope").setup({
   symbol = "│",
 })
-
--- require("anyline").setup()
