@@ -18,11 +18,7 @@ return {
   },
   {
     "glepnir/dashboard-nvim",
-    config = true,
-    event = "VimEnter",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
+    config = true, event = "VimEnter", dependencies = { "nvim-tree/nvim-web-devicons", },
   },
   {
     "NvChad/nvim-colorizer.lua",
@@ -69,6 +65,28 @@ return {
       config = function()
         require("ui.kanagawa")
       end
+    },
+  },
+  {
+    "folke/drop.nvim",
+    event = "VimEnter",
+    config = function()
+      require("drop").setup()
+    end,
+  },
+  {
+    "folke/zen-mode.nvim",
+    config = true,
+    event = "VeryLazy",
+    cmds = {
+      "ZenMode",
+      "close",
+      "quit",
+    },
+    dependencies = {
+      {
+        "folke/twilight.nvim",
+      }
     },
   },
 }
