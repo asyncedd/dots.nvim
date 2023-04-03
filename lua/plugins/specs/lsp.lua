@@ -47,6 +47,7 @@ return {
       "windwp/nvim-autopairs",
       "hrsh7th/cmp-nvim-lsp-document-symbol",
       "davidsierradz/cmp-conventionalcommits",
+      "ray-x/cmp-treesitter",
     },
     config = require("completion.cmp"),
     event = "InsertEnter",
