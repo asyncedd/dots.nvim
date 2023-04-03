@@ -39,8 +39,8 @@ local M = {
   pumhieght = 10, -- Make it smaller
   winblend = 10, -- floating windows are sightly transparent.
 
-  listchars = "extends:…,precedes:…,nbsp:␣", -- Some helper symbols.
-  -- list = true, -- Show them.
+  -- listchars = "extends:…,precedes:…,nbsp:␣", -- Some helper symbols.
+  list = true, -- Show them.
 }
 
 return M
