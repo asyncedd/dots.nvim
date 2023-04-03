@@ -36,7 +36,8 @@ Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim). T
 Then once it finished, you're done! (actually)
 
 ## ⚡ Performance
-* `nvim --clean`: ```
+* `nvim --clean`:
+```
 159.604  000.143: VimEnter autocommands
 159.610  000.006: UIEnter autocommands
 159.617  000.007: before starting main loop
