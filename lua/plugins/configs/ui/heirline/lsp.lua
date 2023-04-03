@@ -40,7 +40,7 @@ M.Diagnostics = {
   update = { "DiagnosticChanged", "BufEnter" },
 
   {
-    provider = "![",
+    provider = " ",
   },
   {
     provider = function(self)
@@ -68,7 +68,7 @@ M.Diagnostics = {
     hl = { fg = "diag_hint" },
   },
   {
-    provider = "]",
+    provider = " ",
   },
 }
 
