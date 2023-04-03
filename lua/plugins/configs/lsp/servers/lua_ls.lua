@@ -8,6 +8,7 @@ local M = {
         "lua/?.lua",
         "lua/?/init.lua",
       },
+      pathStrict = false,
     },
     hover = {
       previewFields = vim.o.lines * 4,
