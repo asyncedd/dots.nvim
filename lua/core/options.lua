@@ -67,6 +67,11 @@ o.list = true -- Enable seeing invisible characters (actually it's UI characters
 o.listchars = { -- See Spaces and eol's as a character.
   eol = "↴",
   space = "⋅",
+  tab = "▶ ",
+  -- trail = "•",
+  precedes = "«",
+  extends = "»",
+  nbsp = "␣",
 }
 
 -- 3.3 Emojis are weird on Neovim...
@@ -78,6 +83,6 @@ o.emoji = false
 -- 4.1 Lazy redraw.
 o.lazyredraw= true
 
--- 4.2 Avoid long syntax highlgihting for big stuff. 
+-- 4.2 Avoid long syntax highlgihting for big stuff.
 o.synmaxcol = 128 -- avoid slow rendering for long lines
 
