@@ -23,7 +23,7 @@ local kindIcons = {
   Struct = "",
   Event = "",
   Operator = "",
-  TypeParameter = ""
+  TypeParameter = "",
 }
 
 return kindIcons

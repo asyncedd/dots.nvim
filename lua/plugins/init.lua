@@ -9,7 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
-    lazypath
+    lazypath,
   })
   print("OK: Done!")
 end
@@ -19,18 +19,18 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 local disabledPlugins = require("user.builtinPlugins")
 
 require("lazy").setup({
-  { import = "plugins.specs" }
+  { import = "plugins.specs" },
 }, {
   performance = {
     rtp = {
-      disabled_plugins = disabledPlugins
+      disabled_plugins = disabledPlugins,
     },
   },
   install = {
     colorscheme = {
       "catppuccin",
       "habamax",
-    }
+    },
   },
   defaults = {
     lazy = true,
@@ -40,4 +40,3 @@ require("lazy").setup({
     throttle = 100,
   },
 })
-

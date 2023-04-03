@@ -1,7 +1,12 @@
 local nls = require("null-ls")
+local builtins = nls.builtins
 
 nls.setup({
   sources = {
-    nls.builtins.formatting.stylua,
+    builtins.formatting.stylua,
+    builtins.diagnostics.luacheck.with({
+      extra_args = { "--globals vim" },
+    }),
+    builtins.formatting.lua_format,
   },
 })

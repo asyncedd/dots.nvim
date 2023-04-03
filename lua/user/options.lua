@@ -34,4 +34,3 @@ o.cul = true
 -- 3.2 Enable TermGUIColors.
 -- Have those glorious 24 bit colors! Take that Windows XP!
 o.tgc = true -- tgc = term gui colors.
-

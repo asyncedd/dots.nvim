@@ -30,7 +30,7 @@ require("catppuccin").setup({
       NvimTreeExecFile = { fg = cp.text },
 
       ["@lsp.type.parameter"] = { fg = cp.red },
-      ["@lsp.type.variable"] = { fg = cp.red },
+      ["@lsp.type.variable"] = { fg = cp.pink },
       ["@lsp.type.function"] = { fg = cp.blue },
     }
   end,
@@ -105,6 +105,5 @@ require("catppuccin").setup({
   },
   compile = {
     enabled = true,
-  }
+  },
 })
-

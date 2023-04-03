@@ -36,14 +36,14 @@ local o = vim.opt
 
 -- Change relative numbers according to the mode.
 autocmd("InsertEnter", {
-  callback = function ()
+  callback = function()
     o.relativenumber = false
     o.number = true
-  end
+  end,
 })
 
 autocmd("InsertLeave", {
-  callback = function ()
+  callback = function()
     o.relativenumber = true
-  end
+  end,
 })

@@ -4,16 +4,16 @@ require("mini.splitjoin").setup()
 
 require("mini.surround").setup({
   mappings = {
-    add = '<leader>sa',
-    delete = '<leader>sd',
-    find = '<leader>sf',
-    find_left = '<leader>sF',
-    highlight = '<leader>sh',
-    replace = '<leader>sr',
-    update_n_lines = '<leader>sn',
+    add = "<leader>sa",
+    delete = "<leader>sd",
+    find = "<leader>sf",
+    find_left = "<leader>sF",
+    highlight = "<leader>sh",
+    replace = "<leader>sr",
+    update_n_lines = "<leader>sn",
 
-    suffix_last = 'l',
-    suffix_next = 'n',
+    suffix_last = "l",
+    suffix_next = "n",
   },
   hooks = {
     pre = function()

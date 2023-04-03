@@ -55,9 +55,12 @@ return {
   {
     "jose-elias-alvarez/null-ls.nvim",
     init = lazyLoad("null-ls.nvim"),
-    config = function ()
+    config = function()
       require("lsp.null")
     end,
+    dependencies = {
+      "jay-babu/mason-null-ls.nvim",
+    },
   },
   {
     "smjonas/inc-rename.nvim",
@@ -67,4 +70,3 @@ return {
     },
   },
 }
-
