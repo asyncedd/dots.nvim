@@ -24,5 +24,10 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     config = true,
-  }
+  },
+  {
+    "stevearc/overseer.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
