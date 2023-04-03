@@ -15,24 +15,32 @@ local Bufferline = lazy_require("plugins.configs.ui.heirline.bufferline")
 
 require("plugins.configs.ui.heirline.colors")
 
-local Align = { provider = "%=" }
-local Space = { provider = " " }
+local Align = { provider = "%=", hl = { bg = "normal" } }
+local Space = { provider = " ", hl = { bg = "normal" } }
 
 local DefaultStatusLine = {
   Lazy, Space, ViMode, Space, SearchResults,
   utils.surround({ "", "" }, "bright_bg", {
     FileName.WorkDir,
-    Space,
-    utils.surround({ "", "" }, "black", { FileName.FileNameBlock }),
+    utils.surround({ "", "" }, function(self) return self:mode_color() end, { FileName.FileNameBlock }),
   }),
   Space,
-  Gitsigns,
+  {
+    Gitsigns,
+    hl = { bg = "normal" }
+  },
   Space,
-  LSP.LSPActive,
+  {
+    LSP.LSPActive,
+    hl = { bg = "normal" }
+  },
   Space,
-  LSP.Diagnostics,
+  {
+    LSP.Diagnostics,
+    hl = { bg = "normal" }
+  },
   Align,
-  File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar,
+  { { File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar }, hl = { bg = 'normal' } },
 }
 
 local bufferline = {
