@@ -11,7 +11,8 @@ M = {
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
       "j-hui/fidget.nvim",
-      "folke/neodev.nvim"
+      "folke/neodev.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
     }
   },
   {
