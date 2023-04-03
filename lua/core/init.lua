@@ -12,7 +12,8 @@ require("core.disableBuiltinPlugins")
 
 -- Set the package.path.
 -- Allow searching in `lua/plugins/configs/x.lua` or `lua/plugins/configs/x/init.lua`
-package.path = string.format(";%s;%s", vim.fn.stdpath("config") .. "/lua/plugins/configs/?.lua", vim.fn.stdpath("config") .. "/lua/plugins/configs/?/init.lua")
+package.path = vim.fn.stdpath("config") .. "/lua/plugins/configs/?.lua;" .. package.path
+package.path = vim.fn.stdpath("config") .. "/lua/plugins/configs/?/init.lua;" .. package.path
 
 -- Set some options.
 -- Now, we can use shortcuts like `<leader>ff` to open Telescope.nvim.
