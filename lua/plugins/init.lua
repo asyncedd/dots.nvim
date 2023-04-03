@@ -4,9 +4,6 @@ local lazyLoad = require("core.utils.lazyLoad")
 
 plugins[1] = {
   "catppuccin/nvim",
-  name = "catppuccin",
-  init = lazyLoad("catppuccin"),
-  config = require("ui.catppuccin"),
 }
 
 plugins[2] = {
