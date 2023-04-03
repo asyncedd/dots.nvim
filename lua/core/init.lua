@@ -42,3 +42,4 @@ vim.schedule(function ()
   -- 1.2 Persistent undos, across sessions.
   o.undofile = true
 end)
+
