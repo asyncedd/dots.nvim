@@ -6,7 +6,6 @@ local ViMode = {
   -- evaluation and store it as a component attribute
   init = function(self)
     self.mode = vim.fn.mode(1) -- :h mode()
-
   end,
   -- Now we define some dictionaries to map the output of mode() to the
   -- corresponding string and color. We can put these into `static` to compute
@@ -76,7 +75,8 @@ local ViMode = {
   end,
   -- Same goes for the highlight. Now the foreground will change according to the current mode.
   hl = {
-    fg = "bright_bg", bold = true
+    fg = "bright_bg",
+    bold = true,
   },
   -- Re-evaluate the component only on ModeChanged event!
   -- This is not required in any way, but it's there, and it's a small
@@ -84,12 +84,14 @@ local ViMode = {
   update = {
     "ModeChanged",
     pattern = "*:*",
-    callback = vim.schedule_wrap(function ()
+    callback = vim.schedule_wrap(function()
       vim.cmd("redrawstatus")
     end),
   },
 }
 
-ViMode = utils.surround({ "", "" }, function(self) return self:mode_color() end, { ViMode })
+ViMode = utils.surround({ "", "" }, function(self)
+  return self:mode_color()
+end, { ViMode })
 
 return ViMode

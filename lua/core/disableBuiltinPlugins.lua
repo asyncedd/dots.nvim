@@ -19,7 +19,7 @@ g["spellfile_plugin"] = 1
 g["tar"] = 1
 g["tarPlugin"] = 1
 g["vimball"] = 1
-g["vimballPlugin"]  = 1
+g["vimballPlugin"] = 1
 g["zip"] = 1
 g["zipPlugin"] = 1
 
