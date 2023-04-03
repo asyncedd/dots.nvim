@@ -8,3 +8,4 @@
 -- Load plugins via lazy.nvim
 -- Add some autocmds and keymaps
 require("core")
+
