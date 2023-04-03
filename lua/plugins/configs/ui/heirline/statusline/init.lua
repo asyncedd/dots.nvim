@@ -15,7 +15,6 @@ local SearchResults = require("ui.heirline.statusline.search")
 
 local Align = { provider = "%=", hl = { bg = "normal" } }
 local Space = { provider = " ", hl = { bg = "normal" } }
-local NormalSpace = { provider = " " }
 
 local DefaultStatusLine = {
   Lazy,
