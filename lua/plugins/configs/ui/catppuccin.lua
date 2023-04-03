@@ -20,6 +20,12 @@ return function()
           warnings = { "italic" },
           information = { "italic" },
         },
+        underlines = {
+          errors = { "undercurl" },
+          hints = { "undercurl" },
+          warnings = { "undercurl" },
+          information = { "undercurl" },
+        },
       },
     },
     styles = {
