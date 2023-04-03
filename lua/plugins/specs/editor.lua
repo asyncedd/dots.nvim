@@ -30,6 +30,7 @@ return {
     dependencies = {
       "andymass/vim-matchup",
       "David-Kunz/markid",
+      "HiPhish/nvim-ts-rainbow2",
     },
     config = require("plugins.configs.editor.treesitter"),
     event = "BufReadPost",
