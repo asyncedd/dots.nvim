@@ -30,8 +30,8 @@ treesitter.setup({
 
   -- Auto-install missing parsers. (once you open a file that requires it.)
   auto_install = true,
-  -- Enable beautiful syntax highlighting!!!
 
+  -- Enable beautiful syntax highlighting!!!
   ensure_installed = { "markdown", "markdown_inline" },
 
   highlight = {
