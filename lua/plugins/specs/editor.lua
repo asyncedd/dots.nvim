@@ -31,6 +31,7 @@ return {
       "andymass/vim-matchup",
       "David-Kunz/markid",
       "HiPhish/nvim-ts-rainbow2",
+      "nvim-treesitter/nvim-treesitter-refactor",
     },
     config = require("plugins.configs.editor.treesitter"),
     event = "BufReadPost",

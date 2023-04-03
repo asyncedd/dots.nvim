@@ -63,6 +63,33 @@ return function ()
         enable =true,
         query = "rainbow-parens"
       },
+
+      -- Be smarter!
+      refactor = {
+        highlight_definations = {
+          enable = true,
+          clear_on_cursor_move = true,
+        },
+        highlight_current_scope = {
+          enable = true,
+        },
+        smart_rename = {
+          enable = true,
+          keymaps = {
+            smart_rename = "grr",
+          },
+        },
+        navigation = {
+          enable = true,
+          keyamsp = {
+            goto_defination = "gnd",
+            list_defination = "gnD",
+            list_defination_toc = "g0",
+            goto_next_usage = "<a-*>",
+            goto_previous_usage = "<a-#>",
+          },
+        },
+      },
     })
   end)
 end
