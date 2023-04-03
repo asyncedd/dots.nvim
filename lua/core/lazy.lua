@@ -7,125 +7,50 @@ local api = vim.api
 local Lazy = {}
 
 function Lazy:load_plugins()
-  self.modules = {}
-
+  self.modules = {}  -- Initialize the table to store the loaded plugins
   local cache_dir = config_dir .. "/cache"
   local cache_file = cache_dir .. "/plugins_cache.lua"
+  local plugins_list = vim.split(fn.glob(modules_dir .. "/plugins/*.lua"), "\n")  -- Get the list of all plugin files
 
-  local append_nativertp = function()
-    -- 📁 Update the package path to include the directories for configs
+  local function load_plugins_from_cache()  -- Function to load plugins from cache
+    local f = io.open(cache_file, "r")
+    if f then  -- If cache file exists
+      local content = f:read("*all")
+      f:close()
+      local success, result = pcall(load(content))  -- Load the content of the cache file
+      if success then
+        self.modules = result  -- Assign the loaded content to `self.modules`
+        return true  -- Return `true` if the content was successfully loaded
+      end
+    end
+    return false  -- Return `false` if the cache file doesn't exist or there was an error while loading the content
+  end
+
+  local function save_plugins_to_cache()  -- Function to save plugins to cache
+    local f = io.open(cache_file, "w")
+    if f then  -- If cache file was successfully opened for writing
+      f:write("return " .. vim.inspect(self.modules))  -- Write the contents of `self.modules` to the cache file
+      f:close()  -- Close the cache file
+    end
+  end
+
+  local append_nativertp = function()  -- 📁 Update the package path to include the directories for configs
     package.path = package.path
     .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
   end
-
-  -- 📁 Listing out plugins files in the directory.
-  local get_plugins_list = function()
-    -- 📂 Create an empty list to store the plugins file paths
-    local list = {}
-
-    -- 🔍 Search for all `.lua` files in the "plugins" directory
-    local plugins_list = vim.split(fn.glob(modules_dir .. "/plugins/*.lua"), "\n")
-
-    -- 🧪 Check if the result of the search is a table
-    if type(plugins_list) == "table" then
-      -- 🔄 Loop through each file found in the "plugins" directory
-      for _, f in ipairs(plugins_list) do
-        -- 📁 Add the file path to the `list` table
-        -- The file path is created by removing the `modules_dir` from the full file path
-        -- Example: "modules/plugins/completion.lua"
-        list[#list + 1] = f:sub(#modules_dir - 6, -1)
-      end
-    end
-
-    -- 🚀 Return the list of plugins file paths
-    return list
-  end
-
-  -- 🔍 Reads data from cache file: "💾 cache file" -> "💼 self.modules". If successful: "✅ yes" else: "❌ no".
-  local function load_plugins_from_cache()
-    -- 🔄 Try to open the cache file for reading
-    local f = io.open(cache_file, "r")
-
-    if f then
-      -- 📖 Read all contents of the file
-      local content = f:read("*all")
-
-      -- 🔒 Close the file
-      f:close()
-
-      -- 🧪 Evaluate the contents of the file as a Lua script
-      local success, result = pcall(load(content))
-
-      if success then
-        -- 💾 Assign the result to `self.modules` if evaluation was successful
-        self.modules = result
-        return true
-      end
-    end
-
-    -- ❌ Return false if unable to open cache file or if evaluation failed
-    return false
-  end
-
-  -- 💾 Saves data of self.modules to cache file for faster loading later on.
-  local function save_plugins_to_cache()
-    local f = io.open(cache_file, "w") -- 💾 Open file for writing
-    if f then
-      f:write("return " .. vim.inspect(self.modules)) -- 💾 Write the `self.modules` table to file
-      f:close() -- 🔒 Close the file after writing
-    end
-  end
-
-  -- 🗑️ deletes the cache file, freeing up the storage space occupied by it.
-  local function remove_cache()
-    os.remove(cache_file) -- 🗑️ Remove the cache file
-  end
-
   append_nativertp()
 
-  -- 📁 Get plugins list with get_plugins_list()
-
-  -- ❔ Check cache file with load_plugins_from_cache()
-
-  -- 🚫 If cache load fails, 🔎 loop through plugins
-
-  -- ⏰ require() each plugin
-
-  -- 📜 Extend self.modules with each plugin's data
-
-  -- 💾 Save data to cache with save_plugins_to_cache()
-
-  local plugins_file = get_plugins_list() 
-  -- 📂Get the list of plugins
-
-  if not load_plugins_from_cache() then 
-    -- 🧐Check if loading from cache is unsuccessful
-
-    for _, m in ipairs(plugins_file) do 
-      -- 🔄Iterate through all the plugins files
-
-      -- require modules which returned in previous operation like this:
-      -- local modules = require("modules/plugins/completion.lua")
-      local modules = require(m:sub(0, #m - 4)) 
-      -- 🔍Require the current plugin file, removing the ".lua" extension
-
-      if type(modules) == "table" then 
-        -- 🎉Check if the required module is a table
-
-        for name, conf in pairs(modules) do 
-          -- 🔄Iterate through the modules' names and configurations
-
-          self.modules[#self.modules + 1] = 
-          vim.tbl_extend("force", { name }, conf) 
-          -- 💻Add the current module to the list of modules
-
+  if not load_plugins_from_cache() then  -- If plugins couldn't be loaded from cache
+    for _, m in ipairs(plugins_list) do  -- Loop through the plugin files
+      local modules = require(m:sub(#modules_dir - 6, -5))  -- Load the plugin file
+      if type(modules) == "table" then  -- If the loaded plugin is a table
+        for name, conf in pairs(modules) do  -- Loop through the table
+          self.modules[#self.modules + 1] = vim.tbl_extend("force", { name }, conf)  -- Add the plugin to `self.modules`
         end
       end
     end
-    save_plugins_to_cache() 
-    -- 💾Save the loaded plugins to cache
+    save_plugins_to_cache()  -- Save the plugins to cache after they have been loaded
   end
-
 end
 
 
