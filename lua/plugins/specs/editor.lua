@@ -9,6 +9,9 @@ return {
     end,
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    dependencies = {
+      "HiPhish/nvim-ts-rainbow2",
+    },
   },
   {
     "andymass/vim-matchup",
