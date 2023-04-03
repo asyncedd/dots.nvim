@@ -3,7 +3,7 @@
 local map = vim.api.nvim_set_keymap
 
 -- Open terminal in insert mode
-map("i", "<leader>sh", "<Esc>:term<CR>i", { silent = true })
+-- map("i", "<leader>sh", "<Esc>:term<CR>i", { silent = true })
 
 -- Open terminal in normal mode
 map("n", "<leader>sh", ":term<CR>", { silent = true })

@@ -2,6 +2,7 @@ local o = vim.opt
 local g = vim.g
 
 g.mapleader = " "
+g.localmapleader = " "
 o.shiftwidth = 2
 o.undofile = true
 o.backup = false
@@ -22,7 +23,7 @@ o.termguicolors = true
 o.showmode = false
 o.wrap = false
 o.signcolumn = "yes"
-o.fillchars = "eob: "
+o.fillchars:append "eob: "
 o.ignorecase = true
 o.incsearch = true
 o.infercase = true
@@ -39,8 +40,6 @@ o.foldcolumn = "1"
 o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
-o.timeout = true
-o.timeoutlen = 300
 vim.diagnostic.config({
   underline = true,
   update_in_insert = false,
