@@ -31,6 +31,10 @@ ui["glepnir/dashboard-nvim"] = {
   config = require("ui.dashboard")
 }
 
+ui["norcalli/nvim-colorizer.lua"] = {
+  event = "BufReadPost"
+}
+
 ui["rebelot/kanagawa.nvim"] = {}
 ui["ellisonleao/gruvbox.nvim"] = {}
 ui["folke/tokyonight.nvim"] = {}
