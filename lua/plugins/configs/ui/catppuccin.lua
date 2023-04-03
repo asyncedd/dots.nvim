@@ -1,6 +1,6 @@
 require("catppuccin").setup({
   dim_inactive = {
-    enable = true,
+    enabled = true,
   },
   compile = {
     enabled = true,
