@@ -157,6 +157,6 @@ return {
       { "<c-p>", "<Plug>(YankyCycleBackward)", mode = { "n", "x" } },
     },
     config = true,
-  }
+  },
 }
 
