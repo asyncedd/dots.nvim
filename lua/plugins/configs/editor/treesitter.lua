@@ -11,8 +11,8 @@ require("nvim-treesitter.configs").setup({
     enable = true,
     use_languagetree = true,
   },
-  matchup = {
+  rainbow = {
     enable = true,
-  }
+  },
 })
 
