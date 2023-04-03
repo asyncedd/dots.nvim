@@ -16,9 +16,9 @@ return {
         end,
         opts = { labeled_modes = "nx" },
       },
-      "ggandor/leap-spooky.nvim",
+      -- "ggandor/leap-spooky.nvim",
       "tpope/vim-repeat",
-      "echasnovski/mini.ai",
+      -- "echasnovski/mini.ai",
     },
     event = "VeryLazy",
     keys = {

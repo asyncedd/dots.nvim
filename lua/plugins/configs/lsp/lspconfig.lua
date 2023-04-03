@@ -8,10 +8,7 @@ local icons = {
 local mason_lspconfig = require("mason-lspconfig")
 local mason = require("mason")
 local lspconfig = require("lspconfig")
-local neodev = require("neodev")
 local nullls = require("null-ls")
-
-neodev.setup()
 
 mason.setup()
 
