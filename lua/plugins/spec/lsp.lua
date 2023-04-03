@@ -1,6 +1,4 @@
-local M
-
-M = {
+return {
   {
     "neovim/nvim-lspconfig",
     event = "BufReadPost",
@@ -34,5 +32,3 @@ M = {
     },
   }
 }
-
-return M

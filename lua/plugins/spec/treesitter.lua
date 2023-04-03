@@ -1,4 +1,4 @@
-local M = {
+return {
   {
     "nvim-treesitter/nvim-treesitter",
     config = require("plugins.configs.editor.treesitter"),
@@ -9,5 +9,3 @@ local M = {
     piority = 1000,
   },
 }
-
-return M
