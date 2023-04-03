@@ -19,6 +19,9 @@ require("plugins")
 local colorscheme = require("user.settings.colorscheme")
 vim.api.nvim_command("colorscheme " .. colorscheme)
 
+-- Set some icons
+require("core.setIcons")
+
 vim.schedule(function ()
   -- Load options that don't require any UI
   vim.opt.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
