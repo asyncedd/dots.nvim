@@ -8,5 +8,8 @@ treesitter.setup({
   },
   indent = {
     enable = true
+  },
+  markid = {
+    enable = true
   }
 })
