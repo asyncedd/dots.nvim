@@ -1,1 +1,1 @@
-## DotsDotNvim (dots.nvim)
+## 🏗️ DotsDotNvim (dots.nvim)
