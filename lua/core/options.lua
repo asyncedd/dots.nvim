@@ -59,3 +59,5 @@ o("listchars", "eol:↴,space:⋅", {}) -- See Spaces and eol's as a character.
 -- =======================================
 -- 4. Performance based options
 -- =======================================
+-- 4.1 Lazy redraw.
+o("lazyredraw", true, {})

@@ -2,7 +2,9 @@
 
 local vim = vim -- Avoid expensive global searching.
 local g = vim.g
--- local o = vim.api.nvim_set_option_value
+local o = vim.api.nvim_set_option_value
+
+o("shadafile", "NONE", {})
 
 g.mapleader = " "
 
@@ -34,3 +36,5 @@ vim.defer_fn(function()
     require("mappings.lspsaga")
   end, 10)
 end, 0)
+
+vim.defer_fn(function() o("shadafile", "", {}) end, 0)
