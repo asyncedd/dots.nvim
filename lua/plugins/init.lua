@@ -19,16 +19,25 @@ plugins[2] = {
 
 plugins[3] = {
   "neovim/nvim-lspconfig",
-  init = lazyLoad("nvim-lspconfig") 
+  -- init = lazyLoad("nvim-lspconfig"),
+  event = "BufReadPost",
+  config = require("plugins.configs.lsp.config"),
+  dependencies = {
+    {
+      "williamboman/mason.nvim",
+      init = lazyLoad("mason.nvim"),
+      dependencies = {
+	"williamboman/mason-lspconfig.nvim",
+      },
+      config = require("plugins.configs.lsp.mason"),
+    }
+  }
 }
 
-plugins[4] = {
-  "williamboman/mason.nvim",
-  init = lazyLoad("mason.nvim"),
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-  },
-  config = require("plugins.configs.lsp.mason"),
+plugins[5] = {
+  "j-hui/fidget.nvim",
+  config = true,
+  event = "VeryLazy"
 }
 
 require("lazy").setup({
