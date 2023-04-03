@@ -32,6 +32,8 @@ local M = {
           [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
         },
         -- "Cache" files for fast loading.
+        -- Oh yeah we allow 100 MB of cache. No more than that.
+        -- And we skip files that are over 10MB.
         maxPreload = 100000,
         preloadFileSize = 10000,
       },
