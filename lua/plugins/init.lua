@@ -307,6 +307,15 @@ local plugins = {
     end,
     init = lazyLoad("lsp-lens.nvim")
   },
+  {
+    "rafcamlet/nvim-luapad",
+    lazy = true,
+    cmd = {
+      "Luapad",
+      "LuaRun",
+      "Lua",
+    },
+  },
 }
 
 require("lazy").setup({
