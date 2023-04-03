@@ -17,7 +17,9 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 local disabledPlugins = require("user.builtinPlugins")
-local lazyLoad = function(plugin) -- Stole this from NvChad, hehe.
+-- Lazy load a plugin.
+---@param plugin string: A plugin to load.
+local lazyLoad = function(plugin) -- CREDIT: NvChad.
   vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
     group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),
     callback = function()
@@ -80,6 +82,9 @@ local plugins = {
     end,
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    dependencies = {
+      "HiPhish/nvim-ts-rainbow2",
+    },
   },
   {
     "andymass/vim-matchup",
@@ -318,7 +323,7 @@ local plugins = {
     config = function()
       require("lsp-lens").setup({})
     end,
-    event = "User LspAttach"
+    event = "VeryLazy",
   },
   {
     "rafcamlet/nvim-luapad",
@@ -344,6 +349,25 @@ local plugins = {
       vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
     end,
     event = "VeryLazy",
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "jbyuki/one-small-step-for-vimkind",
+      "rcarriga/nvim-dap-ui",
+    },
+    keys = {
+      { "<leader>bp", function() require("dap").toggle_breakpoint() end },
+      { "<leader>dc", function() require("dap").continue() end },
+      { "<leader>so", function() require("dap").step_over() end },
+      { "<leader>si", function() require("dap").step_into() end },
+      { "<leader>uh", function() require("dap.ui.widgets").hover() end },
+      { "<leader>ol", function() require("osv").launch({ port = 8086} ) end },
+      { "<leader>runit", function() require("osv").run_this() end },
+    },
+    config = function()
+      require("dap.dap")
+    end,
   }
 }
 
