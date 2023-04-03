@@ -65,20 +65,22 @@ local TablineFileNameBlock = {
   end,
   on_click = {
     callback = function(_, minwid, _, button)
-  if (button == "m") then -- close on mouse middle click
-        vim.api.nvim_buf_delete(minwid, {force = false})
+      if (button == "m") then -- close on mouse middle click
+        vim.schedule(function ()
+          vim.api.nvim_buf_delete(minwid, { force = false })
+        end)
       else
         vim.api.nvim_win_set_buf(0, minwid)
       end
-end,
+    end,
     minwid = function(self)
-  return self.bufnr
+      return self.bufnr
     end,
     name = "heirline_tabline_buffer_callback",
   },
   TablineBufnr,
   FileIcon, -- turns out the version defined in #crash-course-part-ii-filename-and-friends can be reutilized as is here!
-TablineFileName,
+  TablineFileName,
   TablineFileFlags,
 }
 
@@ -93,10 +95,12 @@ local TablineCloseButton = {
     hl = { fg = "gray" },
     on_click = {
       callback = function(_, minwid)
-  vim.api.nvim_buf_delete(minwid, { force = false })
+        vim.schedule(function ()
+          vim.api.nvim_buf_delete(minwid, { force = false })
+        end)
       end,
       minwid = function(self)
-  return self.bufnr
+        return self.bufnr
       end,
       name = "heirline_tabline_close_buffer_callback",
     },
@@ -165,9 +169,9 @@ end, { TablineFileNameBlock, TablineCloseButton, TablinePicker })
 
 -- this is the default function used to retrieve buffers
 local get_bufs = function()
-    return vim.tbl_filter(function(bufnr)
-        return vim.api.nvim_buf_get_option(bufnr, "buflisted")
-    end, vim.api.nvim_list_bufs())
+  return vim.tbl_filter(function(bufnr)
+    return vim.api.nvim_buf_get_option(bufnr, "buflisted")
+  end, vim.api.nvim_list_bufs())
 end
 
 -- initialize the buflist cache
@@ -175,24 +179,24 @@ local buflist_cache = {}
 
 -- setup an autocmd that updates the buflist_cache every time that buffers are added/removed
 vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete" }, {
-    callback = function()
-        vim.schedule(function()
-            local buffers = get_bufs()
-            for i, v in ipairs(buffers) do
-                buflist_cache[i] = v
-            end
-            for i = #buffers + 1, #buflist_cache do
-                buflist_cache[i] = nil
-            end
+  callback = function()
+    vim.schedule(function()
+      local buffers = get_bufs()
+      for i, v in ipairs(buffers) do
+        buflist_cache[i] = v
+      end
+      for i = #buffers + 1, #buflist_cache do
+        buflist_cache[i] = nil
+      end
 
-            -- check how many buffers we have and set showtabline accordingly
-            if #buflist_cache > 1 then
-                vim.o.showtabline = 2 -- always
-            else
-                vim.o.showtabline = 1 -- only when #tabpages > 1
-            end
-        end)
-    end,
+      -- check how many buffers we have and set showtabline accordingly
+      if #buflist_cache > 1 then
+        vim.o.showtabline = 2 -- always
+      else
+        vim.o.showtabline = 1 -- only when #tabpages > 1
+      end
+    end)
+  end,
 })
 
 local BufferLine = utils.make_buflist(
