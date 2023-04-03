@@ -7,6 +7,8 @@ local g = vim.g
 -- 1. IMPORTANT STUF
 -- 1.1 Set the mapleader key to <Space>
 g.mapleader = " "
+-- 1.2 Persistent undos, across sessions.
+o.undofile = true
 
 -- 2. Editor stuff.
 -- 2.1 Indentations.
