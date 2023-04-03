@@ -29,6 +29,7 @@ local DefaultStatusLine = {
     hl = { bg = "normal" },
   },
   Align,
+  Align,
   {
     Gitsigns,
     hl = { bg = "normal" },
@@ -43,6 +44,8 @@ local DefaultStatusLine = {
     LSP.Diagnostics,
     hl = { bg = "normal" },
   },
+  Align,
+  Align,
   Align,
   {
     File.FileType,
