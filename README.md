@@ -63,5 +63,3 @@ As I've been adding more plugins (LSP, Completion etc...) It's a bit slower now.
 ## 😰 Quitting Nvim.
 You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
 
-## 😭 Problems.
-I tried "re-working" everything for "better performance" but yo! it doesn't do anything!
