@@ -57,6 +57,7 @@ require("catppuccin").setup({
         information = { "underline" },
       },
     },
+    cmp = true,
   },
   compile = {
     enabled = true,
