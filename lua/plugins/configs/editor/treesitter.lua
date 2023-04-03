@@ -11,10 +11,5 @@ require("nvim-treesitter.configs").setup({
     enable = true,
     use_languagetree = true,
   },
-  rainbow = {
-    enable = true,
-    query = "rainbow-parens",
-    strategy = require("ts-rainbow").strategy.global,
-  },
 })
 
