@@ -4,7 +4,7 @@ require("nvim-treesitter.configs").setup({
   ensure_installed = { "markdown", "markdown_inline" },
 
   -- Auto-install mssing parsers
-  auto_install = { enable = true },
+  auto_install = true,
 
   -- Enable highlighting.
   highlight = {
