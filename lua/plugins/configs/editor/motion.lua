@@ -1,6 +1,5 @@
 return function()
   local leap = require("leap")
-  local flit = require("flit")
   local miniAi = require("mini.ai")
 
   miniAi.setup()
@@ -31,7 +30,5 @@ return function()
   })
   -- Try it without this setting first, you might find you don't even miss it.
   -- require('leap').opts.highlight_unlabeled_phase_one_targets = true
-
-  flit.setup()
 
 end
