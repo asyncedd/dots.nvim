@@ -55,6 +55,9 @@ o.winblend  = 10 -- Make floating windows slightly transparent
 o.shortmess:append('WcC') -- Reduce command line messages
 o.splitkeep = 'screen'      --
 
+-- 3.4 Keep the cursor in the middle.
+o.scrolloff = 10
+
 --  +----------------------------------------------------------+
 --  |                        4. Windows                        |
 --  +----------------------------------------------------------+
