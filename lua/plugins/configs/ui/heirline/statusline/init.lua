@@ -11,7 +11,6 @@ local Scrollbar = require("ui.heirline.statusline.scrollbar")
 local File = require("ui.heirline.statusline.file")
 local LSP = require("ui.heirline.statusline.lsp")
 local Lazy = require("ui.heirline.statusline.lazy")
-local SearchResults = require("ui.heirline.statusline.search")
 
 local Align = { provider = "%=", hl = { bg = "normal" } }
 local Space = { provider = " ", hl = { bg = "normal" } }
@@ -21,7 +20,6 @@ local DefaultStatusLine = {
   Space,
   ViMode,
   Space,
-  SearchResults,
   {
     FileName.WorkDir,
     hl = { bg = "normal" },
