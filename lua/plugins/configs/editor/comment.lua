@@ -3,7 +3,9 @@ return function()
   local status, comment = pcall(require, "Comment")
 
   -- If it were not installed, return.
-  if (not status) then return end
+  if not status then
+    return
+  end
 
   -- Enable Comment.nvim
   comment.setup()
