@@ -5,18 +5,14 @@ local g = vim.g
 -- 1. General options.
 -- =======================================
 
--- 1.1 Map the leader key.
-g.mapleader = " "
-g.maplocalleader = " "
-
--- 1.2. Undo related options
+-- 1.1. Undo related options
 o.undofile = true -- Persistent undo's across all sessions
 
--- 1.3. Backup files
+-- 1.2. Backup files
 o.backup = false -- Don't write backups. (For better performance and, unneeded non-sense
 o.writebackup = false -- Don't write backups.
 
--- 1.4 Clipboard related options.
+-- 1.3 Clipboard related options.
 o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
 
 -- =======================================
