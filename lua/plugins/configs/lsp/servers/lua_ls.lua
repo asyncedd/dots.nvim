@@ -4,9 +4,9 @@ return {
       -- Tell the LS (langauge server) that we're using LuaJIT!
       version = "LuaJIT",
       path = {
-	vim.split(package.path, ";"),
-	"lua/?.lua",
-	"lua/?/init.lua",
+        vim.split(package.path, ";"),
+        "lua/?.lua",
+        "lua/?/init.lua",
       },
       pathStrict = false,
     },
@@ -15,10 +15,10 @@ return {
     },
     workspace = {
       library = {
-	vim.api.nvim_get_runtime_file("", true),
-	[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-	[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-	[vim.fn.expand("data" .. "/lazy/lazy.nvim/lua/lazy")] = true,
+        vim.api.nvim_get_runtime_file("", true),
+        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+        [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+        [vim.fn.expand("data" .. "/lazy/lazy.nvim/lua/lazy")] = true,
       },
       MaxPreload = 100000,
       preloadFileSize = 10000,
