@@ -28,6 +28,19 @@ local M = {
   infercase = true, -- Infer letter cases.
   smartcase = true, -- Don't ignore case if the pattern has an uppercase letter in it.
   smartindent = true, -- Get smart indents.
+
+  completeopt = "menuone,noinsert,noselect", -- This is mainly for hrsh7th/nvim-cmp.
+  virtualedit = "onemore", -- Allow going one more.
+  formatoptions = "qjl1", -- Don't autoformat commands.
+
+  splitkeep = "screen", -- Reduce scroll if the window splits.
+
+  pumbleend = 10, -- Make the builtin completion menu slightly transparent
+  pumhieght = 10, -- Make it smaller
+  winblend = 10, -- floating windows are sightly transparent.
+
+  listchars = "extends:…,precedes:…,nbsp:␣", -- Some helper symbols.
+  list = true, -- Show them.
 }
 
 return M
