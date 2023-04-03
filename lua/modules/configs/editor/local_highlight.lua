@@ -1,6 +1,5 @@
 return function()
   require("local-highlight").setup({
-    file_types = { "python", "lua" },
-    hlgroup = "TSDefinitionUsage",
+    file_types = { "lua" }
   })
 end
