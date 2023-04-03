@@ -10,7 +10,7 @@ My personal Neovim configuration
 ## Performance
 I'm running Neovim on a quite weak machine so, I won't brag about the startup time 😎. Anyways some stats:
 - **Startup time**: 125ms.
-- **Normal Neovim**: 151.805ms.
+- **Neovim --clean**: 42.085ms.
 - **LazyVim**: 158.062ms.
 - **NvChad**: 159.731ms.
 - **AstroVim**: 580.904ms 
