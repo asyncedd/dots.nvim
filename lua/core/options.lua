@@ -13,6 +13,7 @@ o.mouse = "a" -- Enable mouse for all modes
 o.swapfile = false -- Disable Swap files.
 o.hidden = true -- Don't automatically save whilst changing buffers.
 o.clipboard = "unnamed,unnamedplus" -- Register the clipboard with Windows, Mac OS X And Linux (*Unix) clipboards.
+o.expandtab = true -- Insert spaces instead of tabs when pressing the <Tab> key.
 
 -- Apperance
 o.breakindent = true -- Indent wrapped lines to match line start
@@ -47,7 +48,7 @@ o.pumhieght = 10 -- Make it smaller
 o.winblend = 10 -- floating windows are sightly transparent.
 
 o.list = true -- Show them.
-o.listchars = "" -- Couldn't think about it.
+o.listchars = "eol:↴,space:⋅" -- Couldn't think about it.
 
 -- Disable menu loading
 g.did_install_default_menus = 1
@@ -70,3 +71,14 @@ g.loaded_zipPlugin = 1
 
 -- Disable SQL Omni completion
 g.loaded_sql_completion = 1
+
+g.neovide_refresh_rate = 120
+g.neovide_cursor_vfx_mode = "railgun"
+g.neovide_no_idle = true
+g.neovide_cursor_animate_length = 0.03
+g.neovide_cursor_trail_length = 0.03
+g.neovide_cursor_antialiasing = true
+g.neovide_cursor_vfx_opacity = 200.0
+g.neovide_cursor_vfx_particle_lifetime = 1.2
+g.neovide_cursor_vfx_particle_speed = 20.0
+g.neovide_cursor_vfx_particle_density = 5.0
