@@ -57,6 +57,16 @@ local plugins = {
       },
       "folke/neodev.nvim",
       "ray-x/lsp_signature.nvim",
+      {
+        "glepnir/lspsaga.nvim",
+        config = function()
+          require("lsp.saga")
+        end,
+        dependencies = {
+          { "nvim-tree/nvim-web-devicons" },
+          { "nvim-treesitter/nvim-treesitter" },
+        },
+      }
     }
   },
   {
@@ -145,17 +155,6 @@ local plugins = {
     "NvChad/nvim-colorizer.lua",
     config = true,
     event = "VeryLazy",
-  },
-  {
-    "glepnir/lspsaga.nvim",
-    config = function()
-      require("lsp.saga")
-    end,
-    init = lazyLoad("lspsaga.nvim"),
-    dependencies = {
-      { "nvim-tree/nvim-web-devicons" },
-      { "nvim-treesitter/nvim-treesitter" },
-    },
   },
   {
     "echasnovski/mini.nvim",
