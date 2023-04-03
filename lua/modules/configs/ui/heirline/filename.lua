@@ -1,17 +1,19 @@
 local conditions = require("heirline.conditions")
 local utils = require("heirline.utils")
 
+local M = {}
+
 -- Use local variables to avoid repetitive function calls
 local bufname = vim.api.nvim_buf_get_name(0)
 
-local FileNameBlock = {
+M.FileNameBlock = {
   init = function(self)
     self.filename = bufname
   end,
 }
 
 -- Modify FileName directly with a modifier component
-local FileName = {
+M.FileName = {
   provider = function(self)
     -- first, trim the pattern relative to the current directory. For other
     -- options, see :h filename-modifers
@@ -35,7 +37,7 @@ local FileName = {
   end,
 }
 
-local FileIcon = {
+M.FileIcon = {
     init = function(self)
         local filename = self.filename
         local extension = vim.fn.fnamemodify(filename, ":e")
@@ -68,13 +70,13 @@ local FileFlags = {
 }
 
 -- Use a for loop to add children to FileNameBlock
-for _, child in ipairs({ FileIcon, FileName, FileFlags }) do
-  table.insert(FileNameBlock, child)
+for _, child in ipairs({ M.FileIcon, M.FileName, FileFlags }) do
+  table.insert(M.FileNameBlock, child)
 end
-table.insert(FileNameBlock, { provider = '%<' })
+table.insert(M.FileNameBlock, { provider = '%<' })
 
 
 -- utils.surround({ "", "" }, "bright_bg", { FileNameBlock })
 -- return FileNameBlock
 
-return FileNameBlock
+return M
