@@ -22,6 +22,8 @@ o.expandtab = true
 -- 3.1 Enable line numbers.
 -- Set lines numbers.
 o.number = true
+-- Also relative nuumbers
+o.relativenumber = true
 -- 3.2 Enable TermGUIColors.
 -- Have those glorious 24 bit colors! Take that Windows XP!
 o.termguicolors = true
