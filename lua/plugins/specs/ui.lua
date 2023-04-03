@@ -28,6 +28,7 @@ return {
     event = "BufReadPost",
     config = true,
   },
+  -- Heirline
   {
     "rebelot/heirline.nvim",
     event = "BufReadPost",
@@ -35,6 +36,7 @@ return {
       require("plugins.configs.ui.heirline")
     end
   },
+  -- Folding
   {
     "anuvyklack/pretty-fold.nvim",
     config = true,
@@ -45,5 +47,16 @@ return {
         config = true,
       }
     }
+  },
+  -- Cursorword
+  {
+    "echasnovski/mini.cursorword",
+    event = "BufReadPost",
+    opts = {
+      delay = 50
+    },
+    config = function(_, opts)
+      require("mini.cursorword").setup(opts)
+    end
   }
 }
