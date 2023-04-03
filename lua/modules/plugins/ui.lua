@@ -2,12 +2,12 @@ local ui = {}
 
 ui["catppuccin/nvim"] = {
   name = "catppuccin",
-  -- config = require("ui.catppuccin")
+  config = require("ui.catppuccin")
 }
 
-ui["lukas-reineke/indent-blanklines.nvim"] = {
+ui["lukas-reineke/indent-blankline.nvim"]= {
   event = "BufReadPost",
-  config = require("ui.indent_blanklines")
+  config = require("ui.indent_blankline")
 }
 
 ui["echasnovski/mini.indentscope"] = {
