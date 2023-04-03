@@ -34,5 +34,6 @@ ui["glepnir/dashboard-nvim"] = {
 ui["rebelot/kanagawa.nvim"] = {}
 ui["ellisonleao/gruvbox.nvim"] = {}
 ui["folke/tokyonight.nvim"] = {}
+ui["EdenEast/nightfox.nvim"] = {}
 
 return ui
