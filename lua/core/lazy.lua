@@ -95,7 +95,8 @@ function Lazy:load_lazy()
           "tohtml",
           "zipPlugin",
           "tarPlugin",
-          "tutor"
+          "tutor",
+          "man"
         },
       },
     },
