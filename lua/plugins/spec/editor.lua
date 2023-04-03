@@ -9,6 +9,17 @@ local M = {
     config = require("plugins.configs.editor.gitsigns"),
     event = "BufReadPost",
   },
+  {
+    "gbprod/yanky.nvim",
+    config = true,
+    event = "VeryLazy",
+    keys = {
+      { "p", "<Plug>(YankyPutAfter)", },
+      { "P", "<Plug>(YankyPutBefore)" },
+      { "gp", "<Plug>(YankyGPutAfter)" },
+      { "gP", "<Plug>(YankyGPutBefore)" },
+    }
+  }
 }
 
 return M
