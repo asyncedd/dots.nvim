@@ -1,3 +1,4 @@
+I literally pasted this from the Rust COC. :)
 
 ## Conduct
 
