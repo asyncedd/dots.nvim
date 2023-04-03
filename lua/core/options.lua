@@ -10,7 +10,7 @@ o("undofile", true, {}) -- Persistent undo's across all sessions
 
 -- 1.2. Backup files
 -- EDIT: They might not be unneeded!
-o("backup", true, {}) -- Don't write backups. (For better performance and, unneeded non-sense
+-- o("backup", true, {}) -- Don't write backups. (For better performance and, unneeded non-sense
 -- o("writebackup", true, {}) -- Don't write backups.
 
 -- 1.3 Clipboard related options.
