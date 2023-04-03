@@ -1,5 +1,5 @@
 -- disable builtins plugins
-local disabled_built_ins = {
+local builtins = {
   "2html_plugin",
   "getscript",
   "getscriptPlugin",
@@ -23,8 +23,8 @@ local disabled_built_ins = {
   "matchparen", -- matchparen.nvim disables the default
 }
 
-for _, plugin in pairs(disabled_built_ins) do
-  vim.g["loaded_" .. plugin] = 1
+for _, plugin in pairs(builtins) do
+  vim.g[plugin] = 1
 end
 
 vim.g.do_filetype_lua = 1
