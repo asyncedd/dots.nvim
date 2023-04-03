@@ -63,6 +63,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "andymass/vim-matchup",
+      "David-Kunz/markid",
     },
     -- event = "BufReadPost",
   },
