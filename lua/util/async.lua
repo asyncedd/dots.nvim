@@ -7,7 +7,7 @@ function M.async(func)
     local args = table.pack(...)
     return {
       await = function()
-        local ok, result = coroutine.resume(co, table.unpack(args, 1, args.n))
+        local ok, result = coroutine.resume(co, unpack(args, 1, args.n))
         if ok then
           return result
         else
