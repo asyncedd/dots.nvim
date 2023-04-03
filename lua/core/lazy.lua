@@ -16,6 +16,9 @@ local lazyopts = {
     lazy = true,
     version = false,
   },
+  install = {
+    colorscheme = { "catppuccin", "tokyonight", "habamax" },
+  },
   performance = {
     reset_packpath = true,
     rtp = {
