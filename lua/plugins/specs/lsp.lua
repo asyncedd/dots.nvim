@@ -6,6 +6,8 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
       {
@@ -30,7 +32,7 @@ return {
         },
       },
     },
-    event = "InsertEnter",
+    event = { "InsertEnter", "CmdlineEnter" },
     config = function()
       require("plugins.configs.completion.cmp")
     end,
