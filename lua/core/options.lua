@@ -31,7 +31,7 @@ vim.g.matchup_matchparen_offscreen = { method = "popup" }
 -- =======================================
 
 -- 2.1 Enable virtual edits
-o("virtualedit", "onemore", {}) -- Allow going one more character of the line.
+-- o("virtualedit", "onemore", {}) -- Allow going one more character of the line.
 
 -- 2.2 Some indent based options.
 o("shiftwidth", 2, {}) -- Insert two shifts per indent.
