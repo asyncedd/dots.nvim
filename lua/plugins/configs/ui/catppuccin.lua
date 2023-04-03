@@ -28,6 +28,9 @@ require("catppuccin").setup({
       GitSignsChange = { fg = cp.peach },
       NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
       NvimTreeExecFile = { fg = cp.text },
+
+      ["@lsp.type.parameter"] = { fg = cp.red },
+      ["@lsp.type.variable"] = { fg = cp.teal },
     }
   end,
   styles = {
@@ -62,10 +65,6 @@ require("catppuccin").setup({
       },
     },
     cmp = true,
-    indent_blankline = {
-      enabled = true,
-      colored_indent_levels = false,
-    },
   },
   compile = {
     enabled = true,
