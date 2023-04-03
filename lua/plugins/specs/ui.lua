@@ -1,12 +1,6 @@
 return {
   -- Colorscheme
-  {
-    "catppuccin/nvim",
-    config = function ()
-      vim.cmd("colorscheme catppuccin")
-    end,
-    lazy = false,
-  },
+  "catppuccin/nvim",
   -- Indent blanklines
   {
     "lukas-reineke/indent-blankline.nvim",
