@@ -11,12 +11,12 @@ M.setup = function()
   o("listchars", "eol:↴,space:⋅", {})
 
   require("core.lazy")
-  require("core.load_ui_plugins")
+  require("core.pluginLoader.ui_plugins")
   vim.defer_fn(function ()
     require("core.options")
     -- simulate some heavy plugin loading
     require("mappings.movement")
-    require("core.load_other_plugins")
+    require("core.pluginLoader.other_plugins")
   end, 0)
 
 end
