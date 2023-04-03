@@ -93,13 +93,13 @@ return function()
 
     fallthrough = false,
 
-    DefaultStatusLine,
     InactiveStatusline,
     TerminalStatusline,
+    DefaultStatusLine,
   }
   require("heirline").setup({
     statusline = StatusLines,
     tabline = Tabline,
-    winbar = winbar
+    -- winbar = winbar
   })
 end
