@@ -63,3 +63,7 @@ treesitter.setup({
     },
   },
 })
+
+vim.defer_fn(function()
+  vim.g.matchup_matchparen_offscreen = { method = "popup" }
+end,0)
