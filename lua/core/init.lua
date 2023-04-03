@@ -28,13 +28,6 @@ vim.defer_fn(function()
 
   async.sync(loadModule("mappings.lspsaga"), function() end)
 
-  require("core.autocmd")
-  vim.defer_fn(function ()
-    require("mappings.movement")
-  end, 10)
-  vim.defer_fn(function ()
-    require("mappings.lspsaga")
-  end, 10)
 end, 0)
 
 vim.defer_fn(function() o("shadafile", "", {}) end, 0)
