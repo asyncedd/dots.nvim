@@ -109,4 +109,9 @@ return {
       },
     },
   },
+  {
+    "gen740/SmoothCursor.nvim",
+    event = "CursorMoved",
+    config = true,
+  },
 }
