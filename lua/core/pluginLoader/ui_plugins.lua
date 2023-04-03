@@ -22,7 +22,7 @@ table.insert(threads, coroutine.create(function()
         "configs.ui.heirline",
         "colorizer",
         "configs.editor.ufo",
-        "configs.ui.animate"
+        -- "configs.ui.animate"
       }
 
       -- Load modules asynchronously using pcall
