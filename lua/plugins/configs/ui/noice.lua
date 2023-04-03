@@ -17,8 +17,7 @@ require("noice").setup({
   },
   -- Temp fix.
   messages = {
-    -- enabled = false
-    view = "popup",
+    enabled = false
   },
 })
 
