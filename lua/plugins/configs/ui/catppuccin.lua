@@ -5,8 +5,7 @@ require("catppuccin").setup({
   custom_highlights = function(cp)
     return {
       NormalFloat = { bg = cp.crust },
-      FloatBorder = { bg = cp.crust, fg = cp.crust },
-      VertSplit = { bg = cp.base, fg = cp.surface0 },
+      FloatBorder = { bg = cp.crust, fg = cp.crust }, VertSplit = { bg = cp.base, fg = cp.surface0 },
       CursorLineNr = { fg = cp.mauve, style = { "bold" } },
       Pmenu = { bg = cp.base, fg = "" },
 
