@@ -16,9 +16,6 @@ local SearchResults = require("ui.heirline.statusline.search")
 local Align = { provider = "%=", hl = { bg = "normal" } }
 local Space = { provider = " ", hl = { bg = "normal" } }
 local NormalSpace = { provider = " " }
-local surround = function(color, obj)
-  return utils.surround({ "", "" }, color, { obj })
-end
 
 local DefaultStatusLine = {
   Lazy,
@@ -26,16 +23,14 @@ local DefaultStatusLine = {
   ViMode,
   Space,
   SearchResults,
-  surround("bright_bg", {
+  {
     FileName.WorkDir,
-    surround(function(self)
-      return self:mode_color()
-    end, FileName.FileNameBlock),
-  }),
-  -- utils.surround({ "", "" }, "bright_bg", {
-  --   FileName.WorkDir,
-  --   utils.surround({ "", "" }, function(self) return self:mode_color() end, { FileName.FileNameBlock }),
-  -- }),
+    hl = { bg = "normal" },
+  },
+  {
+    FileName.FileNameBlock,
+    hl = { bg = "normal" },
+  },
   Align,
   {
     Gitsigns,
@@ -52,7 +47,13 @@ local DefaultStatusLine = {
     hl = { bg = "normal" },
   },
   Align,
-  surround("bright_bg", { File.FileType, NormalSpace, surround(function(self) return self:mode_color() end, { Scrollbar.Ruler, Scrollbar.ScrollBar }) })
+  {
+    File.FileType,
+    hl = { bg = "normal" },
+  },
+  Scrollbar.Ruler,
+  Space,
+  Scrollbar.ScrollBar
 }
 
 local StatusLines = {
@@ -71,8 +72,7 @@ local StatusLines = {
       i = "green",
       v = "cyan",
       V = "cyan",
-      ["\22"] = "cyan",
-      c = "orange",
+      ["\22"] = "cyan", c = "orange",
       s = "purple",
       S = "purple",
       ["\19"] = "purple",
