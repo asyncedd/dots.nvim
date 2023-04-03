@@ -64,15 +64,7 @@ o.relativenumber = true -- Also relative numbers since, why not.
 
 -- 3.2 See invisible characters 🧐
 o.list = true -- Enable seeing invisible characters (actually it's UI characters)
-o.listchars = { -- See Spaces and eol's as a character.
-  eol = "↴",
-  space = "⋅",
-  tab = "▶ ",
-  -- trail = "•",
-  precedes = "«",
-  extends = "»",
-  nbsp = "␣",
-}
+o.listchars = {}
 
 -- 3.3 Emojis are weird on Neovim...
 o.emoji = false

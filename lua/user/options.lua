@@ -18,7 +18,15 @@ local opts = {
   -- c = c,
   -- d = d <-- This!
   -- e = e,
-  --
+  -- listchars = { -- See Spaces and eol's as a character.
+  --   eol = "↴",
+  --   space = "⋅",
+  --   tab = "▶ ",
+  --   -- trail = "•",
+  --   precedes = "«",
+  --   extends = "»",
+  --   nbsp = "␣",
+  -- }
 }
 
 -- EOL
