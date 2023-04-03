@@ -9,19 +9,6 @@ require("catppuccin").setup({
   },
   color_overrides = {
     mocha = {
-      rosewater = "#F5E0DC",
-      flamingo = "#F2CDCD",
-      mauve = "#DDB6F2",
-      pink = "#F5C2E7",
-      red = "#F28FAD",
-      maroon = "#E8A2AF",
-      peach = "#F8BD96",
-      yellow = "#FAE3B0",
-      green = "#ABE9B3",
-      blue = "#96CDFB",
-      sky = "#89DCEB",
-      teal = "#B5E8E0",
-      lavender = "#C9CBFF",
       text = "#D9E0EE",
       subtext1 = "#BAC2DE",
       subtext0 = "#A6ADC8",
@@ -36,15 +23,6 @@ require("catppuccin").setup({
       crust = "#161320",
     },
   },
-  intergrations = {
-    mason = false,
-    -- cmp = true,
-    mini = true,
-    -- telescope = true,
-    -- gitsigns = true,
-    treesitter = true,
-    which_key = true,
-  },
   highlight_overrides = {
     mocha = function(cp)
       return {
@@ -57,8 +35,9 @@ require("catppuccin").setup({
         Type = { fg = cp.blue },
         Typedef = { fg = cp.yellow },
         StorageClass = { fg = cp.red, style = { "italic" } },
+        LocalVariable = { fg = cp.pink, style = { "italic" } },
+
         -- For trouble.nvim
-        TroubleNormal = { bg = cp.base },
         -- For treesitter.
             ["@field"] = { fg = cp.rosewater },
             ["@include"] = { fg = cp.teal },
