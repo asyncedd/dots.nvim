@@ -2,13 +2,15 @@
 -- You can provide a colorscheme table to pass to Lazy.nvim.
 -- You can see an example here!
 
+local colorscheme = require("user.settings").colorscheme
+
 local M = {
   -- Catppuccin - A truly vibrant and beautiful colorscheme.
   {
     "catppuccin/nvim",
     config = require("plugins.configs.ui.catppuccin"),
     lazy = function()
-      if "catppuccin" == require("user.settings").colorscheme then
+      if "catppuccin" == colorscheme then
         return false
       end
     end,
@@ -23,7 +25,7 @@ local M = {
     -- If you get an error about "gitDiff not found" or something,
     -- Change it to "gitDeleted" ig.
     lazy = function()
-      if "tokyonight" == require("user.settings").colorscheme then
+      if "tokyonight" == colorscheme then
         return false
       end
     end,
@@ -34,7 +36,7 @@ local M = {
     "rebelot/kanagawa.nvim",
     priority = 1000,
     lazy = function()
-      if "kanagawa" == require("user.settings").colorscheme then
+      if "kanagawa" == colorscheme then
         return false
       end
     end,
