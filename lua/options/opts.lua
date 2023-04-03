@@ -12,6 +12,9 @@ local M = {
   cursorline = true, -- Highlight the line we're currently editting.
   linebreak = true, -- Break long lines into multiple. visually.
   number = true, -- Enable line numbers
+  splitbelow = true, -- Splits below.
+  splitright = true, -- Splits right.
+  termguicolors = true, -- Enable GUI colors.
 }
 
 return M
