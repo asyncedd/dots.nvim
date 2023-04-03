@@ -56,21 +56,19 @@ Just run a `nvim` in your terminal :D
 TODO Redo it once ~~I get it to be more faster (troll)~~ Unlazy
 * `nvim --clean` - [source](https://github.com/asyncedd/dots.nvim/blob/master/clean.log):
 ```
-073.952  000.021: editing files in windows
-074.197  000.246: VimEnter autocommands
-074.207  000.010: UIEnter autocommands
-074.218  000.010: before starting main loop
-078.168  003.951: first screen update
-078.182  000.014: --- NVIM STARTED ---
+009.424  000.083: VimEnter autocommands
+009.426  000.002: UIEnter autocommands
+009.428  000.001: before starting main loop
+010.292  000.864: first screen update
+010.295  000.003: --- NVIM STARTED ---
 ```
 * `nvim` - [source](https://github.com/asyncedd/dots.nvim/blob/master/normal.log):
 ```
-081.890  000.172: UIEnter autocommands
-082.432  000.012  000.012: require('vim.F')
-107.359  025.093  025.081: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
-107.435  000.451: before starting main loop
-109.390  001.955: first screen update
-109.396  000.006: --- NVIM STARTED ---
+028.411  000.140  000.140: require('dashboard.theme.hyper')
+028.664  001.769: UIEnter autocommands
+028.667  000.003: before starting main loop
+029.327  000.660: first screen update
+029.330  000.003: --- NVIM STARTED ---
 ```
 ~~As you can see, my Neovim configuration is FASTER than `nvim --clean`. This is because, I disabled unneeded RTP (runtime plugins) which took `125ms+`. That's 1.2 seconds! In my case, I have **24** plugins. I lazy loaded them so, it's blazingly fast!~~
 As I've been adding more plugins (LSP, Completion etc...) It's a bit slower now. But it's quite fast though!
