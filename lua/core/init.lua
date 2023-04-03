@@ -22,7 +22,7 @@ require("core.bootstrap")
 require("plugins")
 
 -- Set the colorscheme.
-local colorscheme = require("user.settings.colorscheme")
+local colorscheme = require("user.settings").colorscheme
 vim.api.nvim_command("colorscheme " .. colorscheme)
 
 -- Set some icons
