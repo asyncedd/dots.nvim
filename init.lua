@@ -1,3 +1,3 @@
-vim.opt.runtimepath:remove('/usr/share/nvim/runtime/plugin')
+-- vim.go.loadplugins = false
 -- Call setup
 require("core").setup()
