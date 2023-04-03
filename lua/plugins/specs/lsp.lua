@@ -43,7 +43,11 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/nvim-cmp",
+      {
+        "hrsh7th/nvim-cmp",
+        lazy = true,
+        config = function() end,
+      },
       "hrsh7th/cmp-nvim-lsp",
       "folke/neodev.nvim",
       "ray-x/lsp_signature.nvim",
@@ -51,7 +55,7 @@ return {
     config = function ()
       require("plugins.configs.lsp.lspconfig")
     end,
-    event = "BufReadPre",
+    event = "BufReadPost",
   },
   {
     "j-hui/fidget.nvim",
