@@ -1,8 +1,5 @@
-local status, treesitter = pcall(require, "nvim-treesitter.configs")
-if (not status) then return end
-
 return function()
-  treesitter.setup({
+  require("nvim-treesitter.configs").setup({
     ensure_installed = { "lua", "vim", "help" },
     auto_install = true,
     highlight = {
