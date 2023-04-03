@@ -2,6 +2,18 @@ return function()
   local dap = require("dap")
   local keymap = vim.keymap.set
 
+  -- dap.configurations.lua = ({
+  --   {
+  --     type = 'nlua',
+  --     request = 'attach',
+  --     name = "Attach to running Neovim instance",
+  --   }
+  -- })
+
+  -- dap.adapters.nlua = function(callback, config)
+  --   callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
+  -- end
+
   keymap("n", "<leader>db", function ()
     dap.toggle_breakpoint()
   end)
@@ -12,13 +24,5 @@ return function()
 
   keymap("n", "<leader>so", function ()
     dap.step_over()
-  end)
-
-  keymap("n", "<leader>si", function ()
-    dap.step_in()
-  end)
-
-  keymap("n", "<leader>ro", function ()
-    dap.repl.open()
   end)
 end
