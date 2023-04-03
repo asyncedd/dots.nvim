@@ -22,6 +22,8 @@ local lazyopts = {
       reset = true,
       disabled_plugins = {
         "gzip",
+        -- "matchup",
+        -- "matchparen",
         "tarPlugin",
         "tohtml",
         -- "tutor",
