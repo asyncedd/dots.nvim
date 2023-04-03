@@ -8,5 +8,5 @@ My personal Neovim configuration
 - **Simple** 🤔 Sane defaults. Works out of the box ™️
 
 ## Performance
-I'm running Neovim on a quite weak machine so, I won't brag about the startup time 😎. Anyways some features:
-- 
+I'm running Neovim on a quite weak machine so, I won't brag about the startup time 😎. Anyways some stats:
+- **Startup time**: 125ms.
