@@ -10,6 +10,7 @@ lsp["williamboman/mason.nvim"] = {
     { "hrsh7th/cmp-nvim-lsp" },
     { "folke/neodev.nvim"},
   },
+  cmd = "Mason",
 }
 
 lsp["jose-elias-alvarez/null-ls.nvim"] = {
