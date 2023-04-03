@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "6821b3ae27a57f1f3cf8ed030e4a55d70d0c4e43" },
+  "anyline.nvim": { "branch": "dev", "commit": "e9c15b4d106919bbf4f543921d778cbc75ad7cff" },
   "flirt.nvim": { "branch": "main", "commit": "93eefd618963335242046e3336e6003082f2971c" },
   "flit.nvim": { "branch": "main", "commit": "980e80e8fe44caaeb9de501c8e97a559b17db2f4" },
   "heirline.nvim": { "branch": "master", "commit": "b69415d912d466db17b8ee1eb777cc7f776a9286" },
