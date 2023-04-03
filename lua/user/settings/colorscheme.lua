@@ -7,8 +7,8 @@ local M = {
   {
     "catppuccin/nvim",
     config = require("plugins.configs.ui.catppuccin"),
-    lazy = function ()
-      if ("catppuccin" == require("user.settings").colorscheme) then
+    lazy = function()
+      if "catppuccin" == require("user.settings").colorscheme then
         return false
       end
     end,
@@ -22,8 +22,8 @@ local M = {
     -- (Hint: nvim lua/configs/ui/heirline/colors.lua)
     -- If you get an error about "gitDiff not found" or something,
     -- Change it to "gitDeleted" ig.
-    lazy = function ()
-      if ("tokyonight" == require("user.settings").colorscheme) then
+    lazy = function()
+      if "tokyonight" == require("user.settings").colorscheme then
         return false
       end
     end,
@@ -33,15 +33,15 @@ local M = {
   {
     "rebelot/kanagawa.nvim",
     priority = 1000,
-    lazy = function ()
-      if ("kanagawa" == require("user.settings").colorscheme) then
+    lazy = function()
+      if "kanagawa" == require("user.settings").colorscheme then
         return false
       end
     end,
-    config = function ()
+    config = function()
       require("plugins.configs.ui.kanagawa")
     end,
-  }
+  },
   -- -- Edge.nvim
   -- {
   --   "sainnhe/edge",

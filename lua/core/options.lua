@@ -81,8 +81,7 @@ o.emoji = false
 -- 4. Performance based options
 -- =======================================
 -- 4.1 Lazy redraw.
-o.lazyredraw= true
+o.lazyredraw = true
 
 -- 4.2 Avoid long syntax highlgihting for big stuff.
 o.synmaxcol = 128 -- avoid slow rendering for long lines
-
