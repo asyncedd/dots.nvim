@@ -14,7 +14,9 @@ return {
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     },
-    event = "VeryLazy",
+    event = {
+      "VeryLazy",
+    },
   },
   {
     "glepnir/dashboard-nvim",
@@ -44,13 +46,13 @@ return {
   },
   {
     "rebelot/heirline.nvim",
-    init = lazyLoad("heirline.nvim"),
     config = function()
       require("ui.heirline")
     end,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
+    event = "VeryLazy",
   },
   {
     "lukas-reineke/indent-blankline.nvim",
