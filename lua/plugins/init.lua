@@ -229,6 +229,17 @@ local plugins = {
       { "<leader>so", "<cmd>SymbolsOutline<cr>" }
     },
   },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "jbyuki/one-small-step-for-vimkind",
+      "rcarriga/nvim-dap-ui",
+    },
+    event = "VeryLazy",
+    config = function()
+      require("dap.dap")
+    end
+  },
 }
 
 require("lazy").setup({
