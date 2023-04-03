@@ -1,11 +1,11 @@
--- ============================================Ignore ============================================
+-- ============================Ignore ============================================
 -- vim.go.loadplugins = false
--- ============================================Please don't ignore this! :3 ======================
+-- ===================Please don't ignore this! :3 ===============================
 -- Call setup
 -- The setup module does:
 -- Set the options
 -- initalize lazy.nvim
 -- Load plugins via lazy.nvim
 -- Add some autocmds and keymaps
+-- If you want to know more, checkit out at `lua/core/init.lua`
 require("core")
-

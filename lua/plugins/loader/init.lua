@@ -14,6 +14,7 @@
 -- 
 require("plugins.loader.ui")
 
+-- Non blocking in a vim.schedule function.
 vim.schedule(function ()
   -- Load Editor plugins later.
   -- Nonblocking -> {
@@ -21,6 +22,8 @@ vim.schedule(function ()
   -- }
   --
   require("plugins.loader.editor")
+
+  -- Completion for the command line.
 
   require("plugins.loader.cmp_cmd")
 end)
