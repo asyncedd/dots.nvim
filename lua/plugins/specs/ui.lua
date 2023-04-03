@@ -132,4 +132,9 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "tamton-aquib/flirt.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
