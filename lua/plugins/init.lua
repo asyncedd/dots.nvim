@@ -139,6 +139,12 @@ plugins[18] = {
   init = lazyLoad("mini.splitjoin"),
 }
 
+plugins[19] = {
+  "echasnovski/mini.surround",
+  config = require("editor.surround"),
+  init = lazyLoad("mini.surround"),
+}
+
 require("lazy").setup({
   plugins,
 }, {
