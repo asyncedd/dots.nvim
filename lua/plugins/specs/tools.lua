@@ -15,9 +15,7 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons"
     },
-    config = function()
-      require("plugins.configs.tools.tree")
-    end,
+    config = require("plugins.configs.tools.tree"),
     event = "VeryLazy"
   },
 }
