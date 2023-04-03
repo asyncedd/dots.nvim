@@ -9,3 +9,4 @@ require("heirline").setup({
   tabline = bufferline,
   -- statuscolumn = statuscolumn,
 })
+
