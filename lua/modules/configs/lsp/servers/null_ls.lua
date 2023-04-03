@@ -11,7 +11,7 @@ return {
     },
     completion = {
       workspaceWord = true,
-      callSnippet = "Both",
+      callSnippet = "Replace",
     },
   },
 }
