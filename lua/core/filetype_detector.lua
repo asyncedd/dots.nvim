@@ -1,12 +1,12 @@
 local api = vim.api
 
 local filetype_dict = {
-  c    = "c",
-  sh   = "bash",
-  py   = "python",
-  md   = "markdown",
-  lua  = "lua",
-  vim  = "vim",
+  c = "c",
+  sh = "bash",
+  py = "python",
+  md = "markdown",
+  lua = "lua",
+  vim = "vim",
   fish = "fish",
   conf = "conf",
 }
@@ -16,10 +16,10 @@ local filename_dict = {
 }
 
 local ext = nil
-local function ft_detect ()
+local function ft_detect()
   -- ext = api.nvim_buf_get_name(0):gsub(".*/", '')
 
-  local fileExt  = vim.fn.expand("%:e")
+  local fileExt = vim.fn.expand("%:e")
   local fileName = vim.fn.expand("%:t")
 
   vim.bo.ft = fileExt ~= "" and filetype_dict[fileExt] or filename_dict[fileName]
@@ -32,4 +32,3 @@ end
 ft_detect()
 
 api.nvim_create_autocmd({ "BufWinEnter" }, { callback = ft_detect })
-
