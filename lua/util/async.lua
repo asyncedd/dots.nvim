@@ -6,11 +6,14 @@ function M.async(func)
     local co = coroutine.create(func)
     local args = {...}
     local resume = function()
-      local ok, result = coroutine.resume(co, unpack(args))
-      if not ok then
+      local ok, result = xpcall(function()
+        return {coroutine.resume(co, unpack(args))}
+      end, debug.traceback)
+      if ok then
+        return unpack(result)
+      else
         error(result)
       end
-      return result
     end
     return {
       await = function()
@@ -45,4 +48,3 @@ function M.parallel(funcs)
 end
 
 return M
-
