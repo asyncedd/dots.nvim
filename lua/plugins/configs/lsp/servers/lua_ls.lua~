@@ -1,3 +1,31 @@
+-- Thanks to folke with: https://github.com/folke/neodev.nvim
+-- I'd like not use a WHOLE plugin for this.
+-- add support for lazy.nvim
+
+local ret = { "${3rd}/luv/library" }
+
+local function add(lib, filter)
+  ---@diagnostic disable-next-line: param-type-mismatch
+  for _, p in ipairs(vim.fn.expand(lib .. "/lua", false, true)) do
+    p = vim.loop.fs_realpath(p)
+    if p and (not filter or filter[vim.fn.fnamemodify(p, ":h:t")]) then
+      if config.options.pathStrict then
+        table.insert(ret, p)
+      else
+        table.insert(ret, vim.fn.fnamemodify(p, ":h"))
+      end
+    end
+  end
+end
+
+if package.loaded["lazy"] then
+  for _, plugin in ipairs(require("lazy").plugins()) do
+    add(plugin.dir, filter)
+  end
+end
+
+
+
 local M = {
   -- Enable singe file support for the LS (langauge server).
   single_file_support = true,
@@ -27,6 +55,7 @@ local M = {
         -- Only load needed files.
         -- We only load the VIMRUNTIME Lua and LSP files and, some stuff for plugins installed via lazy.nvim.
         library = {
+          ret,
           [vim.fn.expand "$VIMRUNTIME/lua"] = true,
           [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
           [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
