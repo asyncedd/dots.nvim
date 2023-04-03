@@ -3,6 +3,37 @@ local M = {}
 local utils = require("heirline.utils")
 local conditions = require("heirline.conditions")
 
+M.WorkDir = {
+  init = function(self)
+    self.icon = (vim.fn.haslocaldir(0) == 1 and "l" or "g") .. " " .. " "
+    local cwd = vim.fn.getcwd(0)
+    self.cwd = vim.fn.fnamemodify(cwd, ":~")
+  end,
+  hl = { fg = "blue", bold = true },
+
+  flexible = 1,
+
+  {
+    -- evaluates to the full-lenth path
+    provider = function(self)
+      local trail = self.cwd:sub(-1) == "/" and "" or "/"
+      return self.icon .. self.cwd .. trail .." "
+    end,
+  },
+  {
+    -- evaluates to the shortened path
+    provider = function(self)
+      local cwd = vim.fn.pathshorten(self.cwd)
+      local trail = self.cwd:sub(-1) == "/" and "" or "/"
+      return self.icon .. cwd .. trail .. " "
+    end,
+  },
+  {
+    -- evaluates to "", hiding the component
+    provider = "",
+  }
+}
+
 M.FileNameBlock = {
   -- let's first set up some attributes needed by this component and it's children
   init = function(self)
@@ -26,20 +57,24 @@ M.FileIcon = {
 }
 
 M.FileName = {
-  provider = function(self)
-    -- first, trim the pattern relative to the current directory. For other
-    -- options, see :h filename-modifers
-    local filename = vim.fn.fnamemodify(self.filename, ":.")
-    if filename == "" then return "[No Name]" end
-    -- now, if the filename would occupy more than 1/4th of the available
-    -- space, we trim the file path to its initials
-    -- See Flexible Components section below for dynamic truncation
-    if not conditions.width_percent_below(#filename, 0.25) then
-      filename = vim.fn.pathshorten(filename)
-    end
-    return filename
+  init = function(self)
+    self.lfilename = vim.fn.fnamemodify(self.filename, ":.")
+    if self.lfilename == "" then self.lfilename = "[No Name]" end
   end,
   hl = { fg = utils.get_highlight("Directory").fg },
+
+  flexible = 2,
+
+  {
+    provider = function(self)
+      return self.lfilename
+    end,
+  },
+  {
+    provider = function(self)
+      return vim.fn.pathshorten(self.lfilename)
+    end,
+  },
 }
 
 M.FileFlags = {
