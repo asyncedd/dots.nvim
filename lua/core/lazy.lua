@@ -8,35 +8,44 @@ local Lazy = {}
 
 function Lazy:load_plugins()
   self.modules = {}  -- Initialize the table to store the loaded plugins
-  local cache_dir = config_dir .. "/cache"
+  local cache_dir = os.getenv("HOME") .. "/.cache/nvim"
   local cache_file = cache_dir .. "/plugins_cache.lua"
   local plugins_list = vim.split(fn.glob(modules_dir .. "/plugins/*.lua"), "\n")  -- Get the list of all plugin files
 
-  local function cache_plugins(operation)  -- Function to load or save plugins from/to cache
+  local function cache_plugins(operation)
     local cache_content
     local f = io.open(cache_file, "r")
-    if operation == "load" and f then  -- If cache file exists and we want to load plugins
+    if operation == "load" and f then
       cache_content = f:read("*all")
       f:close()
-    elseif operation == "save" then  -- If we want to save plugins
-      cache_content = "return " .. vim.inspect(self.modules)
+    elseif operation == "save" then
+      if not vim.fn.isdirectory(cache_dir) then
+        os.execute("mkdir -p " .. cache_dir)
+      end
+      cache_content = ""
+      for i, module in ipairs(self.modules) do
+        if module.conf then
+          cache_content = cache_content .. module.name .. "," .. module.conf .. "\n"
+        end
+      end
       f = io.open(cache_file, "w")
-      if f then  -- If cache file was successfully opened for writing
-        f:write(cache_content)  -- Write the contents of `self.modules` to the cache file
-        f:close()  -- Close the cache file
+      if f then
+        f:write(cache_content)
+        f:close()
       end
     end
 
     if cache_content then
-      local success, result = pcall(load(cache_content))  -- Load the content of the cache file
-      if success then
-        if operation == "load" then
-          self.modules = result  -- Assign the loaded content to `self.modules`
+      if operation == "load" then
+        local lines = vim.split(cache_content, "\n")
+        for i, line in ipairs(lines) do
+          local name, conf = string.match(line, "(.*),(.*)")
+          self.modules[#self.modules + 1] = { name = name, conf = conf }
         end
-        return true  -- Return `true` if the content was successfully loaded
       end
+      return true
     end
-    return false  -- Return `false` if the cache file doesn't exist or there was an error while loading the content
+    return false
   end
 
   local function load_module(file)
@@ -51,13 +60,13 @@ function Lazy:load_plugins()
   -- 📁 Update the package path to include the directories for configs
     package.path = package.path .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
 
-  local loaded_from_cache = cache_plugins("load")
-  if not loaded_from_cache then  -- If plugins couldn't be loaded from cache
-    for _, m in ipairs(plugins_list) do  -- Loop through the plugin files
-      load_module(m)
-    end
-    cache_plugins("save")  -- Save the plugins to cache after they have been loaded
+  cache_plugins("load")
+
+  for _, m in ipairs(plugins_list) do  -- Loop through the plugin files
+    load_module(m)
   end
+
+  cache_plugins("save")  -- Save the plugins to cache after they have been loaded
 end
 
 
