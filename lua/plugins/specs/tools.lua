@@ -24,16 +24,22 @@ return {
     "tpope/vim-fugitive",
     -- config = true,
     -- Set some commands to load for.
-    cmd = {
-      "G",
-      "Git",
-      "Gdiffsplit",
-      "Gvdiffsplit",
-      "Gread",
-      "Gwrite",
-      "GMove",
-      "GDelete",
-      "GBrowse",
-    },
+
+    config = function()
+      vim.api.nvim_set_keymap("n", "<leader>gi", ":Git<CR>", { desc = "Open Vim-Fugitive" })
+    end,
+    event = "VeryLazy",
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    config = function()
+      vim.api.nvim_set_keymap(
+        "n",
+        "<leader>lgi",
+        ":LazyGitFilter<CR>",
+        { desc = "Open Lazy-Git (needs Lazygit installed.)" }
+      )
+    end,
+    event = "VeryLazy",
   },
 }
