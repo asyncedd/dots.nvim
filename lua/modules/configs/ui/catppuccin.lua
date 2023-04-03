@@ -1,3 +1,5 @@
+local transparent_background = false
+
 return function()
   require("catppuccin").setup({
     flavour = "mocha", -- Can be one of: latte, frappe, macchiato, mocha
@@ -150,7 +152,7 @@ return function()
 
           -- For treesitter.
           ["@field"] = { fg = cp.rosewater },
-          ["@property"] = { fg = cp.yellow },
+          -- ["@property"] = { fg = cp.yellow },
 
           ["@include"] = { fg = cp.teal },
           -- ["@operator"] = { fg = cp.sky },

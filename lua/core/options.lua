@@ -36,3 +36,13 @@ o.splitkeep = "screen"
 o.list = true
 o.listchars = "eol:↴,space:⋅"
 o.tabstop = 2
+o.foldcolumn = "1"
+o.foldlevel = 99
+o.foldlevelstart = 99
+o.foldenable = true
+vim.diagnostic.config({
+  underline = true,
+  update_in_insert = false,
+  virtual_text = { spacing = 4, prefix = "●" },
+  severity_sort = true
+})

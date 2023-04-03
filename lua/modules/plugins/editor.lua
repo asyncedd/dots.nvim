@@ -7,7 +7,6 @@ editor["nvim-treesitter/nvim-treesitter"] = {
     { "andymass/vim-matchup" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "windwp/nvim-ts-autotag" },
-    { "nvim-treesitter/nvim-treesitter-refactor" },
     -- { "p00f/nvim-ts-rainbow" }
   },
 }
@@ -34,6 +33,14 @@ editor["RRethy/vim-illuminate"] = {
 editor["lewis6991/gitsigns.nvim"] = {
   event = "BufReadPost",
   config = require("editor.gitsigns")
+}
+
+editor["kevinhwang91/nvim-ufo"] = {
+  event = "BufReadPost",
+  config = require("editor.ufo"),
+  dependencies = {
+    "kevinhwang91/promise-async"
+  }
 }
 
 return editor
