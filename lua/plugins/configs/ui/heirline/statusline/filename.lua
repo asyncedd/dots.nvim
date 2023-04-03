@@ -1,7 +1,6 @@
 local M = {}
 
 local utils = require("heirline.utils")
-local conditions = require("heirline.conditions")
 
 M.WorkDir = {
   init = function(self)
