@@ -197,6 +197,25 @@ plugins[21] = {
   end
 }
 
+plugins[22] = {
+  "folke/trouble.nvim",
+  config = true,
+  keys = {
+    { "n", "<leader>xx", "<cmd>TroubleToggle<cr>", {
+      silent = true, noremap = true } },
+    { "n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", {
+      silent = true, noremap = true } },
+    { "n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", {
+      silent = true, noremap = true }},
+    { "n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", {
+      silent = true, noremap = true } },
+    { "n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+    { silent = true, noremap = true } },
+    { "n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
+    { silent = true, noremap = true } }
+  }
+}
+
 require("lazy").setup({
   plugins,
 }, {
