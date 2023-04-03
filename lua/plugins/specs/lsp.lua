@@ -89,4 +89,13 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
+  {
+    'ray-x/navigator.lua',
+    dependencies = {
+      { 'ray-x/guihua.lua', build = 'cd lua/fzy && make' },
+      { 'neovim/nvim-lspconfig' },
+    },
+    event = "VeryLazy",
+    config = true,
+  },
 }
