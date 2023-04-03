@@ -1,7 +1,6 @@
 local config_dir = vim.fn.stdpath("config")
 local modules_dir = config_dir .. "/lua/modules"
 local lazy_path = string.format("%s/site/", vim.fn.stdpath("data")) .. "lazy/lazy.nvim"
-local fn = vim.fn
 local api = vim.api
 local async = require("util.async")
 
@@ -15,21 +14,24 @@ function Lazy:load_plugins()
   package.path = package.path
   .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
 
-  local load_plugins = async.async(function()
-    for _, m in ipairs(plugins_list) do
-      local modules = require(m:sub(#modules_dir - 6, -5))
-      if type(modules) == 'table' then
-        for name, conf in pairs(modules) do
-          self.modules[#self.modules + 1] = vim.tbl_extend('force', { name }, conf)
-        end
+  local load_plugins = {}
+  for _, m in ipairs(plugins_list) do
+    local modules = require(m:sub(#modules_dir - 6, -5))
+    if type(modules) == 'table' then
+      for name, conf in pairs(modules) do
+        self.modules[#self.modules + 1] = vim.tbl_extend('force', { name }, conf)
       end
     end
-  end)
+  end
 
-  load_plugins():await()
 
+  local results = async.parallel(load_plugins):await()
+  for _, plugin_configs in ipairs(results) do
+    for _, config in ipairs(plugin_configs) do
+      table.insert(self.modules, config)
+    end
+  end
 end
-
 
 function Lazy:load_lazy()
   if not vim.loop.fs_stat(lazy_path) then
