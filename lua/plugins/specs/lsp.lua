@@ -85,7 +85,9 @@ return {
         winblend = 0,
       }
     },
-    config = true,
+    config = function (_, opts)
+      require("lspsaga").setup(opts)
+    end,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       "nvim-treesitter/nvim-treesitter",
