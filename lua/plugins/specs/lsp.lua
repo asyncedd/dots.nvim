@@ -1,4 +1,25 @@
 return {
+  {
+    "L3MON4D3/LuaSnip",
+    opts = {
+      history = true,
+      delete_check_events = "TextChanged",
+    },
+    config = true,
+    keys = {
+      {
+        "<tab>",
+        function()
+          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
+        end,
+        expr = true,
+        silent = true,
+        mode = "i",
+      },
+      { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
+      { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+    },
+  },
   -- Completion
   {
     "hrsh7th/nvim-cmp",
@@ -11,27 +32,6 @@ return {
       "petertriho/cmp-git",
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
-      {
-        "L3MON4D3/LuaSnip",
-        opts = {
-          history = true,
-          delete_check_events = "TextChanged",
-        },
-        config = true,
-        keys = {
-          {
-            "<tab>",
-            function()
-              return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-            end,
-            expr = true,
-            silent = true,
-            mode = "i",
-          },
-          { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
-          { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
-        },
-      },
     },
     config = function ()
       require("plugins.configs.completion.cmp")
