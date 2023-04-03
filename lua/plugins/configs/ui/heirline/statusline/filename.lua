@@ -65,7 +65,7 @@ M.FileName = {
   -- hl = { fg = utils.get_highlight("Directory").fg },
   -- hl = { fg = "bright_fg" },
   -- hl = { fg = "black" },
-  hl = { fg = "bright_bg" },
+  hl = { fg = "normal" },
 
   flexible = 2,
 
@@ -107,7 +107,7 @@ M.FileNameModifer = {
   hl = function()
     if vim.bo.modified then
       -- use `force` because we need to override the child's hl foreground
-      return { fg = "bright_bg", bold = true, force = true }
+      return { fg = "normal", bold = true, force = true }
     end
   end,
 }
