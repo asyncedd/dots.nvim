@@ -1,5 +1,5 @@
 return function ()
-  vim.schedule(function())
+  vim.schedule(function()
     -- Checking if nvim-treesitter is installed properly.
     local treesitter = require("nvim-treesitter.configs")
 
