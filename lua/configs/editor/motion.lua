@@ -1,5 +1,7 @@
 return function()
   local status, leap = pcall(require, "leap")
+  local status, flit = pcall(require, "flit")
+  if (not status) then return end
   if (not status) then return end
 
   leap.add_default_mappings()
