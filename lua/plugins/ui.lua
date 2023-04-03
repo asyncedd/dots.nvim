@@ -7,5 +7,6 @@ return {
   },
   {
     "monkoose/matchparen.nvim",
-  }
+  },
+  "norcalli/nvim-colorizer.lua",
 }
