@@ -1,26 +1,15 @@
-local coroutine = coroutine
+require("nvim-treesitter.configs").setup({
 
--- Define a function to resume the coroutine until it completes
-local function resumeCoroutine(co)
-  if coroutine.status(co) ~= "dead" then
-    coroutine.resume(co)
-  end
-end
+  -- Make sure we've installed:
+  ensure_installed = { "markdown", "markdown_inline" },
 
-resumeCoroutine(coroutine.create(function()
-  require("nvim-treesitter.configs").setup({
+  -- Auto-install mssing parsers
+  auto_install = true,
 
-    -- Make sure we've installed:
-    ensure_installed = { "markdown", "markdown_inline" },
-
-    -- Auto-install mssing parsers
-    auto_install = true,
-
-    -- Enable highlighting.
-    highlight = {
-      enable = true,
-      use_languagetree = true,
-    },
-  })
-end))
+  -- Enable highlighting.
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+  },
+})
 
