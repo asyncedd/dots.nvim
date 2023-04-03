@@ -24,9 +24,8 @@ local plugins = {
     },
     {
       "rebelot/kanagawa.nvim",
-    }
+    },
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     init = lazyLoad("nvim-treesitter"),
@@ -38,12 +37,10 @@ local plugins = {
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   },
-
   {
     "andymass/vim-matchup",
     event = "CursorMoved",
   },
-
   {
     "neovim/nvim-lspconfig",
     init = lazyLoad("nvim-lspconfig"),
@@ -62,13 +59,11 @@ local plugins = {
       "ray-x/lsp_signature.nvim",
     }
   },
-
   {
     "j-hui/fidget.nvim",
     config = true,
     init = lazyLoad("fidget.nvim"),
   },
-
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -87,19 +82,16 @@ local plugins = {
       require("completion.cmp")
     end,
   },
-
   {
     "windwp/nvim-autopairs",
     config = true,
     event = "InsertEnter",
   },
-
   {
     "lukas-reineke/indent-blankline.nvim",
     config = true,
     init = lazyLoad("indent-blankline.nvim"),
   },
-
   {
     "lewis6991/gitsigns.nvim",
     config = function()
@@ -107,7 +99,6 @@ local plugins = {
     end,
     init = lazyLoad("gitsigns.nvim"),
   },
-
   {
     "rebelot/heirline.nvim",
     event = "BufReadPost",
@@ -118,7 +109,6 @@ local plugins = {
       "nvim-tree/nvim-web-devicons",
     },
   },
-
   {
     "ggandor/leap.nvim",
     event = "VeryLazy",
@@ -126,13 +116,11 @@ local plugins = {
       require("editor.leap")
     end,
   },
-
   {
     "LeonHeidelbach/trailblazer.nvim",
     config = true,
     event = "VeryLazy",
   },
-
   {
     "nvim-telescope/telescope.nvim",
     config = function()
@@ -143,7 +131,6 @@ local plugins = {
     },
     event = "VeryLazy"
   },
-
   {
     "thePrimeagen/harpoon",
     config = function()
@@ -154,13 +141,11 @@ local plugins = {
     },
     event = "VeryLazy",
   },
-
   {
     "NvChad/nvim-colorizer.lua",
     config = true,
     event = "VeryLazy",
   },
-
   {
     "glepnir/lspsaga.nvim",
     config = function()
@@ -172,7 +157,6 @@ local plugins = {
       { "nvim-treesitter/nvim-treesitter" },
     },
   },
-
   {
     "echasnovski/mini.nvim",
     config = function()
@@ -180,7 +164,6 @@ local plugins = {
     end,
     init = lazyLoad("mini.nvim"),
   },
-
   {
     "lukas-reineke/headlines.nvim",
     config = true,
@@ -188,7 +171,6 @@ local plugins = {
       "md",
     },
   },
-
   {
     "nvim-tree/nvim-tree.lua",
     config = function()
@@ -205,7 +187,6 @@ local plugins = {
       { "<leader>tr", "<cmd>NvimTreeToggle<cr>" },
     },
   },
-
   {
     "glepnir/dashboard-nvim",
     config = true,
@@ -222,7 +203,6 @@ local plugins = {
       })
     end,
   },
-
   {
     "folke/trouble.nvim",
     config = true,
@@ -235,7 +215,6 @@ local plugins = {
       { "gR", "<cmd>TroubleToggle lsp_references<cr>" },
     },
   },
-
   {
     "simrat39/symbols-outline.nvim",
     config = true,
