@@ -1,5 +1,5 @@
 local opts = require("options.opts")
 
 for k, v in pairs(opts) do
-  vim.opt[k] = v
+  vim.o[k] = v
 end
