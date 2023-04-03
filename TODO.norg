@@ -40,4 +40,7 @@ version: 0.1
    - Implementing "async" on some degree.
    - Achived 0 ms. But with some problems. Plugins that need to be loaded aren't being loaded properly etc...
 
+   Other problems:
+   - Neorg won't work as intended.
+
 
