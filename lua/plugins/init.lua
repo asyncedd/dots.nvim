@@ -18,6 +18,10 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 local disabledPlugins = require("user.builtinPlugins")
 
+if(require("user.settings").builtins.disable == true) then
+  disabledPlugins = {}
+end
+
 require("lazy").setup({
   { import = "plugins.specs" },
 }, {

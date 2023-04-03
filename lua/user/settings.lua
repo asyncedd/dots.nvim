@@ -17,6 +17,10 @@ M.plugins = {
   -- When installing plugins via lazy, colorschemes aren't loaded whilst installing a plugin.
   -- So, list some colorschemes to try to get lazy.nvim to load. (in order.)
   installColors = {
+    -- It goes like this in my case:
+    -- Tries to find Catppuccin and to load it.
+    -- If it's not installed, try to find tokyonight and load it.
+    -- Repeat.
     "catppuccin",
     "tokyonight",
     "kanagawa",
