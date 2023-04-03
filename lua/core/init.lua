@@ -6,9 +6,6 @@
 -- Quite useful ain't it? :)
 vim.g.mapleader = " "
 
--- Init is the first to be executed.
-require("core.neoinit")
-
 -- Set some options.
 -- Now, we can use shortcuts like `<leader>ff` to open Telescope.nvim.
 -- This will make out lives much easier! :D
@@ -18,9 +15,7 @@ require("core.options")
 -- We're gonna use the best tools for the job!
 require("core.lazy")
 
--- Let's load some plugins!
--- We could do this in the plugins spec, but let's take the finest control!
-require("plugins.loader")
+vim.cmd("colorscheme catppuccin")
 
 -- Do some stuff that aren't required in our UI. (mappings, autocmd etc...)
 -- Also without blocking the main thread for the maximum efficiency.
