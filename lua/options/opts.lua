@@ -40,7 +40,7 @@ local M = {
   winblend = 10, -- floating windows are sightly transparent.
 
   listchars = "extends:…,precedes:…,nbsp:␣", -- Some helper symbols.
-  list = true, -- Show them.
+  -- list = true, -- Show them.
 }
 
 return M
