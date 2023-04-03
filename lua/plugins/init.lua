@@ -28,8 +28,8 @@ plugins[3] = {
       dependencies = {
 	"williamboman/mason-lspconfig.nvim",
       },
-      init = require("lsp.mason"),
-      event = "BufReadPost",
+      config = require("lsp.mason"),
+      event = "BufRead",
     }
   }
 }
