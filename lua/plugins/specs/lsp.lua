@@ -34,6 +34,7 @@ return {
       "windwp/nvim-autopairs",
     },
     config = require("plugins.configs.completion.cmp"),
+    event = "InsertEnter",
   },
   -- LSP.
   {
