@@ -82,13 +82,6 @@ local plugins = {
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   },
-  -- {
-  --   "andymass/vim-matchup",
-  --   config = function()
-  --    require("editor.matchup")
-  --   end,
-  --   init = lazyLoad("vim-matchup"),
-  -- },
   {
     "neovim/nvim-lspconfig",
     init = lazyLoad("nvim-lspconfig"),
