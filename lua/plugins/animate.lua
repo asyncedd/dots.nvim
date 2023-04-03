@@ -1,7 +1,7 @@
 return {
   {
     "echasnovski/mini.animate",
-    event = "VimEnter",
+    event = "VeryLazy",
     config = require("configs.ui.animate"),
     dependencies = {
       { "tamton-aquib/flirt.nvim" }
