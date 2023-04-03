@@ -66,10 +66,10 @@ vim.schedule(function()
     })
   end)
 
-  -- Load options that don't require any UI
+  end)
+-- Load options that don't require any UI
   -- Moved this out of the options since it takes so long ;-;
   vim.schedule(function()
     vim.o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
   end)
-end)
 
