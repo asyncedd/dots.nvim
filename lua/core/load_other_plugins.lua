@@ -1,0 +1,7 @@
+vim.defer_fn(function()
+  require("configs.ui.animate")
+  require("configs.ui.indent")
+  require("configs.ui.matcher")
+  require("configs.editor.comment")
+  require("configs.editor.motion")
+end, 0)
