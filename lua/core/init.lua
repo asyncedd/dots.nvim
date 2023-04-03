@@ -24,36 +24,38 @@ require("core.lazy")
 
 vim.cmd("colorscheme catppuccin")
 
--- Load components in parallel using coroutines and thunks
-local function load_components(components)
-  local thunks = {}
-  for _, component in ipairs(components) do
-    table.insert(thunks, function()
-      require(component)
-    end)
-  end
-  local co = coroutine.create(function()
-    for _, thunk in ipairs(thunks) do
-      thunk()
-      coroutine.yield()
+vim.schedule(function()
+  -- Load components in parallel using coroutines and thunks
+  local function load_components(components)
+    local thunks = {}
+    for _, component in ipairs(components) do
+      table.insert(thunks, function()
+        require(component)
+      end)
     end
-  end)
-  while coroutine.resume(co) do
+    local co = coroutine.create(function()
+      for _, thunk in ipairs(thunks) do
+        thunk()
+        coroutine.yield()
+      end
+    end)
+    while coroutine.resume(co) do
+    end
   end
-end
 
--- Load components in parallel
-vim.schedule(function()
-  load_components({
-    "core.autocmd",
-    "mappings.movement",
-    "mappings.lspsaga",
-    "mappings.plugins",
-  })
+  -- Load components in parallel
+  vim.schedule(function()
+    load_components({
+      "core.autocmd",
+      "mappings.movement",
+      "mappings.lspsaga",
+      "mappings.plugins",
+    })
+  end)
+
+  -- Load options that don't require any UI
+  -- Moved this out of the options since it takes so long ;-;
+  vim.schedule(function()
+    vim.o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
+  end)
 end)
-
--- Load options that don't require any UI
-vim.schedule(function()
-  vim.o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
-end)
-
