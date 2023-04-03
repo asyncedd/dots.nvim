@@ -2,10 +2,10 @@ local M = {}
 
 M.setup = function()
   require("core.options")
-  vim.cmd.colorscheme "habamax"
+  require("core.lazy")
+  require("core.load_ui_plugins")
   vim.defer_fn(function ()
     -- simulate some heavy plugin loading
-    require("core.lazy")
     require("mappings.movement")
   end, 0)
 
