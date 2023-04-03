@@ -1,6 +1,7 @@
 local plugins = {}
 local disabledPlugins = require("user.builtinPlugins")
 local lazyLoad = require("core.utils.lazyLoad")
+local mini = require("editor.mini")
 
 plugins[1] = {
   "catppuccin/nvim",
@@ -129,26 +130,26 @@ plugins[16] = {
 
 plugins[17] = {
   "echasnovski/mini.cursorword",
-  config = require("editor.cursorword"),
-  init = lazyLoad("mini.cursorword"),
+  config = mini.cursorword,
+  event = "BufReadPost",
 }
 
 plugins[18] = {
   "echasnovski/mini.splitjoin",
-  config = require("editor.splitjoin"),
-  init = lazyLoad("mini.splitjoin"),
+  config = mini.splitJoin,
+  event = "BufReadPost",
 }
 
 plugins[19] = {
   "echasnovski/mini.surround",
-  config = require("editor.surround"),
-  init = lazyLoad("mini.surround"),
+  config = mini.surround,
+  event = "BufReadPost",
 }
 
 plugins[20] = {
   "NvChad/nvim-colorizer.lua",
   config = true,
-  init = lazyLoad("nvim-colorizer.lua")
+  event = "BufReadPost",
 }
 
 require("lazy").setup({
