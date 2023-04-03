@@ -5,7 +5,6 @@ return {
     dependencies = {
       "David-Kunz/markid",
     },
-    event = "BufReadPre",
-    piority = 1000,
+    event = "BufReadPost",
   },
 }
