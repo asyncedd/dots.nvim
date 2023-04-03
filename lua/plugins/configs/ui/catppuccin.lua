@@ -18,11 +18,6 @@ return function()
       strings = {},
       variables = {},
     },
-    compile = {
-      enabled = true,
-      path = vim.fn.stdpath("cache") .. "/catppuccin",
-      suffix = "_compiled",
-    },
     color_overrides = {
       mocha = {
         rosewater = "#F5E0DC",
@@ -61,14 +56,14 @@ return function()
           CursorLineNr = { fg = cp.green },
           Search = { bg = cp.surface1, fg = cp.pink, style = { "bold" } },
           IncSearch = { bg = cp.pink, fg = cp.surface1 },
-  Keyword = { fg = cp.pink },
-Type = { fg = cp.blue },
+          Keyword = { fg = cp.pink },
+          Type = { fg = cp.blue },
           Typedef = { fg = cp.yellow },
-  StorageClass = { fg = cp.red, style = { "italic" } },
+          StorageClass = { fg = cp.red, style = { "italic" } },
           LocalVariable = { fg = cp.pink, style = { "italic" } },
 
--- For trouble.nvim
--- For treesitter.
+          -- For trouble.nvim
+          -- For treesitter.
           ["@field"] = { fg = cp.rosewater },
           ["@include"] = { fg = cp.teal },
           ["@keyword.operator"] = { fg = cp.sky },

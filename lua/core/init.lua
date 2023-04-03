@@ -24,8 +24,8 @@ require("core.lazy")
 
 vim.cmd("colorscheme catppuccin")
 
-vim.schedule(function()
-  -- Load components in parallel using coroutines and thunks
+vim.schedule_wrap(function()
+  --   -- Load components in parallel using coroutines and thunks
   local function load_components(components)
     local thunks = {}
     for _, component in ipairs(components) do
