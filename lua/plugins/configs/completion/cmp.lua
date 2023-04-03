@@ -103,7 +103,6 @@ return function()
       },
     },
     sources = cmp.config.sources({
-      { name = 'conventionalcommits' },
       { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
     }, {
         { name = "buffer" },
@@ -123,7 +122,6 @@ return function()
     },
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'nvim_lsp_document_symbol' },
       { name = "buffer" },
     },
   })
