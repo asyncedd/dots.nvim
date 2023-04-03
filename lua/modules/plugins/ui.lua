@@ -18,4 +18,10 @@ table.insert(ui, {
   config = require("modules.configs.ui.indentscope")
 })
 
+table.insert(ui, {
+  "nvim-lualine/lualine.nvim",
+  event = "BufReadPost",
+  config = require("modules.configs.ui.lualine")
+})
+
 return ui
