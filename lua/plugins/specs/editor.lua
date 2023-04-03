@@ -29,7 +29,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "andymass/vim-matchup",
-      "David-Kunz/markid",
+      -- "David-Kunz/markid",
       "HiPhish/nvim-ts-rainbow2",
       "nvim-treesitter/nvim-treesitter-refactor",
     },
