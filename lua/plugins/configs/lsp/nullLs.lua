@@ -1,11 +1,15 @@
 return function()
   local nls = require("null-ls")
+  local builtins = nls.builtins
 
   nls.setup({
     sources = {
-      nls.builtins.formatting.stylua,
-      -- nls.builtins.diagnostics.luacheck,
-      -- nls.builtins.diagnostics.selene,
+      builtins.formatting.stylua,
+      -- builtins.diagnostics.luacheck,
+      -- builtins.diagnostics.selene,
+      builtins.diagnostics.todo_comments,
+      builtins.diagnostics.trail_space,
+      -- builtins.completion.luasnip,
     },
   })
 
@@ -21,3 +25,4 @@ return function()
 
   require("mason-null-ls").setup_handlers({})
 end
+
