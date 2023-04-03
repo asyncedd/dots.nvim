@@ -6,7 +6,7 @@ return {
   -- Indent blanklines
   {
     "lukas-reineke/indent-blankline.nvim",
-    config = require("plugins.configs.ui.indentBlankline"),
+    config = require("ui.indentBlankline"),
     event = "BufReadPost",
   },
   -- Colorizer
@@ -19,7 +19,7 @@ return {
   {
     "rebelot/heirline.nvim",
     config = function()
-      require("plugins.configs.ui.heirline")
+      require("ui.heirline")
     end,
     event = { "BufReadPost", "VeryLazy" },
   },

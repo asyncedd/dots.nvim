@@ -15,7 +15,7 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    config = require("plugins.configs.tools.tree"),
+    config = require("tools.tree"),
     event = "VeryLazy",
   },
   -- Intergrate Git with Neovim.
