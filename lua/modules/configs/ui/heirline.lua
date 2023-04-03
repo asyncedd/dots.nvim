@@ -6,15 +6,18 @@ return function()
   local filename = require("ui.heirline.filename")
   local filetype = require("ui.heirline.filetype")
   -- local fileEncoding = require("ui.heirline.file_encoding")
-  local fileSize = require("ui.heirline.filesize")
+  -- local fileSize = require("ui.heirline.filesize")
+  local ruler = require("ui.heirline.ruler")
+  local scrollbar = require("ui.heirline.scrollbar")
+  local lspactive = require("ui.heirline.lsp")
   require("heirline").load_colors(colors())
   local Space = { provider = " " }
   local Align = { provider = "%=" }
 
   local DefaultStatusLine = {
-    ViMode, Space, filename, Align,
+    ViMode, Space, filename, lspactive, Align,
     Align,
-    filetype, Space, fileSize
+    Align, ruler, Space, scrollbar, Space, filetype, Space
   }
 
   local StatusLines = {
