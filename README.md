@@ -6,3 +6,7 @@ My personal Neovim configuration
 - **Modular**. 💪 Extremely modular.
 - **Fun** 🖌 Expressive config based on [aymir's dotfiles](https://github.com/ayamir/nvimdots)
 - **Simple** 🤔 Sane defaults. Works out of the box ™️
+
+## Performance
+I'm running Neovim on a quite weak machine so, I won't brag about the startup time 😎. Anyways some features:
+- 
