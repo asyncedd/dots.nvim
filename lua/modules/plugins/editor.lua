@@ -27,6 +27,7 @@ table.insert(editor, {
 table.insert(editor, {
   "folke/twilight.nvim",
   event = "BufReadPost",
+  config = require("modules.configs.editor.twilight")
 })
 
 return editor
