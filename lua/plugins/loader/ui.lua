@@ -5,7 +5,7 @@ require("plugins.configs.editor.treesitter")
 vim.defer_fn(function ()
   -- Load indent-blankline and NvChad/Colorizer.nvim later.
   -- Also pretty-fold and mini.cursorword
-  vim.defer_fn(function ()
+  vim.schedule(function ()
     require("indent_blankline").setup({
       show_end_of_line = true,
       space_char_blankline = " ",
@@ -22,10 +22,10 @@ vim.defer_fn(function ()
       symbol = "│",
       options = { try_as_border = true },
     })
-  end, 25)
+  end)
 
-  vim.defer_fn(function ()
+  vim.schedule(function ()
     -- I love heirline.nvim so it can load faster. (What is the logic behind this?)
     require("plugins.configs.ui.heirline")
-  end, 15)
+  end)
 end, 75)

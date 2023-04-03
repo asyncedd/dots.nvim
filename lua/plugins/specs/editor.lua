@@ -1,10 +1,6 @@
 return {
   -- Comment
-  {
-    "numToStr/Comment.nvim",
-    config = true,
-    event = "VeryLazy"
-  },
+  "numToStr/Comment.nvim",
   -- UFO
   -- {
   --   "kevinhwang91/nvim-ufo",

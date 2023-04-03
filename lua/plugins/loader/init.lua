@@ -1,2 +1,2 @@
--- load UI plugins first.
 require("plugins.loader.ui")
+require("plugins.loader.editor")
