@@ -1,4 +1,4 @@
-local pluginSpec = require("core.lazy.plugins")
+local pluginSpec = require("plugins")
 local disabledPlugins = require("user.builtinPlugins")
 
 require("lazy").setup({
@@ -11,5 +11,9 @@ require("lazy").setup({
   },
   install = {
     colorscheme = { "catppuccin" }
-  }
+  },
+  default = {
+    lazy = true,
+    version = false,
+  },
 })
