@@ -32,10 +32,6 @@ It had optimized my workspace and, improve my productivity.
 
 - If you're planning on using Astro and some markdown LSP, you have to have `npm` installed and added to your PATH. Just use a package manager. If you're not going to use them, please comment them out in `lua/plugins/configs/lsp/mason.lua` and `lua/plugins/configs/lps/config.lua`.
 
-- If you don't want random popups from `null-ls` urging you to install `luacheck`, just install `luarocks` not `luacheck`. You can install `luacheck` but it'll look better with just `luarocks`. Mason will automatically install it. If you're not going to use `luacheck` just comment out it in `lua/plugins/configs/lsp/null.lua`. Shouldn't be that hard.
-
-- If you spot slow performance when not using the vanilla ol' `nvim` open an issue. :) (When it's 50% slower than `nvim --clean`.)
-
 - If want to exit Neovim, just plug out your computer (or for laptop users... >:) You don't want to). I meant, that'll never work.
 
 ## 🤨 Crash course: Installing

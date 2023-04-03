@@ -93,8 +93,6 @@ return {
       end,
     },
     "olimorris/onedarkpro.nvim",
-    "EdenEast/nightfox.nvim",
-    "sainnhe/gruvbox-material",
   },
   {
     "folke/drop.nvim",

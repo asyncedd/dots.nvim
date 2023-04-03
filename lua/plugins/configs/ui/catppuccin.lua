@@ -32,8 +32,6 @@ require("catppuccin").setup({
       ["@lsp.type.function"] = { fg = cp.blue },
 
       ["@variable"] = { fg = cp.pink },
-      ["@parameter"] = { fg = cp.red },
-
     }
   end,
   color_overrides = {
@@ -71,30 +69,10 @@ require("catppuccin").setup({
       crust = "#161320",
     },
   },
-  styles = {
-    comments = { "italic" },
-    conditionals = { "italic" },
-    loops = { "bold" },
-    functions = { "bold" },
-    keywords = { "bold" },
-    strings = {},
-    variables = {},
-    numbers = { "bold" },
-    booleans = { "bold" },
-    properties = {},
-    types = { "bold" },
-    operators = {},
-  },
   integrations = {
     mini = true,
     native_lsp = {
       enabled = true,
-      virtual_text = {
-        errors = { "italic" },
-        hints = { "italic" },
-        warnings = { "italic" },
-        information = { "italic" },
-      },
       underlines = {
         errors = { "undercurl" },
         hints = { "underline" },
@@ -102,10 +80,6 @@ require("catppuccin").setup({
         information = { "underline" },
       },
     },
-    cmp = true,
-    treesitter = true,
-    ts_rainbow2 = true,
-    noice = true,
   },
   compile = {
     enabled = true,

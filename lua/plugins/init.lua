@@ -39,6 +39,6 @@ require("lazy").setup({
     version = false,
   },
   ui = {
-    throttle = 100,
+    throttle = 200,
   },
 })
