@@ -1,0 +1,180 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.061  000.061: --- NVIM STARTING ---
+000.471  000.410: event init
+000.717  000.245: early init
+003.733  003.017: locale set
+003.932  000.199: init first window
+006.416  002.484: inits 1
+006.501  000.085: window checked
+006.546  000.046: parsing arguments
+008.220  000.136  000.136: require('vim.shared')
+008.483  000.100  000.100: require('vim._meta')
+008.488  000.255  000.154: require('vim._editor')
+0
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.088  000.088: --- NVIM STARTING ---
+000.601  000.513: event init
+000.922  000.322: early init
+006.375  005.453: locale set
+006.588  000.212: init first window
+007.586  000.998: inits 1
+007.650  000.064: window checked
+007.673  000.023: parsing arguments
+008.671  000.129  000.129: require('vim.shared')
+008.931  000.103  000.103: require('vim._meta')
+008.936  000.246  000.143: require('vim._editor')
+008.939  000.455  000.080: require('vim._init_packages')
+008.990  000.862: init lua interpreter
+010.676  001.687: expanding arguments
+010.859  000.182: inits 2
+011.373  000.514: init highlight
+011.377  000.004: waiting for UI
+012.127  000.749: done waiting for UI
+012.149  000.022: clear screen
+012.387  000.239: init default mappings
+012.418  000.030: init default autocommands
+012.424  000.006: sourcing vimrc file(s)
+012.446  000.022: inits 3
+012.455  000.009: reading ShaDa
+012.744  000.289: opening buffers
+012.749  000.005: BufEnter autocommands
+012.787  000.038: editing files in windows
+013.820  001.033: executing command arguments
+013.826  000.006: VimEnter autocommands
+013.831  000.005: UIEnter autocommands
+013.837  000.007: before starting main loop
+1959.298  1945.461: first screen update
+1959.307  000.009: --- NVIM STARTED ---
+08.491  000.469  000.079: require('vim._init_packages')
+008.678  001.663: init lua interpreter
+015.178  006.500: expanding arguments
+015.429  000.252: inits 2
+016.022  000.593: init highlight
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.080  000.080: --- NVIM STARTING ---
+000.674  000.593: event init
+000.923  000.250: early init
+003.928  003.004: locale set
+004.113  000.186: init first window
+005.186  001.073: inits 1
+005.215  000.029: window checked
+005.240  000.025: parsing arguments
+006.220  000.140  000.140: require('vim.shared')
+006.467  000.097  000.097: require('vim._meta')
+006.472  000.236  000.138: require('vim._editor')
+0
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.076  000.076: --- NVIM STARTING ---
+000.528  000.452: event init
+000.785  000.257: early init
+004.761  003.976: locale set
+004.986  000.225: init first window
+005.958  000.972: inits 1
+006.018  000.060: window checked
+006.042  000.024: parsing arguments
+007.013  000.132  000.132: require('vim.shared')
+007.263  000.101  000.101: require('vim._meta')
+007.268  000.238  000.137: require('vim._editor')
+007.271  000.447  000.076: require('vim._init_packages')
+007.313  000.825: init lua interpreter
+008.978  001.664: expanding arguments
+009.133  000.155: inits 2
+009.639  000.506: init highlight
+009.643  000.004: waiting for UI
+010.386  000.744: done waiting for UI
+010.409  000.022: clear screen
+010.670  000.261: init default mappings
+010.702  000.032: init default autocommands
+010.708  000.007: sourcing vimrc file(s)
+010.731  000.023: inits 3
+010.740  000.009: reading ShaDa
+011.000  000.260: opening buffers
+011.005  000.006: BufEnter autocommands
+011.044  000.039: editing files in windows
+012.031  000.987: executing command arguments
+012.037  000.006: VimEnter autocommands
+012.042  000.004: UIEnter autocommands
+012.048  000.006: before starting main loop
+06.475  000.456  000.080: require('vim._init_packages')
+006.518  000.823: init lua interpreter
+013.664  007.146: expanding arguments
+014.000  000.335: inits 2
+014.824  000.824: init highlight
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.064  000.064: --- NVIM STARTING ---
+000.478  000.414: event init
+000.725  000.246: early init
+004.162  003.437: locale set
+004.370  000.208: init first window
+005.398  001.028: inits 1
+005.426  000.029: window checked
+005.441  000.015: parsing arguments
+006.798  000.189  000.189: require('vim.shared')
+007.734  000.610  000.610: require('vim._meta')
+007.751  000.917  000.307: require('vim._editor')
+0
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.069  000.069: --- NVIM STARTING ---
+000.472  000.403: event init
+000.727  000.255: early init
+003.935  003.208: locale set
+004.125  000.190: init first window
+004.911  000.786: inits 1
+004.970  000.059: window checked
+004.985  000.015: parsing arguments
+006.310  000.185  000.185: require('vim.shared')
+006.725  000.109  000.109: require('vim._meta')
+006.730  000.395  000.286: require('vim._editor')
+006.734  000.719  000.140: require('vim._init_packages')
+006.801  001.096: init lua interpreter
+008.898  002.097: expanding arguments
+009.081  000.183: inits 2
+009.612  000.531: init highlight
+009.616  000.004: waiting for UI
+010.402  000.787: done waiting for UI
+010.425  000.022: clear screen
+010.678  000.253: init default mappings
+010.710  000.032: init default autocommands
+010.716  000.007: sourcing vimrc file(s)
+010.739  000.022: inits 3
+010.747  000.009: reading ShaDa
+011.034  000.286: opening buffers
+011.039  000.006: BufEnter autocommands
+011.077  000.038: editing files in windows
+011.091  000.015: VimEnter autocommands
+011.096  000.004: UIEnter autocommands
+011.102  000.006: before starting main loop
+012.293  001.191: first screen update
+012.298  000.005: --- NVIM STARTED ---
+07.757  001.236  000.130: require('vim._init_packages')
+007.984  001.307: init lua interpreter
+014.814  006.830: expanding arguments
+015.072  000.258: inits 2
+015.681  000.609: init highlight
