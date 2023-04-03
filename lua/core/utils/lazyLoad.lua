@@ -16,7 +16,7 @@ return function(plugin)
           vim.schedule(function()
             require("lazy").load({ plugins = plugin })
 
-            if plugin == "nvim-lspconfig" then
+            if plugin == "nvim-lspconfig" or plugin == "null-ls" then
               vim.cmd("silent! do FileType")
             end
           end)
