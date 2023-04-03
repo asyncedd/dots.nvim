@@ -34,6 +34,12 @@ o("tabstop", 2, {}) -- Insert two tabs per <TAB>
 -- 2.3 Wrap related options.
 o("wrap", true, {}) -- Show long lines as multiple lines.
 
+-- 2.4 Folding.
+o("foldcolumn", "1", {})
+o("foldlevel", 99, {})
+o("foldlevelstart", 99, {})
+o("foldenable", true, {})
+
 -- =======================================
 -- 3. UI related options.
 -- =======================================
