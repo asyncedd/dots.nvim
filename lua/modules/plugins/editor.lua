@@ -8,12 +8,14 @@ editor["nvim-treesitter/nvim-treesitter"] = {
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "windwp/nvim-ts-autotag" },
     -- { "p00f/nvim-ts-rainbow" },
-  { "nvim-treesitter/playground" }
+    { "nvim-treesitter/playground" },
+    { "HiPhish/nvim-ts-rainbow2" }
   },
 }
 
 editor["numToStr/Comment.nvim"] = {
   event = "VeryLazy",
+  config = require("editor.comment")
 }
 
 editor["windwp/nvim-autopairs"] = {
