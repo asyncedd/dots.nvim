@@ -1,4 +1,5 @@
 return {
+  -- Luasnip
   {
     "L3MON4D3/LuaSnip",
     opts = {
@@ -45,7 +46,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
     },
-    config = require("plugins.configs.completion.cmp"),
+    config = require("completion.cmp"),
     event = "InsertEnter",
   },
   -- LSP.
@@ -60,19 +61,19 @@ return {
       "folke/neodev.nvim",
       "ray-x/lsp_signature.nvim",
     },
-    config = require("plugins.configs.lsp.lspconfig"),
+    config = require("lsp.lspconfig"),
     event = "BufReadPost",
   },
   -- Fidget.nvim - a plugin to show the LSP loading stuff.
   {
     "j-hui/fidget.nvim",
-    config = require("plugins.configs.lsp.fidget"),
+    config = require("lsp.fidget"),
     event = "BufReadPost",
   },
   -- Trouble.nvim - a plugin to show some LSP diagnostics in a tree menu!
   {
     "folke/trouble.nvim",
-    config = require("plugins.configs.lsp.trouble"),
+    config = require("lsp.trouble"),
     event = "BufReadPost",
   },
   -- LSPSaga - some cool stuff for LSP.
@@ -82,19 +83,19 @@ return {
       "nvim-tree/nvim-web-devicons",
       "nvim-treesitter/nvim-treesitter",
     },
-    config = require("plugins.configs.lsp.lspsaga"),
+    config = require("lsp.lspsaga"),
     event = "BufReadPost",
   },
   -- LSPSignature - show definations as you type!
   {
     "ray-x/lsp_signature.nvim",
-    config = require("plugins.configs.lsp.signature"),
+    config = require("lsp.signature"),
     event = "BufReadPost",
   },
   -- NullLs - Do some non-LSP stuff as LSP.
   {
     "jose-elias-alvarez/null-ls.nvim",
-    config = require("plugins.configs.lsp.nullLs"),
+    config = require("lsp.nullLs"),
     event = "BufReadPost",
   },
 }
