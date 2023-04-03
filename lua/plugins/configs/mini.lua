@@ -47,3 +47,5 @@ map.setup({
 })
 
 map.toggle()
+
+require("mini.animate").setup()

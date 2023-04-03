@@ -47,6 +47,14 @@ o.cul = true
 -- Have those glorious 24 bit colors! Take that Windows XP!
 o.tgc = true -- tgc = term gui colors.
 
+-- 3.3 Some stuff I totally didn't steal from mini.basics
+o.pumblend  = 10 -- Make builtin completion menus slightly transparent
+o.pumheight = 10 -- Make popup menu smaller
+o.winblend  = 10 -- Make floating windows slightly transparent
+
+o.shortmess:append('WcC') -- Reduce command line messages
+o.splitkeep = 'screen'      --
+
 --  +----------------------------------------------------------+
 --  |                        4. Windows                        |
 --  +----------------------------------------------------------+
