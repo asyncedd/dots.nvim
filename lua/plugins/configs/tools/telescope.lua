@@ -1,19 +1,16 @@
-local no_preview = function()
-  return require("telescope.themes").get_dropdown({
-    borderchars = {
-      { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-      prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
-      results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
-      preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+require("telescope").setup({
+  extensions = {
+    undo = {
+      -- telescope-undo.nvim config, see below
     },
-    width = 0.8,
-    previewer = false,
-    prompt_title = false,
-  })
-end
+  },
+})
+require("telescope").load_extension("undo")
 
 -- then use it on whatever picker you want
 -- ex:
 vim.keymap.set("n", "<leader>ff", function()
-  require("telescope.builtin").find_files(no_preview())
+  require("telescope.builtin").find_files()
 end)
+
+vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
