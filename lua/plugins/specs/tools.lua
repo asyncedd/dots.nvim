@@ -7,7 +7,6 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "debugloop/telescope-undo.nvim",
-      "sudormrfbin/cheatsheet.nvim",
     },
     event = "VeryLazy",
   },

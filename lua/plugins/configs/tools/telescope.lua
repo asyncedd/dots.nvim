@@ -21,4 +21,3 @@ keymap("n", "<leader>u", "<cmd>Telescope undo<cr>")
 
 keymap("n", "<leader>yh", "<cmd>Telescope yank_history<cr>")
 
-require("cheatsheet").setup()
