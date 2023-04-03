@@ -18,7 +18,9 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 local disabledPlugins = require("user.builtinPlugins")
 local lazyLoad = function(plugin) -- Stole this from NvChad, hehe.
-  vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, { group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}), callback = function()
+  vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
+    group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),
+    callback = function()
       local file = vim.fn.expand "%"
       local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
 
@@ -27,7 +29,8 @@ local lazyLoad = function(plugin) -- Stole this from NvChad, hehe.
 
         -- dont defer for treesitter as it will show slow highlighting
         -- This deferring only happens only when we do "nvim filename"
-        if plugin ~= "nvim-treesitter" then vim.schedule(function() require("lazy").load({ plugins = plugin })
+        if plugin ~= "nvim-treesitter" then
+          vim.schedule(function() require("lazy").load({ plugins = plugin })
 
             if plugin == "nvim-lspconfig" or plugin == "null-ls" then
               vim.cmd("silent! do FileType")
@@ -77,6 +80,13 @@ local plugins = {
     end,
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+  },
+  {
+    "andymass/vim-matchup",
+    config = function()
+      vim.g.matchup_matchparen_offscreen = { method = "off" }
+    end,
+    init = lazyLoad("vim-matchup"),
   },
   {
     "neovim/nvim-lspconfig",
