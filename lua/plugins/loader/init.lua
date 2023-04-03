@@ -6,7 +6,8 @@
 -- Catppuccin (colroscheme) ->
 -- Treesitter (syntax highlighting) ->
 -- Nonblocking -> {
---  Colorizer (colorer) + Heirline (statusline)
+--  Colorizer (colorizer) + Heirline (statusline)
+--  CCC.nvim (color code visualizer)
 --  mini.cursorword (Word under cursor highlighter)
 --  indent-blankline + mini.indentscope (Indent visualizers)
 -- }
