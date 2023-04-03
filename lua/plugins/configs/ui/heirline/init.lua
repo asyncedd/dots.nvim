@@ -8,6 +8,7 @@ return function()
   local Scrollbar = require("plugins.configs.ui.heirline.scrollbar")
   local File = require("plugins.configs.ui.heirline.file")
   local LSP = require("plugins.configs.ui.heirline.lsp")
+  local Bufferline = require("plugins.configs.ui.heirline.bufferline")
 
   heirline.load_colors(colors)
 
@@ -18,6 +19,10 @@ return function()
     ViMode, Space, FileName.WorkDir, Space, FileName.FileNameBlock, Space, Gitsigns, Space,
     LSP.LSPActive, LSP.Diagnostics, Align,
     File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar,
+  }
+
+  local Bufferline = {
+    Bufferline.BufferLine
   }
 
   local StatusLines = {
