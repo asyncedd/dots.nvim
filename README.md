@@ -9,14 +9,8 @@ It had optimized my workspace and, improve my productivity.
 
 **Wait less, do more.**
 
-## ⁉ Q&A
-### Why did you make this?
-I started creating nvim configs when I figured none of the "distros" doesn't provide support for Windows. Made a configuration and dopamine did rest of the work!
-### Why would your configuration when I could use others and possibly make my own?
-You don't have to. I just made this as a personal configuration that is dead simple.
-
 ## 🧱 A list of plugins
-* [lazy.nvim 💤](https://github.com/folke/lazy.nvim) - A featureful plugin manager. Post modern `vim-plug`!
+* **[lazy.nvim 💤](https://github.com/folke/lazy.nvim)** - A featureful plugin manager. Post modern `vim-plug`!
 * [Catppuccin ☕](https://github.com/catppuccin/nvim) - A *beautiful*, colorful colorscheme.
 * [Nvim-treesitter 🌳](https://github.com/nvim-treesitter/nvim-treesitter) - An additional abstract layer on top on the original Treesitter. (Actually 99% of it's users just use it for syntax highlighting)
 * [leap.nvim 🦘](https://github.com/ggandor/leap.nvim) - Super fast motion plugin! Leap across your code!
@@ -42,4 +36,4 @@ Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim). T
 Then once it finished, you're done! (actually)
 
 ## 😰 Quitting Nvim.
-You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D *(hint: you gotta be tpope level to quit Neovim.)*
+You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
