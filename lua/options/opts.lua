@@ -9,7 +9,7 @@ local M = {
 
   -- Apperance
   breakindent = true, -- Indent wrapped lines to match line start
-  cursorline = true -- Highlight the line we're currently editting.
+  cursorline = true, -- Highlight the line we're currently editting.
   linebreak = true, -- Break long lines into multiple. visually.
   number = true, -- Enable line numbers
 }
