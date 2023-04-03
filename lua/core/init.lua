@@ -1,4 +1,5 @@
 -- Neoinit v.0.1
+local o = vim.opt
 
 -- Load the configuration file.
 local config = require("user.settings")
@@ -27,7 +28,15 @@ vim.api.nvim_command("colorscheme " .. colorscheme)
 -- Set some icons
 require("core.setIcons")
 
+vim.api.nvim_create_autocmd("BufReadPre", {
+  callback = function ()
+    o.shadafile = ""
+  end
+})
+
 vim.schedule(function ()
   -- Load options that don't require any UI
-  vim.opt.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
+  o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
+  -- 1.2 Persistent undos, across sessions.
+  o.undofile = true
 end)
