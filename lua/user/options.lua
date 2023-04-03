@@ -100,9 +100,9 @@ if vim.g.neovide then
   g.neovide_transparency = 0.9
 
   -- Make floating windows a little bit blurry.
-  g.neovide_floating_blur_amount_x = 1.1
+  g.neovide_floating_blur_amount_x = 1.0
 
-  g.neovide_floating_blur_amount_y = 1.1
+  g.neovide_floating_blur_amount_y = 1.0
 
   -- 6.3 Neovide zoom settings.
   -- Make Neovide not too zoomed in.

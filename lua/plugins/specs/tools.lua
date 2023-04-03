@@ -54,9 +54,7 @@ return {
     keys = {
       { "<leader>gt", "<cmd>Neogit<cr>" },
     },
-    config = function()
-      require("tools.neogit")
-    end,
+    config = true,
   },
   {
     "rafcamlet/nvim-luapad",
