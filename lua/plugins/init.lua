@@ -197,7 +197,7 @@ plugins[19] = {
         end
       end
     })
-  end
+  end,
 }
 
 plugins[20] = {
@@ -210,7 +210,7 @@ plugins[20] = {
     { "<leader>xl", "<cmd>TroubleToggle loclist<cr>" },
     { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>" },
     { "gR", "<cmd>TroubleToggle lsp_references<cr>" },
-  }
+  },
 }
 
 plugins[21] = {
@@ -218,7 +218,7 @@ plugins[21] = {
   config = true,
   keys = {
     { "<leader>so", "<cmd>SymbolsOutline<cr>" }
-  }
+  },
 }
 
 require("lazy").setup({
