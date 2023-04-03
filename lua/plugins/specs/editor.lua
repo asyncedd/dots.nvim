@@ -58,6 +58,7 @@ return {
       require("plugins.configs.editor.treesitter")
     end,
     event = "BufReadPost",
+    priority = 100,
   },
   -- TrailBlazer.nvim
   {
