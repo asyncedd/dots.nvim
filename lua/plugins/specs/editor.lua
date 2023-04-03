@@ -70,6 +70,7 @@ return {
     dependencies = {
       "andymass/vim-matchup",
     },
-    event = "BufReadPost",
+    -- event = "BufReadPost",
+    event = { "CursorHold", "CursorHoldI" }
   },
 }
