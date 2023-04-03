@@ -9,7 +9,7 @@ M.setup = function()
 
   -- Set some mappings for Neovim.
   require("core.keymaps")
-
+  require("core.autocmds")
 
   local colorscheme = require("core.settings").colorscheme
 
