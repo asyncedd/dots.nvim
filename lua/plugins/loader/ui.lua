@@ -10,9 +10,9 @@ local cats_in_line = vim.schedule
 require("plugins.configs.ui.catppuccin")
 -- Nvim.treesitter makes our highlighting beautiful.
 
-vim.defer_fn(function ()
+vim.defer_fn(function()
   require("plugins.configs.editor.treesitter")
-end, 25)
+end, 0)
 
 -- These are the options for mini.indentscope.
 local indentscope_opts = {
