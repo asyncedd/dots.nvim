@@ -6,9 +6,10 @@
   "leap-spooky.nvim": { "branch": "main", "commit": "0bb68f00a02f16085aad6a2b2cea9e53781fb05a" },
   "leap.nvim": { "branch": "main", "commit": "9a69febb2e5a4f5f5a55dd2d7173098fde917bc5" },
   "mini.ai": { "branch": "main", "commit": "ce822c6e6fe3aaf7cb29874e669b2d96febc97e5" },
+  "mini.animate": { "branch": "main", "commit": "43122cbcfba32e4ecba6685c1ad9fa276c7b15c1" },
   "mini.indentscope": { "branch": "main", "commit": "f3bbd793fac80638bb5f4ef173eb514170aa22b3" },
+  "mini.surround": { "branch": "main", "commit": "6a4f31e2a380439315729f561d7e7898bde1fd52" },
   "nvim": { "branch": "main", "commit": "4175759297350557315987d479fb687a9f0b781f" },
   "nvim-treesitter": { "branch": "master", "commit": "53695580e38d9ab5f858e8966275f1992bd2e2ec" },
-  "specs.nvim": { "branch": "main", "commit": "2743e412bbe21c9d73954c403d01e8de7377890d" },
   "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
 }

@@ -26,7 +26,9 @@ require("lazy").setup({
         "spellfile",
         "shada",
         "tarPlugin",
-        "tutor"
+        "tutor",
+        "matchit",
+        "matchparen",
       },
     },
   },
