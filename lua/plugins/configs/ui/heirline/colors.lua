@@ -2,6 +2,7 @@ local heirline = require("heirline")
 local utils = require("heirline.utils")
 
 local colors = {
+  normal = utils.get_highlight("Normal").bg,
   bright_bg = utils.get_highlight("Folded").bg,
   bright_fg = utils.get_highlight("Folded").fg,
   red = utils.get_highlight("DiagnosticError").fg,
