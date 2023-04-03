@@ -7,4 +7,7 @@ require("gitsigns").setup({
     changedelete = { text = "▎" },
     untracked = { text = "▎" },
   },
+  signcolumn = true,
+  numhl = true,
+  current_line_blame = true,
 })
