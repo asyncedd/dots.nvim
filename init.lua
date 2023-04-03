@@ -14,16 +14,16 @@ o.undofile = false
 
 require("user.options")
 
+local config = vim.fn.stdpath("config")
+
 -- Allow searching in `lua/plugins/configs/x.lua` or `lua/plugins/configs/x/init.lua`
-package.path = vim.fn.stdpath("config") .. "/lua/plugins/configs/?.lua;" .. package.path
-package.path = vim.fn.stdpath("config") .. "/lua/plugins/configs/?/init.lua;" .. package.path
+package.path = config .. "/lua/plugins/configs/?.lua;" .. config .. "/lua/plugins/configs/?/init.lua;" .. package.path
 
 require("plugins")
 
-local colorscheme = require("user.settings").colorscheme
-vim.api.nvim_command("colorscheme " .. colorscheme)
+vim.api.nvim_command("colorscheme " .. require("user.settings").colorscheme)
 
-vim.defer_fn(function ()
+vim.schedule(function ()
   require("core.after")
-end, 0)
+end)
 
