@@ -1,10 +1,10 @@
 @document.meta
-  title: TODO
-  description: Some TODO stuff that I can MEMO
-  author: asyncedd
-  categories: MEMO
-  created: 2023-02-25
-  version: 0.1
+title: TODO
+description: Some TODO stuff that I can MEMO
+author: asyncedd
+categories: MEMO
+created: 2023-02-25
+version: 0.1
 @end
 
 = TOC
@@ -28,3 +28,15 @@
    - Better performance may come at a cost of customization.
    - I've tried caching but it's too difficult or slow.
    - Tradeoffs of performance and features are difficult for me to decide.
+
+   I've tried:
+   - Writing it in Rust
+   - Implementing async
+   - Rewritting (AKA "borrowing" code) the module finder
+   - Build nvim builds with `-Ofast`
+
+   What worked:
+   - Building nvim with `-Ofast`, but I don't remember how I did it.
+   - Implementing "async" on some degree.
+
+
