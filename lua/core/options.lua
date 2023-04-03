@@ -42,4 +42,4 @@ o.number = true -- Enable line numbers
 
 -- 3.2 See invisible characters 🧐
 o.list = true -- Enable seeing invisible characters (actually it's UI characters)
-o.listchars = "eol:↴,space:⋅"
+o.listchars = "eol:↴,space:⋅" -- See Spaces and eol's as a character.
