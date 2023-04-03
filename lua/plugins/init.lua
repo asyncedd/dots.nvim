@@ -149,6 +149,12 @@ plugins[20] = {
   event = "VeryLazy",
 }
 
+plugins[21] = {
+  "glepnir/lspsaga.nvim",
+  config = true,
+  init = lazyLoad("lspsaga.nvim"),
+}
+
 require("lazy").setup({
   plugins,
 }, {
