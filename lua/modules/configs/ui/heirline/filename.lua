@@ -77,6 +77,4 @@ table.insert(FileNameBlock, { provider = '%<' })
 -- utils.surround({ "", "" }, "bright_bg", { FileNameBlock })
 -- return FileNameBlock
 
-local bubblyBlock = utils.surround({ "", "" }, "bright_bg", { FileNameBlock })
-
-return bubblyBlock
+return FileNameBlock
