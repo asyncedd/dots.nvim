@@ -11,7 +11,9 @@ return {
       pathStrict = false,
     },
     diagnostics = {
-      globals = { "vim" },
+      globals = {
+        "vim",
+      },
     },
     workspace = {
       library = {
