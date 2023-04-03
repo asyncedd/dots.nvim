@@ -1,6 +1,7 @@
 vim.go.loadplugins = false
 -- Call setup
 local deinpath = vim.fn.stdpath("cache") .. "dein"
+
 if not vim.loop.fs_stat(deinpath) then
   -- stylua: ignore
   vim.fn.system({
