@@ -5,6 +5,13 @@ return function()
 
   require("nvim-autopairs").setup()
 
+  require'cmp'.setup.buffer {
+    sources = require'cmp'.config.sources(
+      {{ name = 'conventionalcommits' }},
+      {{ name = 'buffer' }}
+    ),
+  }
+
   cmp.setup({
     snippet = {
       expand = function(args)
