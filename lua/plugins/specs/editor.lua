@@ -19,7 +19,10 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = {
+      "InsertEnter",
+      "CmdlineEnter",
+    },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       {
@@ -52,6 +55,8 @@ return {
       },
       "hrsh7th/cmp-nvim-lua",
       "windwp/nvim-autopairs",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-path",
     },
     config = function()
       require("completion.cmp")
