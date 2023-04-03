@@ -49,6 +49,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
+    { name = "codeium" },
     { name = "luasnip" },
     { name = "buffer" },
   }),
@@ -67,3 +68,4 @@ cmp.setup({
     ghost_text = true,
   },
 })
+

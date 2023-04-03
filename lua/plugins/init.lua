@@ -131,11 +131,18 @@ local plugins = {
               require("luasnip.loaders.from_vscode").lazy_load()
             end,
           },
-          "onsails/lspkind.nvim"
         },
       },
+      "onsails/lspkind.nvim",
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-buffer",
+      {
+        "jcdickinson/codeium.nvim",
+        config = true,
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+        },
+      }
     },
     config = function()
       require("completion.cmp")
