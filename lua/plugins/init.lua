@@ -298,6 +298,14 @@ local plugins = {
       "nvim-tree/nvim-web-devicons",
     },
   },
+  {
+    "VidocqH/lsp-lens.nvim",
+    config = function()
+      require("lsp-lens").setup({})
+      vim.api.nvim_command("LspLensOn")
+    end,
+    init = lazyLoad("lsp-lens.nvim")
+  },
 }
 
 require("lazy").setup({
