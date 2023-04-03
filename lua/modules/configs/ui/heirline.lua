@@ -30,10 +30,9 @@ return function()
       search_results, Space,
       filename, Space,
       git, Space,
-      diagnostics, Space,
-      lspactive
+      diagnostics,
     }), Align,
-    Align,
+    utils.surround({ "", "" }, "bright_bg", { lspactive }), Space,
     Align, Space, ruler, Space, scrollbar, Space,
     Space, filetype, Space
   }
