@@ -43,9 +43,9 @@ require("catppuccin").setup({
       enabled = true,
       underlines = {
         errors = { "undercurl" },
-        hints = { "underline" },
+        hints = { "undercurl" },
         warnings = { "undercurl" },
-        information = { "underline" },
+        information = { "undercurl" },
       },
     },
   },
