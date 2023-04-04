@@ -30,7 +30,7 @@ o.sw = 2 -- sw = shiftwidth
 o.et = true -- et = expand tab
 
 -- 2.2 Folding.
-o.foldcolumn = '1' -- '0' is not bad
+o.foldcolumn = "1" -- '0' is not bad
 o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true
@@ -61,9 +61,12 @@ o.ph = 10 -- Make popup menu smaller
 o.winbl = 10 -- Make floating windows slightly transparent
 -- winbl = winblend
 
-o.shm:append('WcC') -- Reduce command line messages
+o.shm:append("WcC") -- Reduce command line messages
 -- shm = shortmess
-o.spk = 'screen' -- spk = splitkeep
+o.spk = "screen" -- spk = splitkeep
+
+-- Only have one statusline.
+o.laststatus = 3
 
 --  +----------------------------------------------------------+
 --  |                        4. Windows                        |
@@ -81,11 +84,9 @@ o.spr = true -- spr = split right
 --  Ignore cases whilst searching.
 o.ic = true -- ic = ignore case.
 -- If there is a capital letter, don't ignore case.
-o.sc= true -- sc = smart case.
+o.sc = true -- sc = smart case.
 -- Highlight whilst you search.
 o.is = true -- is = incsearch.
-
-
 
 --  +----------------------------------------------------------+
 --  |                        6. Neovide                        |
@@ -107,5 +108,4 @@ if vim.g.neovide then
   -- 6.3 Neovide zoom settings.
   -- Make Neovide not too zoomed in.
   g.neovide_scale_factor = 0.5
-
 end
