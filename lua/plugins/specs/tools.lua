@@ -9,8 +9,29 @@ return {
       "debugloop/telescope-undo.nvim",
       {
         "jedrzejboczar/possession.nvim",
-        config = function ()
+        config = function()
           require("possession").setup({})
+        end,
+      },
+      {
+        "AckslD/nvim-neoclip.lua",
+        dependencies = {
+          {
+            "kkharji/sqlite.lua",
+            module = "sqlite",
+          },
+          -- you'll need at least one of these
+          -- {'nvim-telescope/telescope.nvim'},
+          -- {'ibhagwan/fzf-lua'},
+        },
+        config = function()
+          require("neoclip").setup({
+            history = 100000,
+            enable_persistent_history = true,
+            length_limit = 1048576,
+            continuous_sync = true,
+            db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3",
+          })
         end,
       },
     },
@@ -59,7 +80,12 @@ return {
     cmd = { "Neogit" },
     config = true,
     keys = {
-      { "<leader>gt", function() require("neogit").open({ kind = "split" }) end },
+      {
+        "<leader>gt",
+        function()
+          require("neogit").open({ kind = "split" })
+        end,
+      },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
