@@ -65,6 +65,9 @@ o.shm:append("WcC") -- Reduce command line messages
 -- shm = shortmess
 o.spk = "screen" -- spk = splitkeep
 
+o.so = 999 -- Make the cursor always on the middle of the screen.
+--so = scrolloff
+
 -- Only have one statusline.
 o.laststatus = 3
 
