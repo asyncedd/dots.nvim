@@ -265,58 +265,6 @@
         "language": "gdscript",
         "path": "./snippets/gdscript.json"
       },
-      {
-        "language": "dart",
-        "path": "./snippets/dart.json",
-      },
-      {
-        "language": "elm",
-        "path": "./snippets/elm.json",
-      },
-      {
-        "language": "help",
-        "path": "./snippets/help.json",
-      },
-      {
-        "language": "html",
-        "path": "./snippets/html.json",
-      },
-      {
-        "language": "json",
-        "path": "./snippets/json.json",
-      },
-      {
-        "language": "markdown",
-        "path": "./snippets/markdown.json",
-      },
-      {
-        "language": "reason",
-        "path": "./snippets/reason.json",
-      },
-      {
-        "language": "tmux",
-        "path": "./snippets/tmux.json",
-      },
-      {
-        "language": "vim",
-        "path": "./snippets/vim.json",
-      },
-      {
-        "language": "vimwiki",
-        "path": "./snippets/vimwiki.json",
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./snippets/reactts.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/typescript.json",
-      },
-      {
-        "language": "lua",
-        "path": "./snippets/lua.json",
-      },
     ]
   }
 }
