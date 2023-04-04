@@ -30,8 +30,8 @@ capabilities.textDocument.completion.completionItem = {
 }
 
 capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
 }
 
 local lspconfig = require("lspconfig")
@@ -90,4 +90,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end, opts)
   end,
 })
-

@@ -30,4 +30,3 @@ require("tokyonight").setup({
     }
   end,
 })
-
