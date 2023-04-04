@@ -26,6 +26,8 @@ require("catppuccin").setup({
       -- GitSignsChange = { fg = cp.peach },
       -- NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
       -- NvimTreeExecFile = { fg = cp.text },
+      FzfLuaNormal = { bg = cp.crust, fg = cp.pink },
+      FzfLuaBorder = { bg = cp.mantle, fg = cp.mantle },
 
       ["@lsp.type.parameter"] = { fg = cp.red },
       ["@lsp.type.variable"] = { fg = cp.pink },
@@ -47,4 +49,3 @@ require("catppuccin").setup({
     },
   },
 })
-
