@@ -71,9 +71,6 @@ o.so = 999 -- Make the cursor always on the middle of the screen.
 -- Only have one statusline.
 o.laststatus = 3
 
--- Verboooooooose
-o.verbose = 5
-
 --  +----------------------------------------------------------+
 --  |                        4. Windows                        |
 --  +----------------------------------------------------------+
