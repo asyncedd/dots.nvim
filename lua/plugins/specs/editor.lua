@@ -78,13 +78,6 @@ return {
           require("completion.cmpTabnine")
         end,
       },
-      {
-        "codota/tabnine-nvim",
-        build = "./dl_binaries.sh",
-        config = function()
-          require("completion.tabnine")
-        end,
-      },
       "hrsh7th/cmp-nvim-lua",
       "windwp/nvim-autopairs",
       "hrsh7th/cmp-cmdline",
