@@ -23,7 +23,8 @@ ui[1] = {
     --   If not available, we use `mini` as the fallback
     "rcarriga/nvim-notify",
   },
-  cond = not not vim.g.neovide,
+  cond = not vim.g.neovide,
+  event = { "VeryLazy" },
 }
 
 ui[2] = {
