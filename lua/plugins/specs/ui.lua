@@ -166,4 +166,12 @@ ui[11] = {
   end,
 }
 
+ui[12] = {
+  "echasnovski/mini.map",
+  config = function()
+    require("ui.map")
+  end,
+  init = lazyLoad("mini.map"),
+}
+
 return ui
