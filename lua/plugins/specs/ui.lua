@@ -143,18 +143,12 @@ ui[8] = {
 }
 
 ui[9] = {
-  "tamton-aquib/flirt.nvim",
-  config = true,
-  init = neovide("flirt.nvim"),
-}
-
-ui[10] = {
   "folke/todo-comments.nvim",
   config = true,
   event = "VeryLazy",
 }
 
-ui[11] = {
+ui[10] = {
   "Eandrju/cellular-automaton.nvim",
   cmd = {
     "CellularAutomaton",
@@ -164,7 +158,7 @@ ui[11] = {
   },
 }
 
-ui[12] = {
+ui[11] = {
   "gen740/SmoothCursor.nvim",
   event = "VeryLazy",
   config = function()
