@@ -1,5 +1,3 @@
--- local stats = require("lazy").stats()
-
 require("dashboard").setup({
   theme = "hyper",
   config = {
@@ -7,12 +5,7 @@ require("dashboard").setup({
       enable = true,
     },
     shortcut = {
-      {
-        desc = " Update",
-        group = "@property",
-        action = "Lazy update",
-        key = "u",
-      },
+      { desc = " Update", group = "@property", action = "Lazy update", key = "u" },
       {
         icon = " ",
         icon_hl = "@variable",
@@ -33,11 +26,6 @@ require("dashboard").setup({
         action = "Telescope dotfiles",
         key = "d",
       },
-    },
-    footer = {
-      "",
-      " 🚀 Sharp tools make good work.",
-      -- "⚡ Neovim loaded " .. stats.count .. " plugins",
     },
   },
 })
