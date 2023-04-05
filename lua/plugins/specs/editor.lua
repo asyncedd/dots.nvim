@@ -347,4 +347,15 @@ editor[21] = {
   },
 }
 
+editor[22] = {
+  "echasnovski/mini.bracketed",
+  keys = {
+    "[",
+    "]",
+  },
+  config = function()
+    require("editor.bracketed")
+  end,
+}
+
 return editor
