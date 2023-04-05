@@ -4,36 +4,6 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local kind_icons = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "ﴯ",
-  Interface = "",
-  Module = "",
-  Property = "ﰠ",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
-  Codeium = "",
-  TabNine = "󱄕",
-}
-
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
@@ -95,9 +65,15 @@ cmp.setup({
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-      vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-
-      local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+      local kind = require("lspkind").cmp_format({
+        mode = "symbol_text",
+        maxwidth = 50,
+        ellipsis_char = "...",
+        symbol_map = {
+          Codeium = "",
+          TabNine = "",
+        },
+      })(entry, vim_item)
 
       return kind
     end,
