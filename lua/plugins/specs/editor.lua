@@ -306,4 +306,14 @@ editor[18] = {
   config = true,
 }
 
+editor[19] = {
+  "mrjones2014/legendary.nvim",
+  config = true,
+  event = "VeryLazy",
+  dependencies = {
+    "stevearc/dressing.nvim",
+    "nvim-telescope/telescope.nvim",
+  },
+}
+
 return editor
