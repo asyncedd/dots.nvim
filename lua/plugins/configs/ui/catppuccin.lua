@@ -1,7 +1,7 @@
 require("catppuccin").setup({
-  dim_inactive = {
-    enabled = true,
-  },
+  -- dim_inactive = {
+  --   enabled = true,
+  -- },
   custom_highlights = function(cp)
     return {
       NormalFloat = { bg = cp.crust },
@@ -9,6 +9,7 @@ require("catppuccin").setup({
       VertSplit = { bg = cp.base, fg = cp.surface0 },
       CursorLineNr = { fg = cp.mauve, style = { "bold" } },
       Pmenu = { bg = cp.crust, fg = "" },
+      CmpPmenu = { bg = cp.crust },
 
       TelescopeSelection = { bg = cp.surface0 },
       TelescopePromptCounter = { fg = cp.mauve, style = { "bold" } },
@@ -55,7 +56,7 @@ require("catppuccin").setup({
     coc_nvim = false,
     dashboard = true,
     fern = false,
-    gitsigns = false,
+    gitsigns = true,
     harpoon = true,
     headlines = false,
     hop = false,
@@ -67,9 +68,10 @@ require("catppuccin").setup({
     neogit = false,
     neotest = false,
     noice = true,
-    cmp = false,
+    cmp = true,
     dap = false,
     navic = false,
+
     notify = false,
     semantic_tokens = true,
     nvimtree = false,
