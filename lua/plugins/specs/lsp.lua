@@ -37,7 +37,6 @@ lsp[1] = {
       },
     },
     "MunifTanjim/nui.nvim",
-    "SmiteshP/nvim-navic",
     {
       "VidocqH/lsp-lens.nvim",
       config = true,

@@ -26,10 +26,6 @@ editor[1] = {
   end,
   build = ":TSUpdate",
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-  -- dependencies = {
-  --   "HiPhish/nvim-ts-rainbow2",
-  -- },
-  event = "VeryLazy",
 }
 
 editor[2] = {
@@ -117,18 +113,6 @@ editor[4] = {
 }
 
 editor[5] = {
-  "echasnovski/mini.nvim",
-  config = function()
-    require("plugins.configs.mini")
-  end,
-  dependencies = {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-  },
-  init = lazyLoad("mini.nvim"),
-  event = "InsertEnter",
-}
-
-editor[6] = {
   "chrisgrieser/nvim-spider",
   keys = {
     {
@@ -162,7 +146,7 @@ editor[6] = {
   },
 }
 
-editor[7] = {
+editor[6] = {
   "ggandor/leap.nvim",
   event = "VeryLazy",
   config = function()
@@ -175,13 +159,13 @@ editor[7] = {
   },
 }
 
-editor[8] = {
+editor[7] = {
   "LeonHeidelbach/trailblazer.nvim",
   config = true,
   event = "VeryLazy",
 }
 
-editor[9] = {
+editor[8] = {
   "LudoPinelli/comment-box.nvim",
   config = true,
   keys = {
@@ -194,7 +178,7 @@ editor[9] = {
   },
 }
 
-editor[10] = {
+editor[9] = {
   "windwp/nvim-autopairs",
   config = function()
     require("editor.autopairs")
@@ -202,7 +186,7 @@ editor[10] = {
   event = "InsertEnter",
 }
 
-editor[11] = {
+editor[10] = {
   "windwp/nvim-ts-autotag",
   config = function()
     require("editor.autotag")
@@ -210,7 +194,7 @@ editor[11] = {
   event = "InsertEnter",
 }
 
-editor[12] = {
+editor[11] = {
   "gbprod/yanky.nvim",
   keys = {
     { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
@@ -223,7 +207,7 @@ editor[12] = {
   config = true,
 }
 
-editor[13] = {
+editor[12] = {
   "nvim-neorg/neorg",
   config = function()
     vim.schedule(function()
@@ -249,7 +233,7 @@ editor[13] = {
   },
 }
 
-editor[14] = {
+editor[13] = {
   "kevinhwang91/nvim-ufo",
   dependencies = {
     "kevinhwang91/promise-async",
@@ -274,21 +258,21 @@ editor[14] = {
   event = "VeryLazy",
 }
 
-editor[15] = {
+editor[14] = {
   "sbdchd/neoformat",
   cmd = {
     "Neoformat",
   },
 }
 
-editor[16] = {
+editor[15] = {
   "fladson/vim-kitty",
   init = function()
     fileLazyLoad("vim-kitty", "conf")
   end,
 }
 
-editor[17] = {
+editor[16] = {
   "ThePrimeagen/refactoring.nvim",
   config = function()
     require("editor.refactoring")
@@ -300,13 +284,13 @@ editor[17] = {
   },
 }
 
-editor[18] = {
+editor[17] = {
   "folke/which-key.nvim",
   event = "VeryLazy",
   config = true,
 }
 
-editor[19] = {
+editor[18] = {
   "mrjones2014/legendary.nvim",
   config = true,
   dependencies = {
@@ -315,6 +299,51 @@ editor[19] = {
   },
   keys = {
     { "<leader>fk", "<cmd>Legendary<cr>" },
+  },
+}
+
+editor[19] = {
+  "echasnovski/mini.surround",
+  keys = {
+    "<leader>sa",
+    "<leader>sd",
+    "<leader>sr",
+    "<leader>sf",
+    "<leader>sF",
+    "<leader>sh",
+  },
+  config = function()
+    require("editor.surround")
+  end,
+}
+
+editor[20] = {
+  "numToStr/Comment.nvim",
+  config = function()
+    require("editor.Comment")
+  end,
+  dependencies = {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+  },
+  keys = {
+    "gcc",
+    "gbc",
+    "gc",
+    "gb",
+    "gc0",
+    "gco",
+    "gcA",
+  },
+}
+
+editor[21] = {
+  "echasnovski/mini.ai",
+  config = function()
+    require("editor.ai")
+  end,
+  keys = {
+    "vi",
+    "va",
   },
 }
 
