@@ -26,9 +26,9 @@ editor[1] = {
   end,
   build = ":TSUpdate",
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-  dependencies = {
-    "HiPhish/nvim-ts-rainbow2",
-  },
+  -- dependencies = {
+  --   "HiPhish/nvim-ts-rainbow2",
+  -- },
 }
 
 editor[2] = {
