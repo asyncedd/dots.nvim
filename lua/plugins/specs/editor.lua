@@ -29,6 +29,7 @@ editor[1] = {
   -- dependencies = {
   --   "HiPhish/nvim-ts-rainbow2",
   -- },
+  event = "VeryLazy",
 }
 
 editor[2] = {
@@ -285,6 +286,18 @@ editor[16] = {
   init = function()
     fileLazyLoad("vim-kitty", "conf")
   end,
+}
+
+editor[17] = {
+  "ThePrimeagen/refactoring.nvim",
+  config = function()
+    require("editor.refactoring")
+  end,
+  event = "BufWritePre",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+  },
 }
 
 return editor
