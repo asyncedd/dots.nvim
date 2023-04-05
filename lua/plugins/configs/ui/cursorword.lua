@@ -1,3 +1,3 @@
 require("mini.cursorword").setup({
-  delay = 0,
+  delay = 50,
 })
