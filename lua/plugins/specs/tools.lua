@@ -92,16 +92,6 @@ tools[5] = {
 }
 
 tools[6] = {
-  "rafcamlet/nvim-luapad",
-  lazy = true,
-  cmd = {
-    "Luapad",
-    "LuaRun",
-    "Lua",
-  },
-}
-
-tools[7] = {
   "sindrets/diffview.nvim",
   config = true,
   keys = {
@@ -109,20 +99,21 @@ tools[7] = {
   },
 }
 
-tools[8] =
-  {
-    "ThePrimeagen/vim-be-good",
-    cmd = { "VimBeGood" },
-  }, {
-    "kdheepak/lazygit.nvim",
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-    },
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>" },
-    },
-  }
+tools[7] = {
+  "ThePrimeagen/vim-be-good",
+  cmd = { "VimBeGood" },
+}
+
+tools[8] = {
+  "kdheepak/lazygit.nvim",
+  cmd = {
+    "LazyGit",
+    "LazyGitConfig",
+  },
+  keys = {
+    { "<leader>lg", "<cmd>LazyGit<cr>" },
+  },
+}
 
 tools[9] = {
   "pwntester/octo.nvim",

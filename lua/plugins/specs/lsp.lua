@@ -64,12 +64,6 @@ lsp[3] = {
 }
 
 lsp[4] = {
-  "chikko80/error-lens.nvim",
-  event = "VeryLazy",
-  config = true,
-}
-
-lsp[5] = {
   "lvimuser/lsp-inlayhints.nvim",
   config = true,
   event = "LspAttach",
