@@ -185,12 +185,6 @@ editor[7] = {
 }
 
 editor[8] = {
-  "ggandor/leap-spooky.nvim",
-  config = true,
-  event = "VeryLazy",
-}
-
-editor[9] = {
   "LeonHeidelbach/trailblazer.nvim",
   config = true,
   keys = {
@@ -212,7 +206,7 @@ editor[9] = {
   },
 }
 
-editor[10] = {
+editor[9] = {
   "LudoPinelli/comment-box.nvim",
   config = true,
   keys = {
@@ -225,7 +219,7 @@ editor[10] = {
   },
 }
 
-editor[11] = {
+editor[10] = {
   "windwp/nvim-autopairs",
   config = function()
     require("editor.autopairs")
@@ -233,7 +227,7 @@ editor[11] = {
   event = "InsertEnter",
 }
 
-editor[12] = {
+editor[11] = {
   "windwp/nvim-ts-autotag",
   config = function()
     require("editor.autotag")
@@ -241,7 +235,7 @@ editor[12] = {
   event = "InsertEnter",
 }
 
-editor[13] = {
+editor[12] = {
   "nvim-neorg/neorg",
   config = function()
     vim.schedule(function()
@@ -267,7 +261,7 @@ editor[13] = {
   },
 }
 
-editor[14] = {
+editor[13] = {
   "kevinhwang91/nvim-ufo",
   dependencies = {
     "kevinhwang91/promise-async",
@@ -292,21 +286,21 @@ editor[14] = {
   event = "VeryLazy",
 }
 
-editor[15] = {
+editor[14] = {
   "sbdchd/neoformat",
   cmd = {
     "Neoformat",
   },
 }
 
-editor[16] = {
+editor[15] = {
   "fladson/vim-kitty",
   init = function()
     fileLazyLoad("vim-kitty", "conf")
   end,
 }
 
-editor[17] = {
+editor[16] = {
   "echasnovski/mini.surround",
   keys = {
     "<leader>sa",
@@ -321,7 +315,7 @@ editor[17] = {
   end,
 }
 
-editor[18] = {
+editor[17] = {
   "numToStr/Comment.nvim",
   config = function()
     require("editor.Comment")
@@ -340,7 +334,7 @@ editor[18] = {
   },
 }
 
-editor[19] = {
+editor[18] = {
   "echasnovski/mini.ai",
   config = function()
     require("editor.ai")
@@ -351,7 +345,7 @@ editor[19] = {
   },
 }
 
-editor[20] = {
+editor[19] = {
   "echasnovski/mini.bracketed",
   keys = {
     "[",
@@ -362,7 +356,7 @@ editor[20] = {
   end,
 }
 
-editor[21] = {
+editor[20] = {
   "echasnovski/mini.splitjoin",
   keys = { "gS" },
   config = function()
@@ -370,7 +364,7 @@ editor[21] = {
   end,
 }
 
-editor[22] = {
+editor[21] = {
   "echasnovski/mini.align",
   config = function()
     require("mini.align").setup()
@@ -380,12 +374,12 @@ editor[22] = {
   },
 }
 
-editor[23] = {
+editor[22] = {
   "tpope/vim-repeat",
   event = "VeryLazy",
 }
 
-editor[24] = {
+editor[23] = {
   "abecodes/tabout.nvim",
   config = true,
   dependencies = {
