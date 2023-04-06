@@ -167,4 +167,24 @@ tools[12] = {
   },
 }
 
+tools[13] = {
+  "tpope/vim-eunuch",
+  cmd = {
+    "Remove",
+    "Delete",
+    "Move",
+    "Rename",
+    "Copy",
+    "Duplicate",
+    "Chmod",
+    "Mkdir",
+    "Cfind",
+    "Clocate",
+    "Lfind",
+    "Wall",
+    "SudoWrite",
+    "SudoEdit",
+  },
+}
+
 return tools
