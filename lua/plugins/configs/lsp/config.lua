@@ -46,6 +46,10 @@ lspconfig.tsserver.setup({
   capabilities = capabilities,
 })
 
+lspconfig.jsonls.setup({
+  capabilities = capabilities,
+})
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
