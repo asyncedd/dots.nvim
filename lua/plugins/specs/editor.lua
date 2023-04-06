@@ -152,10 +152,24 @@ editor[6] = {
   config = function()
     require("editor.leap")
   end,
-  dependencies = { "ggandor/flit.nvim", config = true, dependencies = "tpope/vim-repeat" },
   keys = {
     "s",
     "S",
+  },
+}
+
+editor[7] = {
+  "ggandor/flit.nvim",
+  config = true,
+  dependencies = {
+    "tpope/vim-repeat",
+    "ggandor/leap.nvim",
+  },
+  keys = {
+    "f",
+    "F",
+    "t",
+    "T",
   },
 }
 
