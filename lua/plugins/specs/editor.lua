@@ -351,4 +351,14 @@ editor[22] = {
   end,
 }
 
+editor[23] = {
+  "echasnovski/mini.align",
+  config = function()
+    require("mini.align").setup()
+  end,
+  keys = {
+    "ga",
+  },
+}
+
 return editor
