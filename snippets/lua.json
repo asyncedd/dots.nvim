@@ -497,5 +497,15 @@
     "prefix": "param",
     "body": "--- @param ${1:name} ${2:type}",
     "description": "Add annotation"
+  },
+  "pluginTable": {
+    "prefix": "lazy",
+    "body": ["{", "\t${1:name}", "\t${2:-- aditional arguements}", "}"],
+    "description": "Create a new plugin spec for lazy.nvim"
+  },
+  "pluginFile": {
+    "prefix": "lazf",
+    "body": ["local ${1:file name}", "", "return ${1:file name}"],
+    "description": "Create a new file for a lazy.nvim plugin spec."
   }
 }
