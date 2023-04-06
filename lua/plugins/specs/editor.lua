@@ -176,7 +176,21 @@ editor[7] = {
 editor[7] = {
   "LeonHeidelbach/trailblazer.nvim",
   config = true,
-  event = "VeryLazy",
+  keys = {
+    "<A-l>",
+    "<A-b>",
+    "<A-J>",
+    "<A-K>",
+    "<A-n>",
+    "<A-m>",
+    "<A-L>",
+    "<A-p>",
+    "<A-P>",
+    "<A-t>",
+    "<A-.>",
+    "<A-,>",
+    "<A-s>",
+  },
 }
 
 editor[8] = {
