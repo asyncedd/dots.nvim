@@ -4,6 +4,7 @@ telescope.setup({})
 
 telescope.load_extension("neoclip")
 telescope.load_extension("persisted")
+telescope.load_extension("projects")
 
 local keymap = vim.keymap.set
 
@@ -16,3 +17,5 @@ end)
 keymap("n", "<leader>c", "<cmd>Telescope neoclip<cr>")
 
 keymap("n", "<leader>pe", "<cmd>Telescope persisted<cr>")
+
+keymap("n", "<leader>pt", "<cmd>Telescope projects<cr>")

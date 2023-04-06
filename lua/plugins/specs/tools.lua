@@ -29,6 +29,12 @@ tools[1] = {
       end,
     },
     "olimorris/persisted.nvim",
+    {
+      "ahmedkhalf/project.nvim",
+      config = function()
+        require("project_nvim").setup()
+      end,
+    },
   },
   event = "VeryLazy",
 }
