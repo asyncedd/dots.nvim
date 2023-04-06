@@ -149,14 +149,13 @@ editor[5] = {
 
 editor[6] = {
   "ggandor/leap.nvim",
-  event = "VeryLazy",
   config = function()
     require("editor.leap")
   end,
-  dependencies = {
-    "ggandor/flit.nvim",
-    config = true,
-    dependencies = "tpope/vim-repeat",
+  dependencies = { "ggandor/flit.nvim", config = true, dependencies = "tpope/vim-repeat" },
+  keys = {
+    "s",
+    "S",
   },
 }
 
