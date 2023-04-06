@@ -184,6 +184,12 @@ editor[7] = {
   },
 }
 
+editor[8] = {
+  "ggandor/leap-spooky.nvim",
+  config = true,
+  event = "VeryLazy",
+}
+
 editor[7] = {
   "LeonHeidelbach/trailblazer.nvim",
   config = true,
