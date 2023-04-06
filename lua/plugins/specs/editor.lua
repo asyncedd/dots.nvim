@@ -366,6 +366,9 @@ editor[24] = {
     "<C-A>",
     "<C-X>",
   },
+  cmd = {
+    "SpeedDatingFormat",
+  },
 }
 
 return editor
