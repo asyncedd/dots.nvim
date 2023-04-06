@@ -199,13 +199,7 @@ ui[14] = {
   end,
 }
 
-ui[15] = {
-  "stevearc/dressing.nvim",
-  config = true,
-  event = "VeryLazy",
-}
-
-ui[16] = {
+ui[17] = {
   "edluffy/specs.nvim",
   config = function()
     require("ui.specs")
@@ -213,7 +207,7 @@ ui[16] = {
   event = "VeryLazy",
 }
 
-ui[17] = {
+ui[18] = {
   "echasnovski/mini.animate",
   event = "VeryLazy",
   config = function()
