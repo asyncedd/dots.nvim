@@ -213,4 +213,12 @@ ui[16] = {
   event = "VeryLazy",
 }
 
+ui[17] = {
+  "echasnovski/mini.animate",
+  event = "VeryLazy",
+  config = function()
+    require("ui.animate")
+  end,
+}
+
 return ui
