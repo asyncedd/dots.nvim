@@ -332,8 +332,14 @@ editor[18] = {
   keys = {
     "gcc",
     "gbc",
-    "gc",
-    "gb",
+    {
+      "gc",
+      mode = { "v" },
+    },
+    {
+      "gb",
+      mode = { "v" },
+    },
     "gc0",
     "gco",
     "gcA",
