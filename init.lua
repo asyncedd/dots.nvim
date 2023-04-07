@@ -24,7 +24,3 @@ vim.api.nvim_command("colorscheme catppuccin")
 -- vim.api.nvim_command("colorscheme onedark")
 -- vim.api.nvim_command("colorscheme kanagawa")
 -- vim.api.nvim_command("colorscheme tundra")
-
-vim.schedule(function()
-  require("core.after")
-end)
