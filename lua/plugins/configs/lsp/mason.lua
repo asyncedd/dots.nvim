@@ -18,5 +18,6 @@ require("mason-lspconfig").setup({
     "tsserver",
     "jsonls",
     "emmet_ls",
+    "yamlls",
   },
 })
