@@ -48,6 +48,7 @@ lspconfig.tsserver.setup({
 
 lspconfig.jsonls.setup({
   capabilities = capabilities,
+  settings = require("plugins.configs.lsp.servers.json_ls"),
 })
 
 -- Global mappings.

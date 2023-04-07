@@ -41,6 +41,7 @@ lsp[1] = {
       "VidocqH/lsp-lens.nvim",
       config = true,
     },
+    "b0o/SchemaStore.nvim",
   },
 }
 

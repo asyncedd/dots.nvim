@@ -1,6 +1,10 @@
 return {
   json = {
     schemas = require("schemastore").json.schemas(),
-    validate = { enable = true },
+    select = {
+      ".eslintrc",
+      "package.json",
+    },
   },
+  validate = { enable = true },
 }
