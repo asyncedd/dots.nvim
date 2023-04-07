@@ -13,3 +13,6 @@ o.tgc = true
 -- 2. Editing
 -- Set the shift (indents) width.
 o.shiftwidth = 2
+
+-- Automagically expand tabs to spaces
+o.expandtab = true
