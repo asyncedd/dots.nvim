@@ -7,4 +7,8 @@ require("nvim-treesitter.configs").setup({
     enable = true,
     use_language_tree = true,
   },
+
+  incremental_selection = {
+    enable = false,
+  },
 })

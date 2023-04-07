@@ -1,5 +1,7 @@
 {
   "lazy.nvim": { "branch": "main", "commit": "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
+  "mini.ai": { "branch": "main", "commit": "fdb8dd34c326040f99b178536eeaee41d1efe643" },
   "nvim": { "branch": "main", "commit": "73587f9c454da81679202f1668c30fea6cdafd5e" },
+  "nvim-autopairs": { "branch": "master", "commit": "0fd6519d44eac3a6736aafdb3fe9da916c3701d4" },
   "nvim-treesitter": { "branch": "master", "commit": "226c1475a46a2ef6d840af9caa0117a439465500" }
 }
