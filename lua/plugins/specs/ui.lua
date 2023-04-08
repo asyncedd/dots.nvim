@@ -4,14 +4,14 @@ return {
   {
     "catppuccin/nvim",
     config = function()
-      require("plugins.configs.ui.catppuccin")
+      require("ui.catppuccin")
     end,
   },
   {
     "echasnovski/mini.map",
     config = function()
       vim.schedule_wrap(function()
-        require("plugins.configs.ui.map")
+        require("ui.map")
       end)
     end,
     init = lazyLoad("mini.map"),
@@ -19,14 +19,14 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require("plugins.configs.ui.blankline")
+      require("ui.blankline")
     end,
     init = lazyLoad("indent-blankline.nvim"),
   },
   {
     "echasnovski/mini.indentscope",
     config = function()
-      require("plugins.configs.ui.indentscope")
+      require("ui.indentscope")
     end,
     init = lazyLoad("mini.indentscope"),
   },

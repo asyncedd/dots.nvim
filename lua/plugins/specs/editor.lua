@@ -4,7 +4,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     config = function()
-      require("plugins.configs.editor.treesitter")
+      require("editor.treesitter")
     end,
     init = lazyLoad("nvim-treesitter"),
   },
@@ -44,10 +44,10 @@ return {
       { "S", mode = { "n", "x" } },
       { "x", mode = { "v" } },
       { "X", mode = { "v" } },
-      { "ms", function() require("plugins.configs.editor.leapMulti") end },
+      { "ms", function() require("editor.leapMulti") end },
     },
     config = function()
-      require("plugins.configs.editor.leap")
+      require("editor.leap")
     end,
   },
   {

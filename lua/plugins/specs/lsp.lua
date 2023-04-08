@@ -8,7 +8,7 @@ return {
       "neovim/nvim-lspconfig",
     },
     config = function()
-      require("plugins.configs.lsp.mason")
+      require("lsp.mason")
     end,
     init = lazyLoad("mason.nvim")
   },
