@@ -49,5 +49,22 @@ return {
       require("plugins.configs.editor.leap")
     end,
   },
+  {
+    "ggandor/flit.nvim",
+    keys = {
+      { "f", mode = { "n", "v" } },
+      { "F", mode = { "n", "v" } },
+      { "t", mode = { "n", "v" } },
+      { "T", mode = { "n", "v" } },
+    },
+    config = true,
+  },
+  {
+    "ggandor/leap-spooky.nvim",
+    keys = {
+      "a", "A", "b", "B", "c", "C", "d", "D", "e", "E", "f", "F", "g", "G", "h", "H", "i", "I", "j", "J", "k", "K", "l", "L", "m", "M", "n", "N", "o", "O", "p", "P", "q", "Q", "r", "R", "s", "S", "t", "T", "u", "U", "v", "V", "w", "W", "x", "X", "y", "Y", "z", "Z",
+    },
+    config = true,
+  },
 }
 
