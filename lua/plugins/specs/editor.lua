@@ -40,11 +40,11 @@ return {
   {
     "ggandor/leap.nvim",
     keys = {
-      { "s", mode = { "n", "v" } },
-      { "S", mode = { "n", "v" } },
+      { "s", mode = { "n", "x" } },
+      { "S", mode = { "n", "x" } },
       { "x", mode = { "v" } },
       { "X", mode = { "v" } },
-      { "ms", function() require("plugins.configs.editor.leapMulti") end, mode = { "n", "v" } },
+      { "ms", function() require("plugins.configs.editor.leapMulti") end },
     },
     config = function()
       require("plugins.configs.editor.leap")
@@ -63,7 +63,8 @@ return {
   {
     "ggandor/leap-spooky.nvim",
     keys = {
-      "a", "A", "b", "B", "c", "C", "d", "D", "e", "E", "f", "F", "g", "G", "h", "H", "i", "I", "j", "J", "k", "K", "l", "L", "m", "M", "n", "N", "o", "O", "p", "P", "q", "Q", "r", "R", "s", "S", "t", "T", "u", "U", "v", "V", "w", "W", "x", "X", "y", "Y", "z", "Z",
+      "b", "B", "c", "C", "d", "D", "g", "G", "h", "H", "j", "J", "k",
+      "K", "l", "L", "m", "M", "q", "Q", "r", "R", "x", "X", "z", "Z",
     },
     config = true,
   },
