@@ -58,6 +58,20 @@ return {
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-path",
+      "onsails/lspkind-nvim",
+      {
+        "tzachar/cmp-tabnine",
+        build = "./install.sh",
+      },
+      {
+        "jcdickinson/codeium.nvim",
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+        },
+        config = true,
+      },
     },
     config = function()
       require("coding.cmp")

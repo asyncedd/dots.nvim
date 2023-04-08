@@ -4,3 +4,4 @@ require("mini.indentscope").setup({
     try_as_border = true,
   },
 })
+
