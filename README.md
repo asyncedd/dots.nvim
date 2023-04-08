@@ -106,3 +106,4 @@ You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no w
 - [akinsho's dots](https://github.com/akinsho/dotfiles/tree/nightly/.config/nvim) - For some snippets too!
 - [abzcoding's dots](https://github.com/abzcoding/lvim) - Also for the snippets.
 - [folke's neodev](https://github.com/folke/neodev.nvim) - For his lazy plugin thingy!
+- [mini.basics](https://github.com/echasnovski/mini.basics) - For some of the options :D
