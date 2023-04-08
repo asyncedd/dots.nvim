@@ -2,7 +2,7 @@ return {
   {
     "windwp/nvim-autopairs",
     config = function()
-      require("plugins.configs.editor.autopairs")
+      require("plugins.configs.coding.autopairs")
     end,
     keys = {
       { "{", mode = { "i","c" } },
