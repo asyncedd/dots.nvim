@@ -33,7 +33,7 @@ return {
   {
     "folke/noice.nvim",
     config = true,
-    init = lazyLoad("noice.nvim"),
+    event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
