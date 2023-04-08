@@ -55,7 +55,26 @@ return {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
-      "L3MON4D3/LuaSnip",
+      {
+        "L3MON4D3/LuaSnip",
+        config = function()
+          require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+        end,
+        dependencies = {
+          {
+            "rafamadriz/friendly-snippets",
+            config = function ()
+              require("luasnip.loaders.from_vscode").lazy_load()
+            end,
+          },
+          {
+            "honza/vim-snippets",
+            config = function()
+              require("luasnip.loaders.from_snipmate").lazy_load()
+            end,
+          },
+        },
+      },
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
       "hrsh7th/cmp-cmdline",
