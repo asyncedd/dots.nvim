@@ -10,7 +10,9 @@ return {
   {
     "echasnovski/mini.map",
     config = function()
-      require("plugins.configs.ui.map")
+      vim.schedule_wrap(function()
+        require("plugins.configs.ui.map")
+      end)
     end,
     init = lazyLoad("mini.map"),
   },

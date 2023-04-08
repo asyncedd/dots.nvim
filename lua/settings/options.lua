@@ -12,9 +12,13 @@ o.relativenumber = true
 -- enable TermGUI colors
 o.tgc = true
 
+-- ~~trick hyperfine ;)~~
+o.cmdheight = 0
+
 -- 2. Editing
 -- Set the shift (indents) width.
 o.shiftwidth = 2
 
 -- Automagically expand tabs to spaces
 o.expandtab = true
+
