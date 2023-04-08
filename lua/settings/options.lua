@@ -38,7 +38,7 @@ o.infercase   = true -- Infer letter cases for a richer built-in keyword complet
 o.smartcase   = true -- Don't ignore case when searching if pattern has upper case
 o.smartindent = true -- Make indenting smart
 
-o.completeopt   = 'menuone,noinsert,noselect' -- Customize completions
-o.virtualedit   = 'block'                     -- Allow going past the end of line in visual block mode
-o.formatoptions = 'qjl1'                      -- Don't autoformat comments
+o.completeopt   = "menuone,noinsert,noselect" -- Customize completions
+o.virtualedit   = "block"                     -- Allow going past the end of line in visual block mode
+o.formatoptions = "qjl1"                      -- Don't autoformat comments
 
