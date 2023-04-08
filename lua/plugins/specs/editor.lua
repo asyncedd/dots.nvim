@@ -44,6 +44,7 @@ return {
       { "S", mode = { "n", "v" } },
       { "x", mode = { "v" } },
       { "X", mode = { "v" } },
+      { "ms", function() require("plugins.configs.editor.leapMulti") end, mode = { "n", "v" } },
     },
     config = function()
       require("plugins.configs.editor.leap")
@@ -65,6 +66,13 @@ return {
       "a", "A", "b", "B", "c", "C", "d", "D", "e", "E", "f", "F", "g", "G", "h", "H", "i", "I", "j", "J", "k", "K", "l", "L", "m", "M", "n", "N", "o", "O", "p", "P", "q", "Q", "r", "R", "s", "S", "t", "T", "u", "U", "v", "V", "w", "W", "x", "X", "y", "Y", "z", "Z",
     },
     config = true,
+  },
+  {
+    "ggandor/leap-ast.nvim",
+    config = true,
+    keys = {
+      { "<leader>lp", function() require("leap-ast").leap() end },
+    }
   },
 }
 
