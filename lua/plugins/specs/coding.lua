@@ -22,7 +22,15 @@ return {
       { "<Tab>", mode = "i" },
       { "<S-Tab>", mode = "i" },
     },
-    event = "VeryLazy",
+  },
+  {
+    "echasnovski/mini.splitjoin",
+    config = function()
+      require("mini.splitjoin").setup()
+    end,
+    keys = {
+      "gS",
+    },
   },
 }
 
