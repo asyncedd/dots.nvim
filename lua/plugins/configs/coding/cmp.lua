@@ -61,6 +61,7 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "emoji" },
+    { name = "nerdfont" },
     { name = "calc" },
     { name = "codeium" },
     { name = "cmp_tabnine" },
