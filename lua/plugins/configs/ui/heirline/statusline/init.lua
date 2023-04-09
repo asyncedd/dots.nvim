@@ -1,5 +1,7 @@
 local ViMode = require("ui.heirline.statusline.vimode").ViMode
 local FileNames = require("ui.heirline.statusline.filename")
+local Lsp = require("ui.heirline.statusline.lsp")
+
 local conditions = require("heirline.conditions")
 local utils = require("heirline.utils")
 
@@ -7,7 +9,7 @@ local Space = { provider = " " }
 local Align = { provider = "%=" }
 
 local DefaultStatusLines = {
-  ViMode, Space, FileNames.FileNameBlock, Align,
+  ViMode, Space, FileNames.FileNameBlock, Align, Align, Lsp.LSPActive, Align, Align, Align,
 }
 
 local StatusLines = {
