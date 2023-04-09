@@ -66,10 +66,10 @@ M.FileFlags = {
 -- component
 
 M.FileNameModifer = {
-  hl = function()
+  hl = function(self)
     if vim.bo.modified then
       -- use `force` because we need to override the child's hl foreground
-      return { fg = "cyan", bold = true, force=true }
+      return { fg = self:mode_color(), bold = true, force=true }
     end
   end,
 }
