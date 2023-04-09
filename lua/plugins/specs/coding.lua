@@ -98,6 +98,7 @@ return {
         config = true,
       },
       "lukas-reineke/cmp-rg",
+      "andersevenrud/cmp-tmux",
     },
     config = function()
       require("coding.cmp")

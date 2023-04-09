@@ -63,6 +63,12 @@ cmp.setup({
     { name = "codeium" },
     { name = "cmp_tabnine" },
     { name = "rg" },
+    {
+      name = "tmux",
+      options = {
+        all_panes = true,
+      },
+    },
     { name = "buffer" },
   }),
 
@@ -130,5 +136,4 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
-
 
