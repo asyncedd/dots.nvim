@@ -60,9 +60,9 @@ cmp.setup({
     { name = "buffer" },
   }),
 
-  view = {
-    entries = { name = "custom", selection_order = "near_cursor" },
-  },
+  -- view = {
+  --   entries = { name = "custom", selection_order = "near_cursor" },
+  -- },
 
   formatting = {
     format = lspkind.cmp_format({
@@ -99,5 +99,4 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
-
 
