@@ -1,15 +1,8 @@
 local o = vim.opt
 
-local M = {}
+local icons = require("core.utils.icons")
 
-M.icons = {
-  Error = " ",
-  Warn = " ",
-  Hint = " ",
-  Info = " ",
-}
-
-for name, icon in pairs(M.icons) do
+for name, icon in pairs(icons) do
   name = "DiagnosticSign" .. name
   vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 end
@@ -27,5 +20,3 @@ vim.diagnostic.config({
 o.clipboard = "unnamedplus,unnamed"
 -- Enable cool undos :)
 o.undofile = true
-
-return M

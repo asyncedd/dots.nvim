@@ -27,7 +27,7 @@ M.LSPActive = {
   end
 }
 
-local icons = require("after").icons
+local icons = require("core.utils.icons")
 
 M.Diagnostics = {
 

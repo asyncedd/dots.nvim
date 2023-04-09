@@ -24,6 +24,11 @@ o.pumblend = 10
 -- Make floating windows slightly transparent
 o.winblend = 10
 
+-- Some cool heirline stuff:
+-- Yep, with heirline we're driving manual!
+o.showtabline = 2
+vim.cmd([[au FileType * if index(['wipe', 'delete'], &bufhidden) >= 0 | set nobuflisted | endif]])
+
 -- 2. Editing
 -- Set the shift (indents) width.
 o.shiftwidth = 2
