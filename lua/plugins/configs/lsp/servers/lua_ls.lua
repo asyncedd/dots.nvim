@@ -17,6 +17,7 @@ local library = {
 
 -- Thank you for NvChad for this too! https://nvchad.com/docs/config/walkthrough
 library = vim.tbl_deep_extend("force", library, ret)
+library = vim.tbl_deep_extend("force", library, vim.api.nvim_get_runtime_file("", true))
 
 return {
   Lua = {
