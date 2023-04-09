@@ -4,7 +4,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     config = function()
-      require("editor.treesitter")
+      coroutine.resume(coroutine.create(function() require("editor.treesitter") end))
     end,
     init = lazyLoad("nvim-treesitter"),
   },
