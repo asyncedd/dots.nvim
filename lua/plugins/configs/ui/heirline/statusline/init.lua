@@ -23,7 +23,7 @@ local DefaultStatusLine = {
     FileName.WorkDir,
     utils.surround({ "", "" }, function(self) return self:mode_color() end, { FileName.FileNameBlock }),
   }),
-  Space,
+  Align,
   {
     Gitsigns,
     hl = { bg = "normal" }
