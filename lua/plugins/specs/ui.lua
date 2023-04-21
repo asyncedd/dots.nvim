@@ -10,11 +10,9 @@ return {
   {
     "echasnovski/mini.map",
     config = function()
-      vim.schedule_wrap(function()
-        require("ui.map")
-      end)
+      require("ui.map")
     end,
-    init = lazyLoad("mini.map"),
+    event = "VeryLazy",
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -100,15 +98,6 @@ return {
     end,
     event = {
       "CursorMoved",
-    },
-  },
-  {
-    "rainbowhxch/accelerated-jk.nvim",
-    keys = {
-      { "j", "<Plug>(accelerated_jk_j)", mode = { "n", "v" } },
-      { "k", "<Plug>(accelerated_jk_k)", mode = { "n", "v" } },
-      { "gk", "<Plug>(accelerated_jk_gj)", mode = { "n", "v" } },
-      { "gj", "<Plug>(accelerated_jk_gj)", mode = { "n", "v" } },
     },
   },
 }
