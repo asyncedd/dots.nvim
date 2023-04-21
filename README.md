@@ -4,7 +4,7 @@ My personal Neovim configuration
 ![Size](https://img.shields.io/github/repo-size/asyncedd/dots.nvim?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)
 ![LOC](https://img.shields.io/tokei/lines/github/asyncedd/dots.nvim?style=for-the-badge&logo=starship&color=c69ff5&logoColor=D9E0EE&labelColor=302D41)
 
-![ss](https://imgur.com/mD37UTv.png)
+![ss](https://raw.githubusercontent.com/asyncedd/images/main/image.png?token=GHSAT0AAAAAACA5XGZ5Z32WPLI3PTFS5NTKZBLVX4A)
 
 ## 👋 Introduction
 This is my personal Neovim configuration as, I said.
