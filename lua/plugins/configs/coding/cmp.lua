@@ -62,7 +62,6 @@ cmp.setup({
     { name = "luasnip" },
     { name = "emoji" },
     { name = "nerdfont" },
-    { name = "calc" },
     { name = "codeium" },
     { name = "cmp_tabnine" },
     { name = "rg" },
