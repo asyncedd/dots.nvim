@@ -59,10 +59,6 @@ local plugins = {
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   },
   {
-    "andymass/vim-matchup",
-    event = "CursorMoved",
-  },
-  {
     "neovim/nvim-lspconfig",
     init = lazyLoad("nvim-lspconfig"),
     config = function()
