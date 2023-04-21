@@ -7,15 +7,13 @@ local g = vim.g
 -- 1. IMPORTANT STUF
 -- 1.1 Set the mapleader key to <Space>
 g.mapleader = " "
--- 1.2 Persistent undos, across sessions.
-o.undofile = true
 
 -- 2. Editor stuff.
 -- 2.1 Indentations.
 -- As, 0.2x Devs, we need our 2 space indentation
 o.shiftwidth = 2
 -- Tabs on Neovim are weird :/
-o.expandtab = false
+o.expandtab = true 
 
 -- 3. UI stuff
 -- 3.1 Enable line numbers.
