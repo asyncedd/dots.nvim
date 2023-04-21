@@ -1,76 +1,48 @@
-local co = coroutine
+local M = {}
 
--- use with wrap
-local pong = function(func, callback)
-  assert(type(func) == "function", "type error :: expected func")
-  local thread = co.create(func)
-  local step = nil
-  step = function(...)
-    local stat, ret = co.resume(thread, ...)
-    assert(stat, ret)
-    if co.status(thread) == "dead" then
-      (callback or function() end)(ret)
-    else
-      assert(type(ret) == "function", "type error :: expected func")
-      ret(step)
+-- Run a function asynchronously
+function M.async(func)
+  return function(...)
+    local co = coroutine.create(func)
+    local args = {...}
+    local resume = function()
+      local ok, result = coroutine.resume(co, unpack(args))
+      if not ok then
+        error(result)
+      end
+      return result
     end
-  end
-  step()
-end
-
--- use with pong, creates thunk factory
-local wrap = function(func)
-  assert(type(func) == "function", "type error :: expected func")
-  local factory = function(...)
-    local params = { ... }
-    local thunk = function(step)
-      table.insert(params, step)
-      return func(unpack(params))
-    end
-    return thunk
-  end
-  return factory
-end
-
--- many thunks -> single thunk
-local join = function(thunks)
-  local len = table.getn(thunks)
-  local done = 0
-  local acc = {}
-
-  local thunk = function(step)
-    if len == 0 then
-      return step()
-    end
-    for i, tk in ipairs(thunks) do
-      assert(type(tk) == "function", "thunk must be function")
-      local callback = function(...)
-        acc[i] = { ... }
-        done = done + 1
-        if done == len then
-          step(unpack(acc))
+    return {
+      await = function()
+        local results = {vim.wait(0, resume)}
+        if #results == 0 then
+          return nil
+        elseif #results == 1 then
+          return results[1]
+        else
+          return unpack(results)
         end
       end
-      tk(callback)
-    end
+    }
   end
-  return thunk
 end
 
--- sugar over coroutine
-local await = function(defer)
-  assert(type(defer) == "function", "type error :: expected func")
-  return co.yield(defer)
+-- Run a table of functions asynchronously in parallel
+function M.parallel(funcs)
+  local results = {}
+  for i, func in ipairs(funcs) do
+    results[i] = M.async(func)()
+  end
+  return {
+    await = function()
+      local final_results = {}
+      for i, result in ipairs(results) do
+        final_results[i] = result.await()
+      end
+      return final_results
+    end
+  }
 end
 
-local await_all = function(defer)
-  assert(type(defer) == "table", "type error :: expected table")
-  return co.yield(join(defer))
-end
+return M
 
-return {
-  sync = wrap(pong),
-  wait = await,
-  wait_all = await_all,
-  wrap = wrap,
-}
