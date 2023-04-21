@@ -13,7 +13,7 @@ require("user.options")
 require("core.bootstrap")
 
 -- Initalize lazy.nvim
-require("core.lazy")
+require("plugins")
 
 -- Set the colorscheme.
 local colorscheme = require("user.settings.colorscheme")
