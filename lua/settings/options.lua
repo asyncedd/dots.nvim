@@ -50,7 +50,3 @@ o.foldenable = true
 
 -- Middle screen ;)
 o.scrolloff = 999
-
--- 3. Perf
--- Disable syntax highlighting. (it'll be replaced by nvim-treesitter.)
-o.syntax = "off"

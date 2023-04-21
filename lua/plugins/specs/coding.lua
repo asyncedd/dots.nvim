@@ -41,7 +41,7 @@ return {
   {
     "numToStr/Comment.nvim",
     config = function()
-      require("ui.Comment")
+      require("coding.Comment")
     end,
     keys = {
       "gcc",

@@ -12,7 +12,6 @@ return {
     config = function()
       require("ui.map")
     end,
-    event = "VeryLazy",
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -86,10 +85,7 @@ return {
   {
     "echasnovski/mini.animate",
     event = {
-      "CursorMoved",
-      "VimResized",
-      "WinLeave",
-      "WinEnter",
+      "VeryLazy",
     },
     config = function()
       require("ui.animate")
@@ -101,7 +97,7 @@ return {
       require("ui.specs")
     end,
     event = {
-      "CursorMoved",
+      "VeryLazy",
     },
   },
 }
