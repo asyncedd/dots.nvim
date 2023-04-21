@@ -23,10 +23,10 @@ require("catppuccin").setup({
       TelescopePromptTitle = { fg = cp.surface0, bg = cp.surface0 },
       TelescopeResultsTitle = { fg = cp.mantle, bg = cp.mantle },
       TelescopePreviewTitle = { fg = cp.crust, bg = cp.crust },
-      -- IndentBlanklineChar = { fg = colors.surface0 },
-      -- IndentBlanklineContextChar = { fg = colors.surface2 },
+      IndentBlanklineChar = { fg = cp.surface0 },
+      IndentBlanklineContextChar = { fg = cp.surface2 },
       GitSignsChange = { fg = cp.peach },
-      -- NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
+      NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
       NvimTreeExecFile = { fg = cp.text },
     }
   end,
@@ -62,6 +62,10 @@ require("catppuccin").setup({
       },
     },
     cmp = true,
+    indent_blankline = {
+      enabled = true,
+      colored_indent_levels = false,
+    },
   },
   compile = {
     enabled = true,

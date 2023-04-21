@@ -29,9 +29,7 @@ local lazyLoad = function(plugin) -- Stole this from NvChad, hehe.
 
         -- dont defer for treesitter as it will show slow highlighting
         -- This deferring only happens only when we do "nvim filename"
-        if plugin ~= "nvim-treesitter" then
-          vim.schedule(function()
-            require("lazy").load({ plugins = plugin })
+        if plugin ~= "nvim-treesitter" then vim.schedule(function() require("lazy").load({ plugins = plugin })
 
             if plugin == "nvim-lspconfig" or plugin == "null-ls" then
               vim.cmd("silent! do FileType")
@@ -158,7 +156,9 @@ local plugins = {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
-    config = true,
+    config = function ()
+      require("ui.blankline")
+    end,
     init = lazyLoad("indent-blankline.nvim"),
   },
   {
