@@ -329,4 +329,13 @@ return {
       },
     },
   },
+  {
+    "mfussenegger/nvim-treehopper",
+    dependencies = {
+      "phaazon/hop.nvim",
+    },
+    keys = {
+      { "<leader>th", "<cmd>lua require('tsht').nodes()<cr>" },
+    },
+  },
 }
