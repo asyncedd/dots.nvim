@@ -502,7 +502,7 @@
     "prefix": "lazy",
     "body": [
       "{",
-      "\"\t${1:org/user}/${2:repo}\",",
+      "\t\"${1:org/user}/${2:repo}\",",
       "\t${3:-- aditional arguements}",
       "}"
     ],

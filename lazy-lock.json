@@ -33,6 +33,7 @@
   "mini.surround": { "branch": "main", "commit": "cc962bae0890217f8473390abc8cef988519d370" },
   "noice.nvim": { "branch": "main", "commit": "1da4edfba3e9278e98fc9723d7235d9ab3889744" },
   "nui.nvim": { "branch": "main", "commit": "1f43b13d133eb4b4f53a4485379d9afa58808389" },
+  "null-ls.nvim": { "branch": "main", "commit": "5855128178fa78293acdfb5b4e41ef046779240b" },
   "nvim": { "branch": "main", "commit": "73587f9c454da81679202f1668c30fea6cdafd5e" },
   "nvim-autopairs": { "branch": "master", "commit": "7470af886ffb3df32800e5ef9c072a6cd825770d" },
   "nvim-cmp": { "branch": "main", "commit": "777450fd0ae289463a14481673e26246b5e38bf2" },

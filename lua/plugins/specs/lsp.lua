@@ -12,4 +12,11 @@ return {
     end,
     init = lazyLoad("mason.nvim")
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    init = lazyLoad("null-ls.nvim"),
+    config = function()
+      require("lsp.null")
+    end,
+  },
 }
