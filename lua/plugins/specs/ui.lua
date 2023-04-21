@@ -81,11 +81,6 @@ return {
     },
   },
   {
-    "gen740/SmoothCursor.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "echasnovski/mini.animate",
     event = {
       "VeryLazy",
