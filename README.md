@@ -43,6 +43,7 @@ Dependencies:
 - `bat` for fzf syntax highlighting. (Optional)
 - `luarocks` for well, luarocks.
 - `lua` for Windows users wanting to use nvim-treesitter.
+- `npm` for Astro and Markdown LSP.
 
 To install this configuration, you need a Neovim build. You can use your favorite package manager or, [Install from source](https://dev.to/asyncedd/building-neovim-from-source-1794).
 Then clone this repository.
