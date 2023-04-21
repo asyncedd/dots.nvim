@@ -12,3 +12,4 @@ require("nvim-treesitter.configs").setup({
     enable = false,
   },
 })
+
