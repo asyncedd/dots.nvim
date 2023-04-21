@@ -1,9 +1,19 @@
 require("mason").setup()
 
 local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+
+local error = colors.red
+local warning = colors.yellow
+local info = colors.sky
+local hint = colors.teal
 require("catppuccin.lib.highlighter").syntax({
   ["@lsp.type.parmeter"] = { fg = colors.red },
   ["@lsp.type.function"] = { fg = colors.blue },
+
+  LspDiagnosticsUnderlineError = { style = { "undercurl" }, sp = error }, -- Used to underline "Error" diagnostics
+  LspDiagnosticsUnderlineWarning = { style = { "undercurl" }, sp = warning }, -- Used to underline "Warning" diagnostics
+  LspDiagnosticsUnderlineInformation = { style = { "undercurl" }, sp = info }, -- Used to underline "Information" diagnostics
+  LspDiagnosticsUnderlineHint = { style = { "undercurl" }, sp = hint }, -- Used to underline "Hint" diagnostics
 })
 
 require("core.utils.highlight.semantic_tokens")
