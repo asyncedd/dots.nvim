@@ -39,5 +39,29 @@ return {
       "rcarriga/nvim-notify",
     },
   },
+  {
+    "glepnir/dashboard-nvim",
+    init = function()
+      vim.api.nvim_create_autocmd({ "VimEnter" }, {
+        group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. "dashboard-nvim", {}),
+        callback = function()
+          local file = vim.fn.expand "%"
+          local condition = file == ""
+
+          if condition then
+            vim.api.nvim_del_augroup_by_name("BeLazyOnFileOpen" .. "dashboard-nvim")
+
+            -- dont defer for treesitter as it will show slow highlighting
+            -- This deferring only happens only when we do "nvim filename"
+            require("lazy").load({ plugins = "dashboard-nvim" })
+          end
+        end
+      })
+    end,
+    config = true,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 }
 
