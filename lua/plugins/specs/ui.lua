@@ -3,6 +3,9 @@ return {
   {
     "catppuccin/nvim",
     priority = 1000,
+    config = function ()
+      require("plugins.configs.ui.catppuccin")
+    end
   },
   -- Indent blanklines
   {
