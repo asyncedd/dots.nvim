@@ -75,6 +75,7 @@
   "onedarkpro.nvim": { "branch": "main", "commit": "17b3bb0fcce1cf626f4f848fa586bb5dd4b95331" },
   "persisted.nvim": { "branch": "main", "commit": "e053ff33488431dc5bf9239b08650e650ec67292" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
+  "prettier.nvim": { "branch": "main", "commit": "08f7f08fae57fd970c7470d883c9127f172bd9e6" },
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "promise-async": { "branch": "main", "commit": "7fa127fa80e7d4d447e0e2c78e99af4355f4247b" },
   "sniprun": { "branch": "master", "commit": "52ecf6ad06304e46722118af2aaea5647b157ab8" },

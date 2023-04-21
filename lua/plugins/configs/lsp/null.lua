@@ -7,5 +7,6 @@ nls.setup({
     builtins.diagnostics.luacheck.with({
       extra_args = { "--globals vim" },
     }),
+    builtins.formatting.prettier,
   },
 })

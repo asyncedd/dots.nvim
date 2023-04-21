@@ -1,37 +1,27 @@
 {
   "require": {
     "prefix": "req",
-    "body": [
-      "require(\"${1:module}\")"
-    ],
+    "body": ["require(\"${1:module}\")"],
     "description": "Require module"
   },
   "return": {
     "prefix": "rt",
-    "body": [
-      "return $0"
-    ],
+    "body": ["return $0"],
     "description": "return value"
   },
   "assigment": {
     "prefix": "ll",
-    "body": [
-      "local ${1:varName} = ${0:value}"
-    ],
+    "body": ["local ${1:varName} = ${0:value}"],
     "description": "create a variable"
   },
   "local": {
     "prefix": "l",
-    "body": [
-      "local ${0}"
-    ],
+    "body": ["local ${0}"],
     "description": "create a variable"
   },
   "locreq": {
     "prefix": "lreq",
-    "body": [
-      "local ${1:var} = require(\"${2:module}\")"
-    ],
+    "body": ["local ${1:var} = require(\"${2:module}\")"],
     "description": "Require module as a variable"
   },
   "class": {
@@ -48,35 +38,20 @@
   },
   "if": {
     "prefix": "if",
-    "body": [
-      "if ${1:true} then",
-      "\t$0",
-      "end"
-    ]
+    "body": ["if ${1:true} then", "\t$0", "end"]
   },
   "elseif": {
     "prefix": "elseif",
-    "body": [
-      "elseif ${1:true} then",
-      "\t$0"
-    ]
+    "body": ["elseif ${1:true} then", "\t$0"]
   },
   "for": {
     "prefix": "for",
-    "body": [
-      "for ${1:i}=${2:1},${3:10} do",
-      "\t$0",
-      "end"
-    ],
+    "body": ["for ${1:i}=${2:1},${3:10} do", "\t$0", "end"],
     "description": "for loop range"
   },
   "foreach": {
     "prefix": "foreach",
-    "body": [
-      "for i, ${1:x} in pairs(${2:table}) do",
-      "\t$0",
-      "end"
-    ]
+    "body": ["for i, ${1:x} in pairs(${2:table}) do", "\t$0", "end"]
   },
   "forline": {
     "prefix": "forline",
@@ -92,70 +67,42 @@
   },
   "function": {
     "prefix": "fu",
-    "body": [
-      "function ${1:name}($2)",
-      "\t${0:-- code}",
-      "end"
-    ]
+    "body": ["function ${1:name}($2)", "\t${0:-- code}", "end"]
   },
   "inline-function": {
     "prefix": "f=",
-    "body": [
-      "local ${1:name} = function($2)",
-      "\t${0:-- code}",
-      "end"
-    ]
+    "body": ["local ${1:name} = function($2)", "\t${0:-- code}", "end"]
   },
   "print": {
     "prefix": "p",
-    "body": [
-      "print(${0})"
-    ]
+    "body": ["print(${0})"]
   },
   "self": {
     "prefix": "self:",
-    "body": [
-      "function self:${1:methodName}($2)",
-      "\t$0",
-      "end"
-    ]
+    "body": ["function self:${1:methodName}($2)", "\t$0", "end"]
   },
   "while": {
     "prefix": "while",
-    "body": [
-      "while ${1:true} do",
-      "\t$0",
-      "end"
-    ]
+    "body": ["while ${1:true} do", "\t$0", "end"]
   },
   "pcall": {
     "prefix": "pca",
-    "body": [
-      "pcall(${1:function})"
-    ],
+    "body": ["pcall(${1:function})"],
     "description": "Protect call a function"
   },
   "locpcall": {
     "prefix": "lpca",
-    "body": [
-      "local ${1:status}, ${2:err_or_value} = pcall(${3:function})"
-    ],
+    "body": ["local ${1:status}, ${2:err_or_value} = pcall(${3:function})"],
     "description": "Protect call a function as a variable"
   },
   "func": {
     "prefix": "function",
-    "body": [
-      "function()",
-      "\t${0: --code goes here}",
-      "end"
-    ],
+    "body": ["function()", "\t${0: --code goes here}", "end"],
     "description": "Create an endwise function"
   },
   "pcallRequire": {
     "prefix": "rep",
-    "body": [
-      "pcall(require(\"${1:moduleName}\"))"
-    ],
+    "body": ["pcall(require(\"${1:moduleName}\"))"],
     "description": "Protect call a require module"
   },
   "_G": {
@@ -256,11 +203,7 @@
   },
   "describe": {
     "prefix": "describe",
-    "body": [
-      "describe('${1:Title}', function()",
-      "\t${2}",
-      "end)"
-    ]
+    "body": ["describe('${1:Title}', function()", "\t${2}", "end)"]
   },
   "doc": {
     "prefix": "doc",
@@ -272,27 +215,19 @@
   },
   "apifun": {
     "prefix": "api.",
-    "body": [
-      "vim.api.nvim_${1:buf}_${2:get}_${3:name}"
-    ]
+    "body": ["vim.api.nvim_${1:buf}_${2:get}_${3:name}"]
   },
   "api": {
     "prefix": "lapi",
-    "body": [
-      "local api = vim.api"
-    ]
+    "body": ["local api = vim.api"]
   },
   "fmt": {
     "prefix": "lfmt",
-    "body": [
-      "local fmt = string.format"
-    ]
+    "body": ["local fmt = string.format"]
   },
   "inspect": {
     "prefix": "vi",
-    "body": [
-      "print(\"${1}: \" .. vim.inspect(${1}))"
-    ]
+    "body": ["print(\"${1}: \" .. vim.inspect(${1}))"]
   },
   "fun": {
     "body": "function ${1:function_name}(${2:...})\n\t${0:-- body}\nend",
