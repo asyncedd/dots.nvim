@@ -9,7 +9,7 @@ local g = vim.g
 g.mapleader = " "
 
 -- 1.2 Fix markdown indentations.
--- g.markdown_recommended_style = 0
+g.markdown_recommended_style = 0
 
 -- 2. Editor stuff.
 -- 2.1 Indentations.
