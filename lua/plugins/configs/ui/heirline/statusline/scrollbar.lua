@@ -100,3 +100,4 @@ M.ScrollBar = surround(function(self)
 end, { M.ScrollBar })
 
 return M
+
