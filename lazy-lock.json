@@ -89,6 +89,7 @@
   "sj.nvim": { "branch": "main", "commit": "2e06233c2076390d6f9dab0f166667e8703a59c6" },
   "specs.nvim": { "branch": "main", "commit": "2743e412bbe21c9d73954c403d01e8de7377890d" },
   "sqlite.lua": { "branch": "master", "commit": "376e4735c48e07dade3e6ff5f09a654a04f5d4ba" },
+  "substitute.nvim": { "branch": "main", "commit": "14eea5563234424e9a732cba2e8acb2e4e1f9bb4" },
   "symbols-outline.nvim": { "branch": "master", "commit": "512791925d57a61c545bc303356e8a8f7869763c" },
   "syntax-tree-surfer": { "branch": "master", "commit": "6571f0fe11463ea094f3dec1c8ca925daad70693" },
   "tabout.nvim": { "branch": "master", "commit": "0d275c8d25f32457e67b5c66d6ae43f26a61bce5" },

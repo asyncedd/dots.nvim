@@ -140,4 +140,35 @@ return {
       { "<A-l>", mode = { "n", "v" } },
     },
   },
+  {
+    "gbprod/substitute.nvim",
+    config = true,
+    keys = {
+      {
+        ",s",
+        function()
+          require("substitute").operator()
+        end,
+      },
+      {
+        ",ss",
+        function()
+          require("substitute").line()
+        end,
+      },
+      {
+        ",S",
+        function()
+          require("substitute").eol()
+        end,
+      },
+      {
+        ",s",
+        function()
+          require("substitute").operator()
+        end,
+        mode = { "v", "x" },
+      },
+    },
+  },
 }
