@@ -65,7 +65,9 @@ M.FileName = {
   -- hl = { fg = utils.get_highlight("Directory").fg },
   -- hl = { fg = "bright_fg" },
   -- hl = { fg = "black" },
-  hl = { fg = "normal" },
+  hl = function (self)
+    return { fg = self:mode_color(), bold = true, }
+  end ,
 
   {
     provider = function(self)
@@ -97,10 +99,10 @@ M.FileFlags = {
 -- component
 
 M.FileNameModifer = {
-  hl = function()
+  hl = function(self)
     if vim.bo.modified then
       -- use `force` because we need to override the child's hl foreground
-      return { fg = "normal", bold = true, force = true }
+      return { fg = self:mode_color(), bold = true, force = true }
     end
   end,
 }
