@@ -62,6 +62,12 @@ return {
         end,
       },
       {
+        "<leader>bl",
+        function()
+          require("dap").run_last()
+        end,
+      },
+      {
         "<leader>bt",
         function()
           vim.opt_local.number = false
