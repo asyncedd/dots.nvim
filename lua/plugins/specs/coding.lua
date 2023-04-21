@@ -125,4 +125,13 @@ return {
       require("coding.cmp")
     end,
   },
+  {
+    "gbprod/cutlass.nvim",
+    keys = {
+      "m",
+    },
+    config = function()
+      require("coding.cutlass")
+    end,
+  },
 }
