@@ -78,5 +78,6 @@ o.emoji = false
 -- 4.1 Lazy redraw.
 o.lazyredraw= true
 
--- Avoid long syntax highlgihting for big stuff.
+-- 4.2 Avoid long syntax highlgihting for big stuff. 
 o.synmaxcol = 128 -- avoid slow rendering for long lines
+
