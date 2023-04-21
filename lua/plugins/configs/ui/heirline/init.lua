@@ -18,6 +18,7 @@ require("plugins.configs.ui.heirline.colors")
 
 local Align = { provider = "%=", hl = { bg = "normal" } }
 local Space = { provider = " ", hl = { bg = "normal" } }
+local Space1 = { provider = "                 ", hl = { bg = "normal" } }
 
 local DefaultStatusLine = {
   Lazy, Space, ViMode, Space, SearchResults,
@@ -30,7 +31,7 @@ local DefaultStatusLine = {
     Gitsigns,
     hl = { bg = "normal" }
   },
-  Space,
+  Space1,
   {
     LSP.LSPActive,
     hl = { bg = "normal" }
