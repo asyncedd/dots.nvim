@@ -97,7 +97,7 @@ return {
       },
       "hrsh7th/cmp-emoji",
       "chrisgrieser/cmp-nerdfont",
-      -- "lukas-reineke/cmp-rg",
+      "lukas-reineke/cmp-rg",
       "andersevenrud/cmp-tmux",
     },
     config = function()
