@@ -64,9 +64,7 @@ return {
   {
     "rebelot/heirline.nvim",
     config = function()
-      coroutine.resume(coroutine.create(function()
-        require("ui.heirline")
-      end))
+      require("ui.heirline")
     end,
     init = lazyLoad("heirline.nvim"),
     -- event = "UIEnter",
@@ -203,5 +201,11 @@ return {
       "WinNew",
       "VeryLazy",
     },
+  },
+  {
+    "freddiehaddad/feline.nvim",
+    config = function()
+      require("ui.feline")
+    end,
   },
 }

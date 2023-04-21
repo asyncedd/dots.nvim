@@ -22,6 +22,7 @@
   "dashboard-nvim": { "branch": "master", "commit": "275e7c8579858c3ee06f32c16bdc687153ca7204" },
   "diffview.nvim": { "branch": "main", "commit": "63720aa5a70ce4aa386be407d0e612cd9e63861a" },
   "dressing.nvim": { "branch": "master", "commit": "0e3e1eba147fee6e638ac1ac28f0495bcde17319" },
+  "feline.nvim": { "branch": "main", "commit": "a02bcdde649cdfca0e25d2dd693ba140233b5c3e" },
   "flirt.nvim": { "branch": "main", "commit": "93eefd618963335242046e3336e6003082f2971c" },
   "flit.nvim": { "branch": "main", "commit": "f60e4b3d49bb5a5e97cfffe66f2e671eb422078e" },
   "friendly-snippets": { "branch": "main", "commit": "b1b78a6433268fc172adb5a843e165035e83861e" },
