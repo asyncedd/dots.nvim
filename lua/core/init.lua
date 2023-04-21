@@ -28,12 +28,6 @@ vim.api.nvim_command("colorscheme " .. colorscheme)
 -- Set some icons
 require("core.setIcons")
 
-vim.api.nvim_create_autocmd("BufReadPre", {
-  callback = function ()
-    o.shadafile = ""
-  end
-})
-
 vim.schedule(function ()
   -- We can defer keymaps :/
   require("user.keymaps")
@@ -41,5 +35,7 @@ vim.schedule(function ()
   o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
   -- 1.2 Persistent undos, across sessions.
   o.undofile = true
+  -- 1.3 Shada is cool.
+  o.shada = ""
 end)
 
