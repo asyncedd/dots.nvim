@@ -91,7 +91,7 @@ return {
       "nvim-telescope/telescope.nvim",
     },
   },
-    {
+  {
     "ThePrimeagen/harpoon",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -161,6 +161,18 @@ return {
         "<leader>" .. vim.v.count .. "np",
         function()
           require("harpoon.ui").nav_prev()
+        end,
+      },
+    },
+  },
+  {
+    "TimUntersberger/neogit",
+    config = true,
+    keys = {
+      {
+        "<leader>ng",
+        function()
+          require("neogit").open()
         end,
       },
     },
