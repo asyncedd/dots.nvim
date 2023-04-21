@@ -12,4 +12,9 @@ return {
     end,
     init = lazyLoad("mason.nvim")
   },
+  {
+    "glepnir/lspsaga.nvim",
+    config = true,
+    -- init = lazyLoad("lspsaga.nvim"),
+  },
 }

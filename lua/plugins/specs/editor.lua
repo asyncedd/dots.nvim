@@ -85,7 +85,9 @@ return {
   {
     "folke/todo-comments.nvim",
     init = lazyLoad("todo-comments.nvim"),
-    config = true,
+    config = function()
+      require("todo-comments").setup()
+    end,
   },
 }
 
