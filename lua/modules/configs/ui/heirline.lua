@@ -15,7 +15,7 @@ return function()
   local Align = { provider = "%=" }
 
   local DefaultStatusLine = {
-    ViMode, Space, filename, lspactive, Align,
+    ViMode, Space, filename, Space, lspactive, Align,
     Align,
     Align, ruler, Space, scrollbar, Space, filetype, Space
   }
