@@ -102,5 +102,14 @@ return {
       "CursorMoved",
     },
   },
+  {
+    "rainbowhxch/accelerated-jk.nvim",
+    keys = {
+      { "j", "<Plug>(accelerated_jk_j)", mode = { "n", "v" } },
+      { "k", "<Plug>(accelerated_jk_k)", mode = { "n", "v" } },
+      { "gk", "<Plug>(accelerated_jk_gj)", mode = { "n", "v" } },
+      { "gj", "<Plug>(accelerated_jk_gj)", mode = { "n", "v" } },
+    },
+  },
 }
 
