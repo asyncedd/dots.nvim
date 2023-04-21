@@ -189,4 +189,9 @@ return {
       { "<Down>", "<cmd>lua Scroll('j', 0, 1, 3)<cr>", mode = { "n", "x" } },
     },
   },
+  {
+    "gen740/SmoothCursor.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
