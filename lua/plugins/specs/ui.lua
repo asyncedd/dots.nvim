@@ -148,11 +148,4 @@ return {
       { "<leader>gh", "<cmd>BufferLineCyclePrev<cr>" },
     },
   },
-  {
-    "luukvbaal/statuscol.nvim",
-    config = function()
-      require("ui.statuscol")
-    end,
-    event = "UIEnter",
-  },
 }

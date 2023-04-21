@@ -54,4 +54,26 @@ return {
       { "<A-d>", "<cmd>Lspsaga term_toggle<cr>", mode = { "n", "t" } },
     },
   },
+  {
+    "folke/trouble.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = true,
+    cmd = {
+      "Trouble",
+      "TroubleClose",
+      "TroubleToggle",
+      "TroubleRefresh",
+    },
+    keys = {
+      { "<leader>qf", "<cmd>TroubleToggle quickfix<cr>" },
+      { "<leader>xx", "<cmd>TroubleToggle<cr>" },
+      { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>" },
+      { "<leader>xd", "<cmd>TroubleToggle documnet_diagnostics<cr>" },
+      { "<leader>xl", "<cmd>TroubleToggle loclist<cr>" },
+      { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>" },
+      { "<leader>gR", "<cmd>TroubleToggle lsp_references<cr>" },
+    },
+  },
 }
