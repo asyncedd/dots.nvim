@@ -227,15 +227,35 @@ cmp.setup({
   }),
 
   formatting = {
-    format = lspkind.cmp_format({
-      mode = "symbol_text", -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-      symbol_map = {
-        Codeium = "",
-        TabNine = "",
-      },
-    }),
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      local kind = lspkind.cmp_format({
+        mode = "symbol_text", -- show only symbol annotations
+        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+        ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+        menu = {
+          buffer = "[BUFFER]",
+          copilot = "[COPILOT]",
+          path = "[PATH]",
+          nvim_lsp = "[LSP]",
+          nvim_lsp_signature_help = "[SIGN]",
+          luasnip = "[SNIP]",
+          nvim_lua = "[NVIM]",
+          cmdline_history = "[HIST]",
+          cmdline = "[CMD]",
+          neorg = "[NEORG]",
+          jupynium = "[JUPYTER]",
+        },
+        symbol_map = {
+          Codeium = "",
+          TabNine = "",
+        },
+      })(entry, vim_item)
+
+      local strings = vim.split(vim_item.kind, "%s+", { trimempty = true })
+      kind.kind = string.format(" [%s] %s ", strings[1], strings[2])
+      return kind
+    end,
   },
   enabled = function()
     -- disable completion in comments
