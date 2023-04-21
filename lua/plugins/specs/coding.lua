@@ -22,6 +22,12 @@ return {
       { "<Tab>", mode = "i" },
       { "<S-Tab>", mode = "i" },
     },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    after = {
+      "hrs7th/nvim-cmp",
+    },
   },
   {
     "echasnovski/mini.splitjoin",
