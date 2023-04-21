@@ -7,24 +7,24 @@ local api = vim.api
 local Lazy = {}
 
 function Lazy:load_plugins()
-  self.modules = {}  -- Initialize the table to store the loaded plugins
+  self.modules = {} -- Initialize the table to store the loaded plugins
   local cache_dir = vim.fn.stdpath("cache") .. "/.cache/nvim"
   local cache_file = cache_dir .. "/plugins_cache.lua"
-  local plugins_list = vim.fn.glob(modules_dir .. "/plugins/*.lua")  -- Get the list of all plugin files
+  local plugins_list = vim.fn.glob(modules_dir .. "/plugins/*.lua") -- Get the list of all plugin files
   local plugins_list = vim.split(plugins_list, "\n")
 
-  package.path = package.path .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
+  package.path = package.path
+    .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
 
-  for _, m in ipairs(plugins_list) do  -- Loop through the plugin files
-    local modules = require(m:sub(#modules_dir - 6, -5))  -- Load the plugin file
-    if type(modules) == "table" then  -- If the loaded plugin is a table
-      for name, conf in pairs(modules) do  -- Loop through the table
-        self.modules[#self.modules + 1] = vim.tbl_extend("force", { name }, conf)  -- Add the plugin to `self.modules`
+  for _, m in ipairs(plugins_list) do -- Loop through the plugin files
+    local modules = require(m:sub(#modules_dir - 6, -5)) -- Load the plugin file
+    if type(modules) == "table" then -- If the loaded plugin is a table
+      for name, conf in pairs(modules) do -- Loop through the table
+        self.modules[#self.modules + 1] = vim.tbl_extend("force", { name }, conf) -- Add the plugin to `self.modules`
       end
     end
   end
 end
-
 
 function Lazy:load_lazy()
   if not vim.loop.fs_stat(lazy_path) then
@@ -59,8 +59,8 @@ function Lazy:load_lazy()
           "spellfile",
           "tohtml",
           "zipPlugin",
-          "tarPlugin"
-        }
+          "tarPlugin",
+        },
       },
     },
   }

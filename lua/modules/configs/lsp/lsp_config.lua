@@ -9,11 +9,11 @@ local icons = {
 
 function M.setup(config)
   for server, server_config in pairs(config) do
-    local lspconfig = require('lspconfig')
+    local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     lspconfig[server].setup({
       capabilities = capabilities,
-      server_config
+      settings = server_config,
     })
 
     for name, icon in pairs(icons) do
