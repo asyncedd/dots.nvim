@@ -2,17 +2,16 @@ local heirline = require("heirline")
 local utils = require("heirline.utils")
 local get_highlight = utils.get_highlight
 
-local git_del = function ()
+local git_del = function()
   local colorscheme = require("user.settings").colorscheme
 
-  if ("catppuccin" == colorscheme or "tokyonight" == colorscheme) then
+  if "catppuccin" == colorscheme or "tokyonight" == colorscheme then
     return get_highlight("diffRemoved").fg
   end
 
-  if ("kanagawa" == colorscheme) then
+  if "kanagawa" == colorscheme then
     return get_highlight("diffDeleted").fg
   end
-
 end
 
 local colors = {
@@ -37,4 +36,3 @@ local colors = {
 }
 
 heirline.load_colors(colors)
-
