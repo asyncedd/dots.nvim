@@ -8,6 +8,7 @@ return {
         require("ui.catppuccin")
       end))
     end,
+    build = ":CatppuccinCompile",
   },
   {
     "echasnovski/mini.map",
