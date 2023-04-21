@@ -275,6 +275,10 @@ local plugins = {
       require("lsp.null")
     end,
   },
+  {
+    "TimUntersberger/neogit",
+    cmd = { "Neogit" },
+  }
 }
 
 require("lazy").setup({
