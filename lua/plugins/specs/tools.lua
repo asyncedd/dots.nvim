@@ -131,4 +131,26 @@ return {
       { "<leader>gh", ":Octo " },
     },
   },
+  {
+    "ibhagwan/fzf-lua",
+    -- config = true,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    build = "fzf#install()",
+    keys = {
+      { "<leader>gr", "<cmd>FzfLua grep<cr>" },
+      { "<leader>sw", "<cmd>FzfLua grep_cword<cr>" },
+      { "<leader>sW", "<cmd>FzfLua grep_cWORD<cr>" },
+      { "<leader>sv", "<cmd>FzfLua grep_visual<cr>", mode = "v" },
+      { "<leader>lr", "<cmd>FzfLua live_grep_native<cr>" },
+      { "<leader>lr", "<cmd>FzfLua lsp_references<cr>" },
+      { "<leader>ld", "<cmd>FzfLua lsp_definitions<cr>" },
+      { "<leader>gc", "<cmd>FzfLua git_commits<cr>" },
+      { "<leader>gs", "<cmd>FzfLua git_status<cr>" },
+      { "<leader>gf", "<cmd>FzfLua git_files<cr>" },
+      { "<leader>gb", "<cmd>FzfLua git_bcommits<cr>" },
+      { "<leader>br", "<cmd>FzfLua git_branches<cr>" },
+    },
+  },
 }
