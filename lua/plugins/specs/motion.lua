@@ -9,12 +9,12 @@ return {
       {
         "ms",
         function()
-          require("editor.leapMulti")
+          require("motion.leapMulti")
         end,
       },
     },
     config = function()
-      require("editor.leap")
+      require("motion.leap")
     end,
   },
   {
@@ -170,6 +170,83 @@ return {
       },
       { "<C-f>", "<Right>", mode = { "i" } },
       { "<C-b>", "<Left>", mode = { "i" } },
+    },
+  },
+  {
+    "ziontee113/syntax-tree-surfer",
+    config = function()
+      require("motion.treeSurfer")
+    end,
+    keys = {
+      {
+        "gv",
+        function()
+          require("syntax-tree-surfer").targeted_jump({ "variable_declaration" })
+        end,
+      },
+      {
+        "gfu",
+        function()
+          require("syntax-tree-surfer").targeted_jump({ "function", "arrrow_function", "function_defination" })
+        end,
+      },
+      {
+        "gif",
+        function()
+          require("syntax-tree-surfer").targeted_jump({ "if_statement" })
+        end,
+      },
+      {
+        "gfo",
+        function()
+          require("syntax-tree-surfer").targeted_jump({ "for_statement" })
+        end,
+      },
+      {
+        "hj",
+        function()
+          require("syntax-tree-surfer").targeted_jump({
+            "function",
+            "if_statement",
+            "else_clause",
+            "else_statement",
+            "elseif_statement",
+            "for_statement",
+            "while_statement",
+            "switch_statement",
+          })
+        end,
+      },
+      {
+        "-",
+        function()
+          require("syntax-tree-surfer").filtered_jump(
+            { "if_statement", "else_clause", "else_statement" },
+            false,
+            { destination = "siblings" }
+          )
+        end,
+      },
+      {
+        "_",
+        function()
+          require("syntax-tree-surfer").filtered_jump(
+            { "if_statement", "else_clause", "else_statement" },
+            false,
+            { destination = "parent" }
+          )
+        end,
+      },
+      {
+        "+",
+        function()
+          require("syntax-tree-surfer").filtered_jump(
+            { "if_statement", "else_clause", "else_statement" },
+            false,
+            { destination = "children" }
+          )
+        end,
+      },
     },
   },
 }
