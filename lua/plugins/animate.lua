@@ -1,8 +1,4 @@
 return {
-  {
-    "echasnovski/mini.animate",
-    dependencies = {
-      { "tamton-aquib/flirt.nvim" }
-    }
-  }
+  "echasnovski/mini.animate",
+  "tamton-aquib/flirt.nvim"
 }

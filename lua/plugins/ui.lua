@@ -1,12 +1,6 @@
 return {
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    dependencies = {
-      { "echasnovski/mini.indentscope", version = "*" }
-    }
-  },
-  {
-    "monkoose/matchparen.nvim",
-  },
+  "lukas-reineke/indent-blankline.nvim",
+  "echasnovski/mini.indentscope",
+  "monkoose/matchparen.nvim",
   "norcalli/nvim-colorizer.lua",
 }
