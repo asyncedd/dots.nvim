@@ -305,6 +305,14 @@
         "language": "vimwiki",
         "path": "./snippets/vimwiki.json",
       },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/reactts.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json",
+      },
     ]
   }
 }
