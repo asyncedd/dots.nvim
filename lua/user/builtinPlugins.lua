@@ -27,5 +27,4 @@ return {
   "bugreport",
   "ftplugin",
   "tohtml",
-  "matchparen",
 }
