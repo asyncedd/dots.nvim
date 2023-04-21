@@ -17,13 +17,13 @@ cmp.event:on({
 })
 
 cmp.setup({
-  matching = {
-    disallow_fuzzy_matching = true,
-    disallow_fullfuzzy_matching = true,
-    disallow_partial_fuzzy_matching = true,
-    disallow_partial_matching = true,
-    disallow_prefix_unmatching = false,
-  },
+  -- matching = {
+  --   disallow_fuzzy_matching = true,
+  --   disallow_fullfuzzy_matching = true,
+  --   disallow_partial_fuzzy_matching = true,
+  --   disallow_partial_matching = true,
+  --   disallow_prefix_unmatching = false,
+  -- },
   preselect = cmp.PreselectMode.None,
   snippet = {
     expand = function(args)
