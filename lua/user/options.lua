@@ -29,6 +29,12 @@ o.sw = 2 -- sw = shiftwidth
 -- Expand tabs.
 o.et = true -- et = expand tab
 
+-- 2.2 Folding.
+o.foldcolumn = '1' -- '0' is not bad
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevelstart = 99
+o.foldenable = true
+
 --  +----------------------------------------------------------+
 --  |                       3. UI stuff                        |
 --  +----------------------------------------------------------+
@@ -78,6 +84,8 @@ o.ic = true -- ic = ignore case.
 o.sc= true -- sc = smart case.
 -- Highlight whilst you search.
 o.is = true -- is = incsearch.
+
+
 
 --  +----------------------------------------------------------+
 --  |                        6. Neovide                        |

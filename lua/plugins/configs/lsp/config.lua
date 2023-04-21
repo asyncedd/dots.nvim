@@ -29,6 +29,11 @@ capabilities.textDocument.completion.completionItem = {
   },
 }
 
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+
 local lspconfig = require("lspconfig")
 
 lspconfig.lua_ls.setup({
