@@ -4,37 +4,42 @@ local M = {}
 function M.async(func)
   return function(...)
     local co = coroutine.create(func)
-    local args = {...}
+    local args = ({...})
     local resume = function()
       local ok, result = xpcall(function()
-        return {coroutine.resume(co, unpack(args))}
+        return ({coroutine.resume(co, unpack(args, 1, #args))})
       end, debug.traceback)
       if ok then
-        return unpack(result)
+        return unpack(result, 1, #result)
       else
-        error(result)
+        error(result[1])
       end
     end
     return {
       await = function()
-        local results = {vim.wait(0, resume)}
-        if #results == 0 then
+        local result
+        vim.schedule(function()
+          result = ({resume()})
+        end)
+        coroutine.yield()
+        if #result == 0 then
           return nil
-        elseif #results == 1 then
-          return results[1]
+        elseif #result == 1 then
+          return result[1]
         else
-          return unpack(results)
+          return unpack(result, 1, #result)
         end
       end
     }
   end
 end
 
+
 -- Run a table of functions asynchronously in parallel
 function M.parallel(funcs)
   local results = {}
   for i, func in ipairs(funcs) do
-    results[i] = M.async(func)()
+    results[i] = M.async(coroutine.wrap(func))()
   end
   return {
     await = function()
@@ -48,3 +53,4 @@ function M.parallel(funcs)
 end
 
 return M
+

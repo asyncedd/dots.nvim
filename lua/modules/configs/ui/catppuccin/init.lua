@@ -8,6 +8,9 @@ return function()
       -- NOT recommended if you use old palette (a.k.a., mocha).
       shade = "dark",
       percentage = 0.15,
+    },
+    highlight_overrides = {
+      mocha = require("ui.catppuccin.highlight_overrides")
     }
   })
 end
