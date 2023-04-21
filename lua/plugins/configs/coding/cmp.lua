@@ -2,6 +2,7 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local compare = require("cmp.config.compare")
+local cmp_buffer = require("cmp_buffer")
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -41,6 +42,9 @@ cmp.setup({
       compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
       compare.offset,
       compare.recently_used,
+      function(...)
+        return cmp_buffer:compare_locality(...)
+      end,
       compare.order,
       -- compare.scopes, -- what?
       -- compare.sort_text,
@@ -90,6 +94,7 @@ cmp.setup({
 
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
+    { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "emoji" },
     { name = "nerdfont" },
@@ -101,6 +106,8 @@ cmp.setup({
         get_bufnrs = function()
           return vim.api.nvim_list_bufs()
         end,
+        indexing_batch_size = 100,
+        indexing_batch_size = 150,
       },
     },
     {
@@ -145,6 +152,19 @@ cmp.setup({
 
   experimental = {
     ghost_text = true,
+  },
+  confirm_opts = {
+    behavior = cmp.ConfirmBehavior.Replace,
+    select = false,
+  },
+
+  window = {
+    completion = {
+      border = "rounded",
+    },
+    documentation = {
+      border = "rounded",
+    },
   },
 })
 

@@ -121,6 +121,7 @@ return {
       "chrisgrieser/cmp-nerdfont",
       "lukas-reineke/cmp-rg",
       "andersevenrud/cmp-tmux",
+      "hrsh7th/cmp-nvim-lua",
     },
     config = function()
       require("coding.cmp")
