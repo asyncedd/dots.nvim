@@ -2,6 +2,23 @@ local heirline = require("heirline")
 local utils = require("heirline.utils")
 local get_highlight = utils.get_highlight
 
+local git_del = function ()
+  local colorscheme = require("user.settings").colorscheme
+
+  if ("catppuccin" == colorscheme or "tokyonight" == colorscheme) then
+    return get_highlight("diffRemoved").fg
+  end
+
+  if ("edge" == colorscheme) then
+    return get_highlight("diffDelete").fg
+  end
+
+  if ("kanagawa" == colorscheme) then
+    return get_highlight("diffDeleted").fg
+  end
+
+end
+
 local colors = {
   normal = get_highlight("Normal").bg,
   bright_bg = get_highlight("Folded").bg,
@@ -18,7 +35,7 @@ local colors = {
   diag_error = get_highlight("DiagnosticError").fg,
   diag_hint = get_highlight("DiagnosticHint").fg,
   diag_info = get_highlight("DiagnosticInfo").fg,
-  git_del = get_highlight("diffRemoved").fg,
+  git_del = git_del(),
   git_add = get_highlight("diffAdded").fg,
   git_change = get_highlight("diffChanged").fg,
 }
