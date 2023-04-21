@@ -6,7 +6,7 @@
 -- Load the colorscheme and Treesitter first.
 -- We love catppuccin, catppuccin is life.
 
-require("plugins.configs.ui.catppuccin")
+-- require("plugins.configs.ui.catppuccin")
 
 -- Time to set out beautiful `catppuccin` colorscheme!
 -- It's Clean, cute and customizable!
