@@ -96,9 +96,6 @@ if vim.g.neovide then
   g.neovide_cursor_vfx_mode = "railgun"
 
   -- 6.2 Neovide windows settings.
-  -- Make Neovide slightly transparent.
-  g.neovide_transparency = 0.9
-
   -- Make floating windows a little bit blurry.
   g.neovide_floating_blur_amount_x = 1.0
 
