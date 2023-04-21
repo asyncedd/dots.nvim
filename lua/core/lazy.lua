@@ -97,7 +97,8 @@ function Lazy:load_lazy()
           "tarPlugin",
           "tutor",
           "man",
-          "netrwPlugin"
+          "netrwPlugin",
+          "rplugin"
         },
       },
     },
