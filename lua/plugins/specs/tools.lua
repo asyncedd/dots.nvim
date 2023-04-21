@@ -166,4 +166,9 @@ tools[11] = {
   event = { "VeryLazy" },
 }
 
+tools[12] = {
+  "lewis6991/impatient.nvim",
+  lazy = false,
+}
+
 return tools
