@@ -36,6 +36,9 @@ return {
     after = {
       "hrs7th/nvim-cmp",
     },
+    event = {
+      "InsertEnter",
+    },
   },
   {
     "echasnovski/mini.splitjoin",
