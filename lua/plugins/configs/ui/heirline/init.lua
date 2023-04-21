@@ -7,6 +7,7 @@ return function()
   local Gitsigns = require("plugins.configs.ui.heirline.git")
   local Scrollbar = require("plugins.configs.ui.heirline.scrollbar")
   local File = require("plugins.configs.ui.heirline.file")
+  local LSP = require("plugins.configs.ui.heirline.lsp")
 
   heirline.load_colors(colors)
 
@@ -14,20 +15,9 @@ return function()
   local Space = { provider = " " }
 
   local DefaultStatusLine = {
-    ViMode,
-    Space,
-    FileName.WorkDir,
-    Space,
-    FileName.FileNameBlock,
-    Space,
-    Gitsigns,
-    Align,
-    Align,
-    File.FileType,
-    Space,
-    Scrollbar.Ruler,
-    Space,
-    Scrollbar.ScrollBar,
+    ViMode, Space, FileName.WorkDir, Space, FileName.FileNameBlock, Space, Gitsigns, Space,
+    LSP.LSPActive, LSP.Diagnostics, Align,
+    File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar,
   }
 
   local StatusLines = {
