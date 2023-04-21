@@ -360,4 +360,12 @@ editor[23] = {
   event = "VeryLazy",
 }
 
+editor[24] = {
+  "tpope/vim-speeddating",
+  keys = {
+    "<C-A>",
+    "<C-X>",
+  },
+}
+
 return editor
