@@ -18,6 +18,7 @@ function M.async(func)
   end
 end
 
+
 -- Run a table of functions asynchronously in parallel
 function M.parallel(funcs)
   local co = coroutine.create(function()
