@@ -32,5 +32,22 @@ return {
       "gS",
     },
   },
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+    keys = {
+      "gcc",
+      "gbc",
+      { "gc", mode = { "v", "n" } },
+      vim.v.count .. "gc",
+      vim.v.count .. "gb",
+      { "gb", mode = { "v", "n" } },
+      "gc0",
+      "gco",
+      "gcA",
+    },
+  },
 }
 
