@@ -8,9 +8,11 @@ undofile = true -- Enable persistent undo's
 -- Don't store backup when overwriting the file,
 o.backup = false
 o.writebackup = false
+--
 o.mouse = "a" -- Enable mouse for all modes
 o.swapfile = false -- Disable Swap files.
 o.hidden = true -- Don't automatically save whilst changing buffers.
+o.clipboard = "unnamed,unnamedplus" -- Register the clipboard with Windows, Mac OS X And Linux (*Unix) clipboards.
 
 -- Apperance
 o.breakindent = true -- Indent wrapped lines to match line start
