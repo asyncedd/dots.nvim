@@ -21,4 +21,11 @@ return {
     end,
     init = lazyLoad("indent-blankline.nvim"),
   },
+  {
+    "echasnovski/mini.indentscope",
+    config = function()
+      require("plugins.configs.ui.indentscope")
+    end,
+    init = lazyLoad("mini.indentscope"),
+  },
 }

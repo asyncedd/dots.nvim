@@ -1,10 +1,13 @@
-coroutine.resume(coroutine.create(function()
-  require("settings.options")
+vim.loader.enable()
 
-  require("settings.autocmd")
+require("settings.options")
 
-  require("plugins")
+require("settings.autocmd")
 
-  vim.api.nvim_command("colorscheme catppuccin")
-end))
+require("plugins")
 
+vim.api.nvim_command("colorscheme catppuccin")
+
+vim.schedule(function()
+  require("after")
+end)
