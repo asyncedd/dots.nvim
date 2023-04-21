@@ -169,6 +169,17 @@ plugins[19] = {
   end
 }
 
+plugins[20] = {
+  "nvim-tree/nvim-tree.lua",
+  config = function()
+    require("tools.nvimtree")
+  end,
+  cmd = {
+    "NvimTreeToggle",
+    "NvimTreeFocus",
+  },
+}
+
 require("lazy").setup({
   plugins,
 }, {
