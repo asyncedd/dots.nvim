@@ -163,3 +163,5 @@ way out! >:D
 - [mawkler](https://github.com/mawkler/nvim) - For a DAP keymap.
 - [yukat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D and
   basically about a billion more stuff.
+- [JoseConseco](https://github.com/JoseConseco) - For the CMP sorting
+  configuration.
