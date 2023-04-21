@@ -53,6 +53,10 @@ cmp.setup({
       scrollbar = true,
       winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
     },
+    documentation = {
+      scrollbar = true,
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+    },
   },
   mapping = cmp.mapping.preset.insert({
     ["<CR>"] = cmp.mapping.confirm({ select = false }),
