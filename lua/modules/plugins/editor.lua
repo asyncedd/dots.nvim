@@ -1,14 +1,14 @@
 local editor = {}
 
 editor["nvim-treesitter/nvim-treesitter"] = {
-  event = "BufReadPost",
+  event = "BufReadPre",
   config = require("editor.treesitter"),
   dependencies = {
     { "andymass/vim-matchup" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "windwp/nvim-ts-autotag" },
     { "nvim-treesitter/nvim-treesitter-refactor" },
-    { "p00f/nvim-ts-rainbow" }
+    -- { "p00f/nvim-ts-rainbow" }
   },
 }
 
