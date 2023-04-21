@@ -24,6 +24,8 @@ local M = {
       -- Make the LS (langauge sever) aware of Neovim runtime files.
       library = {
         vim.api.nvim_get_runtime_file("", true),
+        [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+        [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
         [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
       },
       -- "Cache" files for fast loading.
