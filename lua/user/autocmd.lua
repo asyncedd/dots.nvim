@@ -1,9 +1,11 @@
+local autocmd = vim.api.nvim_create_autocmd
+
 local function augroup(name)
   return vim.api.nvim_create_augroup("nvim_" .. name, { clear = true })
 end
 
 -- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
+autocmd("TextYankPost", {
   group = augroup("highlight_yank"),
   callback = function()
     vim.highlight.on_yank()
@@ -11,7 +13,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- resize splits if window got resized
-vim.api.nvim_create_autocmd({ "VimResized" }, {
+autocmd({ "VimResized" }, {
   group = augroup("resize_splits"),
   callback = function()
     vim.cmd("tabdo wincmd =")
@@ -19,7 +21,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 })
 
 -- go to last loc when opening a buffer
-vim.api.nvim_create_autocmd("BufReadPost", {
+autocmd("BufReadPost", {
   group = augroup("last_loc"),
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
@@ -30,3 +32,17 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
+local o = vim.opt
+
+-- Change relative numbers according to the mode.
+autocmd("InsertEnter", {
+  callback = function ()
+    o.relativenumber = false
+  end
+})
+
+autocmd("InsertLeave", {
+  callback = function ()
+    o.relativenumber = true
+  end
+})
