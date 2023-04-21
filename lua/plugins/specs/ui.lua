@@ -123,11 +123,6 @@ return {
     },
   },
   {
-    "gen740/SmoothCursor.nvim",
-    event = "CursorMoved",
-    config = true,
-  },
-  {
     "folke/which-key.nvim",
     config = true,
     event = "VeryLazy",
@@ -137,9 +132,5 @@ return {
     config = true,
     event = "VeryLazy",
   },
-  {
-    "tamton-aquib/zone.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
 }
+
