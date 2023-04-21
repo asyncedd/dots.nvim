@@ -171,4 +171,11 @@ return {
       },
     },
   },
+  {
+    "RRethy/nvim-treesitter-endwise",
+    config = function()
+      require("coding.endwise")
+    end,
+    event = "InsertEnter",
+  },
 }
