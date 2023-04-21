@@ -200,13 +200,6 @@ return {
     },
   },
   {
-    "echasnovski/mini.trailspace",
-    init = lazyLoad("mini.trailspace"),
-    config = function()
-      require("mini.trailspace").setup()
-    end,
-  },
-  {
     "folke/which-key.nvim",
     config = true,
     event = "VeryLazy",
