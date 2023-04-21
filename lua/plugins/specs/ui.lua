@@ -92,7 +92,9 @@ return {
     event = "VimEnter",
     config = function()
       vim.schedule(function()
-        require("drop").setup()
+        require("drop").setup({
+          theme = "stars",
+        })
       end)
     end,
   },
