@@ -300,4 +300,10 @@ editor[17] = {
   },
 }
 
+editor[18] = {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  config = true,
+}
+
 return editor
