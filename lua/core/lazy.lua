@@ -12,9 +12,9 @@ function Lazy:load_plugins()
   local cache_file = cache_dir .. "/plugins_cache.lua"
   local plugins_list = vim.split(fn.glob(modules_dir .. "/plugins/*.lua"), "\n")  -- Get the list of all plugin files
 
-  local function load_plugins_from_cache()  -- Function to load plugins from cache
+  local function cache_plugins(operation)  -- Function to load or save plugins from/to cache
     local f = io.open(cache_file, "r")
-    if f then  -- If cache file exists
+    if operation == "load" and f then  -- If cache file exists and we want to load plugins
       local content = f:read("*all")
       f:close()
       local success, result = pcall(load(content))  -- Load the content of the cache file
@@ -22,25 +22,22 @@ function Lazy:load_plugins()
         self.modules = result  -- Assign the loaded content to `self.modules`
         return true  -- Return `true` if the content was successfully loaded
       end
+    elseif operation == "save" then  -- If we want to save plugins
+      f = io.open(cache_file, "w")
+      if f then  -- If cache file was successfully opened for writing
+        f:write("return " .. vim.inspect(self.modules))  -- Write the contents of `self.modules` to the cache file
+        f:close()  -- Close the cache file
+      end
     end
     return false  -- Return `false` if the cache file doesn't exist or there was an error while loading the content
   end
 
-  local function save_plugins_to_cache()  -- Function to save plugins to cache
-    local f = io.open(cache_file, "w")
-    if f then  -- If cache file was successfully opened for writing
-      f:write("return " .. vim.inspect(self.modules))  -- Write the contents of `self.modules` to the cache file
-      f:close()  -- Close the cache file
-    end
-  end
-
-  local append_nativertp = function()  -- 📁 Update the package path to include the directories for configs
+  -- 📁 Update the package path to include the directories for configs
     package.path = package.path
     .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
-  end
-  append_nativertp()
 
-  if not load_plugins_from_cache() then  -- If plugins couldn't be loaded from cache
+  local loaded_from_cache = cache_plugins("load")
+  if not loaded_from_cache then  -- If plugins couldn't be loaded from cache
     for _, m in ipairs(plugins_list) do  -- Loop through the plugin files
       local modules = require(m:sub(#modules_dir - 6, -5))  -- Load the plugin file
       if type(modules) == "table" then  -- If the loaded plugin is a table
@@ -49,7 +46,7 @@ function Lazy:load_plugins()
         end
       end
     end
-    save_plugins_to_cache()  -- Save the plugins to cache after they have been loaded
+    cache_plugins("save")  -- Save the plugins to cache after they have been loaded
   end
 end
 
