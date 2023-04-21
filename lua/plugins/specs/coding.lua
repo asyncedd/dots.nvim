@@ -15,5 +15,14 @@ return {
       { "\"", mode = { "i", "c" } },
     }
   },
+  {
+    "abecodes/tabout.nvim",
+    config = true,
+    keys = {
+      { "<Tab>", mode = "i" },
+      { "<S-Tab>", mode = "i" },
+    },
+    event = "VeryLazy",
+  },
 }
 
