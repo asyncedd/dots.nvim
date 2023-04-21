@@ -27,16 +27,6 @@ require("plugins")
 
 vim.api.nvim_command("colorscheme " .. require("user.settings").colorscheme)
 
-vim.api.nvim_create_autocmd('FileType', {
-  callback = function()
-    local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
-    if lang and pcall(vim.treesitter.language.add, lang) then
-      -- vim.treesitter.start()  -- sync
-      vim.treesitter.start(nil, nil, { timeout = 1 }) -- async
-    end
-  end,
-})
-
 vim.schedule(function ()
   require("core.after")
 end)
