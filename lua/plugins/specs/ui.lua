@@ -143,11 +143,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "luukvbaal/statuscol.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "Eandrju/cellular-automaton.nvim",
     cmd = {
       "CellularAutomaton",
