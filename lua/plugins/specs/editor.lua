@@ -201,4 +201,13 @@ return {
       { "cs", mode = { "x", "n", "v" } },
     },
   },
+  {
+    "zdcthomas/yop.nvim",
+    config = function()
+      require("editor.yop")
+    end,
+    keys = {
+      { "<leader>sm", mode = { "n", "v" } },
+    },
+  },
 }
