@@ -1,3 +1,5 @@
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+
 require("bufferline").setup({
   options = {
     -- separator_style = "slope",
@@ -84,6 +86,11 @@ require("bufferline").setup({
           table.insert(result, { text = "  " .. info, fg = "#7EA9A7" })
         end
         return result
+      end,
+      left = function()
+        return {
+          { text = "  ", fg = colors.green },
+        }
       end,
     },
   },
