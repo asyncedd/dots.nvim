@@ -7,7 +7,7 @@ return {
       coroutine.resume(coroutine.create(function() require("editor.treesitter") end))
     end,
     init = lazyLoad("nvim-treesitter"),
-    build = "TSUpdate",
+    build = ":TSUpdate",
   },
   {
     "echasnovski/mini.ai",
@@ -151,7 +151,6 @@ return {
       { "<C-b>", "<Left>", mode = { "i" } },
     },
   },
-
   {
     "kevinhwang91/nvim-ufo",
     dependencies = {
@@ -165,6 +164,25 @@ return {
     config = function ()
       require("editor.ufo")
     end,
+  },
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      { "<leader>af", function() require("harpoon.mark").add_file() end },
+      { "<leader>mn", function() require("harpoon.ui").toggle_quick_menu() end },
+      { "<leader>1", function() require("harpoon.ui").nav_file(1) end },
+      { "<leader>2", function() require("harpoon.ui").nav_file(2) end },
+      { "<leader>3", function() require("harpoon.ui").nav_file(3) end },
+      { "<leader>4", function() require("harpoon.ui").nav_file(4) end },
+      { "<leader>5", function() require("harpoon.ui").nav_file(5) end },
+      { "<leader>nn", function() require("harpoon.ui").nav_next() end },
+      { "<leader>np", function() require("harpoon.ui").nav_prev() end },
+      { "<leader>" .. vim.v.count .. "nn", function() require("harpoon.ui").nav_next() end },
+      { "<leader>" .. vim.v.count .. "np", function() require("harpoon.ui").nav_prev() end },
+    },
   },
 }
 
