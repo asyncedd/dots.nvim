@@ -123,39 +123,7 @@ cmp.setup({
   }),
 
   sources = cmp.config.sources({
-    {
-      name = "nvim_lsp",
-      options = {
-        entry_filer = function(entry, ctx)
-          local kind = entry:get_kind()
-          local node = ts_utils.get_node_at_cursor()
-
-          local line = ctx.cursor_line
-          local col = ctx.cursor.col
-          local char_before_cursor = string.sub(line, col - 1, col - 1)
-
-          if node == "arguments" then
-            if kind == 22 then
-              return true
-            else
-              return false
-            end
-          elseif char_before_cursor == "." then
-            if kind == 2 or kind == 5 then
-              return true
-            else
-              return false
-            end
-          elseif string.match(line, "^%s*%w*$") then
-            if kind == 3 or kind == 6 then
-              return true
-            else
-              return false
-            end
-          end
-        end,
-      },
-    },
+    { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "emoji" },
@@ -192,25 +160,15 @@ cmp.setup({
   }),
 
   formatting = {
-    format = function(entry, vim_item)
-      local lspkind = lspkind.cmp_format({
-        mode = "symbol_text", -- show only symbol annotations
-        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-        ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-        symbol_map = {
-          Codeium = "",
-          TabNine = "",
-        },
-      })
-
-      local item = entry:get_completion_item()
-
-      if item.detail then
-        vim_item.menu = item.detail
-      end
-
-      return vim_item
-    end,
+    format = lspkind.cmp_format({
+      mode = "symbol_text", -- show only symbol annotations
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+      symbol_map = {
+        Codeium = "",
+        TabNine = "",
+      },
+    }),
   },
   enabled = function()
     -- disable completion in comments
@@ -229,15 +187,6 @@ cmp.setup({
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
-  },
-
-  window = {
-    completion = {
-      border = "rounded",
-    },
-    documentation = {
-      border = "rounded",
-    },
   },
 })
 
