@@ -7,7 +7,8 @@ table.insert(editor, {
   dependencies = {
     { "andymass/vim-matchup" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
-    { "windwp/nvim-ts-autotag" }
+    { "windwp/nvim-ts-autotag" },
+    { "nvim-treesitter/nvim-treesitter-refactor" },
   },
 })
 
