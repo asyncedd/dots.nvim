@@ -52,6 +52,7 @@ local plugins = {
         -- event = "BufReadPre",
       },
       "folke/neodev.nvim",
+      "ray-x/lsp_signature.nvim",
     }
   },
 
