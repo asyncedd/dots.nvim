@@ -12,8 +12,8 @@ local File = require("ui.heirline.statusline.file")
 local LSP = require("ui.heirline.statusline.lsp")
 local Lazy = require("ui.heirline.statusline.lazy")
 
-local Align = { provider = "%=", hl = { bg = "normal" } }
-local Space = { provider = " ", hl = { bg = "normal" } }
+local Align = { provider = "%=" }
+local Space = { provider = " " }
 
 local DefaultStatusLine = {
   Lazy,
