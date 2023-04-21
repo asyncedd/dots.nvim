@@ -45,13 +45,13 @@ return {
       {
         "[E",
         function()
-          require("lsp.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+          require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
         end,
       },
       {
         "]E",
         function()
-          require("lsp.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+          require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
         end,
       },
       { "<leader>so", "<cmd>Lspsaga outline<cr>" },
