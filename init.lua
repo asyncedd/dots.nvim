@@ -7,8 +7,6 @@
 
 vim.loader.enable()
 
-local co = coroutine
-
 require("settings.options")
 
 require("settings.autocmd")
