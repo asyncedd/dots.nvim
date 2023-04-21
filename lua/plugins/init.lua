@@ -182,8 +182,19 @@ plugins[20] = {
 
 plugins[21] = {
   "glepnir/dashboard-nvim",
-  event = "VimEnter",
   config = true,
+  init = function()
+    local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.")
+    vim.api.nvim_create_autocmd({ "VimEnter" }, {
+      callback = function ()
+        if("" == filename) then
+          require("lazy").load({ plugins = "dashboard-nvim" })
+        else
+          return
+        end
+      end
+    })
+  end
 }
 
 require("lazy").setup({
