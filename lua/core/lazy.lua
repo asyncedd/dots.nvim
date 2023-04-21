@@ -32,4 +32,10 @@ require("lazy").setup({
       },
     },
   },
+  install = {
+    colorscheme = { "catppuccin", "tokyonight", "habamx" },
+  },
+  defaults = {
+    lazy = true
+  }
 })
