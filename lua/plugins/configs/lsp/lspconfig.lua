@@ -10,9 +10,13 @@ return function()
   local status, mason_lspconfig = pcall(require, "mason-lspconfig")
   local status1, mason = pcall(require, "mason")
   local status2, lspconfig = pcall(require, "lspconfig")
+  local status3, neodev = pcall(require, "neodev")
+  if (not status3) then return end
   if (not status) then return end
   if (not status1) then return end
   if (not status2) then return end
+
+  neodev.setup()
 
   mason.setup()
 
