@@ -33,6 +33,8 @@ return function()
     auto_install = true,
     -- Enable beautiful syntax highlighting!!!
 
+    ensure_installed = { "markdown", "markdown_inline" },
+
     highlight = {
       enable = true,
     },
