@@ -5,10 +5,12 @@ return function()
   local ViMode = require("plugins.configs.ui.heirline.vimode")
   -- Unfortunately lazy_requiring ViMode doesn't work ;-;
   local FileName = lazy_require("plugins.configs.ui.heirline.filename")
-  local Gitsigns = lazy_require("plugins.configs.ui.heirline.git")
+  local Gitsigns = require("plugins.configs.ui.heirline.git")
   local Scrollbar = lazy_require("plugins.configs.ui.heirline.scrollbar")
   local File = lazy_require("plugins.configs.ui.heirline.file")
   local LSP = lazy_require("plugins.configs.ui.heirline.lsp")
+  local Lazy = lazy_require("plugins.configs.ui.heirline.lazy")
+  local SearchResults = require("plugins.configs.ui.heirline.search")
   local Bufferline = lazy_require("plugins.configs.ui.heirline.bufferline")
 
   require("plugins.configs.ui.heirline.colors")
@@ -17,7 +19,7 @@ return function()
   local Space = { provider = " " }
 
   local DefaultStatusLine = {
-    ViMode, Space, FileName.WorkDir, Space, FileName.FileNameBlock, Space, Gitsigns, Space,
+    Lazy, Space, ViMode, Space, SearchResults, FileName.WorkDir, Space, FileName.FileNameBlock, Space, Gitsigns, Space,
     LSP.LSPActive, LSP.Diagnostics, Align,
     File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar,
   }
@@ -69,6 +71,6 @@ return function()
 
   heirline.setup({
     statusline = StatusLines,
-    tabline = bufferline
+    tabline = bufferline,
   })
 end
