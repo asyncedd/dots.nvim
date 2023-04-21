@@ -1,6 +1,13 @@
 -- lua/plugins/configs/lsp/config.lua - Get it? lsp/config.lua? I'm so boring :(
 
-require("neodev").setup()
+require("neodev").setup({
+  library = {
+    plugins = {
+      "nvim-dap-ui",
+    },
+    types = true
+  },
+})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
