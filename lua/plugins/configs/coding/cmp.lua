@@ -1,3 +1,4 @@
+local compare = require('cmp.config.compare')
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
@@ -17,6 +18,7 @@ cmp.event:on({
 })
 
 cmp.setup({
+  preselect = cmp.PreselectMode.None,
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
@@ -60,6 +62,7 @@ cmp.setup({
     { name = "luasnip" },
     { name = "codeium" },
     { name = "cmp_tabnine" },
+    { name = "rg" },
     { name = "buffer" },
   }),
 
@@ -95,6 +98,20 @@ cmp.setup({
   experimental = {
     ghost_text = true,
   },
+
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      compare.offset,
+      compare.exact,
+      compare.score,
+      compare.recently_used,
+      compare.kind,
+      compare.sort_text,
+      compare.length,
+      compare.order,
+    }
+  },
 })
 
 cmp.setup.cmdline({ '/', '?' }, {
@@ -113,4 +130,5 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
+
 

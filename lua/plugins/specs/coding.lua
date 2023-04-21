@@ -97,6 +97,7 @@ return {
         },
         config = true,
       },
+      "lukas-reineke/cmp-rg",
     },
     config = function()
       require("coding.cmp")
