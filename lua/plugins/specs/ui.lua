@@ -117,4 +117,9 @@ return {
       require("ui.rainbow")
     end,
   },
+  {
+    "stevearc/dressing.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
