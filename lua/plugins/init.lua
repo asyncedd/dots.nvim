@@ -181,7 +181,10 @@ plugins[20] = {
   },
   dependencies = {
     "nvim-tree/nvim-web-devicons"
-  }
+  },
+  keys = {
+    { "<leader>tr", "<cmd>NvimTreeToggle<cr>" },
+  },
 }
 
 plugins[21] = {
