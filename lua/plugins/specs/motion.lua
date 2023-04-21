@@ -224,22 +224,6 @@ return {
         mode = { "n", "v" },
       },
       {
-        "hj",
-        function()
-          require("syntax-tree-surfer").targeted_jump({
-            "function",
-            "if_statement",
-            "else_clause",
-            "else_statement",
-            "elseif_statement",
-            "for_statement",
-            "while_statement",
-            "switch_statement",
-          })
-        end,
-        mode = { "n", "v" },
-      },
-      {
         "-",
         function()
           require("syntax-tree-surfer").filtered_jump(
@@ -344,5 +328,19 @@ return {
         end,
       },
     },
+  },
+  {
+    "booperlv/nvim-gomove",
+    keys = {
+      { "<A-h>", mode = { "n", "x", "o", "v" } },
+      { "<A-j>", mode = { "n", "x", "o", "v" } },
+      { "<A-k>", mode = { "n", "x", "o", "v" } },
+      { "<A-S-l>", mode = { "n", "x", "o", "v" } },
+      { "<A-S-h>", mode = { "n", "x", "o", "v" } },
+      { "<A-S-j>", mode = { "n", "x", "o", "v" } },
+      { "<A-S-k>", mode = { "n", "x", "o", "v" } },
+      { "<A-S-l>", mode = { "n", "x", "o", "v" } },
+    },
+    config = true,
   },
 }
