@@ -10,9 +10,22 @@ end
 vim.diagnostic.config({
   diagnostics = {
     underline = true,
-    update_in_insert = false,
+    update_in_insert = true,
     virtual_text = { spacing = 4 },
     severity_sort = true,
+    float = {
+      border = "single",
+      title = "Diagnostics",
+      header = {},
+      suffix = {},
+      format = function(diag)
+        if diag.code then
+          return ("[%s](%s): %s"):format(diag.source, diag.code, diag.message)
+        else
+          return ("[%s]: %s"):format(diag.source, diag.message)
+        end
+      end,
+    },
   },
   virtual_text = {
     prefix = function(diagnostic)
@@ -26,6 +39,13 @@ vim.diagnostic.config({
         return icons.Hint -- Nerd font icon for hint
       end
     end,
+  },
+  hover = {
+    border = "single",
+    title = "Hover",
+  },
+  signature_help = {
+    border = "single",
   },
 })
 
