@@ -255,6 +255,15 @@ return {
         end,
         mode = { "n", "v" },
       },
+      {
+        "gnh",
+        "<cmd>STSSwapOrHold<cr>",
+      },
+      {
+        "gnh",
+        "<cmd>STSSwapOrHoldVisual<cr>",
+        mode = { "x", "v" },
+      },
     },
   },
 }
