@@ -9,6 +9,11 @@ require("core.disableBuiltinPlugins")
 -- Set the options.
 require("user.options")
 
+-- Set the package.path.
+-- Allow searching in `lua/plugins/configs/x.lua` or `lua/plugins/configs/x/init.lua`
+package.path = vim.fn.stdpath("config") .. "/lua/plugins/configs/?.lua;" .. package.path
+package.path = vim.fn.stdpath("config") .. "/lua/plugins/configs/?/init.lua;" .. package.path
+
 -- Bootstrap Lazy.nvim
 require("core.bootstrap")
 
