@@ -5,15 +5,15 @@ return {
       require("coding.autopairs")
     end,
     keys = {
-      { "{", mode = { "i","c" } },
+      { "{", mode = { "i", "c" } },
       { "}", mode = { "i", "c" } },
       { "(", mode = { "i", "c" } },
       { ")", mode = { "i", "c" } },
       { "[", mode = { "i", "c" } },
       { "]", mode = { "i", "c" } },
       { "'", mode = { "i", "c" } },
-      { "\"", mode = { "i", "c" } },
-    }
+      { '"', mode = { "i", "c" } },
+    },
   },
   {
     "abecodes/tabout.nvim",
@@ -69,7 +69,7 @@ return {
         dependencies = {
           {
             "rafamadriz/friendly-snippets",
-            config = function ()
+            config = function()
               require("luasnip.loaders.from_vscode").lazy_load()
             end,
           },
@@ -97,14 +97,13 @@ return {
         },
         config = true,
       },
-      "lukas-reineke/cmp-rg",
-      "andersevenrud/cmp-tmux",
       "hrsh7th/cmp-emoji",
       "chrisgrieser/cmp-nerdfont",
+      "lukas-reineke/cmp-rg",
+      "andersevenrud/cmp-tmux",
     },
     config = function()
       require("coding.cmp")
     end,
   },
 }
-

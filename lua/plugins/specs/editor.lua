@@ -4,7 +4,9 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     config = function()
-      coroutine.resume(coroutine.create(function() require("editor.treesitter") end))
+      coroutine.resume(coroutine.create(function()
+        require("editor.treesitter")
+      end))
     end,
     init = lazyLoad("nvim-treesitter"),
     build = ":TSUpdate",
@@ -36,7 +38,7 @@ return {
     end,
     keys = {
       "<leader>s",
-    }
+    },
   },
   {
     "ggandor/leap.nvim",
@@ -45,7 +47,12 @@ return {
       { "S", mode = { "n", "x" } },
       { "x", mode = { "v" } },
       { "X", mode = { "v" } },
-      { "ms", function() require("editor.leapMulti") end },
+      {
+        "ms",
+        function()
+          require("editor.leapMulti")
+        end,
+      },
     },
     config = function()
       require("editor.leap")
@@ -79,8 +86,13 @@ return {
     "ggandor/leap-ast.nvim",
     config = true,
     keys = {
-      { "<leader>lp", function() require("leap-ast").leap() end },
-    }
+      {
+        "<leader>lp",
+        function()
+          require("leap-ast").leap()
+        end,
+      },
+    },
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -141,18 +153,78 @@ return {
   {
     "linty-org/readline.nvim",
     keys = {
-      { "<C-k>", function() require("readline").kill_line() end, mode = { "i" } },
-      { "<C-u>", function() require("readline").backward_kill_line() end, mode = { "i" } },
-      { "<M-d>", function() require("readline").kill_word() end, mode = { "i" } },
-      { "<M-BS>", function() require("readline").backward_kill_word() end, mode = { "i" } },
-      { "<C-w>", function() require("readline").unix_word_rubout() end, mode = { "i" } },
+      {
+        "<C-k>",
+        function()
+          require("readline").kill_line()
+        end,
+        mode = { "i" },
+      },
+      {
+        "<C-u>",
+        function()
+          require("readline").backward_kill_line()
+        end,
+        mode = { "i" },
+      },
+      {
+        "<M-d>",
+        function()
+          require("readline").kill_word()
+        end,
+        mode = { "i" },
+      },
+      {
+        "<M-BS>",
+        function()
+          require("readline").backward_kill_word()
+        end,
+        mode = { "i" },
+      },
+      {
+        "<C-w>",
+        function()
+          require("readline").unix_word_rubout()
+        end,
+        mode = { "i" },
+      },
       { "<C-d>", "<Delete>", mode = { "i" } },
       { "<C-h>", "<BS>", mode = { "i" } },
-      { "<C-a>", function() require("readline").beginning_of_line() end, mode = { "i" } },
-      { "<M-m>", function() require("readline").back_to_indentation() end, mode = { "i" } },
-      { "<C-e>", function() require("readline").end_of_line() end, mode = { "i" } },
-      { "<M-f>", function() require("readline").forward_word() end, mode = { "i" } },
-      { "<M-b>", function() require("readline").backward_word() end, mode = { "i" } },
+      {
+        "<C-a>",
+        function()
+          require("readline").beginning_of_line()
+        end,
+        mode = { "i" },
+      },
+      {
+        "<M-m>",
+        function()
+          require("readline").back_to_indentation()
+        end,
+        mode = { "i" },
+      },
+      {
+        "<C-e>",
+        function()
+          require("readline").end_of_line()
+        end,
+        mode = { "i" },
+      },
+      {
+        "<M-f>",
+        function()
+          require("readline").forward_word()
+        end,
+        mode = { "i" },
+      },
+      {
+        "<M-b>",
+        function()
+          require("readline").backward_word()
+        end,
+        mode = { "i" },
+      },
       { "<C-f>", "<Right>", mode = { "i" } },
       { "<C-b>", "<Left>", mode = { "i" } },
     },
@@ -163,11 +235,21 @@ return {
       "kevinhwang91/promise-async",
     },
     keys = {
-      { "zR", function() require("ufo").openAllFolds() end },
-      { "zM", function() require("ufo").closeAllFolds() end },
+      {
+        "zR",
+        function()
+          require("ufo").openAllFolds()
+        end,
+      },
+      {
+        "zM",
+        function()
+          require("ufo").closeAllFolds()
+        end,
+      },
       "za",
     },
-    config = function ()
+    config = function()
       require("editor.ufo")
     end,
   },
@@ -177,18 +259,82 @@ return {
       "nvim-lua/plenary.nvim",
     },
     keys = {
-      { "<leader>af", function() require("harpoon.mark").add_file() end },
-      { "<leader>mn", function() require("harpoon.ui").toggle_quick_menu() end },
-      { "<leader>1", function() require("harpoon.ui").nav_file(1) end },
-      { "<leader>2", function() require("harpoon.ui").nav_file(2) end },
-      { "<leader>3", function() require("harpoon.ui").nav_file(3) end },
-      { "<leader>4", function() require("harpoon.ui").nav_file(4) end },
-      { "<leader>5", function() require("harpoon.ui").nav_file(5) end },
-      { "<leader>nn", function() require("harpoon.ui").nav_next() end },
-      { "<leader>np", function() require("harpoon.ui").nav_prev() end },
-      { "<leader>" .. vim.v.count .. "nn", function() require("harpoon.ui").nav_next() end },
-      { "<leader>" .. vim.v.count .. "np", function() require("harpoon.ui").nav_prev() end },
+      {
+        "<leader>af",
+        function()
+          require("harpoon.mark").add_file()
+        end,
+      },
+      {
+        "<leader>mn",
+        function()
+          require("harpoon.ui").toggle_quick_menu()
+        end,
+      },
+      {
+        "<leader>1",
+        function()
+          require("harpoon.ui").nav_file(1)
+        end,
+      },
+      {
+        "<leader>2",
+        function()
+          require("harpoon.ui").nav_file(2)
+        end,
+      },
+      {
+        "<leader>3",
+        function()
+          require("harpoon.ui").nav_file(3)
+        end,
+      },
+      {
+        "<leader>4",
+        function()
+          require("harpoon.ui").nav_file(4)
+        end,
+      },
+      {
+        "<leader>5",
+        function()
+          require("harpoon.ui").nav_file(5)
+        end,
+      },
+      {
+        "<leader>nn",
+        function()
+          require("harpoon.ui").nav_next()
+        end,
+      },
+      {
+        "<leader>np",
+        function()
+          require("harpoon.ui").nav_prev()
+        end,
+      },
+      {
+        "<leader>" .. vim.v.count .. "nn",
+        function()
+          require("harpoon.ui").nav_next()
+        end,
+      },
+      {
+        "<leader>" .. vim.v.count .. "np",
+        function()
+          require("harpoon.ui").nav_prev()
+        end,
+      },
+    },
+  },
+  {
+    "chrisgrieser/nvim-recorder",
+    config = true,
+    keys = {
+      "q",
+      "Q",
+      vim.v.count .. "q",
+      vim.v.count .. "Q",
     },
   },
 }
-
