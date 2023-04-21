@@ -196,19 +196,6 @@ editor[10] = {
 }
 
 editor[11] = {
-  "gbprod/yanky.nvim",
-  keys = {
-    { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
-    { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
-    { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
-    { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
-    { "<c-n>", "<Plug>(YankyCycleForward)", mode = { "n", "x" } },
-    { "<c-p>", "<Plug>(YankyCycleBackward)", mode = { "n", "x" } },
-  },
-  config = true,
-}
-
-editor[12] = {
   "nvim-neorg/neorg",
   config = function()
     vim.schedule(function()
@@ -234,7 +221,7 @@ editor[12] = {
   },
 }
 
-editor[13] = {
+editor[12] = {
   "kevinhwang91/nvim-ufo",
   dependencies = {
     "kevinhwang91/promise-async",
@@ -259,21 +246,21 @@ editor[13] = {
   event = "VeryLazy",
 }
 
-editor[14] = {
+editor[13] = {
   "sbdchd/neoformat",
   cmd = {
     "Neoformat",
   },
 }
 
-editor[15] = {
+editor[14] = {
   "fladson/vim-kitty",
   init = function()
     fileLazyLoad("vim-kitty", "conf")
   end,
 }
 
-editor[16] = {
+editor[15] = {
   "echasnovski/mini.surround",
   keys = {
     "<leader>sa",
@@ -288,7 +275,7 @@ editor[16] = {
   end,
 }
 
-editor[17] = {
+editor[16] = {
   "numToStr/Comment.nvim",
   config = function()
     require("editor.Comment")
@@ -307,7 +294,7 @@ editor[17] = {
   },
 }
 
-editor[18] = {
+editor[17] = {
   "echasnovski/mini.ai",
   config = function()
     require("editor.ai")
@@ -318,7 +305,7 @@ editor[18] = {
   },
 }
 
-editor[19] = {
+editor[18] = {
   "echasnovski/mini.bracketed",
   keys = {
     "[",
@@ -329,7 +316,7 @@ editor[19] = {
   end,
 }
 
-editor[20] = {
+editor[19] = {
   "echasnovski/mini.splitjoin",
   keys = { "gS" },
   config = function()
@@ -337,7 +324,7 @@ editor[20] = {
   end,
 }
 
-editor[21] = {
+editor[20] = {
   "echasnovski/mini.move",
   event = "VeryLazy",
   config = function()
@@ -345,7 +332,7 @@ editor[21] = {
   end,
 }
 
-editor[22] = {
+editor[21] = {
   "echasnovski/mini.align",
   config = function()
     require("mini.align").setup()
@@ -355,7 +342,7 @@ editor[22] = {
   },
 }
 
-editor[23] = {
+editor[22] = {
   "tpope/vim-repeat",
   event = "VeryLazy",
 }
