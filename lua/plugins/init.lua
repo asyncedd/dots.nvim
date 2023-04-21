@@ -154,6 +154,14 @@ plugins[17] = {
   init = lazyLoad("mini.nvim"),
 }
 
+plugins[18] = {
+  "lukas-reineke/headlines.nvim",
+  config = true,
+  ft = {
+    "md",
+  },
+}
+
 require("lazy").setup({
   plugins,
 }, {
