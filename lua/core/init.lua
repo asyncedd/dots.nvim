@@ -35,6 +35,8 @@ vim.api.nvim_create_autocmd("BufReadPre", {
 })
 
 vim.schedule(function ()
+  -- We can defer keymaps :/
+  require("user.keymaps")
   -- Load options that don't require any UI
   o.clipboard = "unnamed,unnamedplus" -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
   -- 1.2 Persistent undos, across sessions.
