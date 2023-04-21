@@ -15,7 +15,7 @@ require("dashboard").setup({
         key = "f",
       },
       {
-        desc = " Apps",
+        desc = "󱎱 Apps",
         group = "DiagnosticHint",
         action = "Telescope app",
         key = "a",
@@ -28,7 +28,7 @@ require("dashboard").setup({
       },
       {
         desc = "🚀 Load previous session",
-        group = "pink",
+        group = "DiagnosticWarn",
         action = "SessionLoad",
         key = "b",
       },

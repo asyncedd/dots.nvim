@@ -2,12 +2,20 @@ local lazyLoad = require("core.utils.lazyLoad")
 
 return {
   "catppuccin/nvim",
-  {
-    "echasnovski/mini.map",
-    config = function()
-      require("ui.map")
-    end,
-  },
+  -- {
+  --   "echasnovski/mini.map",
+  --   config = function()
+  --     require("ui.map")
+  --   end,
+  -- },
+  -- {
+  --   "wfxr/minimap.vim",
+  --   -- config = true,
+  --   build = "cargo install --locked code-minimap",
+  --   -- event = "VeryLazy",
+  --   lazy = false,
+  --   dependencies = "wfxr/code-minimap",
+  -- },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -56,7 +64,9 @@ return {
         end,
       })
     end,
-    config = true,
+    config = function()
+      require("ui.dashboard")
+    end,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
@@ -190,14 +200,14 @@ return {
     config = true,
     event = "VeryLazy",
   },
-  {
-    "tamton-aquib/flirt.nvim",
-    config = true,
-    event = {
-      "WinNew",
-      "VeryLazy",
-    },
-  },
+  -- {
+  --   "tamton-aquib/flirt.nvim",
+  --   config = true,
+  --   event = {
+  --     "WinNew",
+  --     "VeryLazy",
+  --   },
+  -- },
   {
     "freddiehaddad/feline.nvim",
     config = function()
