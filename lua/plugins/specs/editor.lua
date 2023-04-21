@@ -7,6 +7,7 @@ return {
       coroutine.resume(coroutine.create(function() require("editor.treesitter") end))
     end,
     init = lazyLoad("nvim-treesitter"),
+    build = "TSUpdate",
   },
   {
     "echasnovski/mini.ai",
@@ -149,6 +150,21 @@ return {
       { "<C-f>", "<Right>", mode = { "i" } },
       { "<C-b>", "<Left>", mode = { "i" } },
     },
+  },
+
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
+    keys = {
+      { "zR", function() require("ufo").openAllFolds() end },
+      { "zM", function() require("ufo").closeAllFolds() end },
+      "za",
+    },
+    config = function ()
+      require("editor.ufo")
+    end,
   },
 }
 

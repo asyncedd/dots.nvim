@@ -20,6 +20,14 @@ capabilities.textDocument.completion.completionItem = {
   },
 }
 
+-- Option 2: nvim lsp as LSP client
+-- Tell the server the capability of foldingRange,
+-- Neovim hasn't added foldingRange to default capabilities, users must add it manually
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true
+}
+
 local mlsp = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 

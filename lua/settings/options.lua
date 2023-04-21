@@ -42,3 +42,8 @@ o.completeopt   = "menuone,noinsert,noselect" -- Customize completions
 o.virtualedit   = "block"                     -- Allow going past the end of line in visual block mode
 o.formatoptions = "qjl1"                      -- Don't autoformat comments
 
+-- Folds
+o.foldcolumn = '1' -- '0' is not bad
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevelstart = 99
+o.foldenable = true
