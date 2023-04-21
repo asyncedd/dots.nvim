@@ -69,9 +69,12 @@ return {
       coroutine.resume(coroutine.create(function() require("ui.heirline.color") end))
     end,
     config = function()
-      require("ui.heirline")
+      coroutine.resume(coroutine.create(function() require("ui.heirline") end))
     end,
     event = "BufReadPost",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
   },
 }
 
