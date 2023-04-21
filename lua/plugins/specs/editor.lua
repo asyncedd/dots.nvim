@@ -274,12 +274,6 @@ editor[15] = {
 }
 
 editor[16] = {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  config = true,
-}
-
-editor[17] = {
   "echasnovski/mini.surround",
   keys = {
     "<leader>sa",
@@ -294,7 +288,7 @@ editor[17] = {
   end,
 }
 
-editor[18] = {
+editor[17] = {
   "numToStr/Comment.nvim",
   config = function()
     require("editor.Comment")
@@ -313,7 +307,7 @@ editor[18] = {
   },
 }
 
-editor[19] = {
+editor[18] = {
   "echasnovski/mini.ai",
   config = function()
     require("editor.ai")
@@ -324,7 +318,7 @@ editor[19] = {
   },
 }
 
-editor[20] = {
+editor[19] = {
   "echasnovski/mini.bracketed",
   keys = {
     "[",
@@ -335,7 +329,7 @@ editor[20] = {
   end,
 }
 
-editor[21] = {
+editor[20] = {
   "echasnovski/mini.splitjoin",
   keys = { "gS" },
   config = function()
@@ -343,7 +337,7 @@ editor[21] = {
   end,
 }
 
-editor[22] = {
+editor[21] = {
   "echasnovski/mini.move",
   event = "VeryLazy",
   config = function()
@@ -351,7 +345,7 @@ editor[22] = {
   end,
 }
 
-editor[23] = {
+editor[22] = {
   "echasnovski/mini.align",
   config = function()
     require("mini.align").setup()
@@ -361,7 +355,7 @@ editor[23] = {
   },
 }
 
-editor[24] = {
+editor[23] = {
   "tpope/vim-repeat",
   event = "VeryLazy",
 }
