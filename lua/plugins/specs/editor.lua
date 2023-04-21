@@ -111,5 +111,14 @@ return {
     },
     config = true,
   },
+  {
+    "chrisgrieser/nvim-spider",
+    keys = {
+      { "w", "<cmd>lua require('spider').motion('w')<CR>", mode = { "x", "o", "n" } },
+      { "e", "<cmd>lua require('spider').motion('e')<CR>", mode = { "x", "o", "n" } },
+      { "b", "<cmd>lua require('spider').motion('b')<CR>", mode = { "x", "o", "n" } },
+      { "ge", "<cmd>lua require('spider').motion('ge')<CR>", mode = { "x", "o", "n" } },
+    },
+  },
 }
 
