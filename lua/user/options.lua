@@ -54,12 +54,12 @@ o.cul = true
 o.tgc = true -- tgc = term gui colors.
 
 -- 3.3 Some stuff I totally didn't steal from mini.basics
-o.pb = 10 -- Make builtin completion menus slightly transparent
--- pb = pumblend.
-o.ph = 10 -- Make popup menu smaller
--- ph = pumheight.
-o.winbl = 10 -- Make floating windows slightly transparent
--- winbl = winblend
+-- o.pb = 10 -- Make builtin completion menus slightly transparent
+-- -- pb = pumblend.
+-- o.ph = 10 -- Make popup menu smaller
+-- -- ph = pumheight.
+-- o.winbl = 10 -- Make floating windows slightly transparent
+-- -- winbl = winblend
 
 o.shm:append("WcC") -- Reduce command line messages
 -- shm = shortmess

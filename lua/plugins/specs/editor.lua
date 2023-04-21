@@ -1,5 +1,21 @@
 local lazyLoad = require("core.utils.lazyLoad")
 
+---@param plugin string
+local fileLazyLoad = function(plugin, ft) -- CREDIT: NvChad.
+  vim.api.nvim_create_autocmd({ "BufReadPre", "BufWinEnter", "BufNewFile" }, {
+    group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),
+    callback = function()
+      local file = vim.fn.expand("%:e")
+      local condition = (file == ft)
+
+      if condition then
+        vim.api.nvim_del_augroup_by_name("BeLazyOnFileOpen" .. plugin)
+        require("lazy").load({ plugins = plugin })
+      end
+    end,
+  })
+end
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -196,19 +212,21 @@ return {
   {
     "nvim-neorg/neorg",
     config = function()
-      require("neorg").setup({
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.norg.dirman"] = {
-            config = {
-              workspaces = {
-                notes = "~/notes",
+      vim.schedule(function()
+        require("neorg").setup({
+          load = {
+            ["core.defaults"] = {}, -- Loads default behaviour
+            ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+            ["core.norg.dirman"] = {
+              config = {
+                workspaces = {
+                  notes = "~/notes",
+                },
               },
-            },
-          }, -- Manages Neorg workspaces
-        },
-      })
+            }, -- Manages Neorg workspaces
+          },
+        })
+      end)
     end,
     ft = { "norg" },
     dependencies = {
@@ -245,5 +263,11 @@ return {
     cmd = {
       "Neoformat",
     },
+  },
+  {
+    "fladson/vim-kitty",
+    init = function()
+      fileLazyLoad("vim-kitty", "conf")
+    end,
   },
 }
