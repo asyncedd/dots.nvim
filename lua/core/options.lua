@@ -1,84 +1,53 @@
-local o = vim.o
-local g = vim.g
+local opts = {
+  -- General
+  -- g.mapleader = " ",
+  shiftwidth = 2, -- Set the indents to 2.
+  undofile = true, -- Enable persistent undo's
+  -- Don't store backup when overwriting the file,
+  backup = false,
+  writebackup = false,
+  --
+  mouse = "a", -- Enable mouse for all modes
+  swapfile = false, -- Disable Swap files.
+  hidden = true, -- Don't automatically save whilst changing buffers.
+  clipboard = "unnamed,unnamedplus", -- Register the clipboard with Windows, Mac OS X And Linux (*Unix) clipboards.
+  expandtab = true, -- Insert spaces instead of tabs when pressing the <Tab> key.
 
--- General
-g.mapleader = " "
-o.shiftwidth = 2 -- Set the indents to 2.
-undofile = true -- Enable persistent undo's
--- Don't store backup when overwriting the file,
-o.backup = false
-o.writebackup = false
---
-o.mouse = "a" -- Enable mouse for all modes
-o.swapfile = false -- Disable Swap files.
-o.hidden = true -- Don't automatically save whilst changing buffers.
-o.clipboard = "unnamed,unnamedplus" -- Register the clipboard with Windows, Mac OS X And Linux (*Unix) clipboards.
-o.expandtab = true -- Insert spaces instead of tabs when pressing the <Tab> key.
+  -- Apperance
+  breakindent = true, -- Indent wrapped lines to match line start
+  cursorline = true, -- Highlight the line we're currently editting.
+  linebreak = true, -- Break long lines into multiple. visually.
+  number = true, -- Enable line numbers
+  splitbelow = true, -- Splits below.
+  splitright = true, -- Splits right.
+  termguicolors = true, -- Enable GUI colors.
+  showmode = false, -- Don't show the mode in the CLI.
 
--- Apperance
-o.breakindent = true -- Indent wrapped lines to match line start
-o.cursorline = true -- Highlight the line we're currently editting.
-o.linebreak = true -- Break long lines into multiple. visually.
-o.number = true -- Enable line numbers
-o.splitbelow = true -- Splits below.
-o.splitright = true -- Splits right.
-o.termguicolors = true -- Enable GUI colors.
-o.showmode = false -- Don't show the mode in the CLI.
+  wrap = false, -- Show long lines as one big line.
 
-o.wrap = false -- Show long lines as one big line.
+  signcolumn = "yes", -- Always show sign columns.
+  fillchars = "eob: ", -- Don't show the "~" outside of the buffers
 
-o.signcolumn = "yes" -- Always show sign columns.
-o.fillchars = "eob: " -- Don't show the "~" outside of the buffers
+  -- Editing
+  ignorecase = true, -- Ignore case when searching.
+  incsearch = true, -- Show search results whilst searching.
+  infercase = true, -- Infer letter cases.
+  smartcase = true, -- Don't ignore case if the pattern has an uppercase letter in it.
+  smartindent = true, -- Get smart indents.
 
--- Editing
-o.ignorecase = true -- Ignore case when searching.
-o.incsearch = true -- Show search results whilst searching.
-o.infercase = true -- Infer letter cases.
-o.smartcase = true -- Don't ignore case if the pattern has an uppercase letter in it.
-o.smartindent = true -- Get smart indents.
+  completeopt = "menuone,noinsert,noselect", -- This is mainly for hrsh7th/nvim-cmp.
+  virtualedit = "onemore", -- Allow going one more.
+  formatoptions = "qjl1", -- Don't autoformat commands.
 
-o.completeopt = "menuone,noinsert,noselect" -- This is mainly for hrsh7th/nvim-cmp.
-o.virtualedit = "onemore" -- Allow going one more.
-o.formatoptions = "qjl1" -- Don't autoformat commands.
+  splitkeep = "screen", -- Reduce scroll if the window splits.
 
-o.splitkeep = "screen" -- Reduce scroll if the window splits.
+  -- o.pumbleend = 10 -- Make the builtin completion menu slightly transparent
+  pumhieght = 10, -- Make it smaller
+  -- o.winblend = 10 -- floating windows are sightly transparent.
 
--- o.pumbleend = 10 -- Make the builtin completion menu slightly transparent
-o.pumhieght = 10 -- Make it smaller
--- o.winblend = 10 -- floating windows are sightly transparent.
+  list = true, -- Show them.
+  listchars = "eol:↴,space:⋅", -- Couldn't think about it.
+}
 
-o.list = true -- Show them.
-o.listchars = "eol:↴,space:⋅" -- Couldn't think about it.
-
--- Disable menu loading
-g.did_install_default_menus = 1
-g.did_install_syntax_menu = 1
-
--- Don't load native syntax completion
-g.loaded_syntax_completion = 1
-
--- Don't load spell files
-g.loaded_spellfile_plugin = 1
-
--- Don't load zipPlugin.vim, gzip.vim and tarPlugin.vim
-g.loaded_gzip = 1
-g.loaded_tar = 1
-g.loaded_tarPlugin = 1
-g.loaded_vimball = 1
-g.loaded_vimballPlugin = 1
-g.loaded_zip = 1
-g.loaded_zipPlugin = 1
-
--- Disable SQL Omni completion
-g.loaded_sql_completion = 1
-
-g.neovide_refresh_rate = 120
-g.neovide_cursor_vfx_mode = "railgun"
-g.neovide_no_idle = true
-g.neovide_cursor_animate_length = 0.03
-g.neovide_cursor_trail_length = 0.03
-g.neovide_cursor_antialiasing = true
-g.neovide_cursor_vfx_opacity = 200.0
-g.neovide_cursor_vfx_particle_lifetime = 1.2
-g.neovide_cursor_vfx_particle_speed = 20.0
-g.neovide_cursor_vfx_particle_density = 5.0
+local async = require("util.async")
+async(opts)
