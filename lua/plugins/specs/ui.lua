@@ -215,11 +215,4 @@ return {
       require("ui.drop")
     end,
   },
-  {
-    "tamton-aquib/zone.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("ui.zone")
-    end,
-  },
 }
