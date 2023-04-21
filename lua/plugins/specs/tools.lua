@@ -193,5 +193,8 @@ return {
       require("sad").setup({})
     end,
     cmd = "Sad",
+    keys = {
+      { "<leader>sd", "<cmd>Sad<cr>" },
+    },
   },
 }
