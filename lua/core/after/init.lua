@@ -14,6 +14,19 @@ vim.diagnostic.config({
     virtual_text = { spacing = 4 },
     severity_sort = true,
   },
+  virtual_text = {
+    prefix = function(diagnostic)
+      if diagnostic.severity == vim.diagnostic.severity.ERROR then
+        return icons.Error -- Nerd font icon for error
+      elseif diagnostic.severity == vim.diagnostic.severity.WARN then
+        return icons.Warn -- Nerd font icon for warning
+      elseif diagnostic.severity == vim.diagnostic.severity.INFO then
+        return icons.Info -- Nerd font icon for info
+      else
+        return icons.Hint -- Nerd font icon for hint
+      end
+    end,
+  },
 })
 
 -- I'm not kidding, you shouldn't have keymaps if, you can't key them after like 100ms.
