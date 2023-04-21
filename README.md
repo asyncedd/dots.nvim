@@ -161,4 +161,5 @@ way out! >:D
 - [chrisgrieser and yutkat](https://github.com/chrisgrieser/.config) and
   [https://github.com/yutkat/dotfiles] - For their DAP configurations.
 - [mawkler](https://github.com/mawkler/nvim) - For a DAP keymap.
-- [yukat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D
+- [yukat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D and
+  basically about a billion more stuff.
