@@ -33,10 +33,6 @@ return {
         },
       },
     },
-    event = { "InsertEnter", "CmdlineEnter" },
-    config = function()
-      require("plugins.configs.completion.cmp")
-    end,
   },
   -- LSP.
   {
