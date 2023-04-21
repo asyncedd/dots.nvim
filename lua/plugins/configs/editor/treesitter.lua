@@ -1,7 +1,5 @@
-return function ()
+return function()
   -- Checking if nvim-treesitter is installed properly.
-  local treesitter = require("nvim-treesitter.configs")
-
   -- Set the Markid's colors.
   local markid_config = {
     bright = {
@@ -19,7 +17,7 @@ return function ()
   }
 
   -- Configure nvim-treesitter
-  treesitter.setup({
+  require("nvim-treesitter.configs").setup({
 
     -- Auto-install missing parsers. (once you open a file that requires it.)
     auto_install = true,
@@ -50,16 +48,16 @@ return function ()
     incremental_selection = {
       enable = true,
       keymaps = {
-        init_selection = '<CR>',
-        scope_incremental = '<CR>',
-        node_incremental = '<TAB>',
-        node_decremental = '<S-TAB>',
+        init_selection = "<CR>",
+        scope_incremental = "<CR>",
+        node_incremental = "<TAB>",
+        node_decremental = "<S-TAB>",
       },
     },
 
     -- Enable rainbow
     rainbow = {
-      enable =true,
+      enable = true,
       query = "rainbow-parens",
       strategy = require("ts-rainbow.strategy.global"),
     },
