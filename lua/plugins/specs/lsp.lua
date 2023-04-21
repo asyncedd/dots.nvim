@@ -14,13 +14,6 @@ return {
     init = lazyLoad("mason.nvim"),
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    init = lazyLoad("null-ls.nvim"),
-    config = function()
-      require("lsp.null")
-    end,
-  },
-  {
     "glepnir/lspsaga.nvim",
     event = "LspAttach",
     config = function()
