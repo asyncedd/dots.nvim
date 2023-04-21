@@ -46,6 +46,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
       "hrsh7th/cmp-nvim-lsp-document-symbol",
+      "davidsierradz/cmp-conventionalcommits",
     },
     config = require("completion.cmp"),
     event = "InsertEnter",
