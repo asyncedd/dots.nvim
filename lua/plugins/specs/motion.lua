@@ -338,4 +338,62 @@ return {
       { "<leader>th", "<cmd>lua require('tsht').nodes()<cr>" },
     },
   },
+  {
+    "drybalka/tree-climber.nvim",
+    keys = {
+      {
+        "H",
+        function()
+          require("tree-climber").goto_parent()
+        end,
+        mode = { "n", "v", "x" },
+      },
+      {
+        "L",
+        function()
+          require("tree-climber").goto_child()
+        end,
+        mode = { "n", "v", "x" },
+      },
+      {
+        "J",
+        function()
+          require("tree-climber").goto_next()
+        end,
+        mode = { "n", "v", "x" },
+      },
+      {
+        "K",
+        function()
+          require("tree-climber").goto_prev()
+        end,
+        mode = { "n", "v", "x" },
+      },
+      {
+        "<leader>in",
+        function()
+          require("tree-climber").select_node()
+        end,
+        mode = { "v", "o" },
+      },
+      {
+        "<C-k>",
+        function()
+          require("tree-climber").swap_prev()
+        end,
+      },
+      {
+        "<C-j>",
+        function()
+          require("tree-climber").swap_next()
+        end,
+      },
+      {
+        "<C-h>",
+        function()
+          require("tree-climber").highlight_node()
+        end,
+      },
+    },
+  },
 }
