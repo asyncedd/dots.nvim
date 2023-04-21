@@ -189,9 +189,5 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
-  {
-    "mg979/vim-visual-multi",
-    event = "VeryLazy",
-  },
 }
 
