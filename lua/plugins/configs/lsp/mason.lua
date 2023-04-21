@@ -13,5 +13,6 @@ require("mason-lspconfig").setup({
     "marksman",
     "astro",
     "tsserver",
+    "jsonls",
   },
 })
