@@ -17,7 +17,7 @@ M.WorkDir = {
     -- evaluates to the full-lenth path
     provider = function(self)
       local trail = self.cwd:sub(-1) == "/" and "" or "/"
-      return self.icon .. self.cwd .. trail .." "
+      return self.icon .. self.cwd .. trail .. " "
     end,
   },
   {
@@ -31,7 +31,7 @@ M.WorkDir = {
   {
     -- evaluates to "", hiding the component
     provider = "",
-  }
+  },
 }
 
 M.FileNameBlock = {
@@ -53,13 +53,15 @@ M.FileIcon = {
   end,
   hl = function(self)
     return { fg = self.icon_color }
-  end
+  end,
 }
 
 M.FileName = {
   init = function(self)
     self.lfilename = vim.fn.fnamemodify(self.filename, ":.")
-    if self.lfilename == "" then self.lfilename = "[No Name]" end
+    if self.lfilename == "" then
+      self.lfilename = "[No Name]"
+    end
   end,
   hl = { fg = utils.get_highlight("Directory").fg },
 
@@ -103,17 +105,18 @@ M.FileNameModifer = {
   hl = function()
     if vim.bo.modified then
       -- use `force` because we need to override the child's hl foreground
-      return { fg = "cyan", bold = true, force=true }
+      return { fg = "cyan", bold = true, force = true }
     end
   end,
 }
 
 -- let's add the children to our FileNameBlock component
-M.FileNameBlock = utils.insert(M.FileNameBlock,
+M.FileNameBlock = utils.insert(
+  M.FileNameBlock,
   M.FileIcon,
   utils.insert(M.FileNameModifer, M.FileName), -- a new table where FileName is a child of FileNameModifier
   M.FileFlags,
-  { provider = '%<'} -- this means that the statusline is cut here when there's not enough space
+  { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
 )
 
 return M

@@ -4,8 +4,8 @@ local M = {
     config = require("plugins.configs.editor.ufo"),
     event = "BufReadPost",
     dependencies = {
-      "kevinhwang91/promise-async"
-    }
+      "kevinhwang91/promise-async",
+    },
   },
 }
 
