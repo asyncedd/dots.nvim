@@ -5,6 +5,8 @@ local mocha = require("catppuccin.palettes").get_palette("mocha")
 vim.api.nvim_set_hl(0, "@lsp.type.parameter", { fg = mocha.red })
 vim.api.nvim_set_hl(0, "@lsp.type.function", { fg = mocha.blue })
 
+require("core.utils.highlight.semantic_tokens")
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 capabilities.textDocument.completion.completionItem = {
