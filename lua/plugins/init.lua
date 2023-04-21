@@ -116,7 +116,6 @@ local plugins = {
         -- event = "BufReadPre",
       },
       "folke/neodev.nvim",
-      "ray-x/lsp_signature.nvim",
       {
         "glepnir/lspsaga.nvim",
         config = function()
@@ -207,7 +206,6 @@ local plugins = {
     dependencies = {
       "ggandor/flit.nvim",
       config = true,
-      event = "VeryLazy",
       dependencies = "tpope/vim-repeat",
     },
   },
@@ -368,7 +366,36 @@ local plugins = {
     config = function()
       require("dap.dap")
     end,
-  }
+  },
+  {
+    "michaelb/sniprun",
+    build = "bash install.sh",
+    cmd = {
+      "SnipRun",
+      "SnipInfo",
+      "SnipClose",
+      "SnipReplMemoryClean",
+      "SnipReset",
+    },
+    keys = {
+      { "<leader>sp", ":SnipRun<cr>", mode = { "v", "n" } },
+    },
+  },
+  {
+    "folke/noice.nvim",
+    config = function()
+      require("ui.noice")
+    end,
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
+    event = "VeryLazy",
+  },
 }
 
 require("lazy").setup({

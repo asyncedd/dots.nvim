@@ -31,7 +31,6 @@ capabilities.textDocument.completion.completionItem = {
 
 local lspconfig = require("lspconfig")
 local on_attach = function(client, bufnr)
-  require("lsp_signature").on_attach(require("lsp_signature").setup(), bufnr)  -- Note: add in lsp client on-attach
   require("nvim-navbuddy").attach(client, bufnr)
   vim.keymap.set("n", "<leader>nb", function() require("nvim-navbuddy").open() end, {})
 end
