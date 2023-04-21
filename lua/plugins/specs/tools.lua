@@ -102,4 +102,11 @@ return {
       { "<leader>lg", "<cmd>LazyGit<cr>" },
     },
   },
+  {
+    "pwntester/octo.nvim",
+    config = true,
+    cmd = {
+      "Octo",
+    },
+  },
 }
