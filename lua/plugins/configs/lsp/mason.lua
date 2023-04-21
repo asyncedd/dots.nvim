@@ -17,5 +17,6 @@ require("mason-lspconfig").setup({
     "astro",
     "tsserver",
     "jsonls",
+    "emmet_ls",
   },
 })
