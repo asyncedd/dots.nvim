@@ -43,9 +43,9 @@ o.formatoptions = "qjl1" -- Don't autoformat commands.
 
 o.splitkeep = "screen" -- Reduce scroll if the window splits.
 
-o.pumbleend = 10 -- Make the builtin completion menu slightly transparent
+-- o.pumbleend = 10 -- Make the builtin completion menu slightly transparent
 o.pumhieght = 10 -- Make it smaller
-o.winblend = 10 -- floating windows are sightly transparent.
+-- o.winblend = 10 -- floating windows are sightly transparent.
 
 o.list = true -- Show them.
 o.listchars = "eol:↴,space:⋅" -- Couldn't think about it.
