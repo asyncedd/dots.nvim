@@ -500,23 +500,13 @@
   },
   "pluginTable": {
     "prefix": "lazy",
-    "body": ["{", "\t${1:name}", "\t${2:-- aditional arguements}", "}"],
-    "description": "Create a new plugin spec for lazy.nvim"
-  },
-  "pluginFile": {
-    "prefix": "lazf",
-    "body": ["local ${1:file name}", "", "return ${1:file name}"],
-    "description": "Create a new file for a lazy.nvim plugin spec."
-  },
-  "myPluginSpec": {
-    "prefix": "laz",
     "body": [
-      "${1:plugin table}[${2:number}] = {",
-      "\t${3:plugin name}",
-      "\t${4:--rest of config goes here}",
+      "{",
+      "\"\t${1:org/user}/${2:repo}\",",
+      "\t${3:-- aditional arguements}",
       "}"
     ],
-    "description": "Create a plugin spec my way."
+    "description": "Create a new plugin spec for lazy.nvim"
   },
   "setOption": {
     "prefix": "opt",
@@ -537,5 +527,21 @@
     "prefix": "setColorscheme",
     "body": ["vim.api.nvim_command(\"colorscheme ${1:name}\")"],
     "description": "Set colorscheme."
+  },
+  "confPlugin": {
+    "prefix": "confPlugin",
+    "body": ["config = function()", "\trequire(\"${1:modulePath}\")", "end,"],
+    "description": "Create a plugin config."
+  },
+  "autocmd": {
+    "prefix": "autocmd",
+    "body": [
+      "nvim.api.nvim_create_autocmd(${1:Event(3)}, {",
+      "\tcallback = function(${2:Args})",
+      "\t\t${3:--code goes here}",
+      "\tend,",
+      "})"
+    ],
+    "description": "Create an autocmd."
   }
 }
