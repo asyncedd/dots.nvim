@@ -121,8 +121,11 @@ local plugins = {
           { "nvim-tree/nvim-web-devicons" },
           { "nvim-treesitter/nvim-treesitter" },
         },
-      }
-    }
+      },
+      "SmiteshP/nvim-navbuddy",
+      "MunifTanjim/nui.nvim",
+      "SmiteshP/nvim-navic",
+    },
   },
   {
     "j-hui/fidget.nvim",
