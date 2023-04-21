@@ -40,4 +40,7 @@ require("catppuccin").setup({
     types = { "bold" },
     operators = {},
   },
+  integrations = {
+    mini = true,
+  },
 })
