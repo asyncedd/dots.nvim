@@ -16,6 +16,9 @@ vim.diagnostic.config({
   },
 })
 
+-- I'm not kidding, you shouldn't have keymaps if, you can't key them after like 100ms.
+require("settings.keymap")
+
 -- Enable clipboard :)
 o.clipboard = "unnamedplus,unnamed"
 -- Enable cool undos :)
