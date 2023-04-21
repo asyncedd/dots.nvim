@@ -267,4 +267,15 @@ return {
       "##",
     },
   },
+  {
+    "lukas-reineke/headlines.nvim",
+    ft = {
+      "md",
+      "markdown",
+    },
+    config = true,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
 }
