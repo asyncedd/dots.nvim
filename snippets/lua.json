@@ -507,5 +507,35 @@
     "prefix": "lazf",
     "body": ["local ${1:file name}", "", "return ${1:file name}"],
     "description": "Create a new file for a lazy.nvim plugin spec."
+  },
+  "myPluginSpec": {
+    "prefix": "laz",
+    "body": [
+      "${1:plugin table}[${2:number}] = {",
+      "\t${3:plugin name}",
+      "\t${4:--rest of config goes here}",
+      "}"
+    ],
+    "description": "Create a plugin spec my way."
+  },
+  "setOption": {
+    "prefix": "opt",
+    "body": ["o.${1:option name} = ${2:option value}"],
+    "description": "Set an option."
+  },
+  "exeCommand": {
+    "prefix": "execommand",
+    "body": ["vim.api.nvim_command(\"${1:command} ${2:args}\")"],
+    "description": "Execute a command."
+  },
+  "exeCmd": {
+    "prefix": "execmd",
+    "body": ["vim.cmd(\"${1:command} ${2:args}\")"],
+    "description": "Execute a cmd."
+  },
+  "setColorscheme": {
+    "prefix": "setColorscheme",
+    "body": ["vim.api.nvim_command(\"colorscheme ${1:name}\")"],
+    "description": "Set colorscheme."
   }
 }
