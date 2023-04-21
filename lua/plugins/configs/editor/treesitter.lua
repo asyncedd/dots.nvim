@@ -23,6 +23,11 @@ require("nvim-treesitter.configs").setup({
   indent = {
     enable = true,
   },
+
+  -- Incremental selection.
+  incremental_selection = {
+    enable = true,
+  },
 })
 
 local g = vim.g
