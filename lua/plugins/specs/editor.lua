@@ -22,7 +22,7 @@ return {
       "tpope/vim-repeat",
       "echasnovski/mini.ai",
     },
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
   -- Treesitter
   {
@@ -47,12 +47,18 @@ return {
   {
     "theprimeagen/harpoon",
     config = require("plugins.configs.editor.harpoon"),
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
   -- Splitjoin
   {
     "echasnovski/mini.splitjoin",
     config = require("plugins.configs.editor.splitjoin"),
     event = "VeryLazy",
-  }
+  },
+  -- Mini.surround - SurroundingYouBlazinglyFast!
+  {
+    "echasnovski/mini.surround",
+    config = require("plugins.configs.editor.surround"),
+    event = "VeryLazy",
+  },
 }
