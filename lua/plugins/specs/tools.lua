@@ -17,14 +17,23 @@ return {
     },
   },
   {
-    "TimUntersberger/neogit",
-    config = true,
-    keys = {
-      { "<leader>ng", function() require("neogit").open() end },
-    },
-  },
-  {
     "tpope/vim-fugitive",
-    event = "VeryLazy",
+    cmd = {
+      "G",
+      "Git",
+      "Gstatus",
+      "Gedit",
+      "Gdiffsplit",
+      "Gvdiffsplit",
+      "Gread",
+      "Gwrite",
+      "Ggrep",
+      "Gmove",
+      "Gdelete",
+      "Gbrowse",
+    },
+    keys = {
+      { "<leader>vf", "<cmd>G<cr>" },
+    },
   },
 }
