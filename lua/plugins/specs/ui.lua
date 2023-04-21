@@ -123,11 +123,6 @@ return {
     },
   },
   {
-    "folke/which-key.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "tamton-aquib/flirt.nvim",
     config = true,
     event = "VeryLazy",
