@@ -41,6 +41,8 @@ mlsp.setup({
 
 require("core.utils.installPkg")({
   "stylua",
+  "selene",
+  "luacheck",
 })
 
 mlsp.setup_handlers({
