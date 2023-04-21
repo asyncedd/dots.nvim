@@ -13,7 +13,7 @@ return {
         config = function()
           require("lsp.mason")
         end,
-        init = lazyLoad("mason.nvim"),
+        -- init = lazyLoad("mason.nvim"),
         build = "<cmd>Mason<cmd>",
         cmd = {
           "Mason",
@@ -64,4 +64,10 @@ return {
       { "<leader>rn", ":IncRename " },
     },
   },
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
+
