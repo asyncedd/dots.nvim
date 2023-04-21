@@ -56,9 +56,13 @@ return {
   {
     "j-hui/fidget.nvim",
     config = true,
+    event = "BufReadPre"
+  },
+  {
+    "folke/trouble.nvim",
+    config = true,
     event = "User LspAttachPre"
   },
-  "folke/trouble.nvim",
   {
     "glepnir/lspsaga.nvim",
     dependencies = {
