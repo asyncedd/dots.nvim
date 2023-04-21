@@ -35,7 +35,7 @@
   "mini.map": { "branch": "main", "commit": "806e343943aa51dec368d5cfc46d0c6311ab27c2" },
   "mini.splitjoin": { "branch": "main", "commit": "686c3ca413382e353f0f1b7c58bb552115d1f5d0" },
   "mini.surround": { "branch": "main", "commit": "cc962bae0890217f8473390abc8cef988519d370" },
-  "neogit": { "branch": "master", "commit": "039ff3212ec43cc4d3332956dfb54e263c8d5033" },
+  "neoformat": { "branch": "master", "commit": "e18e0cc2641dd78f0cdb0ddd575843045d672dde" },
   "noice.nvim": { "branch": "main", "commit": "1da4edfba3e9278e98fc9723d7235d9ab3889744" },
   "nui.nvim": { "branch": "main", "commit": "1f43b13d133eb4b4f53a4485379d9afa58808389" },
   "null-ls.nvim": { "branch": "main", "commit": "7e362189bc1598f36ba5e349ad6b35bed541ec40" },
