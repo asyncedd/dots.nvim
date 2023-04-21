@@ -143,12 +143,17 @@ return {
     "LudoPinelli/comment-box.nvim",
     config = true,
     keys = {
-      { "<leader>cb", function() require("comment-box").lcbox(10) end },
+      {
+        "<leader>cb",
+        function()
+          require("comment-box").lcbox(10)
+        end,
+      },
     },
   },
   {
     "windwp/nvim-autopairs",
-    config = function ()
+    config = function()
       require("editor.autopairs")
     end,
     event = "InsertEnter",
@@ -176,18 +181,18 @@ return {
     "nvim-neorg/neorg",
     config = function()
       require("neorg").setup({
-      load = {
-        ["core.defaults"] = {}, -- Loads default behaviour
-        ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.norg.dirman"] = {
-          config = {
-            workspaces = {
-              notes = "~/notes",
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.norg.dirman"] = {
+            config = {
+              workspaces = {
+                notes = "~/notes",
+              },
             },
-          },
-        }, -- Manages Neorg workspaces
-      },
-    })
+          }, -- Manages Neorg workspaces
+        },
+      })
     end,
     ft = { "norg" },
     dependencies = {
@@ -201,13 +206,28 @@ return {
       "kevinhwang91/promise-async",
     },
     keys = {
-      { "zR", function() require('ufo').openAllFolds() end },
-      { "zM", function() require("ufo").closeAllFolds() end },
+      {
+        "zR",
+        function()
+          require("ufo").openAllFolds()
+        end,
+      },
+      {
+        "zM",
+        function()
+          require("ufo").closeAllFolds()
+        end,
+      },
     },
     config = function()
       require("editor.ufo")
     end,
     event = "VeryLazy",
   },
+  {
+    "sbdchd/neoformat",
+    cmd = {
+      "Neoformat",
+    },
+  },
 }
-

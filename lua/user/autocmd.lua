@@ -40,3 +40,11 @@ autocmd("InsertLeave", {
     o.relativenumber = true
   end,
 })
+
+-- Format before Writing a buffer or joining an undo.
+autocmd({ "BufWritePre" }, {
+  callback = function()
+    vim.api.nvim_command("Neoformat")
+    print("Formatted buffer!")
+  end,
+})
