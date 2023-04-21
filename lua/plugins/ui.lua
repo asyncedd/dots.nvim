@@ -6,5 +6,5 @@ return {
     dependencies = {
       { "echasnovski/mini.indentscope", version = "*" }
     }
-  }
+  },
 }
