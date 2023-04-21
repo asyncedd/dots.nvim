@@ -37,18 +37,6 @@ return {
     },
   },
   {
-    "echasnovski/mini.surround",
-    config = function()
-      require("mini.surround").setup()
-    end,
-    keys = {
-      {
-        "<leader>s",
-        mode = { "x", "o", "n", "v" },
-      },
-    },
-  },
-  {
     "folke/todo-comments.nvim",
     init = lazyLoad("todo-comments.nvim"),
     config = function()
@@ -203,5 +191,14 @@ return {
     "folke/which-key.nvim",
     config = true,
     event = "VeryLazy",
+  },
+  {
+    "kylechui/nvim-surround",
+    config = true,
+    keys = {
+      { "ys", mode = { "x", "o", "n", "v" } },
+      { "ds", mode = { "x", "o", "n", "v" } },
+      { "cs", mode = { "x", "o", "n", "v" } },
+    },
   },
 }
