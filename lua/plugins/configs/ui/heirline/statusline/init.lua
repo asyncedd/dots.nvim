@@ -30,7 +30,9 @@ local DefaultStatusLines = {
   Align,
   Align,
   file,
+  Space,
   ruler.Ruler,
+  Space,
   ruler.ScrollBar,
 }
 
