@@ -21,27 +21,28 @@ end
 
 -- Run a table of functions asynchronously in parallel
 function M.parallel(funcs)
-  local co = coroutine.create(function()
-    local results = {}
-    for i, func in ipairs(funcs) do
-      results[i] = M.async(func)()
-    end
-    coroutine.yield(results)
-  end)
+  local co_results = {}
+  for i, func in ipairs(funcs) do
+    co_results[i] = coroutine.create(function()
+      local result = func()
+      coroutine.yield(result)
+    end)
+  end
   return {
     await = function()
-      local ok, results = coroutine.resume(co)
-      if ok then
-        local final_results = {}
-        for i, result in ipairs(results) do
-          final_results[i] = result.await()
+      local final_results = {}
+      for i, co in ipairs(co_results) do
+        local ok, result = coroutine.resume(co)
+        if ok then
+          final_results[i] = result
+        else
+          error(result)
         end
-        return final_results
-      else
-        error(results)
       end
+      return final_results
     end
   }
 end
+
 
 return M
