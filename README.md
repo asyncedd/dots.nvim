@@ -2,9 +2,8 @@
 My personal Neovim configuration
 
 ![Size](https://img.shields.io/github/repo-size/asyncedd/dots.nvim?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)
-![LOC](https://img.shields.io/tokei/lines/github/asyncedd/dots.nvim?style=for-the-badge&logo=starship&color=c69ff5&logoColor=D9E0EE&labelColor=302D41)
 
-![ss](https://imgur.com/5pSbIS4)
+![ss](https://i.imgur.com/5pSbIS4.png)
 
 ## 👋 Introduction
 This is my personal Neovim configuration as, I said.
