@@ -38,7 +38,10 @@ return {
       require("mini.surround").setup()
     end,
     keys = {
-      "<leader>s",
+      {
+        "<leader>s",
+        mode = { "x", "o", "n", "v" },
+      },
     },
   },
   {
