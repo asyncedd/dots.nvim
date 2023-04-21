@@ -49,11 +49,6 @@ treesitter.setup({
   --   colors = markid_config.bright,
   -- },
 
-  markid = {
-    enable = true,
-    colors = markid_config.bright,
-  },
-
   matchup = {
     enable = true,
   },
