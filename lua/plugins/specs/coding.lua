@@ -41,7 +41,7 @@ return {
   {
     "numToStr/Comment.nvim",
     config = function()
-      require("Comment").setup()
+      require("ui.Comment")
     end,
     keys = {
       "gcc",
@@ -53,6 +53,9 @@ return {
       "gc0",
       "gco",
       "gcA",
+    },
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
     },
   },
   {

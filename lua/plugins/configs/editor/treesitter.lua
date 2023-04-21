@@ -7,5 +7,9 @@ require("nvim-treesitter.configs").setup({
     enable = true,
     use_language_tree = true,
   },
-})
 
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  },
+})
