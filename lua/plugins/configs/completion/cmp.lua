@@ -32,6 +32,19 @@ vim.defer_fn(function()
   require("nvim-autopairs").setup()
 end, 0)
 
+local keys = {}
+
+for i = 1, 10, 1 do
+  local key = table.concat({ "<M-", (i < 10 and i or 0), ">" })
+  keys[key] = function(fallback)
+    if cmp.visible() then
+      return cmp.select_next_item({ count = i - 1 })
+    end
+
+    fallback()
+  end
+end
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -66,6 +79,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
+    keys,
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
@@ -85,7 +99,10 @@ cmp.setup({
     end
   end,
   view = {
-    entries = {name = 'custom', selection_order = 'near_cursor' }
+    entries = {
+      name = 'custom',
+      selection_order = 'near_cursor'
+    },
   },
   formatting = {
     format = function(entry, vim_item)
