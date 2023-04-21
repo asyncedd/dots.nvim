@@ -8,14 +8,6 @@ return {
   --     require("ui.map")
   --   end,
   -- },
-  -- {
-  --   "wfxr/minimap.vim",
-  --   -- config = true,
-  --   build = "cargo install --locked code-minimap",
-  --   -- event = "VeryLazy",
-  --   lazy = false,
-  --   dependencies = "wfxr/code-minimap",
-  -- },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -121,7 +113,6 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
-    -- event = "UIEnter",
     init = lazyLoad("bufferline.nvim"),
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -200,25 +191,17 @@ return {
     config = true,
     event = "VeryLazy",
   },
-  -- {
-  --   "tamton-aquib/flirt.nvim",
-  --   config = true,
-  --   event = {
-  --     "WinNew",
-  --     "VeryLazy",
-  --   },
-  -- },
   {
     "freddiehaddad/feline.nvim",
     config = function()
       require("ui.feline")
     end,
   },
-  -- {
-  --   "folke/drop.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("ui.drop")
-  --   end,
-  -- },
+  {
+    "b0o/incline.nvim",
+    init = lazyLoad("incline.nvim"),
+    config = function()
+      require("ui.incline")
+    end,
+  },
 }

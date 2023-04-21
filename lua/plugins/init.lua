@@ -18,6 +18,7 @@ require("lazy").setup({
   "asyncedd/apr",
   { import = "apr.coding.autopairs" },
   { import = "apr.coding.tabout" },
+  { import = "apr.coding.treesj" },
   { import = "plugins.specs" },
 }, {
   defaults = {
@@ -47,3 +48,4 @@ require("lazy").setup({
     throttle = 150,
   },
 })
+

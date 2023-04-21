@@ -1,12 +1,5 @@
 return {
   {
-    "Wansmer/treesj",
-    config = true,
-    keys = {
-      { "gS", "<cmd>lua require('treesj').toggle()<CR>" },
-    },
-  },
-  {
     "numToStr/Comment.nvim",
     config = function()
       require("coding.Comment")
