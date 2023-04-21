@@ -52,14 +52,27 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     ["<CR>"] = cmp.mapping.confirm({
-      select = true,
+      select = false,
       behavior = cmp.ConfirmBehavior.Replace,
     }),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    keys,
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end,
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
