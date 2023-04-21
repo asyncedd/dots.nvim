@@ -12,7 +12,7 @@ local Space = { provider = " " }
 local Align = { provider = "%=" }
 
 local DefaultStatusLines = {
-  ViMode, Space, FileNames.FileNameBlock, Space, cmdheight.SearchCount, cmdheight.MacroRec, Align, Align, Lsp.LSPActive, Space, Lsp.Diagnostics, Space, Git.Git, Align, Align, Align, ruler.Ruler, ruler.ScrollBar,
+  ViMode, Space, FileNames.FileNameBlock, Space, cmdheight.MacroRec, Align, Align, Lsp.LSPActive, Space, Lsp.Diagnostics, Space, Git.Git, Align, Align, Align, ruler.Ruler, ruler.ScrollBar,
 }
 
 local StatusLines = {

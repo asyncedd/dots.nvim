@@ -20,9 +20,6 @@ capabilities.textDocument.completion.completionItem = {
   },
 }
 
-local on_attach = function(client, bufnr)
-end
-
 local mlsp = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 
@@ -46,8 +43,6 @@ mlsp.setup_handlers({
   ["lua_ls"] = function()
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
-      on_attach = on_attach,
-
       settings = require("lsp.servers.lua_ls"),
     })
   end,
