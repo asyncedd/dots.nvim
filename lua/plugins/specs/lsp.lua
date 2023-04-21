@@ -15,6 +15,6 @@ return {
   {
     "glepnir/lspsaga.nvim",
     config = true,
-    -- init = lazyLoad("lspsaga.nvim"),
+    init = lazyLoad("lspsaga.nvim"),
   },
 }
