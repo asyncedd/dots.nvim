@@ -1,6 +1,6 @@
 return function()
   local conditions = require("heirline.conditions")
-
+  local utils = require("heirline.utils")
   local colors = require("ui.heirline.colors")
   local ViMode = require("ui.heirline.vimode")
   local filename = require("ui.heirline.filename")
