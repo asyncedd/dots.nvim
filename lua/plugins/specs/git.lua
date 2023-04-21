@@ -25,4 +25,11 @@ return {
       "Neogit",
     },
   },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = { "LazyGit", "LazyGitConfig" },
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>" },
+    },
+  },
 }

@@ -47,13 +47,6 @@ return {
     cmd = { "Neoformat" },
   },
   {
-    "kdheepak/lazygit.nvim",
-    cmd = { "LazyGit", "LazyGitConfig" },
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>" },
-    },
-  },
-  {
     "gbprod/yanky.nvim",
     keys = {
       { "p", "<Plug>(YankyPutAfter)", mode = { "x", "n" } },
