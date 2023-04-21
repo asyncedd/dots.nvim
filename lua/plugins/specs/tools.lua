@@ -135,5 +135,18 @@ return {
       "GRemove",
       "GBrowse"
     },
+    keys = {
+      { "<leader>vf", "<cmd>G<cr>" },
+    },
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+    },
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>" },
+    },
   },
 }
