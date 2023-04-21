@@ -75,7 +75,7 @@ return {
         require("ui.heirline")
       end))
     end,
-    event = "VeryLazy",
+    event = "UIEnter",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
@@ -125,7 +125,11 @@ return {
       "catppuccin/nvim",
     },
     config = function()
-      require("ui.bufferline")
+      local co = coroutine
+
+      co.resume(co.create(function()
+        require("ui.bufferline")
+      end))
     end,
     keys = {
       { "<leader>fc", "<cmd>BufferLineTogglePin<cr>" },
@@ -191,6 +195,11 @@ return {
   },
   {
     "gen740/SmoothCursor.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
+  {
+    "lewis6991/satellite.nvim",
     config = true,
     event = "VeryLazy",
   },
