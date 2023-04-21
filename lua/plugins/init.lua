@@ -176,6 +176,12 @@ local plugins = {
     config = function()
       require("editor.leap")
     end,
+    dependencies = {
+      "ggandor/flit.nvim",
+      config = true,
+      event = "VeryLazy",
+      dependencies = "tpope/vim-repeat",
+    },
   },
   {
     "LeonHeidelbach/trailblazer.nvim",
@@ -269,7 +275,6 @@ local plugins = {
   },
   {
     "chrisgrieser/nvim-spider",
-    event = "VeryLazy",
     keys = {
       { "w", function() require("spider").motion("w") end, { "n", "o", "x" } },
       { "e", function() require("spider").motion("e") end, { "n", "o", "x" } },
