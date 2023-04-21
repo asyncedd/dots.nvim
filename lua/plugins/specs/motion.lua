@@ -329,18 +329,4 @@ return {
       },
     },
   },
-  {
-    "booperlv/nvim-gomove",
-    keys = {
-      { "<A-h>", mode = { "n", "x", "o", "v" } },
-      { "<A-j>", mode = { "n", "x", "o", "v" } },
-      { "<A-k>", mode = { "n", "x", "o", "v" } },
-      { "<A-S-l>", mode = { "n", "x", "o", "v" } },
-      { "<A-S-h>", mode = { "n", "x", "o", "v" } },
-      { "<A-S-j>", mode = { "n", "x", "o", "v" } },
-      { "<A-S-k>", mode = { "n", "x", "o", "v" } },
-      { "<A-S-l>", mode = { "n", "x", "o", "v" } },
-    },
-    config = true,
-  },
 }
