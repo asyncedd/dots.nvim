@@ -18,12 +18,12 @@ return {
       "kkharji/sqlite.lua",
     },
     keys = {
-      {
-        "<leader>ff",
-        function()
-          require("telescope.builtin").find_files()
-        end,
-      },
+      -- {
+      --   "<leader>ff",
+      --   function()
+      --     require("telescope.builtin").find_files()
+      --   end,
+      -- },
       {
         "<leader>fg",
         function()
@@ -37,7 +37,7 @@ return {
         end,
       },
       {
-        "<leader>fh",
+        "<leader>ff",
         function()
           require("telescope.builtin").help_tags()
         end,
@@ -205,5 +205,20 @@ return {
       require("fundo").install()
     end,
     config = true,
+  },
+  {
+    "olimorris/persisted.nvim",
+    config = true,
+    event = "VeryLazy",
+    cmd = {
+      "SessionToggle",
+      "SessionStart",
+      "SessionStop",
+      "SessionSave",
+      "SessionLoad",
+      "SessionLoadLast",
+      "SessionLoadFromFile",
+      "SessionDelete",
+    },
   },
 }

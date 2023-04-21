@@ -196,9 +196,9 @@ return {
     "kylechui/nvim-surround",
     config = true,
     keys = {
-      { "ys", mode = { "x", "o", "n", "v" } },
-      { "ds", mode = { "x", "o", "n", "v" } },
-      { "cs", mode = { "x", "o", "n", "v" } },
+      { "ys", mode = { "x", "n", "v" } },
+      { "ds", mode = { "x", "n", "v" } },
+      { "cs", mode = { "x", "n", "v" } },
     },
   },
 }
