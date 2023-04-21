@@ -24,6 +24,16 @@ return {
     },
   },
   {
+    "hrsh7th/nvim-insx",
+    event = {
+      "CmdlineEnter",
+      "InsertEnter",
+    },
+    config = function()
+      require("coding.insx")
+    end,
+  },
+  {
     "abecodes/tabout.nvim",
     config = true,
     keys = {
