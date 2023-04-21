@@ -16,12 +16,6 @@ require("plugins.loader.ui")
 
 -- Setting some funny LSP stuff.
 
-vim.api.nvim_create_autocmd("BufReadPre", {
-  callback = function()
-    require("plugins.configs.lsp.lspconfig")
-  end
-})
-
 require("plugins.loader.lsp")
 
 -- Non blocking in a vim.schedule function.
