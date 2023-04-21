@@ -43,7 +43,7 @@ return {
       vim.api.nvim_create_autocmd({ "VimEnter" }, {
         group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. "dashboard-nvim", {}),
         callback = function()
-          local file = vim.fn.expand "%"
+          local file = vim.fn.expand("%")
           local condition = file == ""
 
           if condition then
@@ -53,7 +53,7 @@ return {
             -- This deferring only happens only when we do "nvim filename"
             require("lazy").load({ plugins = "dashboard-nvim" })
           end
-        end
+        end,
       })
     end,
     config = true,
@@ -64,10 +64,14 @@ return {
   {
     "rebelot/heirline.nvim",
     init = function()
-      coroutine.resume(coroutine.create(function() require("ui.heirline.color") end))
+      coroutine.resume(coroutine.create(function()
+        require("ui.heirline.color")
+      end))
     end,
     config = function()
-      coroutine.resume(coroutine.create(function() require("ui.heirline") end))
+      coroutine.resume(coroutine.create(function()
+        require("ui.heirline")
+      end))
     end,
     event = "BufReadPost",
     dependencies = {
@@ -101,4 +105,3 @@ return {
     },
   },
 }
-

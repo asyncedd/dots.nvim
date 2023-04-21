@@ -30,7 +30,3 @@ o.undoreload = 10000
 
 -- Enable syntax highlighting builtin
 o.syntax = "on"
-
--- Enable ShaDA
-o.shada = ""
-o.shadafile = ""
