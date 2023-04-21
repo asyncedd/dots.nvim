@@ -34,7 +34,6 @@ require("lazy").setup({
         "man",
         "rplugin",
         "spellfile",
-        "shada",
       },
     },
   },

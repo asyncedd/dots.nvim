@@ -71,4 +71,22 @@ return {
       { "<leader>lg", "<cmd>LazyGit<cr>" },
     },
   },
+  {
+    "gbprod/yanky.nvim",
+    keys = {
+      { "p", "<Plug>(YankyPutAfter)", mode = { "x", "n" } },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "x", "n" } },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "x", "n" } },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "x", "n" } },
+      { "<C-n>", "<Plug>(YankyCycleFoward)", mode = { "n" } },
+      { "<C-p>", "<Plug>(YankyCycleBackward)", mode = { "n" } },
+      { "<leader>yh", '<cmd>lua require("telescope").extensions.yank_history.yank_history()<cr>' },
+    },
+    config = function()
+      require("tools.yanky")
+    end,
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+  },
 }
