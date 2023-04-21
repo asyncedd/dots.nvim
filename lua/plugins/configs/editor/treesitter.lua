@@ -7,4 +7,10 @@ require("nvim-treesitter.configs").setup({
     enable = true,
     use_language_tree = true,
   },
+
+  matchup = {
+    enable = true,
+  },
 })
+
+vim.g.matchup_matchparen_deferred = 1

@@ -8,6 +8,9 @@ return {
     end,
     init = lazyLoad("nvim-treesitter"),
     build = ":TSUpdate",
+    dependencies = {
+      "andymass/vim-matchup",
+    },
   },
   {
     "echasnovski/mini.ai",
