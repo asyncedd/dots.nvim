@@ -47,7 +47,7 @@ mlsp.setup({
 })
 
 require("core.utils.installPkg")({
-  "stylua",
+  -- "stylua",
 })
 
 mlsp.setup_handlers({
