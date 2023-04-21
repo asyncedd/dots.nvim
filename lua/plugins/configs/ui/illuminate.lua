@@ -29,9 +29,12 @@ function M.darken(hex, amount, bg)
   return M.blend(hex, bg or M.bg, math.abs(amount))
 end
 
-vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = M.darken(mocha.surface1, 0.7, mocha.base) })
-vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = M.darken(mocha.surface1, 0.7, mocha.base) })
-vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = M.darken(mocha.surface1, 0.7, mocha.base) })
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+require("catppuccin.lib.highlighter").syntax({
+  IlluminatedWordText = { bg = M.darken(colors.surface1, 0.7, colors.base) },
+  IlluminatedWordRead = { bg = M.darken(colors.surface1, 0.7, colors.base) },
+  IlluminatedWordWrite = { bg = M.darken(colors.surface1, 0.7, colors.base) },
+})
 
 require("illuminate").configure({
   delay = 30,
