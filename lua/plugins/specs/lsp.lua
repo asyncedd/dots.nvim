@@ -72,5 +72,6 @@ return {
     config = function ()
       require("lspsaga").setup()
     end,
+    event = "BufReadPost",
   },
 }
