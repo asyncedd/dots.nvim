@@ -51,6 +51,7 @@ return {
         },
       },
       "hrsh7th/cmp-nvim-lua",
+      "windwp/nvim-autopairs",
     },
     config = function()
       require("completion.cmp")
@@ -131,4 +132,12 @@ return {
       { "<leader>cb", function() require("comment-box").lcbox(10) end },
     },
   },
+  {
+    "windwp/nvim-autopairs",
+    config = function ()
+      require("editor.autopairs")
+    end,
+    event = "InsertEnter",
+  },
 }
+

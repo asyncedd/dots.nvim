@@ -33,8 +33,6 @@ require("mini.indentscope").setup({
 
 require("mini.comment").setup()
 
-require("mini.pairs").setup()
-
 require("mini.move").setup()
 
 local map = require("mini.map")
