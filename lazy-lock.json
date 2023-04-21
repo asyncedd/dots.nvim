@@ -32,6 +32,7 @@
   "nvim-tree.lua": { "branch": "master", "commit": "aa9971768a08caa4f10f94ab84e48d2ceb30b1c0" },
   "nvim-treesitter": { "branch": "master", "commit": "a072d923c7a18a5a326e80e31dc211f0ec679e54" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "729d83ecb990dc2b30272833c213cc6d49ed5214" },
+  "nvim-ts-rainbow2": { "branch": "master", "commit": "742049ef6716f59c7202644a026d8dc09fc60c52" },
   "nvim-web-devicons": { "branch": "master", "commit": "95b1e300699be8eb6b5be1758a9d4d69fe93cc7f" },
   "one-small-step-for-vimkind": { "branch": "main", "commit": "aef1bdbb8347e6daaf33d5109002f3df243ebfe9" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
@@ -39,6 +40,5 @@
   "tokyonight.nvim": { "branch": "main", "commit": "1b0c88094548a62641ece1e668fa9a234e1c539e" },
   "trailblazer.nvim": { "branch": "main", "commit": "8f49c735bfa3aa47bbb8fb1bd586df2a77028a92" },
   "trouble.nvim": { "branch": "main", "commit": "7915277a259fdff5d46c6f1d2e100df2ec384d3b" },
-  "vim-enfocado": { "branch": "main", "commit": "ce03fe4785322aeecafb96a24d32288931172fc5" },
-  "vim-matchup": { "branch": "master", "commit": "f69d1ac5bd3c4e6ad349f64317000cc9a4a895cf" }
+  "vim-enfocado": { "branch": "main", "commit": "ce03fe4785322aeecafb96a24d32288931172fc5" }
 }
