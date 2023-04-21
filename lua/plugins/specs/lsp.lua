@@ -17,11 +17,7 @@ return {
     "glepnir/lspsaga.nvim",
     event = "LspAttach",
     config = function()
-      local co = coroutine
-
-      co.resume(co.create(function()
-        require("lspsaga").setup()
-      end))
+      require("lspsaga").setup()
     end,
     dependencies = {
       "nvim-tree/nvim-web-devicons",

@@ -118,11 +118,7 @@ return {
       "catppuccin/nvim",
     },
     config = function()
-      local co = coroutine
-
-      co.resume(co.create(function()
-        require("ui.bufferline")
-      end))
+      require("ui.bufferline")
     end,
     keys = {
       { "<leader>fc", "<cmd>BufferLineTogglePin<cr>" },

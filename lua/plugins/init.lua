@@ -1,5 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
+  print("WARNING: Bootstrapping lazy, it might take some time so, be patient!")
   vim.fn.system({
     "git",
     "clone",
@@ -8,6 +9,8 @@ if not vim.loop.fs_stat(lazypath) then
     "--branch=stable", -- latest stable release
     lazypath,
   })
+  print("OK: Bootstrapped lazy!")
+  print("Installing plugins now. NOW this will take some time.")
 end
 vim.opt.rtp:prepend(lazypath)
 
