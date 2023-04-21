@@ -101,6 +101,7 @@ return {
       "andersevenrud/cmp-tmux",
       "hrsh7th/cmp-emoji",
       "hrsh7th/cmp-calc",
+      "chrisgrieser/cmp-nerdfont",
     },
     config = function()
       require("coding.cmp")
