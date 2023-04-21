@@ -82,5 +82,10 @@ return {
       require("editor.gitsigns")
     end,
   },
+  {
+    "folke/todo-comments.nvim",
+    init = lazyLoad("todo-comments.nvim"),
+    config = true,
+  },
 }
 
