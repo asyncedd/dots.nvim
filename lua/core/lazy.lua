@@ -10,3 +10,29 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+local lazyopts = {
+  defaults = {
+    lazy = true,
+    version = false,
+  },
+  performance = {
+    reset_packpath = true,
+    rtp = {
+      reset = true,
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        -- "tutor",
+        "zipPlugin",
+        "shada",
+        "spellfile"
+      },
+    },
+  },
+}
+
+require("lazy").setup({
+  { import = "modules.plugins" }
+}, lazyopts)
