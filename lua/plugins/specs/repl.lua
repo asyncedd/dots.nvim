@@ -94,4 +94,22 @@ return {
       },
     },
   },
+  {
+    "rafcamlet/nvim-luapad",
+    cmd = {
+      "Luapad",
+      "LuaRun",
+      "Lua",
+    },
+    keys = {
+      {
+        "<leader>la",
+        function()
+          print("Enabled Luapad.")
+
+          vim.cmd("Luapad")
+        end,
+      },
+    },
+  },
 }

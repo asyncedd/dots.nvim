@@ -85,7 +85,6 @@ return {
   },
   {
     "ggandor/leap-ast.nvim",
-    config = true,
     keys = {
       {
         "<leader>lp",
