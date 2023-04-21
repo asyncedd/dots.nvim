@@ -17,7 +17,9 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 local disabledPlugins = require("user.builtinPlugins")
-local lazyLoad = function(plugin) -- Stole this from NvChad, hehe.
+-- Lazy load a plugin.
+---@param plugin string: A plugin to load.
+local lazyLoad = function(plugin) -- CREDIT: NvChad.
   vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
     group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),
     callback = function()
@@ -80,6 +82,9 @@ local plugins = {
     end,
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    dependencies = {
+      "HiPhish/nvim-ts-rainbow2",
+    },
   },
   {
     "andymass/vim-matchup",
@@ -318,7 +323,7 @@ local plugins = {
     config = function()
       require("lsp-lens").setup({})
     end,
-    event = "User LspAttach"
+    event = "VeryLazy",
   },
   {
     "rafcamlet/nvim-luapad",
