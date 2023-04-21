@@ -49,11 +49,12 @@ Just run a `nvim` in your terminal :D
 ```
 * `nvim` - [source](https://github.com/asyncedd/dots.nvim/blob/master/normal.log):
 ```
-078.797  000.013: VimEnter autocommands
-078.921  000.124: UIEnter autocommands
-078.955  000.034: before starting main loop
-083.337  004.381: first screen update
-083.346  000.009: --- NVIM STARTED ---
+097.963  000.019: VimEnter autocommands
+098.052  000.089: UIEnter autocommands
+121.276  022.729  022.729: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
+121.438  000.657: before starting main loop
+124.377  002.939: first screen update
+124.386  000.009: --- NVIM STARTED ---
 ```
 As you can see, my Neovim configuration is FASTER than `nvim --clean`. This is because, I disabled unneeded RTP (runtime plugins) which took `125ms+`. That's 1.2 seconds! In my case, I have **24** plugins. I lazy loaded them so, it's blazingly fast!
 
