@@ -37,6 +37,10 @@ return {
         end,
       },
     },
+    config = function()
+      require("tools.telescope")
+    end,
+    cmd = "Telescope",
   },
   {
     "sbdchd/neoformat",
