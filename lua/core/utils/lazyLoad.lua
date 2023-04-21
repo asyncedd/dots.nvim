@@ -17,7 +17,7 @@ return function(plugin)
 	    require("lazy").load({ plugins = plugin })
 
 	    if plugin == "nvim-lspconfig" then
-	      vim.cmd "silent! do FileType"
+	      vim.cmd("silent! do FileType")
 	    end
 	  end, 0)
 	else
