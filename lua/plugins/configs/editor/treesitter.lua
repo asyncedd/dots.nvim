@@ -1,4 +1,10 @@
 require("nvim-treesitter.configs").setup({
+  -- Ensure both markdown and markdown_inline is installed.
+  ensure_installed = {
+    "markdown",
+    "markdown_inline",
+  },
+
   -- Automagically install parsers when needed.
   auto_install = true,
 
