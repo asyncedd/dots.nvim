@@ -16,6 +16,10 @@ o("undofile", true, {}) -- Persistent undo's across all sessions
 -- 1.3 Clipboard related options.
 o("clipboard", "unnamed,unnamedplus", {}) -- Let's sync clipboards across platforms (Win###s, MacOS and, *Nix based systems)
 
+-- 1.4 Tabline
+o("showtabline", 2, {})
+vim.api.nvim_command([[au FileType * if index(['wipe', 'delete'], &bufhidden) >= 0 | set nobuflisted | endif]])
+
 -- =======================================
 -- 2. Editing options.
 -- =======================================

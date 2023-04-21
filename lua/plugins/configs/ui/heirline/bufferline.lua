@@ -1,7 +1,7 @@
 local utils = require("heirline.utils")
-local M = {}
+local FileIcon = require("plugins.configs.ui.heirline.filename").FileIcon
 
-M.TablineBufnr = {
+local TablineBufnr = {
   provider = function(self)
     return tostring(self.bufnr) .. ". "
   end,
@@ -9,7 +9,7 @@ M.TablineBufnr = {
 }
 
 -- we redefine the filename component, as we probably only want the tail and not the relative path
-M.TablineFileName = {
+local TablineFileName = {
   provider = function(self)
     -- self.filename will be defined later, just keep looking at the example!
     local filename = self.filename
@@ -24,7 +24,7 @@ M.TablineFileName = {
 -- this looks exactly like the FileFlags component that we saw in
 -- #crash-course-part-ii-filename-and-friends, but we are indexing the bufnr explicitly
 -- also, we are adding a nice icon for terminal buffers.
-M.TablineFileFlags = {
+local TablineFileFlags = {
   {
     condition = function(self)
       return vim.api.nvim_buf_get_option(self.bufnr, "modified")
@@ -49,7 +49,7 @@ M.TablineFileFlags = {
 }
 
 -- Here the filename block finally comes together
-M.TablineFileNameBlock = {
+local TablineFileNameBlock = {
   init = function(self)
     self.filename = vim.api.nvim_buf_get_name(self.bufnr)
   end,
@@ -65,21 +65,21 @@ M.TablineFileNameBlock = {
   end,
   on_click = {
     callback = function(_, minwid, _, button)
-      if (button == "m") then -- close on mouse middle click
+  if (button == "m") then -- close on mouse middle click
         vim.api.nvim_buf_delete(minwid, {force = false})
       else
         vim.api.nvim_win_set_buf(0, minwid)
       end
-    end,
+end,
     minwid = function(self)
-      return self.bufnr
+  return self.bufnr
     end,
     name = "heirline_tabline_buffer_callback",
   },
-  M.TablineBufnr,
-  M.FileIcon, -- turns out the version defined in #crash-course-part-ii-filename-and-friends can be reutilized as is here!
-  M.TablineFileName,
-  M.TablineFileFlags,
+  TablineBufnr,
+  FileIcon, -- turns out the version defined in #crash-course-part-ii-filename-and-friends can be reutilized as is here!
+TablineFileName,
+  TablineFileFlags,
 }
 
 -- a nice "x" button to close the buffer
@@ -93,31 +93,74 @@ local TablineCloseButton = {
     hl = { fg = "gray" },
     on_click = {
       callback = function(_, minwid)
-        vim.api.nvim_buf_delete(minwid, { force = false })
+  vim.api.nvim_buf_delete(minwid, { force = false })
       end,
       minwid = function(self)
-        return self.bufnr
+  return self.bufnr
       end,
       name = "heirline_tabline_close_buffer_callback",
     },
   },
 }
 
+
+local TablinePicker = {
+  condition = function(self)
+    return self._show_picker
+  end,
+  init = function(self)
+    local bufname = vim.api.nvim_buf_get_name(self.bufnr)
+    bufname = vim.fn.fnamemodify(bufname, ":t")
+    local label = bufname:sub(1, 1)
+    local i = 2
+    while self._picker_labels[label] do
+      if i > #bufname then
+        break
+      end
+      label = bufname:sub(i, i)
+      i = i + 1
+    end
+    self._picker_labels[label] = self.bufnr
+    self.label = label
+  end,
+  provider = function(self)
+    return self.label
+  end,
+  hl = { fg = "red", bold = true },
+}
+
+vim.keymap.set("n", "gbp", function()
+  local tabline = require("heirline").tabline
+  local buflist = tabline._buflist[1]
+  buflist._picker_labels = {}
+  buflist._show_picker = true
+  vim.cmd.redrawtabline()
+  local char = vim.fn.getcharstr()
+  local bufnr = buflist._picker_labels[char]
+  if bufnr then
+    vim.api.nvim_win_set_buf(0, bufnr)
+  end
+  buflist._show_picker = false
+  vim.cmd.redrawtabline()
+end)
+
+
+
 -- The final touch!
-M.TablineBufferBlock = utils.surround({ "", "" }, function(self)
+local TablineBufferBlock = utils.surround({ "", "" }, function(self)
   if self.is_active then
     return utils.get_highlight("TabLineSel").bg
   else
     return utils.get_highlight("TabLine").bg
   end
-end, { M.TablineFileNameBlock, TablineCloseButton })
+end, { TablineFileNameBlock, TablineCloseButton, TablinePicker })
 
 -- and here we go
-M.BufferLine = utils.make_buflist(
-  M.TablineBufferBlock,
+local BufferLine = utils.make_buflist(
+  TablineBufferBlock,
   { provider = "", hl = { fg = "gray" } }, -- left truncation, optional (defaults to "<")
   { provider = "", hl = { fg = "gray" } } -- right trunctation, also optional (defaults to ...... yep, ">")
   -- by the way, open a lot of buffers and try clicking them ;)
 )
 
-return M
+return BufferLine
