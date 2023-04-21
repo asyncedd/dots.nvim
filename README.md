@@ -35,6 +35,13 @@ It had optimized my workspace and, improve my productivity.
 - If want to exit Neovim, just plug out your computer (or for laptop users... >:) You don't want to). I meant, that'll never work.
 
 ## 🤨 Crash course: Installing
+
+Dependencies:
+- `nvim` :)
+- `bat` for fzf syntax highlighting. (Optional)
+- `luarocks` for well, luarocks.
+- `lua` for Windows users wanting to use nvim-treesitter.
+
 To install this configuration, you need a Neovim build. You can use your favorite package manager or, [Install from source](https://dev.to/asyncedd/building-neovim-from-source-1794).
 Then clone this repository.
 # For *Nix (Linux/MacOS) systems:
