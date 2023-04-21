@@ -15,6 +15,9 @@ require("core.disableBuiltinPlugins")
 -- This will make out lives much easier! :D
 require("core.options")
 
+-- User provided stuff.
+require("core.user")
+
 -- Initalize the plugin manager, lazy.nvim.
 -- We're gonna use the best tools for the job!
 require("core.lazy")
