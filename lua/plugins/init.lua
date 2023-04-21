@@ -80,6 +80,9 @@ plugins[10] = {
   "rebelot/heirline.nvim",
   init = lazyLoad("heirline.nvim"),
   config = require("ui.heirline"),
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
 }
 
 require("lazy").setup({
