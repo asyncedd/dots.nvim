@@ -148,8 +148,6 @@ return {
       { "<M-b>", function() require("readline").backward_word() end, mode = { "i" } },
       { "<C-f>", "<Right>", mode = { "i" } },
       { "<C-b>", "<Left>", mode = { "i" } },
-      { "<C-n>", "<Down>", mode = { "i" } },
-      { "<C-p>", "<Up>", mode = { "i" } },
     },
   },
 }
