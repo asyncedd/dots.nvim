@@ -183,24 +183,28 @@ return {
         function()
           require("syntax-tree-surfer").targeted_jump({ "variable_declaration" })
         end,
+        mode = { "n", "v" },
       },
       {
         "gfu",
         function()
           require("syntax-tree-surfer").targeted_jump({ "function", "arrrow_function", "function_defination" })
         end,
+        mode = { "n", "v" },
       },
       {
         "gif",
         function()
           require("syntax-tree-surfer").targeted_jump({ "if_statement" })
         end,
+        mode = { "n", "v" },
       },
       {
         "gfo",
         function()
           require("syntax-tree-surfer").targeted_jump({ "for_statement" })
         end,
+        mode = { "n", "v" },
       },
       {
         "hj",
@@ -216,6 +220,7 @@ return {
             "switch_statement",
           })
         end,
+        mode = { "n", "v" },
       },
       {
         "-",
@@ -226,6 +231,7 @@ return {
             { destination = "siblings" }
           )
         end,
+        mode = { "n", "v" },
       },
       {
         "_",
@@ -236,6 +242,7 @@ return {
             { destination = "parent" }
           )
         end,
+        mode = { "n", "v" },
       },
       {
         "+",
@@ -246,6 +253,7 @@ return {
             { destination = "children" }
           )
         end,
+        mode = { "n", "v" },
       },
     },
   },
