@@ -48,8 +48,8 @@ return {
       symbol = "│",
       options = { try_as_border = true },
     },
-    config = function ()
-      require("mini.indentscope").setup()
+    config = function (_, opts)
+      require("mini.indentscope").setup(opts)
     end,
     event = "BufReadPost"
   },
