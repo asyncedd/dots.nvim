@@ -7,6 +7,8 @@ require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "markdown",
     "markdown_inline",
+    "luap",
+    "lua",
   },
 
   -- Automagically install parsers when needed.
