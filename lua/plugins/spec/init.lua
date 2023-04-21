@@ -143,6 +143,9 @@ return {
     config = function()
       require("plugins.configs.editor.treesitter")
     end,
+    -- dependencies = {
+    --   "andymass/vim-matchup",
+    -- },
     event = "BufReadPost",
   },
   {
