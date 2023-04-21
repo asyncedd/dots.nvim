@@ -249,27 +249,6 @@ local plugins = {
     },
   },
   {
-    "mfussenegger/nvim-dap",
-    dependencies = {
-      "jbyuki/one-small-step-for-vimkind",
-    },
-    config = function()
-      require("dap.dap")
-    end,
-    keys = function()
-      local dap = require("dap")
-      return {
-        { "<leader>dtb", function() dap.toggle_breakpoint() end },
-        { "<leader>dc", function() dap.continue() end },
-        { "<leader>dso", function() dap.step_over() end },
-        { "<leader>dsi", function() dap.step_into() end },
-        {"<leader>dui", function() require("dap.ui.widgets").hover() end },
-        {"<leader>dls", function() require("osv").launch({ port = 8086 }) end },
-        {"<leader>ort", function() require("osv").run_this() end },
-      }
-    end,
-  },
-  {
     "jose-elias-alvarez/null-ls.nvim",
     init = lazyLoad("null-ls.nvim"),
     config = function ()
