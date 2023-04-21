@@ -90,33 +90,63 @@ return {
         end,
       },
       {
-        "<leader>1",
+        "<C-1>",
         function()
           require("harpoon.ui").nav_file(1)
         end,
       },
       {
-        "<leader>2",
+        "<C-2>",
         function()
           require("harpoon.ui").nav_file(2)
         end,
       },
       {
-        "<leader>3",
+        "<C-3>",
         function()
           require("harpoon.ui").nav_file(3)
         end,
       },
       {
-        "<leader>4",
+        "<C-4>",
         function()
           require("harpoon.ui").nav_file(4)
         end,
       },
       {
-        "<leader>5",
+        "<C-5>",
         function()
           require("harpoon.ui").nav_file(5)
+        end,
+      },
+      {
+        "<C-6>",
+        function()
+          require("harpoon.ui").nav_file(6)
+        end,
+      },
+      {
+        "<C-7>",
+        function()
+          require("harpoon.ui").nav_file(7)
+        end,
+      },
+      {
+        "<C-8>",
+        function()
+          require("harpoon.ui").nav_file(8)
+        end,
+      },
+      {
+        "<C-9>",
+        function()
+          require("harpoon.ui").nav_file(9)
+        end,
+      },
+      {
+        "<C-$>",
+        function()
+          require("harpoon.ui").nav_file(-1)
         end,
       },
       {
