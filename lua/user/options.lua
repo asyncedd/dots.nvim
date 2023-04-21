@@ -4,14 +4,20 @@
 local o = vim.opt
 local g = vim.g
 
--- Set the mapleader key to <Space>
+-- 1. IMPORTANT STUF
+-- 1.1 Set the mapleader key to <Space>
 g.mapleader = " "
+
+-- 2. Editor stuff.
+-- 2.1 Indentations.
 -- As, 0.2x Devs, we need our 2 space indentation
 o.shiftwidth = 2
--- Tabs take less file space, thus you need only 1 floppy disk, so take that to Windows XP!
-o.expandtab = false
+
+-- 3. UI stuff
+-- 3.1 Enable line numbers.
 -- Set lines numbers.
 o.number = true
+-- 3.2 Enable TermGUIColors.
 -- Have those glorious 24 bit colors! Take that Windows XP!
 o.termguicolors = true
 
