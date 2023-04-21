@@ -57,6 +57,12 @@ return function ()
           node_decremental = '<S-TAB>',
         },
       },
+
+      -- Enable rainbow
+      rainbow = {
+        enable =true,
+        query = "rainbow-parens"
+      },
     })
   end)
 end
