@@ -110,11 +110,4 @@ return {
     end,
     event = "VeryLazy",
   },
-  {
-    "nvim-zh/colorful-winsep.nvim",
-    config = function()
-      require("ui.winspec")
-    end,
-    event = "WinNew",
-  },
 }
