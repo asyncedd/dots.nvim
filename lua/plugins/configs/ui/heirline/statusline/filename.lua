@@ -1,43 +1,11 @@
-local M = {}
-
 local utils = require("heirline.utils")
-local fn = vim.fn
-
-M.WorkDir = {
-  init = function(self)
-    self.icon = (fn.haslocaldir(0) == 1 and "l" or "g") .. " " .. " "
-    local cwd = fn.getcwd(0)
-    self.cwd = fn.fnamemodify(cwd, ":~")
-  end,
-  hl = { fg = "blue", bold = true },
-
-  flexible = 1,
-
-  {
-    -- evaluates to the full-lenth path
-    provider = function(self)
-      local trail = self.cwd:sub(-1) == "/" and "" or "/"
-      return self.icon .. self.cwd .. trail .. " "
-    end,
-  },
-  {
-    -- evaluates to the shortened path
-    provider = function(self)
-      local cwd = fn.pathshorten(self.cwd)
-      local trail = self.cwd:sub(-1) == "/" and "" or "/"
-      return self.icon .. cwd .. trail .. " "
-    end,
-  },
-  {
-    -- evaluates to "", hiding the component
-    provider = "",
-  },
-}
+local conditions = require("heirline.conditions")
+local M = {}
 
 M.FileNameBlock = {
   -- let's first set up some attributes needed by this component and it's children
   init = function(self)
-    self.filename = (fn.expand("%") == "" and "Empty") or fn.expand("%:t")
+    self.filename = vim.api.nvim_buf_get_name(0)
   end,
 }
 -- We can now define some children separately and add them later
@@ -45,7 +13,7 @@ M.FileNameBlock = {
 M.FileIcon = {
   init = function(self)
     local filename = self.filename
-    local extension = fn.fnamemodify(filename, ":e")
+    local extension = vim.fn.fnamemodify(filename, ":e")
     self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
   end,
   provider = function(self)
@@ -53,22 +21,26 @@ M.FileIcon = {
   end,
   hl = function(self)
     return { fg = self.icon_color }
-  end,
+  end
 }
 
 M.FileName = {
-  -- hl = { fg = utils.get_highlight("Directory").fg },
-  -- hl = { fg = "bright_fg" },
-  -- hl = { fg = "black" },
-  hl = function(self)
-    return { fg = self:mode_color(), bold = true }
+  provider = function(self)
+    -- first, trim the pattern relative to the current directory. For other
+    -- options, see :h filename-modifers
+    local filename = vim.fn.fnamemodify(self.filename, ":.")
+    if filename == "" then return "[No Name]" end
+    -- now, if the filename would occupy more than 1/4th of the available
+    -- space, we trim the file path to its initials
+    -- See Flexible Components section below for dynamic truncation
+    filename = vim.fn.pathshorten(filename)
+    return filename
   end,
-
-  {
-    provider = function(self)
-      return fn.pathshorten(self.filename)
-    end,
-  },
+  hl = function (self)
+    return {
+      fg = self:mode_color()
+    }
+  end,
 }
 
 M.FileFlags = {
@@ -77,7 +49,7 @@ M.FileFlags = {
       return vim.bo.modified
     end,
     provider = "[+]",
-    hl = { fg = "normal" },
+    hl = { fg = "green" },
   },
   {
     condition = function()
@@ -97,18 +69,17 @@ M.FileNameModifer = {
   hl = function(self)
     if vim.bo.modified then
       -- use `force` because we need to override the child's hl foreground
-      return { fg = self:mode_color(), bold = true, force = true }
+      return { fg = self:mode_color(), bold = true, force=true }
     end
   end,
 }
 
 -- let's add the children to our FileNameBlock component
-M.FileNameBlock = utils.insert(
-  M.FileNameBlock,
-  M.FileIcon,
-  utils.insert(M.FileNameModifer, M.FileName), -- a new table where FileName is a child of FileNameModifier
-  M.FileFlags,
-  { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
+M.FileNameBlock = utils.insert(M.FileNameBlock,
+M.FileIcon,
+utils.insert(M.FileNameModifer, M.FileName), -- a new table where FileName is a child of FileNameModifier
+M.FileFlags,
+{ provider = '%<'} -- this means that the statusline is cut here when there's not enough space
 )
 
 return M

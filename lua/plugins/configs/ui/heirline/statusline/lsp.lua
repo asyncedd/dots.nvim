@@ -1,38 +1,43 @@
-local M = {}
 local conditions = require("heirline.conditions")
+local M = {}
 
 M.LSPActive = {
   condition = conditions.lsp_attached,
-  update = { "LspAttach", "LspDetach", "ModeChanged" },
+  update = {
+    "LspAttach",
+    "LspDetach"
+  },
 
   -- You can keep it simple,
   -- provider = " [LSP]",
 
   -- Or complicate things a bit and get the servers names
-  provider = function()
+  provider  = function()
     local names = {}
     for _, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
       table.insert(names, server.name)
     end
-    return " [" .. table.concat(names, " ") .. "]"
+    return " " .. table.concat(names, " ")
   end,
-  hl = function(self)
+  hl = function (self)
     return {
       fg = self:mode_color(),
       bold = true,
     }
-  end,
+  end
 }
+
+local icons = require("core.utils.icons")
 
 M.Diagnostics = {
 
   condition = conditions.has_diagnostics,
 
   static = {
-    error_icon = " ",
-    warn_icon = " ",
-    info_icon = " ",
-    hint_icon = " ",
+    error_icon = icons.Error,
+    warn_icon = icons.Warn,
+    info_icon = icons.Info,
+    hint_icon = icons.Hint,
   },
 
   init = function(self)
@@ -42,11 +47,11 @@ M.Diagnostics = {
     self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
   end,
 
-  update = { "DiagnosticChanged", "BufEnter" },
-
-  {
-    provider = " ",
+  update = {
+    "DiagnosticChanged",
+    "BufEnter",
   },
+
   {
     provider = function(self)
       -- 0 is just another output, we can decide to print it or not!
@@ -72,9 +77,7 @@ M.Diagnostics = {
     end,
     hl = { fg = "diag_hint" },
   },
-  {
-    provider = " ",
-  },
 }
 
 return M
+

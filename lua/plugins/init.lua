@@ -1,46 +1,43 @@
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
 if not vim.loop.fs_stat(lazypath) then
-  print("NOTICE: Bootstrapping Lazy.nvim. Please wait! (It shouldn't be too long!)")
   vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
+    "--branch=stable", -- latest stable release
     lazypath,
   })
-  print("OK: Done!")
-
-  vim.g.bootstrap = true
 end
-
-vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
-
-local disabledPlugins = require("user.builtinPlugins")
+vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   { import = "plugins.specs" },
 }, {
-  performance = {
-    rtp = {
-      disabled_plugins = disabledPlugins,
-    },
-  },
-  install = {
-    colorscheme = {
-      "catppuccin",
-      "kanagawa",
-      "tokyonight",
-      "habamax",
-    },
-  },
   defaults = {
     lazy = true,
     version = false,
   },
-  ui = {
-    throttle = 100,
+  install = {
+    missing = true,
+    colorscheme = { "catppuccin", "habamax" },
   },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+        "man",
+        "rplugin",
+        "spellfile",
+      },
+    },
+  },
+  ui = {
+    throttle = 50,
+  }
 })

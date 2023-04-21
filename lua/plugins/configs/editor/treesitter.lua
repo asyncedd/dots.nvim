@@ -1,27 +1,11 @@
 require("nvim-treesitter.configs").setup({
-
-  -- Make sure we've installed:
-  ensure_installed = {
-    "markdown",
-    "markdown_inline",
-  },
-
-  -- Auto-install mssing parsers
+  -- Automagically install parsers when needed.
   auto_install = true,
 
-  -- Enable highlighting.
+  -- Enable treesitter's highlighting.
   highlight = {
     enable = true,
-    use_languagetree = true,
-  },
-
-  -- Treesitter powered indents.
-  indent = {
-    enable = true,
-  },
-
-  -- Matchup
-  matchup = {
-    enable = true,
+    use_language_tree = true,
   },
 })
+

@@ -1,13 +1,7 @@
-local indentScope = require("mini.indentscope")
-
-indentScope.setup({
-  draw = {
-    animation = indentScope.gen_animation.exponential({
-      easing = "in-out",
-    }),
-  },
+require("mini.indentscope").setup({
   symbol = "│",
   options = {
     try_as_border = true,
   },
 })
+

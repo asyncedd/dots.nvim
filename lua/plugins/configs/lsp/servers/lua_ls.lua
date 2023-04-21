@@ -1,46 +1,41 @@
+-- Thank you to folke with his neodev plugin for this!
+-- https://github.com/folke/neodev.nvim
+local ret = {}
+
+if package.loaded["lazy"] then
+  local lazy_plugins = require("lazy").plugins()
+  for _, plugin in ipairs(lazy_plugins) do
+    ret[plugin.dir] = true
+  end
+end
+
+local library = {
+  [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+  [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+  [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true
+}
+
+-- Thank you for NvChad for this too! https://nvchad.com/docs/config/walkthrough
+library = vim.tbl_deep_extend("force", library, ret)
+library = vim.tbl_deep_extend("force", library, vim.api.nvim_get_runtime_file("", true))
+
 return {
   Lua = {
     runtime = {
-      -- Tell the LS (langauge server) that we're using LuaJIT!
       version = "LuaJIT",
-      path = {
-        vim.split(package.path, ";"),
-        "lua/?.lua",
-        "lua/?/init.lua",
-      },
-      pathStrict = false,
     },
     diagnostics = {
-      globals = {
-        "vim",
-      },
-    },
-    completion = {
-      keywordSnippet = "Both",
-      workspaceWord = true,
+      globals = { "vim" },
     },
     workspace = {
-      library = {
-        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-        [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-        [vim.fn.expand("data" .. "/lazy/lazy.nvim/lua/lazy")] = true,
-      },
+      library = library,
       checkThirdParty = false,
-      MaxPreload = 100000,
+      maxPreload = 100000,
       preloadFileSize = 10000,
     },
-    telemetry = {
-      enable = false,
-    },
-    format = {
-      enable = true,
-      -- Put format options here
-      -- NOTE: the value should be STRING!!
-      defaultConfig = {
-        indent_style = "space",
-        indent_size = "2",
-        continuation_indent_size = "2",
-      },
+    completion = {
+      callSnippet = "Both",
     },
   },
 }
+

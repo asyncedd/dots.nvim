@@ -1,16 +1,15 @@
--- Neoinit v.0.1
+-- ██╗███╗   ██╗██╗████████╗██╗     ██╗   ██╗ █████╗ 
+-- ██║████╗  ██║██║╚══██╔══╝██║     ██║   ██║██╔══██╗
+-- ██║██╔██╗ ██║██║   ██║   ██║     ██║   ██║███████║
+-- ██║██║╚██╗██║██║   ██║   ██║     ██║   ██║██╔══██║
+-- ██║██║ ╚████║██║   ██║██╗███████╗╚██████╔╝██║  ██║
+-- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
 vim.loader.enable()
 
-require("user.autocmd")
+require("settings.options")
 
--- local disableBuiltinPlugins = require("user.builtinPlugins")
---
--- for _, plugin in ipairs(disableBuiltinPlugins) do
---   vim.g["loaded_" .. plugin] = 1
--- end
-
-require("user.options")
+require("settings.autocmd")
 
 local config = vim.fn.stdpath("config")
 
@@ -19,8 +18,9 @@ package.path = config .. "/lua/plugins/configs/?.lua;" .. config .. "/lua/plugin
 
 require("plugins")
 
--- vim.api.nvim_command("colorscheme tokyonight")
 vim.api.nvim_command("colorscheme catppuccin")
--- vim.api.nvim_command("colorscheme onedark")
--- vim.api.nvim_command("colorscheme kanagawa")
--- vim.api.nvim_command("colorscheme tundra")
+
+vim.schedule(function()
+  require("after")
+end)
+

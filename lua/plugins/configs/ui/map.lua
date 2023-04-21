@@ -1,11 +1,12 @@
 local map = require("mini.map")
+local integration = map.gen_integration
 
 map.setup({
   integrations = {
-    map.gen_integration.gitsigns(),
-    map.gen_integration.diagnostic(),
-    map.gen_integration.builtin_search(),
+    integration.builtin_search(),
+    integration.gitsigns(),
+    integration.diagnostic(),
   },
 })
 
-MiniMap.open()
+map.toggle()

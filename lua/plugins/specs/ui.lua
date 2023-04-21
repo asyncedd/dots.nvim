@@ -1,218 +1,80 @@
 local lazyLoad = require("core.utils.lazyLoad")
-local neovide = function(plugin)
-  vim.defer_fn(function()
-    local condition = not vim.g.neovide
-    if condition then
-      require("lazy").load({ plugins = plugin })
-    end
-  end, 100)
-end
 
-local ui = {}
-
-ui[1] = {
-  "folke/noice.nvim",
-  config = function()
-    require("ui.noice")
-  end,
-  dependencies = {
-    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    "MunifTanjim/nui.nvim",
-    -- OPTIONAL:
-    --   `nvim-notify` is only needed, if you want to use the notification view.
-    --   If not available, we use `mini` as the fallback
-    "rcarriga/nvim-notify",
-  },
-  cond = not vim.g.neovide,
-  event = { "VeryLazy" },
-}
-
-ui[2] = {
-  "glepnir/dashboard-nvim",
-  config = function()
-    require("ui.dashboard")
-  end,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
-  init = function()
-    vim.api.nvim_create_autocmd({ "VimEnter" }, {
-      group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. "dashboard-nvim", {}),
-      callback = function()
-        local file = vim.fn.expand("%")
-        local condition = (file == "NvimTree_1" or file == "[lazy]" or file == "")
-        if condition then
-          require("lazy").load({ plugins = "dashboard-nvim" })
-        end
-      end,
-    })
-  end,
-}
-
-ui[3] = {
-  "NvChad/nvim-colorizer.lua",
-  config = true,
-  event = "BufReadPost",
-}
-
-ui[4] = {
-  "rebelot/heirline.nvim",
-  config = function()
-    require("ui.heirline")
-  end,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
-  event = "VeryLazy",
-}
-
-ui[5] = {
-  "lukas-reineke/indent-blankline.nvim",
-  config = true,
-  init = lazyLoad("indent-blankline.nvim"),
-}
-
-ui[6] = {
+return {
   {
     "catppuccin/nvim",
     config = function()
       require("ui.catppuccin")
     end,
   },
-  "FrenzyExists/aquarium-vim",
   {
-    "wuelnerdotexe/vim-enfocado",
+    "echasnovski/mini.map",
     config = function()
-      vim.g.enfocado_style = "nature" -- You can go for "neon" too.
+      vim.schedule_wrap(function()
+        require("ui.map")
+      end)
     end,
+    init = lazyLoad("mini.map"),
   },
   {
-    "folke/tokyonight.nvim",
+    "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require("ui.tokyonight")
+      require("ui.blankline")
     end,
+    init = lazyLoad("indent-blankline.nvim"),
   },
   {
-    "rebelot/kanagawa.nvim",
+    "echasnovski/mini.indentscope",
     config = function()
-      require("ui.kanagawa")
+      require("ui.indentscope")
     end,
+    init = lazyLoad("mini.indentscope"),
   },
-  "olimorris/onedarkpro.nvim",
   {
-    "sam4llis/nvim-tundra",
+    "folke/noice.nvim",
     config = true,
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
   },
-}
+  {
+    "glepnir/dashboard-nvim",
+    init = function()
+      vim.api.nvim_create_autocmd({ "VimEnter" }, {
+        group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. "dashboard-nvim", {}),
+        callback = function()
+          local file = vim.fn.expand "%"
+          local condition = file == ""
 
-ui[7] = {
-  "folke/drop.nvim",
-  event = "VimEnter",
-  config = function()
-    vim.schedule(function()
-      local drops = {
-        "stars",
-        "leaves",
-        "snow",
-        "xmas",
-        "spring",
-        "summer",
-      }
+          if condition then
+            vim.api.nvim_del_augroup_by_name("BeLazyOnFileOpen" .. "dashboard-nvim")
 
-      require("drop").setup({
-        theme = drops[math.random(#drops)],
+            -- dont defer for treesitter as it will show slow highlighting
+            -- This deferring only happens only when we do "nvim filename"
+            require("lazy").load({ plugins = "dashboard-nvim" })
+          end
+        end
       })
-    end)
-  end,
-}
-
-ui[8] = {
-  "folke/zen-mode.nvim",
-  config = true,
-  event = "VeryLazy",
-  cmds = {
-    "ZenMode",
-    "close",
-    "quit",
+    end,
+    config = true,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
   },
-  dependencies = {
-    {
-      "folke/twilight.nvim",
+  {
+    "rebelot/heirline.nvim",
+    init = function()
+      coroutine.resume(coroutine.create(function() require("ui.heirline.color") end))
+    end,
+    config = function()
+      coroutine.resume(coroutine.create(function() require("ui.heirline") end))
+    end,
+    event = "BufReadPost",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
     },
   },
 }
 
-ui[9] = {
-  "folke/todo-comments.nvim",
-  config = true,
-  event = "VeryLazy",
-}
-
-ui[10] = {
-  "Eandrju/cellular-automaton.nvim",
-  cmd = {
-    "CellularAutomaton",
-  },
-  keys = {
-    { "<leader>fml", "<cmd>CellularAutomaton make_it_rain<cr>" },
-  },
-}
-
-ui[11] = {
-  "gen740/SmoothCursor.nvim",
-  event = "VeryLazy",
-  config = function()
-    require("ui.smoothcursor")
-  end,
-}
-
-ui[12] = {
-  "echasnovski/mini.map",
-  config = function()
-    require("ui.map")
-  end,
-  init = lazyLoad("mini.map"),
-}
-
-ui[13] = {
-  "echasnovski/mini.indentscope",
-  event = {
-    "CursorMoved",
-    "VeryLazy",
-  },
-  config = function()
-    require("ui.indentscope")
-  end,
-  keys = {
-    "<leader>ii",
-    "<leader>ai",
-    "[i",
-    "]i",
-  },
-}
-
-ui[14] = {
-  "echasnovski/mini.cursorword",
-  event = "VeryLazy",
-  config = function()
-    require("mini.cursorword").setup()
-  end,
-}
-
-ui[17] = {
-  "edluffy/specs.nvim",
-  config = function()
-    require("ui.specs")
-  end,
-  event = "VeryLazy",
-}
-
-ui[18] = {
-  "echasnovski/mini.animate",
-  event = "VeryLazy",
-  config = function()
-    require("ui.animate")
-  end,
-}
-
-return ui
