@@ -6,6 +6,7 @@ return {
     end,
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "debugloop/telescope-undo.nvim",
     },
     event = "VeryLazy",
   },
