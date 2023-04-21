@@ -23,4 +23,8 @@ return {
       { "<leader>ng", function() require("neogit").open() end },
     },
   },
+  {
+    "tpope/vim-fugitive",
+    event = "VeryLazy",
+  },
 }
