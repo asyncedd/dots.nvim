@@ -191,4 +191,12 @@ ui[13] = {
   },
 }
 
+ui[14] = {
+  "echasnovski/mini.cursorword",
+  event = "VeryLazy",
+  config = function()
+    require("ui.cursorword")
+  end,
+}
+
 return ui
