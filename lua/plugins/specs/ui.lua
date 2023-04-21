@@ -3,11 +3,6 @@ local lazyLoad = require("core.utils.lazyLoad")
 return {
   {
     "catppuccin/nvim",
-    config = function()
-      coroutine.resume(coroutine.create(function()
-        require("ui.catppuccin")
-      end))
-    end,
     build = ":CatppuccinCompile",
   },
   {
@@ -76,7 +71,8 @@ return {
         require("ui.heirline")
       end))
     end,
-    event = "UIEnter",
+    init = lazyLoad("heirline.nvim"),
+    -- event = "UIEnter",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
@@ -120,7 +116,8 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
-    event = "UIEnter",
+    -- event = "UIEnter",
+    init = lazyLoad("bufferline.nvim"),
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       "catppuccin/nvim",

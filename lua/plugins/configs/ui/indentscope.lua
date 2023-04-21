@@ -1,3 +1,7 @@
+local mocha = require("catppuccin.palettes").get_palette("mocha")
+
+vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = mocha.text })
+
 require("mini.indentscope").setup({
   symbol = "│",
   options = {

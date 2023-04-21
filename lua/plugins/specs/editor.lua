@@ -8,9 +8,13 @@ return {
     end,
     init = lazyLoad("nvim-treesitter"),
     build = ":TSUpdate",
-    dependencies = {
-      "andymass/vim-matchup",
-    },
+  },
+  {
+    "andymass/vim-matchup",
+    init = lazyLoad("vim-matchup"),
+    config = function()
+      require("editor.matchup")
+    end,
   },
   {
     "echasnovski/mini.ai",
@@ -103,7 +107,8 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-context",
     config = true,
-    event = "UIEnter",
+    init = lazyLoad("nvim-treesitter-context"),
+    -- event = "UIEnter",
   },
   {
     "chrisgrieser/nvim-various-textobjs",

@@ -1,3 +1,7 @@
+local mocha = require("catppuccin.palettes").get_palette("mocha")
+
+vim.api.nvim_set_hl(0, "@variable", { fg = mocha.pink })
+
 require("nvim-treesitter.configs").setup({
   -- Ensure both markdown and markdown_inline is installed.
   ensure_installed = {
@@ -14,11 +18,6 @@ require("nvim-treesitter.configs").setup({
     -- use_language_tree = true,
   },
 
-  -- Have Vim-matchup!
-  matchup = {
-    enable = true,
-  },
-
   -- Treesitter powered indents.
   indent = {
     enable = true,
@@ -29,8 +28,3 @@ require("nvim-treesitter.configs").setup({
     enable = true,
   },
 })
-
-local g = vim.g
-
-g.matchup_matchparen_deferred = 1
-g.matchup_matchparen_offscreen = { method = "none" }

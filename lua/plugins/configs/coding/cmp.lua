@@ -1,3 +1,8 @@
+local mocha = require("catppuccin.palettes").get_palette("mocha")
+
+vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = mocha.pink, bold = true })
+vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = mocha.pink, bold = true })
+
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
