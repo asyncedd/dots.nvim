@@ -1,13 +1,12 @@
 local lazyLoad = require("core.utils.lazyLoad")
 local neovide = function(plugin)
   vim.defer_fn(function()
-    local condition = (not vim.g.neovide)
-    if (condition) then
+    local condition = not vim.g.neovide
+    if condition then
       require("lazy").load({ plugins = plugin })
     end
   end, 100)
 end
-
 
 return {
   {
@@ -39,12 +38,12 @@ return {
         callback = function()
           local file = vim.fn.expand("%")
           local condition = (file == "NvimTree_1" or file == "[lazy]" or file == "")
-          if (condition) then
+          if condition then
             require("lazy").load({ plugins = "dashboard-nvim" })
           end
-        end
+        end,
       })
-    end
+    end,
   },
   {
     "NvChad/nvim-colorizer.lua",
@@ -93,6 +92,10 @@ return {
       end,
     },
     "olimorris/onedarkpro.nvim",
+    {
+      "sam4llis/nvim-tundra",
+      config = true,
+    },
   },
   {
     "folke/drop.nvim",
@@ -132,7 +135,7 @@ return {
   {
     "tamton-aquib/flirt.nvim",
     config = true,
-    init = neovide("flirt.nvim")
+    init = neovide("flirt.nvim"),
   },
   {
     "folke/todo-comments.nvim",
@@ -161,4 +164,3 @@ return {
     end,
   },
 }
-
