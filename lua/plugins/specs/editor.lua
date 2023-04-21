@@ -121,28 +121,28 @@ editor[5] = {
       function()
         require("spider").motion("w")
       end,
-      mode = { "n", "o" },
+      mode = { "n", "v" },
     },
     {
       "e",
       function()
         require("spider").motion("e")
       end,
-      mode = { "n", "o" },
+      mode = { "n", "v" },
     },
     {
       "b",
       function()
         require("spider").motion("b")
       end,
-      mode = { "n", "o" },
+      mode = { "n", "v" },
     },
     {
       "ge",
       function()
         require("spider").motion("ge")
       end,
-      mode = { "n", "o" },
+      mode = { "n", "v" },
     },
   },
 }
