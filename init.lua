@@ -7,4 +7,4 @@
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 --
 
-require("setup").setup()
+require("core").setup()
