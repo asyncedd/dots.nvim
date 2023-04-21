@@ -24,4 +24,9 @@ table.insert(editor, {
   config = require("modules.configs.editor.autopairs")
 })
 
+table.insert(editor, {
+  "folke/twilight.nvim",
+  event = "BufReadPost",
+})
+
 return editor
