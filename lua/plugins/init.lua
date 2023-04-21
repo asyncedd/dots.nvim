@@ -218,13 +218,6 @@ local plugins = {
     event = "InsertEnter",
   },
   {
-    "lukas-reineke/headlines.nvim",
-    config = true,
-    ft = {
-      "md",
-    },
-  },
-  {
     "nvim-tree/nvim-tree.lua",
     config = function()
       require("tools.nvimtree")
@@ -252,7 +245,7 @@ local plugins = {
           else
             return
           end
-        end
+        end,
       })
     end,
   },
