@@ -21,5 +21,5 @@ require("plugins")
 vim.api.nvim_command("colorscheme catppuccin")
 
 vim.schedule(function()
-  require("after")
+  require("core.after")
 end)

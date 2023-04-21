@@ -27,3 +27,10 @@ o.undofile = true
 o.undolevels = 10000
 -- Enable more undo stuff
 o.undoreload = 10000
+
+-- Enable syntax highlighting builtin
+o.syntax = "on"
+
+-- Enable ShaDA
+o.shada = ""
+o.shadafile = ""

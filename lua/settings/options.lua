@@ -32,21 +32,25 @@ o.shiftwidth = 2
 o.expandtab = true
 
 -- 3. Mini.basic stuff.
-o.ignorecase  = true -- Ignore case when searching (use `\C` to force not doing that)
-o.incsearch   = true -- Show search results while typing
-o.infercase   = true -- Infer letter cases for a richer built-in keyword completion
-o.smartcase   = true -- Don't ignore case when searching if pattern has upper case
+o.ignorecase = true -- Ignore case when searching (use `\C` to force not doing that)
+o.incsearch = true -- Show search results while typing
+o.infercase = true -- Infer letter cases for a richer built-in keyword completion
+o.smartcase = true -- Don't ignore case when searching if pattern has upper case
 o.smartindent = true -- Make indenting smart
 
-o.completeopt   = "menuone,noinsert,noselect" -- Customize completions
-o.virtualedit   = "block"                     -- Allow going past the end of line in visual block mode
-o.formatoptions = "qjl1"                      -- Don't autoformat comments
+o.completeopt = "menuone,noinsert,noselect" -- Customize completions
+o.virtualedit = "block" -- Allow going past the end of line in visual block mode
+o.formatoptions = "qjl1" -- Don't autoformat comments
 
 -- Folds
-o.foldcolumn = '1' -- '0' is not bad
+o.foldcolumn = "1" -- '0' is not bad
 o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true
 
 -- Middle screen ;)
 o.scrolloff = 999
+
+-- 3. Perf
+-- Disable syntax highlighting. (it'll be replaced by nvim-treesitter.)
+o.syntax = "off"
