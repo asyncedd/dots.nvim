@@ -38,10 +38,11 @@ function Lazy:load_lazy()
   -- print("Elapsed time: " .. elapsed_time .. " seconds")
   vim.opt.rtp:prepend(lazy_path)
 
+  local colors = require("core.settings").colorscheme
   local lazy_settings = {
     install = {
       missing = true,
-      colorscheme = { "catppuccin" },
+      colorscheme = { colors, "catppuccin", "tokyonight" },
     },
     performance = {
       cache = {
