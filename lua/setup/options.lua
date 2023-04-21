@@ -46,3 +46,25 @@ o.winblend = 10 -- floating windows are sightly transparent.
 
 o.list = true -- Show them.
 o.listchars = "" -- Couldn't think about it.
+
+-- Disable menu loading
+g.did_install_default_menus = 1
+g.did_install_syntax_menu = 1
+
+-- Don't load native syntax completion
+g.loaded_syntax_completion = 1
+
+-- Don't load spell files
+g.loaded_spellfile_plugin = 1
+
+-- Don't load zipPlugin.vim, gzip.vim and tarPlugin.vim
+g.loaded_gzip = 1
+g.loaded_tar = 1
+g.loaded_tarPlugin = 1
+g.loaded_vimball = 1
+g.loaded_vimballPlugin = 1
+g.loaded_zip = 1
+g.loaded_zipPlugin = 1
+
+-- Disable SQL Omni completion
+g.loaded_sql_completion = 1
