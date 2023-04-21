@@ -281,6 +281,24 @@ return {
         "<cmd>STSSwapOrHoldVisual<cr>",
         mode = { "x", "v" },
       },
+      {
+        "<leader>hj",
+        function()
+          require("syntax-tree-surfer").targeted_jump({
+            "function",
+            "arrrow_function",
+            "function_defination",
+            "if_statement",
+            "else_clause",
+            "else_statement",
+            "elseif_statement",
+            "for_statement",
+            "while_statement",
+            "switch_statement",
+            "variable_declaration",
+          })
+        end,
+      },
     },
   },
   {
