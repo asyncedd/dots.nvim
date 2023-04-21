@@ -112,3 +112,11 @@ if vim.g.neovide then
   -- Make Neovide not too zoomed in.
   g.neovide_scale_factor = 0.5
 end
+
+--  +----------------------------------------------------------+
+--  |                      7. "Security"                       |
+--  +----------------------------------------------------------+
+--  Cool thing to avoid https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+-- Disable Modelines.
+o.modelines = 0
+o.modeline = false
