@@ -2,8 +2,6 @@
 
 vim.loader.enable()
 
-require("env")
-
 require("user.autocmd")
 
 -- local disableBuiltinPlugins = require("user.builtinPlugins")
