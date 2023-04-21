@@ -16,9 +16,9 @@ return {
   },
   {
     "L3MON4D3/LuaSnip",
-    -- dependencies = {
-    --   "rafamadriz/friendly-snippets"
-    -- },
+    dependencies = {
+      "rafamadriz/friendly-snippets"
+    },
     -- build = "make install_jsregexp",
     keys = {
       {
@@ -31,8 +31,8 @@ return {
       { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
-    -- config = function()
-    --   require("plugins.configs.completion.luasnip")
-    -- end,
+    config = function()
+      require("plugins.configs.completion.luasnip")
+    end,
   }
 }
