@@ -5,6 +5,7 @@ return {
     config = function ()
       require("plugins.configs.ui.catppuccin")
     end,
+    lazy = false,
   },
   -- Indent blanklines
   {
