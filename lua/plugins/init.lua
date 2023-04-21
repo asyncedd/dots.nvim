@@ -15,6 +15,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "asyncedd/apr",
+  { import = "apr.coding.autopairs" },
+  { import = "apr.coding.tabout" },
   { import = "plugins.specs" },
 }, {
   defaults = {
