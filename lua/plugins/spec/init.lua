@@ -117,6 +117,7 @@ return {
         opts = { labeled_modes = "nx" },
       },
       "tpope/vim-repeat",
+      "echasnovski/mini.ai",
     },
     event = "VeryLazy",
   },

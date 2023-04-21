@@ -334,7 +334,7 @@ end
 local impatient_time
 
 function M.enable_profile()
-  local P = require('impatient.profile')
+  local P = require('snips.impatient.profile')
   P.setup(M, {
     std_dirs = std_dirs,
     modpath_mangle = modpath_mangle,
