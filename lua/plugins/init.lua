@@ -6,13 +6,13 @@ plugins[1] = {
   "catppuccin/nvim",
   name = "catppuccin",
   init = lazyLoad("catppuccin"),
-  config = require("plugins.configs.ui.catppuccin"),
+  config = require("ui.catppuccin"),
 }
 
 plugins[2] = {
   "nvim-treesitter/nvim-treesitter",
   init = lazyLoad("nvim-treesitter"),
-  config = require("plugins.configs.editor.treesitter"),
+  config = require("editor.treesitter"),
   build = ":TSUpdate",
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
 }
@@ -21,7 +21,7 @@ plugins[3] = {
   "neovim/nvim-lspconfig",
   -- init = lazyLoad("nvim-lspconfig"),
   event = "BufReadPost",
-  config = require("plugins.configs.lsp.config"),
+  config = require("lsp.config"),
   dependencies = {
     {
       "williamboman/mason.nvim",
@@ -29,7 +29,7 @@ plugins[3] = {
       dependencies = {
 	"williamboman/mason-lspconfig.nvim",
       },
-      config = require("plugins.configs.lsp.mason"),
+      config = require("lsp.mason"),
     }
   }
 }
