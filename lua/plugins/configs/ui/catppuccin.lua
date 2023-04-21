@@ -10,7 +10,7 @@ require("catppuccin").setup({
       ["@variable"] = { fg = ctp.pink },
 
       -- Stolen some highlightings that only need from the colorscheme it self.
-      MiniIndentscopeSymbol = { fg = ctp.blue },
+      MiniIndentscopeSymbol = { fg = ctp.text },
       MiniIndentscopePrefix = { style = { "nocombine" } }, -- Make it invisible
     }
   end,
