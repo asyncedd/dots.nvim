@@ -103,3 +103,5 @@ You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no w
 - [NvChad](https://github.com/nvchad/nvchad) - For the lazyLoader function!
 - [Ayamir's nvimdots](https://github.com/ayamir/nvimdots) - For some structuring and those snippets! (I actually started this repo 99% based on his structure)
 - [Glepnir's dots](https://github.com/glepnir/nvim) - For the snippets!
+- [akinsho's dots](https://github.com/akinsho/dotfiles/tree/nightly/.config/nvim) - For some snippets too!
+- [abzcoding's dots](https://github.com/abzcoding/lvim) - Also for the snippets.
