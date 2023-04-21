@@ -1,11 +1,12 @@
 local M = {
-  -- Enable singe file support for the LS (langauge server).
-  single_file_support = true,
   settings = {
     Lua = {
       runtime = {
         -- Tell the LS (langauge server) that we're using LuaJIT!
-        version = "LuaJIT"
+        version = "LuaJIT",
+        special = {
+          reload = "require",
+        },
       },
       completion = {
         -- Show function name and call the Snippet
@@ -18,7 +19,7 @@ local M = {
         parameters = {
           "--log-level=trace",
         }
-      }
+      },
       workspace = {
         -- Don't check for third party workspaces.
         checkThirdParty = false,
@@ -32,6 +33,8 @@ local M = {
           [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
         },
         -- "Cache" files for fast loading.
+        -- Oh yeah we allow 100 MB of cache. No more than that.
+        -- And we skip files that are over 10MB.
         maxPreload = 100000,
         preloadFileSize = 10000,
       },
