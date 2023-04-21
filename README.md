@@ -108,4 +108,5 @@ You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no w
 - [folke's neodev](https://github.com/folke/neodev.nvim) - For his lazy plugin thingy!
 - [mini.basics](https://github.com/echasnovski/mini.basics) - For some of the options :D
 - [lazyvim](https://github.com/LazyVim/LazyVim) - Stole some configurations and some autocmds i think
-- [https://github.com/chrisgrieser/.config] and [https://github.com/yutkat/dotfiles] - For their DAP configurations.
+- [chrisgrieser and yutkat](https://github.com/chrisgrieser/.config) and [https://github.com/yutkat/dotfiles] - For their DAP configurations.
+- [mawkler](https://github.com/mawkler/nvim) - For a DAP keymap.
