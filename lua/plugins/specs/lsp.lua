@@ -47,11 +47,11 @@ return {
       },
     },
   },
-  {
-    "j-hui/fidget.nvim",
-    config = true,
-    init = lazyLoad("fidget.nvim"),
-  },
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   config = true,
+  --   init = lazyLoad("fidget.nvim"),
+  -- },
   {
     "jose-elias-alvarez/null-ls.nvim",
     init = lazyLoad("null-ls.nvim"),

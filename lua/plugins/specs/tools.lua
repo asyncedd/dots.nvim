@@ -55,13 +55,6 @@ return {
     },
   },
   {
-    "dstein64/vim-startuptime",
-    cmd = "StartupTime",
-    config = function()
-      vim.g.startuptime_tries = 10
-    end,
-  },
-  {
     "rafcamlet/nvim-luapad",
     lazy = true,
     cmd = {
@@ -86,4 +79,24 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "stevearc/oil.nvim",
+    config = true,
+    keys = {
+      { "<leader>oil", "<cmd>Oil<cr>", { desc = "Open that coconut oil!" } },
+      { "-", function() require("oil").open() end, { desc = "Open parent directory" } },
+    },
+  },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("tools.refactoring")
+    end,
+    event = "BufWrite",
+  },
 }
+

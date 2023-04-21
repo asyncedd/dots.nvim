@@ -28,3 +28,4 @@ local lazyLoad = function(plugin) -- CREDIT: NvChad.
 end
 
 return lazyLoad
+
