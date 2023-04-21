@@ -282,4 +282,9 @@ return {
     config = true,
     init = lazyLoad("nvim-treesitter-context"),
   },
+  {
+    "haringsrob/nvim_context_vt",
+    config = true,
+    init = lazyLoad("nvim_context_vt"),
+  },
 }
