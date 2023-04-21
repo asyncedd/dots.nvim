@@ -5,7 +5,8 @@ M.LSPActive = {
   condition = conditions.lsp_attached,
   update = {
     "LspAttach",
-    "LspDetach"
+    "LspDetach",
+    "ModeChanged",
   },
 
   -- You can keep it simple,
