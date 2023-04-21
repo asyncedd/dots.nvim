@@ -4,7 +4,7 @@ return {
     keys = {
       { "<leader>u", vim.cmd.UndotreeToggle },
     },
-    event = "BufReadPost",
+    event = "TextChanged",
   },
   {
     "nvim-telescope/telescope.nvim",
