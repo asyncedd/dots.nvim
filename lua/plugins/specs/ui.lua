@@ -34,5 +34,16 @@ return {
     config = function ()
       require("plugins.configs.ui.heirline")
     end
+  },
+  {
+    "anuvyklack/pretty-fold.nvim",
+    config = true,
+    event = "BufReadPost",
+    dependencies = {
+      {'anuvyklack/fold-preview.nvim',
+        dependencies = { 'anuvyklack/keymap-amend.nvim' },
+        config = true,
+      }
+    }
   }
 }

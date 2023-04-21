@@ -23,7 +23,7 @@ local DefaultStatusLine = {
   utils.surround({ "", "" }, "bright_bg", {
     FileName.WorkDir,
     Space,
-    utils.surround({ "", "" }, "red", { FileName.FileNameBlock }),
+    utils.surround({ "", "" }, "black", { FileName.FileNameBlock }),
   }),
   Space,
   Gitsigns,
