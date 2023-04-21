@@ -67,13 +67,6 @@ M.FileName = {
   -- hl = { fg = "black" },
   hl = { fg = "normal" },
 
-  flexible = 2,
-
-  {
-    provider = function(self)
-      return self.lfilename
-    end,
-  },
   {
     provider = function(self)
       return vim.fn.pathshorten(self.lfilename)
