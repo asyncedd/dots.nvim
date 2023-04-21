@@ -32,4 +32,21 @@ return {
       { "<leader>lg", "<cmd>LazyGit<cr>" },
     },
   },
+  {
+    "sindrets/diffview.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    cmd = {
+      "DiffviewFileHistory",
+      "DiffviewOpen",
+      "DiffviewClose",
+      "DiffviewToggleFiles",
+      "DiffviewFocusFiles",
+      "DiffviewRefresh",
+    },
+    keys = {
+      { "<leader>dv", "<cmd>DiffviewClose<cr>" },
+    },
+  },
 }
