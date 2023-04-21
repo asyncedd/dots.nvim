@@ -90,5 +90,26 @@ return {
       require("todo-comments").setup()
     end,
   },
+  {
+    "LeonHeidelbach/trailblazer.nvim",
+    keys = {
+      "<A-l>",
+      "<A-b>",
+      "<A-J>",
+      "<A-K>",
+      "<A-n>",
+      "<A-m>",
+      "<A-L>",
+      "<A-p>",
+      "<A-P>",
+      "<A-t>",
+      "<A-.>",
+      "<A-,>",
+      "<A-s>",
+      "<A-j>",
+      "<A-k>",
+    },
+    config = true,
+  },
 }
 
