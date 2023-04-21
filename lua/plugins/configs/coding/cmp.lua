@@ -70,7 +70,14 @@ cmp.setup({
     { name = "nerdfont" },
     { name = "codeium" },
     { name = "cmp_tabnine" },
-    { name = "buffer" },
+    {
+      name = "buffer",
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end,
+      },
+    },
     {
       name = "rg",
       keyword_length = 3,
