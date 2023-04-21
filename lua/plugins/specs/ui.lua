@@ -4,7 +4,9 @@ return {
   {
     "catppuccin/nvim",
     config = function()
-      require("ui.catppuccin")
+      coroutine.resume(coroutine.create(function()
+        require("ui.catppuccin")
+      end))
     end,
   },
   {
@@ -62,17 +64,12 @@ return {
   },
   {
     "rebelot/heirline.nvim",
-    init = function()
-      coroutine.resume(coroutine.create(function()
-        require("ui.heirline.color")
-      end))
-    end,
     config = function()
       coroutine.resume(coroutine.create(function()
         require("ui.heirline")
       end))
     end,
-    event = "BufReadPost",
+    event = "VeryLazy",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },

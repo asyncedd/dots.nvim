@@ -4,9 +4,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     config = function()
-      coroutine.resume(coroutine.create(function()
-        require("editor.treesitter")
-      end))
+      require("editor.treesitter")
     end,
     init = lazyLoad("nvim-treesitter"),
     build = ":TSUpdate",
@@ -96,8 +94,8 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
-    -- init = lazyLoad("gitsigns.nvim"),
-    event = "BufReadPre",
+    init = lazyLoad("gitsigns.nvim"),
+    -- event = "BufReadPost",
     config = function()
       require("editor.gitsigns")
     end,
