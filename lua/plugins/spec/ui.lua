@@ -26,6 +26,8 @@ return {
   {
     "rebelot/heirline.nvim",
     event = "BufReadPost",
-    config = require("plugins.configs.ui.heirline"),
+    config = function()
+      require("plugins.configs.ui.heirline")
+    end
   },
 }

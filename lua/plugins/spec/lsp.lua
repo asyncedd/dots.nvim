@@ -2,7 +2,9 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = "BufReadPost",
-    config = require("plugins.configs.lsp.lspconfig"),
+    config = function()
+      require("plugins.configs.lsp.lspconfig")
+    end,
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -40,3 +42,4 @@ return {
     },
   }
 }
+
