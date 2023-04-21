@@ -159,4 +159,32 @@ return {
       "vaP",
     },
   },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    config = function()
+      require("editor.ts-textobj")
+    end,
+    keys = {
+      "vaf",
+      "vif",
+      "vac",
+      "vic",
+      "vas",
+      "<leader>a",
+      "<leader>A",
+      "]m",
+      "]]",
+      "]o",
+      "]s",
+      "]z",
+      "]M",
+      "][",
+      "[m",
+      "[[",
+      "[M",
+      "[]",
+      "]d",
+      "[d",
+    },
+  },
 }

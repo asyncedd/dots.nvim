@@ -70,9 +70,3 @@ autocmd("BufWritePre", {
     vim.cmd("Neoformat")
   end,
 })
-
-autocmd("CursorHold", {
-  callback = function()
-    vim.cmd("Lspsaga hover_doc")
-  end,
-})
