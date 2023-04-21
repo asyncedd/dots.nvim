@@ -99,6 +99,7 @@ return {
       },
       "lukas-reineke/cmp-rg",
       "andersevenrud/cmp-tmux",
+      "hrsh7th/cmp-emoji",
     },
     config = function()
       require("coding.cmp")
