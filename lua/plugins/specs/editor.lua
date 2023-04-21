@@ -2,34 +2,22 @@ return {
   -- Comment
   {
     "numToStr/Comment.nvim",
-    config = true,
+    config = require("plugins.configs.editor.comment"),
     event = "VeryLazy",
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
   },
   -- Gitsigns!
   {
     "lewis6991/gitsigns.nvim",
-    opts = {
-      signs = {
-        add = { text = "▎" },
-        change = { text = "▎" },
-        delete = { text = "" },
-        topdelete = { text = "" },
-        changedelete = { text = "▎" },
-        untracked = { text = "▎" },
-      },
-      numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
-      linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
-      word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
-    },
-    config = true,
+    config = require("plugins.configs.editor.gitsigns"),
     event = "BufReadPost",
   },
   -- Leap!
   {
     "ggandor/leap.nvim",
-    config = function()
-      require("plugins.configs.editor.motion")
-    end,
+    config = require("plugins.configs.editor.motion"),
     dependencies = {
       {
         "ggandor/flit.nvim",
@@ -54,51 +42,26 @@ return {
       "andymass/vim-matchup",
       "David-Kunz/markid",
     },
-    config = function ()
-      require("plugins.configs.editor.treesitter")
-    end,
+    config = require("plugins.configs.editor.treesitter"),
     event = "BufReadPost",
     priority = 100,
   },
   -- TrailBlazer.nvim
   {
     "LeonHeidelbach/trailblazer.nvim",
-    config = true,
+    config = require("plugins.configs.editor.trailblazer"),
     event = "VeryLazy",
   },
   -- I got harpooned, blazingly fast!
   {
     "theprimeagen/harpoon",
-    config = function ()
-      local mark = require("harpoon.mark")
-      local ui = require("harpoon.ui")
-      local keymap = vim.keymap.set
-
-      keymap("n", "<leader>a", mark.add_file)
-      keymap("n", "<leader>e", ui.toggle_quick_menu)
-
-      keymap("n", "<C-h>", function () ui.nav_file(1) end)
-      keymap("n", "<C-t>", function () ui.nav_file(2) end)
-      keymap("n", "<C-n>", function () ui.nav_file(3) end)
-      keymap("n", "<C-s>", function () ui.nav_file(4) end)
-    end,
+    config = require("plugins.configs.editor.harpoon"),
     event = "VeryLazy"
   },
-  -- IncRename
-  {
-    "smjonas/inc-rename.nvim",
-    config = function ()
-      require("inc_rename").setup()
-    end,
-    event = "VeryLazy",
-    keys = { "n", "<leader>rn", ":IncRename " }
-  },
-  -- Splitjoin
+   -- Splitjoin
   {
     "echasnovski/mini.splitjoin",
-    config = function ()
-      require("mini.splitjoin").setup()
-    end,
+    config = require("plugins.configs.editor.splitjoin"),
     event = "VeryLazy",
   }
 }
