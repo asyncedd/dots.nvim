@@ -2,6 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     config = require("configs.editor.treesitter"),
-    event = "BufReadPost",
+    lazy = false,
+    piority = 1000
   }
 }
