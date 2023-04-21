@@ -55,7 +55,7 @@ local plugins = {
     "FrenzyExists/aquarium-vim",
     {
       "wuelnerdotexe/vim-enfocado",
-      config = function ()
+      config = function()
         vim.g.enfocado_style = "nature" -- You can go for "neon" too.
       end,
     },
@@ -234,7 +234,7 @@ local plugins = {
   {
     "NvChad/nvim-colorizer.lua",
     config = true,
-    event = "VeryLazy",
+    event = "BufReadPre",
   },
   {
     "echasnovski/mini.nvim",
@@ -318,7 +318,7 @@ local plugins = {
     config = function()
       require("lsp-lens").setup({})
     end,
-    init = lazyLoad("lsp-lens.nvim")
+    event = "User LspAttach"
   },
   {
     "rafcamlet/nvim-luapad",
@@ -329,6 +329,22 @@ local plugins = {
       "Lua",
     },
   },
+  {
+    "stevearc/aerial.nvim",
+    config = function()
+      require('aerial').setup({
+        -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+        on_attach = function(bufnr)
+          -- Jump forwards/backwards with '{' and '}'
+          vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', {buffer = bufnr})
+          vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
+        end
+      })
+      -- You probably also want to set a keymap to toggle aerial
+      vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+    end,
+    event = "VeryLazy",
+  }
 }
 
 require("lazy").setup({
