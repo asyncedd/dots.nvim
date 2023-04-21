@@ -19,6 +19,4 @@ local LSPActive = {
   hl = { fg = "green", bold = true },
 }
 
--- utils.surround({ "", "" }, "bright_bg", { LSPActive })
-
 return LSPActive
