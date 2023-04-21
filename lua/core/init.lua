@@ -24,6 +24,9 @@ require("core.lazy")
 
 vim.cmd("colorscheme catppuccin")
 
+-- Initalize the Heirline.nvim color stuff since we need it.
+-- require("plugins.configs.ui.heirline.colors")
+
 vim.schedule_wrap(function()
   --   -- Load components in parallel using coroutines and thunks
   local function load_components(components)
