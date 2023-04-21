@@ -3,7 +3,7 @@ return function()
   local utils = require("heirline.utils")
   local colors = require("ui.heirline.colors")
   local ViMode = require("ui.heirline.vimode")
-  local filename = require("ui.heirline.filename")
+  local filename = require("ui.heirline.filename").FileNameBlock
   local filetype = require("ui.heirline.filetype")
   -- local fileEncoding = require("ui.heirline.file_encoding")
   -- local fileSize = require("ui.heirline.filesize")
@@ -15,6 +15,7 @@ return function()
   local TablineOffset = require("ui.heirline.tablineoffset")
   local Bufferline = require("ui.heirline.bufferline")
   local Tabpage = require("ui.heirline.tablist")
+  local winbar = require("ui.heirline.winbar")
   require("ui.heirline.tablinepicker")
   -- local navic = require("ui.heirline.navic")
   require("heirline").load_colors(colors())
@@ -72,12 +73,13 @@ return function()
       end,
     },
 
-  fallthrough = false,
+    fallthrough = false,
 
-  DefaultStatusLine
-}
+    DefaultStatusLine
+  }
   require("heirline").setup({
     statusline = StatusLines,
-    tabline = Tabline
+    tabline = Tabline,
+    winbar = winbar
   })
 end
