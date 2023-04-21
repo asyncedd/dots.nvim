@@ -1,6 +1,11 @@
 return {
   -- Colorscheme.
-  "catppuccin/nvim",
+  {
+    "catppuccin/nvim",
+    config = function()
+      require("plugins.configs.ui.catppuccin")
+    end
+  },
   -- Completion.
   {
     "hrsh7th/nvim-cmp",
@@ -38,7 +43,7 @@ return {
   {
     "numToStr/Comment.nvim",
     config = true,
-    event = "VeryLazy",
+    event = "BufReadPost",
   },
   {
     "kevinhwang91/nvim-ufo",
@@ -51,7 +56,7 @@ return {
     dependencies = {
       "kevinhwang91/promise-async"
     },
-    event = "VimEnter",
+    event = "BufReadPost",
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -137,7 +142,7 @@ return {
       "tpope/vim-repeat",
       "echasnovski/mini.ai",
     },
-    event = "VeryLazy",
+    event = "BufReadPost",
   },
   -- Tools
   {
@@ -159,7 +164,7 @@ return {
     dependencies = {
       "andymass/vim-matchup",
     },
-    event = "BufReadPre",
+    event = "BufReadPost",
   },
   {
     "lukas-reineke/indent-blankline.nvim",
