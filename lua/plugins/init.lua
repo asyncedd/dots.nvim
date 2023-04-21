@@ -95,6 +95,9 @@ local plugins = {
         cmd = {
           "Mason",
         },
+        dependencies = {
+          "williamboman/mason-lspconfig.nvim",
+        },
         -- event = "BufReadPre",
       },
       "folke/neodev.nvim",

@@ -1,6 +1,8 @@
-require("mason").setup({
+require("mason").setup()
+
+require("mason-lspconfig").setup({
   ensure_installed = {
-    "lua-language-server",
-    "stylua",
-  }
+    "lua_ls",
+    "marksman",
+  },
 })
