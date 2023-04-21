@@ -152,6 +152,9 @@ editor[6] = {
   config = function()
     require("editor.leap")
   end,
+  dependencies = {
+    "tpope/vim-repeat",
+  },
   keys = {
     "s",
     "s",
