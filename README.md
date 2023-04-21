@@ -22,14 +22,20 @@ It had optimized my workspace and, improve my productivity.
 *Q 🙋 Why should I use this?*
 > A: Don't. Do-not. Please don't. For the love of god. If you just use someone else's config, you're not really gonna boost your productivity. Just use this to steal configs and the file tree, I don't mind :)
 
-## Really good place to put: ⚠️ DISCLAIMER! ⚠️
+## Wow, a really good place to put: ⚠️ DISCLAIMER! ⚠️
 > Here's some DISCLAIMERS!
 - If you're using Neovide, it's a good idea to open it with `--maximized` or you're not really going to have a good experience.
-- Speaking of Neovide, don't `dd`. I don't know why, but just don't.
+
+- Speaking of Neovide, don't `dd`. I don't know why, but just don't. (btw, if you do just `pkill` it and open `neovide` without opening a file.)
+
 - Also, if you're on Neovim nightly, please build Neovide from source. You'll be stuck on some black screen.
+
 - If you're planning on using Astro and some markdown LSP, you have to have `npm` installed and added to your PATH. Just use a package manager. If you're not going to use them, please comment them out in `lua/plugins/configs/lsp/mason.lua` and `lua/plugins/configs/lps/config.lua`.
+
 - If you don't want random popups from `null-ls` urging you to find `luacheck`, just install `luarocks` not `luacheck`. You can install `luacheck` but it'll look better with just `luarocks`. Mason will automatically install it. If you're not going to use `luacheck` just comment out it in `lua/plugins/configs/lsp/null.lua`. Shouldn't be that hard.
-- If you spot slow performance when not using `neovide` open an issue. :) (When it's 50% slower than `nvim --clean`.)
+
+- If you spot slow performance when not using the vanilla ol' `nvim` open an issue. :) (When it's 50% slower than `nvim --clean`.)
+
 - If want to exit Neovim, just plug out your computer (or for laptop users... >:) You don't want to). I meant, that'll never work.
 
 ## 🤨 Crash course: Installing
