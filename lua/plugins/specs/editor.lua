@@ -139,5 +139,12 @@ return {
     end,
     event = "InsertEnter",
   },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("editor.autotag")
+    end,
+    event = "InsertEnter",
+  },
 }
 
