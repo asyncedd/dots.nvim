@@ -1,3 +1,5 @@
+local lazyLoad = require("core.utils.lazyLoad")
+
 return {
   {
     "catppuccin/nvim",
@@ -10,6 +12,13 @@ return {
     config = function()
       require("plugins.configs.ui.map")
     end,
-    event = "VeryLazy",
+    init = lazyLoad("mini.map"),
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("plugins.configs.ui.blankline")
+    end,
+    init = lazyLoad("indent-blankline.nvim"),
   },
 }
