@@ -343,4 +343,12 @@ editor[21] = {
   end,
 }
 
+editor[22] = {
+  "echasnovski/mini.move",
+  event = "VeryLazy",
+  config = function()
+    require("editor.move")
+  end,
+}
+
 return editor
