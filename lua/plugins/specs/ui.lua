@@ -84,11 +84,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "edluffy/specs.nvim",
-    event = "CursorMoved",
-    config = true,
-  },
-  {
     "echasnovski/mini.animate",
     event = {
       "CursorMoved",
