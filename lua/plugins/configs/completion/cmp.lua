@@ -27,12 +27,10 @@ local kind_icons = {
 }
 
 return function()
-  local status, cmp = pcall(require, "cmp")
-  local status1, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
-  if (not status) then return end
-  if (not status1) then return end
+  local cmp = require("cmp")
+  local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
-  require("nvim-autopairs").setup {}
+  require("nvim-autopairs").setup()
 
   cmp.event:on(
     "confirm_done",
@@ -64,6 +62,7 @@ return function()
     }),
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
+      { name = "luasnip" },
       { name = "buffer" },
     }),
     enabled = function()
@@ -94,6 +93,9 @@ return function()
         })[entry.source.name]
         return vim_item
       end
+    },
+    experimental = {
+      ghost_text = true,
     },
   })
 
