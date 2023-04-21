@@ -209,4 +209,8 @@ return {
   --     require("ui.incline")
   --   end,
   -- },
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+  },
 }
