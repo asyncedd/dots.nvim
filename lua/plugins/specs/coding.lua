@@ -124,4 +124,20 @@ return {
       require("coding.cutlass")
     end,
   },
+  {
+    "echasnovski/mini.move",
+    config = function()
+      require("mini.move").setup()
+    end,
+    keys = {
+      { "<M-k>", mode = { "n", "v" } },
+      { "<M-j>", mode = { "n", "v" } },
+      { "<M-h>", mode = { "n", "v" } },
+      { "<M-l>", mode = { "n", "v" } },
+      { "<A-k>", mode = { "n", "v" } },
+      { "<A-j>", mode = { "n", "v" } },
+      { "<A-h>", mode = { "n", "v" } },
+      { "<A-l>", mode = { "n", "v" } },
+    },
+  },
 }
