@@ -1,6 +1,9 @@
 -- lua/core/init.lua
 -- This is the place where the magic happens!
 
+-- Our ms-jpq's async.
+local a = require("snips.async")
+
 -- Set the <leader> key to: <Space>
 -- So we can go for ex. -> `<leader>ff` to open Telescope.nvim.
 -- Quite useful ain't it? :)
