@@ -7,6 +7,9 @@ require("lazy").setup({
   performance = {
     rtp = {
       disabled_plugins = disabledPlugins
-    }
+    },
+  },
+  install = {
+    colorscheme = { "catppuccin" }
   }
 })
