@@ -30,16 +30,7 @@ return {
   {
     "ggandor/leap-spooky.nvim",
     config = true,
-    keys = {
-      "d",
-      "c",
-      "y",
-      "g",
-      "!",
-      "=",
-      ">",
-      "<",
-    },
+    event = "VeryLazy",
   },
   {
     "ggandor/leap-ast.nvim",
