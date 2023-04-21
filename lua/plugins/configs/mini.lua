@@ -1,20 +1,19 @@
--- Enable highlighitng of cursorwords.
 require("mini.cursorword").setup()
--- Enable splitjoins.
+
 require("mini.splitjoin").setup()
--- Enable surround.
+
 require("mini.surround").setup({
   mappings = {
-    add = '<leader>sa', -- Add surrounding in Normal and Visual modes
-    delete = '<leader>sd', -- Delete surrounding
-    find = '<leader>sf', -- Find surrounding (to the right)
-    find_left = '<leader>sF', -- Find surrounding (to the left)
-    highlight = '<leader>sh', -- Highlight surrounding
-    replace = '<leader>sr', -- Replace surrounding
-    update_n_lines = '<leader>sn', -- Update `n_lines`
+    add = '<leader>sa',
+    delete = '<leader>sd',
+    find = '<leader>sf',
+    find_left = '<leader>sF',
+    highlight = '<leader>sh',
+    replace = '<leader>sr',
+    update_n_lines = '<leader>sn',
 
-    suffix_last = 'l', -- Suffix to search with "prev" method
-    suffix_next = 'n', -- Suffix to search with "next" method
+    suffix_last = 'l',
+    suffix_next = 'n',
   },
   hooks = {
     pre = function()
@@ -22,15 +21,16 @@ require("mini.surround").setup({
     end,
   },
 })
--- Enable AI.
+
 require("mini.ai").setup()
--- Indentscope.
+
 require("mini.indentscope").setup({
   symbol = "│",
   options = { try_as_border = true },
 })
 
--- Comments
 require("mini.comment").setup()
 
 require("mini.pairs").setup()
+
+require("mini.move").setup()
