@@ -100,4 +100,11 @@ return {
       "VeryLazy",
     },
   },
+  {
+    "RRethy/vim-illuminate",
+    config = function()
+      require("ui.illuminate")
+    end,
+    event = "VeryLazy",
+  },
 }
