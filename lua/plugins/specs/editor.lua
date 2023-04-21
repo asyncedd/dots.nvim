@@ -347,4 +347,17 @@ editor[22] = {
   event = "VeryLazy",
 }
 
+editor[23] = {
+  "abecodes/tabout.nvim",
+  config = true,
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "hrsh7th/nvim-cmp",
+  },
+  keys = {
+    "<Tab>",
+    "<S-Tab>",
+  },
+}
+
 return editor
