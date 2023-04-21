@@ -8,6 +8,7 @@ return {
       { "theHamsta/nvim-dap-virtual-text", config = true },
       { "rcarriga/nvim-dap-ui", config = true },
       "jbyuki/one-small-step-for-vimkind", -- lua debugger specifically for neovim config
+      "ofirgall/goto-breakpoints.nvim",
     },
     config = function()
       require("repl.dap")
@@ -90,6 +91,24 @@ return {
             return
           end
           require("osv").run_this()
+        end,
+      },
+      {
+        "]d",
+        function()
+          require("goto-breakpoints").next()
+        end,
+      },
+      {
+        "[d",
+        function()
+          require("goto-breakpoints").next()
+        end,
+      },
+      {
+        "]S",
+        function()
+          require("goto-breakpoints").stopped()
         end,
       },
     },
