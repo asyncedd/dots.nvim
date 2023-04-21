@@ -40,10 +40,6 @@ return {
       { "<leader>ca", "<cmd>Lspsaga code_action<cr>", mode = { "n", "v" } },
       { "gr", "<cmd>Lspsaga rename<cr>" },
       { "<leader>gr", "<cmd>Lspsaga rename ++project<cr>" },
-      { "gp", "<cmd>Lspsaga peek_defination<cr>" },
-      { "gd", "<cmd>Lspsaga goto_defination<cr>" },
-      { "gt", "<cmd>Lspsaga peek_type_defination<cr>" },
-      { "gt", "<cmd>Lspsaga goto_type_defination<cr>" },
       { "[e", "<cmd>Lspsaga diagnostic_jump_prev<cr>" },
       { "]e", "<cmd>Lspsaga diagnostic_jump_next<cr>" },
       {
