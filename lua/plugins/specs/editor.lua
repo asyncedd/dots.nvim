@@ -75,5 +75,12 @@ return {
       { "<leader>lp", function() require("leap-ast").leap() end },
     }
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    init = lazyLoad("gitsigns.nvim"),
+    config = function()
+      require("editor.gitsigns")
+    end,
+  },
 }
 
