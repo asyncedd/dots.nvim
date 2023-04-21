@@ -22,6 +22,7 @@
   "heirline.nvim": { "branch": "master", "commit": "64d57ac5dcfd24a998ff38a76bf3204810273988" },
   "indent-blankline.nvim": { "branch": "master", "commit": "018bd04d80c9a73d399c1061fa0c3b14a7614399" },
   "lazy.nvim": { "branch": "main", "commit": "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
+  "lazygit.nvim": { "branch": "main", "commit": "32bffdebe273e571588f25c8a708ca7297928617" },
   "leap-ast.nvim": { "branch": "main", "commit": "1a21b70505ebb868a1e196c0d63797e1426b53a5" },
   "leap-spooky.nvim": { "branch": "main", "commit": "79a7a3f28897d99e5da970e7121ac8ff738e1554" },
   "leap.nvim": { "branch": "main", "commit": "98a72ad93c629c49bd7127d342960cc1b159b620" },

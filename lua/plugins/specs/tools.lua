@@ -59,7 +59,16 @@ return {
   {
     "sbdchd/neoformat",
     event = { "BufWritePre" },
-    config = function() vim.api.nvim_command("Neoformat") end,
+    config = function()
+      vim.api.nvim_command("Neoformat")
+    end,
     cmd = { "Neoformat" },
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = { "LazyGit", "LazyGitConfig" },
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>" },
+    },
   },
 }
