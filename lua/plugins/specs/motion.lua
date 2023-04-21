@@ -40,6 +40,7 @@ return {
         function()
           require("leap-ast").leap()
         end,
+        mode = { "n", "v", "x" },
       },
     },
   },
