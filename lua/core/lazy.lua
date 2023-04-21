@@ -18,6 +18,7 @@ function Lazy:load_plugins()
     .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
   end
 
+  -- 📁 Listing out plugins files in the directory.
   local get_plugins_list = function()
     -- 📂 Create an empty list to store the plugins file paths
     local list = {}
@@ -40,6 +41,7 @@ function Lazy:load_plugins()
     return list
   end
 
+  -- ⏰️💾 This function reads data from a cache file (cache_file) and tries to load it as a Lua chunk. If reading the file and loading the data is successful, the data is stored in self.modules. If there's any error in the process, it returns false.
   local function load_plugins_from_cache()
     -- 🔄 Try to open the cache file for reading
     local f = io.open(cache_file, "r")
@@ -65,6 +67,7 @@ function Lazy:load_plugins()
     return false
   end
 
+  -- 💾 Saves data of self.modules to cache file for faster loading later on.
   local function save_plugins_to_cache()
     local f = io.open(cache_file, "w") -- 💾 Open file for writing
     if f then
@@ -73,11 +76,24 @@ function Lazy:load_plugins()
     end
   end
 
+  -- 🗑️ deletes the cache file, freeing up the storage space occupied by it.
   local function remove_cache()
     os.remove(cache_file) -- 🗑️ Remove the cache file
   end
 
   append_nativertp()
+
+  -- 📁 Get plugins list with get_plugins_list()
+
+  -- ❔ Check cache file with load_plugins_from_cache()
+
+  -- 🚫 If cache load fails, 🔎 loop through plugins
+
+  -- ⏰ require() each plugin
+
+  -- 📜 Extend self.modules with each plugin's data
+
+  -- 💾 Save data to cache with save_plugins_to_cache()
 
   local plugins_file = get_plugins_list() 
   -- 📂Get the list of plugins
