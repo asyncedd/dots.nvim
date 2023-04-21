@@ -1,3 +1,3 @@
-vim.schedule(function()
+vim.defer_fn(function()
   require("plugins.configs.completion.cmpcmd")
-end)
+end, 0)
