@@ -3,6 +3,7 @@
   "flirt.nvim": { "branch": "main", "commit": "93eefd618963335242046e3336e6003082f2971c" },
   "flit.nvim": { "branch": "main", "commit": "980e80e8fe44caaeb9de501c8e97a559b17db2f4" },
   "indent-blankline.nvim": { "branch": "master", "commit": "018bd04d80c9a73d399c1061fa0c3b14a7614399" },
+  "kanagawa.nvim": { "branch": "master", "commit": "4c8d48726621a7f3998c7ed35b2c2535abc22def" },
   "lazy.nvim": { "branch": "main", "commit": "8077428e63feb0f3bf795d53b23ba1695b28ab0e" },
   "leap-spooky.nvim": { "branch": "main", "commit": "0bb68f00a02f16085aad6a2b2cea9e53781fb05a" },
   "leap.nvim": { "branch": "main", "commit": "9a69febb2e5a4f5f5a55dd2d7173098fde917bc5" },
@@ -10,8 +11,10 @@
   "mini.animate": { "branch": "main", "commit": "43122cbcfba32e4ecba6685c1ad9fa276c7b15c1" },
   "mini.indentscope": { "branch": "main", "commit": "f3bbd793fac80638bb5f4ef173eb514170aa22b3" },
   "neorg": { "branch": "main", "commit": "93c40f2e38a0770e9ce95787c8363320344a87c3" },
+  "nightfox.nvim": { "branch": "main", "commit": "be5e53df21c8f41790d25c56cd16cda90137dc63" },
   "nvim": { "branch": "main", "commit": "4175759297350557315987d479fb687a9f0b781f" },
   "nvim-treesitter": { "branch": "master", "commit": "53695580e38d9ab5f858e8966275f1992bd2e2ec" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
+  "tokyonight.nvim": { "branch": "main", "commit": "a0abe53df53616d13da327636cb0bcac3ea7f5af" },
   "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
 }
