@@ -10,7 +10,7 @@ if (not status1) then return end
 if (not status2) then return end
 if (not status3) then return end
 if (not status4) then return end
-if (not status5) then print("a") return end
+-- if (not status5) then return end
 
 heirline.load_colors(colors)
 
