@@ -16,51 +16,55 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "plugins.spec" },
 }, {
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "2html_plugin",
-        -- "getscript",
-        -- "getscriptPlugin",
-        "gzip",
-        -- "logipat",
-        "netrw",
-        -- "netrwFileHandlers",
-        -- "loaded_remote_plugins",
-        -- "loaded_tutor_mode_plugin",
-        "netrwPlugin",
-        "netrwSettings",
-        -- "rrhelper",
-        "spellfile_plugin",
-        "tar",
-        "tarPlugin",
-        "vimball",
-        "vimballPlugin",
-        "zip",
-        "zipPlugin",
-        "rplugin",
-        "tohtml",
-        "tutor",
-        -- "shada",
-        "spellfile",
-        "matchit",
-        "matchparen",
-        -- "shada",
+    performance = {
+      rtp = {
+        disabled_plugins = {
+          "2html_plugin",
+          -- "getscript",
+          -- "getscriptPlugin",
+          "gzip",
+          -- "logipat",
+          "netrw",
+          -- "netrwFileHandlers",
+          -- "loaded_remote_plugins",
+          -- "loaded_tutor_mode_plugin",
+          "netrwPlugin",
+          "netrwSettings",
+          -- "rrhelper",
+          "spellfile_plugin",
+          "tar",
+          "tarPlugin",
+          "vimball",
+          "vimballPlugin",
+          "zip",
+          "zipPlugin",
+          "rplugin",
+          "tohtml",
+          "tutor",
+          -- "shada",
+          "spellfile",
+          "matchit",
+          "matchparen",
+          -- "shada",
+        },
       },
+      cache = {
+        enabled = true,
+      },
+      reset_packpath = true,
     },
-  },
-  ui = {
-    -- size = { width = 0.8, height = 0.8 },
-    -- border = "solid",
-    icons = {
-      lazy = "鈴",
+    ui = {
+      -- size = { width = 0.8, height = 0.8 },
+      -- border = "solid",
+      icons = {
+        lazy = "鈴",
+      },
+      -- throttle = 50,
     },
-    -- throttle = 50,
-  },
-  install = {
-    colorscheme = { "catppuccin", "tokyonight", "habamx" },
-  },
-  defaults = {
-    lazy = true,
-  },
-})
+    install = {
+      colorscheme = { "catppuccin", "tokyonight", "habamx" },
+    },
+    defaults = {
+      lazy = true,
+    },
+  })
