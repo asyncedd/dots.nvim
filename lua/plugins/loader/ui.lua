@@ -2,7 +2,7 @@
 -- Where we load our eye-candy.
 
 -- Avoid expensive global searching, we already have it at home!
-local schedule = vim.schedule
+local cats_in_line = vim.schedule
 
 -- Load the colorscheme and Treesitter first.
 -- We love catppuccin, catppuccin is life.
@@ -20,7 +20,7 @@ local indentscope_opts = {
   options = { try_as_border = true },
 }
 
-schedule(function ()
+cats_in_line(function ()
 
   -- Load indent_blankline and mini.indentscope for a clean and, aesthestically pleasing indent visualizer.
   require("indent_blankline").setup()
@@ -41,7 +41,7 @@ schedule(function ()
 
 end)
 
-schedule(function ()
+cats_in_line(function ()
 
   -- Heirline.nvim is a true minimalisitc statusline for Neovim.
 
