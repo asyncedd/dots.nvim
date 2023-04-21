@@ -3,8 +3,8 @@ local hl = vim.api.nvim_set_hl
 
 hl(0, "TelescopeSelection", { bg = mocha.surface0 })
 hl(0, "TelescopePromptCounter", { fg = mocha.mauve, bold = true })
-hl(0, "TelescopePromptPrefix", { fg = mocha.surface0 })
-hl(0, "TelescopePromptNormal", { fg = mocha.surface0 })
+hl(0, "TelescopePromptPrefix", { fg = mocha.text })
+hl(0, "TelescopePromptNormal", { fg = mocha.text })
 hl(0, "TelescopeResultsNormal", { fg = mocha.text })
 hl(0, "TelescopePreviewNormal", { fg = mocha.crust })
 hl(0, "TelescopePromptBorder", { bg = mocha.surface0, fg = mocha.surface0 })
