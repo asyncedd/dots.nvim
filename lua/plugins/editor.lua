@@ -1,7 +1,7 @@
 return {
   {
     "numToStr/Comment.nvim",
-    event = "BufReadPost",
+    event = "VeryLazy",
     config = require("configs.editor.comment")
   }
 }

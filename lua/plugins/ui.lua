@@ -1,7 +1,7 @@
 return {
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = "BufReadPost",
+    event = "VeryLazy",
     config = require("configs.ui.indent"),
     dependencies = {
       { "echasnovski/mini.indentscope", version = "*" }
@@ -9,7 +9,7 @@ return {
   },
   {
     "monkoose/matchparen.nvim",
-    event = "BufReadPost",
+    event = "VeryLazy",
     config = require("configs.ui.matcher")
   }
 }
