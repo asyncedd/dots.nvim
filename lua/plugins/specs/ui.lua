@@ -63,5 +63,15 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
   },
+  {
+    "rebelot/heirline.nvim",
+    init = function()
+      coroutine.resume(coroutine.create(function() require("ui.heirline.color") end))
+    end,
+    config = function()
+      require("ui.heirline")
+    end,
+    event = "BufReadPost",
+  },
 }
 
