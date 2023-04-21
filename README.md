@@ -56,10 +56,13 @@ _Q 🙋 Why should I use this?_
 Dependencies:
 
 - `nvim` :)
-- `bat` for fzf syntax highlighting. (Optional)
 - `luarocks` for well, luarocks.
 - `lua` for Windows users wanting to use nvim-treesitter.
 - `npm` for Astro and Markdown LSP.
+- `sad` for Sad
+- `fzf` for Sad
+- `fd` for Sad
+- `delta` for Sad. If you're using Arch, use `yay -Syu git-delta`
 
 To install this configuration, you need a Neovim build. You can use your
 favorite package manager or,
