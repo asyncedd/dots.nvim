@@ -110,4 +110,11 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "HiPhish/nvim-ts-rainbow2",
+    init = lazyLoad("nvim-ts-rainbow2"),
+    config = function()
+      require("ui.rainbow")
+    end,
+  },
 }

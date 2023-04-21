@@ -14,6 +14,7 @@ require("nvim-treesitter.configs").setup({
     -- use_language_tree = true,
   },
 
+  -- Have Vim-matchup!
   matchup = {
     enable = true,
   },
