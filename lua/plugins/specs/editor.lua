@@ -37,5 +37,17 @@ return {
       "<leader>s",
     }
   },
+  {
+    "ggandor/leap.nvim",
+    keys = {
+      { "s", mode = { "n", "v" } },
+      { "S", mode = { "n", "v" } },
+      { "x", mode = { "v" } },
+      { "X", mode = { "v" } },
+    },
+    config = function()
+      require("plugins.configs.editor.leap")
+    end,
+  },
 }
 
