@@ -11,5 +11,8 @@ return function()
     incremental_selection = {
       enable = true,
     },
+    matchup = {
+      enable = true,
+    },
   })
 end
