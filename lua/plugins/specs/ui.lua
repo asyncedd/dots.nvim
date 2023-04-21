@@ -27,6 +27,12 @@ return {
     config = function()
       require("ui.indentscope")
     end,
+    keys = {
+      "viii",
+      "vaii",
+      "viai",
+      "vaai",
+    },
     init = lazyLoad("mini.indentscope"),
   },
   {
