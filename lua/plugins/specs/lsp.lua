@@ -47,7 +47,7 @@ return {
           require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
         end,
       },
-      { "<leader>so", "<cmd>Lspsaga outline<cr>" },
+      { "<leader>lo", "<cmd>Lspsaga outline<cr>" },
       { "K", "<cmd>Lspsaga hover_doc ++keep<cr>" },
       { "<leader>ci", "<cmd>Lspsaga incoming_calls<cr>" },
       { "<leader>co", "<cmd>Lspsaga outgoing_calls<cr>" },
@@ -74,6 +74,18 @@ return {
       { "<leader>xl", "<cmd>TroubleToggle loclist<cr>" },
       { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>" },
       { "<leader>gR", "<cmd>TroubleToggle lsp_references<cr>" },
+    },
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    config = true,
+    cmd = {
+      "SymbolsOutline",
+      "SymbolsOutlineOpen",
+      "SymbolsOutlineClose",
+    },
+    keys = {
+      { "<leader>so", "<cmd>SymbolsOutline<cr>" },
     },
   },
 }
