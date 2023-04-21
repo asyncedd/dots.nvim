@@ -1,3 +1,1 @@
-return function()
-  require('matchparen').setup()
-end
+require('matchparen').setup()
