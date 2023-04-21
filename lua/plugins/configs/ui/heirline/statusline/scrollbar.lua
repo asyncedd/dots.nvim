@@ -9,7 +9,7 @@ M.Ruler = {
   -- %c = column number
   -- %P = percentage through file of displayed window
   provider = "%7(%l/%3L%):%2c %P",
-  hl = { fg = "normal" }
+  hl = { bg = "normal" }
 }
 
 -- Thanks dharmx!
@@ -92,9 +92,5 @@ M.ScrollBar = {
 M.ScrollBar = surround(function(self)
   return self.scrollbarHL()
 end, { M.ScrollBar })
-
-M.Ruler = surround(function(self)
-  return self:mode_color()
-end, { M.Ruler })
 
 return M
