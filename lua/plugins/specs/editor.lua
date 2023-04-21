@@ -358,4 +358,12 @@ editor[22] = {
   end,
 }
 
+editor[23] = {
+  "echasnovski/mini.splitjoin",
+  keys = { "gS" },
+  config = function()
+    require("editor.splitjoin")
+  end,
+}
+
 return editor
