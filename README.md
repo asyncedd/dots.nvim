@@ -41,22 +41,24 @@ Just run a `nvim` in your terminal :D
 ## ⚡ Performance
 * `nvim --clean` - [source](https://github.com/asyncedd/dots.nvim/blob/master/clean.log):
 ```
-159.604  000.143: VimEnter autocommands
-159.610  000.006: UIEnter autocommands
-159.617  000.007: before starting main loop
-163.176  003.559: first screen update
-163.185  000.009: --- NVIM STARTED ---
+073.952  000.021: editing files in windows
+074.197  000.246: VimEnter autocommands
+074.207  000.010: UIEnter autocommands
+074.218  000.010: before starting main loop
+078.168  003.951: first screen update
+078.182  000.014: --- NVIM STARTED ---
 ```
 * `nvim` - [source](https://github.com/asyncedd/dots.nvim/blob/master/normal.log):
 ```
-097.963  000.019: VimEnter autocommands
-098.052  000.089: UIEnter autocommands
-121.276  022.729  022.729: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
-121.438  000.657: before starting main loop
-124.377  002.939: first screen update
-124.386  000.009: --- NVIM STARTED ---
+081.890  000.172: UIEnter autocommands
+082.432  000.012  000.012: require('vim.F')
+107.359  025.093  025.081: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
+107.435  000.451: before starting main loop
+109.390  001.955: first screen update
+109.396  000.006: --- NVIM STARTED ---
 ```
-As you can see, my Neovim configuration is FASTER than `nvim --clean`. This is because, I disabled unneeded RTP (runtime plugins) which took `125ms+`. That's 1.2 seconds! In my case, I have **24** plugins. I lazy loaded them so, it's blazingly fast!
+~~As you can see, my Neovim configuration is FASTER than `nvim --clean`. This is because, I disabled unneeded RTP (runtime plugins) which took `125ms+`. That's 1.2 seconds! In my case, I have **24** plugins. I lazy loaded them so, it's blazingly fast!~~
+As I've been adding more plugins (LSP, Completion etc...) It's a bit slower now. But it's quite fast though!
 
 ## 😰 Quitting Nvim.
 You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
