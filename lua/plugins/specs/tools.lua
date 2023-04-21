@@ -39,26 +39,6 @@ return {
     },
   },
   {
-    "tpope/vim-fugitive",
-    cmd = {
-      "G",
-      "Git",
-      "Gstatus",
-      "Gedit",
-      "Gdiffsplit",
-      "Gvdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "Gmove",
-      "Gdelete",
-      "Gbrowse",
-    },
-    keys = {
-      { "<leader>vf", "<cmd>G<cr>" },
-    },
-  },
-  {
     "sbdchd/neoformat",
     event = { "BufWritePre" },
     config = function()
@@ -167,7 +147,9 @@ return {
   },
   {
     "TimUntersberger/neogit",
-    config = true,
+    config = function()
+      require("tools.neogit")
+    end,
     keys = {
       {
         "<leader>ng",
@@ -175,6 +157,9 @@ return {
           require("neogit").open()
         end,
       },
+    },
+    cmd = {
+      "Neogit",
     },
   },
 }
