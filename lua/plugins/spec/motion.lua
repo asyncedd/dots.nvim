@@ -1,4 +1,4 @@
-local M = {
+return {
   {
     "ggandor/leap.nvim",
     config = require("plugins.configs.editor.motion"),
@@ -26,5 +26,3 @@ local M = {
     },
   },
 }
-
-return M

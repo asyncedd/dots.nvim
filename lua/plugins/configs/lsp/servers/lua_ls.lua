@@ -1,18 +1,13 @@
-local runtime_path = vim.split(package.path, ";")
-
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-
-
 local M = {
   Lua = {
     runtime = {
       -- Tell the LS (langauge server) that we're using LuaJIT!
       version = "LuaJIT",
-      special = {
-        reload = "require",
+      path = {
+        vim.split(package.path, ";"),
+        "lua/?.lua",
+        "lua/?/init.lua",
       },
-      path = runtime_path,
     },
     hover = {
       previewFields = vim.o.lines * 4,
@@ -27,9 +22,6 @@ local M = {
       -- Don't check for third party workspaces.
       checkThirdParty = false,
       -- Make the LS (langauge sever) aware of Neovim runtime files.
-      -- library = vim.api.nvim_get_runtime_file("", true)
-      -- Only load needed files.
-      -- We only load the VIMRUNTIME Lua and LSP files and, some stuff for plugins installed via lazy.nvim.
       library = {
         vim.api.nvim_get_runtime_file("", true),
         [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,

@@ -1,6 +1,4 @@
-local M
-
-M = {
+return {
   {
     "neovim/nvim-lspconfig",
     event = "BufReadPost",
@@ -10,7 +8,15 @@ M = {
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
-      "j-hui/fidget.nvim",
+      {
+        "j-hui/fidget.nvim",
+        opts = {
+          text = {
+            spinner = "dots"
+          }
+        },
+        config = true,
+      },
       "folke/neodev.nvim",
       "jose-elias-alvarez/null-ls.nvim",
     }
@@ -34,5 +40,3 @@ M = {
     },
   }
 }
-
-return M
