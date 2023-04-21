@@ -88,5 +88,17 @@ return {
     event = "CursorMoved",
     config = true,
   },
+  {
+    "echasnovski/mini.animate",
+    event = {
+      "CursorMoved",
+      "VimResized",
+      "WinLeave",
+      "WinEnter",
+    },
+    config = function()
+      require("ui.animate")
+    end,
+  },
 }
 
