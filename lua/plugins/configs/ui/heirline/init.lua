@@ -17,7 +17,7 @@ return function()
   local DefaultStatusLine = {
     ViMode, Space, FileName.WorkDir, Space, FileName.FileNameBlock, Space, Gitsigns, Space,
     LSP.LSPActive, LSP.Diagnostics, Align,
-    File.FileEncoding, File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar,
+    File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar,
   }
 
   local bufferline = {
