@@ -46,74 +46,13 @@ return {
           },
         },
         config = function()
-          local snippet_path = vim.fn.stdpath("config") .. "/snips/"
-          if not vim.tbl_contains(vim.opt.rtp:get(), snippet_path) then
-            vim.opt.rtp:append(snippet_path)
-          end
-
-          require("luasnip").config.set_config({
-            history = true,
-            updateevents = "TextChanged,TextChangedI",
-            delete_check_events = "TextChanged,InsertLeave",
-          })
-
-          require("luasnip.loaders.from_lua").lazy_load()
-          require("luasnip.loaders.from_vscode").lazy_load()
-          require("luasnip.loaders.from_snipmate").lazy_load()
+          require("completion.luasnip")
         end,
       },
       {
         "onsails/lspkind.nvim",
         config = function()
-          require("lspkind").init({
-            -- DEPRECATED (use mode instead): enables text annotations
-            --
-            -- default: true
-            -- with_text = true,
-
-            -- defines how annotations are shown
-            -- default: symbol
-            -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
-            mode = "symbol_text",
-
-            -- default symbol map
-            -- can be either 'default' (requires nerd-fonts font) or
-            -- 'codicons' for codicon preset (requires vscode-codicons font)
-            --
-            -- default: 'default'
-            preset = "codicons",
-
-            -- override preset symbols
-            --
-            -- default: {}
-            symbol_map = {
-              Text = "",
-              Method = "",
-              Function = "",
-              Constructor = "",
-              Field = "ﰠ",
-              Variable = "",
-              Class = "ﴯ",
-              Interface = "",
-              Module = "",
-              Property = "ﰠ",
-              Unit = "塞",
-              Value = "",
-              Enum = "",
-              Keyword = "",
-              Snippet = "",
-              Color = "",
-              File = "",
-              Reference = "",
-              Folder = "",
-              EnumMember = "",
-              Constant = "",
-              Struct = "פּ",
-              Event = "",
-              Operator = "",
-              TypeParameter = "",
-            },
-          })
+          require("completion.lspkind")
         end,
       },
       "saadparwaiz1/cmp_luasnip",
@@ -123,6 +62,10 @@ return {
         config = true,
         dependencies = {
           "nvim-lua/plenary.nvim",
+          {
+            "jcdickinson/http.nvim",
+            build = "cargo build --workspace --release",
+          },
         },
       },
       {
@@ -131,6 +74,16 @@ return {
         dependencies = {
           "hrsh7th/nvim-cmp",
         },
+        config = function()
+          require("completion.cmpTabnine")
+        end,
+      },
+      {
+        "codota/tabnine-nvim",
+        build = "./dl_binaries.sh",
+        config = function()
+          require("completion.tabnine")
+        end,
       },
       "hrsh7th/cmp-nvim-lua",
       "windwp/nvim-autopairs",
