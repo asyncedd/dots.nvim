@@ -45,13 +45,6 @@ return {
     },
   },
   {
-    "lewis6991/gitsigns.nvim",
-    init = lazyLoad("gitsigns.nvim"),
-    config = function()
-      require("editor.gitsigns")
-    end,
-  },
-  {
     "folke/todo-comments.nvim",
     init = lazyLoad("todo-comments.nvim"),
     config = function()

@@ -176,23 +176,6 @@ return {
     },
   },
   {
-    "TimUntersberger/neogit",
-    config = function()
-      require("tools.neogit")
-    end,
-    keys = {
-      {
-        "<leader>ng",
-        function()
-          require("neogit").open()
-        end,
-      },
-    },
-    cmd = {
-      "Neogit",
-    },
-  },
-  {
     "nvim-tree/nvim-tree.lua",
     config = function()
       require("tools.nvimtree")
