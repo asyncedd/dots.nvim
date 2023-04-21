@@ -1,12 +1,13 @@
 local M = {}
 
 local utils = require("heirline.utils")
+local fn = vim.fn
 
 M.WorkDir = {
   init = function(self)
-    self.icon = (vim.fn.haslocaldir(0) == 1 and "l" or "g") .. " " .. " "
-    local cwd = vim.fn.getcwd(0)
-    self.cwd = vim.fn.fnamemodify(cwd, ":~")
+    self.icon = (fn.haslocaldir(0) == 1 and "l" or "g") .. " " .. " "
+    local cwd = fn.getcwd(0)
+    self.cwd = fn.fnamemodify(cwd, ":~")
   end,
   hl = { fg = "blue", bold = true },
 
@@ -22,7 +23,7 @@ M.WorkDir = {
   {
     -- evaluates to the shortened path
     provider = function(self)
-      local cwd = vim.fn.pathshorten(self.cwd)
+      local cwd = fn.pathshorten(self.cwd)
       local trail = self.cwd:sub(-1) == "/" and "" or "/"
       return self.icon .. cwd .. trail .. " "
     end,
@@ -36,7 +37,7 @@ M.WorkDir = {
 M.FileNameBlock = {
   -- let's first set up some attributes needed by this component and it's children
   init = function(self)
-    self.filename = vim.api.nvim_buf_get_name(0)
+    self.filename = (fn.expand("%") == "" and "Empty") or fn.expand("%:t")
   end,
 }
 -- We can now define some children separately and add them later
@@ -44,7 +45,7 @@ M.FileNameBlock = {
 M.FileIcon = {
   init = function(self)
     local filename = self.filename
-    local extension = vim.fn.fnamemodify(filename, ":e")
+    local extension = fn.fnamemodify(filename, ":e")
     self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
   end,
   provider = function(self)
@@ -56,12 +57,6 @@ M.FileIcon = {
 }
 
 M.FileName = {
-  init = function(self)
-    self.lfilename = vim.fn.fnamemodify(self.filename, ":.")
-    if self.lfilename == "" then
-      self.lfilename = "[No Name]"
-    end
-  end,
   -- hl = { fg = utils.get_highlight("Directory").fg },
   -- hl = { fg = "bright_fg" },
   -- hl = { fg = "black" },
@@ -71,7 +66,7 @@ M.FileName = {
 
   {
     provider = function(self)
-      return vim.fn.pathshorten(self.lfilename)
+      return fn.pathshorten(self.filename)
     end,
   },
 }
