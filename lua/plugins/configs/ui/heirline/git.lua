@@ -21,7 +21,7 @@ local Git = {
     condition = function(self)
       return self.has_changes
     end,
-    provider = "( ",
+    provider = " ",
   },
   {
     provider = function(self)
@@ -48,7 +48,7 @@ local Git = {
     condition = function(self)
       return self.has_changes
     end,
-    provider = " )",
+    provider = " ",
   },
 }
 
