@@ -7,5 +7,4 @@
 -- initalize lazy.nvim
 -- Load plugins via lazy.nvim
 -- Add some autocmds and keymaps
--- If you want to know more, checkit out at `lua/core/init.lua`
 require("core")
