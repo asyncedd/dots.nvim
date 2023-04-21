@@ -313,6 +313,10 @@
         "language": "typescript",
         "path": "./snippets/typescript.json",
       },
+      {
+        "language": "lua",
+        "path": "./snippets/lua.json",
+      },
     ]
   }
 }
