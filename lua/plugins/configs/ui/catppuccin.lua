@@ -8,10 +8,13 @@ require("catppuccin").setup({
       ["@lsp.type.function"] = { fg = ctp.blue },
 
       ["@variable"] = { fg = ctp.pink },
+
+      -- Stolen some highlightings that only need from the colorscheme it self.
+      MiniIndentscopeSymbol = { fg = ctp.blue },
+      MiniIndentscopePrefix = { style = { "nocombine" } }, -- Make it invisible
     }
   end,
   integrations = {
-    mini = true,
     illuminate = true,
   },
 })
