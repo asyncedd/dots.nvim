@@ -71,7 +71,7 @@ require("catppuccin").setup({
     dap = false,
     navic = false,
     notify = false,
-    semantic_tokens = false,
+    semantic_tokens = true,
     nvimtree = false,
     treesitter_context = false,
     treesitter = true,
