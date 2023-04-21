@@ -60,4 +60,10 @@ editor["ggandor/flit.nvim"] = {
   config = require("editor.flit")
 }
 
+editor["echasnovski/mini.ai"] = {
+  event = "BufReadPost",
+  version = false,
+  config = require("editor.miniai")
+}
+
 return editor
