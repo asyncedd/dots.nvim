@@ -105,7 +105,4 @@ if vim.g.neovide then
   -- Make Neovide not too zoomed in.
   g.neovide_scale_factor = 0.5
 
-  -- Also have this setting just in case.
-  g.neovide_zoom = 0.3
-
 end

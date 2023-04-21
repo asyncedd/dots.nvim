@@ -22,7 +22,7 @@ It had optimized my workspace and, improve my productivity.
 *Q 🙋 Why should I use this?*
 > A: Don't. Do-not. Please don't. For the love of god. If you just use someone else's config, you're not really gonna boost your productivity. Just use this to steal configs and the file tree, I don't mind :)
 
-## Really good place to put: ⚠️⚠️⚠️ DISCLAIMER! ⚠️⚠️⚠️
+## Really good place to put: ⚠️ DISCLAIMER! ⚠️
 > Here's some DISCLAIMERS!
 - If you're using Neovide, it's a good idea to open it with `--maximized` or you're not really going to have a good experience.
 - Speaking of Neovide, don't `dd`. I don't know why, but just don't.
