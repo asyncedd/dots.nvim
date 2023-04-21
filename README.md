@@ -171,3 +171,4 @@ way out! >:D
 - [vsedov's config](https://github.com/vsedov/nvim) - For lots of configs!
 - [yuki uthman](https://www.youtube.com/@yukiuthman8358) - For his great cmp
   turtorials.
+- [matthewsia98](https://github.com/matthewsia98/dotfiles) - For some cmp configurations.

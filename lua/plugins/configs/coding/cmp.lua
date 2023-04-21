@@ -268,6 +268,30 @@ cmp.setup({
     end
   end,
 
+  window = {
+    completion = {
+      border = "rounded",
+      --[[ Default: ]]
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+      -- winhighlight = "CursorLine:PmenuSel,Search:None",
+      col_offset = 0,
+      side_padding = 0,
+    },
+    documentation = {
+      border = "rounded",
+      -- Default: winhighlight = "FloatBorder:NormalFloat",
+      winhighlight = "FloatBorder:FloatBorder",
+      zindex = 1001,
+    },
+  },
+
+  -- view = {
+  --   entries = {
+  --     name = "custom",
+  --     selection_order = "near_cursor",
+  --   },
+  -- },
+
   experimental = {
     ghost_text = true,
   },
