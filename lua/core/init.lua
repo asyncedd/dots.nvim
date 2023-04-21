@@ -6,13 +6,20 @@ M.setup = function()
   require("core.lazy")
 
   -- Set some mappings for Neovim.
-
-  require("mappings")
-  require("core.autocmds")
-
   local colorscheme = require("core.settings").colorscheme
 
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    callback = function ()
+      require("mappings")
+      require("core.autocmds")
+
+    end
+  })
+
+
   vim.api.nvim_command("colorscheme " .. colorscheme)
+  -- require(colorscheme).load()
 end
 
 return M

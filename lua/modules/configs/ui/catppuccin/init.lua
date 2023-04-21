@@ -11,6 +11,7 @@ return function()
     },
     highlight_overrides = {
       mocha = require("ui.catppuccin.highlight_overrides")
-    }
+    },
+    integrations = require("ui.catppuccin.integrations")
   })
 end

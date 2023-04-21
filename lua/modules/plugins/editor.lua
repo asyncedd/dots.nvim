@@ -14,7 +14,6 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 
 editor["numToStr/Comment.nvim"] = {
   event = "VeryLazy",
-  config = require("editor.comment"),
 }
 
 editor["windwp/nvim-autopairs"] = {
@@ -29,7 +28,6 @@ editor["folke/twilight.nvim"] = {
 
 editor["echasnovski/mini.cursorword"] = {
   event = "BufReadPost",
-  config = require("editor.cursorword")
 }
 
 editor["lewis6991/gitsigns.nvim"] = {
@@ -45,9 +43,14 @@ editor["kevinhwang91/nvim-ufo"] = {
   },
 }
 
--- editor["folke/which-key.nvim"] = {
---   event = "VeryLazy",
---   config = require("editor.which_key")
--- }
+editor["folke/which-key.nvim"] = {
+  event = "VeryLazy",
+  config = require("editor.which_key")
+}
+
+editor["ggandor/leap.nvim"] = {
+  event = "VeryLazy",
+  config = require("editor.leap")
+}
 
 return editor
