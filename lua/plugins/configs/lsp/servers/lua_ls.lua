@@ -27,6 +27,8 @@ local M = {
       -- Only load needed files.
       -- We only load the VIMRUNTIME Lua and LSP files and, some stuff for plugins installed via lazy.nvim.
       library = {
+        vim.api.nvim_get_runtime_file("", true),
+        [vim.fn.expand "$VIMRUNTIME"] = true,
         [vim.fn.expand "$VIMRUNTIME/lua"] = true,
         [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
         [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
@@ -72,7 +74,7 @@ local M = {
     },
     -- Enable LS (langage server) formatting.
     format = {
-      enable = true,
+      enable = false,
       defaultConfig = {
         -- Space-indents for the win!
         indent_style = "space",

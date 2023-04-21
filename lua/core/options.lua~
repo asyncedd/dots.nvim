@@ -47,6 +47,7 @@ o("foldenable", true, {})
 
 -- 3.1 Enable line numbers.
 o("number", true, {}) -- Enable line numbers
+o("relativenumber", true, {}) -- Also relative numbers since, why not.
 
 -- 3.2 See invisible characters 🧐
 o("list", true, {}) -- Enable seeing invisible characters (actually it's UI characters)
