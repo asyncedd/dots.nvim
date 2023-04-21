@@ -57,8 +57,7 @@ o.winbl = 10 -- Make floating windows slightly transparent
 
 o.shm:append('WcC') -- Reduce command line messages
 -- shm = shortmess
-o.spk = 'screen'      --
--- spk = splitkeep
+o.spk = 'screen' -- spk = splitkeep
 
 -- 3.4 Keep the cursor in the middle.
 o.so = 10

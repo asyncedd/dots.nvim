@@ -82,20 +82,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "stevearc/oil.nvim",
-    config = true,
-    keys = {
-      { "<leader>oil", "<cmd>Oil<cr>", { desc = "Open that coconut oil!" } },
-      {
-        "-",
-        function()
-          require("oil").open()
-        end,
-        { desc = "Open parent directory" },
-      },
-    },
-  },
-  {
     "sindrets/diffview.nvim",
     config = true,
     keys = {
@@ -103,39 +89,8 @@ return {
     },
   },
   {
-    "pwntester/octo.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "ThePrimeagen/vim-be-good",
     cmd = { "VimBeGood" },
-  },
-  {
-    "tpope/vim-fugitive",
-    cmd = {
-      "G",
-      "Git",
-      "Gedit",
-      "Gsplit",
-      "Gdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "GMove",
-      "GRename",
-      "GDelete",
-      "GRemove",
-      "GBrowse"
-    },
-    keys = {
-      { "<leader>vf", "<cmd>G<cr>" },
-    },
   },
   {
     "kdheepak/lazygit.nvim",
