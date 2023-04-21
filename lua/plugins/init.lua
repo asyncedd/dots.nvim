@@ -129,18 +129,12 @@ plugins[16] = {
 }
 
 plugins[17] = {
-  "goolord/alpha-nvim",
-  config = require("ui.alpha"),
-  event = "VimEnter",
-}
-
-plugins[18] = {
   "echasnovski/mini.nvim",
   config = require("mini"),
   init = lazyLoad("mini.nvim"),
 }
 
-plugins[19] = {
+plugins[18] = {
   "lewis6991/impatient.nvim",
   event = "VimEnter",
 }
