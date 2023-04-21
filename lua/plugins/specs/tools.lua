@@ -16,4 +16,11 @@ return {
       { "<leader>fh", function() require("telescope.builtin").help_tags() end },
     },
   },
+  {
+    "TimUntersberger/neogit",
+    config = true,
+    keys = {
+      { "<leader>ng", function() require("neogit").open() end },
+    },
+  },
 }
