@@ -1,6 +1,8 @@
 local statusline = require("ui.heirline.statusline")
+local bufferline = require("ui.heirline.tabline")
 
 require("heirline").setup({
-  statusline = { statusline }
+  statusline = { statusline },
+  tabline = { bufferline },
 })
 
