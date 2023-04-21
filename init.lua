@@ -1,4 +1,3 @@
 -- vim.go.loadplugins = false
 -- Call setup
-
-require("core")
+pcall(require, "core")
