@@ -283,6 +283,6 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-context",
     config = true,
-    init = lazyLoad("nvim-treesitter-context"),
+    event = "UIEnter",
   },
 }
