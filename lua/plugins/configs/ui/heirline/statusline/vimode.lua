@@ -92,6 +92,10 @@ local ViMode = {
   -- performance improvement.
   update = {
     "ModeChanged",
+    pattern = "*:*",
+    callback = vim.schedule_wrap(function ()
+      vim.cmd("redrawstatus")
+    end),
   },
 }
 
