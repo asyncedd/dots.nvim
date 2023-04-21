@@ -100,5 +100,6 @@ As I've been adding more plugins (LSP, Completion etc...) It's a bit slower now.
 You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
 
 ## Inspirations
-- [NvChad](https://github.com/nvchad/nvchad)
-- [Ayamir's nvimdots](https://github.com/ayamir/nvimdots)
+- [NvChad](https://github.com/nvchad/nvchad) - For the lazyLoader function!
+- [Ayamir's nvimdots](https://github.com/ayamir/nvimdots) - For some structuring and those snippets! (I actually started this repo 99% based on his structure)
+- [Glepnir's dots](https://github.com/glepnir/nvim) - For the snippets!
