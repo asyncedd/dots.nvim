@@ -120,5 +120,16 @@ return {
       { "ge", "<cmd>lua require('spider').motion('ge')<CR>", mode = { "x", "o", "n" } },
     },
   },
+  {
+    "cbochs/portal.nvim",
+    keys = {
+      { "<leader>o", "<cmd>Portal jumplist backward<cr>" },
+      { "<leader>i", "<cmd>Portal jumplist forward<cr>" },
+    },
+    dependencies = {
+      "cbochs/grapple.nvim",
+      "ThePrimeagen/harpoon",
+    },
+  },
 }
 
