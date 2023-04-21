@@ -94,6 +94,12 @@ plugins[11] = {
   config = require("editor.leap"),
 }
 
+plugins[12] = {
+  "LeonHeidelbach/trailblazer.nvim",
+  config = require("editor.trailblazer"),
+  init = lazyLoad("trailblazer.nvim"),
+}
+
 require("lazy").setup({
   plugins,
 }, {
