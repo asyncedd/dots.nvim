@@ -210,4 +210,8 @@ return {
       { "<leader>sm", mode = { "n", "v" } },
     },
   },
+  {
+    "jghauser/mkdir.nvim",
+    event = "BufWritePre",
+  },
 }
