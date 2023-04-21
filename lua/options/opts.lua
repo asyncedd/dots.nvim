@@ -16,7 +16,8 @@ local M = {
   splitright = true, -- Splits right.
   termguicolors = true, -- Enable GUI colors.
   showmode = false, -- Don't show the mode in the CLI.
-  wrap = false -- Show lohj line in lingn line
+
+  wrap = false -- Show long lines as one big line.
 }
 
 return M
