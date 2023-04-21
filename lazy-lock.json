@@ -17,6 +17,7 @@
   "lsp_signature.nvim": { "branch": "master", "commit": "1882019270be445a8cad4353f1530574f2b2d02d" },
   "lspsaga.nvim": { "branch": "main", "commit": "04617d1f5b1cfbdd2a99d9765ef04fc6ae415622" },
   "mason.nvim": { "branch": "main", "commit": "874c4ab82ede731d4a0e464a413725932a71b26f" },
+  "matchparen.nvim": { "branch": "main", "commit": "dc511ea561bb34c99d0fad9a6fd08bb0e4187a5e" },
   "mini.nvim": { "branch": "main", "commit": "b4ef7ee6d7c7d6d335a4aa7e7261b3e4d9983f45" },
   "neodev.nvim": { "branch": "main", "commit": "6315ff9f2e8530905ea1f573eaf27abe86c66548" },
   "nvim": { "branch": "main", "commit": "dc216c6241fd8439fe6018cca834200aca1a04ad" },
@@ -35,5 +36,6 @@
   "tokyonight.nvim": { "branch": "main", "commit": "1b0c88094548a62641ece1e668fa9a234e1c539e" },
   "trailblazer.nvim": { "branch": "main", "commit": "8f49c735bfa3aa47bbb8fb1bd586df2a77028a92" },
   "trouble.nvim": { "branch": "main", "commit": "7915277a259fdff5d46c6f1d2e100df2ec384d3b" },
-  "vim-enfocado": { "branch": "main", "commit": "ce03fe4785322aeecafb96a24d32288931172fc5" }
+  "vim-enfocado": { "branch": "main", "commit": "ce03fe4785322aeecafb96a24d32288931172fc5" },
+  "vim-matchup": { "branch": "master", "commit": "f69d1ac5bd3c4e6ad349f64317000cc9a4a895cf" }
 }

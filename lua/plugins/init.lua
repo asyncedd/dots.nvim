@@ -33,8 +33,15 @@ local plugins = {
     config = function()
       require("editor.treesitter")
     end,
+    dependencies = {
+    },
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+  },
+
+  {
+    "andymass/vim-matchup",
+    event = "CursorMoved",
   },
 
   {
@@ -156,8 +163,14 @@ local plugins = {
 
   {
     "glepnir/lspsaga.nvim",
-    config = true,
+    config = function()
+      require("lsp.saga")
+    end,
     init = lazyLoad("lspsaga.nvim"),
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
   },
 
   {
@@ -249,7 +262,7 @@ local plugins = {
         {"<leader>dls", function() require("osv").launch({ port = 8086 }) end },
         {"<leader>ort", function() require("osv").run_this() end },
       }
-    end
+    end,
   },
 }
 
