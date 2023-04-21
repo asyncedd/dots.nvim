@@ -46,11 +46,11 @@ Then once it finished, you're done! (actually)
 ```
 * `nvim` - [source](https://github.com/asyncedd/dots.nvim/blob/master/normal.log):
 ```
-081.097  000.014: VimEnter autocommands
-081.230  000.133: UIEnter autocommands
-081.264  000.034: before starting main loop
-086.992  005.727: first screen update
-086.999  000.008: --- NVIM STARTED ---
+078.797  000.013: VimEnter autocommands
+078.921  000.124: UIEnter autocommands
+078.955  000.034: before starting main loop
+083.337  004.381: first screen update
+083.346  000.009: --- NVIM STARTED ---
 ```
 
 ## 😰 Quitting Nvim.
