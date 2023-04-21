@@ -1,4 +1,4 @@
-local M = {
+return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -30,5 +30,3 @@ local M = {
     },
   }
 }
-
-return M

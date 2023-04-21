@@ -1,4 +1,4 @@
-local M = {
+return {
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufReadPost",
@@ -20,5 +20,3 @@ local M = {
     config = require("plugins.configs.ui.heirline"),
   },
 }
-
-return M
