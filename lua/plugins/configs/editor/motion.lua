@@ -16,7 +16,9 @@ return function()
     return
   end
 
-  leap.add_default_mappings()
+  leap.add_default_mappings(true)
+  vim.keymap.del({ "x", "o" }, "x")
+  vim.keymap.del({ "x", "o" }, "X")
 
   flit.setup()
 
