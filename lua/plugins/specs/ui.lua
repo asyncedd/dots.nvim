@@ -104,13 +104,13 @@ return {
     end,
     event = "VeryLazy",
   },
-  {
-    "HiPhish/nvim-ts-rainbow2",
-    init = lazyLoad("nvim-ts-rainbow2"),
-    config = function()
-      require("ui.rainbow")
-    end,
-  },
+  -- {
+  --   "HiPhish/nvim-ts-rainbow2",
+  --   init = lazyLoad("nvim-ts-rainbow2"),
+  --   config = function()
+  --     require("ui.rainbow")
+  --   end,
+  -- },
   {
     "stevearc/dressing.nvim",
     config = true,
@@ -202,11 +202,11 @@ return {
       require("ui.feline")
     end,
   },
-  {
-    "b0o/incline.nvim",
-    init = lazyLoad("incline.nvim"),
-    config = function()
-      require("ui.incline")
-    end,
-  },
+  -- {
+  --   "b0o/incline.nvim",
+  --   init = lazyLoad("incline.nvim"),
+  --   config = function()
+  --     require("ui.incline")
+  --   end,
+  -- },
 }
