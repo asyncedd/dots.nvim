@@ -58,6 +58,12 @@ plugins[6] = {
   event = "InsertEnter",
 }
 
+plugins[7] = {
+  "numToStr/Comment.nvim",
+  config = true,
+  init = lazyLoad("Comment.nvim")
+}
+
 require("lazy").setup({
   plugins,
 }, {
