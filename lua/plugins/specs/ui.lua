@@ -208,4 +208,11 @@ return {
       require("ui.feline")
     end,
   },
+  {
+    "folke/drop.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("ui.drop")
+    end,
+  },
 }
