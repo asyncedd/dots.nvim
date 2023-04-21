@@ -309,10 +309,12 @@ editor[18] = {
 editor[19] = {
   "mrjones2014/legendary.nvim",
   config = true,
-  event = "VeryLazy",
   dependencies = {
     "stevearc/dressing.nvim",
     "nvim-telescope/telescope.nvim",
+  },
+  keys = {
+    { "<leader>fk", "<cmd>Legendary<cr>" },
   },
 }
 
