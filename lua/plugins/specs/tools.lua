@@ -97,4 +97,11 @@ return {
       },
     },
   },
+  {
+    "sindrets/diffview.nvim",
+    config = true,
+    keys = {
+      { "<leader>dv", "<cmd>DiffviewOpen<cr>" },
+    },
+  },
 }
