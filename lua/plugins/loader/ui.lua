@@ -10,7 +10,7 @@ local cats_in_line = vim.schedule
 require("plugins.configs.ui.catppuccin")
 -- Nvim.treesitter makes our highlighting beautiful.
 
-vim.defer_fn(function ()
+vim.defer_fn(function()
   require("plugins.configs.editor.treesitter")
 end, 0)
 
