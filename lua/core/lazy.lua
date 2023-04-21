@@ -12,6 +12,15 @@ function Lazy:load_plugins()
   local cache_file = cache_dir .. "/plugins_cache.lua"
   local plugins_list = vim.split(fn.glob(modules_dir .. "/plugins/*.lua"), "\n")  -- Get the list of all plugin files
 
+  local function load_module(file)
+    local modules = require(file:sub(#modules_dir - 6, -5))  -- Load the plugin file
+    if type(modules) == "table" then  -- If the loaded plugin is a table
+      for name, conf in pairs(modules) do  -- Loop through the table
+        self.modules[#self.modules + 1] = vim.tbl_extend("force", { name }, conf)  -- Add the plugin to `self.modules`
+      end
+    end
+  end
+
   local function cache_plugins(operation)
     local cache_content
     local f = io.open(cache_file, "r")
@@ -23,11 +32,19 @@ function Lazy:load_plugins()
         os.execute("mkdir -p " .. cache_dir)
       end
       cache_content = ""
-      for i, module in ipairs(self.modules) do
-        if module.conf then
-          cache_content = cache_content .. module.name .. "," .. module.conf .. "\n"
+      local file_names = vim.split(fn.glob(modules_dir .. "/plugins/*.lua"), "\n")
+      for _, file in pairs(file_names) do
+        local modules = load_module(file)
+        if type(modules) == "table" then
+          for name, conf in pairs(modules) do
+            self.modules[#self.modules + 1] = vim.tbl_extend("force", { name }, conf)
+          end
         end
       end
+      -- Write the updated `self.modules` to the cache file
+      local f = io.open(cache_file, "w")
+      f:write(vim.inspect(self.modules))
+      f:close()
       f = io.open(cache_file, "w")
       if f then
         f:write(cache_content)
@@ -37,26 +54,15 @@ function Lazy:load_plugins()
 
     if cache_content then
       if operation == "load" then
-        local lines = vim.split(cache_content, "\n")
-        for i, line in ipairs(lines) do
-          local name, conf = string.match(line, "(.*),(.*)")
-          self.modules[#self.modules + 1] = { name = name, conf = conf }
-        end
+        local func = load(cache_content)
+        func()
       end
       return true
     end
     return false
   end
 
-  local function load_module(file)
-    local modules = require(file:sub(#modules_dir - 6, -5))  -- Load the plugin file
-    if type(modules) == "table" then  -- If the loaded plugin is a table
-      for name, conf in pairs(modules) do  -- Loop through the table
-        self.modules[#self.modules + 1] = vim.tbl_extend("force", { name }, conf)  -- Add the plugin to `self.modules`
-      end
-    end
-  end
-
+  
   -- 📁 Update the package path to include the directories for configs
     package.path = package.path .. string.format(";%s;%s", modules_dir .. "/configs/?.lua", modules_dir .. "/configs/?/init.lua")
 
