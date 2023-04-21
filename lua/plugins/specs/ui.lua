@@ -155,7 +155,7 @@ return {
   },
   {
     "gen740/SmoothCursor.nvim",
-    event = "CursorMoved",
+    event = "VeryLazy",
     config = function()
       require("ui.smoothcursor")
     end,

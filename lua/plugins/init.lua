@@ -12,6 +12,8 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
   print("OK: Done!")
+
+  vim.g.bootstrap = true
 end
 
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
@@ -39,6 +41,6 @@ require("lazy").setup({
     version = false,
   },
   ui = {
-    throttle = 200,
+    throttle = 100,
   },
 })
