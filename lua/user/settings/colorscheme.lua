@@ -7,7 +7,6 @@ local M = {
   {
     "catppuccin/nvim",
     config = require("plugins.configs.ui.catppuccin"),
-    priority = 1000,
     lazy = function ()
       if ("catppuccin" == require("user.settings").colorscheme) then
         return false
@@ -18,7 +17,6 @@ local M = {
   {
     "folke/tokyonight.nvim",
     config = require("plugins.configs.ui.tokyonight"),
-    priority = 1000,
     -- Change "lazy = true" to lazy = false" if you want to have Tokyonight.nvim instead of catppuccin.
     -- BTW if you use another colorscheme that isn't catppuccin, you might want to tweak some of the heirline's config.
     -- (Hint: nvim lua/configs/ui/heirline/colors.lua)
@@ -31,6 +29,19 @@ local M = {
     end,
     -- This ^^^
   },
+  -- Kanagawa.nvim - A beautiful colorscheme.
+  {
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+    lazy = function ()
+      if ("kanagawa" == require("user.settings").colorscheme) then
+        return false
+      end
+    end,
+    config = function ()
+      require("plugins.configs.ui.kanagawa")
+    end,
+  }
   -- -- Edge.nvim
   -- {
   --   "sainnhe/edge",
