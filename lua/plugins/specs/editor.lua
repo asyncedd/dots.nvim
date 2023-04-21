@@ -63,11 +63,17 @@ return {
   },
   {
     "ggandor/leap-spooky.nvim",
-    keys = {
-      "b", "B", "c", "C", "d", "D", "g", "G", "h", "H", "j", "J", "k",
-      "K", "l", "L", "m", "M", "q", "Q", "r", "R", "x", "X", "z", "Z",
-    },
     config = true,
+    keys = {
+      "d",
+      "c",
+      "y",
+      "g",
+      "!",
+      "=",
+      ">",
+      "<",
+    },
   },
   {
     "ggandor/leap-ast.nvim",
