@@ -1,6 +1,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
+local compare = require("cmp.config.compare")
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -25,6 +26,29 @@ cmp.setup({
   --   disallow_partial_matching = true,
   --   disallow_prefix_unmatching = false,
   -- },
+  matching = {
+    disallow_fuzzy_matching = false,
+    disallow_fullfuzzy_matching = false,
+    disallow_partial_matching = false,
+    disallow_prefix_unmatching = false,
+  },
+  sorting = {
+    priority_weight = 0.8,
+    comparators = {
+      -- compare.score_offset, -- not good at all
+      -- compare.scopes, -- treesitter scope
+      compare.locality,
+      compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+      compare.offset,
+      compare.recently_used,
+      compare.order,
+      -- compare.scopes, -- what?
+      -- compare.sort_text,
+      -- compare.exact,
+      -- compare.kind,
+      -- compare.length,
+    },
+  },
   preselect = cmp.PreselectMode.None,
   snippet = {
     expand = function(args)
