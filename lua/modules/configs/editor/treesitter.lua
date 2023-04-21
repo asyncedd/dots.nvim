@@ -16,6 +16,9 @@ return function()
     },
     context_commentstring = {
       enable = true,
-    }
+    },
+    autotag = {
+      enable = true,
+    },
   })
 end
