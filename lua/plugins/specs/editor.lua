@@ -185,6 +185,22 @@ return {
       "[]",
       "]d",
       "[d",
+      "<leader>df",
+      "<leader>dF",
+      {
+        ";",
+        function()
+          require("nvim-treesitter.textobjects.repeatable_move").repeat_last_move_next()
+        end,
+        mode = { "n", "x", "o" },
+      },
+      {
+        ",",
+        function()
+          require("nvim-treesitter.textobjects.repeatable_move").repeat_last_move_previous()
+        end,
+        mode = { "n", "x", "o" },
+      },
     },
   },
 }
