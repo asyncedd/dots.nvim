@@ -31,7 +31,6 @@ editor["RRethy/vim-illuminate"] = {
   event = "BufReadPost"
 }
 
-
 editor["lewis6991/gitsigns.nvim"] = {
   event = "BufReadPost",
   config = require("modules.configs.editor.gitsigns")
