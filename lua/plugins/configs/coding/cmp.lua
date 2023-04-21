@@ -65,10 +65,10 @@ cmp.setup({
     { name = "codeium" },
     { name = "cmp_tabnine" },
     { name = "buffer" },
-    {
-      name = "rg",
-      keyword_length = 3,
-    },
+    -- {
+    --   name = "rg",
+    --   keyword_length = 3,
+    -- },
     {
       name = "tmux",
       option = {

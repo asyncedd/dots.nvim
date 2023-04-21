@@ -59,31 +59,26 @@ return {
     },
   },
   {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+    end,
+    dependencies = {
+      {
+        "rafamadriz/friendly-snippets",
+        config = function()
+          require("luasnip.loaders.from_vscode").lazy_load()
+        end,
+      },
+    },
+  },
+  {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
-      {
-        "L3MON4D3/LuaSnip",
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
-        end,
-        dependencies = {
-          {
-            "rafamadriz/friendly-snippets",
-            config = function()
-              require("luasnip.loaders.from_vscode").lazy_load()
-            end,
-          },
-          {
-            "honza/vim-snippets",
-            config = function()
-              require("luasnip.loaders.from_snipmate").lazy_load()
-            end,
-          },
-        },
-      },
+      "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
       "hrsh7th/cmp-cmdline",
@@ -102,7 +97,7 @@ return {
       },
       "hrsh7th/cmp-emoji",
       "chrisgrieser/cmp-nerdfont",
-      "lukas-reineke/cmp-rg",
+      -- "lukas-reineke/cmp-rg",
       "andersevenrud/cmp-tmux",
     },
     config = function()

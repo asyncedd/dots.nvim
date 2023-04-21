@@ -25,7 +25,7 @@ capabilities.textDocument.completion.completionItem = {
 -- Neovim hasn't added foldingRange to default capabilities, users must add it manually
 capabilities.textDocument.foldingRange = {
   dynamicRegistration = false,
-  lineFoldingOnly = true
+  lineFoldingOnly = true,
 }
 
 local mlsp = require("mason-lspconfig")
@@ -55,8 +55,8 @@ mlsp.setup_handlers({
   ["lua_ls"] = function()
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
+
       settings = require("lsp.servers.lua_ls"),
     })
   end,
 })
-

@@ -5,7 +5,7 @@ require("nvim-treesitter.configs").setup({
   -- Enable treesitter's highlighting.
   highlight = {
     enable = true,
-    use_language_tree = true,
+    -- use_language_tree = true,
   },
 
   matchup = {
