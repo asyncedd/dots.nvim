@@ -122,4 +122,35 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "akinsho/bufferline.nvim",
+    event = "UIEnter",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "catppuccin/nvim",
+    },
+    config = function()
+      require("ui.bufferline")
+    end,
+    keys = {
+      { "<leader>fc", "<cmd>BufferLineTogglePin<cr>" },
+      { "<leader>gd", "<cmd>BufferLinePick<cr>" },
+      { "<leader>gD", "<cmd>BufferLinePickClose<cr>" },
+      { "<leader>g" .. vim.v.count, "<Cmd>BufferLineGoToBuffer " .. vim.v.count .. "<CR>" },
+      { "<leader>g1", "<Cmd>BufferLineGoToBuffer 1<CR>" },
+      { "<leader>g2", "<Cmd>BufferLineGoToBuffer 2<CR>" },
+      { "<leader>g3", "<Cmd>BufferLineGoToBuffer 3<CR>" },
+      { "<leader>g4", "<Cmd>BufferLineGoToBuffer 4<CR>" },
+      { "<leader>g5", "<Cmd>BufferLineGoToBuffer 5<CR>" },
+      { "<leader>g6", "<Cmd>BufferLineGoToBuffer 6<CR>" },
+      { "<leader>g7", "<Cmd>BufferLineGoToBuffer 7<CR>" },
+      { "<leader>g8", "<Cmd>BufferLineGoToBuffer 8<CR>" },
+      { "<leader>g9", "<Cmd>BufferLineGoToBuffer 9<CR>" },
+      { "<leader>g$", "<Cmd>BufferLineGoToBuffer -1<CR>" },
+      { "<leader>gn", "<cmd>BufferLineCycleNext<cr>" },
+      { "<leader>gb", "<cmd>BufferLineCyclePrev<cr>" },
+      { "<leader>gl", "<cmd>BufferLineCycleNext<cr>" },
+      { "<leader>gh", "<cmd>BufferLineCyclePrev<cr>" },
+    },
+  },
 }

@@ -2,5 +2,5 @@ return {
   Error = " ",
   Warn = " ",
   Hint = " ",
-  Info = " ",
+  Info = " ",
 }
