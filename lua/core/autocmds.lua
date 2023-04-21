@@ -1,24 +1,26 @@
+local autocmd = vim.api.nvim_create_autocmd
+
 -- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
+autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank()
   end,
 })
 
 -- Check if we need to reload the file when it changed
-vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
+autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
   command = "checktime",
 })
 
 -- resize splits if window got resized
-vim.api.nvim_create_autocmd({ "VimResized" }, {
+autocmd({ "VimResized" }, {
   callback = function()
     vim.cmd("tabdo wincmd =")
   end,
 })
 
 -- go to last loc when opening a buffer
-vim.api.nvim_create_autocmd("BufReadPost", {
+autocmd("BufReadPost", {
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
     local lcount = vim.api.nvim_buf_line_count(0)
@@ -29,7 +31,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- close some filetypes with <q>
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   pattern = {
     "qf",
     "help",
@@ -48,7 +50,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- wrap and check for spell in text filetypes
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   pattern = { "gitcommit", "markdown" },
   callback = function()
     vim.opt_local.wrap = true
@@ -56,13 +58,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("InsertEnter", {
+autocmd("InsertEnter", {
   callback = function()
     vim.opt_local.relativenumber = false
   end
 })
 
-vim.api.nvim_create_autocmd("InsertLeave", {
+autocmd("InsertLeave", {
   pattern = "*",
   callback = function()
     vim.opt_local.relativenumber = true

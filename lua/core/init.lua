@@ -14,6 +14,7 @@ M.setup = function()
   local colorscheme = require("core.settings").colorscheme
 
   vim.api.nvim_command("colorscheme " .. colorscheme)
+
 end
 
 return M
