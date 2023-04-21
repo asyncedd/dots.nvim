@@ -52,9 +52,10 @@ return function()
       })
     },
     experimental = {
-      ghost_text = {
-        hl_group = "LspCodeLens",
-      }
-    }
+      ghost_text = true
+    },
+    view = {
+      entries = {name = 'custom', selection_order = 'near_cursor' }
+    },
   })
 end

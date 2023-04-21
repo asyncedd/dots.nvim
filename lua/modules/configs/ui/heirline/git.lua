@@ -28,7 +28,7 @@ local Git = {
   {
     provider = function(self)
       local count = self.status_dict.added or 0
-      return count > 0 and ("+" .. count)
+      return count > 0 and ("" .. count)
     end,
     hl = { fg = cp.green },
   },
