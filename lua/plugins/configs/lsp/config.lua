@@ -30,31 +30,21 @@ capabilities.textDocument.completion.completionItem = {
 }
 
 local lspconfig = require("lspconfig")
-local on_attach = function(client, bufnr)
-  require("nvim-navbuddy").attach(client, bufnr)
-  vim.keymap.set("n", "<leader>nb", function()
-    require("nvim-navbuddy").open()
-  end, {})
-end
 
 lspconfig.lua_ls.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
   settings = require("plugins.configs.lsp.servers.lua_ls"),
 })
 
 lspconfig.marksman.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 
 lspconfig.astro.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 
 lspconfig.tsserver.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 

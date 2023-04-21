@@ -34,13 +34,8 @@ return {
           { "nvim-treesitter/nvim-treesitter" },
         },
       },
-      "SmiteshP/nvim-navbuddy",
       "MunifTanjim/nui.nvim",
       "SmiteshP/nvim-navic",
-      {
-        "Kasama/nvim-custom-diagnostic-highlight",
-        config = true,
-      },
       {
         "VidocqH/lsp-lens.nvim",
         config = true,
