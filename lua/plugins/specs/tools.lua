@@ -15,9 +15,19 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons"
     },
-    config = function ()
+    config = function()
       require("plugins.configs.tools.tree")
     end,
     event = "VeryLazy"
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    config = true,
+  },
+  {
+    "stevearc/overseer.nvim",
+    config = true,
+    event = "VeryLazy",
   },
 }
