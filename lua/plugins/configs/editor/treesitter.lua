@@ -1,11 +1,8 @@
 -- Checking if nvim-treesitter is installed properly.
 local treesitter = require("nvim-treesitter.configs")
 
--- Load Markid.
--- local markid_config = require("markid").colors
-
 -- Set the Markid's colors.
-markid_config = {
+local markid_config = {
   bright = {
     "#f5c2e7",
     "#fab387",
@@ -31,6 +28,7 @@ treesitter.setup({
 
   highlight = {
     enable = true,
+    additional_regex_highlighting = true,
   },
 
   -- Enable nvim-treesitter indention.
