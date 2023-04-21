@@ -53,6 +53,7 @@ return function()
       { name = "nvim_lua" },
       { name = "luasnip" },
       { name = "buffer" },
+      { name = "treesitter" },
     }),
     enabled = function()
       -- disable completion in comments
@@ -102,6 +103,7 @@ return function()
       },
     },
     sources = cmp.config.sources({
+      { name = 'conventionalcommits' },
       { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
     }, {
         { name = "buffer" },
@@ -144,11 +146,4 @@ return function()
         { name = "cmdline" },
       }),
   })
-
-  require'cmp'.setup.buffer {
-    sources = require'cmp'.config.sources(
-      {{ name = 'conventionalcommits' }},
-      {{ name = 'buffer' }}
-    ),
-  }
 end
