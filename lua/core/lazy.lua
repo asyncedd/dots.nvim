@@ -96,7 +96,8 @@ function Lazy:load_lazy()
           "zipPlugin",
           "tarPlugin",
           "tutor",
-          "man"
+          "man",
+          "netrwPlugin"
         },
       },
     },
