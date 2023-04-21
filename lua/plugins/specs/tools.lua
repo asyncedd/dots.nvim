@@ -10,6 +10,12 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-frecency.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+      },
+      "kkharji/sqlite.lua",
     },
     keys = {
       {
@@ -36,6 +42,7 @@ return {
           require("telescope.builtin").help_tags()
         end,
       },
+      { "<leader>fr", "<cmd>Telescope frecency workspace=CWD<cr>" },
     },
     config = function()
       require("tools.telescope")
