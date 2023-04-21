@@ -144,5 +144,14 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "Eandrju/cellular-automaton.nvim",
+    cmd = {
+      "CellularAutomaton",
+    },
+    keys = {
+      { "<leader>fml", "<cmd>CellularAutomaton make_it_rain<cr>" },
+    },
+  },
 }
 
