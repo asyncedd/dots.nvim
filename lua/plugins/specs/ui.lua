@@ -1,7 +1,12 @@
 local lazyLoad = require("core.utils.lazyLoad")
 
 return {
-  "catppuccin/nvim",
+  {
+    "catppuccin/nvim",
+    config = function()
+      require("ui.catppuccin")
+    end
+  },
   -- {
   --   "echasnovski/mini.map",
   --   config = function()

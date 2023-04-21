@@ -1,18 +1,21 @@
 local mocha = require("catppuccin.palettes").get_palette("mocha")
 local hl = vim.api.nvim_set_hl
 
-hl(0, "TelescopeSelection", { bg = mocha.surface0 })
-hl(0, "TelescopePromptCounter", { fg = mocha.mauve, bold = true })
-hl(0, "TelescopePromptPrefix", { fg = mocha.text })
-hl(0, "TelescopePromptNormal", { fg = mocha.text })
-hl(0, "TelescopeResultsNormal", { fg = mocha.text })
-hl(0, "TelescopePreviewNormal", { fg = mocha.crust })
-hl(0, "TelescopePromptBorder", { bg = mocha.surface0, fg = mocha.surface0 })
-hl(0, "TelescopeResultsBorder", { bg = mocha.mantle, fg = mocha.mantle })
-hl(0, "TelescopePreviewBorder", { bg = mocha.crust, fg = mocha.crust })
-hl(0, "TelescopePromptTitle", { fg = mocha.surface0, bg = mocha.surface0 })
-hl(0, "TelescopeResultsTitle", { fg = mocha.mantle, bg = mocha.mantle })
-hl(0, "TelescopePreviewTitle", { fg = mocha.crust, bg = mocha.crust })
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+require("catppuccin.lib.highlighter").syntax({
+   TelescopeSelection = { bg = colors.surface0 },
+  TelescopePromptCounter = { fg = colors.mauve, style = { "bold" } },
+  TelescopePromptPrefix = { bg = colors.surface0 },
+  TelescopePromptNormal = { bg = colors.surface0 },
+  TelescopeResultsNormal = { bg = colors.mantle },
+  TelescopePreviewNormal = { bg = colors.crust },
+  TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
+  TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
+  TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
+  TelescopePromptTitle = { fg = colors.surface0, bg = colors.surface0 },
+  TelescopeResultsTitle = { fg = colors.mantle, bg = colors.mantle },
+  TelescopePreviewTitle = { fg = colors.crust, bg = colors.crust },
+})
 
 require("telescope").setup({
   extensions = {

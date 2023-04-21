@@ -19,6 +19,7 @@ hl(0, "LeapLabelPrimary", {
 hl(0, "LeapLabelSecondary", {
   fg = "blue", bold = true, nocombine = true,
 })
+
 -- Try it without this setting first, you might find you don't even miss it.
 leap.opts.highlight_unlabeled_phase_one_targets = true
 

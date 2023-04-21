@@ -61,9 +61,10 @@ o.undolevels = 10000
 -- Enable more undo stuff
 o.undoreload = 10000
 
-local mocha = require("catppuccin.palettes").get_palette("mocha")
-
-vim.api.nvim_set_hl(0, "Pmenu", { bg = mocha.crust, fg = "" })
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+require("catppuccin.lib.highlighter").syntax({
+  Pmenu = { bg = colors.crust, fg = "" },
+})
 
 require("nvim-treesitter.configs").setup({
   -- Treesitter powered indents.

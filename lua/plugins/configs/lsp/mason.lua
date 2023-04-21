@@ -1,9 +1,10 @@
 require("mason").setup()
 
-local mocha = require("catppuccin.palettes").get_palette("mocha")
-
-vim.api.nvim_set_hl(0, "@lsp.type.parameter", { fg = mocha.red })
-vim.api.nvim_set_hl(0, "@lsp.type.function", { fg = mocha.blue })
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+require("catppuccin.lib.highlighter").syntax({
+  ["@lsp.type.parmeter"] = { fg = colors.red },
+  ["@lsp.type.function"] = { fg = colors.blue },
+})
 
 require("core.utils.highlight.semantic_tokens")
 
