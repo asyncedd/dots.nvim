@@ -99,3 +99,6 @@ As I've been adding more plugins (LSP, Completion etc...) It's a bit slower now.
 ## 😰 Quitting Nvim.
 You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
 
+## Inspirations
+- [NvChad](https://github.com/nvchad/nvchad)
+- [Ayamir's nvimdots](https://github.com/ayamir/nvimdots)
