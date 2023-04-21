@@ -26,7 +26,7 @@ plugins[3] = {
     {
       "williamboman/mason.nvim",
       dependencies = {
-	"williamboman/mason-lspconfig.nvim",
+        "williamboman/mason-lspconfig.nvim",
       },
       config = require("lsp.mason"),
       event = "BufReadPost",
@@ -50,6 +50,12 @@ plugins[5] = {
     "hrsh7th/cmp-buffer",
   },
   config = require("completion.cmp"),
+}
+
+plugins[6] = {
+  "windwp/nvim-autopairs",
+  config = true,
+  event = "InsertEnter",
 }
 
 require("lazy").setup({
