@@ -12,9 +12,4 @@ return {
     end,
     init = lazyLoad("mason.nvim")
   },
-  {
-    "glepnir/lspsaga.nvim",
-    config = true,
-    event = "BufReadPre",
-  },
 }
