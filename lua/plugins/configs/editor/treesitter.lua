@@ -1,30 +1,16 @@
--- Set the Markid's colors.
-
-local setupTreesitter = function()
-  -- Configure nvim-treesitter
+return function()
   require("nvim-treesitter.configs").setup({
 
-    -- Auto-install missing parsers. (once you open a file that requires it.)
-    auto_install = true,
+    -- Make sure we've installed:
+    ensure_installed = { "markdown", "markdown_inline" },
 
-    -- Enable beautiful syntax highlighting!!!
-    -- ensure_installed = { "markdown", "markdown_inline" },
+    -- Auto-install mssing parsers
+    auto_install = { enable = true },
 
+    -- Enable highlighting.
     highlight = {
       enable = true,
-      additional_regex_highlighting = true,
       use_languagetree = true,
     },
-
-    -- Enable nvim-treesitter indention.
-    indent = {
-      enable = true,
-    },
   })
-end
-
-return function()
-  -- Checking if nvim-treesitter is installed properly.
-
-  setupTreesitter()
 end
