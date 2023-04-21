@@ -53,7 +53,9 @@ plugins[5] = {
 }
 
 plugins[6] = {
-  "windwp/nvim-autopairs", config = true, event = "InsertEnter",
+  "windwp/nvim-autopairs",
+  config = true,
+  event = "InsertEnter",
 }
 
 plugins[7] = {
@@ -81,6 +83,27 @@ plugins[10] = {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
+}
+
+plugins[11] = {
+  "ggandor/leap.nvim",
+  init = lazyLoad("leap.nvim"),
+  dependencies = {
+    "ggandor/flit.nvim",
+  },
+  config = require("editor.leap"),
+}
+
+plugins[12] = {
+  "LeonHeidelbach/trailblazer.nvim",
+  config = require("editor.trailblazer"),
+  init = lazyLoad("trailblazer.nvim"),
+}
+
+plugins[13] = {
+  "echasnovski/mini.ai",
+  config = require("editor.miniai"),
+  init = lazyLoad("mini.ai"),
 }
 
 require("lazy").setup({
