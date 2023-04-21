@@ -70,4 +70,10 @@ lsp[4] = {
   config = true,
 }
 
+lsp[5] = {
+  "lvimuser/lsp-inlayhints.nvim",
+  config = true,
+  event = "LspAttach",
+}
+
 return lsp

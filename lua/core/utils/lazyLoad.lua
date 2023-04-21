@@ -1,3 +1,5 @@
+local lazy = require("lazy")
+
 -- Lazy load a plugin.
 ---@param plugin string: A plugin to load.
 local lazyLoad = function(plugin) -- CREDIT: NvChad.
@@ -14,14 +16,14 @@ local lazyLoad = function(plugin) -- CREDIT: NvChad.
         -- This deferring only happens only when we do "nvim filename"
         if plugin ~= "nvim-treesitter" then
           vim.schedule(function()
-            require("lazy").load({ plugins = plugin })
+            lazy.load({ plugins = plugin })
 
             if plugin == "nvim-lspconfig" or plugin == "null-ls" then
               vim.api.nvim_command("silent! do FileType")
             end
           end)
         else
-          require("lazy").load({ plugins = plugin })
+          lazy.load({ plugins = plugin })
         end
       end
     end,

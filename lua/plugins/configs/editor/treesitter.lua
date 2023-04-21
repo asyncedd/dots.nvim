@@ -1,7 +1,10 @@
 require("nvim-treesitter.configs").setup({
 
   -- Make sure we've installed:
-  ensure_installed = { "markdown", "markdown_inline" },
+  ensure_installed = {
+    "markdown",
+    "markdown_inline",
+  },
 
   -- Auto-install mssing parsers
   auto_install = true,
@@ -16,13 +19,4 @@ require("nvim-treesitter.configs").setup({
   indent = {
     enable = true,
   },
-
-  -- -- Rainbow parentheses
-  -- rainbow = {
-  --   enable = true,
-  --   -- Which query to use for finding delimiters
-  --   query = "rainbow-parens",
-  --   -- Highlight the entire buffer all at once
-  --   strategy = require("ts-rainbow").strategy["global"],
-  -- },
 })
