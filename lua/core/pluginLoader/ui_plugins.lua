@@ -26,11 +26,11 @@ table.insert(threads, coroutine.create(function()
     group = augroup("ui"),
     callback = function()
       local module_names = {
-        "configs.editor.treesitter",
-        "configs.ui.indent",
-        "configs.editor.gitsigns",
-        "configs.ui.heirline",
-        "configs.editor.ufo",
+        "plugins.configs.editor.treesitter",
+        "plugins.configs.ui.indent",
+        "plugins.configs.editor.gitsigns",
+        "plugins.configs.ui.heirline",
+        "plugins.configs.editor.ufo",
         -- "configs.ui.animate"
       }
 
