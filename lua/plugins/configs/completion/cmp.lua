@@ -5,7 +5,6 @@ local has_words_before = function()
 end
 
 local cmp = require("cmp")
-local kindIcons = require("core.utils.icons.kind")
 local luasnip = require("luasnip")
 
 cmp.setup({
@@ -48,6 +47,7 @@ cmp.setup({
     end, { "i", "s" }),
   }),
   sources = cmp.config.sources({
+    { name = "nvim_lua" },
     { name = "nvim_lsp" },
     { name = "codeium" },
     { name = "cmp_tabnine" },
