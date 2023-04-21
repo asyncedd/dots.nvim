@@ -8,6 +8,7 @@ local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local compare = require("cmp.config.compare")
 local cmp_buffer = require("cmp_buffer")
+local ts_utils = require("nvim-treesitter.ts_utils")
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -38,13 +39,37 @@ cmp.setup({
     disallow_partial_matching = false,
     disallow_prefix_unmatching = false,
   },
+  -- Thanks to https://www.youtube.com/@yukiuthman8358
   sorting = {
     priority_weight = 0.8,
     comparators = {
       -- compare.score_offset, -- not good at all
       -- compare.scopes, -- treesitter scope
       compare.locality,
-      compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+      -- compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+      function(entry1, entry2)
+        local kind1 = entry1.completion_item.kind
+        local kind2 = entry2.completion_item.kind
+
+        local node = ts_utils.get_node_at_cursor()
+
+        if node and node:type() == "arguments" then
+          if kind1 == 22 then
+            entry1.score = 100
+          end
+
+          if kind2 == 22 then
+            entry2.score = 100
+          end
+        end
+
+        local diff = entry2.score - entry1.score
+        if diff < 0 then
+          return true
+        elseif diff > 0 then
+          return false
+        end
+      end,
       compare.offset,
       compare.recently_used,
       function(...)
@@ -98,13 +123,49 @@ cmp.setup({
   }),
 
   sources = cmp.config.sources({
-    { name = "nvim_lsp" },
+    {
+      name = "nvim_lsp",
+      entry_filer = function(entry, ctx)
+        local kind = entry:get_kind()
+        local node = ts_utils.get_node_at_cursor()
+
+        local line = ctx.cursor_line
+        local col = ctx.cursor.col
+        local char_before_cursor = string.sub(line, col - 1, col - 1)
+
+        if node == "arguments" then
+          if kind == 22 then
+            return true
+          else
+            return false
+          end
+        elseif char_before_cursor == "." then
+          if kind == 2 or kind == 5 then
+            return true
+          else
+            return false
+          end
+        elseif string.match(line, "^%s*%w*$") then
+          if kind == 3 or kind == 6 then
+            return true
+          else
+            return false
+          end
+        end
+      end,
+    },
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "emoji" },
     { name = "nerdfont" },
-    { name = "codeium" },
-    { name = "cmp_tabnine" },
+    {
+      name = "codeium",
+      keyword_length = 5,
+    },
+    {
+      name = "cmp_tabnine",
+      keyword_length = 5,
+    },
     {
       name = "buffer",
       option = {
@@ -114,10 +175,11 @@ cmp.setup({
         indexing_batch_size = 100,
         indexing_batch_size = 150,
       },
+      keyword_length = 5,
     },
     {
       name = "rg",
-      keyword_length = 3,
+      keyword_length = 5,
     },
     {
       name = "tmux",
@@ -128,21 +190,25 @@ cmp.setup({
   }),
 
   formatting = {
-    format = lspkind.cmp_format({
-      mode = "symbol_text", -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-      symbol_map = {
-        Codeium = "",
-        TabNine = "",
-      },
+    format = function(entry, vim_item)
+      local lspkind = lspkind.cmp_format({
+        mode = "symbol_text", -- show only symbol annotations
+        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+        ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+        symbol_map = {
+          Codeium = "",
+          TabNine = "",
+        },
+      })
 
-      -- The function below will be called before any actual modifications from lspkind
-      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-      before = function(_, vim_item)
-        return vim_item
-      end,
-    }),
+      local item = entry:get_completion_item()
+
+      if item.detail then
+        vim_item.menu = item.detail
+      end
+
+      return vim_item
+    end,
   },
   enabled = function()
     -- disable completion in comments
