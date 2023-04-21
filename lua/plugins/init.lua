@@ -76,6 +76,12 @@ plugins[9] = {
   init = lazyLoad("mini.indentscope")
 }
 
+plugins[10] = {
+  "rebelot/heirline.nvim",
+  init = lazyLoad("heirline.nvim"),
+  config = require("ui.heirline"),
+}
+
 require("lazy").setup({
   plugins,
 }, {
