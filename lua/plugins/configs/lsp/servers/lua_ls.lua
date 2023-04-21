@@ -47,42 +47,6 @@ local M = {
     globals = {
       "vim"
     },
-    -- Enable LS (language server) diagnostics.
-    diagnostics = {
-      enable = true,
-      -- Set "strong" and "strict" severtities to "Warning".
-      groupSeverity = {
-        strong = "Warning",
-        strict = "Warning",
-      },
-      -- Modify the diagnostic needed file status.
-      groupFileStatus = {
-        ["ambiguity"] = "Opened",
-        ["await"] = "Opened",
-        ["codestyle"] = "None",
-        ["duplicate"] = "Opened",
-        ["global"] = "Opened",
-        ["luadoc"] = "Opened",
-        ["redefined"] = "Opened",
-        ["strict"] = "Opened",
-        ["strong"] = "Opened",
-        ["type-check"] = "Opened",
-        ["unbalanced"] = "Opened",
-        ["unused"] = "Opened",
-      },
-      unusedLocalExclude = { "_*" },
-    },
-    -- Enable LS (langage server) formatting.
-    format = {
-      enable = false,
-      defaultConfig = {
-        -- Space-indents for the win!
-        indent_style = "space",
-        -- As 0.2x devs we need our 2 spaces!
-        indent_size = "2",
-        continuation_indent_size = "2",
-      }
-    }
   },
 }
 

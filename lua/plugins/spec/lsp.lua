@@ -3,7 +3,7 @@ local M = {}
 M = {
   {
     "neovim/nvim-lspconfig",
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = require("plugins.configs.lsp.lspconfig"),
     dependencies = {
       "williamboman/mason.nvim",
