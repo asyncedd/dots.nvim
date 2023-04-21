@@ -23,7 +23,7 @@ require("plugins")
 local colorscheme = require("user.settings").colorscheme
 vim.api.nvim_command("colorscheme " .. colorscheme)
 
-vim.schedule(function ()
+vim.defer_fn(function ()
   require("core.after")
-end)
+end, 0)
 
