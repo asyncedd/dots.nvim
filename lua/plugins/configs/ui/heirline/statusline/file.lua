@@ -18,14 +18,6 @@ M.FileFormat = {
   hl = { fg = "black" },
 }
 
-M.FileEncoding = {
-  provider = function()
-    local enc = (vim.bo.fenc ~= '' and vim.bo.fenc) or vim.o.enc -- :h 'enc'
-    return enc:upper() .. " "
-  end,
-  hl = { fg = "black" },
-}
-
 M.FileType = {
   provider = function()
     return string.upper(vim.bo.filetype)
@@ -33,4 +25,4 @@ M.FileType = {
   hl = { fg = "black", bold = true },
 }
 
-return utils.surround({ "", "" }, function(self) return self:mode_color() end, { M.FileEncoding, M.FileFormat, M.FileType })
+return utils.surround({ "", "" }, function(self) return self:mode_color() end, { M.FileFormat, M.FileType })
