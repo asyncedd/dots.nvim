@@ -85,8 +85,6 @@ return {
     keys = {
       "q",
       "Q",
-      vim.v.count .. "q",
-      vim.v.count .. "Q",
       "<C-q>",
       "cq",
       "yq",

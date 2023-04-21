@@ -133,7 +133,6 @@ return {
       { "<leader>fc", "<cmd>BufferLineTogglePin<cr>" },
       { "<leader>gbp", "<cmd>BufferLinePick<cr>" },
       { "<leader>gb", "<cmd>BufferLinePickClose<cr>" },
-      { "<leader>g" .. vim.v.count, "<Cmd>BufferLineGoToBuffer " .. vim.v.count .. "<CR>" },
       { "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>" },
       { "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>" },
       { "<leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>" },
