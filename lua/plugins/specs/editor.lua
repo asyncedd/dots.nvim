@@ -77,7 +77,8 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
-    init = lazyLoad("gitsigns.nvim"),
+    -- init = lazyLoad("gitsigns.nvim"),
+    event = "BufReadPre",
     config = function()
       require("editor.gitsigns")
     end,
