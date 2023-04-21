@@ -23,8 +23,8 @@ return {
         "folke/trouble.nvim",
         config = true,
       },
-      -- "folke/neodev.nvim",
-      "jose-elias-alvarez/null-ls.nvim",
+      "folke/neodev.nvim",
+      -- "jose-elias-alvarez/null-ls.nvim",
     }
   },
   {
