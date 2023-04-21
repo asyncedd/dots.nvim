@@ -64,6 +64,18 @@ plugins[7] = {
   init = lazyLoad("Comment.nvim")
 }
 
+plugins[8] = {
+  "lukas-reineke/indent-blankline.nvim",
+  config = require("ui.blankline"),
+  init = lazyLoad("indent-blankline.nvim")
+}
+
+plugins[9] = {
+  "echasnovski/mini.indentscope",
+  config = require("ui.indentscope"),
+  init = lazyLoad("mini.indentscope")
+}
+
 require("lazy").setup({
   plugins,
 }, {
