@@ -1,3 +1,9 @@
+local runtime_path = vim.split(package.path, ";")
+
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
+
 local M = {
   Lua = {
     runtime = {
@@ -6,18 +12,16 @@ local M = {
       special = {
         reload = "require",
       },
+      path = runtime_path,
+    },
+    hover = {
+      previewFields = vim.o.lines * 4,
     },
     completion = {
       -- Show function name and call the Snippet
       callSnippet = "Replace",
       -- Should the displayed context word contains the content of another file in the workspace
       workspaceWord = true,
-    },
-    misc = {
-      -- CLI parameters when starting the LS (Language server)
-      parameters = {
-        "--log-level=trace",
-      }
     },
     workspace = {
       -- Don't check for third party workspaces.
@@ -28,9 +32,6 @@ local M = {
       -- We only load the VIMRUNTIME Lua and LSP files and, some stuff for plugins installed via lazy.nvim.
       library = {
         vim.api.nvim_get_runtime_file("", true),
-        [vim.fn.expand "$VIMRUNTIME"] = true,
-        [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-        [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
         [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
       },
       -- "Cache" files for fast loading.
