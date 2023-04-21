@@ -59,7 +59,7 @@ end
 ---
 --- -- ... some time later
 --- lazy_func(42)  -- <- Only loads the module now
---- 
+---
 --- </pre>
 lazy.require_on_exported_call = function(require_path)
   return setmetatable({}, {

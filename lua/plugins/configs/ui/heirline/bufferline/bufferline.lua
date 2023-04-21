@@ -65,8 +65,8 @@ local TablineFileNameBlock = {
   end,
   on_click = {
     callback = function(_, minwid, _, button)
-      if (button == "m") then -- close on mouse middle click
-        vim.schedule(function ()
+      if button == "m" then -- close on mouse middle click
+        vim.schedule(function()
           vim.api.nvim_buf_delete(minwid, { force = false })
         end)
       else
@@ -95,7 +95,7 @@ local TablineCloseButton = {
     hl = { fg = "gray" },
     on_click = {
       callback = function(_, minwid)
-        vim.schedule(function ()
+        vim.schedule(function()
           vim.api.nvim_buf_delete(minwid, { force = false })
         end)
       end,
@@ -106,7 +106,6 @@ local TablineCloseButton = {
     },
   },
 }
-
 
 local TablinePicker = {
   condition = function(self)
@@ -147,8 +146,6 @@ vim.keymap.set("n", "gbp", function()
   buflist._show_picker = false
   vim.cmd.redrawtabline()
 end)
-
-
 
 -- The final touch!
 local TablineBufferBlock = utils.surround({ "", "" }, function(self)
