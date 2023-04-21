@@ -16,6 +16,7 @@ return {
   {
     "andymass/vim-matchup",
     config = function()
+      -- Don't show the matchup's matchparen.
       vim.g.matchup_matchparen_offscreen = { method = "off" }
     end,
     init = lazyLoad("vim-matchup"),
@@ -282,5 +283,22 @@ return {
     cmd = {
       "Neoformat",
     },
+  },
+  {
+    "james1236/backseat.nvim",
+    config = function()
+      require("backseat").setup({
+        openai_api_key = vim.env.gpt, -- Get yours from platform.openai.com/account/api-keys
+        openai_model_id = "gpt-3.5-turbo", --gpt-4
+
+        split_threshold = 100,
+        additional_instruction = "Respond snarkily", -- (GPT-3 will probably deny this request, but GPT-4 complies)
+        highlight = {
+          icon = "", -- ''
+          group = "Comment",
+        },
+      })
+    end,
+    event = "VeryLazy",
   },
 }

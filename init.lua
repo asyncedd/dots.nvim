@@ -2,6 +2,8 @@
 
 vim.loader.enable()
 
+require("env")
+
 require("user.autocmd")
 
 -- local disableBuiltinPlugins = require("user.builtinPlugins")
@@ -27,4 +29,3 @@ vim.api.nvim_command("colorscheme catppuccin")
 vim.schedule(function()
   require("core.after")
 end)
-
