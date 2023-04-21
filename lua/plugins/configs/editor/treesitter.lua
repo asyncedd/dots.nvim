@@ -13,4 +13,7 @@ require("nvim-treesitter.configs").setup({
   },
 })
 
-vim.g.matchup_matchparen_deferred = 1
+local g = vim.g
+
+g.matchup_matchparen_deferred = 1
+g.matchup_matchparen_offscreen = { method = "none" }

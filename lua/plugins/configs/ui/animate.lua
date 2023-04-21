@@ -16,7 +16,7 @@ animate.setup({
   },
 
   scroll = {
-    -- enable = false,
+    enable = true,
     timing = animate.gen_timing.linear({ duration = 150, unit = "total" }),
     subscroll = animate.gen_subscroll.equal({
       predicate = function(total_scroll)
