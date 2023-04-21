@@ -58,3 +58,6 @@ o.foldenable = true
 
 -- Middle screen ;)
 o.scrolloff = 999
+
+-- enable cursorline
+o.cursorline = true

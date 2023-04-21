@@ -196,12 +196,12 @@ return {
     config = true,
     event = "VeryLazy",
   },
-  {
-    "freddiehaddad/feline.nvim",
-    config = function()
-      require("ui.feline")
-    end,
-  },
+  -- {
+  --   "freddiehaddad/feline.nvim",
+  --   config = function()
+  --     require("ui.feline")
+  --   end,
+  -- },
   -- {
   --   "b0o/incline.nvim",
   --   init = lazyLoad("incline.nvim"),
