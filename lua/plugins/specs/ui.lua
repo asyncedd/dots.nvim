@@ -1,10 +1,7 @@
 local lazyLoad = require("core.utils.lazyLoad")
 
 return {
-  {
-    "catppuccin/nvim",
-    build = ":CatppuccinCompile",
-  },
+  "catppuccin/nvim",
   {
     "echasnovski/mini.map",
     config = function()
