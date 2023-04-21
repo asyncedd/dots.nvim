@@ -12,5 +12,6 @@ require("catppuccin").setup({
   end,
   integrations = {
     mini = true,
+    illuminate = true,
   },
 })
