@@ -63,7 +63,8 @@ M.FileName = {
       self.lfilename = "[No Name]"
     end
   end,
-  hl = { fg = utils.get_highlight("Directory").fg },
+  -- hl = { fg = utils.get_highlight("Directory").fg },
+  hl = { fg = "bright_fg" },
 
   flexible = 2,
 
