@@ -29,9 +29,10 @@ local kind_icons = {
 vim.defer_fn(function()
   local lazy_require = require("snips.lazy-require").require_on_exported_call
   local cmp = require("cmp")
-  local cmp_autopairs = lazy_require("nvim-autopairs.completion.cmp")
 
-  require("nvim-autopairs").setup()
+  vim.defer_fn(function()
+    require("nvim-autopairs").setup()
+  end, 0)
 
   cmp.setup({
     snippet = {
