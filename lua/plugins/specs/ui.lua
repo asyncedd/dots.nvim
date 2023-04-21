@@ -92,8 +92,17 @@ return {
     event = "VimEnter",
     config = function()
       vim.schedule(function()
+        local drops = {
+          "stars",
+          "leaves",
+          "snow",
+          "xmas",
+          "spring",
+          "summer",
+        }
+
         require("drop").setup({
-          theme = "stars",
+          theme = drops[math.random(#drops)],
         })
       end)
     end,
