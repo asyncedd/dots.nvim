@@ -14,12 +14,29 @@ function Lazy:load_plugins()
   local function load_plugins_list()
     local plugins_list = {}
     for _, filename in ipairs(vim.fn.glob(modules_dir .. '/plugins/*.lua', false, true)) do
-      if vim.loop.fs_stat(filename).type == "file" then
-        table.insert(plugins_list, filename)
+      local stat = vim.loop.fs_stat(filename)
+      if stat and stat.type == "file" then
+        local bytecode_filename = vim.fn.stdpath('cache') .. '/plugins/' .. filename:sub(#modules_dir + 2) .. "c"
+        local bytecode_stat = vim.loop.fs_stat(bytecode_filename)
+        if bytecode_stat and bytecode_stat.type == "file" and bytecode_stat.mtime.sec >= stat.mtime.sec then
+          table.insert(plugins_list, bytecode_filename)
+        else
+          -- Create the cache directory if it doesn't exist
+          local cache_dir = vim.fn.stdpath('cache') .. '/plugins/'
+          if not vim.loop.fs_stat(cache_dir) then
+            vim.loop.fs_mkdir(cache_dir)
+          end
+          -- Compile the Lua file to bytecode and update the modification time of the bytecode file
+          local cmd = string.format("luac -o %s %s", bytecode_filename, filename)
+          os.execute(cmd)
+          vim.loop.fs_utime(bytecode_filename, stat.atime.sec, stat.mtime.sec)
+          table.insert(plugins_list, bytecode_filename)
+        end
       end
     end
     return plugins_list
   end
+
 
   local function save_plugins_list(plugins_list)
     local file = io.open(cache_file, 'w')
@@ -67,7 +84,7 @@ function Lazy:load_plugins()
   -- Create a coroutine to load the plugins
   local co = coroutine.create(function()
     local results = {}
-    for _, m in pairs(plugins_list) do
+    for _, m in ipairs(plugins_list) do
       local modules = require(m:sub(#modules_dir - 6, -5))
       if type(modules) == "table" then
         for name, conf in pairs(modules) do
@@ -78,14 +95,13 @@ function Lazy:load_plugins()
     coroutine.yield(results)
   end)
 
+
   -- Await the coroutine and add the results to the self.modules table
   local ok, results = coroutine.resume(co)
   if not ok then
     error(results)
   end
-  for _, config in ipairs(results) do
-    table.insert(self.modules, config)
-  end
+  vim.list_extend(self.modules, results)
 end
 
 function Lazy:load_lazy()
