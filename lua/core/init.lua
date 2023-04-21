@@ -15,9 +15,6 @@ require("user.options")
 package.path = vim.fn.stdpath("config") .. "/lua/plugins/configs/?.lua;" .. package.path
 package.path = vim.fn.stdpath("config") .. "/lua/plugins/configs/?/init.lua;" .. package.path
 
--- Bootstrap Lazy.nvim
-require("core.bootstrap")
-
 -- Initalize lazy.nvim
 require("plugins")
 
