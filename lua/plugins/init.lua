@@ -180,6 +180,12 @@ plugins[20] = {
   },
 }
 
+plugins[21] = {
+  "glepnir/dashboard-nvim",
+  event = "VimEnter",
+  config = true,
+}
+
 require("lazy").setup({
   plugins,
 }, {
