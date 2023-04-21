@@ -40,6 +40,18 @@ plugins[4] = {
   init = lazyLoad("fidget.nvim"),
 }
 
+plugins[5] = {
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+    "hrsh7th/cmp-buffer",
+  },
+  config = require("completion.cmp"),
+}
+
 require("lazy").setup({
   plugins,
 }, {
