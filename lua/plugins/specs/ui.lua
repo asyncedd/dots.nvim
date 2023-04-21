@@ -137,4 +137,9 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "tamton-aquib/zone.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
