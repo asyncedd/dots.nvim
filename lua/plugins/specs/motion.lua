@@ -315,4 +315,34 @@ return {
       { "<leader>is", "<cmd>ISwap<cr>" },
     },
   },
+  {
+    "woosaaahh/sj.nvim",
+    config = true,
+    keys = {
+      {
+        "<leader><leader>s",
+        function()
+          require("sj").run()
+        end,
+      },
+      {
+        "<A-,>",
+        function()
+          require("sj").prev_match()
+        end,
+      },
+      {
+        "<A-;>",
+        function()
+          require("sj").next_match()
+        end,
+      },
+      {
+        "<leader>su",
+        function()
+          require("sj").redo()
+        end,
+      },
+    },
+  },
 }
