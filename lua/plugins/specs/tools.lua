@@ -166,4 +166,14 @@ tools[11] = {
   event = { "VeryLazy" },
 }
 
+tools[12] = {
+  "kdheepak/lazygit.nvim",
+  keys = {
+    { "<leader>lg", "<cmd>LazyGit<cr>" },
+  },
+  cmd = {
+    "LazyGit",
+  },
+}
+
 return tools
