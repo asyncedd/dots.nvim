@@ -130,7 +130,7 @@ plugins[16] = {
 
 plugins[17] = {
   "echasnovski/mini.cursorword",
-  config = mini.cursorword,
+  config = mini.cursorWord,
   event = "BufReadPost",
 }
 
@@ -149,7 +149,7 @@ plugins[19] = {
 plugins[20] = {
   "NvChad/nvim-colorizer.lua",
   config = true,
-  event = "BufReadPost",
+  event = "VeryLazy",
 }
 
 require("lazy").setup({
