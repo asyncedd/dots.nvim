@@ -1,9 +1,4 @@
-local icons = {
-  Error = " ",
-  Warn = " ",
-  Hint = " ",
-  Info = " ",
-}
+local icons = require("core.utils.icons.diagnostics")
 
 local mason_lspconfig = require("mason-lspconfig")
 local mason = require("mason")
