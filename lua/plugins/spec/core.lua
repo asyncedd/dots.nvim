@@ -1,9 +1,5 @@
-local M = {}
-
-local core = table.insert
-
-core(M, {
+local M = {
   "nvim-tree/nvim-web-devicons"
-})
+}
 
 return M
