@@ -27,7 +27,7 @@ local M = {
   incsearch = true, -- Show search results whilst searching.
   infercase = true -- Infer letter cases.
   smartcase = true -- Don't ignore case if the pattern has an uppercase letter in it.
-  smartcase = true -- Get smart indents.
+  smartindent = true -- Get smart indents.
 }
 
 return M
