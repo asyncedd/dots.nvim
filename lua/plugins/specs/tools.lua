@@ -37,13 +37,7 @@ return {
           require("telescope.builtin").buffers()
         end,
       },
-      {
-        "<leader>ff",
-        function()
-          require("telescope.builtin").help_tags()
-        end,
-      },
-      { "<leader>fr", "<cmd>Telescope frecency workspace=CWD<cr>" },
+      { "<leader>ff", "<cmd>Telescope frecency workspace=CWD<cr>" },
       { "<leader>fs", "<cmd>Telescope persisted<cr>" },
     },
     config = function()
