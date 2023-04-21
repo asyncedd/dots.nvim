@@ -56,12 +56,12 @@ return {
   {
     "j-hui/fidget.nvim",
     config = true,
-    event = "BufReadPre"
+    event = "BufReadPost"
   },
   {
     "folke/trouble.nvim",
     config = true,
-    event = "User LspAttachPre"
+    event = "BufReadPost"
   },
   {
     "glepnir/lspsaga.nvim",
@@ -69,8 +69,8 @@ return {
       "nvim-tree/nvim-web-devicons",
       "nvim-treesitter/nvim-treesitter",
     },
+    config = function ()
+      require("lspsaga").setup()
+    end,
   },
-  config = function ()
-    require("lspsaga").setup()
-  end
 }
