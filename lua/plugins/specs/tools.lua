@@ -4,5 +4,6 @@ return {
     keys = {
       { "<leader>u", vim.cmd.UndotreeToggle },
     },
+    event = "BufReadPost",
   },
 }
