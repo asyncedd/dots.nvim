@@ -28,8 +28,12 @@ return {
     },
     workspace = {
       library = library,
+      checkThirdParty = false,
       maxPreload = 100000,
       preloadFileSize = 10000,
+    },
+    completion = {
+      callSnippet = "Both",
     },
   },
 }
