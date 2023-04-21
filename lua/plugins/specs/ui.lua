@@ -133,5 +133,10 @@ return {
     config = true,
     init = neovide("flirt.nvim")
   },
+  {
+    "folke/todo-comments.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
 

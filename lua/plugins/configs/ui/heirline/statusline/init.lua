@@ -47,6 +47,7 @@ local DefaultStatusLine = {
   Align,
   Align,
   Align,
+  Space,
   {
     File.FileType,
     hl = { bg = "normal" },

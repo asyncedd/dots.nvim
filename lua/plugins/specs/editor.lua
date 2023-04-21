@@ -166,5 +166,28 @@ return {
     },
     config = true,
   },
+  {
+    "nvim-neorg/neorg",
+    config = function()
+      require("neorg").setup({
+      load = {
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.norg.dirman"] = {
+          config = {
+            workspaces = {
+              notes = "~/notes",
+            },
+          },
+        }, -- Manages Neorg workspaces
+      },
+    })
+    end,
+    ft = { "norg" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
 }
 
