@@ -21,8 +21,10 @@ return function()
     File.FileType, Space, Scrollbar.Ruler, Space, Scrollbar.ScrollBar,
   }
 
-  local Bufferline = {
-    Bufferline.BufferLine
+  local bufferline = {
+    require("plugins.configs.ui.heirline.tablineoffset"),
+    Bufferline,
+    require("plugins.configs.ui.heirline.tablist").Tabpages,
   }
 
   local StatusLines = {
@@ -66,5 +68,6 @@ return function()
 
   heirline.setup({
     statusline = StatusLines,
+    tabline = bufferline
   })
 end
