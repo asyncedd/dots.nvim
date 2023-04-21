@@ -31,6 +31,9 @@ require("catppuccin").setup({
       ["@lsp.type.variable"] = { fg = cp.pink },
       ["@lsp.type.function"] = { fg = cp.blue },
 
+      ["@variable"] = { fg = cp.pink },
+      ["@parameter"] = { fg = cp.red },
+
     }
   end,
   color_overrides = {

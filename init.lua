@@ -19,10 +19,14 @@ package.path = config .. "/lua/plugins/configs/?.lua;" .. config .. "/lua/plugin
 
 require("plugins")
 
--- vim.api.nvim_command("colorscheme catppuccin")
+-- vim.api.nvim_command("colorscheme tokyonight")
 vim.api.nvim_command("colorscheme catppuccin")
+-- vim.api.nvim_command("colorscheme onedark")
+-- vim.api.nvim_command("colorscheme nightfox")
+-- vim.api.nvim_command("colorscheme gruvbox-material")
 -- vim.api.nvim_command("colorscheme kanagawa")
 
 vim.schedule(function()
   require("core.after")
 end)
+
