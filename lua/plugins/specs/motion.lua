@@ -266,4 +266,18 @@ return {
       },
     },
   },
+  {
+    "mizlan/iswap.nvim",
+    config = function()
+      require("motion.iswap")
+    end,
+    cmd = {
+      "ISwap",
+      "ISwapWith",
+      "ISwapNode",
+    },
+    keys = {
+      { "<leader>is", "<cmd>ISwap<cr>" },
+    },
+  },
 }
