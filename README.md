@@ -57,6 +57,14 @@ TODO Redo it once ~~I get it to be more faster (troll)~~ Unlazy
 029.327  000.660: first screen update
 029.330  000.003: --- NVIM STARTED ---
 ```
+* `nvim init.lua` - [source](https://github.com/asyncedd/dots.nvim/blob/master/edit.log)
+```
+034.959  000.021: VimEnter autocommands
+034.990  000.030: UIEnter autocommands
+034.992  000.002: before starting main loop
+036.897  001.905: first screen update
+036.900  000.003: --- NVIM STARTED ---
+```
 ~~As you can see, my Neovim configuration is FASTER than `nvim --clean`. This is because, I disabled unneeded RTP (runtime plugins) which took `125ms+`. That's 1.2 seconds! In my case, I have **24** plugins. I lazy loaded them so, it's blazingly fast!~~
 As I've been adding more plugins (LSP, Completion etc...) It's a bit slower now. But it's quite fast though!
 

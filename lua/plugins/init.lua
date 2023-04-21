@@ -31,7 +31,7 @@ plugins[3] = {
       config = function()
         require("lsp.mason")
       end,
-      event = "BufReadPre",
+      -- event = "BufReadPre",
     },
     "folke/neodev.nvim",
   }
