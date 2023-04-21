@@ -23,12 +23,12 @@ It had optimized my workspace and, improve my productivity.
 ## 🤨 Crash course: Installing
 To install this configuration, you need a Neovim build. You can use your favorite package manager or, [Install from source](https://dev.to/asyncedd/building-neovim-from-source-1794).
 Then clone this repository.
-For *Nix (Linux/MacOS) systems:
+# For *Nix (Linux/MacOS) systems:
 ```bash
 mkdir ~/.config/nvim/
 git clone https://github.com/asycnedd/nvim.git ~/.config/nvim/
 ```
-For Windows systems:
+# For Windows systems:
 ```bash
 git clone https://github.com/asyncedd/nvim.git ~/AppData/Local/nvim/
 ```
