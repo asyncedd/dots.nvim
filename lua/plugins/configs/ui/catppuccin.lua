@@ -10,5 +10,8 @@ require("catppuccin").setup({
       ["@variable"] = { fg = ctp.pink },
     }
   end,
+  integrations = {
+    mini = true,
+  },
 })
 
