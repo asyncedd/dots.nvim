@@ -58,13 +58,13 @@ local plugins = {
     build = ":TSUpdate",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   },
-  {
-    "andymass/vim-matchup",
-    config = function()
-     require("editor.matchup")
-    end,
-    init = lazyLoad("vim-matchup"),
-  },
+  -- {
+  --   "andymass/vim-matchup",
+  --   config = function()
+  --    require("editor.matchup")
+  --   end,
+  --   init = lazyLoad("vim-matchup"),
+  -- },
   {
     "neovim/nvim-lspconfig",
     init = lazyLoad("nvim-lspconfig"),
@@ -141,7 +141,7 @@ local plugins = {
   },
   {
     "rebelot/heirline.nvim",
-    event = "BufReadPost",
+    init = lazyLoad("heirline.nvim"),
     config = function()
       require("ui.heirline")
     end,
@@ -278,6 +278,28 @@ local plugins = {
   {
     "TimUntersberger/neogit",
     cmd = { "Neogit" },
+  },
+  {
+    "giusgad/pets.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "giusgad/hologram.nvim",
+    },
+    config = true,
+    cmd = {
+      "PetsNew",
+      "PetsNewCustom",
+      "PetsList",
+      "PetsKill",
+      "PetsKillAll",
+      "PetsRemove",
+      "PetsRemoveAll",
+      "PetsPauseToggle",
+      "PetsHideToggle",
+      "PetsIdleToggle",
+      "PetsSleepToggle",
+    },
+    enabled = false,
   },
 }
 
