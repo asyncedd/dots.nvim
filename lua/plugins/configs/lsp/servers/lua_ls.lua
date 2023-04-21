@@ -14,13 +14,8 @@ return {
       globals = {
         "vim",
       },
-      neededFileStatus = {
-        ["codestyle-check"] = "Any",
-      },
-      enable = true,
     },
     completion = {
-      displayContext = 100,
       keywordSnippet = "Both",
       workspaceWord = true,
     },
@@ -46,13 +41,6 @@ return {
         indent_size = "2",
         continuation_indent_size = "2",
       },
-    },
-    hint = {
-      enable = true,
-    },
-    semantic = {
-      enable = true,
-      keyword = true,
     },
   },
 }

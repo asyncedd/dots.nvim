@@ -25,7 +25,12 @@ editor[1] = {
     require("editor.treesitter")
   end,
   build = ":TSUpdate",
-  cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+  cmd = {
+    "TSInstall",
+    "TSBufEnable",
+    "TSBufDisable",
+    "TSModuleInfo",
+  },
 }
 
 editor[2] = {
@@ -78,10 +83,6 @@ editor[3] = {
       config = true,
       dependencies = {
         "nvim-lua/plenary.nvim",
-        {
-          "jcdickinson/http.nvim",
-          build = "cargo build --workspace --release",
-        },
       },
     },
     {
@@ -120,28 +121,28 @@ editor[5] = {
       function()
         require("spider").motion("w")
       end,
-      { "n", "o", "x" },
+      mode = { "n", "o", "x" },
     },
     {
       "e",
       function()
         require("spider").motion("e")
       end,
-      { "n", "o", "x" },
+      mode = { "n", "o", "x" },
     },
     {
       "b",
       function()
         require("spider").motion("b")
       end,
-      { "n", "o", "x" },
+      mode = { "n", "o", "x" },
     },
     {
       "ge",
       function()
         require("spider").motion("ge")
       end,
-      { "n", "o", "x" },
+      mode = { "n", "o", "x" },
     },
   },
 }
@@ -273,36 +274,12 @@ editor[15] = {
 }
 
 editor[16] = {
-  "ThePrimeagen/refactoring.nvim",
-  config = function()
-    require("editor.refactoring")
-  end,
-  event = "BufWritePre",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-  },
-}
-
-editor[17] = {
   "folke/which-key.nvim",
   event = "VeryLazy",
   config = true,
 }
 
 editor[18] = {
-  "mrjones2014/legendary.nvim",
-  config = true,
-  dependencies = {
-    "stevearc/dressing.nvim",
-    "nvim-telescope/telescope.nvim",
-  },
-  keys = {
-    { "<leader>fk", "<cmd>Legendary<cr>" },
-  },
-}
-
-editor[19] = {
   "echasnovski/mini.surround",
   keys = {
     "<leader>sa",
@@ -317,7 +294,7 @@ editor[19] = {
   end,
 }
 
-editor[20] = {
+editor[19] = {
   "numToStr/Comment.nvim",
   config = function()
     require("editor.Comment")
@@ -336,7 +313,7 @@ editor[20] = {
   },
 }
 
-editor[21] = {
+editor[20] = {
   "echasnovski/mini.ai",
   config = function()
     require("editor.ai")
@@ -347,7 +324,7 @@ editor[21] = {
   },
 }
 
-editor[22] = {
+editor[21] = {
   "echasnovski/mini.bracketed",
   keys = {
     "[",
@@ -358,7 +335,7 @@ editor[22] = {
   end,
 }
 
-editor[23] = {
+editor[22] = {
   "echasnovski/mini.splitjoin",
   keys = { "gS" },
   config = function()

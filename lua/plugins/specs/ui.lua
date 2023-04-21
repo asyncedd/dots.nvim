@@ -174,4 +174,21 @@ ui[12] = {
   init = lazyLoad("mini.map"),
 }
 
+ui[13] = {
+  "echasnovski/mini.indentscope",
+  event = {
+    "CursorMoved",
+    "VeryLazy",
+  },
+  config = function()
+    require("ui.indentscope")
+  end,
+  keys = {
+    "<leader>ii",
+    "<leader>ai",
+    "[i",
+    "]i",
+  },
+}
+
 return ui
