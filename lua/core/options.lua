@@ -19,6 +19,9 @@ o("clipboard", "unnamed,unnamedplus", {}) -- Let's sync clipboards across platfo
 o("showtabline", 2, {})
 vim.api.nvim_command([[au FileType * if index(['wipe', 'delete'], &bufhidden) >= 0 | set nobuflisted | endif]])
 
+-- For vim-matchup
+vim.g.matchup_matchparen_offscreen = { method = "popup" }
+
 -- =======================================
 -- 2. Editing options.
 -- =======================================
@@ -39,10 +42,9 @@ o("tabstop", 2, {}) -- Insert two tabs per <TAB>
 o("wrap", true, {}) -- Show long lines as multiple lines.
 
 -- 2.4 Folding.
-o("foldcolumn", "1", {})
-o("foldlevel", 99, {})
-o("foldlevelstart", 99, {})
-o("foldenable", true, {})
+o("foldmethod", "expr", {})
+o("foldexpr", "nvim_treesitter#foldexpr()", {})
+o("foldenable", false, {})
 
 -- =======================================
 -- 3. UI related options.
