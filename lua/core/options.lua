@@ -40,6 +40,8 @@ o.foldcolumn = "1"
 o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
+o.showtabline = 2
+vim.cmd([[au FileType * if index(['wipe', 'delete'], &bufhidden) >= 0 | set nobuflisted | endif]])
 vim.diagnostic.config({
   underline = true,
   update_in_insert = false,

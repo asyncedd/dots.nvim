@@ -12,21 +12,33 @@ return function()
   local lspactive = require("ui.heirline.lsp")
   local diagnostics = require("ui.heirline.diagnostics")
   local git = require("ui.heirline.git")
+  local TablineOffset = require("ui.heirline.tablineoffset")
+  local Bufferline = require("ui.heirline.bufferline")
+  local Tabpage = require("ui.heirline.tablist")
+  require("ui.heirline.tablinepicker")
   -- local navic = require("ui.heirline.navic")
   require("heirline").load_colors(colors())
   local Space = { provider = " " }
   local Align = { provider = "%=" }
+  ViMode = utils.surround({ "", "" }, function(self) return self:mode_color() end, { ViMode })
 
   local DefaultStatusLine = {
-    utils.surround({ "", "" }, "bright_bg", {ViMode, Space,
+    utils.surround({ "", "" }, "bright_bg", {
+      ViMode, Space,
       filename, Space,
       git, Space,
       diagnostics, Space,
       lspactive
     }), Align,
     Align,
-    Align, Space, utils.surround({ "", "" }, function(self) return self:mode_color() end, {ruler, hl = {fg = 'black'}} ), Space, 
-    scrollbar, Space, filetype, Space
+    Align, Space, ruler, Space, scrollbar, Space,
+    Space, filetype, Space
+  }
+
+  local Tabline = {
+    TablineOffset,
+    Bufferline,
+    Tabpage,
   }
 
   local StatusLines = {
@@ -64,5 +76,8 @@ return function()
 
   DefaultStatusLine
 }
-  require("heirline").setup({ statusline = StatusLines })
+  require("heirline").setup({
+    statusline = StatusLines,
+    tabline = Tabline
+  })
 end
