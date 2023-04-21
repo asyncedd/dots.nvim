@@ -5,6 +5,8 @@ return function()
   local ViMode = require("ui.heirline.vimode")
   local filename = require("ui.heirline.filename")
   local filetype = require("ui.heirline.filetype")
+  -- local fileEncoding = require("ui.heirline.file_encoding")
+  local fileSize = require("ui.heirline.filesize")
   require("heirline").load_colors(colors())
   local Space = { provider = " " }
   local Align = { provider = "%=" }
@@ -12,7 +14,7 @@ return function()
   local DefaultStatusLine = {
     ViMode, Space, filename, Align,
     Align,
-    filetype
+    filetype, Space, fileSize
   }
 
   local StatusLines = {
