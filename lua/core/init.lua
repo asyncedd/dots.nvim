@@ -22,11 +22,6 @@ require("core.lazy")
 -- We could do this in the plugins spec, but let's take the finest control!
 require("plugins.loader")
 
--- Time to set out beautiful `catppuccin` colorscheme!
--- It's Clean, cute and customizable!
--- Perfect for our programming lives! As we need the highest quality coffee!
-vim.cmd("colorscheme catppuccin")
-
 -- Do some stuff that aren't required in our UI. (mappings, autocmd etc...)
 -- Also without blocking the main thread for the maximum efficiency.
 vim.schedule(function()

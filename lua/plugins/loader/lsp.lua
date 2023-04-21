@@ -16,24 +16,24 @@
 --   end
 -- })
 
-vim.schedule(function ()
-  require("lsp_signature").setup()
-end)
+vim.api.nvim_create_autocmd("BufReadPre", {
+  callback = function ()
+    require("lsp_signature").setup()
 
-local fidget_configuration = {
-  text = {
-    spinner = "dots"
-  }
-}
+    local fidget_configuration = {
+      text = {
+        spinner = "dots"
+      }
+    }
 
--- We never nest! (not really, we just did (-_-)
-vim.schedule(function ()
-  require("fidget").setup(fidget_configuration)
+    -- We never nest! (not really, we just did (-_-)
+    require("fidget").setup(fidget_configuration)
 
--- Setup trouble.nvim...
--- Wait! I though about some fancy component!
+    -- Setup trouble.nvim...
+    -- Wait! I though about some fancy component!
 
-  require("trouble").setup()
+    require("trouble").setup()
 
-end)
+  end
+})
 

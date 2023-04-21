@@ -2,17 +2,20 @@
 -- Where we load our eye-candy.
 
 -- Avoid expensive global searching, we already have it at home!
-local cats_in_line = vim.schedule
+local coroutineList = {}
 
 -- Load the colorscheme and Treesitter first.
 -- We love catppuccin, catppuccin is life.
 
 require("plugins.configs.ui.catppuccin")
--- Nvim.treesitter makes our highlighting beautiful.
 
-vim.defer_fn(function ()
-  require("plugins.configs.editor.treesitter")
-end, 0)
+-- Time to set out beautiful `catppuccin` colorscheme!
+-- It's Clean, cute and customizable!
+-- Perfect for our programming lives! As we need the highest quality coffee!
+vim.cmd("colorscheme catppuccin")
+
+-- Nvim.treesitter makes our highlighting beautiful.
+table.insert(coroutineList, coroutine.create(function() return require("plugins.configs.editor.treesitter") end))
 
 -- These are the options for mini.indentscope.
 local indentscope_opts = {
@@ -22,30 +25,63 @@ local indentscope_opts = {
   options = { try_as_border = true },
 }
 
-cats_in_line(function ()
+-- Heirline.nvim is a true minimalisitc statusline for Neovim.
 
-  -- Heirline.nvim is a true minimalisitc statusline for Neovim.
+vim.api.nvim_create_autocmd({ "BufReadPre" }, {
+  callback = function ()
+    require("plugins.configs.ui.heirline")
+  end
+})
 
-  require("plugins.configs.ui.heirline")
+-- Load indent_blankline and mini.indentscope for a clean and, aesthestically pleasing indent visualizer.
+vim.api.nvim_create_autocmd("BufReadPre", {
+  callback = function ()
+    require("indent_blankline").setup()
+  end
+})
 
-  -- Load indent_blankline and mini.indentscope for a clean and, aesthestically pleasing indent visualizer.
-  require("indent_blankline").setup()
+vim.api.nvim_create_autocmd("BufReadPre", {
+  callback = function ()
+    require("mini.indentscope").setup(indentscope_opts)
+  end
+})
 
-  require("mini.indentscope").setup(indentscope_opts)
+-- Colorizer is a beautiful color-code visualizer that is blazingly fast, if the Primeagen were to say it.
+vim.api.nvim_create_autocmd("BufReadPre", {
+  callback = function ()
+    require("colorizer").setup({})
+  end
+})
 
-  -- Colorizer is a beautiful color-code visualizer that is blazingly fast, if the Primeagen were to say it.
-  require("colorizer").setup({})
+-- CCCC.nvim is a powerful color picker for those that are picky! (me)
+vim.api.nvim_create_autocmd("BufReadPre", {
+  callback = function ()
+    require("ccc").setup()
+  end
+})
 
-  -- CCCC.nvim is a powerful color picker for those that are picky! (me)
-  require("ccc").setup()
+-- Pretty-fold.nvim is a clean and cute, aesthetically pleasing alternative to the ugly builtin visualizer.
 
-  -- Pretty-fold.nvim is a clean and cute, aesthetically pleasing alternative to the ugly builtin visualizer.
+vim.api.nvim_create_autocmd("BufReadPre", {
+  callback = function ()
+    require("pretty-fold").setup({})
+  end
+})
 
-  require("pretty-fold").setup({})
+-- Mini.cursorword which visualizes the current word under the cursor.
 
-  -- Mini.cursorword which visualizes the current word under the cursor.
+vim.api.nvim_create_autocmd("BufReadPre", {
+  callback = function ()
+    require("mini.cursorword").setup({})
+  end
+})
 
-  require("mini.cursorword").setup({})
-
-end)
+local results = {}
+for _, co in ipairs(coroutineList) do
+  local ok, result = coroutine.resume(co)
+  if not ok then
+    error(result)
+  end
+  table.insert(results, result)
+end
 
