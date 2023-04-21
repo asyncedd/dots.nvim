@@ -24,7 +24,7 @@ local icons = require("core.utils.icons.lazy")
 -- Now we're going to initalize lazy.nvim
 require("lazy").setup({
   -- First, we're going to get the specs table from a directory.
-  { import = "plugins.specs" },
+  require("plugins.specs"),
   -- Next is the options for lazy.nvim
 }, {
     performance = {
