@@ -13,9 +13,17 @@
 -- }
 -- 
 require("plugins.loader.ui")
--- Load Editor plugins later.
--- Nonblocking -> {
---  Comment (modern commentary.vim)
--- }
---
-require("plugins.loader.editor")
+
+-- Non blocking in a vim.schedule function.
+vim.schedule(function ()
+  -- Load Editor plugins later.
+  -- Nonblocking -> {
+  --  Comment (modern commentary.vim)
+  -- }
+  --
+  require("plugins.loader.editor")
+
+  -- Completion for the command line.
+
+  require("plugins.loader.cmp_cmd")
+end)

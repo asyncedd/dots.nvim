@@ -5,20 +5,20 @@ local treesitter = require("nvim-treesitter.configs")
 -- local markid_config = require("markid").colors
 
 -- Set the Markid's colors.
--- markid_config = {
-  -- bright = {
-    -- "#f5c2e7",
-    -- "#fab387",
-    -- "#f9e2af",
-    -- "#f5c0e8",
-    -- "#94e2d5",
-    -- "#89dceb",
-    -- "#74c7ec",
-    -- "#b4befe",
-    -- "#cba6f7",
-    -- "#c5e1a5",
-  -- },
--- }
+markid_config = {
+  bright = {
+    "#f5c2e7",
+    "#fab387",
+    "#f9e2af",
+    "#f5c0e8",
+    "#94e2d5",
+    "#89dceb",
+    "#74c7ec",
+    "#b4befe",
+    "#cba6f7",
+    "#c5e1a5",
+  },
+}
 
 -- Configure nvim-treesitter
 treesitter.setup({
