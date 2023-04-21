@@ -52,9 +52,7 @@ return {
       "folke/neodev.nvim",
       "ray-x/lsp_signature.nvim",
     },
-    config = function ()
-      require("plugins.configs.lsp.lspconfig")
-    end,
+    config = require("plugins.configs.lsp.lspconfig"),
     event = "BufReadPost",
   },
   {
