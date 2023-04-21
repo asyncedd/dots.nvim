@@ -84,7 +84,11 @@ return {
       require("plugins.configs.lsp.lspconfig")
     end,
     dependencies = {
-      "williamboman/mason.nvim",
+      {
+        "williamboman/mason.nvim",
+        config = true,
+        cmd = "Mason",
+      },
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
@@ -155,6 +159,20 @@ return {
       { "<leader>ff", "<cmd>Telescope find_files<CR>" }
     }
   },
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons"
+    },
+    config = function ()
+      require("plugins.configs.tools.tree")
+    end,
+    event = "VeryLazy"
+  },
+  -- {
+  --   "ms-jpq/chadtree",
+  --   event = "VeryLazy",
+  -- },
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
