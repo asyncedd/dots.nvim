@@ -7,13 +7,6 @@ tools[1] = {
   end,
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "debugloop/telescope-undo.nvim",
-    {
-      "jedrzejboczar/possession.nvim",
-      config = function()
-        require("possession").setup({})
-      end,
-    },
     {
       "AckslD/nvim-neoclip.lua",
       dependencies = {
@@ -35,6 +28,7 @@ tools[1] = {
         })
       end,
     },
+    "olimorris/persisted.nvim",
   },
   event = "VeryLazy",
 }
@@ -162,6 +156,14 @@ tools[10] = {
     { "<leader>gb", "<cmd>FzfLua git_bcommits<cr>" },
     { "<leader>br", "<cmd>FzfLua git_branches<cr>" },
   },
+}
+
+tools[11] = {
+  "olimorris/persisted.nvim",
+  config = function()
+    require("tools.persisted")
+  end,
+  event = { "VeryLazy" },
 }
 
 return tools

@@ -12,6 +12,12 @@ require("nvim-treesitter.configs").setup({
     use_languagetree = true,
   },
 
+  -- Treesitter powered indents.
+  indent = {
+    enable = true,
+  },
+
+  -- Rainbow parentheses
   rainbow = {
     enable = true,
     -- Which query to use for finding delimiters
