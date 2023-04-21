@@ -12,11 +12,10 @@ M.setup = function()
     pattern = "VeryLazy",
     callback = function ()
       require("mappings")
-      require("core.autocmds")
-
     end
   })
 
+  require("core.autocmds")
 
   vim.api.nvim_command("colorscheme " .. colorscheme)
   -- require(colorscheme).load()
