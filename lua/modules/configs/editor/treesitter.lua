@@ -23,6 +23,8 @@ return function()
     },
     rainbow = {
       enable = true,
+      query = "rainbow-parens",
+      stragedy = require("ts-rainbow.strategy.global")
     },
     playground = {
       enable = true,
