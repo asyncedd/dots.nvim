@@ -140,7 +140,7 @@ return {
       { "<M-BS>", function() require("readline").backward_kill_word() end, mode = { "i" } },
       { "<C-w>", function() require("readline").unix_word_rubout() end, mode = { "i" } },
       { "<C-d>", "<Delete>", mode = { "i" } },
-      { "<C-h>", "<BS", mode = { "i" } },
+      { "<C-h>", "<BS>", mode = { "i" } },
       { "<C-a>", function() require("readline").beginning_of_line() end, mode = { "i" } },
       { "<M-m>", function() require("readline").back_to_indentation() end, mode = { "i" } },
       { "<C-e>", function() require("readline").end_of_line() end, mode = { "i" } },
