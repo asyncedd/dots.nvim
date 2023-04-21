@@ -1,21 +1,10 @@
 return {
   -- Comment
-  "numToStr/Comment.nvim",
-  -- UFO
-  -- {
-  --   "kevinhwang91/nvim-ufo",
-  --   opts = {
-  --     provider_selector = function(bufnr, filetype, buftype)
-  --       return {"treesitter", "indent"}
-  --     end
-  --   },
-  --   config = true,
-  --   dependencies = {
-  --     "kevinhwang91/promise-async"
-  --   },
-  --   event = "BufReadPost",
-  -- },
-
+  {
+    "numToStr/Comment.nvim",
+    config = true,
+    event = "BufReadPost",
+  },
   -- Gitsigns!
   {
     "lewis6991/gitsigns.nvim",
@@ -65,6 +54,42 @@ return {
       "andymass/vim-matchup",
       "David-Kunz/markid",
     },
-    -- event = "BufReadPost",
+    config = function ()
+      require("plugins.configs.editor.treesitter")
+    end,
+    event = "BufReadPost",
+  },
+  -- TrailBlazer.nvim
+  {
+    "LeonHeidelbach/trailblazer.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
+  -- I got harpooned, blazingly fast!
+  {
+    "theprimeagen/harpoon",
+    config = function ()
+      local mark = require("harpoon.mark")
+      local ui = require("harpoon.ui")
+      local keymap = vim.keymap.set
+
+      keymap("n", "<leader>a", mark.add_file)
+      keymap("n", "<leader>e", ui.toggle_quick_menu)
+
+      keymap("n", "<C-h>", function () ui.nav_file(1) end)
+      keymap("n", "<C-t>", function () ui.nav_file(2) end)
+      keymap("n", "<C-n>", function () ui.nav_file(3) end)
+      keymap("n", "<C-s>", function () ui.nav_file(4) end)
+    end,
+    event = "VeryLazy"
+  },
+  -- IncRename
+  {
+    "smjonas/inc-rename.nvim",
+    config = function ()
+      require("inc_rename").setup()
+      vim.keymap.set("n", "<leader>rn", ":IncRename ")
+    end,
+    event = "VeryLazy",
   },
 }

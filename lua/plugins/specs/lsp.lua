@@ -33,6 +33,9 @@ return {
         },
       },
     },
+    config = function ()
+      require("plugins.configs.completion.cmp")
+    end
   },
   -- LSP.
   {
@@ -45,9 +48,21 @@ return {
       "folke/neodev.nvim",
       "ray-x/lsp_signature.nvim",
     },
+    config = function ()
+      require("plugins.configs.lsp.lspconfig")
+    end,
+    event = "BufReadPre",
   },
-  "j-hui/fidget.nvim",
-  "folke/trouble.nvim",
+  {
+    "j-hui/fidget.nvim",
+    config = true,
+    event = "BufReadPre"
+  },
+  {
+    "folke/trouble.nvim",
+    config = true,
+    event = "User LspAttachPre"
+  },
   {
     "glepnir/lspsaga.nvim",
     dependencies = {
@@ -55,4 +70,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
+  config = function ()
+    require("lspsaga").setup()
+  end
 }
