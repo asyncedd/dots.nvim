@@ -2,6 +2,11 @@ require("catppuccin").setup({
   dim_inactive = {
     enable = true,
   },
+  compile = {
+    enabled = true,
+    path = vim.fn.stdpath("cache") .. "/catppuccin",
+    suffix = "_compiled",
+  },
   color_overrides = {
     mocha = {
       rosewater = "#F5E0DC",
