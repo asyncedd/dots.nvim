@@ -7,6 +7,10 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "debugloop/telescope-undo.nvim",
+      {
+        "jedrzejboczar/possession.nvim",
+        config = true,
+      },
     },
     event = "VeryLazy",
   },
