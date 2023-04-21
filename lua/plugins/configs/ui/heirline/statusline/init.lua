@@ -4,7 +4,7 @@ local conditions = require("heirline.conditions")
 local utils = require("heirline.utils")
 
 local Space = { provider = " " }
-local Align = { provider = "%=%" }
+local Align = { provider = "%=" }
 
 local DefaultStatusLines = {
   ViMode, Space, FileNames.FileNameBlock, Align,
