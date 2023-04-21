@@ -1,6 +1,3 @@
--- ============================Ignore ============================================
--- vim.go.loadplugins = false
--- ===================Please don't ignore this! :3 ===============================
 -- Call setup
 -- The setup module does:
 -- Set the options
@@ -9,4 +6,3 @@
 -- Add some autocmds and keymaps
 
 require("core")
-
