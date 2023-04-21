@@ -1,7 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "6821b3ae27a57f1f3cf8ed030e4a55d70d0c4e43" },
-  "flirt.nvim": { "branch": "main", "commit": "93eefd618963335242046e3336e6003082f2971c" },
   "flit.nvim": { "branch": "main", "commit": "980e80e8fe44caaeb9de501c8e97a559b17db2f4" },
+  "gitsigns.nvim": { "branch": "main", "commit": "76b71f74ce002119fce322df13bd21cc52c1d112" },
   "heirline.nvim": { "branch": "master", "commit": "b69415d912d466db17b8ee1eb777cc7f776a9286" },
   "indent-blankline.nvim": { "branch": "master", "commit": "018bd04d80c9a73d399c1061fa0c3b14a7614399" },
   "kanagawa.nvim": { "branch": "master", "commit": "4c8d48726621a7f3998c7ed35b2c2535abc22def" },
@@ -11,7 +11,6 @@
   "markid": { "branch": "main", "commit": "248a785900c29ee52ddf42aa096e9e3478739cb1" },
   "matchparen.nvim": { "branch": "main", "commit": "dc511ea561bb34c99d0fad9a6fd08bb0e4187a5e" },
   "mini.ai": { "branch": "main", "commit": "ce822c6e6fe3aaf7cb29874e669b2d96febc97e5" },
-  "mini.animate": { "branch": "main", "commit": "68ed56e0a730f8c69d1382e9ca9db7433565f421" },
   "mini.indentscope": { "branch": "main", "commit": "ff1e68b5c01426f9dfff3278dd1b10c9b5f000a1" },
   "nightfox.nvim": { "branch": "main", "commit": "5e9c8ca12f0bfefd958d3729ee2182499e7a6e73" },
   "nvim": { "branch": "main", "commit": "7c392fb5f27daa6addee050f7b7522718e8d9357" },
