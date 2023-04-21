@@ -16,8 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "asyncedd/apr",
-  "AstroNvim/astrocommunity",
-  { import = "astrocommunity.syntax.vim-cool" },
   { import = "apr.coding.autopairs" },
   { import = "apr.coding.tabout" },
   { import = "apr.coding.treesj" },
