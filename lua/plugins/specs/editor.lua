@@ -365,14 +365,6 @@ editor[19] = {
 }
 
 editor[20] = {
-  "echasnovski/mini.move",
-  event = "VeryLazy",
-  config = function()
-    require("editor.move")
-  end,
-}
-
-editor[21] = {
   "echasnovski/mini.align",
   config = function()
     require("mini.align").setup()
@@ -382,12 +374,12 @@ editor[21] = {
   },
 }
 
-editor[22] = {
+editor[21] = {
   "tpope/vim-repeat",
   event = "VeryLazy",
 }
 
-editor[23] = {
+editor[22] = {
   "abecodes/tabout.nvim",
   config = true,
   dependencies = {
