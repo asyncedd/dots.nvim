@@ -5,7 +5,7 @@ M.setup = function()
   require("core.options")
   require("core.lazy")
 
-  -- require "impatient"
+  require "impatient"
 
   -- Set some mappings for Neovim.
   require("core.keymaps")
