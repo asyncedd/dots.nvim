@@ -51,6 +51,7 @@ local DefaultStatusLine = {
     File.FileType,
     hl = { bg = "normal" },
   },
+  Space,
   Scrollbar.Ruler,
   Space,
   Scrollbar.ScrollBar
