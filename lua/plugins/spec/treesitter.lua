@@ -6,6 +6,7 @@ local M = {
       "David-Kunz/markid",
     },
     event = "BufReadPre",
+    piority = 1000,
   },
 }
 
