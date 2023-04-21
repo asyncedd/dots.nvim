@@ -20,3 +20,7 @@ vim.diagnostic.config({
 o.clipboard = "unnamedplus,unnamed"
 -- Enable cool undos :)
 o.undofile = true
+-- Enable undo levels
+o.undolevels = 10000
+-- Enable more undo stuff
+o.undoreload = 10000
