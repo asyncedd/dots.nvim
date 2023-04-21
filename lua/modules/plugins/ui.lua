@@ -18,10 +18,4 @@ table.insert(ui, {
   config = require("modules.configs.ui.indentscope")
 })
 
-table.insert(ui, {
-  "echasnovski/mini.map",
-  event = "BufReadPost",
-  config = require("modules.configs.ui.map")
-})
-
 return ui
