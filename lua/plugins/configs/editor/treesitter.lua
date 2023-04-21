@@ -1,21 +1,20 @@
-return function()
-  -- Checking if nvim-treesitter is installed properly.
-  -- Set the Markid's colors.
-  local markid_config = {
-    bright = {
-      "#f5c2e7",
-      "#fab387",
-      "#f9e2af",
-      "#f5c0e8",
-      "#94e2d5",
-      "#89dceb",
-      "#74c7ec",
-      "#b4befe",
-      "#cba6f7",
-      "#c5e1a5",
-    },
-  }
+-- Set the Markid's colors.
+local markid_config = {
+  bright = {
+    "#f5c2e7",
+    "#fab387",
+    "#f9e2af",
+    "#f5c0e8",
+    "#94e2d5",
+    "#89dceb",
+    "#74c7ec",
+    "#b4befe",
+    "#cba6f7",
+    "#c5e1a5",
+  },
+}
 
+local setupTreesitter = function()
   -- Configure nvim-treesitter
   require("nvim-treesitter.configs").setup({
 
@@ -89,4 +88,10 @@ return function()
       },
     },
   })
+end
+
+return function()
+  -- Checking if nvim-treesitter is installed properly.
+
+  setupTreesitter()
 end
