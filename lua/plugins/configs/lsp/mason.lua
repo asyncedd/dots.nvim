@@ -44,7 +44,7 @@ mlsp.setup_handlers({
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
 
-      settings = require("plugins.configs.lsp.servers.lua_ls"),
+      settings = require("lsp.servers.lua_ls"),
     })
   end,
 })

@@ -2,7 +2,7 @@ return {
   {
     "windwp/nvim-autopairs",
     config = function()
-      require("plugins.configs.coding.autopairs")
+      require("coding.autopairs")
     end,
     keys = {
       { "{", mode = { "i","c" } },
@@ -59,7 +59,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
     },
     config = function()
-      require("plugins.configs.coding.cmp")
+      require("coding.cmp")
     end,
   },
 }
