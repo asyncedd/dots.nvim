@@ -1,5 +1,7 @@
 local o = vim.opt
 
+vim.g.mapleader = " "
+
 -- 1. UI
 -- Enable line numbers.
 o.number = true
