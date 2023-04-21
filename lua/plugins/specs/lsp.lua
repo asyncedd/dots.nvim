@@ -85,6 +85,8 @@ return {
       automatic_installation = true,
     },
     config = true,
+    event = "BufReadPost",
+    priority = 75,
   },
   -- Fidget.nvim - a plugin to show the LSP loading stuff.
   {
@@ -106,7 +108,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     config = require("lsp.lspsaga"),
-    event = "BufReadPost",
+    event = "VeryLazy",
   },
   -- LSPSignature - show definations as you type!
   {
