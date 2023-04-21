@@ -50,7 +50,12 @@ return {
       "gcA",
     },
     dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        config = function()
+          require("coding.commentstring")
+        end,
+      },
     },
   },
   {
@@ -109,6 +114,7 @@ return {
       "lukas-reineke/cmp-rg",
       "andersevenrud/cmp-tmux",
       "hrsh7th/cmp-nvim-lua",
+      "ray-x/cmp-treesitter",
     },
     config = function()
       require("coding.cmp")

@@ -137,14 +137,11 @@ cmp.setup({
       keyword_length = 5,
     },
     {
+      name = "treesitter",
+      keyword_length = 5,
+    },
+    {
       name = "buffer",
-      option = {
-        get_bufnrs = function()
-          return vim.api.nvim_list_bufs()
-        end,
-        indexing_batch_size = 100,
-        indexing_batch_size = 150,
-      },
       keyword_length = 5,
     },
     {
