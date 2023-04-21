@@ -1,4 +1,5 @@
 local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+local groups = require("bufferline.groups")
 
 require("bufferline").setup({
   options = {
@@ -20,6 +21,8 @@ require("bufferline").setup({
         toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
       },
       items = {
+        groups.builtin.pinned:with({ icon = "" }),
+        groups.builtin.ungrouped,
         {
           name = "Tests", -- Mandatory
           -- highlight = { underline = true, sp = "blue" }, -- Optional
@@ -67,6 +70,12 @@ require("bufferline").setup({
         text = "File Explorer",
         highlight = "Directory",
         separator = true, -- use a "true" to enable the default, or set your own character
+      },
+      {
+        text = "UNDOTREE",
+        filetype = "undotree",
+        highlight = "PanelHeading",
+        separator = true,
       },
     },
     custom_areas = {

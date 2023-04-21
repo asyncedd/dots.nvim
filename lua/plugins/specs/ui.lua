@@ -133,8 +133,8 @@ return {
     end,
     keys = {
       { "<leader>fc", "<cmd>BufferLineTogglePin<cr>" },
-      { "<leader>gd", "<cmd>BufferLinePick<cr>" },
-      { "<leader>gD", "<cmd>BufferLinePickClose<cr>" },
+      { "<leader>gbp", "<cmd>BufferLinePick<cr>" },
+      { "<leader>gb", "<cmd>BufferLinePickClose<cr>" },
       { "<leader>g" .. vim.v.count, "<Cmd>BufferLineGoToBuffer " .. vim.v.count .. "<CR>" },
       { "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>" },
       { "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>" },
@@ -150,6 +150,10 @@ return {
       { "<leader>gb", "<cmd>BufferLineCyclePrev<cr>" },
       { "<leader>gl", "<cmd>BufferLineCycleNext<cr>" },
       { "<leader>gh", "<cmd>BufferLineCyclePrev<cr>" },
+      { "<tab>", "<cmd>BufferLineCycleNext<cr>" },
+      { "<S-tab>", "<cmd>BufferLineCyclePrev<cr>" },
+      { "[b", "<cmd>BufferLineMoveNext<cr>" },
+      { "]b", "<cmd>BufferLineMovePrev<cr>" },
     },
   },
   {
