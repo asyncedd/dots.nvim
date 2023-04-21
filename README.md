@@ -10,7 +10,7 @@ It had optimized my workspace and, improve my productivity.
 **Wait less, do more.**
 
 ## 🧱 A list of plugins
-* **[lazy.nvim 💤](https://github.com/folke/lazy.nvim)** - A featureful plugin manager. Post modern `vim-plug`!
+* [lazy.nvim 💤](https://github.com/folke/lazy.nvim) - A featureful plugin manager. Post modern `vim-plug`!
 * [Catppuccin ☕](https://github.com/catppuccin/nvim) - A *beautiful*, colorful colorscheme.
 * [Nvim-treesitter 🌳](https://github.com/nvim-treesitter/nvim-treesitter) - An additional abstract layer on top on the original Treesitter. (Actually 99% of it's users just use it for syntax highlighting)
 * [leap.nvim 🦘](https://github.com/ggandor/leap.nvim) - Super fast motion plugin! Leap across your code!
@@ -32,3 +32,8 @@ git clone https://github.com/asycnedd/nvim.git ~/.config/nvim/
 ```bash
 git clone https://github.com/asyncedd/nvim.git ~/AppData/Local/nvim/
 ```
+Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim). Then you can get a cup of [mocha ☕](https://github.com/catppuccin/nvim) while you wait. (Not that long btw)
+Then once it finished, you're done! (actually)
+
+## 😰 Quitting Nvim.
+You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
