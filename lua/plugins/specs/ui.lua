@@ -1,11 +1,8 @@
+local colorscheme = require("user.settings.colorscheme")
+
 return {
   -- Colorscheme
-  {
-    "catppuccin/nvim",
-    priority = 1000,
-    config = require("plugins.configs.ui.catppuccin"),
-    lazy = false,
-  },
+  colorscheme,
   -- Indent blanklines
   {
     "lukas-reineke/indent-blankline.nvim",
