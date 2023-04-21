@@ -273,6 +273,7 @@ return {
             "variable_declaration",
           })
         end,
+        mode = { "n", "v", "x" },
       },
     },
   },
