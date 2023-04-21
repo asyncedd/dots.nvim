@@ -18,42 +18,24 @@ return {
   },
   {
     "glepnir/dashboard-nvim",
-    opts = {
-      theme = "hyper",
-      config = {
-        week_header = {
-          enable = true,
-        },
-        shortcut = {
-          { desc = " Update", group = "@property", action = "Lazy update", key = "u" },
-          {
-            icon = " ",
-            icon_hl = "@variable",
-            desc = "Files",
-            group = "Label",
-            action = "Telescope find_files",
-            key = "f",
-          },
-          {
-            desc = " Apps",
-            group = "DiagnosticHint",
-            action = "Telescope app",
-            key = "a",
-          },
-          {
-            desc = " dotfiles",
-            group = "Number",
-            action = "Telescope dotfiles",
-            key = "d",
-          },
-        },
-      },
-    },
-    config = true,
-    event = "VimEnter",
+    config = function()
+      require("ui.dashboard")
+    end,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
+    init = function()
+      vim.api.nvim_create_autocmd({ "VimEnter" }, {
+        group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. "dashboard-nvim", {}),
+        callback = function()
+          local file = vim.fn.expand("%")
+          local condition = (file == "NvimTree_1" or file == "[lazy]" or file == "")
+          if (condition) then
+            require("lazy").load({ plugins = "dashboard-nvim" })
+          end
+        end
+      })
+    end
   },
   {
     "NvChad/nvim-colorizer.lua",
@@ -101,6 +83,7 @@ return {
         require("ui.kanagawa")
       end,
     },
+    "VonHeikemen/little-wonder",
   },
   {
     "folke/drop.nvim",

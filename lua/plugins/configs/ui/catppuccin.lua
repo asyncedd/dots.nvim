@@ -8,8 +8,7 @@ require("catppuccin").setup({
       FloatBorder = { bg = cp.crust, fg = cp.crust },
       VertSplit = { bg = cp.base, fg = cp.surface0 },
       CursorLineNr = { fg = cp.mauve, style = { "bold" } },
-      Pmenu = { bg = cp.crust, fg = "" },
-      PmenuSel = { bg = cp.surface0, fg = "" },
+      Pmenu = { bg = cp.base, fg = "" },
 
       TelescopeSelection = { bg = cp.surface0 },
       TelescopePromptCounter = { fg = cp.mauve, style = { "bold" } },
@@ -32,6 +31,7 @@ require("catppuccin").setup({
       ["@lsp.type.parameter"] = { fg = cp.red },
       ["@lsp.type.variable"] = { fg = cp.pink },
       ["@lsp.type.function"] = { fg = cp.blue },
+
     }
   end,
   color_overrides = {
@@ -102,8 +102,11 @@ require("catppuccin").setup({
     },
     cmp = true,
     treesitter = true,
+    ts_rainbow2 = true,
+    noice = true,
   },
   compile = {
     enabled = true,
   },
 })
+
