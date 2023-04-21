@@ -103,7 +103,7 @@ plugins[13] = {
 
 plugins[14] = {
   "echasnovski/mini.ai",
-  config = require("editor.miniai"),
+  config = mini.ai, 
   init = lazyLoad("mini.ai"),
 }
 
