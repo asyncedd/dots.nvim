@@ -16,7 +16,7 @@ return {
       show_trailing_blankline_indent = true,
     },
     config = function (_, opts)
-      require("indet_blankline").setup(opts)
+      require("indent_blankline").setup(opts)
     end,
     event = "BufReadPost"
   },
