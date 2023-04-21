@@ -5,11 +5,23 @@ My personal Neovim configuration
 
 ## 👋 Introduction
 This is my personal Neovim configuration as, I said.
-Well I've structured the file architecture to be easy as possible to maintain.
+In the configuration I prioritize the editing experience rather than speed and making it simple.
+Really, the thing that matters for Neovim configs are:
+- Customizability
+- Hackablity
+- The overall editing experience
+- Modulability
+- Speed
+
+Not gonna lie, startup time doesn't really matter for Neovim configurations. It's about the hackablity and the customizability of the editor.
+Copy-pasting stuff from this should be super easy, no nonsense spaggehti code and whatsoever.
 
 It had optimized my workspace and, improve my productivity.
 
-**Wait less, do more.**
+*Q 🙋 Why should I use this?*
+> A: Don't. Do-not. Please don't. For the love of god. If you just use someone else's config, you're not really gonna boost your productivity. Just use this to steal configs and the file tree, I don't mind :)
+
+**Think less, do more.**
 
 ## 🧱 A list of plugins
 * **[lazy.nvim 💤](https://github.com/folke/lazy.nvim)** - A featureful plugin manager. Post modern `vim-plug`!
