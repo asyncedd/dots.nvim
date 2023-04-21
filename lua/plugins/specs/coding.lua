@@ -1,32 +1,5 @@
 return {
   {
-    "altermo/npairs-integrate-upair",
-    config = function()
-      require("coding.autopairs")
-    end,
-    dependencies = {
-      "altermo/ultimate-autopair.nvim",
-      "windwp/nvim-autopairs",
-    },
-    event = {
-      "InsertEnter",
-      "CmdlineEnter",
-    },
-  },
-  {
-    "abecodes/tabout.nvim",
-    config = true,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-    after = {
-      "hrs7th/nvim-cmp",
-    },
-    event = {
-      "InsertEnter",
-    },
-  },
-  {
     "Wansmer/treesj",
     config = true,
     keys = {
@@ -103,6 +76,7 @@ return {
           "nvim-lua/plenary.nvim",
         },
         config = true,
+        enabled = false,
       },
       "hrsh7th/cmp-emoji",
       "chrisgrieser/cmp-nerdfont",
