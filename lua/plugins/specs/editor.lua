@@ -279,7 +279,7 @@ editor[16] = {
   config = true,
 }
 
-editor[18] = {
+editor[17] = {
   "echasnovski/mini.surround",
   keys = {
     "<leader>sa",
@@ -294,7 +294,7 @@ editor[18] = {
   end,
 }
 
-editor[19] = {
+editor[18] = {
   "numToStr/Comment.nvim",
   config = function()
     require("editor.Comment")
@@ -313,7 +313,7 @@ editor[19] = {
   },
 }
 
-editor[20] = {
+editor[19] = {
   "echasnovski/mini.ai",
   config = function()
     require("editor.ai")
@@ -324,7 +324,7 @@ editor[20] = {
   },
 }
 
-editor[21] = {
+editor[20] = {
   "echasnovski/mini.bracketed",
   keys = {
     "[",
@@ -335,7 +335,7 @@ editor[21] = {
   end,
 }
 
-editor[22] = {
+editor[21] = {
   "echasnovski/mini.splitjoin",
   keys = { "gS" },
   config = function()
