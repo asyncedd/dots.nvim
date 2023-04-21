@@ -24,16 +24,6 @@ return {
     },
   },
   {
-    "hrsh7th/nvim-insx",
-    event = {
-      "CmdlineEnter",
-      "InsertEnter",
-    },
-    config = function()
-      require("coding.insx")
-    end,
-  },
-  {
     "abecodes/tabout.nvim",
     config = true,
     keys = {
@@ -81,6 +71,7 @@ return {
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
       require("luasnip.loaders.from_lua").lazy_load({ paths = { "./luasnip" } })
+      require("coding.luasnip")
     end,
     dependencies = {
       {
