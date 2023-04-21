@@ -4,16 +4,6 @@ return {
     config = function()
       require("coding.autopairs")
     end,
-    keys = {
-      { "{", mode = { "i", "c" } },
-      { "}", mode = { "i", "c" } },
-      { "(", mode = { "i", "c" } },
-      { ")", mode = { "i", "c" } },
-      { "[", mode = { "i", "c" } },
-      { "]", mode = { "i", "c" } },
-      { "'", mode = { "i", "c" } },
-      { '"', mode = { "i", "c" } },
-    },
     dependencies = {
       "altermo/ultimate-autopair.nvim",
       "windwp/nvim-autopairs",
@@ -26,10 +16,6 @@ return {
   {
     "abecodes/tabout.nvim",
     config = true,
-    keys = {
-      { "<Tab>", mode = "i" },
-      { "<S-Tab>", mode = "i" },
-    },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
@@ -58,8 +44,6 @@ return {
       "gcc",
       "gbc",
       { "gc", mode = { "v", "n" } },
-      vim.v.count .. "gc",
-      vim.v.count .. "gb",
       { "gb", mode = { "v", "n" } },
       "gc0",
       "gco",

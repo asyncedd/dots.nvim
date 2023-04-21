@@ -165,18 +165,6 @@ return {
           require("harpoon.ui").nav_prev()
         end,
       },
-      {
-        "<leader>" .. vim.v.count .. "nn",
-        function()
-          require("harpoon.ui").nav_next()
-        end,
-      },
-      {
-        "<leader>" .. vim.v.count .. "np",
-        function()
-          require("harpoon.ui").nav_prev()
-        end,
-      },
     },
   },
   {
