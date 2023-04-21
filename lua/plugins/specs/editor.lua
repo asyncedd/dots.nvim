@@ -199,4 +199,8 @@ return {
       },
     },
   },
+  {
+    "echasnovski/mini.trailspace",
+    init = lazyLoad("mini.trailspace"),
+  },
 }

@@ -125,34 +125,36 @@ cmp.setup({
   sources = cmp.config.sources({
     {
       name = "nvim_lsp",
-      entry_filer = function(entry, ctx)
-        local kind = entry:get_kind()
-        local node = ts_utils.get_node_at_cursor()
+      options = {
+        entry_filer = function(entry, ctx)
+          local kind = entry:get_kind()
+          local node = ts_utils.get_node_at_cursor()
 
-        local line = ctx.cursor_line
-        local col = ctx.cursor.col
-        local char_before_cursor = string.sub(line, col - 1, col - 1)
+          local line = ctx.cursor_line
+          local col = ctx.cursor.col
+          local char_before_cursor = string.sub(line, col - 1, col - 1)
 
-        if node == "arguments" then
-          if kind == 22 then
-            return true
-          else
-            return false
+          if node == "arguments" then
+            if kind == 22 then
+              return true
+            else
+              return false
+            end
+          elseif char_before_cursor == "." then
+            if kind == 2 or kind == 5 then
+              return true
+            else
+              return false
+            end
+          elseif string.match(line, "^%s*%w*$") then
+            if kind == 3 or kind == 6 then
+              return true
+            else
+              return false
+            end
           end
-        elseif char_before_cursor == "." then
-          if kind == 2 or kind == 5 then
-            return true
-          else
-            return false
-          end
-        elseif string.match(line, "^%s*%w*$") then
-          if kind == 3 or kind == 6 then
-            return true
-          else
-            return false
-          end
-        end
-      end,
+        end,
+      },
     },
     { name = "nvim_lua" },
     { name = "luasnip" },
