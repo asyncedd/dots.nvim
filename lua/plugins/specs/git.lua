@@ -46,7 +46,7 @@ return {
       "DiffviewRefresh",
     },
     keys = {
-      { "<leader>dv", "<cmd>DiffviewClose<cr>" },
+      { "<leader>dv", "<cmd>DiffviewOpen<cr>" },
     },
   },
 }
