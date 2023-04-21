@@ -28,4 +28,14 @@ return {
     end,
     init = lazyLoad("mini.indentscope"),
   },
+  {
+    "folke/noice.nvim",
+    config = true,
+    init = lazyLoad("noice.nvim"),
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
 }
+
