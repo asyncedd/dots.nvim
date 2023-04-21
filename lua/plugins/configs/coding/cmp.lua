@@ -16,6 +16,7 @@ cmp.event:on({
   cmp_autopairs.on_confirm_done(),
 })
 
+---@diagnostic disable
 cmp.setup({
   -- matching = {
   --   disallow_fuzzy_matching = true,
@@ -122,6 +123,8 @@ cmp.setup({
     ghost_text = true,
   },
 })
+
+---@diagnostics enable
 
 cmp.setup.cmdline({ "/", "?" }, {
   mapping = cmp.mapping.preset.cmdline(),
