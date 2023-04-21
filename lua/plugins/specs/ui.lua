@@ -138,5 +138,10 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "luukvbaal/statuscol.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
 
