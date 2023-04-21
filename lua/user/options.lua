@@ -29,9 +29,6 @@ o.sw = 2 -- sw = shiftwidth
 -- Expand tabs.
 o.et = true -- et = expand tab
 
--- 2.2 This is for Whichkey.
-o.timeoutlen = 500
-
 --  +----------------------------------------------------------+
 --  |                       3. UI stuff                        |
 --  +----------------------------------------------------------+
@@ -51,15 +48,21 @@ o.cul = true
 o.tgc = true -- tgc = term gui colors.
 
 -- 3.3 Some stuff I totally didn't steal from mini.basics
-o.pumblend  = 10 -- Make builtin completion menus slightly transparent
-o.pumheight = 10 -- Make popup menu smaller
-o.winblend  = 10 -- Make floating windows slightly transparent
+o.pb = 10 -- Make builtin completion menus slightly transparent
+-- pb = pumblend.
+o.ph = 10 -- Make popup menu smaller
+-- ph = pumheight.
+o.winbl = 10 -- Make floating windows slightly transparent
+-- winbl = winblend
 
-o.shortmess:append('WcC') -- Reduce command line messages
-o.splitkeep = 'screen'      --
+o.shm:append('WcC') -- Reduce command line messages
+-- shm = shortmess
+o.spk = 'screen'      --
+-- spk = splitkeep
 
 -- 3.4 Keep the cursor in the middle.
-o.scrolloff = 10
+o.so = 10
+-- so = scrolloff
 
 --  +----------------------------------------------------------+
 --  |                        4. Windows                        |
@@ -69,3 +72,14 @@ o.scrolloff = 10
 -- Splits on the right
 o.spr = true -- spr = split right
 
+--  +----------------------------------------------------------+
+--  |                       5. Searching                       |
+--  +----------------------------------------------------------+
+--
+--  5.1 Searching.
+--  Ignore cases whilst searching.
+o.ic = true -- ic = ignore case.
+-- If there is a capital letter, don't ignore case.
+o.sc= true -- sc = smart case.
+-- Highlight whilst you search.
+o.is = true -- is = incsearch.
