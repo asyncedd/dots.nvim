@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
       require("configs.editor.treesitter")
       require("configs.ui.heirline")
       require'colorizer'.setup()
+      require("configs.editor.ufo")
     end, 0)
   end
 })
