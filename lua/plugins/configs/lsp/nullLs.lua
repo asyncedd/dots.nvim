@@ -9,6 +9,7 @@ return function()
       -- builtins.diagnostics.selene,
       builtins.diagnostics.todo_comments,
       builtins.diagnostics.trail_space,
+      builtins.code_actions.gitsigns,
       -- builtins.completion.luasnip,
     },
   })
