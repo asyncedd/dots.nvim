@@ -30,7 +30,7 @@ return {
         dependencies = {
           {
             "rafamadriz/friendly-snippets",
-            config = function ()
+            config = function()
               require("luasnip.loaders.from_vscode").lazy_load()
             end,
           },
@@ -80,10 +80,34 @@ return {
   {
     "chrisgrieser/nvim-spider",
     keys = {
-      { "w", function() require("spider").motion("w") end, { "n", "o", "x" } },
-      { "e", function() require("spider").motion("e") end, { "n", "o", "x" } },
-      { "b", function() require("spider").motion("b") end, { "n", "o", "x" } },
-      { "ge", function() require("spider").motion("ge") end, { "n", "o", "x" } },
+      {
+        "w",
+        function()
+          require("spider").motion("w")
+        end,
+        { "n", "o", "x" },
+      },
+      {
+        "e",
+        function()
+          require("spider").motion("e")
+        end,
+        { "n", "o", "x" },
+      },
+      {
+        "b",
+        function()
+          require("spider").motion("b")
+        end,
+        { "n", "o", "x" },
+      },
+      {
+        "ge",
+        function()
+          require("spider").motion("ge")
+        end,
+        { "n", "o", "x" },
+      },
     },
   },
   {
@@ -104,4 +128,3 @@ return {
     event = "VeryLazy",
   },
 }
-

@@ -1,4 +1,4 @@
-vim.schedule(function ()
+vim.schedule(function()
   local bufferline = require("ui.heirline.bufferline")
   local statusline = require("ui.heirline.statusline")
   -- local statuscolumn = require("plugins.configs.ui.heirline.statuscolumn")

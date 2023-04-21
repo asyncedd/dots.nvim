@@ -60,9 +60,9 @@ M.FileName = {
   -- hl = { fg = utils.get_highlight("Directory").fg },
   -- hl = { fg = "bright_fg" },
   -- hl = { fg = "black" },
-  hl = function (self)
-    return { fg = self:mode_color(), bold = true, }
-  end ,
+  hl = function(self)
+    return { fg = self:mode_color(), bold = true }
+  end,
 
   {
     provider = function(self)

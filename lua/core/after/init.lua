@@ -19,4 +19,3 @@ vim.diagnostic.config({
 require("user.keymaps")
 o.clipboard = "unnamedplus,unnamed"
 o.undofile = true
-

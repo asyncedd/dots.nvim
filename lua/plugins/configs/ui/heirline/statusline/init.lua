@@ -54,7 +54,7 @@ local DefaultStatusLine = {
   Space,
   Scrollbar.Ruler,
   Space,
-  Scrollbar.ScrollBar
+  Scrollbar.ScrollBar,
 }
 
 local StatusLines = {
@@ -73,7 +73,8 @@ local StatusLines = {
       i = "green",
       v = "cyan",
       V = "cyan",
-      ["\22"] = "cyan", c = "orange",
+      ["\22"] = "cyan",
+      c = "orange",
       s = "purple",
       S = "purple",
       ["\19"] = "purple",
@@ -102,7 +103,7 @@ local StatusLines = {
       end
 
       return color
-    end
+    end,
   },
 
   -- the first statusline with no condition, or which condition returns true is used.
