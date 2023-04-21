@@ -1,4 +1,4 @@
-local api = vim.api
+local utils = require("heirline.utils")
 
 local M = {}
 
@@ -13,6 +13,10 @@ M.Ruler = {
 
 -- Thanks dharmx!
 
+local surround = function(color, obj)
+  return utils.surround({ "", "" }, color, { obj })
+end
+
 -- I take no credits for this! :lion:
 M.ScrollBar = {
   static = {
@@ -20,7 +24,7 @@ M.ScrollBar = {
     -- Another variant, because the more choice the better.
     -- sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
   },
-  provider = function(self)
+  provider = function()
     -- local curr_line = api.nvim_win_get_cursor(0)[1]
     -- local lines = api.nvim_buf_line_count(0)
     -- local i = math.floor((curr_line - 1) / lines * #self.sbar) + 1
@@ -67,27 +71,15 @@ M.ScrollBar = {
     else
       position = sbar[math.floor(line_ratio * #sbar)] .. position
     end
+
     return position
   end,
   -- hl = { fg = "blue", bg = "bright_bg" },
   -- hl = { fg = "blue" },
-  hl = function()
-    local position = math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
-    local fg
-    local style
-
-    if position <= 5 then
-      fg = "aqua"
-      -- style = "bold"
-    elseif position >= 95 then
-      fg = "red"
-      -- style = "bold"
-    else
-      fg = "purple"
-      -- style = nil
-    end
+  hl = function(self)
     return {
-      fg = fg,
+      fg = "bright_bg",
+      bg = self.scrollbarHL(),
       -- style = "bold",
       -- bg = "bg",
     }
@@ -95,5 +87,9 @@ M.ScrollBar = {
   -- left_sep = "block",
   -- right_sep = "block",
 }
+
+M.ScrollBar = surround(function (self)
+  return self.scrollbarHL()
+end, { M.ScrollBar })
 
 return M
