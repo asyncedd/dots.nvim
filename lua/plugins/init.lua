@@ -109,10 +109,19 @@ plugins[13] = {
 plugins[14] = {
   "nvim-telescope/telescope.nvim",
   config = require("tools.telescope"),
-  lazy = false,
   dependencies = {
     "nvim-lua/plenary.nvim"
-  }
+  },
+  event = "VeryLazy"
+}
+
+plugins[15] = {
+  "thePrimeagen/harpoon",
+  config = require("tools.harpoon"),
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
+  event = "VeryLazy",
 }
 
 require("lazy").setup({
