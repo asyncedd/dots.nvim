@@ -83,5 +83,10 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "edluffy/specs.nvim",
+    event = "CursorMoved",
+    config = true,
+  },
 }
 
