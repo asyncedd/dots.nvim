@@ -23,12 +23,13 @@ local M = {
     lazy = true,
     -- This ^^^
   },
-  -- Edge.nvim
-  {
-    "sainnhe/edge",
-    config = require("plugins.configs.ui.edge"),
-    lazy = true,
-  }
+  -- -- Edge.nvim
+  -- {
+  --   "sainnhe/edge",
+  --   config = require("plugins.configs.ui.edge"),
+  --   lazy = true,
+  -- }
+  -- Dropped support for edge.nvim since it has been a pain to use it with Heirline.
 }
 
 return M
