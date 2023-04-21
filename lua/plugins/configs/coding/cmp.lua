@@ -200,14 +200,14 @@ cmp.setup({
     { name = "luasnip" },
     { name = "emoji" },
     { name = "nerdfont" },
-    {
-      name = "codeium",
-      keyword_length = 5,
-    },
-    {
-      name = "cmp_tabnine",
-      keyword_length = 5,
-    },
+    -- {
+    --   name = "codeium",
+    --   keyword_length = 5,
+    -- },
+    -- {
+    --   name = "cmp_tabnine",
+    --   keyword_length = 5,
+    -- },
     {
       name = "treesitter",
       keyword_length = 5,
@@ -309,3 +309,4 @@ cmp.setup.cmdline(":", {
     { name = "cmdline" },
   }),
 })
+

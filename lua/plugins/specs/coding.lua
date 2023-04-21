@@ -59,18 +59,18 @@ return {
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-path",
       "onsails/lspkind-nvim",
-      {
-        "tzachar/cmp-tabnine",
-        build = "./install.sh",
-      },
-      {
-        "jcdickinson/codeium.nvim",
-        dependencies = {
-          "nvim-lua/plenary.nvim",
-        },
-        config = true,
-        enabled = false,
-      },
+      -- {
+      --   "tzachar/cmp-tabnine",
+      --   build = "./install.sh",
+      -- },
+      -- {
+      --   "jcdickinson/codeium.nvim",
+      --   dependencies = {
+      --     "nvim-lua/plenary.nvim",
+      --   },
+      --   config = true,
+      --   enabled = false,
+      -- },
       "hrsh7th/cmp-emoji",
       "chrisgrieser/cmp-nerdfont",
       "lukas-reineke/cmp-rg",
