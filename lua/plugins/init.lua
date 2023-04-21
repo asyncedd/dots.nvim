@@ -6,7 +6,8 @@ plugins[1] = {
   "catppuccin/nvim",
   name = "catppuccin",
   init = lazyLoad("catppuccin"),
-  config = require("ui.catppuccin"), }
+  config = require("ui.catppuccin"),
+}
 
 plugins[2] = {
   "nvim-treesitter/nvim-treesitter",
@@ -142,7 +143,6 @@ require("lazy").setup({
   },
   defaults = {
     lazy = true,
-    version = false,
   },
 })
 
