@@ -76,5 +76,12 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
   },
+  {
+    "gen740/SmoothCursor.nvim",
+    config = function()
+      require("ui.smoothcursor")
+    end,
+    event = "VeryLazy",
+  },
 }
 
