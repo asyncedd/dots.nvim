@@ -52,6 +52,7 @@ Then once it finished, you're done! (actually)
 083.337  004.381: first screen update
 083.346  000.009: --- NVIM STARTED ---
 ```
+As you can see, my Neovim configuration is FASTER than `nvim --clean`. This is because, I disabled unneeded RTP (runtime plugins) which took `125ms+`. That's 1.2 seconds! In my case, I have **24** plugins. I lazy loaded them so, it's blazingly fast!
 
 ## 😰 Quitting Nvim.
 You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no way out! >:D
