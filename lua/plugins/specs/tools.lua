@@ -9,7 +9,14 @@ return {
       "debugloop/telescope-undo.nvim",
       {
         "jedrzejboczar/possession.nvim",
-        config = true,
+        config = function ()
+          require("possession").setup({
+            autosave = {
+              current = true,
+              tmp = true,
+            },
+          })
+        end,
       },
     },
     event = "VeryLazy",
