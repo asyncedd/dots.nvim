@@ -9,6 +9,7 @@ M.setup = function()
   o("cursorline", true, {})
   o("list", true, {})
   o("listchars", "eol:↴,space:⋅", {})
+  o("termguicolors", true, {})
 
   require("core.lazy")
   require("core.pluginLoader.ui_plugins")
