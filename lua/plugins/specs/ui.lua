@@ -39,5 +39,11 @@ return {
     "anuvyklack/pretty-fold.nvim",
     config = true,
     event = "BufReadPost",
+    dependencies = {
+      {'anuvyklack/fold-preview.nvim',
+        dependencies = { 'anuvyklack/keymap-amend.nvim' },
+        config = true,
+      }
+    }
   }
 }
