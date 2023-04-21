@@ -27,15 +27,14 @@ return {
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "andymass/vim-matchup",
-      -- "David-Kunz/markid",
-      "HiPhish/nvim-ts-rainbow2",
-      "nvim-treesitter/nvim-treesitter-refactor",
-    },
     config = require("editor.treesitter"),
     event = "BufReadPost",
     priority = 75,
+  },
+  -- Matchup
+  {
+    "andymass/vim-matchup",
+    event = "BufReadPost"
   },
   -- TrailBlazer.nvim
   {
