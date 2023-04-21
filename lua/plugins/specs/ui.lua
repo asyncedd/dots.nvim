@@ -1,4 +1,13 @@
 local lazyLoad = require("core.utils.lazyLoad")
+local neovide = function(plugin)
+  vim.defer_fn(function()
+    local condition = (not vim.g.neovide)
+    if (condition) then
+      require("lazy").load({ plugins = plugin })
+    end
+  end, 100)
+end
+
 
 return {
   {
@@ -14,9 +23,7 @@ return {
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     },
-    event = {
-      "VeryLazy",
-    },
+    init = neovide("noice.nvim"),
   },
   {
     "glepnir/dashboard-nvim",
@@ -124,7 +131,21 @@ return {
   {
     "tamton-aquib/flirt.nvim",
     config = true,
-    event = "VeryLazy",
+    init = neovide("flirt.nvim")
+  },
+  {
+    "edluffy/specs.nvim",
+    config = true,
+    event = "CursorMoved",
+    opts = {
+      popup = {
+        delay_ms = 0, -- delay before popup displays
+        inc_ms = 10, -- time increments used for fade/resize effects 
+        blend = 10, -- starting blend, between 0-100 (fully transparent), see :h winblend
+        width = 10,
+        winhl = "PMenu",
+      },
+    },
   },
 }
 
