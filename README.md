@@ -169,3 +169,5 @@ way out! >:D
 - [JoseConseco](https://github.com/JoseConseco) - For the CMP sorting
   configuration.
 - [vsedov's config](https://github.com/vsedov/nvim) - For lots of configs!
+- [yuki uthman](https://www.youtube.com/@yukiuthman8358) - For his great cmp
+  turtorials.
