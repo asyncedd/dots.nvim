@@ -7,19 +7,19 @@ local M = {
   {
     "monkoose/matchparen.nvim",
     event = "BufReadPost",
-    config = require("plugins.configs.ui.matcher")
+    config = require("plugins.configs.ui.matcher"),
   },
   {
     "NvChad/nvim-colorizer.lua",
     event = "BufReadPost",
     config = function()
       require("colorizer").setup()
-    end
+    end,
   },
   {
     "rebelot/heirline.nvim",
     event = "BufReadPost",
-    config = require("plugins.configs.ui.heirline")
+    config = require("plugins.configs.ui.heirline"),
   },
 }
 

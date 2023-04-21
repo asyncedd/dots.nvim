@@ -14,7 +14,7 @@ M.Ruler = {
 -- Thanks dharmx!
 
 -- I take no credits for this! :lion:
-M.ScrollBar ={
+M.ScrollBar = {
   static = {
     -- sbar = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' }
     -- Another variant, because the more choice the better.

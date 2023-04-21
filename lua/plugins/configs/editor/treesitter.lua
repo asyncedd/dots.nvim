@@ -1,10 +1,11 @@
 return function()
-
   -- Checking if nvim-treesitter is installed properly.
   local status, treesitter = pcall(require, "nvim-treesitter.configs")
 
   -- If it isn't, then return.
-  if not status then return end
+  if not status then
+    return
+  end
 
   -- Load Markid.
   local markid_config = require("markid").colors
@@ -12,16 +13,16 @@ return function()
   -- Set the Markid's colors.
   markid_config = {
     bright = {
-      "#f5c2e7", 
-      "#fab387", 
-      "#f9e2af", 
-      "#f5c0e8", 
-      "#94e2d5", 
-      "#89dceb", 
-      "#74c7ec", 
-      "#b4befe", 
-      "#cba6f7", 
-      "#c5e1a5" 
+      "#f5c2e7",
+      "#fab387",
+      "#f9e2af",
+      "#f5c0e8",
+      "#94e2d5",
+      "#89dceb",
+      "#74c7ec",
+      "#b4befe",
+      "#cba6f7",
+      "#c5e1a5",
     },
   }
 
@@ -33,18 +34,18 @@ return function()
     -- Enable beautiful syntax highlighting!!!
 
     highlight = {
-      enable = true
+      enable = true,
     },
 
     -- Enable nvim-treesitter indention.
     indent = {
-      enable = true
+      enable = true,
     },
 
     -- Configure Markid.
     markid = {
       enable = true,
-      colors = markid_config.bright
-    }
+      colors = markid_config.bright,
+    },
   })
 end

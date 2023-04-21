@@ -9,6 +9,12 @@ local M = {
     config = require("plugins.configs.editor.gitsigns"),
     event = "BufReadPost",
   },
+  {
+    "wesleimp/stylua.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim"
+    },
+  },
 }
 
 return M

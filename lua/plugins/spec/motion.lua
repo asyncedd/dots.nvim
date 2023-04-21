@@ -6,10 +6,10 @@ local M = {
       "ggandor/flit.nvim",
       "ggandor/leap-spooky.nvim",
       "tpope/vim-repeat",
-      "echasnovski/mini.ai"
+      "echasnovski/mini.ai",
     },
-    event = "VeryLazy"
-  }
+    event = "VeryLazy",
+  },
 }
 
 return M
