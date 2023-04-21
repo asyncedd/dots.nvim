@@ -142,7 +142,14 @@ local plugins = {
         dependencies = {
           "nvim-lua/plenary.nvim",
         },
-      }
+      },
+      {
+        "tzachar/cmp-tabnine",
+        build = "./install.sh",
+        dependencies = {
+          "hrsh7th/nvim-cmp",
+        },
+      },
     },
     config = function()
       require("completion.cmp")

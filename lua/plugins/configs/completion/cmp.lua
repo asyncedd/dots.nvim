@@ -50,6 +50,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "codeium" },
+    { name = "cmp_tabnine" },
     { name = "luasnip" },
     { name = "buffer" },
   }),
