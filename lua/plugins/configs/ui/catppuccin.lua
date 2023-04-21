@@ -12,6 +12,8 @@ require("catppuccin").setup({
       -- Stolen some highlightings that only need from the colorscheme it self.
       MiniIndentscopeSymbol = { fg = ctp.text },
       MiniIndentscopePrefix = { style = { "nocombine" } }, -- Make it invisible
+      CmpItemAbbrMatch = { fg = ctp.pink, style = { "bold" } },
+      CmpItemAbbrMatchFuzzy = { fg = ctp.pink, style = { "bold" } },
     }
   end,
   integrations = {
