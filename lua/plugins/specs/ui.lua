@@ -78,9 +78,7 @@ return {
   },
   {
     "gen740/SmoothCursor.nvim",
-    config = function()
-      require("ui.smoothcursor")
-    end,
+    config = true,
     event = "VeryLazy",
   },
   {
@@ -94,6 +92,15 @@ return {
     config = function()
       require("ui.animate")
     end,
+  },
+  {
+    "edluffy/specs.nvim",
+    config = function()
+      require("ui.specs")
+    end,
+    event = {
+      "CursorMoved",
+    },
   },
 }
 
