@@ -199,4 +199,10 @@ ui[14] = {
   end,
 }
 
+ui[15] = {
+  "stevearc/dressing.nvim",
+  config = true,
+  event = "VeryLazy",
+}
+
 return ui
