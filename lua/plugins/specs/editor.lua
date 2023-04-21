@@ -361,4 +361,9 @@ editor[23] = {
   },
 }
 
+editor[24] = {
+  "tpope/vim-repeat",
+  event = "VeryLazy",
+}
+
 return editor
