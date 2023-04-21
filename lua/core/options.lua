@@ -1,3 +1,4 @@
+-- Avoid expensive global variable searching, we already have it at home!
 local o = vim.api.nvim_set_option_value
 
 -- =======================================
