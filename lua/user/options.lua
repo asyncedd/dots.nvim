@@ -14,19 +14,20 @@ g.markdown_recommended_style = 0
 -- 2. Editor stuff.
 -- 2.1 Indentations.
 -- As, 0.2x Devs, we need our 2 space indentation
-o.shiftwidth = 2
+o.sw = 2 -- sw = shiftwidth
 -- Automagically indents based on the previous line.
-o.autoindent = true
+o.ai = true -- ai = artifical intelligent indents and totally not autoindent
 -- Smartly indents based on the current syntax and filetype.
-o.smartindent = true
+o.si = true -- si = smartindent
 
 -- 3. UI stuff
 -- 3.1 Enable line numbers.
 -- Set lines numbers.
-o.number = true
+o.nu = true -- nu = line numbers
 -- Also relative nuumbers
-o.relativenumber = true
+o.rnu = true -- rnu = relative line numbers
+
 -- 3.2 Enable TermGUIColors.
 -- Have those glorious 24 bit colors! Take that Windows XP!
-o.termguicolors = true
+o.tgc = true -- tgc = term gui colors.
 
