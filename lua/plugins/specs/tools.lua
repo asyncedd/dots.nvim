@@ -10,12 +10,26 @@ return {
       {
         "jedrzejboczar/possession.nvim",
         config = function ()
+          -- Define the alphabet as a string
+          local alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+          -- Generate a random name with 5 characters
+          local name = ""
+          for i = 1, 5 do
+            local randIndex = math.random(#alphabet)
+            local randLetter = alphabet:sub(randIndex, randIndex)
+            name = name .. randLetter
+          end
+
           require("possession").setup({
             autosave = {
               current = true,
               tmp = true,
-            },
-          })
+              tmp_name = name,
+              on_load = true,
+              on_quit = true,
+              },
+            })
         end,
       },
     },
