@@ -275,6 +275,13 @@ local plugins = {
       { "<leader>gt", "<cmd>Neogit<cr>" },
     },
   },
+  {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime",
+    config = function()
+      vim.g.startuptime_tries = 10
+    end,
+  },
 }
 
 require("lazy").setup({
