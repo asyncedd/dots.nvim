@@ -34,5 +34,10 @@ return {
     config = function ()
       require("plugins.configs.ui.heirline")
     end
+  },
+  {
+    "anuvyklack/pretty-fold.nvim",
+    config = true,
+    event = "BufReadPost",
   }
 }
