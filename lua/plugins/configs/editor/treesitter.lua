@@ -18,6 +18,11 @@ require("nvim-treesitter.configs").setup({
   matchup = {
     enable = true,
   },
+
+  -- Treesitter powered indents.
+  indent = {
+    enable = true,
+  },
 })
 
 local g = vim.g
