@@ -41,6 +41,19 @@ return {
     event = "VeryLazy",
   },
   {
+    "kevinhwang91/nvim-ufo",
+    opts = {
+      provider_selector = function(bufnr, filetype, buftype)
+        return {"treesitter", "indent"}
+      end
+    },
+    config = true,
+    dependencies = {
+      "kevinhwang91/promise-async"
+    },
+    event = "VimEnter",
+  },
+  {
     "lewis6991/gitsigns.nvim",
     opts = {
       signs = {
@@ -146,7 +159,7 @@ return {
     dependencies = {
       "andymass/vim-matchup",
     },
-    event = "BufReadPost",
+    event = "BufReadPre",
   },
   {
     "lukas-reineke/indent-blankline.nvim",
