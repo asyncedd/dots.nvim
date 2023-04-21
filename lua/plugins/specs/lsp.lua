@@ -37,64 +37,22 @@ return {
   -- LSP.
   {
     "neovim/nvim-lspconfig",
-    event = "BufReadPost",
-    config = function()
-      require("plugins.configs.lsp.lspconfig")
-    end,
     dependencies = {
-      {
-        "williamboman/mason.nvim",
-        config = true,
-        cmd = "Mason",
-      },
+      "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
       "folke/neodev.nvim",
-      {
-        "ray-x/lsp_signature.nvim",
-        config = true
-      },
+      "ray-x/lsp_signature.nvim",
     },
   },
-  {
-    "j-hui/fidget.nvim",
-    event = "VeryLazy",
-    opts = {
-      text = {
-        spinner = "dots"
-      }
-    },
-    config = true,
-  },
-  {
-    "folke/trouble.nvim",
-    event = "VeryLazy",
-    config = true,
-  },
+  "j-hui/fidget.nvim",
+  "folke/trouble.nvim",
   {
     "glepnir/lspsaga.nvim",
-    event = "BufReadPost",
-    opts = {
-      ui = {
-        theme = 'round',
-        title = true,
-        -- border type can be single,double,rounded,solid,shadow.
-        border = 'rounded',
-        winblend = 0,
-      }
-    },
-    config = function (_, opts)
-      require("lspsaga").setup(opts)
-    end,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       "nvim-treesitter/nvim-treesitter",
     },
   },
-  {
-    "mhartington/formatter.nvim",
-    event = "VeryLazy",
-    config = true,
-  }
 }
