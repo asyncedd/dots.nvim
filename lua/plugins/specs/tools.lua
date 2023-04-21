@@ -192,4 +192,22 @@ return {
       "Neogit",
     },
   },
+  {
+    "nvim-tree/nvim-tree.lua",
+    config = function()
+      require("tools.nvimtree")
+    end,
+    cmd = {
+      "NvimTreeToggle",
+      "NvimTreeFocus",
+      "NvimTreeFindFile",
+      "NvimTreeCollapse",
+    },
+    keys = {
+      { "<leader>tr", "<cmd>NvimTreeToggle<cr>" },
+      { "<leader>tc", "<cmd>NvimTreeCollapse<cr>" },
+      { "<leader>tf", "<cmd>NvimTreeFocus<cr>" },
+      { "<leader>ft", "<cmd>NvimTreeFindFile<cr>" },
+    },
+  },
 }
