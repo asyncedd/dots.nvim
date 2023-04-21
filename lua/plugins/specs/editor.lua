@@ -2,7 +2,7 @@ return {
   -- Comment
   {
     "numToStr/Comment.nvim",
-    config = require("plugins.configs.editor.comment"),
+    config = require("editor.comment"),
     event = "VeryLazy",
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
@@ -11,13 +11,13 @@ return {
   -- Gitsigns!
   {
     "lewis6991/gitsigns.nvim",
-    config = require("plugins.configs.editor.gitsigns"),
+    config = require("editor.gitsigns"),
     event = "BufReadPost",
   },
   -- Leap!
   {
     "ggandor/leap.nvim",
-    config = require("plugins.configs.editor.motion"),
+    config = require("editor.motion"),
     dependencies = {
       "tpope/vim-repeat",
       "echasnovski/mini.ai",
@@ -33,41 +33,32 @@ return {
       "HiPhish/nvim-ts-rainbow2",
       "nvim-treesitter/nvim-treesitter-refactor",
     },
-    config = require("plugins.configs.editor.treesitter"),
+    config = require("editor.treesitter"),
     event = "BufReadPost",
     priority = 75,
   },
   -- TrailBlazer.nvim
   {
     "LeonHeidelbach/trailblazer.nvim",
-    config = require("plugins.configs.editor.trailblazer"),
+    config = require("editor.trailblazer"),
     event = "VeryLazy",
   },
   -- I got harpooned, blazingly fast!
   {
     "theprimeagen/harpoon",
-    config = require("plugins.configs.editor.harpoon"),
+    config = require("editor.harpoon"),
     event = "VeryLazy",
   },
   -- Splitjoin
   {
     "echasnovski/mini.splitjoin",
-    config = require("plugins.configs.editor.splitjoin"),
+    config = require("editor.splitjoin"),
     event = "VeryLazy",
   },
   -- Mini.surround - SurroundingYouBlazinglyFast!
   {
     "echasnovski/mini.surround",
-    config = require("plugins.configs.editor.surround"),
+    config = require("editor.surround"),
     event = "VeryLazy",
   },
-  -- Refactor.nvim - a thePrimeagen plugin :)
-  {
-    "ThePrimeagen/refactoring.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter"
-    },
-    config = true,
-  }
 }
