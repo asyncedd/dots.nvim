@@ -16,6 +16,7 @@ return {
         build = "make",
       },
       "kkharji/sqlite.lua",
+      "olimorris/persisted.nvim",
     },
     keys = {
       -- {
@@ -43,6 +44,7 @@ return {
         end,
       },
       { "<leader>fr", "<cmd>Telescope frecency workspace=CWD<cr>" },
+      { "<leader>fs", "<cmd>Telescope persisted<cr>" },
     },
     config = function()
       require("tools.telescope")
@@ -219,6 +221,9 @@ return {
       "SessionLoadLast",
       "SessionLoadFromFile",
       "SessionDelete",
+    },
+    keys = {
+      { "<leader>ss", "<cmd>SessionSave<cr>" },
     },
   },
 }
