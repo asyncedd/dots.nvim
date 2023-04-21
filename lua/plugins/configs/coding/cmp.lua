@@ -9,6 +9,8 @@ local lspkind = require("lspkind")
 local compare = require("cmp.config.compare")
 local cmp_buffer = require("cmp_buffer")
 local ts_utils = require("nvim-treesitter.ts_utils")
+local types = require("cmp.types")
+local cache = require("cmp.utils.cache")
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -39,12 +41,80 @@ cmp.setup({
     disallow_partial_matching = false,
     disallow_prefix_unmatching = false,
   },
-  -- Thanks to https://www.youtube.com/@yukiuthman8358
   sorting = {
     priority_weight = 0.8,
     comparators = {
       -- compare.score_offset, -- not good at all
       -- compare.scopes, -- treesitter scope
+      function(entry1, entry2)
+        setmetatable({
+          scopes_map = {},
+          update = function(self)
+            local config = require("cmp").get_config()
+            if not vim.tbl_contains(config.sorting.comparators, compare.scopes) then
+              return
+            end
+
+            local ok, locals = pcall(require, "nvim-treesitter.locals")
+            if ok then
+              local win, buf = vim.api.nvim_get_current_win(), vim.api.nvim_get_current_buf()
+              local cursor_row = vim.api.nvim_win_get_cursor(win)[1] - 1
+
+              -- Cursor scope.
+              local cursor_scope = nil
+              for _, scope in ipairs(locals.get_scopes(buf)) do
+                if scope:start() <= cursor_row and cursor_row <= scope:end_() then
+                  if not cursor_scope then
+                    cursor_scope = scope
+                  else
+                    if cursor_scope:start() <= scope:start() and scope:end_() <= cursor_scope:end_() then
+                      cursor_scope = scope
+                    end
+                  end
+                elseif cursor_scope and cursor_scope:end_() <= scope:start() then
+                  break
+                end
+              end
+
+              -- Definitions.
+              local definitions = locals.get_definitions_lookup_table(buf)
+
+              -- Narrow definitions.
+              local depth = 0
+              for scope in locals.iter_scope_tree(cursor_scope, buf) do
+                local s, e = scope:start(), scope:end_()
+
+                -- Check scope's direct child.
+                for _, definition in pairs(definitions) do
+                  if s <= definition.node:start() and definition.node:end_() <= e then
+                    if scope:id() == locals.containing_scope(definition.node, buf):id() then
+                      local text = vim.treesitter.query.get_node_text(definition.node, buf) or ""
+                      if not self.scopes_map[text] then
+                        self.scopes_map[text] = depth
+                      end
+                    end
+                  end
+                end
+                depth = depth + 1
+              end
+            end
+          end,
+        }, {
+          __call = function(self, entry1, entry2)
+            local local1 = self.scopes_map[entry1:get_word()]
+            local local2 = self.scopes_map[entry2:get_word()]
+            if local1 ~= local2 then
+              if local1 == nil then
+                return false
+              end
+              if local2 == nil then
+                return true
+              end
+              return local1 < local2
+            end
+          end,
+        })
+      end,
       compare.locality,
       -- compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
       function(entry1, entry2)
