@@ -12,3 +12,5 @@ require("nvim-treesitter.configs").setup({
     use_languagetree = true,
   },
 })
+
+vim.g.matchup_matchparen_offscreen = { method = "popup" }
