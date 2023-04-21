@@ -18,5 +18,15 @@ return {
       { "va", mode = { "x", "o", "n", "v" } },
     },
   },
+  {
+    "echasnovski/mini.bracketed",
+    config = function()
+      require("mini.bracketed").setup()
+    end,
+    keys = {
+      { "[", mode = { "x", "o", "n", "v" } },
+      { "]", mode = { "x", "o", "n", "v" } },
+    },
+  },
 }
 
