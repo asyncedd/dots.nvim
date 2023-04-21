@@ -205,4 +205,12 @@ ui[15] = {
   event = "VeryLazy",
 }
 
+ui[16] = {
+  "edluffy/specs.nvim",
+  config = function()
+    require("ui.specs")
+  end,
+  event = "VeryLazy",
+}
+
 return ui
