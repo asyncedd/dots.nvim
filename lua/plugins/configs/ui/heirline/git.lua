@@ -12,7 +12,7 @@ local Git = {
 
   { -- git branch name
     provider = function(self)
-      return " " .. self.status_dict.head
+      return "  " .. self.status_dict.head
     end,
     hl = { bold = true },
   },
@@ -48,7 +48,7 @@ local Git = {
     condition = function(self)
       return self.has_changes
     end,
-    provider = " ",
+    provider = "",
   },
 }
 
