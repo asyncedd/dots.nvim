@@ -36,10 +36,11 @@ o.splitkeep = "screen"
 o.list = true
 o.listchars = "eol:↴,space:⋅"
 o.tabstop = 2
-o.foldcolumn = "1"
-o.foldlevel = 99
+o.foldcolumn = '1' -- '0' is not bad
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true
+o.foldmethod = "manual"
 o.showtabline = 2
 vim.cmd([[au FileType * if index(['wipe', 'delete'], &bufhidden) >= 0 | set nobuflisted | endif]])
 vim.diagnostic.config({

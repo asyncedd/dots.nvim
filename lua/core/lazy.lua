@@ -16,7 +16,7 @@ function Lazy:load_plugins()
   end
   handle:close()
 
-
+  -- Add config paths to package.path
   package.path = package.path .. ";" .. table.concat({
     modules_dir .. "/configs/?.lua",
     modules_dir .. "/configs/?/init.lua",
@@ -54,7 +54,6 @@ function Lazy:load_plugins()
     table.insert(self.modules, config)
   end
 end
-
 
 function Lazy:load_lazy()
   if not vim.loop.fs_stat(lazy_path) then
