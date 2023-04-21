@@ -71,6 +71,9 @@ o.so = 999 -- Make the cursor always on the middle of the screen.
 -- Only have one statusline.
 o.laststatus = 3
 
+-- Increase redraw time.
+o.rdt = 3000
+
 --  +----------------------------------------------------------+
 --  |                        4. Windows                        |
 --  +----------------------------------------------------------+
@@ -118,5 +121,5 @@ end
 --  +----------------------------------------------------------+
 --  Cool thing to avoid https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 -- Disable Modelines.
--- o.modelines = 0
--- o.modeline = false
+o.modelines = 0
+o.modeline = false

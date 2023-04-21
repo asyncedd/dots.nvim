@@ -22,7 +22,13 @@ editor[1] = {
   "nvim-treesitter/nvim-treesitter",
   init = lazyLoad("nvim-treesitter"),
   config = function()
-    require("editor.treesitter")
+    local co = coroutine
+    co.resume(co.create(function()
+      -- Don't show the matchup's matchparen.
+      vim.g.matchup_matchparen_offscreen = { method = "off" }
+
+      require("editor.treesitter")
+    end))
   end,
   build = ":TSUpdate",
   cmd = {
@@ -31,18 +37,12 @@ editor[1] = {
     "TSBufDisable",
     "TSModuleInfo",
   },
+  dependencies = {
+    "andymass/vim-matchup",
+  },
 }
 
 editor[2] = {
-  "andymass/vim-matchup",
-  config = function()
-    -- Don't show the matchup's matchparen.
-    vim.g.matchup_matchparen_offscreen = { method = "off" }
-  end,
-  init = lazyLoad("vim-matchup"),
-}
-
-editor[3] = {
   "hrsh7th/nvim-cmp",
   event = {
     "InsertEnter",
@@ -105,7 +105,7 @@ editor[3] = {
   end,
 }
 
-editor[4] = {
+editor[3] = {
   "lewis6991/gitsigns.nvim",
   config = function()
     require("editor.gitsigns")
@@ -113,7 +113,7 @@ editor[4] = {
   init = lazyLoad("gitsigns.nvim"),
 }
 
-editor[5] = {
+editor[4] = {
   "chrisgrieser/nvim-spider",
   keys = {
     {
@@ -147,7 +147,7 @@ editor[5] = {
   },
 }
 
-editor[6] = {
+editor[5] = {
   "ggandor/leap.nvim",
   config = function()
     require("editor.leap")
@@ -169,7 +169,7 @@ editor[6] = {
   },
 }
 
-editor[7] = {
+editor[6] = {
   "ggandor/flit.nvim",
   config = true,
   dependencies = {
@@ -184,13 +184,13 @@ editor[7] = {
   },
 }
 
-editor[8] = {
+editor[7] = {
   "ggandor/leap-spooky.nvim",
   config = true,
   event = "VeryLazy",
 }
 
-editor[9] = {
+editor[8] = {
   "LeonHeidelbach/trailblazer.nvim",
   config = true,
   keys = {
@@ -212,7 +212,7 @@ editor[9] = {
   },
 }
 
-editor[10] = {
+editor[9] = {
   "LudoPinelli/comment-box.nvim",
   config = true,
   keys = {
@@ -225,7 +225,7 @@ editor[10] = {
   },
 }
 
-editor[11] = {
+editor[10] = {
   "windwp/nvim-autopairs",
   config = function()
     require("editor.autopairs")
@@ -233,7 +233,7 @@ editor[11] = {
   event = "InsertEnter",
 }
 
-editor[12] = {
+editor[11] = {
   "windwp/nvim-ts-autotag",
   config = function()
     require("editor.autotag")
@@ -241,7 +241,7 @@ editor[12] = {
   event = "InsertEnter",
 }
 
-editor[13] = {
+editor[12] = {
   "nvim-neorg/neorg",
   config = function()
     vim.schedule(function()
@@ -267,7 +267,7 @@ editor[13] = {
   },
 }
 
-editor[14] = {
+editor[13] = {
   "kevinhwang91/nvim-ufo",
   dependencies = {
     "kevinhwang91/promise-async",
@@ -292,21 +292,21 @@ editor[14] = {
   event = "VeryLazy",
 }
 
-editor[15] = {
+editor[14] = {
   "sbdchd/neoformat",
   cmd = {
     "Neoformat",
   },
 }
 
-editor[16] = {
+editor[15] = {
   "fladson/vim-kitty",
   init = function()
     fileLazyLoad("vim-kitty", "conf")
   end,
 }
 
-editor[17] = {
+editor[16] = {
   "echasnovski/mini.surround",
   keys = {
     "<leader>sa",
@@ -321,7 +321,7 @@ editor[17] = {
   end,
 }
 
-editor[18] = {
+editor[17] = {
   "numToStr/Comment.nvim",
   config = function()
     require("editor.Comment")
@@ -334,11 +334,11 @@ editor[18] = {
     "gbc",
     {
       "gc",
-      mode = { "v" },
+      mode = { "v", "n" },
     },
     {
       "gb",
-      mode = { "v" },
+      mode = { "v", "n" },
     },
     "gc0",
     "gco",
@@ -346,7 +346,7 @@ editor[18] = {
   },
 }
 
-editor[19] = {
+editor[18] = {
   "echasnovski/mini.ai",
   config = function()
     require("editor.ai")
@@ -357,7 +357,7 @@ editor[19] = {
   },
 }
 
-editor[20] = {
+editor[19] = {
   "echasnovski/mini.bracketed",
   keys = {
     "[",
@@ -368,7 +368,7 @@ editor[20] = {
   end,
 }
 
-editor[21] = {
+editor[20] = {
   "echasnovski/mini.splitjoin",
   keys = { "gS" },
   config = function()
@@ -376,7 +376,7 @@ editor[21] = {
   end,
 }
 
-editor[22] = {
+editor[21] = {
   "echasnovski/mini.align",
   config = function()
     require("mini.align").setup()
@@ -386,12 +386,12 @@ editor[22] = {
   },
 }
 
-editor[23] = {
+editor[22] = {
   "tpope/vim-repeat",
   event = "VeryLazy",
 }
 
-editor[23] = {
+editor[22] = {
   "abecodes/tabout.nvim",
   config = true,
   dependencies = {

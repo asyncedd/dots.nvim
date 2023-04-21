@@ -63,10 +63,4 @@ lsp[3] = {
   },
 }
 
-lsp[4] = {
-  "lvimuser/lsp-inlayhints.nvim",
-  event = "LspAttach",
-  config = true,
-}
-
 return lsp
