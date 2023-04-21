@@ -1,7 +1,6 @@
 local plugins = {}
 local disabledPlugins = require("user.builtinPlugins")
 local lazyLoad = require("core.utils.lazyLoad")
-local mini = require("editor.mini")
 
 plugins[1] = {
   "catppuccin/nvim",
@@ -58,7 +57,7 @@ plugins[6] = {
 plugins[7] = {
   "numToStr/Comment.nvim",
   config = true,
-  init = lazyLoad("Comment.nvim")
+  event = "VeryLazy",
 }
 
 plugins[8] = {
@@ -68,19 +67,12 @@ plugins[8] = {
 }
 
 plugins[9] = {
-  "echasnovski/mini.indentscope",
-  config = require("ui.indentscope"),
-  init = lazyLoad("mini.indentscope")
-}
-
-
-plugins[10] = {
   "lewis6991/gitsigns.nvim",
   config = require("editor.gitsigns"),
   init = lazyLoad("gitsigns.nvim"),
 }
 
-plugins[11] = {
+plugins[10] = {
   "rebelot/heirline.nvim",
   init = lazyLoad("heirline.nvim"),
   config = require("ui.heirline"),
@@ -89,25 +81,19 @@ plugins[11] = {
   },
 }
 
-plugins[12] = {
+plugins[11] = {
   "ggandor/leap.nvim",
   init = lazyLoad("leap.nvim"),
   config = require("editor.leap"),
 }
 
-plugins[13] = {
+plugins[12] = {
   "LeonHeidelbach/trailblazer.nvim",
   config = require("editor.trailblazer"),
   init = lazyLoad("trailblazer.nvim"),
 }
 
-plugins[14] = {
-  "echasnovski/mini.ai",
-  config = mini.ai, 
-  init = lazyLoad("mini.ai"),
-}
-
-plugins[15] = {
+plugins[13] = {
   "nvim-telescope/telescope.nvim",
   config = require("tools.telescope"),
   dependencies = {
@@ -116,7 +102,7 @@ plugins[15] = {
   event = "VeryLazy"
 }
 
-plugins[16] = {
+plugins[14] = {
   "thePrimeagen/harpoon",
   config = require("tools.harpoon"),
   dependencies = {
@@ -125,40 +111,28 @@ plugins[16] = {
   event = "VeryLazy",
 }
 
-plugins[17] = {
-  "echasnovski/mini.cursorword",
-  config = mini.cursorWord,
-  event = "BufReadPost",
-}
-
-plugins[18] = {
-  "echasnovski/mini.splitjoin",
-  config = mini.splitJoin,
-  event = "BufReadPost",
-}
-
-plugins[19] = {
-  "echasnovski/mini.surround",
-  config = mini.surround,
-  event = "BufReadPost",
-}
-
-plugins[20] = {
+plugins[15] = {
   "NvChad/nvim-colorizer.lua",
   config = true,
   event = "VeryLazy",
 }
 
-plugins[21] = {
+plugins[16] = {
   "glepnir/lspsaga.nvim",
   config = true,
   init = lazyLoad("lspsaga.nvim"),
 }
 
-plugins[22] = {
+plugins[17] = {
   "goolord/alpha-nvim",
   config = require("ui.alpha"),
   event = "VimEnter",
+}
+
+plugins[18] = {
+  "echasnovski/mini.nvim",
+  config = require("mini"),
+  init = lazyLoad("mini.nvim"),
 }
 
 require("lazy").setup({
