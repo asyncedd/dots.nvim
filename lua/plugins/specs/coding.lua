@@ -1,6 +1,6 @@
 return {
   {
-    "windwp/nvim-autopairs",
+    "altermo/npairs-integrate-upair",
     config = function()
       require("coding.autopairs")
     end,
@@ -13,6 +13,14 @@ return {
       { "]", mode = { "i", "c" } },
       { "'", mode = { "i", "c" } },
       { '"', mode = { "i", "c" } },
+    },
+    dependencies = {
+      "altermo/ultimate-autopair.nvim",
+      "windwp/nvim-autopairs",
+    },
+    event = {
+      "InsertEnter",
+      "CmdlineEnter",
     },
   },
   {
