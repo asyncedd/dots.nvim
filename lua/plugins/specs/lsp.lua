@@ -62,7 +62,11 @@ return {
         config = true,
       },
       "folke/neodev.nvim",
-    }
+      {
+        "ray-x/lsp_signature.nvim",
+        config = true
+      }
+    },
   },
   -- LSPSaga
   {

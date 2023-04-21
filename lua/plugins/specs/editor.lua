@@ -3,22 +3,23 @@ return {
   {
     "numToStr/Comment.nvim",
     config = true,
-    event = "BufReadPost",
+    event = "VeryLazy"
   },
   -- UFO
-  {
-    "kevinhwang91/nvim-ufo",
-    opts = {
-      provider_selector = function(bufnr, filetype, buftype)
-        return {"treesitter", "indent"}
-      end
-    },
-    config = true,
-    dependencies = {
-      "kevinhwang91/promise-async"
-    },
-    event = "BufReadPost",
-  },
+  -- {
+  --   "kevinhwang91/nvim-ufo",
+  --   opts = {
+  --     provider_selector = function(bufnr, filetype, buftype)
+  --       return {"treesitter", "indent"}
+  --     end
+  --   },
+  --   config = true,
+  --   dependencies = {
+  --     "kevinhwang91/promise-async"
+  --   },
+  --   event = "BufReadPost",
+  -- },
+
   -- Gitsigns!
   {
     "lewis6991/gitsigns.nvim",
@@ -59,7 +60,7 @@ return {
       "tpope/vim-repeat",
       "echasnovski/mini.ai",
     },
-    event = "BufReadPost",
+    event = "VeryLazy"
   },
   -- Treesitter
   {
