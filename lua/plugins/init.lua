@@ -118,12 +118,6 @@ local plugins = {
     "j-hui/fidget.nvim",
     config = true,
     init = lazyLoad("fidget.nvim"),
-    opts = {
-      window = {
-        blend = 0,
-      },
-      -- ... the rest of your fidget config
-    },
   },
   {
     "hrsh7th/nvim-cmp",

@@ -28,6 +28,8 @@ o.et = true -- et = expand tab
 o.nu = true -- nu = line numbers
 -- Also relative nuumbers
 o.rnu = true -- rnu = relative line numbers
+-- Also cursor lines.
+o.cul = true
 
 -- 3.2 Enable TermGUIColors.
 -- Have those glorious 24 bit colors! Take that Windows XP!
