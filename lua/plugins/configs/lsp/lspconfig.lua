@@ -11,10 +11,12 @@ return function()
   local status1, mason = pcall(require, "mason")
   local status2, lspconfig = pcall(require, "lspconfig")
   local status3, neodev = pcall(require, "neodev")
+  local status4, nullls = pcall(require, "null-ls")
   if (not status3) then return end
   if (not status) then return end
   if (not status1) then return end
   if (not status2) then return end
+  if (not status4) then return end
 
   neodev.setup()
 
@@ -49,6 +51,16 @@ return function()
     }
   })
 
-  require"fidget".setup{}
+  nullls.setup({
+    sources = {
+      nullls.builtins.formatting.stylua,
+    },
+  })
+
+  require("fidget").setup({
+    text = {
+      spinner = "dots"
+    }
+  })
 
 end
