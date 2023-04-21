@@ -4,10 +4,11 @@ local M = {}
 function M.async(func)
   return function(...)
     local co = coroutine.create(func)
-    local args = table.pack(...)
+    local nargs = select("#", ...)
+    local args = {...}
     return {
       await = function()
-        local ok, result = coroutine.resume(co, unpack(args, 1, args.n))
+        local ok, result = coroutine.resume(co, table.unpack(args, 1, nargs))
         if ok then
           return result
         else
