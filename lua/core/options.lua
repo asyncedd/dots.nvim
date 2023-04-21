@@ -1,4 +1,4 @@
-local o = vim.opt
+local o = vim.opt 
 
 -- =======================================
 -- 1. General options.
@@ -28,6 +28,7 @@ o.breakindent = true -- Indent wrapped lines too.
 o.copyindent = true -- Copy the structure of the existing lines' indents.
 o.expandtab = true -- Convert tabs to spaces.
 o.smartindent = true -- Non-strict cindent.
+o.tabstop = 2 -- Insert two tabs per <TAB>
 
 -- 2.3 Wrap related options.
 o.wrap = true -- Show long lines as multiple lines.
@@ -38,3 +39,10 @@ o.wrap = true -- Show long lines as multiple lines.
 
 -- 3.1 Enable line numbers.
 o.number = true -- Enable line numbers
+
+-- 3.2 See invisible characters 🧐
+o.list = true -- Enable seeing invisible characters (actually it's UI characters)
+o.listchars = ({
+  eol = "↴",
+  space = "⋅",
+})
