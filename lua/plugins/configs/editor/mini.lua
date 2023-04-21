@@ -12,4 +12,8 @@ M.surround = function()
   require("mini.surround").setup()
 end
 
+M.ai = function()
+  require("mini.ai").setup()
+end
+
 return M
