@@ -49,30 +49,32 @@ return {
     config = require("plugins.configs.lsp.lspconfig"),
     event = "BufReadPost",
   },
+  -- Fidget.nvim - a plugin to show the LSP loading stuff.
   {
     "j-hui/fidget.nvim",
     config = require("plugins.configs.lsp.fidget"),
     event = "BufReadPost"
   },
+  -- Trouble.nvim - a plugin to show some LSP diagnostics in a tree menu!
   {
     "folke/trouble.nvim",
     config = require("plugins.configs.lsp.trouble"),
     event = "BufReadPost"
   },
+  -- LSPSaga - some cool stuff for LSP.
   {
     "glepnir/lspsaga.nvim",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function ()
-      require("lspsaga").setup()
-    end,
+    config = require("plugins.configs.lsp.lspsaga"),
     event = "BufReadPost",
   },
+  -- LSPSignature - show definations as you type!
   {
     "ray-x/lsp_signature.nvim",
-    config = true,
+    config = require("plugins.configs.lsp.signature"),
     event = "BufReadPost",
   }
 }
