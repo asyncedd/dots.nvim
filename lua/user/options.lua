@@ -15,10 +15,12 @@ g.markdown_recommended_style = 0
 -- 2.1 Indentations.
 -- As, 0.2x Devs, we need our 2 space indentation
 o.sw = 2 -- sw = shiftwidth
--- Automagically indents based on the previous line.
-o.ai = true -- ai = artifical intelligent indents and totally not autoindent
--- Smartly indents based on the current syntax and filetype.
-o.si = true -- si = smartindent
+-- -- Automagically indents based on the previous line.
+-- o.ai = true -- ai = artifical intelligent indents and totally not autoindent
+-- -- Smartly indents based on the current syntax and filetype.
+-- o.si = true -- si = smartindent
+-- Expand tabs.
+o.et = true -- et = expand tab
 
 -- 3. UI stuff
 -- 3.1 Enable line numbers.
