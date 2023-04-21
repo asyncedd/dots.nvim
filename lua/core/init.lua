@@ -1,6 +1,3 @@
--- require("snips.impatient").enable_profile()
-
-local vim = vim -- Avoid expensive global searching.
 local o = vim.api.nvim_set_option_value
 
 o("shadafile", "NONE", {})
