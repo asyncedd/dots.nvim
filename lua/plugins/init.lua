@@ -6,6 +6,7 @@ plugins[1] = {
   "catppuccin/nvim",
   name = "catppuccin",
   lazy = lazyLoad("catppuccin"),
+  config = require("plugins.configs.ui.catppuccin"),
 }
 
 plugins[2] = {
