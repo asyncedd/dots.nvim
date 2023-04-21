@@ -34,10 +34,10 @@ plugins[3] = {
   }
 }
 
-plugins[5] = {
+plugins[4] = {
   "j-hui/fidget.nvim",
   config = true,
-  event = "VeryLazy"
+  init = lazyLoad("fidget.nvim"),
 }
 
 require("lazy").setup({
