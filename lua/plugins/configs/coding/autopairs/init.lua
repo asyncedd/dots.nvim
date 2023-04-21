@@ -50,3 +50,7 @@ require("npairs-int-upair").setup({
     },
   },
 })
+
+require("coding.autopairs.space")
+require("coding.autopairs.multipairs")
+require("coding.autopairs.comma_semicolon")
