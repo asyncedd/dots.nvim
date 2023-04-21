@@ -27,12 +27,10 @@ return {
     },
   },
   {
-    "echasnovski/mini.splitjoin",
-    config = function()
-      require("mini.splitjoin").setup()
-    end,
+    "Wansmer/treesj",
+    config = true,
     keys = {
-      "gS",
+      { "gS", "<cmd>lua require('treesj').toggle()<CR>" },
     },
   },
   {
@@ -45,9 +43,6 @@ return {
       "gbc",
       { "gc", mode = { "v", "n" } },
       { "gb", mode = { "v", "n" } },
-      "gc0",
-      "gco",
-      "gcA",
     },
     dependencies = {
       {
