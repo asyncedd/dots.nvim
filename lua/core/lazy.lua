@@ -64,6 +64,14 @@ function Lazy:load_lazy()
       reset_packpath = true,
       rtp = {
         reset = true,
+        disabled_plugins = {
+          "gzip",
+          "shada",
+          "spellfile",
+          "tohtml",
+          "zipPlugin",
+          "tarPlugin"
+        }
       },
     },
   }
