@@ -214,4 +214,15 @@ return {
       require("ui.hlchunk")
     end,
   },
+  {
+    "folke/zen-mode.nvim",
+    dependencies = {
+      "folke/twilight.nvim",
+    },
+    config = true,
+    cmd = { "ZenMode" },
+    keys = {
+      { "<leader>zm", "<cmd>ZenMode<CR>" },
+    },
+  },
 }
