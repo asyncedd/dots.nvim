@@ -214,4 +214,9 @@ return {
     "jghauser/mkdir.nvim",
     event = "BufWritePre",
   },
+  {
+    "utilyre/sentiment.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
