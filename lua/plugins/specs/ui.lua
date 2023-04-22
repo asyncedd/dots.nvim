@@ -5,7 +5,7 @@ return {
     "catppuccin/nvim",
     config = function()
       require("ui.catppuccin")
-    end
+    end,
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -206,5 +206,12 @@ return {
   {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
+  },
+  {
+    "shellRaining/hlchunk.nvim",
+    init = lazyLoad("hlchunk.nvim"),
+    config = function()
+      require("ui.hlchunk")
+    end,
   },
 }
