@@ -91,4 +91,19 @@ return {
       require("lsp.null")
     end,
   },
+  {
+    "folke/trouble.nvim",
+    opts = { use_diagnostic_signs = true },
+    config = function(_, opts)
+      require("trouble").setup(opts)
+    end,
+    keys = {
+      { "<leader>xx", "<cmd>Trouble<CR>" },
+      { "<leader>xd", "<cmd>Trouble documnet_diagnostics<CR>" },
+      { "<leader>xw", "<cmd>Trouble workspace_diagnostics<CR>" },
+      { "<leader>gR", "<cmd>Trouble lsp_references<CR>" },
+      { "<leader>xq", "<cmd>Trouble lsp_references<CR>" },
+      { "<leader>xl", "<cmd>Trouble loc_list<CR>" },
+    },
+  },
 }
