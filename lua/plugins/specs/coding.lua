@@ -145,4 +145,55 @@ return {
     end,
     event = "InsertEnter",
   },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("coding.refactoring")
+    end,
+    keys = {
+      {
+        "<leader>re",
+        "<Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>",
+        mode = "v",
+        { noremap = true, silent = true, expr = false },
+      },
+      {
+        "<leader>rf",
+        "<Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>",
+        mode = "v",
+        { noremap = true, silent = true, expr = false },
+      },
+      {
+        "<leader>rv",
+        "<Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>",
+        mode = "v",
+        { noremap = true, silent = true, expr = false },
+      },
+      {
+        "<leader>ri",
+        "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>",
+        mode = "v",
+        { noremap = true, silent = true, expr = false },
+      },
+      {
+        "<leader>rb",
+        "<Esc><Cmd>lua require('refactoring').refactor('Extract Block')<CR>",
+        { noremap = true, silent = true, expr = false },
+      },
+      {
+        "<leader>rbf",
+        "<Esc><Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>",
+        { noremap = true, silent = true, expr = false },
+      },
+      {
+        "<leader>ri",
+        "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>",
+        { noremap = true, silent = true, expr = false },
+      },
+    },
+  },
 }
