@@ -7,12 +7,6 @@ return {
       require("ui.catppuccin")
     end
   },
-  -- {
-  --   "echasnovski/mini.map",
-  --   config = function()
-  --     require("ui.map")
-  --   end,
-  -- },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -185,8 +179,8 @@ return {
       { "z-", "<cmd>lua Scroll('z-', 0, 1)<cr>" },
       { "z+", "<cmd>lua Scroll('z+', 0, 1)<cr>" },
       { "z^", "<cmd>lua Scroll('z^', 0, 1)<cr>" },
-      -- { "k", "<cmd>lua Scroll('k', 0, 1, 3)<cr>", mode = { "n", "x" } },
-      -- { "j", "<cmd>lua Scroll('j', 0, 1, 3)<cr>", mode = { "n", "x" } },
+      { "gk", "<cmd>lua Scroll('gk', 0, 1, 3)<cr>", mode = { "n", "x" } },
+      { "gj", "<cmd>lua Scroll('gj', 0, 1, 3)<cr>", mode = { "n", "x" } },
       { "<Up>", "<cmd>lua Scroll('k', 0, 1, 3)<cr>", mode = { "n", "x" } },
       { "<Down>", "<cmd>lua Scroll('j', 0, 1, 3)<cr>", mode = { "n", "x" } },
     },

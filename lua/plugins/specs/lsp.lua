@@ -84,4 +84,11 @@ return {
       { "<leader>so", "<cmd>SymbolsOutline<cr>" },
     },
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    init = lazyLoad("null-ls.nvim"),
+    config = function()
+      require("lsp.null")
+    end,
+  },
 }

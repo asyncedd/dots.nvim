@@ -58,7 +58,8 @@ mlsp.setup({
 })
 
 require("core.utils.installPkg")({
-  -- "stylua",
+  "stylua",
+  -- "luacheck",
 })
 
 mlsp.setup_handlers({
