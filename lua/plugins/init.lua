@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "asyncedd/apr",
-  { import = "apr.coding.autopairs" },
+  -- { import = "apr.coding.autopairs" },
   { import = "apr.coding.tabout" },
   { import = "apr.coding.treesj" },
   { import = "apr.coding.dial" },
@@ -49,4 +49,3 @@ require("lazy").setup({
     throttle = 150,
   },
 })
-

@@ -1,5 +1,16 @@
 return {
   {
+    "altermo/npairs-integrate-upair",
+    dependencies = {
+      "windwp/nvim-autopairs",
+      "altermo/ultimate-autopair.nvim",
+    },
+    config = function()
+      require("coding.autopairs")
+    end,
+    event = { "InsertEnter", "CmdlineEnter" },
+  },
+  {
     "numToStr/Comment.nvim",
     config = function()
       require("coding.Comment")
