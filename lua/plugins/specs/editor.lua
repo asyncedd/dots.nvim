@@ -219,4 +219,12 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "nvim-treesitter/nvim-treesitter-refactor",
+    config = function()
+      require("editor.refactor")
+    end,
+    init = lazyLoad("nvim-treesitter-refactor"),
+    -- lazy = false,
+  },
 }
