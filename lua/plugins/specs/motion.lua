@@ -188,77 +188,26 @@ return {
     end,
     keys = {
       {
-        "gv",
-        function()
-          require("syntax-tree-surfer").targeted_jump({ "variable_declaration" })
-        end,
-        mode = { "n", "v" },
-      },
-      {
-        "gfu",
-        function()
-          require("syntax-tree-surfer").targeted_jump({ "function", "arrrow_function", "function_defination" })
-        end,
-        mode = { "n", "v" },
-      },
-      {
-        "gif",
-        function()
-          require("syntax-tree-surfer").targeted_jump({ "if_statement" })
-        end,
-        mode = { "n", "v" },
-      },
-      {
-        "gfo",
-        function()
-          require("syntax-tree-surfer").targeted_jump({ "for_statement" })
-        end,
-        mode = { "n", "v" },
-      },
-      {
-        "-",
-        function()
-          require("syntax-tree-surfer").filtered_jump(
-            { "if_statement", "else_clause", "else_statement" },
-            false,
-            { destination = "siblings" }
-          )
-        end,
-        mode = { "n", "v" },
-      },
-      {
-        "_",
-        function()
-          require("syntax-tree-surfer").filtered_jump(
-            { "if_statement", "else_clause", "else_statement" },
-            false,
-            { destination = "parent" }
-          )
-        end,
-        mode = { "n", "v" },
-      },
-      {
-        "+",
-        function()
-          require("syntax-tree-surfer").filtered_jump(
-            { "if_statement", "else_clause", "else_statement" },
-            false,
-            { destination = "children" }
-          )
-        end,
-        mode = { "n", "v" },
-      },
-      {
-        "gnh",
-        "<cmd>STSSwapOrHold<cr>",
-      },
-      {
-        "gnh",
-        "<cmd>STSSwapOrHoldVisual<cr>",
-        mode = { "x", "v" },
-      },
-      {
         "<leader>hj",
+        function()
+          require("syntax-tree-surfer").targeted_jump({
+            "function",
+            "arrrow_function",
+            "function_defination",
+            "if_statement",
+            "else_clause",
+            "else_statement",
+            "elseif_statement",
+            "for_statement",
+            "while_statement",
+            "switch_statement",
+            "variable_declaration",
+          })
+        end,
+        mode = { "n", "v", "x" },
+      },
+      {
+        "<leader>s<leader>",
         function()
           require("syntax-tree-surfer").targeted_jump({
             "function",
