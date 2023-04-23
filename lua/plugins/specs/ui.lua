@@ -68,6 +68,7 @@ return {
       require("ui.heirline")
     end,
     init = lazyLoad("heirline.nvim"),
+    event = { "VeryLazy", "BufReadPost" },
     -- event = "UIEnter",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -113,6 +114,7 @@ return {
   {
     "akinsho/bufferline.nvim",
     init = lazyLoad("bufferline.nvim"),
+    event = { "BufReadPost", "BufNew", "VeryLazy" },
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       "catppuccin/nvim",

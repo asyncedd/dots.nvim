@@ -4,6 +4,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     init = lazyLoad("gitsigns.nvim"),
+    -- event = { "BufReadPost", "VeryLazy" },
     config = function()
       require("git.gitsigns")
     end,
