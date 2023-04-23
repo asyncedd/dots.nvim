@@ -242,4 +242,18 @@ return {
       },
     },
   },
+  {
+    "AckslD/muren.nvim",
+    config = true,
+    cmd = {
+      "MurenToggle",
+      "MurenOpen",
+      "MurenClose",
+      "MurenFresh",
+      "MurenUnique",
+    },
+    keys = {
+      { "<leader>rm", "<cmd>MurenToggle<CR>" },
+    },
+  },
 }
