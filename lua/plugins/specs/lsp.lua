@@ -6,7 +6,8 @@ return {
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
-      "SmiteshP/nvim-navic",
+      -- "SmiteshP/nvim-navic",
+      "folke/neodev.nvim",
     },
     config = function()
       require("lsp.mason")

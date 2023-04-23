@@ -13,19 +13,29 @@ end
 local library = {
   [vim.fn.expand("$VIMRUNTIME/lua")] = true,
   [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-  [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
-  [vim.fn.expand("~/.config/nvim/lua")] = true,
-  ["./?.lua"] = true,
+  -- [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
+  -- [vim.fn.expand("~/.config/nvim/lua")] = true,
+  -- ["./?.lua"] = true,
 }
 
 -- Thank you for NvChad for this too! https://nvchad.com/docs/config/walkthrough
 library = deepExtend("force", library, ret)
-library = deepExtend("force", library, vim.api.nvim_get_runtime_file("", true))
+-- library = deepExtend("force", library, vim.api.nvim_get_runtime_file("", true))
+
+-- require("neodev").setup({
+--   library = {
+--     enable = false,
+--   },
+-- })
 
 return {
   Lua = {
     runtime = {
-      version = "LuaJIT",
+      version = "LuaJIT", --[[ 
+      paths = {
+        "?/init.lua",
+        "?.lua",
+      }, ]]
     },
     diagnostics = {
       globals = { "vim" },
@@ -36,8 +46,8 @@ return {
     workspace = {
       library = library,
       checkThirdParty = false,
-      maxPreload = 100000,
-      preloadFileSize = 10000,
+      maxPreload = 1000000,
+      preloadFileSize = 100000,
     },
     completion = {
       callSnippet = "Replace",

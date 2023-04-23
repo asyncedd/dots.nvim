@@ -622,7 +622,7 @@
     "description": "Create an autocmd."
   },
   "cmd": {
-    "prefix": "cmd",
+    "prefix": "<cmd",
     "body": "<cmd>${1: --[Stuff goes here]}<CR>",
     "description": "Create a new cmd!"
   }
