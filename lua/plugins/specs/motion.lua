@@ -338,14 +338,14 @@ return {
       },
     },
   },
-  {
-    "rainbowhxch/accelerated-jk.nvim",
-    config = true,
-    keys = {
-      { "j", "<Plug>(accelerated_jk_gj)" },
-      { "gj", "<Plug>(accelerated_jk_gj)" },
-      { "k", "<Plug>(accelerated_jk_gk)" },
-      { "gk", "<Plug>(accelerated_jk_gk)" },
-    },
-  },
+  -- {
+  --   "rainbowhxch/accelerated-jk.nvim",
+  --   config = true,
+  --   keys = {
+  --     { "j", "<Plug>(accelerated_jk_gj)" },
+  --     { "gj", "<Plug>(accelerated_jk_gj)" },
+  --     { "k", "<Plug>(accelerated_jk_gk)" },
+  --     { "gk", "<Plug>(accelerated_jk_gk)" },
+  --   },
+  -- },
 }
