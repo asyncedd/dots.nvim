@@ -44,8 +44,8 @@ elseif colorscheme == "tokyonight" then
   -- aplugin.background = colors.bg_dark
   -- aplugin.my_error = util.brighten(colors.red1, 0.3)
   vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = M.darken(colors.cyan, 0.3, colors.bg) })
-  vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = M.darken(colors.cyan, 0.3, colors.bg) })
-  vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = M.darken(colors.cyan, 0.3, colors.bg) })
+  vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = M.darken(colors.cyan, 0.7, colors.bg) })
+  vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = M.darken(colors.cyan, 0.7, colors.bg) })
 end
 
 require("illuminate").configure({
