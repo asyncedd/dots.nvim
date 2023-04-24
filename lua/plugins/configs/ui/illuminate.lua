@@ -1,5 +1,4 @@
-local mocha = require("catppuccin.palettes").get_palette("mocha")
-
+local colorscheme = vim.g.colorscheme
 local M = {}
 
 local hex_to_rgb = function(hex_str)
@@ -29,12 +28,25 @@ function M.darken(hex, amount, bg)
   return M.blend(hex, bg or M.bg, math.abs(amount))
 end
 
-local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
-require("catppuccin.lib.highlighter").syntax({
-  IlluminatedWordText = { bg = M.darken(colors.surface1, 0.7, colors.base) },
-  IlluminatedWordRead = { bg = M.darken(colors.surface1, 0.7, colors.base) },
-  IlluminatedWordWrite = { bg = M.darken(colors.surface1, 0.7, colors.base) },
-})
+if colorscheme == "catppuccin" then
+  local mocha = require("catppuccin.palettes").get_palette("mocha")
+
+  local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+  require("catppuccin.lib.highlighter").syntax({
+    IlluminatedWordText = { bg = M.darken(colors.surface1, 0.7, colors.base) },
+    IlluminatedWordRead = { bg = M.darken(colors.surface1, 0.7, colors.base) },
+    IlluminatedWordWrite = { bg = M.darken(colors.surface1, 0.7, colors.base) },
+  })
+elseif colorscheme == "tokyonight" then
+  local colors = require("tokyonight.colors").setup() -- pass in any of the config options as explained above
+  local util = require("tokyonight.util")
+
+  -- aplugin.background = colors.bg_dark
+  -- aplugin.my_error = util.brighten(colors.red1, 0.3)
+  vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = M.darken(colors.cyan, 0.3, colors.bg) })
+  vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = M.darken(colors.cyan, 0.3, colors.bg) })
+  vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = M.darken(colors.cyan, 0.3, colors.bg) })
+end
 
 require("illuminate").configure({
   delay = 30,

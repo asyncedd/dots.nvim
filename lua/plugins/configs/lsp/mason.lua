@@ -16,7 +16,7 @@ require("catppuccin.lib.highlighter").syntax({
   LspDiagnosticsUnderlineHint = { style = { "undercurl" }, sp = hint }, -- Used to underline "Hint" diagnostics
 })
 
-require("core.utils.highlight.semantic_tokens")
+require("core.utils.highlight." .. vim.g.colorscheme .. ".semantic_tokens")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 

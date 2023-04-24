@@ -18,7 +18,27 @@ package.path = config .. "/lua/plugins/configs/?.lua;" .. config .. "/lua/plugin
 
 require("plugins")
 
-vim.api.nvim_command("colorscheme catppuccin")
+local colorschemes = {
+  "catppuccin-mocha",
+  -- "catppuccin-latte",
+  "catppuccin-frappe",
+  "catppuccin-macchiato",
+  "tokyonight-storm",
+  "tokyonight-night",
+  "tokyonight-moon",
+}
+
+math.randomseed(os.time())
+
+local scheme = colorschemes[math.random(#colorschemes)]
+
+if scheme:find("^catppuccin") ~= nil then
+  vim.g.colorscheme = "catppuccin"
+elseif scheme:find("^tokyonight") ~= nil then
+  vim.g.colorscheme = "tokyonight"
+end
+
+vim.api.nvim_command("colorscheme " .. scheme)
 
 vim.schedule(function()
   require("core.after")

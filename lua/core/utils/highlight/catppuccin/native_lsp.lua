@@ -1,4 +1,4 @@
-local ctp = require("catppuccin.palettes").get_palette("mocha")
+local ctp = require("catppuccin.palettes").get_palette()
 local hl = vim.api.nvim_set_hl
 
 vim.api.nvim_set_hl("LspDiagnosticsUnderlineError", { style = underlines.errors, sp = error }, -- Used to underline "Error" diagnostics

@@ -1,6 +1,13 @@
-local mocha = require("catppuccin.palettes").get_palette("mocha")
+local colorscheme = vim.g.colorscheme
+local colors
 
-vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = mocha.text })
+if colorscheme == "catppuccin" then
+  colors = require("catppuccin.palettes").get_palette()
+elseif colorscheme == "tokyonight" then
+  colors = require("tokyonight.colors").setup() -- pass in any of the config options as explained above
+end
+
+vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = colors.text })
 
 require("mini.indentscope").setup({
   symbol = "│",

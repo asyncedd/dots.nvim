@@ -61,10 +61,17 @@ o.undolevels = 10000
 -- Enable more undo stuff
 o.undoreload = 10000
 
-local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
-require("catppuccin.lib.highlighter").syntax({
-  Pmenu = { bg = colors.crust, fg = "" },
-})
+local colors
+
+if vim.g.colorscheme == "catppuccin" then
+  colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+  require("catppuccin.lib.highlighter").syntax({
+    Pmenu = { bg = colors.crust, fg = "" },
+  })
+elseif vim.g.colorscheme == "tokyonight" then
+  colors = require("tokyonight.colors").setup() -- pass in any of the config options as explained above
+  vim.api.nvim_set_hl(0, "Pmenu", { bg = colors.bg_dark })
+end
 
 require("nvim-treesitter.configs").setup({
   -- Treesitter powered indents.

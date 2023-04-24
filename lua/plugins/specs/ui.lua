@@ -1,12 +1,12 @@
 local lazyLoad = require("core.utils.lazyLoad")
 
 return {
-  {
-    "catppuccin/nvim",
-    config = function()
-      require("ui.catppuccin")
-    end,
-  },
+  -- {
+  --   "catppuccin/nvim",
+  --   config = function()
+  --     require("ui.catppuccin")
+  --   end,
+  -- },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -209,13 +209,13 @@ return {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
   },
-  {
-    "shellRaining/hlchunk.nvim",
-    init = lazyLoad("hlchunk.nvim"),
-    config = function()
-      require("ui.hlchunk")
-    end,
-  },
+  -- {
+  --   "shellRaining/hlchunk.nvim",
+  --   init = lazyLoad("hlchunk.nvim"),
+  --   config = function()
+  --     require("ui.hlchunk")
+  --   end,
+  -- },
   {
     "folke/zen-mode.nvim",
     dependencies = {
