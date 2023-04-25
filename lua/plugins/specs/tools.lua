@@ -17,6 +17,7 @@ return {
       },
       "kkharji/sqlite.lua",
       "olimorris/persisted.nvim",
+      "tiagovla/scope.nvim",
     },
     keys = {
       -- {
@@ -31,12 +32,13 @@ return {
           require("telescope.builtin").live_grep()
         end,
       },
-      {
-        "<leader>fb",
-        function()
-          require("telescope.builtin").buffers()
-        end,
-      },
+      { "<leader>fb", "<cmd>Telescope scope buffers<CR>" },
+      -- {
+      --   "<leader>fb",
+      --   function()
+      --     require("telescope.builtin").buffers()
+      --   end,
+      -- },
       { "<leader>ff", "<cmd>Telescope frecency workspace=CWD<cr>" },
       { "<leader>fs", "<cmd>Telescope persisted<cr>" },
     },

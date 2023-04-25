@@ -3,7 +3,7 @@ local hl = vim.api.nvim_set_hl
 
 local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
 require("catppuccin.lib.highlighter").syntax({
-   TelescopeSelection = { bg = colors.surface0 },
+  TelescopeSelection = { bg = colors.surface0 },
   TelescopePromptCounter = { fg = colors.mauve, style = { "bold" } },
   TelescopePromptPrefix = { bg = colors.surface0 },
   TelescopePromptNormal = { bg = colors.surface0 },
@@ -36,3 +36,5 @@ require("telescope").load_extension("fzf")
 require("telescope").load_extension("frecency")
 
 require("telescope").load_extension("persisted")
+
+require("telescope").load_extension("scope")
