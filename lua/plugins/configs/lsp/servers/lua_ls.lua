@@ -1,6 +1,7 @@
 -- Thank you to folke with his neodev plugin for this!
 -- https://github.com/folke/neodev.nvim
 local ret = {}
+
 local deepExtend = vim.tbl_deep_extend
 
 if package.loaded["lazy"] then
@@ -20,7 +21,7 @@ local library = {
 
 -- Thank you for NvChad for this too! https://nvchad.com/docs/config/walkthrough
 library = deepExtend("force", library, ret)
--- library = deepExtend("force", library, vim.api.nvim_get_runtime_file("", true))
+library = deepExtend("force", library, vim.api.nvim_get_runtime_file("", true))
 
 -- require("neodev").setup({
 --   library = {
@@ -46,8 +47,8 @@ return {
     workspace = {
       library = library,
       checkThirdParty = false,
-      maxPreload = 1000000,
-      preloadFileSize = 100000,
+      -- maxPreload = 1000000,
+      -- preloadFileSize = 100000,
     },
     completion = {
       callSnippet = "Replace",
