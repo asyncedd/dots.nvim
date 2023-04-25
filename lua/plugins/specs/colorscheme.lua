@@ -1,4 +1,7 @@
 return {
-  "catppuccin/nvim",
+  {
+    "catppuccin/nvim",
+    cond = true,
+  },
   "folke/tokyonight.nvim",
 }

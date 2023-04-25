@@ -25,6 +25,7 @@ require("lazy").setup({
   defaults = {
     lazy = true,
     version = false,
+    cond = not vim.g.started_by_firenvim,
   },
   install = {
     missing = true,

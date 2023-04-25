@@ -7,7 +7,9 @@
 
 vim.loader.enable()
 
-require("settings.options")
+if not vim.g.loaded_from_firenvim then
+  require("settings.options")
+end
 
 require("settings.autocmd")
 
@@ -21,7 +23,7 @@ require("plugins")
 local colorschemes = {
   "catppuccin-mocha",
   -- "catppuccin-latte",
-  "catppuccin-frappe",
+  -- "catppuccin-frappe",
   "catppuccin-macchiato",
   -- "tokyonight-storm",
   -- "tokyonight-night",
