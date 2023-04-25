@@ -20,10 +20,10 @@ return {
       require("ui.indentscope")
     end,
     keys = {
-      "viii",
-      "vaii",
-      "viai",
-      "vaai",
+      "vii",
+      "vai",
+      "via",
+      "vaa",
     },
     init = lazyLoad("mini.indentscope"),
   },
