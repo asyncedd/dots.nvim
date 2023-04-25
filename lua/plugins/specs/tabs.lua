@@ -4,6 +4,7 @@ return {
   {
     "akinsho/bufferline.nvim",
     init = lazyLoad("bufferline.nvim"),
+    event = { "VeryLazy", "BufReadPost" },
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       "catppuccin/nvim",
