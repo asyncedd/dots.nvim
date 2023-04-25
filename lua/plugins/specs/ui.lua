@@ -225,4 +225,16 @@ return {
       { "<leader>zm", "<cmd>ZenMode<CR>" },
     },
   },
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+
+      require("colorizer").attach_to_buffer(0, { mode = "background", css = true })
+    end,
+    event = {
+      "BufReadPost",
+      "VeryLazy",
+    },
+  },
 }
