@@ -23,9 +23,9 @@ local colorschemes = {
   -- "catppuccin-latte",
   "catppuccin-frappe",
   "catppuccin-macchiato",
-  "tokyonight-storm",
-  "tokyonight-night",
-  "tokyonight-moon",
+  -- "tokyonight-storm",
+  -- "tokyonight-night",
+  -- "tokyonight-moon",
 }
 
 math.randomseed(os.time())
