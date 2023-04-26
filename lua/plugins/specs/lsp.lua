@@ -26,13 +26,13 @@ return {
         ensure_installed()
       end
     end,
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "User LSP", },
   },
   {
     "neovim/nvim-lspconfig",
     config = function()
       require("plugins.configs.lsp.config")
     end,
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "User LSP" },
   },
 }
