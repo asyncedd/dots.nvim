@@ -50,7 +50,7 @@ o.bri = true
 
 -- Enable undofile
 -- Saves undo history to a file when writing a buffer to a file and, restore on read.
-o.undofile = true
+o.udf = true
 
 -- 1.4 Searching.
 
