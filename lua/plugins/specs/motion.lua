@@ -91,6 +91,9 @@ return {
       { "t", mode = { "n", "x" } },
       { "T", mode = { "n", "x" } },
     },
+    dependencies = {
+      "ggandor/leap.nvim",
+    },
   },
   {
     "ggandor/leap-spooky.nvim",
