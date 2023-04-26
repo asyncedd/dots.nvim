@@ -4,7 +4,6 @@ return {
     dependencies = {
       {
         "altermo/ultimate-autopair.nvim",
-        branch = "v0.5.0-pre-alpha",
       },
       "windwp/nvim-autopairs"
     },
