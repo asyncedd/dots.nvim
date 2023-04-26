@@ -46,3 +46,19 @@ o.lbr = true
 -- Indent wrapped lines.
 o.bri = true
 
+-- 2. UI Options.
+
+-- 2.1 Line number settings.
+
+-- Enable line numbers.
+-- Print the line number infront of each line.
+o.nu = true
+
+-- Enable relative line numbers.
+-- Show the line number relative to the line with the cursor in front of each line.
+o.rnu = true
+
+-- Enable cursorline.
+-- Highlight the text line of the cursor with a lighter highlight I guess?
+o.cul = true
+
