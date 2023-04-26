@@ -46,6 +46,12 @@ o.lbr = true
 -- Indent wrapped lines.
 o.bri = true
 
+-- 1.3 Undos
+
+-- Enable undofile
+-- Saves undo history to a file when writing a buffer to a file and, restore on read.
+o.undofile = true
+
 -- 2. UI Options.
 
 -- 2.1 Line number settings.
