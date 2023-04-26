@@ -2,6 +2,8 @@ local o = vim.opt
 
 -- 1. Editing
 
+-- 1.1 Indent options.
+
 -- Enable Autoindent.
 -- Copy indent from current line when starting a new line.
 o.ai = true
@@ -24,9 +26,24 @@ o.ts = 2
 
 -- Enable Expandtabs.
 -- To use spaces over tabs.
-o.expandtab = true
+o.et = true
 
 -- Enable Copyindent.
 -- Copy the structure of existing lines indent when autoindenting.
 o.si = true
 
+-- 1.2 Wrapping
+
+-- Enable wrapping.
+-- Wrap long lines.
+o.wrap = true
+
+-- Enable line break.
+-- Wrap long lines at a character in `breakat` (default " ^I!@*-+;:,./?")
+o.lbr = true
+
+-- Enable Breakindent
+-- Indent wrapped lines.
+o.bri = true
+
+-- hello, this is a really long line.... So, yeah, super long line that should be wrapped when it reaches the <EOL>... I wonder if it'll be wrapped properly or not, but hey! Let's see about 
