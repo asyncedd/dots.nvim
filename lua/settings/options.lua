@@ -1,5 +1,10 @@
 local o = vim.opt
 
+-- 0. General
+
+-- Map the leader key to <space>
+vim.g.mapleader = " "
+
 -- 1. Editing
 
 -- 1.1 Indent options.
