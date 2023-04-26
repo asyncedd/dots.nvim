@@ -86,10 +86,10 @@ return {
     "ggandor/flit.nvim",
     config = true,
     keys = {
-      { "f", mode = { "n", "o" } },
-      { "F", mode = { "n", "o" } },
-      { "t", mode = { "n", "o" } },
-      { "T", mode = { "n", "o" } },
+      { "f", mode = { "n", "x" } },
+      { "F", mode = { "n", "x" } },
+      { "t", mode = { "n", "x" } },
+      { "T", mode = { "n", "x" } },
     },
   },
 }
