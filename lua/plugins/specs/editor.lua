@@ -17,5 +17,6 @@ return {
       })
     end,
     event = { "BufRead", "BufNewFile", "BufEnter" },
+    init = require("core.utils.lazyLoad")("nvim-treesitter"),
   },
 }

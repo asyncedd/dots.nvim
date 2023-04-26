@@ -1,3 +1,5 @@
+local lazyLoad = require("core.utils.lazyLoad")
+
 return {
   {
     "rebelot/heirline.nvim",
@@ -5,6 +7,7 @@ return {
       require("plugins.configs.ui.heirline")
     end,
     event = { "VeryLazy", "BufReadPost", "User Heirline" },
+    init = lazyLoad("heirline.nvim"),
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
@@ -35,11 +38,13 @@ return {
     config = function()
       require("ui.bufferline")
     end,
+    init = lazyLoad("bufferline.nvim"),
     event = { "VeryLazy", "BufReadPost", "User Heirline" },
   },
   {
     "folke/noice.nvim",
     event = { "VeryLazy", "BufReadPost", "User Heirline" },
+    init = lazyLoad("noice.nvim"),
     config = true,
     dependencies = {
       "MunifTanjim/nui.nvim",
