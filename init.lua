@@ -6,6 +6,11 @@ require("settings.options")
 -- Create some autocommands.
 require("settings.autocmd")
 
+local config = vim.fn.stdpath("config")
+
+-- Allow searching in `lua/plugins/configs/x.lua` or `lua/plugins/configs/x/init.lua`
+package.path = config .. "/lua/plugins/configs/?.lua;" .. config .. "/lua/plugins/configs/?/init.lua;" .. package.path
+
 -- Setup lazy.nvim
 require("plugins")
 
