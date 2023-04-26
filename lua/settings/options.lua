@@ -79,3 +79,6 @@ o.rnu = true
 -- Highlight the text line of the cursor with a lighter highlight I guess?
 o.cul = true
 
+-- Enable Mousemoveevent.
+-- Enable mouse hover events
+o.mousemoveevent = true

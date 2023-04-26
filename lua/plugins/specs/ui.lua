@@ -30,4 +30,11 @@ return {
       end
     end,
   },
+  {
+    "akinsho/bufferline.nvim",
+    config = function()
+      require("ui.bufferline")
+    end,
+    event = { "VeryLazy", "BufReadPost", "User Heirline" },
+  },
 }
