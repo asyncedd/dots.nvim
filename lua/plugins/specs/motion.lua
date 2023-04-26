@@ -118,4 +118,40 @@ return {
       "ggandor/leap.nvim",
     },
   },
+  {
+    "ziontee113/syntax-tree-surfer",
+    opts = {
+      left_hand_side = "qwertyasdfghzxcvb",
+      right_hand_side = "jkl;oiu.,mpy/n",
+    },
+    config = true,
+    cmd = {
+      "STSPrintNodesAtCursor",
+    },
+    keys = {
+      {
+        "<leader>ss",
+        function()
+          require("syntax-tree-surfer").targeted_jump({
+            "function",
+            "arrow_function",
+            "function_definition",
+            "if_statement",
+            "else_clause",
+            "else_statement",
+            "elseif_statement",
+            "for_statement",
+            "while_statement",
+            "switch_statement",
+            --"field",
+            "table_constructor",
+            "identifier",
+            "expression_list",
+            "return_statement",
+            -- "chunk",
+          })
+        end,
+      },
+    }
+  },
 }
