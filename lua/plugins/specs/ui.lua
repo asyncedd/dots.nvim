@@ -10,7 +10,7 @@ return {
     },
   },
   {
-    "willothy/veil.nvim",
+    "goolord/alpha-nvim",
     dependencies = {
       -- All optional, only required for the default setup.
       -- If you customize your config, these aren't necessary.
@@ -18,13 +18,15 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-file-browser.nvim"
     },
-    config = true,
+    config = function()
+      require("alpha").setup(require("ui.alpha").config)
+    end,
     init = function()
       local file = vim.fn.expand "%"
       local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
 
       if not condition then
-        require("lazy").load({ plugins = "veil.nvim" })
+        require("lazy").load({ plugins = "alpha-nvim" })
       end
     end,
   },

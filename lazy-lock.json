@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "e77fa9ad0b1f4fc6cddf54e51047e17e90c7d7ed" },
+  "alpha-nvim": { "branch": "main", "commit": "87c204040e3f5d4c1c95067b35905d8f8a2f2545" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
@@ -20,6 +21,5 @@
   "plenary.nvim": { "branch": "master", "commit": "9ac3e9541bbabd9d73663d757e4fe48a675bb054" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "e0fcb12702ad0d2873544a31730f9aaef04fd032" },
   "telescope.nvim": { "branch": "master", "commit": "713d26b98583b160b50fb827adb751f768238ed3" },
-  "ultimate-autopair.nvim": { "branch": "v0.5.0-pre-alpha", "commit": "28592a9fb36473fff5467feb5d728701e6291e3a" },
-  "veil.nvim": { "branch": "main", "commit": "ec18376953b401d784756a47df38a75ece40f3e9" }
+  "ultimate-autopair.nvim": { "branch": "main", "commit": "28592a9fb36473fff5467feb5d728701e6291e3a" }
 }
