@@ -9,6 +9,9 @@ require("settings.autocmd")
 -- Setup lazy.nvim
 require("plugins")
 
+-- Enable the catppuccin colorshceme
+vim.api.nvim_command("colorscheme catppuccin")
+
 -- Defer time-consuming tasks later.
 vim.defer_fn(function()
   require("core.after")
