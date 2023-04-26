@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local compare = require("cmp.config.compare")
 local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
@@ -70,5 +71,23 @@ cmp.setup({
       -- kind.kind = string.format(" [%s] %s ", strings[1], strings[2])
       return kind
     end,
-  }
+  },
+
+  sorting = {
+    priority_weight = 0.8,
+    comparators = {
+      -- compare.score_offset, -- not good at all
+      compare.scopes, -- treesitter scope
+      compare.locality,
+      compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+      compare.offset,
+      compare.recently_used,
+      compare.order,
+      -- compare.scopes, -- what?
+      -- compare.sort_text,
+      -- compare.exact,
+      -- compare.kind,
+      -- compare.length,
+    },
+  },
 })
