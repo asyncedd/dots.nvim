@@ -10,6 +10,10 @@ return {
         highlight = {
           enable = true,
         },
+
+        indent = {
+          enable = true,
+        },
       })
     end,
     event = { "BufRead", "BufNewFile", "BufEnter" },
