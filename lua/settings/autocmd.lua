@@ -15,8 +15,8 @@ autocmd("InsertLeave", {
 
 autocmd({ "BufRead", "BufNewFile", "BufWinEnter" }, {
   callback = function()
-    vim.api.nvim_exec_autocmds("User", { pattern = "Heirline" })
     vim.schedule(function()
+    vim.api.nvim_exec_autocmds("User", { pattern = "Heirline" })
       vim.api.nvim_exec_autocmds("User", { pattern = "LSP" })
       vim.cmd("silent! do FileType")
     end)

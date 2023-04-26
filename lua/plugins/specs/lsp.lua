@@ -31,6 +31,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      require("plugins.configs.lsp.cfg")
       require("plugins.configs.lsp.config")
     end,
     event = { "User LSP" },
