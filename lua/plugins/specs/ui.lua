@@ -19,6 +19,13 @@ return {
       "nvim-telescope/telescope-file-browser.nvim"
     },
     config = true,
-    event = "VimEnter",
+    init = function()
+      local file = vim.fn.expand "%"
+      local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+
+      if not condition then
+        require("lazy").load({ plugins = "veil.nvim" })
+      end
+    end,
   },
 }
