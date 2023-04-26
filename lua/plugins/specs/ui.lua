@@ -37,4 +37,13 @@ return {
     end,
     event = { "VeryLazy", "BufReadPost", "User Heirline" },
   },
+  {
+    "folke/noice.nvim",
+    event = { "VeryLazy", "BufReadPost", "User Heirline" },
+    config = true,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
 }
