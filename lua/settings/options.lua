@@ -22,9 +22,11 @@ o.sw = 2
 -- Add two spaces that a <Tab> in a file count for.
 o.ts = 2
 
--- Set Expandtab to two.
--- Add an appropiate number of spaces per <Tab>
+-- Enable Expandtabs.
+-- To use spaces over tabs.
+o.expandtab = true
 
 -- Enable Copyindent.
 -- Copy the structure of existing lines indent when autoindenting.
 o.si = true
+
