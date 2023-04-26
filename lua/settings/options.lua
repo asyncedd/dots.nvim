@@ -52,6 +52,12 @@ o.bri = true
 -- Saves undo history to a file when writing a buffer to a file and, restore on read.
 o.undofile = true
 
+-- 1.4 Searching.
+
+-- Enable incsearch.
+-- Highlight matches whilst searching.
+o.is = true
+
 -- 2. UI Options.
 
 -- 2.1 Line number settings.
