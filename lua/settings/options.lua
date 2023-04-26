@@ -46,4 +46,3 @@ o.lbr = true
 -- Indent wrapped lines.
 o.bri = true
 
--- hello, this is a really long line.... So, yeah, super long line that should be wrapped when it reaches the <EOL>... I wonder if it'll be wrapped properly or not, but hey! Let's see about 
