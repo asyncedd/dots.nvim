@@ -4,7 +4,7 @@ return {
     config = function()
       require("plugins.configs.ui.heirline")
     end,
-    event = { "VeryLazy", "BufReadPost" },
+    event = { "VeryLazy", "BufReadPost", "User Heirline" },
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
