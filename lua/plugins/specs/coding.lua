@@ -12,4 +12,17 @@ return {
     end,
     event = { "InsertEnter", "CmdlineEnter" },
   },
+  {
+    "kylechui/nvim-surround",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = true,
+    keys = {
+      "ys",
+      "ds",
+      "cs",
+    },
+  },
 }
