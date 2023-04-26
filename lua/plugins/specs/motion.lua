@@ -92,4 +92,27 @@ return {
       { "T", mode = { "n", "x" } },
     },
   },
+  {
+    "ggandor/leap-spooky.nvim",
+    config = true,
+    keys = {
+      "d",
+      "y",
+      "g",
+      "zf",
+      "c",
+      "g~",
+      "gu",
+      "gU",
+      "g?",
+      "<",
+      ">",
+      "gq",
+      "!",
+      "=",
+    },
+    dependencies = {
+      "ggandor/leap.nvim",
+    },
+  },
 }
