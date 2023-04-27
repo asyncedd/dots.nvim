@@ -19,4 +19,20 @@ return {
     event = { "BufRead", "BufNewFile", "BufEnter" },
     init = require("core.utils.lazyLoad")("nvim-treesitter"),
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    -- event = { "BufRead", "BufNewFile" },
+    event = "User Heirline",
+    opts = {
+      signs = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
+        changedelete = { text = "▎" },
+        untracked = { text = "▎" },
+      },
+    },
+    config = true,
+  }
 }
