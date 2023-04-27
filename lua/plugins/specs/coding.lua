@@ -44,19 +44,4 @@ return {
       { "<C-g>S", mode = "i" },
     },
   },
-  {
-    "ggandor/leap-ast.nvim",
-    dependencies = {
-      "ggandor/leap.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    keys = {
-      {
-        "<leader><leader>s",
-        function()
-          require("leap-ast").leap()
-        end,
-      },
-    },
-  },
 }
