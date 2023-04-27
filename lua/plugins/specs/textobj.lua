@@ -51,4 +51,18 @@ return {
       { "v", mode = { "n", "v", "x", "o" } },
     }
   },
+  {
+    "echasnovski/mini.ai",
+    opts = {
+      custom_textobjects = {
+        f = "@function"
+      },
+    },
+    config = function(_, opts)
+      require("mini.ai").setup(opts)
+    end,
+    keys = {
+      "v",
+    },
+  },
 }
