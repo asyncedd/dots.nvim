@@ -6,7 +6,7 @@ return {
     config = function()
       require("plugins.configs.ui.heirline")
     end,
-    event = { "VeryLazy", "BufReadPost", "User UI" },
+    event = { "VeryLazy", "User UI" },
     init = lazyLoad("heirline.nvim"),
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -39,11 +39,11 @@ return {
       require("ui.bufferline")
     end,
     init = lazyLoad("bufferline.nvim"),
-    event = { "VeryLazy", "BufReadPost", "User UI" },
+    event = { "VeryLazy", "User UI" },
   },
   {
     "folke/noice.nvim",
-    event = { "VeryLazy", "BufReadPost", "User UI" },
+    event = { "VeryLazy", "User UI" },
     init = lazyLoad("noice.nvim"),
     config = true,
     dependencies = {
@@ -67,7 +67,8 @@ return {
       symbol = "│",
       options = { try_as_border = true },
     },
-    event = { "BufReadPre", "BufNewFile" },
+    -- event = { "BufReadPre", "BufNewFile" },
+    event = "User UI",
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
         pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "neogit" },

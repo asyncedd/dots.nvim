@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 -- Neoinit v2.0
 
 -- Set options.
