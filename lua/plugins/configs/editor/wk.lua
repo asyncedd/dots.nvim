@@ -41,3 +41,12 @@ wk.register({
   s = "Leap",
   S = "Leap backward",
 }, { mode = { "n", "v", "o", "x" } })
+
+wk.register({
+  f = {
+    name = "find",
+    f = "Find file",
+    r = "Find recent file",
+    y = "Find yanks in killring",
+  },
+}, { prefix = "<leader>" })

@@ -35,6 +35,7 @@ return {
     },
     keys = {
       { "<leader>ff", "<cmd>Telescope find_files<CR>" },
+      { "<leader>fr", "<cmd>Telescope oldfiles<CR>" },
     },
   },
   {
