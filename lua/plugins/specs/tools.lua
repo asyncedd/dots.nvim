@@ -37,4 +37,34 @@ return {
       { "<leader>ff", "<cmd>Telescope find_files<CR>" },
     },
   },
+  {
+    "gbprod/yanky.nvim",
+    opts = {
+      highlight = {
+        on_put = true,
+        on_yank = true,
+        timer = 300,
+      },
+    },
+    config = function(_, opts)
+      require("yanky").setup(opts)
+
+      require("telescope").load_extension("yank_history")
+    end,
+    keys = {
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
+      { "<C-n>", "<Plug>(YankyCycleForward)" },
+      { "<C-p>", "<Plug>(YankyCyclePrevious)" },
+      { "y", "<Plug>(YankyYank)", mode = { "n", "x" } },
+      { "=p", "<Plug>(YankyPutAfterFilter)" },
+      { "=P", "<Plug>(YankyPutBeforeFilter)" },
+      { "<leader>fy", "<cmd>Telescope yank_history<CR>" },
+    },
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+  },
 }
