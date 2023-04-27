@@ -51,4 +51,13 @@ return {
       "rcarriga/nvim-notify",
     },
   },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      treesitter = true,
+      use_treesitter = true,
+    },
+    config = true,
+    event = { "VeryLazy" },
+  },
 }
