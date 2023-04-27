@@ -33,6 +33,8 @@ wk.register({
   S = { "Toggle surround in visual mode", mode = { "v", "x" } },
   ds = "Delete surround",
   cs = "Change surround",
+  ["<C-g>s"] = { "Insert surround", mode = "i" },
+  ["<C-g>S"] = { "Insert line", mode = "i" },
 })
 
 wk.register({
