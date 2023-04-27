@@ -12,10 +12,6 @@ return {
         highlight = {
           enable = true,
         },
-
-        indent = {
-          enable = true,
-        },
       })
     end,
     event = { "BufRead", "BufNewFile", "BufEnter" },
@@ -36,5 +32,31 @@ return {
       },
     },
     config = true,
-  }
+  },
+  {
+    "andymass/vim-matchup",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        matchup = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
+      })
+
+      vim.cmd("silent! do FileType")
+      local g = vim.g
+
+      -- Don't show offscreen matches.
+      g.matchup_matchparen_offscreen = { method = "none" }
+      -- Enable transmute.
+      -- Read: https://github.com/andymass/vim-matchup/blob/5a1978e46a0e721b5c5d113379c685ff7ec339e7/doc/matchup.txt#L31
+      g.matchup_transmute_enabled = 1
+      -- Defer surround matching. (To improve performance)
+      g.matchup_matchparen_deferred = 1
+    end,
+    -- event = "User LSP",
+    event = "VeryLazy",
+  },
 }
