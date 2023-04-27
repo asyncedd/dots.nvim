@@ -32,4 +32,35 @@ return {
       { "<C-g>S", mode = "i" },
     },
   },
+  {
+    "numToStr/Comment.nvim",
+    keys = {
+      "gcc",
+      "gbc",
+      { "gc", mode = { "v", "x", } },
+      { "gb", mode = { "v", "x", } },
+      "gcO",
+      "gco",
+      "gcA",
+    },
+    dependencies = {
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        config = function()
+          require("nvim-treesitter.configs").setup({
+            context_commentstring = {
+              enable = true,
+            },
+          })
+        end,
+      },
+    },
+    opts = function()
+      return {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+    config = true,
+  },
 }
+
