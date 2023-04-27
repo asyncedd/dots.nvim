@@ -2,6 +2,8 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     config = function()
+      require("core.highlight.treesitter")
+
       require("nvim-treesitter.configs").setup({
         ensure_installed = { "markdown", "markdown_inline", "luap", "luadoc", "vim" },
 
