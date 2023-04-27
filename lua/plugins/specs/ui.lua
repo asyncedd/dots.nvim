@@ -6,7 +6,7 @@ return {
     config = function()
       require("plugins.configs.ui.heirline")
     end,
-    event = { "VeryLazy", "BufReadPost", "User Heirline" },
+    event = { "VeryLazy", "BufReadPost", "User UI" },
     init = lazyLoad("heirline.nvim"),
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -39,11 +39,11 @@ return {
       require("ui.bufferline")
     end,
     init = lazyLoad("bufferline.nvim"),
-    event = { "VeryLazy", "BufReadPost", "User Heirline" },
+    event = { "VeryLazy", "BufReadPost", "User UI" },
   },
   {
     "folke/noice.nvim",
-    event = { "VeryLazy", "BufReadPost", "User Heirline" },
+    event = { "VeryLazy", "BufReadPost", "User UI" },
     init = lazyLoad("noice.nvim"),
     config = true,
     dependencies = {

@@ -22,7 +22,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     -- event = { "BufRead", "BufNewFile" },
-    event = "User Heirline",
+    event = "User UI",
     opts = {
       signs = {
         add = { text = "▎" },
