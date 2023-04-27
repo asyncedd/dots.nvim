@@ -16,14 +16,14 @@ return {
     "kylechui/nvim-surround",
     opts = {
       keymaps = {
-        normal = "<leader>ys",
-        normal_cur = "<leader>yss",
-        normal_line = "<leader>yS",
-        normal_cur_line = "<leader>ySS",
-        visual = "<leader>S",
-        visual_line = "<leader>gS",
-        delete = "<leader>ds",
-        change = "<leader>cs",
+        normal = "gys",
+        normal_cur = "gyss",
+        normal_line = "gyS",
+        normal_cur_line = "gySS",
+        visual = "gS",
+        visual_line = "ggS",
+        delete = "gds",
+        change = "gcs",
       },
     },
     dependencies = {
@@ -32,16 +32,31 @@ return {
     },
     config = true,
     keys = {
-      "<leader>ys",
-      "<leader>yss",
-      "<leader>ds",
-      "<leader>cs",
-      "<leader>yS",
-      "<leader>ySS",
-      { "<leader>S", mode = { "v", "x" } },
-      { "<leader>gS", mode = { "v", "x" } },
+      "gys",
+      "gyss",
+      "gds",
+      "gcs",
+      "gyS",
+      "gySS",
+      { "gS", mode = { "v", "x" } },
+      { "ggS", mode = { "v", "x" } },
       { "<C-g>s", mode = "i" },
       { "<C-g>S", mode = "i" },
+    },
+  },
+  {
+    "ggandor/leap-ast.nvim",
+    dependencies = {
+      "ggandor/leap.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    keys = {
+      {
+        "<leader><leader>s",
+        function()
+          require("leap-ast").leap()
+        end,
+      },
     },
   },
 }
