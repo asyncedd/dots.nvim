@@ -82,19 +82,19 @@ return {
       },
     },
   },
-  {
-    "ggandor/flit.nvim",
-    config = true,
-    keys = {
-      { "f", mode = { "n", "x" } },
-      { "F", mode = { "n", "x" } },
-      { "t", mode = { "n", "x" } },
-      { "T", mode = { "n", "x" } },
-    },
-    dependencies = {
-      "ggandor/leap.nvim",
-    },
-  },
+  -- {
+  --   "ggandor/flit.nvim",
+  --   config = true,
+  --   keys = {
+  --     { "f", mode = { "n", "x" } },
+  --     { "F", mode = { "n", "x" } },
+  --     { "t", mode = { "n", "x" } },
+  --     { "T", mode = { "n", "x" } },
+  --   },
+  --   dependencies = {
+  --     "ggandor/leap.nvim",
+  --   },
+  -- },
   {
     "ggandor/leap-spooky.nvim",
     config = true,
@@ -123,6 +123,20 @@ return {
       "<A-.>",
       "<A-,>",
       "<A-s>",
+    },
+  },
+  {
+    "jinh0/eyeliner.nvim",
+    opts = {
+      highlight_on_key = true, -- show highlights only after keypress
+      dim = true,
+    },
+    config = true,
+    keys = {
+      { "f", mode = { "n", "x", "v", "o" } },
+      { "F", mode = { "n", "x", "v", "o" } },
+      { "t", mode = { "n", "x", "v", "o" } },
+      { "T", mode = { "n", "x", "v", "o" } },
     },
   },
 }
