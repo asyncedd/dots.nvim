@@ -32,8 +32,8 @@ return {
       require("leap").add_default_mappings()
     end,
     keys = {
-      { "s", mode = { "n", "v", "o", "x" } },
-      { "S", mode = { "n", "v", "o", "x" } },
+      { "s", mode = { "n", "v", "x" } },
+      { "S", mode = { "n", "v", "x" } },
       { "x", mode = { "v", "o" } },
       { "X", mode = { "v", "o" } },
       {
