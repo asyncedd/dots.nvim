@@ -62,7 +62,14 @@ return {
       require("mini.ai").setup(opts)
     end,
     keys = {
-      "v",
+      { "v", mode = { "n", "v", "x", "o" } },
+    },
+  },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    config = true,
+    keys = {
+      { "v", mode = { "n", "v", "x", "o" } },
     },
   },
 }
