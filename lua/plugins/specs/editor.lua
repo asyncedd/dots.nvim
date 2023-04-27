@@ -59,4 +59,11 @@ return {
     -- event = "User LSP",
     event = "VeryLazy",
   },
+  {
+    "folke/which-key.nvim",
+    config = function()
+      require("editor.wk")
+    end,
+    event = { "VeryLazy" },
+  },
 }
