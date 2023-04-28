@@ -1,6 +1,10 @@
 {
   "lazy.nvim": { "branch": "main", "commit": "d6a782c7002682f4a01b79fc3918c4584ad6e8fb" },
+  "mason-lspconfig.nvim": { "branch": "main", "commit": "7276ffffcf51a8304b5fd4b81293be4ee010ec47" },
+  "mason.nvim": { "branch": "main", "commit": "23874ac7855d201add6fe382c507102155b3cd80" },
+  "neodev.nvim": { "branch": "main", "commit": "0043cf91c18aeac8db5765eb86c6078e17ac9325" },
   "nvim": { "branch": "main", "commit": "dd176757cc745f71bd54c472a9f58d5f8a54661d" },
+  "nvim-lspconfig": { "branch": "master", "commit": "427378a03ffc1e1bc023275583a49b1993e524d0" },
   "nvim-treesitter": { "branch": "master", "commit": "2ce3c9080cfe4a39c7907e672edafd2a95244a7c" },
   "vim-matchup": { "branch": "master", "commit": "1e276be9306490e439784cf5e8abe1f93b4a41b6" }
 }
