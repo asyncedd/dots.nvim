@@ -24,6 +24,12 @@ o.et = true
 -- For each step of (auto)indenting, use two spaces.
 o.sw = 2
 
+-- 1.2 Undo
+
+-- Enable undofile.
+-- Saves undos into a file.
+o.udf = true
+
 -- 2. UI
 
 -- 2.1 Line numbers.
