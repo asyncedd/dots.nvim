@@ -3,6 +3,7 @@ return {
   ensure_installed = {
     "lua",
     "luap",
+    "luadoc",
     "markdown_inline",
     "markdown",
     "vim",
