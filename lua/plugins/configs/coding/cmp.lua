@@ -48,5 +48,12 @@ return {
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
-  })
+  }),
+  formatting = {
+    format = require("lspkind").cmp_format({
+      mode = "symbol_text",
+      ellipsis_char = "...",
+    }),
+  },
 }
+
