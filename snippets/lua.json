@@ -1,11 +1,4 @@
 {
-  "require": {
-    "prefix": "req",
-    "body": [
-      "require(\"${1:module}\")"
-    ],
-    "description": "Require module"
-  },
   "return": {
     "prefix": "rt",
     "body": [
@@ -352,12 +345,6 @@
     "body": "rawset(${0:...})",
     "description": "5.1,5.2,5.3\n\nrawset (table, index, value)",
     "prefix": "rawset",
-    "scope": "source.lua"
-  },
-  "req": {
-    "body": "require(\"${1:module}\")",
-    "description": "require()",
-    "prefix": "req",
     "scope": "source.lua"
   },
   "ret": {

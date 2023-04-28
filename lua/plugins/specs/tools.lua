@@ -1,225 +1,71 @@
 return {
   {
-    "mbbill/undotree",
-    keys = {
-      { "<leader>u", vim.cmd.UndotreeToggle },
+    "TimUntersberger/neogit",
+    opts = {
+      disable_commit_confirmation = true,
     },
-    event = "TextChanged",
+    config = true,
+    keys = {
+      { "<leader>gt", "<cmd>Neogit<CR>" },
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
   },
   {
     "nvim-telescope/telescope.nvim",
+    config = function()
+      require("core.highlight.telescope")
+
+      require("telescope").setup()
+    end,
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-frecency.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
+        config = function()
+          -- To get fzf loaded and working with telescope, you need to call
+          -- load_extension, somewhere after setup function:
+          require("telescope").load_extension("fzf")
+        end,
         build = "make",
       },
-      "kkharji/sqlite.lua",
-      "olimorris/persisted.nvim",
-      "tiagovla/scope.nvim",
+    },
+    cmd = {
+      "Telescope",
     },
     keys = {
-      -- {
-      --   "<leader>ff",
-      --   function()
-      --     require("telescope.builtin").find_files()
-      --   end,
-      -- },
-      {
-        "<leader>fg",
-        function()
-          require("telescope.builtin").live_grep()
-        end,
-      },
-      { "<leader>fb", "<cmd>Telescope scope buffers<CR>" },
-      -- {
-      --   "<leader>fb",
-      --   function()
-      --     require("telescope.builtin").buffers()
-      --   end,
-      -- },
-      { "<leader>ff", "<cmd>Telescope frecency workspace=CWD<cr>" },
-      { "<leader>fs", "<cmd>Telescope persisted<cr>" },
+      { "<leader>ff", "<cmd>Telescope find_files<CR>" },
+      { "<leader>fr", "<cmd>Telescope oldfiles<CR>" },
     },
-    config = function()
-      require("tools.telescope")
-    end,
-    cmd = "Telescope",
-  },
-  {
-    "sbdchd/neoformat",
-    event = { "BufWritePre" },
-    config = function()
-      vim.api.nvim_command("Neoformat")
-    end,
-    cmd = { "Neoformat" },
   },
   {
     "gbprod/yanky.nvim",
-    keys = {
-      { "p", "<Plug>(YankyPutAfter)", mode = { "x", "n" } },
-      { "P", "<Plug>(YankyPutBefore)", mode = { "x", "n" } },
-      { "gp", "<Plug>(YankyGPutAfter)", mode = { "x", "n" } },
-      { "gP", "<Plug>(YankyGPutBefore)", mode = { "x", "n" } },
-      { "<C-n>", "<Plug>(YankyCycleFoward)", mode = { "n" } },
-      { "<C-p>", "<Plug>(YankyCycleBackward)", mode = { "n" } },
-      { "<leader>yh", '<cmd>lua require("telescope").extensions.yank_history.yank_history()<cr>' },
+    opts = {
+      highlight = {
+        on_put = true,
+        on_yank = true,
+        timer = 300,
+      },
     },
-    config = function()
-      require("tools.yanky")
+    config = function(_, opts)
+      require("yanky").setup(opts)
+
+      require("telescope").load_extension("yank_history")
     end,
+    keys = {
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
+      { "<C-n>", "<Plug>(YankyCycleForward)" },
+      { "<C-p>", "<Plug>(YankyCyclePrevious)" },
+      { "y", "<Plug>(YankyYank)", mode = { "n", "x" } },
+      { "=p", "<Plug>(YankyPutAfterFilter)" },
+      { "=P", "<Plug>(YankyPutBeforeFilter)" },
+      { "<leader>fy", "<cmd>Telescope yank_history<CR>" },
+    },
     dependencies = {
       "nvim-telescope/telescope.nvim",
-    },
-  },
-  {
-    "ThePrimeagen/harpoon",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    keys = {
-      {
-        "<leader>af",
-        function()
-          require("harpoon.mark").add_file()
-        end,
-      },
-      {
-        "<leader>mn",
-        function()
-          require("harpoon.ui").toggle_quick_menu()
-        end,
-      },
-      {
-        "<C-1>",
-        function()
-          require("harpoon.ui").nav_file(1)
-        end,
-      },
-      {
-        "<C-2>",
-        function()
-          require("harpoon.ui").nav_file(2)
-        end,
-      },
-      {
-        "<C-3>",
-        function()
-          require("harpoon.ui").nav_file(3)
-        end,
-      },
-      {
-        "<C-4>",
-        function()
-          require("harpoon.ui").nav_file(4)
-        end,
-      },
-      {
-        "<C-5>",
-        function()
-          require("harpoon.ui").nav_file(5)
-        end,
-      },
-      {
-        "<C-6>",
-        function()
-          require("harpoon.ui").nav_file(6)
-        end,
-      },
-      {
-        "<C-7>",
-        function()
-          require("harpoon.ui").nav_file(7)
-        end,
-      },
-      {
-        "<C-8>",
-        function()
-          require("harpoon.ui").nav_file(8)
-        end,
-      },
-      {
-        "<C-9>",
-        function()
-          require("harpoon.ui").nav_file(9)
-        end,
-      },
-      {
-        "<C-$>",
-        function()
-          require("harpoon.ui").nav_file(-1)
-        end,
-      },
-      {
-        "<leader>nn",
-        function()
-          require("harpoon.ui").nav_next()
-        end,
-      },
-      {
-        "<leader>np",
-        function()
-          require("harpoon.ui").nav_prev()
-        end,
-      },
-    },
-  },
-  {
-    "nvim-tree/nvim-tree.lua",
-    config = function()
-      require("tools.nvimtree")
-    end,
-    cmd = {
-      "NvimTreeToggle",
-      "NvimTreeFocus",
-      "NvimTreeFindFile",
-      "NvimTreeCollapse",
-    },
-    keys = {
-      { "<leader>tr", "<cmd>NvimTreeToggle<cr>" },
-      { "<leader>tc", "<cmd>NvimTreeCollapse<cr>" },
-      { "<leader>tf", "<cmd>NvimTreeFocus<cr>" },
-      { "<leader>ft", "<cmd>NvimTreeFindFile<cr>" },
-    },
-  },
-  {
-    "ray-x/sad.nvim",
-    dependencies = { "ray-x/guihua.lua", build = "cd lua/fzy && make" },
-    config = function()
-      require("sad").setup({})
-    end,
-    cmd = "Sad",
-    keys = {
-      { "<leader>sd", "<cmd>Sad<cr>" },
-    },
-  },
-  {
-    "kevinhwang91/nvim-fundo",
-    dependencies = {
-      "kevinhwang91/promise-async",
-    },
-    build = function()
-      require("fundo").install()
-    end,
-    config = true,
-  },
-  {
-    "olimorris/persisted.nvim",
-    config = true,
-    event = "VeryLazy",
-    cmd = {
-      "SessionToggle",
-      "SessionStart",
-      "SessionStop",
-      "SessionSave",
-      "SessionLoad",
-      "SessionLoadLast",
-      "SessionLoadFromFile",
-      "SessionDelete",
-    },
-    keys = {
-      { "<leader>ss", "<cmd>SessionSave<cr>" },
     },
   },
 }

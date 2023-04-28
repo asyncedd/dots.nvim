@@ -1,207 +1,84 @@
 local lazyLoad = require("core.utils.lazyLoad")
 
 return {
-  -- {
-  --   "catppuccin/nvim",
-  --   config = function()
-  --     require("ui.catppuccin")
-  --   end,
-  -- },
   {
-    "lukas-reineke/indent-blankline.nvim",
+    "rebelot/heirline.nvim",
     config = function()
-      require("ui.blankline")
+      require("plugins.configs.ui.heirline")
     end,
-    init = lazyLoad("indent-blankline.nvim"),
+    event = { "VeryLazy", "User UI" },
+    init = lazyLoad("heirline.nvim"),
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
   },
   {
-    "echasnovski/mini.indentscope",
-    config = function()
-      require("ui.indentscope")
-    end,
-    keys = {
-      "vii",
-      "vai",
-      "via",
-      "vaa",
+    "goolord/alpha-nvim",
+    dependencies = {
+      -- All optional, only required for the default setup.
+      -- If you customize your config, these aren't necessary.
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim"
     },
-    init = lazyLoad("mini.indentscope"),
+    config = function()
+      require("alpha").setup(require("ui.alpha").config)
+    end,
+    init = function()
+      local file = vim.fn.expand "%"
+      local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+
+      if not condition then
+        require("lazy").load({ plugins = "alpha-nvim" })
+      end
+    end,
+  },
+  {
+    "akinsho/bufferline.nvim",
+    config = function()
+      require("ui.bufferline")
+    end,
+    init = lazyLoad("bufferline.nvim"),
+    event = { "VeryLazy", "User UI" },
   },
   {
     "folke/noice.nvim",
+    event = { "VeryLazy", "User UI" },
+    init = lazyLoad("noice.nvim"),
     config = true,
-    event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
   },
   {
-    "glepnir/dashboard-nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      treesitter = true,
+      use_treesitter = true,
+    },
+    config = true,
+    event = { "VeryLazy" },
+  },
+  {
+    "echasnovski/mini.indentscope",
+    opts = {
+      -- symbol = "▏",
+      symbol = "│",
+      options = { try_as_border = true },
+    },
+    -- event = { "BufReadPre", "BufNewFile" },
+    event = "User UI",
     init = function()
-      vim.api.nvim_create_autocmd({ "VimEnter" }, {
-        group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. "dashboard-nvim", {}),
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "neogit" },
         callback = function()
-          local file = vim.fn.expand("%")
-          local condition = file == ""
-
-          if condition then
-            vim.api.nvim_del_augroup_by_name("BeLazyOnFileOpen" .. "dashboard-nvim")
-
-            -- dont defer for treesitter as it will show slow highlighting
-            -- This deferring only happens only when we do "nvim filename"
-            require("lazy").load({ plugins = "dashboard-nvim" })
-          end
+          vim.b.miniindentscope_disable = true
         end,
       })
     end,
-    config = function()
-      require("ui.dashboard")
+    config = function(_, opts)
+      require("mini.indentscope").setup(opts)
     end,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
-  {
-    "rebelot/heirline.nvim",
-    -- cond = true,
-    config = function()
-      require("ui.heirline")
-    end,
-    init = lazyLoad("heirline.nvim"),
-    -- event = "UIEnter",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
-  {
-    "echasnovski/mini.animate",
-    event = {
-      "VeryLazy",
-    },
-    config = function()
-      require("ui.animate")
-    end,
-  },
-  {
-    "edluffy/specs.nvim",
-    config = function()
-      require("ui.specs")
-    end,
-    event = {
-      "VeryLazy",
-    },
-  },
-  {
-    "RRethy/vim-illuminate",
-    config = function()
-      require("ui.illuminate")
-    end,
-    event = "VeryLazy",
-  },
-  -- {
-  --   "HiPhish/nvim-ts-rainbow2",
-  --   init = lazyLoad("nvim-ts-rainbow2"),
-  --   config = function()
-  --     require("ui.rainbow")
-  --   end,
-  -- },
-  {
-    "stevearc/dressing.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
-  -- {
-  --   "declancm/cinnamon.nvim",
-  --   config = function()
-  --     require("ui.cinnamon")
-  --   end,
-  --   keys = {
-  --     { "<C-u>", '<cmd>lua Scroll("<C-u>")<cr>', mode = "" },
-  --     { "<C-u>", '<cmd>lua Scroll("<C-u>")<cr>', mode = "i" },
-  --     { "<C-d>", '<cmd>lua Scroll("<C-d>")<cr>', mode = "" },
-  --     { "<C-d>", '<cmd>lua Scroll("<C-d>")<cr>', mode = "i" },
-  --     { "<C-b>", "<Cmd>lua Scroll('<C-b>', 1, 1)<CR>", mode = "n" },
-  --     { "C-f>", "<Cmd>lua Scroll('<C-f>', 1, 1)<CR>", mode = "n" },
-  --     { "<PageUp>", "<cmd>lua Scroll('<C-b>', 1, 1)<cr>", mode = "n" },
-  --     { "<PageDown>", "<cmd>lua Scroll('<C-f>', 1, 1)<cr>", mode = "n" },
-  --     { "gg", "<Cmd>lua Scroll('gg', 0, 0, 3)<cr>", mode = { "n", "x" } },
-  --     { "G", "<cmd>lua Scroll('G', 0, 1, 3)<cr>", mode = { "n", "x" } },
-  --     { "M", "<cmd>lua Scroll('M', 0, 1, 3)<cr>", mode = { "n", "x" } },
-  --     { "{", "<cmd>lua Scroll('{', 0)<cr>", mode = { "n", "x" } },
-  --     { "}", "<cmd>lua Scroll('}', 0)<cr>", mode = { "n", "x" } },
-  --     { "n", "<cmd>lua Scroll('n')<cr>" },
-  --     { "N", "<cmd>lua Scroll('N')<cr>" },
-  --     { "*", "<cmd>lua Scroll('*')<cr>" },
-  --     { "#", "<cmd>lua Scroll('#')<cr>" },
-  --     { "g*", "<cmd>lua Scroll('g*')<cr>" },
-  --     { "g#", "<cmd>lua Scroll('g#')<cr>" },
-  --     { "<C-o>", "<cmd>lua Scroll('<C-o>')<cr>" },
-  --     { "<C-i>", "<cmd>lua Scroll('<C-i>')<cr>" },
-  --     { "zz", "<cmd>lua Scroll('zz', 0, 1)<cr>" },
-  --     { "zt", "<cmd>lua Scroll('zt', 0, 1)<cr>" },
-  --     { "zb", "<cmd>lua Scroll('zb', 0, 1)<cr>" },
-  --     { "z.", "<cmd>lua Scroll('z.', 0, 1)<cr>" },
-  --     { "z<cr>", "<cmd>lua Scroll('z<cr>', 0, 1)<cr>" },
-  --     { "z-", "<cmd>lua Scroll('z-', 0, 1)<cr>" },
-  --     { "z+", "<cmd>lua Scroll('z+', 0, 1)<cr>" },
-  --     { "z^", "<cmd>lua Scroll('z^', 0, 1)<cr>" },
-  --     -- { "gk", "<cmd>lua Scroll('gk', 0, 1, 3)<cr>", mode = { "n", "x" } },
-  --     -- { "gj", "<cmd>lua Scroll('gj', 0, 1, 3)<cr>", mode = { "n", "x" } },
-  --     { "<Up>", "<cmd>lua Scroll('k', 0, 1, 3)<cr>", mode = { "n", "x" } },
-  --     { "<Down>", "<cmd>lua Scroll('j', 0, 1, 3)<cr>", mode = { "n", "x" } },
-  --   },
-  -- },
-  {
-    "gen740/SmoothCursor.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
-  -- {
-  --   "freddiehaddad/feline.nvim",
-  --   config = function()
-  --     require("ui.feline")
-  --   end,
-  -- },
-  -- {
-  --   "b0o/incline.nvim",
-  --   init = lazyLoad("incline.nvim"),
-  --   config = function()
-  --     require("ui.incline")
-  --   end,
-  -- },
-  {
-    "stevearc/dressing.nvim",
-    event = "VeryLazy",
-  },
-  -- {
-  --   "shellRaining/hlchunk.nvim",
-  --   init = lazyLoad("hlchunk.nvim"),
-  --   config = function()
-  --     require("ui.hlchunk")
-  --   end,
-  -- },
-  {
-    "folke/zen-mode.nvim",
-    dependencies = {
-      "folke/twilight.nvim",
-    },
-    config = true,
-    cmd = { "ZenMode" },
-    keys = {
-      { "<leader>zm", "<cmd>ZenMode<CR>" },
-    },
-  },
-  {
-    "NvChad/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-
-      require("colorizer").attach_to_buffer(0, { mode = "background", css = true })
-    end,
-    event = {
-      "BufReadPost",
-      "VeryLazy",
-    },
   },
 }

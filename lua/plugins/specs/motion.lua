@@ -1,351 +1,142 @@
 return {
   {
-    "ggandor/leap.nvim",
-    keys = {
-      { "s", mode = { "n", "x" } },
-      { "S", mode = { "n", "x" } },
-      { "x", mode = { "v" } },
-      { "X", mode = { "v" } },
-      {
-        "ms",
-        function()
-          require("motion.leapMulti")
-        end,
-      },
-    },
-    config = function()
-      require("motion.leap")
-    end,
-  },
-  {
-    "ggandor/flit.nvim",
-    keys = {
-      { "f", mode = { "n", "v" } },
-      { "F", mode = { "n", "v" } },
-      { "t", mode = { "n", "v" } },
-      { "T", mode = { "n", "v" } },
-    },
-    config = true,
-  },
-  {
-    "ggandor/leap-spooky.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
-  {
-    "ggandor/leap-ast.nvim",
-    keys = {
-      {
-        "<leader>lp",
-        function()
-          require("leap-ast").leap()
-        end,
-        mode = { "n", "v", "x" },
-      },
-    },
-  },
-  {
-    "LeonHeidelbach/trailblazer.nvim",
-    keys = {
-      "Ma",
-      "Mb",
-      "Mj",
-      "Mk",
-      "MM",
-      "ML",
-      "Mn",
-      "MN",
-      "Mt",
-      "M[",
-      "M]",
-      "Ms",
-    },
-    cmd = {
-      "TrailBlazerNewTrailMark",
-      "TrailBlazerTrackBack",
-      "TrailBlazerPeekMovePreviousUp",
-      "TrailBlazerPeekMoveNextDown",
-      "TrailBlazerDeleteAllTrailMarks",
-      "TrailBlazerPasteAtLastTrailMark",
-      "TrailBlazerPasteAtAllTrailMarks",
-      "TrailBlazerTrailMarkSelectMode",
-      "TrailBlazerToggleTrailMarkList",
-      "TrailBlazerSwitchTrailMarkStack",
-      "TrailBlazerAddTrailMarkStack",
-      "TrailBlazerDeleteTrailMarkStacks",
-      "TrailBlazerDeleteAllTrailMarkStacks",
-      "TrailBlazerSwitchNextTrailMarkStack",
-      "TrailBlazerSwitchPreviousTrailMarkStack",
-      "TrailBlazerSetTrailMarkStackSortMode",
-    },
-    config = function()
-      require("motion.trailblazer")
-    end,
-  },
-  {
     "chrisgrieser/nvim-spider",
     keys = {
-      { "w", "<cmd>lua require('spider').motion('w')<CR>", mode = { "x", "o", "n" } },
-      { "e", "<cmd>lua require('spider').motion('e')<CR>", mode = { "x", "o", "n" } },
-      { "b", "<cmd>lua require('spider').motion('b')<CR>", mode = { "x", "o", "n" } },
-      { "ge", "<cmd>lua require('spider').motion('ge')<CR>", mode = { "x", "o", "n" } },
+      { "w", "<cmd>lua require('spider').motion(\"w\")<CR>", mode = { "n", "o", "x" } },
+      { "e", "<cmd>lua require('spider').motion(\"e\")<CR>", mode = { "n", "o", "x" } },
+      { "b", "<cmd>lua require('spider').motion(\"b\")<CR>", mode = { "n", "o", "x" } },
+      { "ge", "<cmd>lua require('spider').motion(\"ge\")<CR>", mode = { "n", "o", "x" } },
     },
   },
   {
-    "cbochs/portal.nvim",
-    keys = {
-      { "<leader>o", "<cmd>Portal jumplist backward<cr>" },
-      { "<leader>i", "<cmd>Portal jumplist forward<cr>" },
-    },
-    dependencies = {
-      "cbochs/grapple.nvim",
-      "ThePrimeagen/harpoon",
-    },
-  },
-  {
-    "linty-org/readline.nvim",
-    keys = {
-      {
-        "<C-k>",
-        function()
-          require("readline").kill_line()
-        end,
-        mode = { "i" },
-      },
-      {
-        "<C-u>",
-        function()
-          require("readline").backward_kill_line()
-        end,
-        mode = { "i" },
-      },
-      {
-        "<M-d>",
-        function()
-          require("readline").kill_word()
-        end,
-        mode = { "i" },
-      },
-      {
-        "<M-BS>",
-        function()
-          require("readline").backward_kill_word()
-        end,
-        mode = { "i" },
-      },
-      {
-        "<C-w>",
-        function()
-          require("readline").unix_word_rubout()
-        end,
-        mode = { "i" },
-      },
-      { "<C-d>", "<Delete>", mode = { "i" } },
-      { "<C-h>", "<BS>", mode = { "i" } },
-      {
-        "<C-a>",
-        function()
-          require("readline").beginning_of_line()
-        end,
-        mode = { "i" },
-      },
-      {
-        "<M-m>",
-        function()
-          require("readline").back_to_indentation()
-        end,
-        mode = { "i" },
-      },
-      {
-        "<C-e>",
-        function()
-          require("readline").end_of_line()
-        end,
-        mode = { "i" },
-      },
-      {
-        "<M-f>",
-        function()
-          require("readline").forward_word()
-        end,
-        mode = { "i" },
-      },
-      {
-        "<M-b>",
-        function()
-          require("readline").backward_word()
-        end,
-        mode = { "i" },
-      },
-      { "<C-f>", "<Right>", mode = { "i" } },
-      { "<C-b>", "<Left>", mode = { "i" } },
-    },
-  },
-  {
-    "ziontee113/syntax-tree-surfer",
+    "ggandor/leap.nvim",
     config = function()
-      require("motion.treeSurfer")
+      -- The below settings make Leap's highlighting closer to what you've been
+      -- used to in Lightspeed.
+
+      vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" }) -- or some grey
+      vim.api.nvim_set_hl(0, "LeapMatch", {
+        -- For light themes, set to 'black' or similar.
+        fg = "white", bold = true, nocombine = true,
+      })
+      -- Of course, specify some nicer shades instead of the default "red" and "blue".
+      vim.api.nvim_set_hl(0, "LeapLabelPrimary", {
+        fg = "pink", bold = true, nocombine = true,
+      })
+      vim.api.nvim_set_hl(0, "LeapLabelSecondary", {
+        fg = "blue", bold = true, nocombine = true,
+      })
+      -- Try it without this setting first, you might find you don't even miss it.
+      require("leap").opts.highlight_unlabeled_phase_one_targets = true
+
+      require("leap").add_default_mappings()
     end,
     keys = {
+      { "s", mode = { "n", "v", "x", "o" } },
+      { "S", mode = { "n", "v", "x", "o" } },
+      { "x", mode = { "v", "o" } },
+      { "X", mode = { "v", "o" } },
       {
-        "<leader>hj",
+        "<leader>s",
         function()
-          require("syntax-tree-surfer").targeted_jump({
-            "function",
-            "arrrow_function",
-            "function_defination",
-            "if_statement",
-            "else_clause",
-            "else_statement",
-            "elseif_statement",
-            "for_statement",
-            "while_statement",
-            "switch_statement",
-            "variable_declaration",
-          })
+          local function get_line_starts(winid)
+            local wininfo =  vim.fn.getwininfo(winid)[1]
+            local cur_line = vim.fn.line('.')
+
+            -- Get targets.
+            local targets = {}
+            local lnum = wininfo.topline
+            while lnum <= wininfo.botline do
+              local fold_end = vim.fn.foldclosedend(lnum)
+              -- Skip folded ranges.
+              if fold_end ~= -1 then
+                lnum = fold_end + 1
+              else
+                if lnum ~= cur_line then table.insert(targets, { pos = { lnum, 1 } }) end
+                lnum = lnum + 1
+              end
+            end
+            -- Sort them by vertical screen distance from cursor.
+            local cur_screen_row = vim.fn.screenpos(winid, cur_line, 1)['row']
+            local function screen_rows_from_cur(t)
+              local t_screen_row = vim.fn.screenpos(winid, t.pos[1], t.pos[2])['row']
+              return math.abs(cur_screen_row - t_screen_row)
+            end
+            table.sort(targets, function (t1, t2)
+              return screen_rows_from_cur(t1) < screen_rows_from_cur(t2)
+            end)
+
+            if #targets >= 1 then
+              return targets
+            end
+          end
+
+          -- Usage:
+          local winid = vim.api.nvim_get_current_win()
+          require('leap').leap {
+            target_windows = { winid },
+            targets = get_line_starts(winid),
+          }
         end,
-        mode = { "n", "v", "x" },
-      },
-      {
-        "<leader>s<leader>",
-        function()
-          require("syntax-tree-surfer").targeted_jump({
-            "function",
-            "arrrow_function",
-            "function_defination",
-            "if_statement",
-            "else_clause",
-            "else_statement",
-            "elseif_statement",
-            "for_statement",
-            "while_statement",
-            "switch_statement",
-            "variable_declaration",
-          })
-        end,
-        mode = { "n", "v", "x" },
-      },
-    },
-  },
-  {
-    "mizlan/iswap.nvim",
-    config = function()
-      require("motion.iswap")
-    end,
-    cmd = {
-      "ISwap",
-      "ISwapWith",
-      "ISwapNode",
-    },
-    keys = {
-      { "<leader>is", "<cmd>ISwap<cr>" },
-    },
-  },
-  {
-    "woosaaahh/sj.nvim",
-    config = true,
-    keys = {
-      {
-        "<leader><leader>s",
-        function()
-          require("sj").run()
-        end,
-      },
-      {
-        "<A-,>",
-        function()
-          require("sj").prev_match()
-        end,
-      },
-      {
-        "<A-;>",
-        function()
-          require("sj").next_match()
-        end,
-      },
-      {
-        "<leader>su",
-        function()
-          require("sj").redo()
-        end,
-      },
-    },
-  },
-  {
-    "mfussenegger/nvim-treehopper",
-    dependencies = {
-      "phaazon/hop.nvim",
-    },
-    keys = {
-      { "<leader>th", "<cmd>lua require('tsht').nodes()<cr>" },
-    },
-  },
-  {
-    "drybalka/tree-climber.nvim",
-    keys = {
-      {
-        "H",
-        function()
-          require("tree-climber").goto_parent()
-        end,
-        mode = { "n", "v", "x" },
-      },
-      {
-        "L",
-        function()
-          require("tree-climber").goto_child()
-        end,
-        mode = { "n", "v", "x" },
-      },
-      {
-        "J",
-        function()
-          require("tree-climber").goto_next()
-        end,
-        mode = { "n", "v", "x" },
-      },
-      {
-        "K",
-        function()
-          require("tree-climber").goto_prev()
-        end,
-        mode = { "n", "v", "x" },
-      },
-      {
-        "<leader>in",
-        function()
-          require("tree-climber").select_node()
-        end,
-        mode = { "v", "o" },
-      },
-      {
-        "<C-k>",
-        function()
-          require("tree-climber").swap_prev()
-        end,
-      },
-      {
-        "<C-j>",
-        function()
-          require("tree-climber").swap_next()
-        end,
-      },
-      {
-        "<C-h>",
-        function()
-          require("tree-climber").highlight_node()
-        end,
+        mode = { "o", "v", "n" },
       },
     },
   },
   -- {
-  --   "rainbowhxch/accelerated-jk.nvim",
+  --   "ggandor/flit.nvim",
   --   config = true,
   --   keys = {
-  --     { "j", "<Plug>(accelerated_jk_gj)" },
-  --     { "gj", "<Plug>(accelerated_jk_gj)" },
-  --     { "k", "<Plug>(accelerated_jk_gk)" },
-  --     { "gk", "<Plug>(accelerated_jk_gk)" },
+  --     { "f", mode = { "n", "x" } },
+  --     { "F", mode = { "n", "x" } },
+  --     { "t", mode = { "n", "x" } },
+  --     { "T", mode = { "n", "x" } },
+  --   },
+  --   dependencies = {
+  --     "ggandor/leap.nvim",
   --   },
   -- },
+  {
+    "ggandor/leap-spooky.nvim",
+    config = true,
+    keys = {
+      { "r", mode = { "n", "v", "x", "o" } },
+      { "R", mode = { "n", "v", "x", "o" } },
+    },
+    dependencies = {
+      "ggandor/leap.nvim",
+    },
+  },
+  {
+    "LeonHeidelbach/trailblazer.nvim",
+    config = true,
+    keys = {
+      "<A-l>",
+      "<A-b>",
+      "<A-J>",
+      "<A-K>",
+      "<A-n>",
+      "<A-m>",
+      "<A-L>",
+      "<A-p>",
+      "<A-P>",
+      "<A-t>",
+      "<A-.>",
+      "<A-,>",
+      "<A-s>",
+    },
+  },
+  {
+    "jinh0/eyeliner.nvim",
+    opts = {
+      highlight_on_key = true, -- show highlights only after keypress
+      dim = true,
+    },
+    config = true,
+    keys = {
+      { "f", mode = { "n", "x", "v", "o" } },
+      { "F", mode = { "n", "x", "v", "o" } },
+      { "t", mode = { "n", "x", "v", "o" } },
+      { "T", mode = { "n", "x", "v", "o" } },
+    },
+  },
 }
