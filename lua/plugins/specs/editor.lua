@@ -6,6 +6,8 @@ return {
     end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
+
+      require("plugins.highlight.editor.treesitter")
     end,
     build = ":TSUpdate",
     event = { "BufReadPost" }
