@@ -29,6 +29,18 @@ return {
         end,
         build = "make",
       },
+      {
+        "prochri/telescope-all-recent.nvim",
+        opts = {
+          default = {
+            sorting = "frecency",
+          },
+        },
+        dependencies = {
+          "kkharji/sqlite.lua",
+        },
+        config = true,
+      },
     },
     cmd = {
       "Telescope",
@@ -36,6 +48,7 @@ return {
     keys = {
       { "<leader>ff", "<cmd>Telescope find_files<CR>" },
       { "<leader>fr", "<cmd>Telescope oldfiles<CR>" },
+      { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
     },
   },
   {
