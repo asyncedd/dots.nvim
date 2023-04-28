@@ -67,6 +67,7 @@ return {
   },
   {
     "chrisgrieser/nvim-various-textobjs",
+    opts = { useDefaultKeymaps = true },
     config = true,
     keys = {
       { "v", mode = { "n", "v", "x", "o" } },
