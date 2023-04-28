@@ -41,3 +41,11 @@ o.cursorline = true
 
 -- Set cmdheight to 0.
 o.cmdheight = 0
+
+-- 2.3 Pop up menu.
+
+-- Make pumhieght a little bit smaller. (This will limit the amount of items that will fit into a completion menu, and leave the rest to be scrolled.
+o.ph = 5
+
+-- Make the pumblend a little bit transparent. (This is just for aesthetic purposes, doesn't do anything really useful.)
+o.pb = 30
