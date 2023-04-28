@@ -14,5 +14,17 @@ return {
       "onsails/lspkind-nvim",
     },
   },
+  {
+    "altermo/npairs-integrate-upair",
+    opts = function()
+      return require("plugins.configs.coding.autopairs")
+    end,
+    config = true,
+    event = { "InsertEnter", "CmdlineEnter" },
+    dependencies = {
+      "windwp/nvim-autopairs",
+      "altermo/ultimate-autopair.nvim",
+    },
+  },
 }
 
