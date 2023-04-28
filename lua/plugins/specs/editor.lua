@@ -10,7 +10,7 @@ return {
       require("plugins.highlight.editor.treesitter")
     end,
     build = ":TSUpdate",
-    event = { "BufReadPost" }
+    event = { "BufReadPost" },
   },
   {
     "andymass/vim-matchup",
@@ -18,10 +18,12 @@ return {
       return require("plugins.configs.editor.matchup")
     end,
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      vim.schedule(function()
+        require("nvim-treesitter.configs").setup(opts)
 
-      vim.cmd("silent! do FileType")
+        vim.cmd("silent! do FileType")
+      end)
     end,
-    event = "VeryLazy",
+    event = { "VeryLazy", "User file" },
   },
 }
