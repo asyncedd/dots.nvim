@@ -9,4 +9,12 @@ return {
       "rcarriga/nvim-notify",
     },
   },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = function()
+      require("plugins.configs.ui.indent-blankline")
+    end,
+    config = true,
+    event = { "VeryLazy", "BufReadPost" },
+  },
 }
