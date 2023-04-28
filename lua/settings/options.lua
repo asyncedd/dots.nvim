@@ -33,3 +33,6 @@ o.number = true
 
 -- Enable relativenumber.
 o.relativenumber = true
+
+-- Enable cursorline.
+o.cursorline = true

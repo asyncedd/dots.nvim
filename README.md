@@ -1,5 +1,7 @@
 ## 🏗️ DotsDotNvim (dots.nvim)
 
+:warning: This README is really really outdated since, I'm too lazy.
+
 My personal Neovim configuration
 
 ![Size](https://img.shields.io/github/repo-size/asyncedd/dots.nvim?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)
