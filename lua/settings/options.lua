@@ -29,18 +29,18 @@ o.sw = 2
 -- 2.1 Line numbers.
 
 -- Enable line numbers.
-o.number = true
+o.nu = true
 
 -- Enable relativenumber.
-o.relativenumber = true
+o.rnu = true
 
 -- Enable cursorline.
-o.cursorline = true
+o.cul = true
 
 -- 2.2 Statusline
 
 -- Set cmdheight to 0.
-o.cmdheight = 0
+o.ch = 0
 
 -- 2.3 Pop up menu.
 
