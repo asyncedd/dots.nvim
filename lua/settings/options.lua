@@ -36,3 +36,8 @@ o.relativenumber = true
 
 -- Enable cursorline.
 o.cursorline = true
+
+-- 2.2 Statusline
+
+-- Set cmdheight to 0.
+o.cmdheight = 0
