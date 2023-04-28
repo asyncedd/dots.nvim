@@ -15,5 +15,7 @@ require("plugins")
 -- Set the colorscheme to catppuccin.
 vim.api.nvim_command("colorscheme catppuccin")
 
--- Defer some functions later.
-require("core.after")
+vim.schedule(function()
+  -- Defer some functions later.
+  require("core.after")
+end)

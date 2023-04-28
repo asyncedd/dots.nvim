@@ -15,6 +15,6 @@ return {
       require("plugins.configs.ui.indent-blankline")
     end,
     config = true,
-    event = { "VeryLazy", "BufReadPost" },
+    event = { "VeryLazy", "User file" },
   },
 }
