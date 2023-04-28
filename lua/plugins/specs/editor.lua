@@ -19,7 +19,7 @@ return {
     end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
-      
+
       vim.cmd("silent! do FileType")
     end,
     event = "VeryLazy",
