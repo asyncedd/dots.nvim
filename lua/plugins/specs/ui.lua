@@ -2,6 +2,9 @@ return {
   "catppuccin/nvim",
   {
     "folke/noice.nvim",
+    opts = function()
+      return require("plugins.configs.ui.noice")
+    end,
     config = true,
     event = "VeryLazy",
     dependencies = {
