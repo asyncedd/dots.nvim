@@ -37,4 +37,14 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "echasnovski/mini.indentscope",
+    opts = function()
+      return require("plugins.configs.ui.mini-indentscope")
+    end,
+    config = function(_, opts)
+      require("mini.indentscope").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
 }
