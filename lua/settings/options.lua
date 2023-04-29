@@ -48,6 +48,9 @@ o.cul = true
 -- Set cmdheight to 0.
 o.ch = 0
 
+-- Use a global statusline.
+o.ls = 3
+
 -- 2.3 Pop up menu.
 
 -- Make pumhieght a little bit smaller. (This will limit the amount of items that will fit into a completion menu, and leave the rest to be scrolled.
