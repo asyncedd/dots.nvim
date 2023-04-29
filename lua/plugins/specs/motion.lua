@@ -89,7 +89,7 @@ return {
   {
     "echasnovski/mini.ai",
     opts = function()
-      return require("plugins.configs.motion.miniai")
+      return require("plugins.configs.motion.mini-ai")
     end,
     config = function(_, opts)
       require("mini.ai").setup(opts)
