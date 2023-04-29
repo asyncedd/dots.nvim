@@ -9,6 +9,9 @@ return {
     "vim",
     "vimdoc",
     "query",
+    "regex",
+    "bash",
+    "fish",
   },
 
   -- Check https://github.com/nvim-treesitter/nvim-treesitter/wiki/Linux-Support.
