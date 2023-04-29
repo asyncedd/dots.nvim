@@ -59,5 +59,8 @@ return {
     end,
     config = true,
     event = { "User file", "VeryLazy", "BufReadPost" },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
   },
 }
