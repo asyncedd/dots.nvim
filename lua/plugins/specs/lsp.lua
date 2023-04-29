@@ -18,4 +18,24 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    opts = function()
+      return require("plugins.configs.lsp.null")
+    end,
+    dependencies = {
+      {
+        "jay-babu/mason-null-ls.nvim",
+        opts = {
+          ensure_installed = { "stylua" },
+        },
+        config = true,
+      },
+      "nvim-lua/plenary.nvim",
+    },
+    event = "VeryLazy",
+    config = function(_, opts)
+      require("null-ls").setup(opts)
+    end,
+  },
 }
