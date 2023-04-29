@@ -64,6 +64,8 @@ return {
       return require("plugins.configs.ui.mini-starter")
     end,
     config = function(_, opts)
+      require("plugins.highlight.ui.mini-starter")
+
       require("mini.starter").setup(opts)
     end,
     event = { "VimEnter" },
