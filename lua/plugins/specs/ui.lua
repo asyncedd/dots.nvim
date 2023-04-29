@@ -66,6 +66,6 @@ return {
     config = function(_, opts)
       require("mini.starter").setup(opts)
     end,
-    lazy = false,
+    event = { "VimEnter" },
   },
 }
