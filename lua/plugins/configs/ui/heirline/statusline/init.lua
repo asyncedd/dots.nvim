@@ -80,6 +80,22 @@ local ViMode = {
   },
 }
 
+local FileFormat = {
+  provider = function()
+    local fmt = vim.bo.fileformat
+    -- return fmt ~= 'unix' and fmt:upper()
+    if fmt == "unix" then
+      return " UNIX"
+    elseif fmt == "mac" then
+      return " MAC"
+    elseif fmt == "dos" then
+      return " DOS"
+    else
+      return fmt:upper()
+    end
+  end
+}
+
 -- We're getting minimalists here!
 local Ruler = {
   -- %l = current line number
@@ -268,6 +284,8 @@ local DefaultStatusline = {
   Space,
   FileNameBlock,
   Align,
+  FileFormat,
+  Space,
   Ruler,
   Space,
   ScrollBar,
