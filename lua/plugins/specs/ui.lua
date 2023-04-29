@@ -48,11 +48,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "gen740/SmoothCursor.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "rebelot/heirline.nvim",
     opts = function()
       return require("plugins.configs.ui.heirline")
