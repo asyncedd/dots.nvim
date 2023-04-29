@@ -19,6 +19,9 @@ return {
   },
   {
     "echasnovski/mini.animate",
+    opts = function()
+      return require("plugins.configs.ui.mini-animate")
+    end,
     config = function(_, opts)
       require("mini.animate").setup(opts)
     end,
