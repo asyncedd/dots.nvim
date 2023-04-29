@@ -86,7 +86,25 @@ local Ruler = {
   -- %L = number of lines in the buffer
   -- %c = column number
   -- %P = percentage through file of displayed window
-  provider = "%7(%l/%3L%):%2c %P",
+  -- provider = "%7(%l/%3L%):%2c %P",
+  provider = "%7(%l/%3L%):%2c",
+  hl = function()
+    local position = math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
+    local fg
+
+    if position <= 5 then
+      fg = "aqua"
+    elseif position >= 95 then
+      fg = "red"
+    else
+      fg = "purple"
+    end
+    return {
+      fg = fg,
+      bold = true,
+      bg = "black",
+    }
+  end,
 }
 
 -- I take no credits for this! :lion:
