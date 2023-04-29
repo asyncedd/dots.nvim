@@ -1,4 +1,12 @@
 local o = vim.opt
+local g = vim.g
+
+-- 0. General
+
+-- 0.1 Leader
+
+-- Map the <leader> key to <space>
+g.mapleader = " "
 
 -- 1. Editor
 
