@@ -17,4 +17,11 @@ return {
     config = true,
     event = { "VeryLazy", "User file" },
   },
+  {
+    "echasnovski/mini.animate",
+    config = function(_, opts)
+      require("mini.animate").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
 }
