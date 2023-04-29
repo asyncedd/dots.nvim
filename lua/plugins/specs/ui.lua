@@ -47,4 +47,9 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "gen740/SmoothCursor.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
