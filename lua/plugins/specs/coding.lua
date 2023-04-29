@@ -91,4 +91,13 @@ return {
       { "g", mode = { "n", "x" } },
     },
   },
+  {
+    "Wansmer/treesj",
+    config = true,
+    keys = {
+      "<leader>m",
+      "<leader>j",
+      "<leader>s",
+    },
+  },
 }
