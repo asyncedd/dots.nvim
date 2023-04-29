@@ -36,20 +36,6 @@ _Q 🙋 Why should I use this?_
 
 > Here's some DISCLAIMERS!
 
-- If you're using Neovide, it's a good idea to open it with `--maximized` or
-  you're not really going to have a good experience.
-
-- Speaking of Neovide, don't `dd`. I don't know why, but just don't. (btw, if
-  you do just `pkill` it and open `neovide` without opening a file.)
-
-- Also, if you're on Neovim nightly, please build Neovide from source. You'll be
-  stuck on some black screen.
-
-- If you're planning on using Astro and some markdown LSP, you have to have
-  `npm` installed and added to your PATH. Just use a package manager. If you're
-  not going to use them, please comment them out in
-  `lua/plugins/configs/lsp/mason.lua` and `lua/plugins/configs/lps/config.lua`.
-
 - If want to exit Neovim, just plug out your computer (or for laptop users...
   >:) You don't want to). I meant, that'll never work.
 
@@ -58,13 +44,13 @@ _Q 🙋 Why should I use this?_
 Dependencies:
 
 - `nvim` :)
-- `luarocks` for well, luarocks.
-- `lua` for Windows users wanting to use nvim-treesitter.
-- `npm` for Astro and Markdown LSP.
-- `sad` for Sad
-- `fzf` for Sad
-- `fd` for Sad
-- `delta` for Sad. If you're using Arch, use `yay -Syu git-delta`
+- `fzf` for Telescope!
+- `fd` for Telescope too!
+
+Other Dependencies:
+
+`:checkhealth`
+`:checkhealth mason`
 
 To install this configuration, you need a Neovim build. You can use your
 favorite package manager or,
@@ -77,7 +63,6 @@ Then clone this repository.
 mkdir ~/.config/nvim/
 git clone https://github.com/asycnedd/nvim.git ~/.config/nvim/
 ```
-
 # For Windows systems:
 
 ```bash
@@ -92,6 +77,7 @@ Just run a `nvim` in your terminal :D
 ## ⚡ Performance
 
 TODO Redo it once ~~I get it to be more faster (troll)~~ Unlazy
+This is really outdated btw.
 
 - `nvim --clean` -
   [source](https://github.com/asyncedd/dots.nvim/blob/master/clean.log):
