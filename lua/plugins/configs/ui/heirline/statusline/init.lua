@@ -277,12 +277,35 @@ FileNameBlock = utils.insert(FileNameBlock,
   { provider = '%<'} -- this means that the statusline is cut here when there's not enough space
 )
 
+local LSPActive = {
+  condition = conditions.lsp_attached,
+  update = {
+    "LspAttach",
+    "LspDetach"
+  },
+
+  -- You can keep it simple,
+  -- provider = " [LSP]",
+
+  -- Or complicate things a bit and get the servers names
+  provider  = function()
+    local names = {}
+    for i, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
+      table.insert(names, server.name)
+    end
+    return "  " .. table.concat(names, " ")
+  end,
+  hl = { fg = "green", bold = true },
+}
+
 -- ViMode = utils.surround({ "", "" }, function(self) return self:mode_color() end, { hl = { fg = "black" } })
 
 local DefaultStatusline = {
   ViMode,
   Space,
   FileNameBlock,
+  Align,
+  LSPActive,
   Align,
   FileFormat,
   Space,
