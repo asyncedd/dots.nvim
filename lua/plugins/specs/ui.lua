@@ -74,8 +74,18 @@ return {
   },
   {
    "akinsho/bufferline.nvim",
+    opts = function()
+      return require("plugins.configs.ui.bufferline")
+    end,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
+    },
+    config = true,
+    event = { "VeryLazy" },
+    keys = {
+      { "[b", "<cmd>BufferLineCycleNext<CR>" },
+      { "]b", "<cmd>BufferLineCyclePrev<CR>" },
+      { "gbp", "<cmd>BufferLinePick<CR>" },
     },
   },
 }
