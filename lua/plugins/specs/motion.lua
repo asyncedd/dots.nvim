@@ -86,4 +86,17 @@ return {
       { "T", mode = { "n", "x", "o" } },
     },
   },
+  {
+    "echasnovski/mini.ai",
+    opts = function()
+      return require("plugins.configs.motion.miniai")
+    end,
+    config = function(_, opts)
+      require("mini.ai").setup(opts)
+    end,
+    keys = {
+      { "i", mode = { "o", "x" } },
+      { "a", mode = { "o", "x" } },
+    },
+  },
 }
