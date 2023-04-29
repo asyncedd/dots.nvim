@@ -55,3 +55,6 @@ o.ph = 5
 
 -- Make the pumblend a little bit transparent. (This is just for aesthetic purposes, doesn't do anything really useful.)
 o.pb = 30
+
+-- 2.4 Scrolling.
+o.so = 999
