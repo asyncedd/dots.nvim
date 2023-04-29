@@ -34,4 +34,9 @@ return {
     config = true,
     event = { "VeryLazy", "BufRead", "User file" },
   },
+  {
+    "folke/todo-comments.nvim",
+    config = true,
+    event = { "VeryLazy", "BufRead", "User file" },
+  },
 }
