@@ -24,4 +24,12 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "rainbowhxch/accelerated-jk.nvim",
+    config = true,
+    keys = {
+      { "j", "<Plug>(accelerated_jk_gj)" },
+      { "k", "<Plug>(accelerated_jk_gk)" },
+    }
+  },
 }
