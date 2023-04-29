@@ -43,6 +43,8 @@ return {
       return require("plugins.configs.ui.mini-indentscope")
     end,
     config = function(_, opts)
+      require("plugins.highlight.ui.mini-indentscope")
+
       require("mini.indentscope").setup(opts)
     end,
     event = "VeryLazy",
