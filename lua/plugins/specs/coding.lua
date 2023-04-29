@@ -33,5 +33,9 @@ return {
       { "s", mode = "o" },
     },
   },
+  {
+    "abecodes/tabout.nvim",
+    config = true,
+    event = { "InsertEnter" },
+  },
 }
-
