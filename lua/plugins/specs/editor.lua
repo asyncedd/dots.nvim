@@ -26,4 +26,12 @@ return {
     end,
     event = { "VeryLazy", "User file" },
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = function()
+      return require("plugins.configs.editor.gitsigns")
+    end,
+    config = true,
+    event = { "VeryLazy", "BufRead", "User file" },
+  },
 }
