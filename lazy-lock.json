@@ -1,7 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "38d3b7eb553872d8866f14a0dd4fe84126068fce" },
   "LuaSnip": { "branch": "master", "commit": "e77fa9ad0b1f4fc6cddf54e51047e17e90c7d7ed" },
-  "SmoothCursor.nvim": { "branch": "main", "commit": "b61173fb107455f18099715b88d86002579f2736" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
@@ -20,6 +19,7 @@
   "mini.ai": { "branch": "main", "commit": "25bd5af6f984126ebd54c029bc12c9378214eb26" },
   "mini.animate": { "branch": "main", "commit": "8d65359d3094f6c80b8a75de2ae319acced7b197" },
   "mini.indentscope": { "branch": "main", "commit": "2bac901c15c604f0e7537bd66e79ac2a94876397" },
+  "mini.starter": { "branch": "main", "commit": "f86cbbfeec1e4dd8a60afd91f975e92521dc030e" },
   "neodev.nvim": { "branch": "main", "commit": "0043cf91c18aeac8db5765eb86c6078e17ac9325" },
   "noice.nvim": { "branch": "main", "commit": "0f12ed399e79aa49f283aa954468b92be65e03ed" },
   "npairs-integrate-upair": { "branch": "main", "commit": "9e898dcb1d648796663791b78ae348161c4031f8" },

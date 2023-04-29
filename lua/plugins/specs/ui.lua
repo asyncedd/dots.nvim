@@ -58,4 +58,14 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
   },
+  {
+    "echasnovski/mini.starter",
+    opts = function()
+      return require("plugins.configs.ui.mini-starter")
+    end,
+    config = function(_, opts)
+      require("mini.starter").setup(opts)
+    end,
+    lazy = false,
+  },
 }
