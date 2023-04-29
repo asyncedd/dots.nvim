@@ -49,10 +49,10 @@ return {
       require("plugins.configs.motion.leap")
     end,
     keys = {
-      { "s", mode = { "n", "x", "o" } },
-      { "S", mode = { "n", "x", "o" } },
-      { "x", mode = { "x", "o" } },
-      { "X", mode = { "x", "o" } },
+      { "s", mode = { "n", "x" } },
+      { "S", mode = { "n", "x" } },
+      { "x", mode = { "x" } },
+      { "X", mode = { "x" } },
     },
     dependencies = {
       "tpope/vim-repeat",
