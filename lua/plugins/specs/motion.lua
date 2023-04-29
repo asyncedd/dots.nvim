@@ -69,4 +69,21 @@ return {
       "ggandor/leap.nvim",
     },
   },
+  {
+    "ggandor/flit.nvim",
+    opts = function()
+      return require("plugins.configs.motion.flit")
+    end,
+    config = true,
+    dependencies = {
+      "ggandor/leap.nvim",
+      "tpope/vim-repeat",
+    },
+    keys = {
+      { "f", mode = { "n", "x", "o" } },
+      { "F", mode = { "n", "x", "o" } },
+      { "t", mode = { "n", "x", "o" } },
+      { "T", mode = { "n", "x", "o" } },
+    },
+  },
 }
