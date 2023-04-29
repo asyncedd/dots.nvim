@@ -19,3 +19,4 @@ vim.schedule(function()
   -- Defer some functions later.
   require("core.after")
 end)
+

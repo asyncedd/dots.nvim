@@ -53,8 +53,19 @@ return {
       ellipsis_char = "...",
     }),
   },
+  sorting = {
+    comparators = {
+      cmp.config.compare.score,
+      cmp.config.compare.exact,
+      cmp.config.compare.locality,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.order,
+      cmp.config.compare.offset,
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+    },
+  },
   experimental = {
     ghost_text = true,
   },
 }
-
