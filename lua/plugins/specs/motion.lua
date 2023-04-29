@@ -42,4 +42,17 @@ return {
       { "i;", mode = { "o", "x" } },
     },
   },
+  {
+    "ggandor/leap.nvim",
+    config = function()
+      require("plugins.highlight.motion.leap")
+      require("plugins.configs.motion.leap")
+    end,
+    keys = {
+      { "s", mode = { "n", "x", "o" } },
+      { "S", mode = { "n", "x", "o" } },
+      { "x", mode = { "x", "o" } },
+      { "X", mode = { "x", "o" } },
+    },
+  },
 }
