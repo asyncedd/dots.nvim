@@ -26,5 +26,12 @@ return {
       "altermo/ultimate-autopair.nvim",
     },
   },
+  {
+    "kylechui/nvim-surround",
+    config = true,
+    keys = {
+      { "s", mode = "o" },
+    },
+  },
 }
 
