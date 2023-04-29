@@ -17,12 +17,6 @@ return {
           require("luasnip.loaders.from_snipmate").lazy_load()
         end,
       },
-      {
-        "molleweide/LuaSnip-snippets.nvim",
-        config = function()
-          require("luasnip.loaders.from_lua").lazy_load()
-        end,
-      },
     },
     config = function(_, opts)
       require("luasnip").setup(opts)
