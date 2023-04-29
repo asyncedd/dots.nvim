@@ -54,5 +54,8 @@ return {
       { "x", mode = { "x", "o" } },
       { "X", mode = { "x", "o" } },
     },
+    dependencies = {
+      "tpope/vim-repeat",
+    },
   },
 }
