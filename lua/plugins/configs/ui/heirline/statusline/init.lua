@@ -1,5 +1,6 @@
 local conditions = require("heirline.conditions")
 local utils = require("heirline.utils")
+local icons = require("core.utils.icons")
 
 local Space = { provider = " " }
 local Align = { provider = "%=" }
@@ -303,10 +304,10 @@ local Diagnostics = {
   condition = conditions.has_diagnostics,
 
   static = {
-    error_icon = vim.fn.sign_getdefined("DiagnosticSignError")[1].text,
-    warn_icon = vim.fn.sign_getdefined("DiagnosticSignWarn")[1].text,
-    info_icon = vim.fn.sign_getdefined("DiagnosticSignInfo")[1].text,
-    hint_icon = vim.fn.sign_getdefined("DiagnosticSignHint")[1].text,
+    error_icon = icons.Error,
+    warn_icon = icons.Warn,
+    info_icon = icons.Info,
+    hint_icon = icons.Hint,
   },
 
   init = function(self)
@@ -351,6 +352,7 @@ local DefaultStatusline = {
   ViMode,
   Space,
   FileNameBlock,
+  Space,
   Space,
   LSPActive,
   Align,
@@ -404,3 +406,4 @@ local StatusLines = {
 }
 
 return StatusLines
+
