@@ -46,4 +46,14 @@ return {
     },
     cmd = { "Telescope" },
   },
+  {
+    "TimUntersberger/neogit",
+    opts = function()
+      return require("plugins.configs.tools.neogit")
+    end,
+    config = true,
+    keys = {
+      { "<leader>gt", "<cmd>Neogit<CR>" },
+    },
+  },
 }
