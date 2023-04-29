@@ -26,6 +26,9 @@ return {
     },
     config = function(_, opts)
       require("luasnip").setup(opts)
+
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+      require("luasnip.loaders.from_lua").lazy_load({ paths = { "./luasnip" } })
     end,
     event = { "VeryLazy", "InsertEnter" },
   },
