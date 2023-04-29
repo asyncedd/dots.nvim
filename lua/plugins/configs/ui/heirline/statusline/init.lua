@@ -96,13 +96,73 @@ local ScrollBar ={
     -- Another variant, because the more choice the better.
     -- sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
   },
-  provider = function(self)
-    local curr_line = vim.api.nvim_win_get_cursor(0)[1]
-    local lines = vim.api.nvim_buf_line_count(0)
-    local i = math.floor((curr_line - 1) / lines * #self.sbar) + 1
-    return string.rep(self.sbar[i], 2)
+  -- provider = function(self)
+  --   local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+  --   local lines = vim.api.nvim_buf_line_count(0)
+  --   local i = math.floor((curr_line - 1) / lines * #self.sbar) + 1
+  --   return string.rep(self.sbar[i], 2)
+  -- end,
+  provider = function()
+    local chars = {
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+    }
+    local line_ratio = vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0)
+    local position = math.floor(line_ratio * 100)
+
+    if position <= 5 then
+      position = " TOP"
+    elseif position >= 95 then
+      position = " BOT"
+    else
+      position = chars[math.floor(line_ratio * #chars)] .. position
+    end
+    return position
   end,
-  hl = { fg = "blue", bg = "bright_bg" },
+  -- hl = { fg = "blue", bg = "bright_bg" },
+  hl = function()
+    local position = math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
+    local fg
+
+    if position <= 5 then
+      fg = "aqua"
+    elseif position >= 95 then
+      fg = "red"
+    else
+      fg = "purple"
+    end
+    return {
+      fg = fg,
+      bold = true,
+      bg = "black",
+    }
+  end,
 }
 
 local FileNameBlock = {
