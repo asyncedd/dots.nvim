@@ -46,4 +46,22 @@ return {
     config = true,
     event = { "InsertEnter" },
   },
+  {
+    "numToStr/Comment.nvim",
+    opts = function()
+      return require("plugins.configs.coding.comment")
+    end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts.treesitter)
+
+      require("Comment").setup(opts.comment)
+    end,
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    keys = {
+      { "g", mode = { "n", "x" } },
+    },
+  },
 }
