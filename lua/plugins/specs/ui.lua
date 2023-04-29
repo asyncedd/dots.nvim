@@ -27,4 +27,14 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "edluffy/specs.nvim",
+    opts = function()
+      return require("plugins.configs.ui.specs")
+    end,
+    config = function(_, opts)
+      require("specs").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
 }
