@@ -5,6 +5,29 @@ local icons = require("core.utils.icons")
 local Space = { provider = " " }
 local Align = { provider = "%=" }
 
+local null_ls_providers = function(filetype)
+  local registered = {}
+  -- try to load null-ls
+  local sources_avail, sources = pcall(require, "null-ls.sources")
+  if sources_avail then
+    -- get the available sources of a given filetype
+    for _, source in ipairs(sources.get_available(filetype)) do
+      -- get each source name
+      for method in pairs(source.methods) do
+        registered[method] = registered[method] or {}
+        table.insert(registered[method], source.name)
+      end
+    end
+  end
+  -- return the found null-ls sources
+  return registered
+end
+
+local null_ls_sources = function(filetype, method)
+  local methods_avail, methods = pcall(require, "null-ls.methods")
+  return methods_avail and null_ls_providers(filetype)[methods.internal[method]] or {}
+end
+
 local ViMode = {
   -- get vim current mode, this information will be required by the provider
   -- and the highlight functions, so we compute it only once per component
@@ -292,7 +315,17 @@ local LSPActive = {
   provider  = function()
     local names = {}
     for i, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
-      table.insert(names, server.name)
+      if server.name == "null-ls" then
+        local nullls_sources = {}
+        for _, type in ipairs { "FORMATTING", "DIAGNOSTICS" } do
+          for _, source in ipairs(null_ls_sources(vim.bo.filetype, type)) do
+            nullls_sources[source] = true
+          end
+        end
+        vim.list_extend(names, vim.tbl_keys(nullls_sources))
+      else
+        table.insert(names, server.name)
+      end
     end
     return "  " .. table.concat(names, " ")
   end,
