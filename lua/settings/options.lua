@@ -60,4 +60,10 @@ o.ph = 5
 o.pb = 30
 
 -- 2.4 Scrolling.
+-- Make scrolloff to a high value so, the cursor is on the middle of the screen!
 o.so = 999
+
+-- 2.5 TermGUIColors.
+
+-- Enable termgui colors
+o.tgc = true
