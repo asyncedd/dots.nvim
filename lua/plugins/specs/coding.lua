@@ -1,6 +1,9 @@
 return {
   {
     "L3MON4D3/LuaSnip",
+    opts = function()
+      return require("plugins.configs.coding.luasnip")
+    end,
     dependencies = {
       {
         "rafamadriz/friendly-snippets",
@@ -21,6 +24,9 @@ return {
         end,
       },
     },
+    config = function(_, opts)
+      require("luasnip").setup(opts)
+    end,
     event = { "VeryLazy", "InsertEnter" },
   },
   {
