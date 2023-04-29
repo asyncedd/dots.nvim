@@ -58,4 +58,15 @@ return {
       "tpope/vim-repeat",
     },
   },
+  {
+    "ggandor/leap-spooky.nvim",
+    config = true,
+    keys = {
+      { "r", mode = "o" },
+      { "R", mode = "o" },
+    },
+    dependencies = {
+      "ggandor/leap.nvim",
+    },
+  },
 }
