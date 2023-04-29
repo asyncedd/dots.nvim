@@ -18,4 +18,4 @@ vim.api.nvim_command("colorscheme catppuccin")
 vim.schedule(function()
   -- Defer some functions later.
   require("core.after")
-end)
+end, 0)
