@@ -11,6 +11,7 @@
 -- * 0 - Declaring variables
 -- * 1 - Declaring general options.
 -- * 2 - Declaring Editor options.
+-- * 3 - Declaring UI options.
 --
 -- This is what each does:
 -- *  0 - Set locals for easy use in the buffer.
@@ -20,8 +21,9 @@
 -- For fast navigation, I've set codes before each category.
 -- Here's the list:
 -- *  0 - R9i
--- *  2 - Ayz
--- *  3 - iy0
+-- *  1 - Ayz
+-- *  2 - iy0
+-- *  3 - hFy
 -- 
 -- You can now go to each category by: "/ [CODE_GOES_HERE]"
 -- To go back to the legend, you can press "gg". This will go to the first line in a buffer.
@@ -194,6 +196,29 @@ o.ts = 2
 -- 
 --- TIP: To insert a real tab when, "expandtab" is turned on, use <C-v><Tab>!
 --
--- FACT: "et" is abbreviates "expandtab"
+-- FACT: "et" abbreviates "expandtab"
 
 o.et = true
+
+-- CODE: hFy
+-- #############################
+-- #           3. UI           #
+-- #############################
+
+-- // 3.1 Line numbers.
+
+--- Enable numbers.
+--
+--- Print the corresponding line number before each line.
+--- I don't really have any more context for this so, I'll end it right here.
+-- 
+--- EXPAMPLE:
+--  1. -- init.lua
+--  2.
+--  3. -- Blanklines and comments are counted!
+--  4. print("wow, this is so cool!")
+--  5.
+--
+-- FACT: "nu" abbreviates "numbers"
+
+o.nu = true
