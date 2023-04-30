@@ -19,13 +19,7 @@ return {
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end,
-    keys = {
-      { "if", mode = { "o", "x" } },
-      { "ic", mode = { "o", "x" } },
-      { "af", mode = { "o", "x" } },
-      { "ac", mode = { "o", "x" } },
-      { "as", mode = { "o", "x" } },
-    },
+    event = "VeryLazy",
   },
   {
     "RRethy/nvim-treesitter-textsubjects",
@@ -35,12 +29,7 @@ return {
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end,
-    keys = {
-      { ",", mode = { "o", "x" } },
-      { ".", mode = { "o", "x" } },
-      { ";", mode = { "o", "x" } },
-      { "i;", mode = { "o", "x" } },
-    },
+    event = "VeryLazy",
   },
   {
     "ggandor/leap.nvim",
@@ -48,12 +37,7 @@ return {
       require("plugins.highlight.motion.leap")
       require("plugins.configs.motion.leap")
     end,
-    keys = {
-      { "s", mode = { "n", "x", "o" } },
-      { "S", mode = { "n", "x", "o" } },
-      { "x", mode = { "x", "o" } },
-      { "X", mode = { "x", "o" } },
-    },
+    event = "VeryLazy",
     dependencies = {
       "tpope/vim-repeat",
     },
@@ -76,12 +60,7 @@ return {
       "ggandor/leap.nvim",
       "tpope/vim-repeat",
     },
-    keys = {
-      { "f", mode = { "n", "x", "o" } },
-      { "F", mode = { "n", "x", "o" } },
-      { "t", mode = { "n", "x", "o" } },
-      { "T", mode = { "n", "x", "o" } },
-    },
+    event = "VeryLazy",
   },
   {
     "echasnovski/mini.ai",
@@ -91,9 +70,6 @@ return {
     config = function(_, opts)
       require("mini.ai").setup(opts)
     end,
-    keys = {
-      { "i", mode = { "o", "x" } },
-      { "a", mode = { "o", "x" } },
-    },
+    event = "VeryLazy",
   },
 }
