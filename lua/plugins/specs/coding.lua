@@ -58,9 +58,7 @@ return {
   {
     "kylechui/nvim-surround",
     config = true,
-    keys = {
-      { "s", mode = { "o" } },
-    },
+    event = "VeryLazy",
   },
   {
     "abecodes/tabout.nvim",
