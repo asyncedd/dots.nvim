@@ -24,4 +24,14 @@ require("lazy").setup({
       "habamax",
     },
   },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "zipPlugin",
+      },
+    },
+  },
 })
