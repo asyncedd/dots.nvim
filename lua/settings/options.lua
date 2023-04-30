@@ -211,6 +211,12 @@ o.et = true
 
 o.jop = "stack"
 
+--- Enable mouse movement tracking in Neovim.
+--
+-- This could be useful for plugins like bufferline.nvim.
+
+o.mousemev = true
+
 -- CODE: hFy
 -- #############################
 -- #           3. UI           #
