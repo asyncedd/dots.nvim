@@ -11,4 +11,16 @@ return {
     },
     event = "VeryLazy",
   },
+  {
+    "folke/noice.nvim",
+    opts = function()
+      return require("plugins.configs.ui.noice")
+    end,
+    event = "VeryLazy",
+    config = true,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
 }
