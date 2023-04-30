@@ -4,7 +4,11 @@ return {
     opts = function()
       return require("plugins.configs.coding.cmp")
     end,
-    config = true,
+    config = function(_, opts)
+      require("cmp").setup(opts)
+
+      require("plugins.highlight.coding.cmp")
+    end,
     event = { "InsertEnter" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
