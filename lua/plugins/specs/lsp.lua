@@ -23,11 +23,14 @@ return {
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter" }, {
         callback = function()
-          local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
-          if condition then
-          require("lazy").load({ plugins = "nvim-lspconfig" })
-          vim.cmd("silent! do FileType")
-        end
+          vim.schedule(function()
+            local file = vim.fn.expand "%"
+            local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+            if condition then
+              require("lazy").load({ plugins = "nvim-lspconfig" })
+              vim.cmd("silent! do FileType")
+            end
+          end)
         end,
       })
     end,
