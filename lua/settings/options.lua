@@ -249,3 +249,9 @@ o.rnu = true
 -- FACT: "cul" abbreviates to "cursorline"
 
 o.cul = true
+
+--- Enable TermGUIColors.
+-- 
+-- Enables 24-bit RGB colors in the TUI. Uses "gui" :highlight attributes instead of "cterm" attributes. BUT, requires an ISO-8613-3 compatible terminal. (most terminals)
+
+o.tgc = true
