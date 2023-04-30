@@ -1,4 +1,4 @@
--- lua/settings.options.lua
+-- lua/settings/options.lua
 --
 -- This is where I set my Neovim options.
 --
