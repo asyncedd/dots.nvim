@@ -7,7 +7,7 @@ return {
     end,
     config = true,
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
+      "nvim-web-devicons",
     },
     event = "VeryLazy",
   },
@@ -19,7 +19,7 @@ return {
     event = "VeryLazy",
     config = true,
     dependencies = {
-      "MunifTanjim/nui.nvim",
+      "nui.nvim",
       "rcarriga/nvim-notify",
     },
   },

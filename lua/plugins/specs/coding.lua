@@ -27,7 +27,7 @@ return {
     config = true,
     event = "VeryLazy",
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      "plenary.nvim",
     },
   },
 }
