@@ -183,7 +183,17 @@ o.sw = 2
 --- It's bascially saying to Neovim to use two spaces for each <Tab> inserted.
 --- So, it's mainly for consistency.
 --
--- FACT: "ts" is a abbreviation of "tabstop"
+-- FACT: "ts" abbreviations of "tabstop"
 
 o.ts = 2
 
+--- Enable Expandtab.
+--
+--- In Insert Mode: Use the appropiate number of spaces to insert a <Tab>.
+--- Spaces will also be used in indents too!
+-- 
+--- TIP: To insert a real tab when, "expandtab" is turned on, use <C-v><Tab>!
+--
+-- FACT: "et" is abbreviates "expandtab"
+
+o.et = true
