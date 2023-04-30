@@ -54,4 +54,7 @@ return {
       ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
     })
   },
+  experimental = {
+    ghost_text = true,
+  },
 }
