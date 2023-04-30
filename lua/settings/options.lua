@@ -182,6 +182,8 @@ o.sw = 2
 --- I'll go for a very brief explanation on what Tabstop does.
 --- It's bascially saying to Neovim to use two spaces for each <Tab> inserted.
 --- So, it's mainly for consistency.
+--
+-- FACT: "ts" is a abbreviation of "tabstop"
 
 o.ts = 2
 
