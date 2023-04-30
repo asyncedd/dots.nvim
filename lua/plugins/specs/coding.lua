@@ -28,5 +28,16 @@ return {
     },
     event = "VeryLazy",
   },
+  {
+    "tzachar/cmp-tabnine",
+    opts = function()
+      return require("plugins.configs.coding.tabnine")
+    end,
+    event = "VeryLazy",
+    build = "./install.sh",
+    config = function(_, opts)
+      require("cmp_tabnine.config"):setup(opts)
+    end,
+  },
 }
 

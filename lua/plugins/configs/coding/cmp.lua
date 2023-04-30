@@ -47,6 +47,7 @@ return {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "codeium" },
+    { name = "cmp_tabnine" },
   }),
   formatting = {
     format = lspkind.cmp_format({
