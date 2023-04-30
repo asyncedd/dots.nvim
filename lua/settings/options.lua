@@ -238,3 +238,14 @@ o.nu = true
 -- FACT: "rnu" abbreviates "relativenumber"
 
 o.rnu = true
+
+--- Enable Cursorline.
+--
+--- Highlight the text line of the cursor with cursorline hl-CursorLine.
+--- VERY useful for figuring out where the cursor is.
+--- BUT, will make screen redrawing a bit slower.
+--- In VISUAL mode, it's disabled to make it easier to spot the selected text.
+--
+-- FACT: "cul" abbreviates to "cursorline"
+
+o.cul = true
