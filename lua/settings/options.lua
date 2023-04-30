@@ -174,3 +174,14 @@ o.si = true
 -- FACT: "sw" abbreviates "shift width"
 
 o.sw = 2
+
+--- Set Tabstop to 2.
+--
+--- If "shiftwidth" is two, it's only logical to also set <Tab>s to two.
+--
+--- I'll go for a very brief explanation on what Tabstop does.
+--- It's bascially saying to Neovim to use two spaces for each <Tab> inserted.
+--- So, it's mainly for consistency.
+
+o.ts = 2
+
