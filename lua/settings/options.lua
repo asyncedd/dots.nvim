@@ -213,12 +213,28 @@ o.et = true
 --- I don't really have any more context for this so, I'll end it right here.
 -- 
 --- EXPAMPLE:
---  1. -- init.lua
---  2.
---  3. -- Blanklines and comments are counted!
---  4. print("wow, this is so cool!")
---  5.
+--  1  -- init.lua
+--  2 
+--  3  -- Blanklines and comments are counted!
+--  4  print("wow, this is so cool!")
+--  5 
 --
 -- FACT: "nu" abbreviates "numbers"
 
 o.nu = true
+
+--- Enable Relativenumber.
+--
+-- Print the correspoding relative numbe rbefore each line.
+-- So, for each line, it's basically a diff of the current line and the other line.
+--
+--- EXAMPLE:
+--  3  -- init.lua
+--  2 
+--  1  -- Blanklines and comments are counted!
+--   4 print("wow, this is so cool!")
+--  1 
+--
+-- FACT: "rnu" abbreviates "relativenumber"
+
+o.rnu = true
