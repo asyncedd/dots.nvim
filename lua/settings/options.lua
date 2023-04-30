@@ -38,6 +38,14 @@ o.sw = 2
 -- Saves undos into a file.
 o.udf = true
 
+-- 1.3 Keymaps.
+
+-- Enable timeout.
+o.to = true
+
+-- Set timeout len to 300.
+o.tm = 300
+
 -- 2. UI
 
 -- 2.1 Line numbers.
