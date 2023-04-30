@@ -154,3 +154,23 @@ o.ai = true
 
 o.si = true
 
+--- Set Shiftwith to 2.
+-- 
+--- Shiftwidth sets the number of spaces of each (auto)indent.
+--- Used for "cindent" >> and <<.
+--- Other than the three listed above, "autoindent", "smartindent" also uses the value of shiftwidth.
+--
+--- When zero, the "tabstop" will be used.
+--
+--- SOME PERSONAL FACTORS:
+-- Why I've used 2 is a matter of personal prefences.
+-- But, here are some reasons on why:
+--   * Spaces (which we'll be using) are more flexible than tabs and, more "global" than tabs.
+--   * Two is the perfect balance of readability and screen real estate.
+--   * Most people uses 2 spaces.
+--
+--- So, in summary, they're simply a matter of personal prefences.
+--
+-- FACT: "sw" abbreviates "shift width"
+
+o.sw = 2
