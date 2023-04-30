@@ -92,7 +92,9 @@ Specs:
 1073741824 bytes (1.1 GB, 1.0 GiB) copied, 0.642741 s, 1.7 GB/s
 ```
 
-<!-- - `nvim --clean` - -->
+![blank buffer](https://github.com/asyncedd/dots.nvim/blob/master/screenshots/2023-04-30_09-12.png?raw=true)
+![a normal buffer](https://github.com/asyncedd/dots.nvim/blob/master/screenshots/2023-04-30_09-13.png?raw=true)
+```!-- - `nvim --clean` - -->
 <!--   [source](https://github.com/asyncedd/dots.nvim/blob/master/clean.log): -->
 <!---->
 <!-- ``` -->
