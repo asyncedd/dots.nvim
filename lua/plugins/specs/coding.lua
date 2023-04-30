@@ -16,6 +16,17 @@ return {
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "onsails/lspkind.nvim",
+      "codeium.nvim",
     },
   },
+  {
+    "jcdickinson/codeium.nvim",
+    config = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-cmp",
+    },
+    event = "VeryLazy",
+  },
 }
+
