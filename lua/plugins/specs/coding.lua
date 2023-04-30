@@ -52,5 +52,10 @@ return {
     },
     event = { "InsertEnter", "CmdlineEnter" },
   },
+  {
+    "kylechui/nvim-surround",
+    config = true,
+    event = "VeryLazy",
+  },
 }
 
