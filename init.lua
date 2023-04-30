@@ -3,3 +3,6 @@ vim.loader.enable()
 
 -- Set some options.
 require("settings.options")
+
+-- Require lazy.nvim.
+require("plugins")
