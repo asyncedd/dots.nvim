@@ -6,3 +6,6 @@ require("settings.options")
 
 -- Require lazy.nvim.
 require("plugins")
+
+-- Catppuccinify the editor.
+vim.cmd("colorscheme catppuccin")
