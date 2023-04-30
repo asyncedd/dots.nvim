@@ -200,6 +200,17 @@ o.ts = 2
 
 o.et = true
 
+--- Some options for <C-i> and <C-o> jump motions.
+-- 
+-- Stack makes the jumplist behave like a web browser.
+-- Relative location of entries in the
+-- jumplist is preserved at the cost of discarding
+-- subsequent entries when navigating backwards in the
+-- jumplist and then jumping to a location.
+-- jumplist-stack
+
+o.jop = "stack"
+
 -- CODE: hFy
 -- #############################
 -- #           3. UI           #
