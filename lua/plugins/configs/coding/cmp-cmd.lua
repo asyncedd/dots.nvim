@@ -11,7 +11,7 @@ cmp.setup.cmdline({ '/', '?' }, {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { "i", "s", "c" }),
 
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -19,7 +19,7 @@ cmp.setup.cmdline({ '/', '?' }, {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { "i", "s", "c" }),
     ["<CR>"] = cmp.mapping({
       i = function(fallback)
         if cmp.visible() and cmp.get_active_entry() then
@@ -48,7 +48,7 @@ cmp.setup.cmdline(':', {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { "i", "s", "c" }),
 
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -56,7 +56,7 @@ cmp.setup.cmdline(':', {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { "i", "s", "c" }),
     ["<CR>"] = cmp.mapping({
       i = function(fallback)
         if cmp.visible() and cmp.get_active_entry() then
