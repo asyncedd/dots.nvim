@@ -255,3 +255,16 @@ o.cul = true
 -- Enables 24-bit RGB colors in the TUI. Uses "gui" :highlight attributes instead of "cterm" attributes. BUT, requires an ISO-8613-3 compatible terminal. (most terminals)
 
 o.tgc = true
+
+--- Blinking cursor.
+--
+--- I've found in https://github.com/vsedov/nvim
+--- I find it cool :)
+--
+-- This is from the help docs, it enables mode shapes, "Cursor" highlight, and blinking
+o.gcr = {
+    [[n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50]],
+    [[a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor]],
+    [[sm:block-blinkwait175-blinkoff150-blinkon175]],
+}
+
