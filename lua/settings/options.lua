@@ -268,3 +268,12 @@ o.gcr = {
     [[sm:block-blinkwait175-blinkoff150-blinkon175]],
 }
 
+--- Pum options. (Popup menu)
+--
+--- Making the pum menu a bit transparent.
+
+o.pb = 15
+
+--- Making pum menu a bit limited in the terms of screen real estate.
+
+o.ph = 10
