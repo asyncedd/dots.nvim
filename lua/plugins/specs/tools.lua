@@ -55,5 +55,6 @@ return {
     keys = {
       { "<leader>gt", "<cmd>Neogit<CR>" },
     },
+    cmd = { "Neogit" },
   },
 }

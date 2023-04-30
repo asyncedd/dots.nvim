@@ -51,6 +51,14 @@ return {
       require("mini.indentscope").setup(opts)
     end,
     event = "VeryLazy",
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+    end,
   },
   {
     "rebelot/heirline.nvim",
@@ -62,18 +70,6 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-  },
-  {
-    "echasnovski/mini.starter",
-    opts = function()
-      return require("plugins.configs.ui.mini-starter")
-    end,
-    config = function(_, opts)
-      require("plugins.highlight.ui.mini-starter")
-
-      require("mini.starter").setup(opts)
-    end,
-    event = { "VimEnter" },
   },
   {
    "akinsho/bufferline.nvim",
@@ -90,5 +86,13 @@ return {
       { "]b", "<cmd>BufferLineCyclePrev<CR>" },
       { "gbp", "<cmd>BufferLinePick<CR>" },
     },
+  },
+  {
+    "goolord/alpha-nvim",
+    opts = function()
+      return require("plugins.configs.ui.alpha").config
+    end,
+    event = "VimEnter",
+    config = true,
   },
 }
