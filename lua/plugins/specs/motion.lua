@@ -49,10 +49,10 @@ return {
       require("plugins.configs.motion.leap")
     end,
     keys = {
-      { "s", mode = { "n", "x" } },
-      { "S", mode = { "n", "x" } },
-      { "x", mode = { "x" } },
-      { "X", mode = { "x" } },
+      { "s", mode = { "n", "x", "o" } },
+      { "S", mode = { "n", "x", "o" } },
+      { "x", mode = { "x", "o" } },
+      { "X", mode = { "x", "o" } },
     },
     dependencies = {
       "tpope/vim-repeat",
@@ -61,10 +61,7 @@ return {
   {
     "ggandor/leap-spooky.nvim",
     config = true,
-    keys = {
-      { "r", mode = "o" },
-      { "R", mode = "o" },
-    },
+    event = "VeryLazy",
     dependencies = {
       "ggandor/leap.nvim",
     },

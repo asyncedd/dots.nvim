@@ -39,4 +39,16 @@ return {
     config = true,
     event = { "VeryLazy", "BufRead", "User file" },
   },
+  {
+    "folke/which-key.nvim",
+    opts = function()
+      return require("plugins.configs.editor.which_key")
+    end,
+    config = function(_, opts)
+      require("which-key").setup(opts)
+
+      require("plugins.configs.editor.wk")
+    end,
+    event = { "VeryLazy" },
+  },
 }
