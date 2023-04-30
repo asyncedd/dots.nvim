@@ -1,7 +1,7 @@
 return {
   {
     "williamboman/mason.nvim",
-    dependencies = {
+    after = {
       {
         "williamboman/mason-lspconfig.nvim",
         opts = function()
@@ -11,5 +11,25 @@ return {
       },
     },
     config = true,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.configs.lsp.config")
+    end,
+    dependencies = {
+      "mason.nvim",
+    },
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter" }, {
+        callback = function()
+          local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+          if condition then
+          require("lazy").load({ plugins = "nvim-lspconfig" })
+          vim.cmd("silent! do FileType")
+        end
+        end,
+      })
+    end,
   },
 }
