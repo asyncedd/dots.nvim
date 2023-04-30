@@ -11,12 +11,6 @@ return {
           require("luasnip.loaders.from_vscode").lazy_load()
         end,
       },
-      {
-        "honza/vim-snippets",
-        config = function()
-          require("luasnip.loaders.from_snipmate").lazy_load()
-        end,
-      },
     },
     config = function(_, opts)
       require("luasnip").setup(opts)
