@@ -30,4 +30,27 @@ return {
       "plenary.nvim",
     },
   },
+  {
+    "altermo/npairs-integrate-upair",
+    opts = function()
+      require("plugins.configs.coding.autopairs")
+    end,
+    config = function(opts)
+      require("npairs-int-upair").setup(opts)
+
+      -- If you want insert `(` after select function or method item
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+      local cmp = require("cmp")
+      cmp.event:on(
+        "confirm_done",
+        cmp_autopairs.on_confirm_done()
+      )
+    end,
+    dependencies = {
+      "altermo/ultimate-autopair.nvim",
+      "windwp/nvim-autopairs",
+    },
+    event = { "InsertEnter", "CmdlineEnter" },
+  },
 }
+
