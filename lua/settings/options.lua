@@ -232,7 +232,7 @@ o.nu = true
 --  3  -- init.lua
 --  2 
 --  1  -- Blanklines and comments are counted!
---   4 print("wow, this is so cool!")
+-- 4   print("wow, this is so cool!")
 --  1 
 --
 -- FACT: "rnu" abbreviates "relativenumber"
