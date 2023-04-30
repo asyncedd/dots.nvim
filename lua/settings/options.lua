@@ -91,7 +91,7 @@ g.mapleader = " "
 -- and type <Esc>, <C-O> or <CR>, the indent is deleted once again.
 --
 --- Should be enabled by default. But, we're going to enable it anyways.
-
+-- 
 -- FACT: "ai" is a abbreviation for "autoindent"
 
 o.ai = true
@@ -149,7 +149,7 @@ o.ai = true
 --   |
 -- }
 --
-
+--
 -- FACT: "si" abbreviates "smart indent"
 
 o.si = true
