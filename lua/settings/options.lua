@@ -294,3 +294,9 @@ o.pb = 15
 --- Making pum menu a bit limited in the terms of screen real estate.
 
 o.ph = 10
+
+--- Cmdheight to zero.
+-- 
+--- Making noice.nvim not feel so late.
+
+o.ch = 0
