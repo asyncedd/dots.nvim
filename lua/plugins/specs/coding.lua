@@ -48,5 +48,16 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "abecodes/tabout.nvim",
+    config = true,
+    dependencies = {
+      "nvim-treesitter",
+    },
+    after = {
+      "nvim-cmp",
+    },
+    event = { "VeryLazy", "InsertEnter" },
+  },
 }
 
