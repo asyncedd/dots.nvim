@@ -8,8 +8,10 @@ return {
       require("cmp").setup(opts)
 
       require("plugins.highlight.coding.cmp")
+
+      require("plugins.configs.coding.cmp-cmd")
     end,
-    event = { "InsertEnter", "VeryLazy" },
+    event = { "InsertEnter", "VeryLazy", "CmdlineEnter" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -17,6 +19,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "onsails/lspkind.nvim",
       "codeium.nvim",
+      "hrsh7th/cmp-cmdline",
     },
   },
   {

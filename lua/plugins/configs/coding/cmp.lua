@@ -59,3 +59,4 @@ return {
     ghost_text = true,
   },
 }
+
