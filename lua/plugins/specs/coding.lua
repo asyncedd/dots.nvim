@@ -85,4 +85,19 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "gbprod/yanky.nvim",
+    config = function()
+      vim.opt.cb = "unnamedplus"
+
+      require("yanky").setup()
+    end,
+    keys = {
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
+    },
+    event = "VeryLazy",
+  },
 }
