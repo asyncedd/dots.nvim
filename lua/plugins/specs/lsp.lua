@@ -23,7 +23,7 @@ return {
       "mason.nvim",
     },
     init = function()
-      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter" }, {
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
         callback = function()
           vim.schedule(function()
             local file = vim.fn.expand "%"
