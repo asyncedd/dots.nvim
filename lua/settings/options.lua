@@ -235,7 +235,7 @@ o.lbr = true
 -- o.foldlevelstart = 99: Set the starting fold level to be 99.
 -- o.foldenable = true: Enable folding.
 
-o.foldcolumn = "1"
+o.foldcolumn = "0"
 
 o.foldlevel = 99
 o.foldlevelstart = 99
