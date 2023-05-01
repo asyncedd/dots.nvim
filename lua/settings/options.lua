@@ -224,6 +224,12 @@ o.mousemev = true
 
 o.bri = true
 
+--- Enable linebreak.
+--
+--- Make long lines be wrapped at a word instead of the final character.
+
+o.lbr = true
+
 -- CODE: hFy
 -- #############################
 -- #           3. UI           #
