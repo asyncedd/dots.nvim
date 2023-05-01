@@ -59,5 +59,20 @@ return {
     },
     event = { "VeryLazy", "InsertEnter" },
   },
+  {
+    "numToStr/Comment.nvim",
+    opts = function()
+      return require("plugins.configs.coding.comment")
+    end,
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts.treesitter)
+
+      require("Comment").setup(opts.Comment)
+    end,
+    event = "VeryLazy",
+  },
 }
 
