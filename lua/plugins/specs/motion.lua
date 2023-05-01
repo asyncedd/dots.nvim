@@ -16,4 +16,15 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "ggandor/flit.nvim",
+    opts = function()
+      return require("plugins.configs.motion.flit")
+    end,
+    config = true,
+    dependencies = {
+      "ggandor/leap.nvim",
+    },
+    event = "VeryLazy",
+  },
 }
