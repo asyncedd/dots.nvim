@@ -217,6 +217,13 @@ o.jop = "stack"
 
 o.mousemev = true
 
+--- Enable breakindent.
+--
+--- Every wrapped line will continue to be visually indented.
+--- This is really useful to keep consistency through wraps.
+
+o.bri = true
+
 -- CODE: hFy
 -- #############################
 -- #           3. UI           #
