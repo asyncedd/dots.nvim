@@ -200,35 +200,46 @@ o.ts = 2
 
 o.et = true
 
---- Some options for <C-i> and <C-o> jump motions.
--- 
--- Stack makes the jumplist behave like a web browser.
--- Relative location of entries in the
--- jumplist is preserved at the cost of discarding
--- subsequent entries when navigating backwards in the
--- jumplist and then jumping to a location.
--- jumplist-stack
+--- Jumplist options for <C-i> and <C-o> jump motions.
+-- The following option allows you to modify how jumplist works in Neovim.
+
+-- o.jop = "stack": When set to "stack", the jumplist behaves like a web browser.
+-- The relative location of entries in the jumplist is preserved, but subsequent entries
+-- are discarded when navigating backwards in the jumplist and then jumping to a location.
 
 o.jop = "stack"
 
 --- Enable mouse movement tracking in Neovim.
---
--- This could be useful for plugins like bufferline.nvim.
+-- This option allows plugins to track mouse movements in Neovim.
+-- o.mousemev = true: When set to true, mouse movements can be tracked in Neovim.
 
 o.mousemev = true
 
 --- Enable breakindent.
---
---- Every wrapped line will continue to be visually indented.
---- This is really useful to keep consistency through wraps.
+-- This option allows you to visually indent every wrapped line.
+-- o.bri = true: When set to true, every wrapped line will continue to be visually indented.
 
 o.bri = true
 
 --- Enable linebreak.
---
---- Make long lines be wrapped at a word instead of the final character.
+-- This option allows you to wrap long lines at a word instead of the final character.
+-- o.lbr = true: When set to true, long lines will be wrapped at a word instead of the final character.
 
 o.lbr = true
+
+--- Fold-related options.
+-- The following options allow you to modify how folds are displayed in Neovim.
+
+-- o.foldcolumn = "1": Set the fold column to be at the "later" column of line numbers.
+-- o.foldlevel = 99: Set the fold level to be 99.
+-- o.foldlevelstart = 99: Set the starting fold level to be 99.
+-- o.foldenable = true: Enable folding.
+
+o.foldcolumn = "1"
+
+o.foldlevel = 99
+o.foldlevelstart = 99
+o.foldenable = true
 
 -- CODE: hFy
 -- #############################
