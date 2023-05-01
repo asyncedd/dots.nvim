@@ -28,6 +28,7 @@
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "0bf8fbc2ca8f8cdb6efbd0a9e32740d7a991e4c3" },
   "nvim-web-devicons": { "branch": "master", "commit": "10940542e62087707b3dc0b4157d98c427504eb0" },
   "plenary.nvim": { "branch": "master", "commit": "9ac3e9541bbabd9d73663d757e4fe48a675bb054" },
+  "specs.nvim": { "branch": "main", "commit": "2743e412bbe21c9d73954c403d01e8de7377890d" },
   "tabout.nvim": { "branch": "master", "commit": "0d275c8d25f32457e67b5c66d6ae43f26a61bce5" },
   "ultimate-autopair.nvim": { "branch": "main", "commit": "28592a9fb36473fff5467feb5d728701e6291e3a" }
 }
