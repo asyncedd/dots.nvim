@@ -16,6 +16,8 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       require("plugins.configs.lsp.config")
+
+      require("plugins.configs.lsp.native")
     end,
     dependencies = {
       "mason.nvim",
