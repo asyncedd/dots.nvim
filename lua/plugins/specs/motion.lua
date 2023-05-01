@@ -9,4 +9,11 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "ggandor/leap.nvim",
+    config = function()
+      require("plugins.configs.motion.leap")
+    end,
+    event = "VeryLazy",
+  },
 }
