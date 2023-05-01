@@ -19,7 +19,7 @@ return {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { "i", "s", "c" }),
 
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -29,7 +29,7 @@ return {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { "i", "s", "c" }),
     ["<CR>"] = cmp.mapping({
       i = function(fallback)
         if cmp.visible() and cmp.get_active_entry() then
@@ -38,9 +38,10 @@ return {
           fallback()
         end
       end,
-      s = cmp.mapping.confirm({ select = true }),
-      c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+      s = cmp.mapping.confirm({ select = false }),
+      c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
     }),
+    ["<C-e>"] = cmp.mapping.abort(),
   },
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
