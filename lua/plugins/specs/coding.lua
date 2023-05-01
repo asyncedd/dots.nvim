@@ -1,5 +1,16 @@
 return {
   {
+    "L3MON4D3/LuaSnip",
+    build = "make install_jsregexp",
+    config = function()
+      return require("plugins.configs.coding.luasnip")
+    end,
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    },
+    event = "VeryLazy",
+  },
+  {
     "hrsh7th/nvim-cmp",
     opts = function()
       return require("plugins.configs.coding.cmp")
@@ -15,7 +26,7 @@ return {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
-      "L3MON4D3/LuaSnip",
+      "LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "onsails/lspkind.nvim",
       "hrsh7th/cmp-cmdline",
@@ -75,4 +86,3 @@ return {
     event = "VeryLazy",
   },
 }
-
