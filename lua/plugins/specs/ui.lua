@@ -63,4 +63,12 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "tamton-aquib/flirt.nvim",
+    opts = function()
+      return require("plugins.configs.ui.flirt")
+    end,
+    config = true,
+    event = "VeryLazy",
+  },
 }
