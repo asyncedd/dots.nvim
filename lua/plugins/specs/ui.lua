@@ -27,4 +27,22 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     event = "VeryLazy",
   },
+  {
+    "echasnovski/mini.indentscope",
+    opts = function()
+      return require("plugins.configs.ui.indentscope")
+    end,
+    event = "VeryLazy",
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+    end,
+    config = function(_, opts)
+      require("mini.indentscope").setup(opts)
+    end,
+  },
 }
