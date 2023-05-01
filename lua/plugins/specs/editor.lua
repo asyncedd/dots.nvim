@@ -11,4 +11,15 @@ return {
     end,
     event = { "BufReadPost", "BufNewFile", "BufWinEnter" },
   },
+  {
+    "kevinhwang91/nvim-ufo",
+    opts = function()
+      return require("plugins.configs.editor.ufo")
+    end,
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
+    config = true,
+    event = "VeryLazy",
+  },
 }
