@@ -45,4 +45,14 @@ return {
       require("mini.indentscope").setup(opts)
     end,
   },
+  {
+    "echasnovski/mini.animate",
+    opts = function()
+      return require("plugins.configs.ui.animate")
+    end,
+    config = function(_, opts)
+      require("mini.animate").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
 }
