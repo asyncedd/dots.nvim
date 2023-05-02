@@ -60,17 +60,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "abecodes/tabout.nvim",
-    config = true,
-    dependencies = {
-      "nvim-treesitter",
-    },
-    after = {
-      "nvim-cmp",
-    },
-    event = { "VeryLazy", "InsertEnter" },
-  },
-  {
     "numToStr/Comment.nvim",
     opts = function()
       return require("plugins.configs.coding.comment")
