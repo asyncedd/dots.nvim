@@ -56,14 +56,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "edluffy/specs.nvim",
-    opts = function()
-      return require("plugins.configs.ui.specs")
-    end,
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "tamton-aquib/flirt.nvim",
     opts = function()
       return require("plugins.configs.ui.flirt")
