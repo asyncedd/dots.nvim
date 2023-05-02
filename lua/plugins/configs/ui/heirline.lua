@@ -137,9 +137,7 @@ local FileName = {
     -- now, if the filename would occupy more than 1/4th of the available
     -- space, we trim the file path to its initials
     -- See Flexible Components section below for dynamic truncation
-    if not conditions.width_percent_below(#filename, 0.25) then
-      filename = vim.fn.pathshorten(filename)
-    end
+    filename = vim.fn.pathshorten(filename)
     return filename
   end,
   hl = { fg = utils.get_highlight("Directory").fg },
@@ -263,6 +261,14 @@ local LSPActive = {
     end
   end,
   hl = { fg = "green", bold = true },
+  on_click = {
+    callback = function()
+      vim.defer_fn(function()
+        vim.cmd("LspInfo")
+      end, 100)
+    end,
+    name = "heirline_LSP",
+  },
 }
 
 local icons = require("core.utils.icons")
