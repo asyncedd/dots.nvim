@@ -54,4 +54,12 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    opts = {
+      useDefaultKeymaps = true,
+    },
+    config = true,
+    event = "VeryLazy",
+  },
 }
