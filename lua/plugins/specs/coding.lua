@@ -89,4 +89,32 @@ return {
     },
     event = "VeryLazy",
   },
+  {
+    "andymass/vim-matchup",
+    opts = function()
+      return require("plugins.configs.coding.matchup")
+    end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+
+      vim.cmd("silent! do FileType")
+    end,
+    dependencies = {
+      "nvim-treesitter",
+    },
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
+        callback = function()
+          vim.schedule(function()
+            local file = vim.fn.expand "%"
+            local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+            if condition then
+              require("lazy").load({ plugins = "vim-matchup" })
+              vim.cmd("silent! do FileType")
+            end
+          end)
+        end,
+      })
+    end,
+  },
 }
