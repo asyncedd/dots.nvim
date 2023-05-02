@@ -23,7 +23,7 @@ return {
     end,
     config = true,
     dependencies = {
-      "ggandor/leap.nvim",
+      "leap.nvim",
     },
     event = "VeryLazy",
   },

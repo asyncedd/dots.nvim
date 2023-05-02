@@ -19,4 +19,15 @@ return {
       { "gt", "<cmd>Neogit<CR>" },
     },
   },
+  {
+    "kelly-lin/ranger.nvim",
+    opts = function()
+      return require("plugins.configs.tools.ranger")
+    end,
+    config = true,
+    event = "VeryLazy",
+    keys = {
+      { "<leader>ef", function() require("ranger-nvim").open() end, { noremap = true },  }
+    },
+  },
 }
