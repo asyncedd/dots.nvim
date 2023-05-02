@@ -45,6 +45,7 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope.nvim": { "branch": "master", "commit": "713d26b98583b160b50fb827adb751f768238ed3" },
   "ultimate-autopair.nvim": { "branch": "main", "commit": "28592a9fb36473fff5467feb5d728701e6291e3a" },
+  "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
   "vim-matchup": { "branch": "master", "commit": "a8d1b8e635d666b19effa842f331ffa32beb57c2" },
   "yanky.nvim": { "branch": "main", "commit": "c4c794afd762a00ca543972e5b9e34ce9aa14a87" }
 }
