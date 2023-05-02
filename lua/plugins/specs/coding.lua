@@ -124,4 +124,14 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "Wansmer/treesj",
+    opts = {
+      use_default_keymaps = false,
+      max_join_length = 500,
+    },
+    keys = {
+      { "gS", "<cmd>lua require('treesj').toggle()<CR>" },
+    },
+  },
 }
