@@ -63,4 +63,12 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "rebelot/heirline.nvim",
+    opts = function()
+      return require("plugins.configs.ui.heirline")
+    end,
+    config = true,
+    event = { "VeryLazy", "BufRead" },
+  },
 }
