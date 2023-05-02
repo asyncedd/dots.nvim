@@ -2,12 +2,8 @@ return {
   {
     "L3MON4D3/LuaSnip",
     build = "make install_jsregexp",
-    config = function()
-      return require("plugins.configs.coding.luasnip")
-    end,
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-    },
+    config = function() return require("plugins.configs.coding.luasnip") end,
+    dependencies = { "rafamadriz/friendly-snippets" },
     event = "VeryLazy",
   },
   {
@@ -40,7 +36,6 @@ return {
     config = function(opts)
       require("npairs-int-upair").setup(opts)
 
-      -- If you want insert `(` after select function or method item
       local cmp_autopairs = require("nvim-autopairs.completion.cmp")
       local cmp = require("cmp")
       cmp.event:on(
@@ -131,7 +126,7 @@ return {
       max_join_length = 500,
     },
     keys = {
-      { "gS", "<cmd>lua require('treesj').toggle()<CR>" },
+      { "gS", "<cmd>lua require('treesj').toggle()<CR>", mode = { "n", "x" } },
     },
   },
 }
