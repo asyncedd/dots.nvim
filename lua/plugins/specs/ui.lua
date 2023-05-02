@@ -10,6 +10,9 @@ return {
       "nvim-web-devicons",
     },
     event = "VeryLazy",
+    keys = {
+      { "gbp", "<cmd>BufferLinePick<CR>" },
+    },
   },
   {
     "folke/noice.nvim",
