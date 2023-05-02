@@ -1,6 +1,7 @@
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local cmp = require("cmp")
+local compare = require("cmp.config.compare")
 
 return {
   snippet = {
@@ -46,7 +47,7 @@ return {
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    { name = "buffer" },
+    { name = "buffer", keyword_length = 3 },
   }),
   formatting = {
     format = lspkind.cmp_format({
@@ -57,5 +58,16 @@ return {
   },
   experimental = {
     ghost_text = true,
+  },
+  sorting = {
+    priority_weight = 0.8,
+    comparators = {
+      compare.scopes,
+      compare.locality,
+      compare.score,
+      compare.offset,
+      compare.recently_used,
+      compare.order,
+    },
   },
 }
