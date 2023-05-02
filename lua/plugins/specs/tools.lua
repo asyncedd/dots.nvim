@@ -30,4 +30,23 @@ return {
       { "<leader>ef", function() require("ranger-nvim").open() end, { noremap = true },  }
     },
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function(_, opts)
+      require("telescope").setup()
+
+      require("plugins.highlight.tools.telescope")
+    end,
+    dependencies = {
+      "nvim-treesitter",
+      "nvim-web-devicons",
+      "nvim-telescope/telescope-fzf-native.nvim",
+      "plenary.nvim",
+    },
+    keys = {
+      { "<leader>ff", "<cmd>Telescope find_files<CR>" },
+      { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
+    },
+    event = "VeryLazy",
+  },
 }
