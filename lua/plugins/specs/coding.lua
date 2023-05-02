@@ -117,4 +117,11 @@ return {
       })
     end,
   },
+  {
+    "echasnovski/mini.bracketed",
+    config = function()
+      require("mini.bracketed").setup()
+    end,
+    event = "VeryLazy",
+  },
 }
