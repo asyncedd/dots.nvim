@@ -62,4 +62,14 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "RRethy/nvim-treesitter-textsubjects",
+    opts = function()
+      return require("plugins.configs.motion.textsubjects")
+    end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
 }
