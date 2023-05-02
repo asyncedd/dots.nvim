@@ -16,7 +16,7 @@ local colors = {
   diag_error = utils.get_highlight("DiagnosticError").fg,
   diag_hint = utils.get_highlight("DiagnosticHint").fg,
   diag_info = utils.get_highlight("DiagnosticInfo").fg,
-  git_del = utils.get_highlight("diffDeleted").fg,
+  git_del = utils.get_highlight("diffRemoved").fg,
   git_add = utils.get_highlight("diffAdded").fg,
   git_change = utils.get_highlight("diffChanged").fg,
 }
@@ -320,8 +320,48 @@ local Diagnostics = {
   },
 }
 
+local Git = {
+  condition = conditions.is_git_repo,
+
+  init = function(self)
+    self.status_dict = vim.b.gitsigns_status_dict
+    self.has_changes = self.status_dict.added ~= 0 or self.status_dict.removed ~= 0 or self.status_dict.changed ~= 0
+  end,
+
+  hl = { fg = "orange" },
+
+
+  {   -- git branch name
+    provider = function(self)
+      return " " .. self.status_dict.head .. " "
+    end,
+    hl = { bold = true }
+  },
+  {
+    provider = function(self)
+      local count = self.status_dict.added or 0
+      return count > 0 and (" " .. count .. " ")
+    end,
+    hl = { fg = "git_add" },
+  },
+  {
+    provider = function(self)
+      local count = self.status_dict.removed or 0
+      return count > 0 and (" " .. count .. " ")
+    end,
+    hl = { fg = "git_del" },
+  },
+  {
+    provider = function(self)
+      local count = self.status_dict.changed or 0
+      return count > 0 and (" " .. count .. " ")
+    end,
+    hl = { fg = "git_change" },
+  },
+}
+
 local StatusLine = {
-  ViMode, Space, FileNameBlock, Space, LSPActive, Align, Diagnostics, Space, Scrollbar,
+  ViMode, Space, FileNameBlock, Space, Git, Space, LSPActive, Align, Diagnostics, Space, Scrollbar,
 }
 
 local StatusLines = {

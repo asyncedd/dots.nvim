@@ -9,6 +9,7 @@
   "flirt.nvim": { "branch": "main", "commit": "93eefd618963335242046e3336e6003082f2971c" },
   "flit.nvim": { "branch": "main", "commit": "f60e4b3d49bb5a5e97cfffe66f2e671eb422078e" },
   "friendly-snippets": { "branch": "main", "commit": "89e4d981bbe0424c8ec46ced4119c3610631c9a3" },
+  "gitsigns.nvim": { "branch": "main", "commit": "e5edefd9976039f5352e0c900f35206770b33a2d" },
   "heirline.nvim": { "branch": "master", "commit": "2aed06a3a04c877dc64834e9b9dabf6ad3491bc8" },
   "indent-blankline.nvim": { "branch": "master", "commit": "018bd04d80c9a73d399c1061fa0c3b14a7614399" },
   "lazy.nvim": { "branch": "main", "commit": "bb5cc9ef3bbb17541929b745f74551c900188099" },
