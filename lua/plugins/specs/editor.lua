@@ -22,4 +22,12 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = function()
+      return require("plugins.configs.editor.gitsigns")
+    end,
+    config = true,
+    event = { "BufReadPost" },
+  },
 }
