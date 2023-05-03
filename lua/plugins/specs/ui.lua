@@ -59,14 +59,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "tamton-aquib/flirt.nvim",
-    opts = function()
-      return require("plugins.configs.ui.flirt")
-    end,
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "rebelot/heirline.nvim",
     opts = function()
       return require("plugins.configs.ui.heirline")
