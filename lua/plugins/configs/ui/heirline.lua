@@ -44,8 +44,6 @@ local null_ls_sources = function(filetype, method)
   return methods_avail and null_ls_providers(filetype)[methods.internal[method]] or {}
 end
 
-
-
 local Space = {
   provider = " "
 }
