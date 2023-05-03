@@ -28,6 +28,7 @@ return {
     end,
     dependencies = {
       "mason.nvim",
+      "neodev.nvim",
     },
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
@@ -67,5 +68,12 @@ return {
         end,
       })
     end,
+  },
+  {
+    "folke/neodev.nvim",
+    opts = {
+      library = { plugins = false }
+    },
+    config = true,
   },
 }

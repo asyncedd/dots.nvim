@@ -13,6 +13,7 @@ return {
       },
       maxPreload = 100000,
       preloadFileSize = 10000,
+      checkThirdParty = false,
     },
   },
 }

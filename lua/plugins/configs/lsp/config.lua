@@ -21,7 +21,7 @@ capabilities.textDocument.completion.completionItem = {
 }
 
 lspconfig.lua_ls.setup({
-  capabilities = capabilities,
+  -- capabilities = capabilities,
 
   settings = require("plugins.configs.lsp.servers.lua_ls")
 })

@@ -20,6 +20,7 @@
   "mini.animate": { "branch": "main", "commit": "58226f659c43a9dd340fbe2f864c169f7e1e9b0d" },
   "mini.bracketed": { "branch": "main", "commit": "e2ee6900751da016ec330b8bcac1b5edcc1d658e" },
   "mini.indentscope": { "branch": "main", "commit": "c2eee0b60aac85e95b04752109d826527203790b" },
+  "neodev.nvim": { "branch": "main", "commit": "ab4c68129b5fefe5c6bb6d7e92283d3f8bdf8566" },
   "neoformat": { "branch": "master", "commit": "aca320ad601338c93eca50ab4c86fca964a18d96" },
   "neogit": { "branch": "master", "commit": "d7c66e5e8752e0cc76336a78c4432648cf3102e1" },
   "noice.nvim": { "branch": "main", "commit": "d31fe940e0866686718822aaac45527412c45134" },
