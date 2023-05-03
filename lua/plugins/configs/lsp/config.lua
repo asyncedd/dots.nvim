@@ -20,10 +20,8 @@ capabilities.textDocument.completion.completionItem = {
   },
 }
 
-lspconfig["lua_ls"].setup({
+lspconfig.lua_ls.setup({
   capabilities = capabilities,
 
-  settings = require("plugins.configs.lsp.servers.lua_ls"),
+  settings = require("plugins.configs.lsp.servers.lua_ls")
 })
-
-vim.cmd("silent! do FileType")

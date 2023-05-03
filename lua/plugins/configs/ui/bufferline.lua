@@ -1,23 +1,30 @@
-local ico = require("core.utils.icons")
+local icon = require("core.utils.icons")
 
 local icons = {
-  ["warn"] = ico.Warn,
-  ["info"] = ico.Info,
-  ["hint"] = ico.Hint,
-  ["error"] = ico.Error,
+  ["warn"] = icon.Warn,
+  ["hint"] = icon.Hint,
+  ["info"] = icon.Hint,
+  ["error"] = icon.Error,
 }
 
 return {
   options = {
-    mode = "buffers",
-    themable = true,
+    mode = "buffer",
     numbers = "buffer_id",
-    diagnostics = "nvim_lsp",
-    diagnostics_indicator = function(count, level)
-      return (icons[level] or "?") .. " " .. count
-    end,
     sort_by = "insert_after_current",
     right_mouse_command = "vert sbuffer %d",
+    hover = {
+      enabled = true,
+      delay = 100,
+      reveal = {
+        "close",
+      },
+    },
+    diagnostics = "nvim_lsp",
+    diagnostics_indicator = function(count, level)
+      level = level:match("warn") and "warn" or level
+      return (icons[level] or "?") .. " " .. count
+    end,
     always_show_bufferline = false,
   },
 }

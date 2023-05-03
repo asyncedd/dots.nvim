@@ -1,6 +1,13 @@
-local leap = require("leap")
+local colors = require("catppuccin.palettes").get_palette()
 
-leap.add_default_mappings()
+require("catppuccin.lib.highlighter").syntax({
+  LeapBackdrop = { link = "Comment" },
+  LeapMatch = { fg = colors.text, style = { "bold", "nocombine" } },
+  LeapLabelPrimary = { fg = colors.pink, style = { "bold", "nocombine" } },
+  LeapLabelSecondary = { fg = colors.sky, style = { "bold", "nocombine" } },
+})
 
--- Try it without this setting first, you might find you don't even miss it.
-leap.opts.highlight_unlabeled_phase_one_targets = true
+require("leap").add_default_mappings()
+
+require("leap").opts.highlight_unlabeled_phase_one_targets = true
+

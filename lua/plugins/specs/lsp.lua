@@ -1,41 +1,71 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      { "williamboman/mason.nvim", config = true },
+    "williamboman/mason.nvim",
+    after = {
       {
         "williamboman/mason-lspconfig.nvim",
-        opts = {
-          ensure_installed = { "lua_ls" },
-        },
+        opts = function()
+          return require("plugins.configs.lsp.mason-lsp")
+        end,
         config = true,
       },
-      { "folke/neodev.nvim", config = true },
+      {
+        "jay-babu/mason-null-ls.nvim",
+        opts = function()
+          return require("plugins.configs.lsp.mason-null")
+        end,
+        config = true,
+      },
     },
+    config = true,
+  },
+  {
+    "neovim/nvim-lspconfig",
     config = function()
-      require("plugins.configs.lsp.native")
       require("plugins.configs.lsp.config")
+
+      require("plugins.configs.lsp.native")
     end,
-    event = "VeryLazy",
+    dependencies = {
+      "mason.nvim",
+    },
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
+        callback = function()
+          vim.schedule(function()
+            local file = vim.fn.expand "%"
+            local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+            if condition then
+              require("lazy").load({ plugins = "nvim-lspconfig" })
+              vim.cmd("silent! do FileType")
+            end
+          end)
+        end,
+      })
+    end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function()
       return require("plugins.configs.lsp.null")
     end,
+    config = true,
     dependencies = {
-      {
-        "jay-babu/mason-null-ls.nvim",
-        opts = {
-          ensure_installed = { "stylua" },
-        },
-        config = true,
-      },
-      "nvim-lua/plenary.nvim",
+      "mason.nvim",
     },
-    event = "VeryLazy",
-    config = function(_, opts)
-      require("null-ls").setup(opts)
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
+        callback = function()
+          vim.schedule(function()
+            local file = vim.fn.expand "%"
+            local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+            if condition then
+              require("lazy").load({ plugins = "null-ls.nvim" })
+              vim.cmd("silent! do FileType")
+            end
+          end)
+        end,
+      })
     end,
   },
 }

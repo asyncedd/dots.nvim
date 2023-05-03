@@ -1,11 +1,11 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
-  print(" Bootstrapping lazy.nvim")
+  print(" Bootstrapping lazy.nvim!")
 
-  vim.api.nvim_command("!git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable " .. lazypath)
+  vim.cmd("!git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable " .. lazypath)
 
-  print(" Bootstrapped lazy.nvim")
+  print(" Done!")
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -18,7 +18,11 @@ require("lazy").setup({
     version = false,
   },
   install = {
-    colorscheme = { "catppuccin", "habamax" },
+    missing = true,
+    colorscheme = {
+      "catppuccin",
+      "habamax",
+    },
   },
   performance = {
     rtp = {
@@ -27,7 +31,6 @@ require("lazy").setup({
         "tarPlugin",
         "tohtml",
         "zipPlugin",
-        "tutor",
       },
     },
   },

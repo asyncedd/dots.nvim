@@ -1,7 +1,7 @@
-local null = require("null-ls")
+local nls = require("null-ls")
 
 return {
   sources = {
-    null.builtins.formatting.stylua,
+    nls.builtins.formatting.stylua,
   },
 }

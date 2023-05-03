@@ -1,9 +1,7 @@
-return {
-  history = true, -- Allow snippets that were exited, to be jumped back again.
+require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+require("luasnip.loaders.from_lua").lazy_load({ paths = { "./luasnip" } })
 
-  -- Update active nodes on textchange.
-  update_events = {
-    "TextChanged",
-    "TextChangedI",
-  },
-}
+require("luasnip").setup({
+  update_events = { "TextChanged", "TextChangedI" },
+})

@@ -1,22 +1,11 @@
--- Neoinit
-
--- Enable the new experimental vim.loader.
+-- Enable the experimental new loader.
 vim.loader.enable()
 
 -- Set some options.
 require("settings.options")
 
--- Create some autocmds.
-require("settings.autocmd")
-
--- Enable lazy.nvim
+-- Require lazy.nvim.
 require("plugins")
 
--- Set the colorscheme to catppuccin.
-vim.api.nvim_command("colorscheme catppuccin")
-
-vim.schedule(function()
-  -- Defer some functions later.
-  require("core.after")
-end)
-
+-- Catppuccinify the editor.
+vim.cmd("colorscheme catppuccin")

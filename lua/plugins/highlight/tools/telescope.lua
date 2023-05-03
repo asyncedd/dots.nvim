@@ -13,6 +13,4 @@ require("catppuccin.lib.highlighter").syntax({
   TelescopePromptTitle = { fg = colors.surface0, bg = colors.surface0 },
   TelescopeResultsTitle = { fg = colors.mantle, bg = colors.mantle },
   TelescopePreviewTitle = { fg = colors.crust, bg = colors.crust },
-  IndentBlanklineChar = { fg = colors.surface0 },
-  IndentBlanklineContextChar = { fg = colors.surface2 },
 })

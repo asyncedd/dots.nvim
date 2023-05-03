@@ -1,54 +1,39 @@
 return {
   "catppuccin/nvim",
   {
+    "akinsho/bufferline.nvim",
+    opts = function()
+      return require("plugins.configs.ui.bufferline")
+    end,
+    config = true,
+    dependencies = {
+      "nvim-web-devicons",
+    },
+    event = "VeryLazy",
+    keys = {
+      { "gbp", "<cmd>BufferLinePick<CR>" },
+    },
+  },
+  {
     "folke/noice.nvim",
     opts = function()
       return require("plugins.configs.ui.noice")
     end,
-    config = true,
     event = "VeryLazy",
+    config = true,
     dependencies = {
-      "MunifTanjim/nui.nvim",
+      "nui.nvim",
       "rcarriga/nvim-notify",
     },
   },
   {
     "lukas-reineke/indent-blankline.nvim",
-    opts = function()
-      require("plugins.configs.ui.indent-blankline")
-    end,
-    config = true,
-    event = { "VeryLazy", "User file" },
-  },
-  {
-    "echasnovski/mini.animate",
-    opts = function()
-      return require("plugins.configs.ui.mini-animate")
-    end,
-    config = function(_, opts)
-      require("mini.animate").setup(opts)
-    end,
-    event = "VeryLazy",
-  },
-  {
-    "edluffy/specs.nvim",
-    opts = function()
-      return require("plugins.configs.ui.specs")
-    end,
-    config = function(_, opts)
-      require("specs").setup(opts)
-    end,
     event = "VeryLazy",
   },
   {
     "echasnovski/mini.indentscope",
     opts = function()
-      return require("plugins.configs.ui.mini-indentscope")
-    end,
-    config = function(_, opts)
-      require("plugins.highlight.ui.mini-indentscope")
-
-      require("mini.indentscope").setup(opts)
+      return require("plugins.configs.ui.indentscope")
     end,
     event = "VeryLazy",
     init = function()
@@ -59,6 +44,27 @@ return {
         end,
       })
     end,
+    config = function(_, opts)
+      require("mini.indentscope").setup(opts)
+    end,
+  },
+  {
+    "echasnovski/mini.animate",
+    opts = function()
+      return require("plugins.configs.ui.animate")
+    end,
+    config = function(_, opts)
+      require("mini.animate").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
+  {
+    "tamton-aquib/flirt.nvim",
+    opts = function()
+      return require("plugins.configs.ui.flirt")
+    end,
+    config = true,
+    event = "VeryLazy",
   },
   {
     "rebelot/heirline.nvim",
@@ -66,33 +72,18 @@ return {
       return require("plugins.configs.ui.heirline")
     end,
     config = true,
-    event = { "User file", "VeryLazy", "BufReadPost" },
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
+    event = { "VeryLazy", "BufRead" },
   },
   {
-   "akinsho/bufferline.nvim",
+    "RRethy/vim-illuminate",
     opts = function()
-      return require("plugins.configs.ui.bufferline")
+      return require("plugins.configs.ui.illuminate")
     end,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = true,
-    event = { "VeryLazy" },
-    keys = {
-      { "[b", "<cmd>BufferLineCycleNext<CR>" },
-      { "]b", "<cmd>BufferLineCyclePrev<CR>" },
-      { "gbp", "<cmd>BufferLinePick<CR>" },
-    },
-  },
-  {
-    "goolord/alpha-nvim",
-    opts = function()
-      return require("plugins.configs.ui.alpha").config
+    config = function(_, opts)
+      require("illuminate").configure(opts)
+
+      require("plugins.highlight.ui.illuminate")
     end,
-    event = "VimEnter",
-    config = true,
+    event = "VeryLazy",
   },
 }

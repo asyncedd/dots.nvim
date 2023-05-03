@@ -9,22 +9,18 @@ return {
 
       require("plugins.highlight.editor.treesitter")
     end,
-    build = ":TSUpdate",
-    event = { "BufReadPost" },
+    event = { "BufReadPost", "BufNewFile", "BufWinEnter" },
   },
   {
-    "andymass/vim-matchup",
+    "kevinhwang91/nvim-ufo",
     opts = function()
-      return require("plugins.configs.editor.matchup")
+      return require("plugins.configs.editor.ufo")
     end,
-    config = function(_, opts)
-      vim.schedule(function()
-        require("nvim-treesitter.configs").setup(opts)
-
-        vim.cmd("silent! do FileType")
-      end)
-    end,
-    event = { "VeryLazy", "User file" },
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
+    config = true,
+    event = "VeryLazy",
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -32,23 +28,6 @@ return {
       return require("plugins.configs.editor.gitsigns")
     end,
     config = true,
-    event = { "VeryLazy", "BufRead", "User file" },
-  },
-  {
-    "folke/todo-comments.nvim",
-    config = true,
-    event = { "VeryLazy", "BufRead", "User file" },
-  },
-  {
-    "folke/which-key.nvim",
-    opts = function()
-      return require("plugins.configs.editor.which_key")
-    end,
-    config = function(_, opts)
-      require("which-key").setup(opts)
-
-      require("plugins.configs.editor.wk")
-    end,
-    event = { "VeryLazy" },
+    event = { "BufReadPost" },
   },
 }

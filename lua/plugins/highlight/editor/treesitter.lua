@@ -1,5 +1,5 @@
-local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+local colors = require("catppuccin.palettes").get_palette()
 
 require("catppuccin.lib.highlighter").syntax({
-  ["@variable"] = { fg = colors.maroon },
+  ["@variable"] = { fg = colors.flamingo },
 })

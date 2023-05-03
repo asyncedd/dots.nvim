@@ -1,59 +1,53 @@
 return {
   {
     "L3MON4D3/LuaSnip",
-    opts = function()
-      return require("plugins.configs.coding.luasnip")
-    end,
-    dependencies = {
-      {
-        "rafamadriz/friendly-snippets",
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load()
-        end,
-      },
-    },
-    config = function(_, opts)
-      require("luasnip").setup(opts)
-
-      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
-      require("luasnip.loaders.from_lua").lazy_load({ paths = { "./luasnip" } })
-    end,
-    event = { "VeryLazy", "InsertEnter" },
+    build = "make install_jsregexp",
+    config = function() return require("plugins.configs.coding.luasnip") end,
+    dependencies = { "rafamadriz/friendly-snippets" },
+    event = "VeryLazy",
   },
   {
     "hrsh7th/nvim-cmp",
     opts = function()
       return require("plugins.configs.coding.cmp")
     end,
-    config = true,
-    event = "InsertEnter",
+    config = function(_, opts)
+      require("cmp").setup(opts)
+
+      require("plugins.highlight.coding.cmp")
+
+      require("plugins.configs.coding.cmp-cmd")
+    end,
+    event = { "InsertEnter", "VeryLazy", "CmdlineEnter" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
-      "L3MON4D3/LuaSnip",
+      "LuaSnip",
       "saadparwaiz1/cmp_luasnip",
-      "onsails/lspkind-nvim",
+      "onsails/lspkind.nvim",
+      "hrsh7th/cmp-cmdline",
     },
   },
   {
     "altermo/npairs-integrate-upair",
     opts = function()
-      return require("plugins.configs.coding.autopairs")
+      require("plugins.configs.coding.autopairs")
     end,
-    config = function(_, opts)
+    config = function(opts)
       require("npairs-int-upair").setup(opts)
 
-      local event = require('cmp').event
-      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-
-      event:on('confirm_done', cmp_autopairs.on_confirm_done { map_char = { tex = '' } })
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+      local cmp = require("cmp")
+      cmp.event:on(
+        "confirm_done",
+        cmp_autopairs.on_confirm_done()
+      )
     end,
-    event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
-      "windwp/nvim-autopairs",
       "altermo/ultimate-autopair.nvim",
-      "hrsh7th/nvim-cmp",
+      "windwp/nvim-autopairs",
     },
+    event = { "InsertEnter", "CmdlineEnter" },
   },
   {
     "kylechui/nvim-surround",
@@ -61,53 +55,78 @@ return {
     event = "VeryLazy",
   },
   {
-    "abecodes/tabout.nvim",
-    config = true,
-    event = { "InsertEnter" },
-  },
-  {
     "numToStr/Comment.nvim",
     opts = function()
       return require("plugins.configs.coding.comment")
     end,
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts.treesitter)
 
-      require("Comment").setup(opts.comment)
+      require("Comment").setup(opts.Comment)
     end,
-    dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    keys = {
-      { "g", mode = { "n", "x" } },
-    },
-  },
-  {
-    "Wansmer/treesj",
-    config = true,
-    keys = {
-      "<leader>m",
-      "<leader>j",
-      "<leader>s",
-    },
+    event = "VeryLazy",
   },
   {
     "gbprod/yanky.nvim",
-    config = function(_, opts)
-      require("yanky").setup(opts)
+    config = function()
+      vim.opt.cb = "unnamedplus"
 
-      require("telescope").load_extension("yank_history")
+      require("yanky").setup()
     end,
     keys = {
-      { "p", "<Plug>(YankyPutAfter)>", mode = { "n", "x" }, desc = "Put after from your clipboard" },
-      { "gp", "<Plug>(YankyGPutAfter)>", mode = { "n", "x" }, desc = "GPut after from your clipboard" },
-      { "P", "<Plug>(YankyPutBefore)>", mode = { "n", "x" }, desc = "Put before from your clipboard" },
-      { "gP", "<Plug>(YankyGPutBefore)>", mode = { "n", "x" }, desc = "GPut before from your clipboard" },
-      { "<C-n>", "<Plug>(YankyCycleFoward)", desc = "Go foward the yanky-ring" },
-      { "<C-p>", "<Plug>(YankyCyclePrevious)", desc = "Go backwards the yanky-ring" },
-      { "<leader>fy", "<cmd>Telescope yank_history theme=dropdown<CR>", desc = "Find yanks" },
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
     },
     event = "VeryLazy",
+  },
+  {
+    "andymass/vim-matchup",
+    opts = function()
+      return require("plugins.configs.coding.matchup")
+    end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+
+      vim.cmd("silent! do FileType")
+    end,
+    dependencies = {
+      "nvim-treesitter",
+    },
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
+        callback = function()
+          vim.schedule(function()
+            local file = vim.fn.expand "%"
+            local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+            if condition then
+              require("lazy").load({ plugins = "vim-matchup" })
+              vim.cmd("silent! do FileType")
+            end
+          end)
+        end,
+      })
+    end,
+  },
+  {
+    "echasnovski/mini.bracketed",
+    config = function()
+      require("mini.bracketed").setup()
+    end,
+    event = "VeryLazy",
+  },
+  {
+    "Wansmer/treesj",
+    opts = {
+      use_default_keymaps = false,
+      max_join_length = 500,
+    },
+    keys = {
+      { "gS", "<cmd>lua require('treesj').toggle()<CR>", mode = { "n", "x" } },
+    },
   },
 }

@@ -1,5 +1,4 @@
 return {
-  current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
   signs = {
     add = { text = "▎" },
     change = { text = "▎" },
@@ -8,4 +7,5 @@ return {
     changedelete = { text = "▎" },
     untracked = { text = "▎" },
   },
+  current_line_blame = true,
 }
