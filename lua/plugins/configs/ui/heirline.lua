@@ -230,7 +230,6 @@ local Scrollbar = {
         end
       end,
       bold = true,
-      bg = "bg",
     }
   end,
 }
