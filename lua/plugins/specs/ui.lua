@@ -68,12 +68,8 @@ return {
   },
   {
     "RRethy/vim-illuminate",
-    opts = function()
-      return require("plugins.configs.ui.illuminate")
-    end,
-    config = function(_, opts)
-      require("illuminate").configure(opts)
-
+    config = function()
+      require("illuminate").configure()
       require("plugins.highlight.ui.illuminate")
     end,
     event = "VeryLazy",
