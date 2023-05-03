@@ -345,7 +345,6 @@ local Git = {
 
   hl = { fg = "orange" },
 
-
   {   -- git branch name
     provider = function(self)
       return " " .. self.status_dict.head .. " "
