@@ -5,12 +5,6 @@ return {
 
       -- Automatically jump forward to textobj, similar to targets.vim
       lookahead = true,
-
-      keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        -- You can also use captures from other query groups like `locals.scm`
-        ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
-      },
       -- You can choose the select mode (default is charwise 'v')
       --
       -- Can also be a function which gets passed a table with the keys
