@@ -243,22 +243,6 @@ local LSPActive = {
   },
 
   provider = function(self)
-    -- local names = {}
-    -- for _, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
-    --   if server.name == "null-ls" then
-    --     local nullls_sources = {}
-    --
-    --     for _, type in ipairs { "FORMATTING", "DIAGNOSTICS" } do
-    --       for _, source in ipairs(null_ls_sources(vim.bo.filetype, type)) do
-    --         nullls_sources[source] = true
-    --       end
-    --     end
-    --     vim.list_extend(names, vim.tbl_keys(nullls_sources))
-    --   else
-    --     table.insert(names, server.name)
-    --   end
-    --   return "  " .. table.concat(names, " ") .. " "
-    -- end
     local buf_client_names = {}
     for _, client in pairs(vim.lsp.get_active_clients { bufnr = self and self.bufnr or 0 }) do
       if client.name == "null-ls" then
