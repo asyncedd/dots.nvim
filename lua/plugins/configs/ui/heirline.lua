@@ -218,17 +218,17 @@ local Scrollbar = {
   end,
   hl = function()
     local position = math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
-    local fg
 
-    if position <= 5 then
-      fg = "aqua"
-    elseif position >= 95 then
-      fg = "red"
-    else
-      fg = "purple"
-    end
     return {
-      fg = fg,
+      fg = function()
+        if position <=5 then
+          return "aqua"
+        elseif position >=95 then
+          return "red"
+        else
+          return "purple"
+        end
+      end,
       bold = true,
       bg = "bg",
     }
