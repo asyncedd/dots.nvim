@@ -129,4 +129,16 @@ return {
       { "gS", "<cmd>lua require('treesj').toggle()<CR>", mode = { "n", "x" } },
     },
   },
+  {
+    "sbdchd/neoformat",
+    config = function()
+      require("neoformat").setup()
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        callback = function()
+          vim.cmd("Neoformat")
+        end,
+      })
+    end,
+  },
 }
