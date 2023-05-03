@@ -32,7 +32,7 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
-    config = function(_, opts)
+    config = function()
       require("telescope").setup()
 
       require("plugins.highlight.tools.telescope")
@@ -47,6 +47,5 @@ return {
       { "<leader>ff", "<cmd>Telescope find_files<CR>" },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
     },
-    event = "VeryLazy",
   },
 }
