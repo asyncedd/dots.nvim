@@ -14,18 +14,18 @@ return {
       { "gbp", "<cmd>BufferLinePick<CR>" },
     },
   },
-  -- {
-  --   "folke/noice.nvim",
-  --   opts = function()
-  --     return require("plugins.configs.ui.noice")
-  --   end,
-  --   event = "VeryLazy",
-  --   config = true,
-  --   dependencies = {
-  --     "nui.nvim",
-  --     "rcarriga/nvim-notify",
-  --   },
-  -- },
+  {
+    "folke/noice.nvim",
+    opts = function()
+      return require("plugins.configs.ui.noice")
+    end,
+    event = "VeryLazy",
+    config = true,
+    dependencies = {
+      "nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "VeryLazy",
