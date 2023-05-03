@@ -21,6 +21,31 @@ local colors = {
   git_change = utils.get_highlight("diffChanged").fg,
 }
 
+local null_ls_providers = function(filetype)
+  local registered = {}
+  -- try to load null-ls
+  local sources_avail, sources = pcall(require, "null-ls.sources")
+  if sources_avail then
+    -- get the available sources of a given filetype
+    for _, source in ipairs(sources.get_available(filetype)) do
+      -- get each source name
+      for method in pairs(source.methods) do
+        registered[method] = registered[method] or {}
+        table.insert(registered[method], source.name)
+      end
+    end
+  end
+  -- return the found null-ls sources
+  return registered
+end
+
+local null_ls_sources = function(filetype, method)
+  local methods_avail, methods = pcall(require, "null-ls.methods")
+  return methods_avail and null_ls_providers(filetype)[methods.internal[method]] or {}
+end
+
+
+
 local Space = {
   provider = " "
 }
@@ -219,46 +244,38 @@ local LSPActive = {
     "LspDetach"
   },
 
-  provider = function()
-    local names = {}
-    local null_ls_providers = function(filetype)
-      local registered = {}
-      -- try to load null-ls
-      local sources_avail, sources = pcall(require, "null-ls.sources")
-      if sources_avail then
-        -- get the available sources of a given filetype
-        for _, source in ipairs(sources.get_available(filetype)) do
-          -- get each source name
-          for method in pairs(source.methods) do
-            registered[method] = registered[method] or {}
-            table.insert(registered[method], source.name)
-          end
-        end
-      end
-      -- return the found null-ls sources
-      return registered
-    end
-
-    local null_ls_sources = function(filetype, method)
-      local methods_avail, methods = pcall(require, "null-ls.methods")
-      return methods_avail and null_ls_providers(filetype)[methods.internal[method]] or {}
-    end
-
-    for _, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
-      if server.name == "null-ls" then
+  provider = function(self)
+    -- local names = {}
+    -- for _, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
+    --   if server.name == "null-ls" then
+    --     local nullls_sources = {}
+    --
+    --     for _, type in ipairs { "FORMATTING", "DIAGNOSTICS" } do
+    --       for _, source in ipairs(null_ls_sources(vim.bo.filetype, type)) do
+    --         nullls_sources[source] = true
+    --       end
+    --     end
+    --     vim.list_extend(names, vim.tbl_keys(nullls_sources))
+    --   else
+    --     table.insert(names, server.name)
+    --   end
+    --   return "  " .. table.concat(names, " ") .. " "
+    -- end
+    local buf_client_names = {}
+    for _, client in pairs(vim.lsp.get_active_clients { bufnr = self and self.bufnr or 0 }) do
+      if client.name == "null-ls" then
         local nullls_sources = {}
-
         for _, type in ipairs { "FORMATTING", "DIAGNOSTICS" } do
           for _, source in ipairs(null_ls_sources(vim.bo.filetype, type)) do
-            null_ls_sources[source] = true
+            nullls_sources[source] = true
           end
         end
-        vim.list_extend(names, vim.tbl_keys(nullls_sources))
+        vim.list_extend(buf_client_names, vim.tbl_keys(nullls_sources))
       else
-        table.insert(names, server.name)
+        table.insert(buf_client_names, client.name)
       end
-      return "  " .. table.concat(names, " ") .. " "
     end
+    return " " .. table.concat(buf_client_names, ", ")
   end,
   hl = { fg = "green", bold = true },
   on_click = {
