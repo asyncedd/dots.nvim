@@ -30,22 +30,4 @@ return {
     config = true,
     event = { "BufReadPost" },
   },
-  {
-    "nvim-treesitter/nvim-treesitter-refactor",
-    opts = function()
-      return require("plugins.configs.editor.refactor")
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
-    dependencies = {
-      "nvim-treesitter",
-    },
-    event = "VeryLazy",
-  },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    config = true,
-    event = "VeryLazy",
-  },
 }
