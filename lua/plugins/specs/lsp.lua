@@ -32,6 +32,7 @@ return {
     end,
     dependencies = {
       "mason-lspconfig.nvim",
+      "neodev.nvim",
     },
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "WinEnter" }, {
@@ -71,5 +72,18 @@ return {
         end,
       })
     end,
+  },
+  {
+    "folke/neodev.nvim",
+    opts = {
+      library = {
+        plugins = false,
+        runtime = true,
+        types = true,
+      },
+      -- lspconfig = false,
+      pathStrict = true,
+    },
+    config = true,
   },
 }
