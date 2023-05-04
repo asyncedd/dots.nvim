@@ -9,3 +9,4 @@ require("plugins")
 
 -- Catppuccinify the editor.
 vim.cmd("colorscheme catppuccin")
+
