@@ -71,9 +71,9 @@ g.mapleader = " "
 
 -- // 2.1 Indentation options.
 
---- Enable Autoindent.
+-- Enable Autoindent.
 --
---- If you're entering into a new line via <CR> in normal mode or `o` `O` in normal mode,
+-- If you're entering into a new line via <CR> in normal mode or `o` `O` in normal mode,
 -- It'll automatically indent the newline.
 -- For example:
 --
@@ -88,24 +88,24 @@ g.mapleader = " "
 --   |
 -- }
 --
---- It does automatically indent but, except for when you don't type anything into the newline except for <BS> or <C-D>
+-- It does automatically indent but, except for when you don't type anything into the newline except for <BS> or <C-D>
 -- and type <Esc>, <C-O> or <CR>, the indent is deleted once again.
 --
---- Should be enabled by default. But, we're going to enable it anyways.
+-- Should be enabled by default. But, we're going to enable it anyways.
 --
 -- FACT: "ai" is a abbreviation for "autoindent"
 
 o.ai = true
 
---- Enable Smartindent.
---- Do smart auto-indenting when starting a new line.
---- Works for C-like programs, but can be used for most languages.
---- Similar to `cindent` but, less strict.
---- Not the most useful option for non-C-like languages.
+-- Enable Smartindent.
+-- Do smart auto-indenting when starting a new line.
+-- Works for C-like programs, but can be used for most languages.
+-- Similar to `cindent` but, less strict.
+-- Not the most useful option for non-C-like languages.
 --
---- Smartindent is usually enabled when Autoindent is enabled.
+-- Smartindent is usually enabled when Autoindent is enabled.
 --
---- For example:
+-- For example:
 --
 -- if something then
 --   |
@@ -129,14 +129,14 @@ o.ai = true
 --   |
 -- end
 --
---- Here's a list of rules that are defined for Smartindent.
+-- Here's a list of rules that are defined for Smartindent.
 --
---- Insert an indent after a line ending with "{"
---- Insert an indent starting with a keyword from:
+-- Insert an indent after a line ending with "{"
+-- Insert an indent starting with a keyword from:
 -- "if", "else", "while", "do", "for", "switch"
---- Insert and indent before a line from starting with "}" (Only with the "O" operator).
---- When typing '}' as the first character in a new line, that line is given the same indent as the matching "{".
---- When typing '#' as the first character in a new line, the indent for that line is removed, the '#' is put in the first column.
+-- Insert and indent before a line from starting with "}" (Only with the "O" operator).
+-- When typing '}' as the first character in a new line, that line is given the same indent as the matching "{".
+-- When typing '#' as the first character in a new line, the indent for that line is removed, the '#' is put in the first column.
 --
 -- For example:
 --
@@ -155,51 +155,51 @@ o.ai = true
 
 o.si = true
 
---- Set Shiftwith to 2.
+-- Set Shiftwith to 2.
 --
---- Shiftwidth sets the number of spaces of each (auto)indent.
---- Used for "cindent" >> and <<.
---- Other than the three listed above, "autoindent", "smartindent" also uses the value of shiftwidth.
+-- Shiftwidth sets the number of spaces of each (auto)indent.
+-- Used for "cindent" >> and <<.
+-- Other than the three listed above, "autoindent", "smartindent" also uses the value of shiftwidth.
 --
---- When zero, the "tabstop" will be used.
+-- When zero, the "tabstop" will be used.
 --
---- SOME PERSONAL FACTORS:
+-- SOME PERSONAL FACTORS:
 -- Why I've used 2 is a matter of personal prefences.
 -- But, here are some reasons on why:
 --   * Spaces (which we'll be using) are more flexible than tabs and, more "global" than tabs.
 --   * Two is the perfect balance of readability and screen real estate.
 --   * Most people uses 2 spaces.
 --
---- So, in summary, they're simply a matter of personal prefences.
+-- So, in summary, they're simply a matter of personal prefences.
 --
 -- FACT: "sw" abbreviates "shift width"
 
 o.sw = 2
 
---- Set Tabstop to 2.
+-- Set Tabstop to 2.
 --
---- If "shiftwidth" is two, it's only logical to also set <Tab>s to two.
+-- If "shiftwidth" is two, it's only logical to also set <Tab>s to two.
 --
---- I'll go for a very brief explanation on what Tabstop does.
---- It's bascially saying to Neovim to use two spaces for each <Tab> inserted.
---- So, it's mainly for consistency.
+-- I'll go for a very brief explanation on what Tabstop does.
+-- It's bascially saying to Neovim to use two spaces for each <Tab> inserted.
+-- So, it's mainly for consistency.
 --
 -- FACT: "ts" abbreviations of "tabstop"
 
 o.ts = 2
 
---- Enable Expandtab.
+-- Enable Expandtab.
 --
---- In Insert Mode: Use the appropiate number of spaces to insert a <Tab>.
---- Spaces will also be used in indents too!
+-- In Insert Mode: Use the appropiate number of spaces to insert a <Tab>.
+-- Spaces will also be used in indents too!
 --
---- TIP: To insert a real tab when, "expandtab" is turned on, use <C-v><Tab>!
+-- TIP: To insert a real tab when, "expandtab" is turned on, use <C-v><Tab>!
 --
 -- FACT: "et" abbreviates "expandtab"
 
 o.et = true
 
---- Jumplist options for <C-i> and <C-o> jump motions.
+-- Jumplist options for <C-i> and <C-o> jump motions.
 -- The following option allows you to modify how jumplist works in Neovim.
 
 -- o.jop = "stack": When set to "stack", the jumplist behaves like a web browser.
@@ -208,25 +208,25 @@ o.et = true
 
 o.jop = "stack"
 
---- Enable mouse movement tracking in Neovim.
+-- Enable mouse movement tracking in Neovim.
 -- This option allows plugins to track mouse movements in Neovim.
 -- o.mousemev = true: When set to true, mouse movements can be tracked in Neovim.
 
 o.mousemev = true
 
---- Enable breakindent.
+-- Enable breakindent.
 -- This option allows you to visually indent every wrapped line.
 -- o.bri = true: When set to true, every wrapped line will continue to be visually indented.
 
 o.bri = true
 
---- Enable linebreak.
+-- Enable linebreak.
 -- This option allows you to wrap long lines at a word instead of the final character.
 -- o.lbr = true: When set to true, long lines will be wrapped at a word instead of the final character.
 
 o.lbr = true
 
---- Fold-related options.
+-- Fold-related options.
 -- The following options allow you to modify how folds are displayed in Neovim.
 
 -- o.foldcolumn = "1": Set the fold column to be at the "later" column of line numbers.
@@ -247,12 +247,12 @@ o.foldenable = true
 
 -- // 3.1 Line numbers.
 
---- Enable numbers.
+-- Enable numbers.
 --
---- Print the corresponding line number before each line.
---- I don't really have any more context for this so, I'll end it right here.
+-- Print the corresponding line number before each line.
+-- I don't really have any more context for this so, I'll end it right here.
 --
---- EXPAMPLE:
+-- EXPAMPLE:
 --  1  -- init.lua
 --  2
 --  3  -- Blanklines and comments are counted!
@@ -263,12 +263,12 @@ o.foldenable = true
 
 o.nu = true
 
---- Enable Relativenumber.
+-- Enable Relativenumber.
 --
 -- Print the correspoding relative numbe rbefore each line.
 -- So, for each line, it's basically a diff of the current line and the other line.
 --
---- EXAMPLE:
+-- EXAMPLE:
 --  3  -- init.lua
 --  2
 --  1  -- Blanklines and comments are counted!
@@ -279,27 +279,27 @@ o.nu = true
 
 o.rnu = true
 
---- Enable Cursorline.
+-- Enable Cursorline.
 --
---- Highlight the text line of the cursor with cursorline hl-CursorLine.
---- VERY useful for figuring out where the cursor is.
---- BUT, will make screen redrawing a bit slower.
---- In VISUAL mode, it's disabled to make it easier to spot the selected text.
+-- Highlight the text line of the cursor with cursorline hl-CursorLine.
+-- VERY useful for figuring out where the cursor is.
+-- BUT, will make screen redrawing a bit slower.
+-- In VISUAL mode, it's disabled to make it easier to spot the selected text.
 --
 -- FACT: "cul" abbreviates to "cursorline"
 
 o.cul = true
 
---- Enable TermGUIColors.
+-- Enable TermGUIColors.
 --
 -- Enables 24-bit RGB colors in the TUI. Uses "gui" :highlight attributes instead of "cterm" attributes. BUT, requires an ISO-8613-3 compatible terminal. (most terminals)
 
 o.tgc = true
 
---- Blinking cursor.
+-- Blinking cursor.
 --
---- I've found in https://github.com/vsedov/nvim
---- I find it cool :)
+-- I've found in https://github.com/vsedov/nvim
+-- I find it cool :)
 --
 -- This is from the help docs, it enables mode shapes, "Cursor" highlight, and blinking
 o.gcr = {
@@ -308,18 +308,18 @@ o.gcr = {
   [[sm:block-blinkwait175-blinkoff150-blinkon175]],
 }
 
---- Pum options. (Popup menu)
+-- Pum options. (Popup menu)
 --
---- Making the pum menu a bit transparent.
+-- Making the pum menu a bit transparent.
 
 o.pb = 15
 
---- Making pum menu a bit limited in the terms of screen real estate.
+-- Making pum menu a bit limited in the terms of screen real estate.
 
 o.ph = 10
 
---- Cmdheight to zero.
+-- Cmdheight to zero.
 --
---- Making noice.nvim not feel so late.
+-- Making noice.nvim not feel so late.
 
 o.ch = 0
