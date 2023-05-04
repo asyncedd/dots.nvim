@@ -5,7 +5,7 @@ return {
     },
     completion = {
       callSnippet = "Both",
-      workspace = true,
+      workspaceWord = true,
       keywordSnippet = "Replace",
       postfix = "@",
     },
