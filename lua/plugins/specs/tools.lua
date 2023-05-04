@@ -18,6 +18,7 @@ return {
     keys = {
       { "gt", "<cmd>Neogit<CR>" },
     },
+    event = "VeryLazy",
   },
   {
     "nvim-telescope/telescope.nvim",
