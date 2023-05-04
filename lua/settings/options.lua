@@ -240,6 +240,13 @@ o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
 
+-- Unfofile
+--
+-- Automatically save undo history to an undo file when writing a buffer to a file, and when reading a file, restores undo history from the same file on buffer read.
+-- The directory used is set by 'undodir'.
+
+o.udf = true
+
 -- CODE: hFy
 -- #############################
 -- #           3. UI           #
