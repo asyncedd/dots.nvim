@@ -95,4 +95,10 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "ggandor/leap-ast.nvim",
+    keys = {
+      { "gs", function() require("leap-ast").leap() end, mode = { "n", "x", "o" } },
+    },
+  },
 }
