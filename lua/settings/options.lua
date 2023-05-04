@@ -320,8 +320,9 @@ o.gcr = {
 -- Pum options. (Popup menu)
 --
 -- Making the pum menu a bit transparent.
+-- NOTE: This is pseudo-transparent.
 
-o.pb = 15
+o.pb = 25
 
 -- Making pum menu a bit limited in the terms of screen real estate.
 
