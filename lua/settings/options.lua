@@ -331,5 +331,9 @@ o.ph = 10
 -- Cmdheight to zero.
 --
 -- Making noice.nvim not feel so late.
+--
+-- Otherwise, cmdheight is a cool option.
+-- It basically prevents those wierd "Press ENTER or type command to continue" prompts.
+--
 
 o.ch = 0
