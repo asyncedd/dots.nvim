@@ -325,6 +325,8 @@ o.gcr = {
 o.pb = 25
 
 -- Making pum menu a bit limited in the terms of screen real estate.
+-- Basically it only shows 10 items into a popup menu.
+-- Otherwise, it can be shown via scrolling.
 
 o.ph = 10
 
