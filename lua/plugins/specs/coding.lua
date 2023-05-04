@@ -127,7 +127,7 @@ return {
     },
     event = "VeryLazy",
     keys = {
-      { "gS", "<cmd>lua require('treesj').toggle()<CR>", mode = { "n", "x" } },
+      { "gS", "<cmd>lua require('treesj').toggle()<CR>" },
     },
   },
   {
