@@ -30,4 +30,9 @@ return {
     config = true,
     event = { "BufReadPost" },
   },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    config = true,
+  },
 }
