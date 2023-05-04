@@ -245,7 +245,9 @@ o.foldenable = true
 -- Automatically save undo history to an undo file when writing a buffer to a file, and when reading a file, restores undo history from the same file on buffer read.
 -- The directory used is set by 'undodir'.
 
-o.udf = true
+vim.schedule(function()
+  o.udf = true
+end)
 
 -- CODE: hFy
 -- #############################
