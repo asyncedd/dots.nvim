@@ -37,4 +37,8 @@ return {
       { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
     },
   },
+  {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime",
+  },
 }
