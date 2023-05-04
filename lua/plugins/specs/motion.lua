@@ -1,12 +1,6 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    opts = function()
-      return require("plugins.configs.motion.nvim-treesitter-textobjects")
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
     event = "VeryLazy",
     init = function()
       -- PERF: no need to load the plugin, if we only need its queries for mini.ai
@@ -35,9 +29,9 @@ return {
   },
   {
     "ggandor/flit.nvim",
-    opts = function()
-      return require("plugins.configs.motion.flit")
-    end,
+    opts = {
+      labeled_modes = "nvoi"
+    },
     config = true,
     dependencies = {
       "leap.nvim",
@@ -79,6 +73,6 @@ return {
       { "e", "<cmd>lua require('spider').motion('e')<CR>", mode = { "n", "o", "x" } },
       { "b", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" } },
       { "ge", "<cmd>lua require('spider').motion('ge')<CR>", mode = { "n", "o", "x" } },
-    }
+    },
   },
 }

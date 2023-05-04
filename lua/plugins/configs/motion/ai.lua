@@ -9,6 +9,7 @@ return {
     }, {}),
     f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
     c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+    s = ai.gen_spec.treesitter({ a = "@scope", i = "@scope.inner" }, {}),
   },
   search_method = "cover_or_nearest",
 }

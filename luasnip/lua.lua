@@ -24,19 +24,6 @@ local conds = require("luasnip.extras.conditions.expand")
 return {
   -- rec_ls is self-referencing. That makes this snippet 'infinite' eg. have as many
   -- \item as necessary by utilizing a choiceNode.
-  s("usep", {
-    t({ "use({'" }),
-    i(1, { "repo/name" }),
-    t({ "'," }),
-    c(2, { sn(1, { t({ "event = '" }), i(1, { "VimEnter" }), t({ "'," }) }), t({ " " }) }),
-    c(3, {
-      f(function(args)
-        return "config = function() require('rc/pluginconfig/" .. string.gsub(args[1][1], "(.*/)(.*)", "%2") .. "') end"
-      end, { 1 }),
-      t({ "" }),
-    }),
-    t({ "})" }),
-  }),
   s("pcall", {
     t({ 'local ok, _ = pcall(require, "' }),
     i(1),
