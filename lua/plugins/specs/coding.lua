@@ -28,6 +28,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "onsails/lspkind.nvim",
       "hrsh7th/cmp-cmdline",
+      "dmitmel/cmp-cmdline-history",
     },
   },
   {
