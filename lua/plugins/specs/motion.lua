@@ -101,4 +101,12 @@ return {
       { "gs", function() require("leap-ast").leap() end, mode = { "n", "x", "o" } },
     },
   },
+  {
+    "cbochs/portal.nvim",
+    config = true,
+    keys = {
+      { "<C-i>", "<cmd>Portal jumplist forward<CR>" },
+      { "<C-o>", "<cmd>Portal jumplist backward<CR>" },
+    },
+  },
 }
