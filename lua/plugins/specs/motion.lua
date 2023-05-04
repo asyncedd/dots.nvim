@@ -43,7 +43,12 @@ return {
     dependencies = {
       "leap.nvim",
     },
-    event = "VeryLazy",
+    keys = {
+      { "f", mode = { "n", "x", "o" }, desc = "f" },
+      { "F", mode = { "n", "x", "o" }, desc = "F" },
+      { "t", mode = { "n", "x", "o" }, desc = "t" },
+      { "T", mode = { "n", "x", "o" }, desc = "T" },
+    },
   },
   {
     "echasnovski/mini.ai",
