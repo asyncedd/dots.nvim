@@ -29,9 +29,9 @@ return {
   },
   {
     "ggandor/flit.nvim",
-    opts = function()
-      return require("plugins.configs.motion.flit")
-    end,
+    opts = {
+      labeled_modes = "nvoi"
+    },
     config = true,
     dependencies = {
       "leap.nvim",
