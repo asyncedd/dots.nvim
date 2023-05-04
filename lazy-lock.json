@@ -18,6 +18,7 @@
   "mini.ai": { "branch": "main", "commit": "25bd5af6f984126ebd54c029bc12c9378214eb26" },
   "mini.animate": { "branch": "main", "commit": "58226f659c43a9dd340fbe2f864c169f7e1e9b0d" },
   "mini.bracketed": { "branch": "main", "commit": "e2ee6900751da016ec330b8bcac1b5edcc1d658e" },
+  "mini.bufremove": { "branch": "main", "commit": "14805473144fffbd019d07e51bed2d176e065ee9" },
   "mini.indentscope": { "branch": "main", "commit": "c2eee0b60aac85e95b04752109d826527203790b" },
   "neogit": { "branch": "master", "commit": "d7c66e5e8752e0cc76336a78c4432648cf3102e1" },
   "noice.nvim": { "branch": "main", "commit": "d31fe940e0866686718822aaac45527412c45134" },

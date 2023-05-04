@@ -8,6 +8,12 @@ return {
     config = true,
     dependencies = {
       "nvim-web-devicons",
+      {
+        "echasnovski/mini.bufremove",
+        config = function()
+          require("mini.bufremove").setup()
+        end,
+      },
     },
     event = "VeryLazy",
     keys = {
