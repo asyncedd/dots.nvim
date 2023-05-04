@@ -1,5 +1,8 @@
 return {
   Lua = {
+    runtime = {
+      pathStrict = true,
+    },
     completion = {
       callSnippet = "Replace",
       keywordSnippet = "Replace",
