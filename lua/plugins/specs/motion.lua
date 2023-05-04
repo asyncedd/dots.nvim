@@ -93,7 +93,6 @@ return {
       "leap.nvim",
     },
     config = true,
-    -- event = "VeryLazy",
-    event = "ModeChanged",
+    event = "VeryLazy",
   },
 }
