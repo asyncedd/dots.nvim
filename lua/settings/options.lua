@@ -330,6 +330,8 @@ o.pb = 25
 
 o.ph = 10
 
+-- Command line options.
+
 -- Cmdheight to zero.
 --
 -- Making noice.nvim not feel so late.
