@@ -23,6 +23,7 @@
   "mini.bracketed": { "branch": "main", "commit": "e2ee6900751da016ec330b8bcac1b5edcc1d658e" },
   "mini.bufremove": { "branch": "main", "commit": "14805473144fffbd019d07e51bed2d176e065ee9" },
   "mini.indentscope": { "branch": "main", "commit": "c2eee0b60aac85e95b04752109d826527203790b" },
+  "neoformat": { "branch": "master", "commit": "aca320ad601338c93eca50ab4c86fca964a18d96" },
   "neogit": { "branch": "master", "commit": "d7c66e5e8752e0cc76336a78c4432648cf3102e1" },
   "noice.nvim": { "branch": "main", "commit": "d31fe940e0866686718822aaac45527412c45134" },
   "npairs-integrate-upair": { "branch": "main", "commit": "9e898dcb1d648796663791b78ae348161c4031f8" },

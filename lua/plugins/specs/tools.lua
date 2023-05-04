@@ -41,4 +41,17 @@ return {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
   },
+  {
+    "sbdchd/neoformat",
+    config = function()
+      vim.g.neoformat_run_all_formatters = 1
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        callback = function()
+          vim.cmd("Neoformat")
+        end,
+      })
+    end,
+    cmd = "Neoformat",
+  },
 }
