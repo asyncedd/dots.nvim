@@ -128,4 +128,9 @@ return {
       { "gS", "<cmd>lua require('treesj').toggle()<CR>", mode = { "n", "x" } },
     },
   },
+  {
+    "chrisgrieser/nvim-alt-substitute",
+    opts = true,
+    event = "CmdlineEnter",
+  },
 }
