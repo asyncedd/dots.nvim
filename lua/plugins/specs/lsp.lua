@@ -1,23 +1,23 @@
 return {
   {
-    "williamboman/mason.nvim",
-    after = {
-      {
-        "williamboman/mason-lspconfig.nvim",
-        opts = function()
-          return require("plugins.configs.lsp.mason-lsp")
-        end,
-        config = true,
-      },
-      {
-        "jay-babu/mason-null-ls.nvim",
-        opts = function()
-          return require("plugins.configs.lsp.mason-null")
-        end,
-        config = true,
-      },
-    },
+    "williamboman/mason-lspconfig.nvim",
+    opts = function()
+      return require("plugins.configs.lsp.mason-lsp")
+    end,
     config = true,
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+  },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    opts = function()
+      return require("plugins.configs.lsp.mason-null")
+    end,
+    config = true,
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
   },
   {
     "neovim/nvim-lspconfig",
@@ -27,7 +27,7 @@ return {
       require("plugins.configs.lsp.native")
     end,
     dependencies = {
-      "mason.nvim",
+      "mason-lspconfig.nvim",
     },
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
@@ -51,7 +51,7 @@ return {
     end,
     config = true,
     dependencies = {
-      "mason.nvim",
+      "mason-null-ls.nvim",
     },
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
