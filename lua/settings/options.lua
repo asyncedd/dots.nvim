@@ -330,6 +330,13 @@ o.pb = 25
 
 o.ph = 10
 
+-- Floating window options.
+
+-- Making floating windows to be a bit transparent.
+-- Same as Pumblend, this is pseudo-transparent.
+
+o.winbl = 25
+
 -- Command line options.
 
 -- Cmdheight to zero.
