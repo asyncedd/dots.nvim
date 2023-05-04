@@ -34,7 +34,7 @@ return {
       "mason-lspconfig.nvim",
     },
     init = function()
-      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter" }, {
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "WinEnter" }, {
         callback = function()
           vim.schedule(function()
             local file = vim.fn.expand("%")
@@ -58,7 +58,7 @@ return {
       "mason-null-ls.nvim",
     },
     init = function()
-      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter" }, {
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "WinEnter" }, {
         callback = function()
           vim.schedule(function()
             local file = vim.fn.expand("%")
