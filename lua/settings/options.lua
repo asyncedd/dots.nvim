@@ -321,7 +321,7 @@ o.gcr = {
 --
 -- Making the pum menu a bit transparent.
 
-o.pb = 25
+o.pb = 15
 
 -- Making pum menu a bit limited in the terms of screen real estate.
 
