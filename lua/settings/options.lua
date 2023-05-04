@@ -24,7 +24,7 @@
 -- *  1 - Ayz
 -- *  2 - iy0
 -- *  3 - hFy
--- 
+--
 -- You can now go to each category by: "/ [CODE_GOES_HERE]"
 -- To go back to the legend, you can press "gg". This will go to the first line in a buffer.
 --
@@ -36,7 +36,7 @@
 -- #############################
 
 -- Set local "o" to vim.opt.
--- 
+--
 -- vim.opt is basically a wrapper that sets options.
 --
 -- SYNTAX:
@@ -64,7 +64,6 @@ local g = vim.g
 -- Set <leader> to be <Space>.
 g.mapleader = " "
 
-
 -- CODE: iy0
 -- ##############################
 -- #         2. Editing         #
@@ -81,11 +80,11 @@ g.mapleader = " "
 -- {
 --   |
 -- }
--- 
+--
 -- <CR>
--- 
+--
 -- {
---   
+--
 --   |
 -- }
 --
@@ -93,7 +92,7 @@ g.mapleader = " "
 -- and type <Esc>, <C-O> or <CR>, the indent is deleted once again.
 --
 --- Should be enabled by default. But, we're going to enable it anyways.
--- 
+--
 -- FACT: "ai" is a abbreviation for "autoindent"
 
 o.ai = true
@@ -115,7 +114,7 @@ o.ai = true
 -- <ESC>
 --
 -- if something then
--- █ 
+-- █
 -- end
 --
 -- And:
@@ -126,7 +125,7 @@ o.ai = true
 -- <CR>
 --
 -- if something then
--- 
+--
 --   |
 -- end
 --
@@ -140,9 +139,9 @@ o.ai = true
 --- When typing '#' as the first character in a new line, the indent for that line is removed, the '#' is put in the first column.
 --
 -- For example:
--- 
+--
 -- {
--- 
+--
 -- }█
 --
 -- O
@@ -157,7 +156,7 @@ o.ai = true
 o.si = true
 
 --- Set Shiftwith to 2.
--- 
+--
 --- Shiftwidth sets the number of spaces of each (auto)indent.
 --- Used for "cindent" >> and <<.
 --- Other than the three listed above, "autoindent", "smartindent" also uses the value of shiftwidth.
@@ -193,7 +192,7 @@ o.ts = 2
 --
 --- In Insert Mode: Use the appropiate number of spaces to insert a <Tab>.
 --- Spaces will also be used in indents too!
--- 
+--
 --- TIP: To insert a real tab when, "expandtab" is turned on, use <C-v><Tab>!
 --
 -- FACT: "et" abbreviates "expandtab"
@@ -252,13 +251,13 @@ o.foldenable = true
 --
 --- Print the corresponding line number before each line.
 --- I don't really have any more context for this so, I'll end it right here.
--- 
+--
 --- EXPAMPLE:
 --  1  -- init.lua
---  2 
+--  2
 --  3  -- Blanklines and comments are counted!
 --  4  print("wow, this is so cool!")
---  5 
+--  5
 --
 -- FACT: "nu" abbreviates "numbers"
 
@@ -271,10 +270,10 @@ o.nu = true
 --
 --- EXAMPLE:
 --  3  -- init.lua
---  2 
+--  2
 --  1  -- Blanklines and comments are counted!
 -- 4   print("wow, this is so cool!")
---  1 
+--  1
 --
 -- FACT: "rnu" abbreviates "relativenumber"
 
@@ -292,7 +291,7 @@ o.rnu = true
 o.cul = true
 
 --- Enable TermGUIColors.
--- 
+--
 -- Enables 24-bit RGB colors in the TUI. Uses "gui" :highlight attributes instead of "cterm" attributes. BUT, requires an ISO-8613-3 compatible terminal. (most terminals)
 
 o.tgc = true
@@ -320,7 +319,7 @@ o.pb = 15
 o.ph = 10
 
 --- Cmdheight to zero.
--- 
+--
 --- Making noice.nvim not feel so late.
 
 o.ch = 0

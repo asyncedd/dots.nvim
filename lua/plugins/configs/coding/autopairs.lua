@@ -10,4 +10,3 @@ return {
   rfastwarp = "<A-E>",
   fastwrap = "<A-]>",
 }
-

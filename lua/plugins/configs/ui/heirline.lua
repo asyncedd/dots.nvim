@@ -90,23 +90,23 @@ local ViMode = {
       t = "T",
     },
     mode_colors = {
-      n = "red" ,
+      n = "red",
       i = "green",
       v = "cyan",
-      V =  "cyan",
-      ["\22"] =  "cyan",
-      c =  "orange",
-      s =  "purple",
-      S =  "purple",
-      ["\19"] =  "purple",
-      R =  "orange",
-      r =  "orange",
-      ["!"] =  "red",
-      t =  "red",
+      V = "cyan",
+      ["\22"] = "cyan",
+      c = "orange",
+      s = "purple",
+      S = "purple",
+      ["\19"] = "purple",
+      R = "orange",
+      r = "orange",
+      ["!"] = "red",
+      t = "red",
     },
   },
   provider = function(self)
-    return " %2("..self.mode_names[self.mode].."%)"
+    return " %2(" .. self.mode_names[self.mode] .. "%)"
   end,
   -- Same goes for the highlight. Now the foreground will change according to the current mode.
   hl = function(self)
@@ -144,7 +144,7 @@ local FileIcon = {
   end,
   hl = function(self)
     return { fg = self.icon_color }
-  end
+  end,
 }
 
 local FileName = {
@@ -152,7 +152,9 @@ local FileName = {
     -- first, trim the pattern relative to the current directory. For other
     -- options, see :h filename-modifers
     local filename = vim.fn.fnamemodify(self.filename, ":.")
-    if filename == "" then return "[No Name]" end
+    if filename == "" then
+      return "[No Name]"
+    end
     -- now, if the filename would occupy more than 1/4th of the available
     -- space, we trim the file path to its initials
     -- See Flexible Components section below for dynamic truncation
@@ -163,10 +165,11 @@ local FileName = {
 }
 
 -- let's add the children to our FileNameBlock component
-FileNameBlock = utils.insert(FileNameBlock,
+FileNameBlock = utils.insert(
+  FileNameBlock,
   FileIcon,
   utils.insert(FileName), -- a new table where FileName is a child of FileNameModifier
-  { provider = '%<'} -- this means that the statusline is cut here when there's not enough space
+  { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
 )
 
 local Scrollbar = {
@@ -235,15 +238,15 @@ local LSPActive = {
   condition = conditions.lsp_attached,
   update = {
     "LspAttach",
-    "LspDetach"
+    "LspDetach",
   },
 
   provider = function(self)
     local buf_client_names = {}
-    for _, client in pairs(vim.lsp.get_active_clients { bufnr = self and self.bufnr or 0 }) do
+    for _, client in pairs(vim.lsp.get_active_clients({ bufnr = self and self.bufnr or 0 })) do
       if client.name == "null-ls" then
         local nullls_sources = {}
-        for _, type in ipairs { "FORMATTING", "DIAGNOSTICS" } do
+        for _, type in ipairs({ "FORMATTING", "DIAGNOSTICS" }) do
           for _, source in ipairs(null_ls_sources(vim.bo.filetype, type)) do
             nullls_sources[source] = true
           end
@@ -318,11 +321,11 @@ local Git = {
 
   hl = { fg = "orange" },
 
-  {   -- git branch name
+  { -- git branch name
     provider = function(self)
       return " " .. self.status_dict.head .. " "
     end,
-    hl = { bold = true }
+    hl = { bold = true },
   },
   {
     provider = function(self)
@@ -348,7 +351,17 @@ local Git = {
 }
 
 local StatusLine = {
-  ViMode, Space, FileNameBlock, Space, Git, Space, LSPActive, Align, Diagnostics, Space, Scrollbar,
+  ViMode,
+  Space,
+  FileNameBlock,
+  Space,
+  Git,
+  Space,
+  LSPActive,
+  Align,
+  Diagnostics,
+  Space,
+  Scrollbar,
 }
 
 local StatusLines = {

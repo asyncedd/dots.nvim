@@ -33,7 +33,7 @@ return {
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
         callback = function()
           vim.schedule(function()
-            local file = vim.fn.expand "%"
+            local file = vim.fn.expand("%")
             local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
             if condition then
               require("lazy").load({ plugins = "nvim-lspconfig" })
@@ -57,7 +57,7 @@ return {
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
         callback = function()
           vim.schedule(function()
-            local file = vim.fn.expand "%"
+            local file = vim.fn.expand("%")
             local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
             if condition then
               require("lazy").load({ plugins = "null-ls.nvim" })

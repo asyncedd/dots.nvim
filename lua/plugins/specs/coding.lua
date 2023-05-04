@@ -2,7 +2,9 @@ return {
   {
     "L3MON4D3/LuaSnip",
     build = "make install_jsregexp",
-    config = function() return require("plugins.configs.coding.luasnip") end,
+    config = function()
+      return require("plugins.configs.coding.luasnip")
+    end,
     dependencies = { "rafamadriz/friendly-snippets" },
     event = "VeryLazy",
   },
@@ -38,10 +40,7 @@ return {
 
       local cmp_autopairs = require("nvim-autopairs.completion.cmp")
       local cmp = require("cmp")
-      cmp.event:on(
-        "confirm_done",
-        cmp_autopairs.on_confirm_done()
-      )
+      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
     dependencies = {
       "altermo/ultimate-autopair.nvim",
@@ -101,7 +100,7 @@ return {
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
         callback = function()
           vim.schedule(function()
-            local file = vim.fn.expand "%"
+            local file = vim.fn.expand("%")
             local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
             if condition then
               require("lazy").load({ plugins = "vim-matchup" })

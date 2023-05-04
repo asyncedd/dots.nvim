@@ -11,7 +11,7 @@ return {
 
       vim.api.nvim_create_autocmd("FileType", {
         group = "neogit-additions",
-        pattern = "NeogitCommitMessage";
+        pattern = "NeogitCommitMessage",
         command = "silent! set filetype=gitcommit",
       })
     end,
