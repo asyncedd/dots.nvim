@@ -87,4 +87,13 @@ return {
       { "ge", "<cmd>lua require('spider').motion('ge')<CR>", mode = { "n", "o", "x" } },
     },
   },
+  {
+    "ggandor/leap-spooky.nvim",
+    dependencies = {
+      "leap.nvim",
+    },
+    config = true,
+    -- event = "VeryLazy",
+    event = "ModeChanged",
+  },
 }
