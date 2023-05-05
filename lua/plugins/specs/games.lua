@@ -10,4 +10,9 @@ return {
       require("plugins.configs.games.cellular-automation")
     end,
   },
+  {
+    "seandewar/killersheep.nvim",
+    config = true,
+    cmd = "KillKillKill",
+  },
 }
