@@ -25,3 +25,7 @@ lspconfig.lua_ls.setup({
 
   settings = require("plugins.configs.lsp.servers.lua_ls"),
 })
+
+lspconfig.cssls.setup({
+  capabilities = capabilities,
+})
