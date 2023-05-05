@@ -74,6 +74,10 @@ Then you can get a cup of [mocha ☕](https://github.com/catppuccin/nvim) while
 you wait. (Not that long btw) Then once it finished, you're done! (actually)
 Just run a `nvim` in your terminal :D
 
+# After
+
+Go to tabninehub or something and, turn code completion to CLOUD. Not Hybird nor local. Otherwise, you'll have severe performance issues! (on my machine)
+
 ## ⚡ Performance
 
 TODO Redo it once ~~I get it to be more faster (troll)~~ Unlazy
