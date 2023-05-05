@@ -48,6 +48,7 @@ return {
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer", keyword_length = 3 },
+    { name = "cmp_tabnine", keyword_length = 3 },
   }),
   formatting = {
     format = lspkind.cmp_format({

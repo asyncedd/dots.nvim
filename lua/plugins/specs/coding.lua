@@ -29,6 +29,7 @@ return {
       "onsails/lspkind.nvim",
       "hrsh7th/cmp-cmdline",
       "dmitmel/cmp-cmdline-history",
+      "cmp-tabnine",
     },
   },
   {
@@ -139,5 +140,15 @@ return {
     "gbprod/cutlass.nvim",
     config = true,
     event = "VeryLazy",
+  },
+  {
+    "tzachar/cmp-tabnine",
+    opts = function()
+      return require("plugins.configs.coding.tabnine")
+    end,
+    config = function(_, opts)
+      require("cmp_tabnine.config"):setup(opts)
+    end,
+    build = "./install.sh",
   },
 }
