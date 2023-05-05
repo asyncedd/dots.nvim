@@ -76,7 +76,7 @@ Just run a `nvim` in your terminal :D
 
 # After
 
-Go to tabninehub or something and, turn code completion to CLOUD. Not Hybird nor local. Otherwise, you'll have severe performance issues! (on my machine)
+Go to TabNineHub or something and, turn code completion to CLOUD. Not Hybird nor local. Otherwise, you'll have severe performance issues! (on my machine)
 
 ## ⚡ Performance
 
