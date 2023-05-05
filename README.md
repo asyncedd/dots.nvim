@@ -38,6 +38,7 @@ _Q 🙋 Why should I use this?_
 
 - If want to exit Neovim, just plug out your computer (or for laptop users...
   >:) You don't want to). I meant, that'll never work.
+- Also, http.nvim exist in this config. It may take centuries to build.
 
 ## 🤨 Crash course: Installing
 
