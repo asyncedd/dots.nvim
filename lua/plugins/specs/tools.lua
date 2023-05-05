@@ -53,4 +53,11 @@ return {
       "LazyGitFilterCurrentFile",
     },
   },
+  {
+    "kelly-lin/ranger.nvim",
+    config = true,
+    keys = {
+      { "<leader>ef", function() require("ranger-nvim").open() end },
+    },
+  },
 }
