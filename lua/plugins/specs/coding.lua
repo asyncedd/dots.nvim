@@ -135,4 +135,9 @@ return {
     opts = true,
     event = "CmdlineEnter",
   },
+  {
+    "gbprod/cutlass.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
