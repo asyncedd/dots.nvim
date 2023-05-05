@@ -11,3 +11,4 @@ require("plugins")
 vim.cmd("colorscheme catppuccin")
 
 require("core.utils.hl")
+
