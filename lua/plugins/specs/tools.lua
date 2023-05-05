@@ -53,5 +53,6 @@ return {
       })
     end,
     cmd = "Neoformat",
+    event = "VeryLazy",
   },
 }
