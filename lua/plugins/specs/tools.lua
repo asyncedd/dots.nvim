@@ -41,4 +41,14 @@ return {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
   },
+  {
+    "kdheepak/lazygit.nvim",
+    keys = {
+      { "<leader>gg", "<cmd>LazyGit<CR>" },
+    },
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+    },
+  },
 }
