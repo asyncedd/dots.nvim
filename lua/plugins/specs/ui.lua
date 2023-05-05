@@ -82,14 +82,15 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter-refactor",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        refactor = {
-          highlight_current_scope = {
-            enable = true,
-          },
+    opts = {
+      refactor = {
+        highlight_current_scope = {
+          enable = true,
         },
-      })
+      },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
     end,
     event = "VeryLazy",
     dependencies = {
