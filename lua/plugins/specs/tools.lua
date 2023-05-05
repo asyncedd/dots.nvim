@@ -49,6 +49,8 @@ return {
     cmd = {
       "LazyGit",
       "LazyGitConfig",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
     },
   },
 }
