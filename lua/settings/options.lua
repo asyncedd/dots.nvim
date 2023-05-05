@@ -348,3 +348,11 @@ o.winbl = 25
 --
 
 o.ch = 0
+
+-- "Fix" emojis.
+--
+-- https://www.youtube.com/watch?v=F91VWOelFNE explains basically everything.
+--
+-- For a small TL;DR: Emojis are weird in width and might cause issues when editing and even displaying in TMUX.
+
+o.emo = false
