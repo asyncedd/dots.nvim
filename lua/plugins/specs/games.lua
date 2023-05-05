@@ -15,4 +15,8 @@ return {
     config = true,
     cmd = "KillKillKill",
   },
+  {
+    "alec-gibson/nvim-tetris",
+    cmd = "Tetris",
+  },
 }
