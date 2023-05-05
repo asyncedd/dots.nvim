@@ -14,14 +14,10 @@ This is my personal Neovim configuration as, I said. In the configuration I
 prioritize the editing experience rather than speed and making it simple.
 Really, the thing that matters for Neovim configs are:
 
-- Customizability
-- Hackablity
 - The overall editing experience
-- Modulability
-- Speed
 
 Not gonna lie, startup time doesn't really matter for Neovim configurations.
-It's about the hackablity and the customizability of the editor. Copy-pasting
+It's about the overall editing experience of the editor. Copy-pasting
 stuff from this should be super easy, no nonsense spaggehti code and whatsoever.
 
 It had optimized my workspace and, improve my productivity.
@@ -63,11 +59,13 @@ Then clone this repository.
 ```bash
 mkdir ~/.config/nvim/
 git clone https://github.com/asycnedd/nvim.git ~/.config/nvim/
+nvim --headless "+Lazy! sync" +qa
 ```
 # For Windows systems:
 
-```bash
+```powershell
 git clone https://github.com/asyncedd/nvim.git ~/AppData/Local/nvim/
+nvim --headless "+Lazy! sync" +qa
 ```
 
 Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim).
