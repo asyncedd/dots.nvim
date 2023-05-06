@@ -19,14 +19,14 @@ M.colors = {
   end,
   function()
     require("catppuccin.lib.highlighter").syntax({
-      StartLogo1 = { fg = colors.yellow },
-      StartLogo2 = { fg = colors.yellow },
-      StartLogo3 = { fg = colors.yellow },
-      StartLogo4 = { fg = colors.yellow },
-      StartLogo5 = { fg = colors.yellow },
-      StartLogo6 = { fg = colors.blue },
-      StartLogo7 = { fg = colors.blue },
-      StartLogo8 = { fg = colors.blue },
+      StartLogo1 = { fg = colors.blue },
+      StartLogo2 = { fg = colors.blue },
+      StartLogo3 = { fg = colors.blue },
+      StartLogo4 = { fg = colors.blue },
+      StartLogo5 = { fg = colors.blue },
+      StartLogo6 = { fg = colors.yellow },
+      StartLogo7 = { fg = colors.yellow },
+      StartLogo8 = { fg = colors.yellow },
     })
   end,
 }
