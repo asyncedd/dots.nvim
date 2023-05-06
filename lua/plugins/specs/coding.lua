@@ -31,6 +31,7 @@ return {
       "dmitmel/cmp-cmdline-history",
       "cmp-tabnine",
       "codeium.nvim",
+      "hrsh7th/cmp-emoji",
     },
   },
   {
