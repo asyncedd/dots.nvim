@@ -93,6 +93,7 @@ return {
     end,
     keys = {
       { "gh", "<cmd>Lspsaga lsp_finder<CR>", desc = "Find the symbols's defination" },
+      { "<leader>ca", "<cmd>Lspsaga code_action<CR>", desc = "Open a code action (if any)", mode = { "n", "x" } },
     },
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "WinEnter" }, {
