@@ -30,7 +30,6 @@ return {
       "hrsh7th/cmp-cmdline",
       "dmitmel/cmp-cmdline-history",
       "cmp-tabnine",
-      "codeium.nvim",
       "hrsh7th/cmp-emoji",
     },
   },
@@ -147,16 +146,5 @@ return {
       require("cmp_tabnine.config"):setup(opts)
     end,
     build = "./install.sh",
-  },
-  {
-    "jcdickinson/codeium.nvim",
-    config = true,
-    dependencies = {
-      "http.nvim",
-    },
-  },
-  {
-    "jcdickinson/http.nvim",
-    build = "cargo build --workspace --release"
   },
 }
