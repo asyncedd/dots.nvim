@@ -27,13 +27,13 @@ return {
       return (icons[level] or "?") .. " " .. count
     end,
     always_show_bufferline = false,
-  },
-  offsets = {
-    {
-      filetype = "NvimTree",
-      text = "File Explorer",
-      text_align = "left" | "center" | "right",
-      separator = true,
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = "File Explorer",
+        text_align = "center",
+        separator = true,
+      },
     },
   },
 }
