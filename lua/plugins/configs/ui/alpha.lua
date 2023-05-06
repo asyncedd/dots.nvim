@@ -53,6 +53,8 @@ dashboard.section.buttons.val = {
   dashboard.button("e", "  New file", ":ene | startinsert <CR>"),
   dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
   dashboard.button("g", "  Find word", ":Telescope live_grep<CR>"),
+  dashboard.button("t", "  Open Neogit", ":Neogit<CR>"),
+  dashboard.button("l", "󰒲  Open Lazygit", ":LazyGit<CR>"),
   dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
 }
 
