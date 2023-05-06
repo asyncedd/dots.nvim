@@ -33,7 +33,7 @@ M.colors = {
 
 math.randomseed(os.time())
 
-M.colors[math.random(1, 2)]()
+M.colors[math.random(1, #M.colors)]()
 
 -- Inspired by https://github.com/glepnir/dashboard-nvim with my own flair
 local header = {
