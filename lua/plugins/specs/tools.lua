@@ -36,6 +36,7 @@ return {
       { "<leader>ff", "<cmd>Telescope find_files<CR>" },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
     },
+    cmd = "Telescope",
   },
   {
     "dstein64/vim-startuptime",
