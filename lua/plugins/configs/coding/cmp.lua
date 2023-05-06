@@ -52,22 +52,21 @@ return {
     { name = "cmp_tabnine", keyword_length = 3 },
   }),
   formatting = {
-    format = lspkind.cmp_format({
-      mode = "symbol_text", -- show only symbol annotations
-      maxwidth = 30, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-      symbol_map = {
-        Codeium = "",
-        TabNine = "",
-      },
-      menu = ({
-        nvim_lsp = "🔍",
-        luasnip = "📦",
-        cmp_tabnine = "🧠",
-        buffer = "📝",
-        emoji = "😃",
-      }),
-    }),
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      local fmt = require("lspkind").cmp_format({
+        mode = "symbol",
+        maxwidth = 50,
+        symbol_map = {
+          TabNine = "",
+        }
+      })(entry, vim_item)
+
+      -- room to breathe
+      fmt.kind = " " .. fmt.kind .. " "
+
+      return fmt
+    end,
   },
   experimental = {
     ghost_text = true,
