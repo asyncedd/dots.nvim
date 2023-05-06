@@ -96,6 +96,7 @@ return {
       { "<leader>ca", "<cmd>Lspsaga code_action<CR>", desc = "Open a code action (if any)", mode = { "n", "x" } },
       -- Renaming is handled by Spectre.nvim and, I don't want it to be handled by Lspsaga.
       { "<leader>lp", "<cmd>Lspsaga peek_definition<CR>", desc = "Take a peek of the definition for the symbol" },
+      { "<leader>lo", "<cmd>Lspsaga goto_definition<CR>", desc = "Goto definition for the symbol." },
     },
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "WinEnter" }, {
