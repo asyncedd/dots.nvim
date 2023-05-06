@@ -8,7 +8,8 @@ require("settings.options")
 require("plugins")
 
 -- Catppuccinify the editor.
-vim.cmd("colorscheme catppuccin")
+-- vim.cmd("colorscheme catppuccin")
+require("catppuccin").load("mocha")
 
 -- Set up highlights.
 require("core.utils.hl")
