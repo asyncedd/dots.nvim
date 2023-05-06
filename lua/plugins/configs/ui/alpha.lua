@@ -1,4 +1,3 @@
-local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 local fortune = require("alpha.fortune")
 local colors = require("catppuccin.palettes").get_palette()
