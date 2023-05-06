@@ -65,4 +65,14 @@ return {
     cmd = "Octo",
     config = true,
   },
+  {
+    "nvim-tree/nvim-tree.lua",
+    cmd = {
+      "NvimTreeToggle",
+      "NvimTree",
+    },
+    keys = {
+      { "<leader>tt", "<cmd>NvimTreeToggle<CR>", desc = "NvimTree Tree Toggle" },
+    },
+  },
 }
