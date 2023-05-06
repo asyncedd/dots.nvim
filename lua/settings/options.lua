@@ -356,3 +356,9 @@ o.ch = 0
 -- For a small TL;DR: Emojis are weird in width and might cause issues when editing and even displaying in TMUX.
 
 o.emo = false
+
+-- Enable global status.
+--
+-- If there are two windows, it'll always and ONLY show the one window last accessed.
+
+o.ls = 3
