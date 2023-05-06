@@ -68,7 +68,7 @@ return {
         cmp_tabnine = "🧠",
         buffer = "📝",
         emoji = "😃",
-      })
+      }),
     }),
   },
   experimental = {
