@@ -28,4 +28,12 @@ return {
     end,
     always_show_bufferline = false,
   },
+  offsets = {
+    {
+      filetype = "NvimTree",
+      text = "File Explorer",
+      text_align = "left" | "center" | "right",
+      separator = true,
+    },
+  },
 }
