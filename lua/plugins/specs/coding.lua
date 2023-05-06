@@ -101,7 +101,7 @@ return {
       "nvim-treesitter",
     },
     init = function()
-      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "BufWinLeave" }, {
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "WinEnter" }, {
         callback = function()
           vim.schedule(function()
             local file = vim.fn.expand("%")
