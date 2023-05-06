@@ -70,7 +70,7 @@ return {
       return require("plugins.configs.ui.heirline")
     end,
     config = true,
-    event = { "VeryLazy", "BufRead" },
+    event = { "VeryLazy", "BufReadPost" },
   },
   {
     "RRethy/vim-illuminate",
