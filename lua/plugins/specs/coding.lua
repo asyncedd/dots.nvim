@@ -139,11 +139,6 @@ return {
     event = "CmdlineEnter",
   },
   {
-    "gbprod/cutlass.nvim",
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "tzachar/cmp-tabnine",
     opts = function()
       return require("plugins.configs.coding.tabnine")
