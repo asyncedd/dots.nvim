@@ -99,7 +99,16 @@ return {
     },
     event = {
       "LSPAttach",
-      "BufReadPost",
     },
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+        group = vim.api.nvim_create_augroup("BeLazyOnFileOpenbarbecue.nvim", {}),
+        callback = function()
+          vim.schedule(function()
+            require("lazy").load({ plugins = "barbecue.nvim" })
+          end)
+        end,
+      })
+    end,
   },
 }
