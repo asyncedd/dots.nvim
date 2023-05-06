@@ -99,7 +99,7 @@ return {
     },
     event = {
       "LSPAttach",
-      "VeryLazy",
+      "VeryLazy"
     },
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost" }, {
