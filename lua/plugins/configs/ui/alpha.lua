@@ -2,16 +2,38 @@ local dashboard = require("alpha.themes.dashboard")
 local fortune = require("alpha.fortune")
 local colors = require("catppuccin.palettes").get_palette()
 
-require("catppuccin.lib.highlighter").syntax({
-  StartLogo1 = { fg = colors.red },
-  StartLogo2 = { fg = colors.red },
-  StartLogo3 = { fg = colors.peach },
-  StartLogo4 = { fg = colors.yellow },
-  StartLogo5 = { fg = colors.green },
-  StartLogo6 = { fg = colors.sapphire },
-  StartLogo7 = { fg = colors.lavender },
-  StartLogo8 = { fg = colors.mauve },
-})
+local M = {}
+
+M.colors = {
+  function()
+    require("catppuccin.lib.highlighter").syntax({
+      StartLogo1 = { fg = colors.red },
+      StartLogo2 = { fg = colors.red },
+      StartLogo3 = { fg = colors.peach },
+      StartLogo4 = { fg = colors.yellow },
+      StartLogo5 = { fg = colors.green },
+      StartLogo6 = { fg = colors.sapphire },
+      StartLogo7 = { fg = colors.lavender },
+      StartLogo8 = { fg = colors.mauve },
+    })
+  end,
+  function()
+    require("catppuccin.lib.highlighter").syntax({
+      StartLogo1 = { fg = colors.yellow },
+      StartLogo2 = { fg = colors.yellow },
+      StartLogo3 = { fg = colors.yellow },
+      StartLogo4 = { fg = colors.yellow },
+      StartLogo5 = { fg = colors.yellow },
+      StartLogo6 = { fg = colors.blue },
+      StartLogo7 = { fg = colors.blue },
+      StartLogo8 = { fg = colors.blue },
+    })
+  end,
+}
+
+math.randomseed(os.time())
+
+M.colors[math.random(1, 2)]()
 
 -- Inspired by https://github.com/glepnir/dashboard-nvim with my own flair
 local header = {
