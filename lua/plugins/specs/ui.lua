@@ -124,11 +124,4 @@ return {
       end
     end,
   },
-  {
-    "gen740/SmoothCursor.nvim",
-    opts = function()
-      return require("plugins.configs.ui.smoothcursor")
-    end,
-    event = "VeryLazy",
-  },
 }
