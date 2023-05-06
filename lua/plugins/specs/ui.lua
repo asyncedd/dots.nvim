@@ -112,4 +112,16 @@ return {
       })
     end,
   },
+  {
+    "goolord/alpha-nvim",
+    opts = function()
+      return require("plugins.configs.ui.alpha")
+    end,
+    config = true,
+    init = function()
+      if vim.fn.expand("%") == "" then
+        require("lazy").load({ plugins = "alpha-nvim" })
+      end
+    end,
+  },
 }
