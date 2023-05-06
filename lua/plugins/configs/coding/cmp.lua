@@ -61,6 +61,14 @@ return {
         Codeium = "",
         TabNine = "",
       },
+      menu = ({
+        nvim_lsp = "🔍",
+        luasnip = "📦",
+        codeium = "💡",
+        cmp_tabnine = "🧠",
+        buffer = "📝",
+        emoji = "😃",
+      })
     }),
   },
   experimental = {
