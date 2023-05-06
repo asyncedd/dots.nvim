@@ -81,23 +81,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "nvim-treesitter/nvim-treesitter-refactor",
-    opts = {
-      refactor = {
-        highlight_current_scope = {
-          enable = true,
-        },
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-treesitter",
-    },
-  },
-  {
     "nvim-treesitter/nvim-treesitter-context",
     opts = true,
     event = "VeryLazy",
