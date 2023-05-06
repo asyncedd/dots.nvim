@@ -3,7 +3,7 @@ local fortune = require("alpha.fortune")
 local colors = require("catppuccin.palettes").get_palette()
 
 require("catppuccin.lib.highlighter").syntax({
-  StartLogo1 = { fg = colors.pink },
+  StartLogo1 = { fg = colors.red },
   StartLogo2 = { fg = colors.red },
   StartLogo3 = { fg = colors.peach },
   StartLogo4 = { fg = colors.yellow },
