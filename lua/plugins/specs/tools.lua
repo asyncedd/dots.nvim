@@ -18,6 +18,7 @@ return {
     keys = {
       { "gt", "<cmd>Neogit<CR>" },
     },
+    cmd = "Neogit",
   },
   {
     "nvim-telescope/telescope.nvim",
