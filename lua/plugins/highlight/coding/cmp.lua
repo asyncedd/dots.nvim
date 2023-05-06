@@ -1,4 +1,8 @@
 local C = require("catppuccin.palettes").get_palette()
+local utils = require("catppuccin.utils.colors")
+local tint = function(tint)
+  return utils.blend(tint, C.base, 0.2)
+end
 
 require("catppuccin.lib.highlighter").syntax({
   CmpItemAbbr = { fg = C.overlay2 },
@@ -9,30 +13,38 @@ require("catppuccin.lib.highlighter").syntax({
   CmpItemAbbrMatchFuzzy = { fg = C.pink, style = { "bold" } },
 
   -- kind support
-  CmpItemKindSnippet = { fg = C.mauve },
-  CmpItemKindKeyword = { fg = C.red },
-  CmpItemKindText = { fg = C.teal },
-  CmpItemKindMethod = { fg = C.blue },
-  CmpItemKindConstructor = { fg = C.blue },
-  CmpItemKindFunction = { fg = C.blue },
-  CmpItemKindFolder = { fg = C.blue },
-  CmpItemKindModule = { fg = C.blue },
-  CmpItemKindConstant = { fg = C.peach },
-  CmpItemKindField = { fg = C.green },
-  CmpItemKindProperty = { fg = C.green },
-  CmpItemKindEnum = { fg = C.green },
-  CmpItemKindUnit = { fg = C.green },
-  CmpItemKindClass = { fg = C.yellow },
-  CmpItemKindVariable = { fg = C.flamingo },
-  CmpItemKindFile = { fg = C.blue },
-  CmpItemKindInterface = { fg = C.yellow },
-  CmpItemKindColor = { fg = C.red },
-  CmpItemKindReference = { fg = C.red },
-  CmpItemKindEnumMember = { fg = C.red },
-  CmpItemKindStruct = { fg = C.blue },
-  CmpItemKindValue = { fg = C.peach },
-  CmpItemKindEvent = { fg = C.blue },
-  CmpItemKindOperator = { fg = C.blue },
-  CmpItemKindTypeParameter = { fg = C.blue },
-  CmpItemKindCopilot = { fg = C.teal },
+  CmpItemKindField = { fg = C.rosewater, bg = tint(C.rosewater) },
+  CmpItemKindProperty = { fg = C.rosewater, bg = tint(C.rosewater) },
+  CmpItemKindEvent = { fg = C.rosewater, bg = tint(C.rosewater) },
+
+  CmpItemKindText = { fg = C.text, bg = tint(C.text) },
+  CmpItemKindModule = { fg = C.text, bg = tint(C.text) },
+  CmpItemKindVariable = { fg = C.text, bg = tint(C.text) },
+  CmpItemKindFile = { fg = C.text, bg = tint(C.text) },
+  CmpItemKindUnit = { fg = C.text, bg = tint(C.text) },
+  CmpItemKindValue = { fg = C.text, bg = tint(C.text) },
+
+  CmpItemKindEnum = { fg = C.yellow, bg = tint(C.yellow) },
+  CmpItemKindReference = { fg = C.yellow, bg = tint(C.yellow) },
+  CmpItemKindClass = { fg = C.yellow, bg = tint(C.yellow) },
+  CmpItemKindFolder = { fg = C.yellow, bg = tint(C.yellow) },
+  CmpItemKindEnumMember = { fg = C.yellow, bg = tint(C.yellow) },
+  CmpItemKindInterface = { fg = C.yellow, bg = tint(C.yellow) },
+
+  CmpItemKindKeyword = { fg = C.mauve, bg = tint(C.mauve) },
+
+  CmpItemKindConstant = { fg = C.peach, bg = tint(C.peach) },
+
+  CmpItemKindConstructor = { fg = C.lavender, bg = tint(C.lavender) },
+
+  CmpItemKindFunction = { fg = C.blue, bg = tint(C.blue) },
+  CmpItemKindMethod = { fg = C.blue, bg = tint(C.blue) },
+
+  CmpItemKindStruct = { fg = C.teal, bg = tint(C.teal) },
+  CmpItemKindOperator = { fg = C.teal, bg = tint(C.teal) },
+
+  CmpItemKindSnippet = { fg = C.flamingo, bg = tint(C.flamingo) },
+
+  CmpItemKindColor = { fg = C.pink, bg = tint(C.pink) },
+  CmpItemKindTypeParameter = { fg = C.maroon, bg = tint(C.maroon) },
 })
