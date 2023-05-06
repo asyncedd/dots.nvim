@@ -85,4 +85,13 @@ return {
     opts = true,
     event = "VeryLazy",
   },
+  {
+    "utilyre/barbecue.nvim",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = true,
+    event = "LSPAttach",
+  },
 }
