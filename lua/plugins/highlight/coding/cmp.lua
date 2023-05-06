@@ -20,7 +20,6 @@ require("catppuccin.lib.highlighter").syntax({
   CmpItemKindText = { fg = C.text, bg = tint(C.text) },
   CmpItemKindModule = { fg = C.text, bg = tint(C.text) },
   CmpItemKindVariable = { fg = C.text, bg = tint(C.text) },
-  CmpItemKindFile = { fg = C.text, bg = tint(C.text) },
   CmpItemKindUnit = { fg = C.text, bg = tint(C.text) },
   CmpItemKindValue = { fg = C.text, bg = tint(C.text) },
 
@@ -44,6 +43,8 @@ require("catppuccin.lib.highlighter").syntax({
   CmpItemKindOperator = { fg = C.teal, bg = tint(C.teal) },
 
   CmpItemKindSnippet = { fg = C.flamingo, bg = tint(C.flamingo) },
+
+  CmpItemKindFile = { fg = C.sky, bg = tint(C.sky) },
 
   CmpItemKindColor = { fg = C.pink, bg = tint(C.pink) },
   CmpItemKindTypeParameter = { fg = C.maroon, bg = tint(C.maroon) },
