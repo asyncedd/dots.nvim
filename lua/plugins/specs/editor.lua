@@ -35,4 +35,11 @@ return {
     event = "VeryLazy",
     config = true,
   },
+  {
+    "simrat39/symbols-outline.nvim",
+    config = true,
+    keys = {
+      { "<leader>cc", "<cmd>SymbolsOutline<CR>" },
+    },
+  },
 }
