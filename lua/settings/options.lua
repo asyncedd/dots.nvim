@@ -64,6 +64,12 @@ local g = vim.g
 -- Set <leader> to be <Space>.
 g.mapleader = " "
 
+-- Set <Localleader> to be "," (comma)
+g.maplocalleader = ","
+
+-- Map <Subleader> to be ";" (semicolon)
+g.mapsubleader = ";"
+
 -- CODE: iy0
 -- ##############################
 -- #         2. Editing         #
