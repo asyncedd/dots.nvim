@@ -71,6 +71,7 @@ return {
       "NvimTreeToggle",
       "NvimTree",
     },
+    config = true,
     keys = {
       { "<leader>tt", "<cmd>NvimTreeToggle<CR>", desc = "NvimTree Tree Toggle" },
     },
