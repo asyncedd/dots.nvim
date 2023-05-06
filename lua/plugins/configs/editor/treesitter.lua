@@ -10,6 +10,7 @@ return {
     "markdown_inline",
     "luap",
     "luadoc",
+    "git_rebase",
   },
 
   auto_install = true,
