@@ -92,7 +92,7 @@ return {
       return require("plugins.configs.lsp.saga")
     end,
     keys = {
-      { "gh", "<cmd>Lspsaga lsp_finder<CR>" },
+      { "gh", "<cmd>Lspsaga lsp_finder<CR>", desc = "Find the symbols's defination" },
     },
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "WinEnter" }, {
