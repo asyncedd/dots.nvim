@@ -50,7 +50,7 @@ return {
     { name = "emoji" },
     { name = "buffer", keyword_length = 3 },
     { name = "cmp_tabnine", keyword_length = 3 },
-    { name = "codeium" },
+    { name = "codeium", keyword_length = 5 },
   }),
   formatting = {
     format = lspkind.cmp_format({
