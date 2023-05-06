@@ -374,3 +374,11 @@ o.ls = 3
 -- It doesn't really matter for the TUI but, it does on GUI versions.
 
 o.gfn = "Cartograph CF:h10"
+
+-- Set scrolloff to be at the max.
+--
+-- It essentially specifies how many lines of lines should be kept above and below the cursor.
+-- Setting it to 999 - the largest you can set, makes it so that the cursor is always kept in the middle.
+-- Of course, this isn't true if there aren't enough lines above and below.
+
+o.so = 999
