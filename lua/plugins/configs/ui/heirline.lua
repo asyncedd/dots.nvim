@@ -1,7 +1,9 @@
 local utils = require("heirline.utils")
 local conditions = require("heirline.conditions")
 
-local colors = {
+local M = {}
+
+M.colors = {
   bright_bg = utils.get_highlight("Folded").bg,
   bright_fg = utils.get_highlight("Folded").fg,
   red = utils.get_highlight("DiagnosticError").fg,
@@ -21,7 +23,7 @@ local colors = {
   git_change = utils.get_highlight("diffChanged").fg,
 }
 
-local null_ls_providers = function(filetype)
+M.null_ls_providers = function(filetype)
   local registered = {}
   -- try to load null-ls
   local sources_avail, sources = pcall(require, "null-ls.sources")
@@ -39,16 +41,16 @@ local null_ls_providers = function(filetype)
   return registered
 end
 
-local null_ls_sources = function(filetype, method)
+M.null_ls_sources = function(filetype, method)
   local methods_avail, methods = pcall(require, "null-ls.methods")
-  return methods_avail and null_ls_providers(filetype)[methods.internal[method]] or {}
+  return methods_avail and M.null_ls_providers(filetype)[methods.internal[method]] or {}
 end
 
-local Space = { provider = " " }
+M.Space = { provider = " " }
 
-local Align = { provider = "%=" }
+M.Align = { provider = "%=" }
 
-local ViMode = {
+M.ViMode = {
   init = function(self)
     self.mode = vim.fn.mode(1)
   end,
@@ -127,13 +129,13 @@ local ViMode = {
   },
 }
 
-local FileNameBlock = {
+M.FileNameBlock = {
   init = function(self)
     self.filename = vim.api.nvim_buf_get_name(0)
   end,
 }
 
-local FileIcon = {
+M.FileIcon = {
   init = function(self)
     local filename = self.filename
     local extension = vim.fn.fnamemodify(filename, ":e")
@@ -147,7 +149,7 @@ local FileIcon = {
   end,
 }
 
-local FileName = {
+M.FileName = {
   provider = function(self)
     -- first, trim the pattern relative to the current directory. For other
     -- options, see :h filename-modifers
@@ -165,14 +167,14 @@ local FileName = {
 }
 
 -- let's add the children to our FileNameBlock component
-FileNameBlock = utils.insert(
-  FileNameBlock,
-  FileIcon,
-  utils.insert(FileName), -- a new table where FileName is a child of FileNameModifier
+M.FileNameBlock = utils.insert(
+  M.FileNameBlock,
+  M.FileIcon,
+  utils.insert(M.FileName), -- a new table where FileName is a child of FileNameModifier
   { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
 )
 
-local Scrollbar = {
+M.Scrollbar = {
   provider = function()
     local chars = {
       " ",
@@ -234,7 +236,7 @@ local Scrollbar = {
   end,
 }
 
-local LSPActive = {
+M.LSPActive = {
   condition = conditions.lsp_attached,
   update = {
     "LspAttach",
@@ -247,7 +249,7 @@ local LSPActive = {
       if client.name == "null-ls" then
         local nullls_sources = {}
         for _, type in ipairs({ "FORMATTING", "DIAGNOSTICS" }) do
-          for _, source in ipairs(null_ls_sources(vim.bo.filetype, type)) do
+          for _, source in ipairs(M.null_ls_sources(vim.bo.filetype, type)) do
             nullls_sources[source] = true
           end
         end
@@ -269,9 +271,9 @@ local LSPActive = {
   },
 }
 
-local icons = require("core.utils.icons")
+M.icons = require("core.utils.icons")
 
-local Diagnostics = {
+M.Diagnostics = {
 
   condition = conditions.has_diagnostics,
 
@@ -287,31 +289,31 @@ local Diagnostics = {
   {
     provider = function(self)
       -- 0 is just another output, we can decide to print it or not!
-      return self.errors > 0 and (icons.Error .. self.errors .. " ")
+      return self.errors > 0 and (M.icons.Error .. self.errors .. " ")
     end,
     hl = { fg = "diag_error" },
   },
   {
     provider = function(self)
-      return self.warnings > 0 and (icons.Warn .. self.warnings .. " ")
+      return self.warnings > 0 and (M.icons.Warn .. self.warnings .. " ")
     end,
     hl = { fg = "diag_warn" },
   },
   {
     provider = function(self)
-      return self.info > 0 and (icons.Info .. self.info .. " ")
+      return self.info > 0 and (M.icons.Info .. self.info .. " ")
     end,
     hl = { fg = "diag_info" },
   },
   {
     provider = function(self)
-      return self.hints > 0 and (icons.Hint .. self.hints)
+      return self.hints > 0 and (M.icons.Hint .. self.hints)
     end,
     hl = { fg = "diag_hint" },
   },
 }
 
-local Git = {
+M.Git = {
   condition = conditions.is_git_repo,
 
   init = function(self)
@@ -350,21 +352,21 @@ local Git = {
   },
 }
 
-local StatusLine = {
-  ViMode,
-  Space,
-  FileNameBlock,
-  Space,
-  Git,
-  Space,
-  LSPActive,
-  Align,
-  Diagnostics,
-  Space,
-  Scrollbar,
+M.StatusLine = {
+  M.ViMode,
+  M.Space,
+  M.FileNameBlock,
+  M.Space,
+  M.Git,
+  M.Space,
+  M.LSPActive,
+  M.Align,
+  M.Diagnostics,
+  M.Space,
+  M.Scrollbar,
 }
 
-local StatusLines = {
+M.StatusLines = {
   hl = function()
     if conditions.is_active() then
       return "Normal"
@@ -373,12 +375,12 @@ local StatusLines = {
     end
   end,
 
-  StatusLine,
+  M.StatusLine,
 }
 
 return {
   opts = {
-    colors = colors,
+    colors = M.colors,
   },
-  statusline = StatusLines,
+  statusline = M.StatusLines,
 }
