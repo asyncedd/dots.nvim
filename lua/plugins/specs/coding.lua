@@ -31,6 +31,7 @@ return {
       "dmitmel/cmp-cmdline-history",
       "cmp-tabnine",
       "hrsh7th/cmp-emoji",
+      "codeium.nvim",
     },
   },
   {
@@ -135,7 +136,7 @@ return {
   {
     "chrisgrieser/nvim-alt-substitute",
     opts = true,
-    event = "CmdlineEnter",
+    event = "Cmdlineenter",
   },
   {
     "tzachar/cmp-tabnine",
@@ -146,5 +147,17 @@ return {
       require("cmp_tabnine.config"):setup(opts)
     end,
     build = "./install.sh",
+  },
+  {
+    "jcdickinson/codeium.nvim",
+    config = true,
+    dependencies = {
+      "http.nvim",
+      "plenary.nvim",
+    },
+  },
+  {
+    "jcdickinson/http.nvim",
+    build = "cargo build --workspace --release"
   },
 }
