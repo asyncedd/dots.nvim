@@ -368,3 +368,9 @@ o.emo = false
 -- If there are two windows, it'll always and ONLY show the one window last accessed.
 
 o.ls = 3
+
+-- Set GUI font to Cartograph CF.
+--
+-- It doesn't really matter for the TUI but, it does on GUI versions.
+
+o.gfn = "Cartograph CF:h10"
