@@ -87,11 +87,16 @@ return {
   },
   {
     "utilyre/barbecue.nvim",
+    opts = function()
+      return require("plugins.configs.ui.barbecue")
+    end,
+    config = function(_, opts)
+      require("barbecue").setup(opts)
+    end,
     dependencies = {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons", -- optional dependency
     },
-    opts = true,
     event = {
       "LSPAttach",
       "BufReadPost",
