@@ -19,7 +19,7 @@ return {
   views = {
     cmdline_popup = {
       border = {
-        style = "none",
+        style = "shadow",
         padding = { 2, 3 },
       },
       filter_options = {},
