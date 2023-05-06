@@ -19,7 +19,7 @@ return {
   type = "default",          -- define cursor movement calculate function, "default" or "exp" (exponential).
   fancy = {
     enable = true,        -- enable fancy mode
-    head = { cursor = "", texthl = "SmoothCursor", linehl = nil },
+    head = { cursor = "", texthl = "SmoothCursor", linehl = nil },
     body = {
       { cursor = "", texthl = "SmoothCursorRed" },
       { cursor = "", texthl = "SmoothCursorOrange" },
