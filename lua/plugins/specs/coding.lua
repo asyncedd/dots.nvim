@@ -160,4 +160,15 @@ return {
     "jcdickinson/http.nvim",
     build = "cargo build --workspace --release"
   },
+  {
+    "nvim-pack/nvim-spectre",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = true,
+    cmd = "Spectre",
+    keys = {
+      { "<localleader>s", "<cmd>Spectre<CR>" },
+    },
+  },
 }
