@@ -92,6 +92,9 @@ return {
       "nvim-tree/nvim-web-devicons", -- optional dependency
     },
     opts = true,
-    event = "LSPAttach",
+    event = {
+      "LSPAttach",
+      "BufReadPost",
+    },
   },
 }
