@@ -3,6 +3,36 @@ local lspkind = require("lspkind")
 local cmp = require("cmp")
 local compare = require("cmp.config.compare")
 
+local kind_icons = {
+  -- if you change or add symbol here
+  -- replace corresponding line in readme
+  Text = "󰉿",
+  Method = "󰆧",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "󰜢",
+  Variable = "󰀫",
+  Class = "󰠱",
+  Interface = "",
+  Module = "",
+  Property = "󰜢",
+  Unit = "󰑭",
+  Value = "󰎠",
+  Enum = "",
+  Keyword = "󰌋",
+  Snippet = "",
+  Color = "󰏘",
+  File = "󰈙",
+  Reference = "󰈇",
+  Folder = "󰉋",
+  EnumMember = "",
+  Constant = "󰏿",
+  Struct = "󰙅",
+  Event = "",
+  Operator = "󰆕",
+  TypeParameter = "",
+}
+
 return {
   snippet = {
     expand = function(args)
@@ -53,13 +83,6 @@ return {
   }),
   formatting = {
     format = lspkind.cmp_format({
-      mode = "symbol_text", -- show only symbol annotations
-      maxwidth = 30, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-      symbol_map = {
-        Codeium = "",
-        TabNine = "",
-      },
       menu = {
         nvim_lsp = "🔍",
         luasnip = "📦",
@@ -67,6 +90,11 @@ return {
         buffer = "📝",
         emoji = "😃",
       },
+      before = function(_, vim_item)
+        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+        vim_item.kind = vim_item.kind .. " "
+        return vim_item
+      end
     }),
   },
   experimental = {
