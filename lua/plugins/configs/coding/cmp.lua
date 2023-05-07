@@ -97,10 +97,10 @@ return {
         rg = "🌌",
       },
       before = function(_, vim_item)
-        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+        vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
         vim_item.kind = vim_item.kind .. " "
         return vim_item
-      end
+      end,
     }),
   },
   experimental = {
