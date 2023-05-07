@@ -165,7 +165,7 @@ return {
   {
     "m4xshen/hardtime.nvim",
     opts = {
-      hint = false
+      hint = false,
     },
     event = "VeryLazy",
   },
