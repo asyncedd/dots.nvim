@@ -182,4 +182,30 @@ return {
     opts = true,
     event = "InsertEnter",
   },
+  {
+    "ziontee113/syntax-tree-surfer",
+    opts = function()
+      return require("plugins.configs.motion.syntax-tree-surfer")
+    end,
+    keys = {
+      {
+        "<localleader>j",
+        function()
+          require("syntax-tree-surfer").targeted_jump({
+            "function",
+            "arrow_function",
+            "function_definition",
+            "if_statement",
+            "else_clause",
+            "else_statement",
+            "elseif_statement",
+            "for_statement",
+            "while_statement",
+            "switch_statement",
+            "variable_declaration",
+          })
+        end,
+      },
+    },
+  },
 }
