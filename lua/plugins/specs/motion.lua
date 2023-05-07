@@ -205,6 +205,8 @@ return {
             "variable_declaration",
           })
         end,
+        mode = { "n", "x", "o" },
+        desc = "Jump to Treesitter nodes."
       },
     },
   },
