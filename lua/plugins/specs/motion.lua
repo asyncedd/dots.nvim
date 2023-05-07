@@ -104,26 +104,6 @@ return {
     },
   },
   {
-    "LeonHeidelbach/trailblazer.nvim",
-    config = true,
-    keys = {
-      "<A-l>",
-      "<A-b>",
-      "<A-J>",
-      "<A-K>",
-      "<A-n>",
-      "<A-m>",
-      "<A-L>",
-      "<A-p>",
-      "<A-p>",
-      "<A-P>",
-      "<A-t>",
-      "<A-.>",
-      "<A-,>",
-      "<A-s>",
-    },
-  },
-  {
     "linty-org/readline.nvim",
     keys = {
       {
