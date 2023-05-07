@@ -263,7 +263,7 @@ end)
 --
 -- So, if I have a new diff, It'll not feel weird, by the signcolumn expanding
 
-o.scl = "yes:2"
+o.scl = "yes:1"
 
 -- CODE: hFy
 -- #############################
