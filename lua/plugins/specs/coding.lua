@@ -162,11 +162,4 @@ return {
     opts = true,
     event = "InsertEnter",
   },
-  -- {
-  --   "m4xshen/hardtime.nvim",
-  --   opts = {
-  --     hint = false,
-  --   },
-  --   event = "VeryLazy",
-  -- },
 }
