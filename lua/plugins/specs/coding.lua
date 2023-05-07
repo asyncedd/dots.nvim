@@ -122,17 +122,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "Wansmer/treesj",
-    opts = {
-      use_default_keymaps = false,
-      max_join_length = 500,
-    },
-    event = "VeryLazy",
-    keys = {
-      { "gS", "<cmd>lua require('treesj').toggle()<CR>" },
-    },
-  },
-  {
     "chrisgrieser/nvim-alt-substitute",
     opts = true,
     event = "Cmdlineenter",

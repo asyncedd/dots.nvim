@@ -30,8 +30,8 @@ return {
       { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
       { "x", mode = { "x", "o" }, desc = "Leap foward till" },
       { "X", mode = { "x", "o" }, desc = "Leap backward till" },
-      { "gs", mode = { "n", "x", "o" }, desc = "Leap from window" },
-      { "gS", mode = { "n", "x", "o" }, desc = "Leap backward to" },
+      { "gs", mode = { "x", "o" }, desc = "Leap from window" },
+      { "gS", mode = { "x", "o" }, desc = "Leap backward to" },
     },
   },
   {
