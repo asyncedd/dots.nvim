@@ -99,9 +99,21 @@ return {
       { "<leader>lo", "<cmd>Lspsaga goto_definition<CR>", desc = "Goto definition for the symbol." },
       { "<localleader>o", "<cmd>Lspsaga outline<CR>", desc = "Open Lspsaga's code outline" },
       { "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostic messages in the current line" },
-      { "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Show diagnostic messages in the current buffer" },
-      { "<leader>sw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", desc = "Show diagnostic messages in the current workspace" },
-      { "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", desc = "Show diagnostic messages in the hovered area" },
+      {
+        "<leader>sb",
+        "<cmd>Lspsaga show_buf_diagnostics<CR>",
+        desc = "Show diagnostic messages in the current buffer",
+      },
+      {
+        "<leader>sw",
+        "<cmd>Lspsaga show_workspace_diagnostics<CR>",
+        desc = "Show diagnostic messages in the current workspace",
+      },
+      {
+        "<leader>sc",
+        "<cmd>Lspsaga show_cursor_diagnostics<CR>",
+        desc = "Show diagnostic messages in the hovered area",
+      },
     },
     init = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "WinEnter" }, {

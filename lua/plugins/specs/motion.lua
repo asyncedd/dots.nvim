@@ -215,7 +215,7 @@ return {
           })
         end,
         mode = { "n", "x", "o" },
-        desc = "Jump to Treesitter nodes."
+        desc = "Jump to Treesitter nodes.",
       },
     },
   },
