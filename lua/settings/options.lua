@@ -232,20 +232,6 @@ o.bri = true
 
 o.lbr = true
 
--- Fold-related options.
--- The following options allow you to modify how folds are displayed in Neovim.
-
--- o.foldcolumn = "1": Set the fold column to be at the "later" column of line numbers.
--- o.foldlevel = 99: Set the fold level to be 99.
--- o.foldlevelstart = 99: Set the starting fold level to be 99.
--- o.foldenable = true: Enable folding.
-
-o.foldcolumn = "0"
-
-o.foldlevel = 99
-o.foldlevelstart = 99
-o.foldenable = true
-
 -- Unfofile
 --
 -- Automatically save undo history to an undo file when writing a buffer to a file, and when reading a file, restores undo history from the same file on buffer read.
