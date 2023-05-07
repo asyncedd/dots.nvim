@@ -87,7 +87,7 @@ return {
   formatting = {
     fields = { "abbr", "kind", "menu" },
     format = lspkind.cmp_format({
-      maxwidth = 20,
+      maxwidth = 30,
       menu = {
         nvim_lsp = "🔍",
         luasnip = "📦",
