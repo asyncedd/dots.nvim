@@ -12,4 +12,5 @@ return {
   },
   hide_cursor = true,
   stop_eof = true,
+  respect_scrolloff = true,
 }
