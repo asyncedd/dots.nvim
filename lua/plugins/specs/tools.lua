@@ -34,8 +34,8 @@ return {
       "plenary.nvim",
     },
     keys = {
-      { "<leader>ff", "<cmd>Telescope find_files<CR>" },
-      { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
+      { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find files" },
+      { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Find grep" },
     },
     cmd = "Telescope",
   },
