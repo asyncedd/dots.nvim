@@ -130,4 +130,11 @@ return {
       { "gR", "<cmd>TroubleToggle lsp_references<cr>", desc = "Toggle Trouble for LSP references" },
     },
   },
+  {
+    "smjonas/inc-rename.nvim",
+    opts = true,
+    keys = {
+      { "<leader>gr", ":IncRename " },
+    },
+  },
 }
