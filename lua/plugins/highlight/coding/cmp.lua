@@ -19,7 +19,7 @@ require("catppuccin.lib.highlighter").syntax({
 
   CmpItemKindText = { fg = C.text, bg = tint(C.text) },
   CmpItemKindModule = { fg = C.text, bg = tint(C.text) },
-  CmpItemKindVariable = { fg = C.text, bg = tint(C.text) },
+  CmpItemKindVariable = { fg = C.rosewater, bg = tint(C.rosewater) },
   CmpItemKindUnit = { fg = C.text, bg = tint(C.text) },
   CmpItemKindValue = { fg = C.text, bg = tint(C.text) },
 
