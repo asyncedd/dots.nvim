@@ -84,7 +84,9 @@ return {
     { name = "cmp_tabnine", keyword_length = 3 },
   }),
   formatting = {
+    fields = { "abbr", "kind", "menu" },
     format = lspkind.cmp_format({
+      maxwidth = 20,
       menu = {
         nvim_lsp = "🔍",
         luasnip = "📦",
