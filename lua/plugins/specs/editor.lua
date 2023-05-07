@@ -32,8 +32,10 @@ return {
   },
   {
     "folke/which-key.nvim",
+    opts = function()
+      return require("plugins.configs.editor.which-key")
+    end,
     event = "VeryLazy",
-    config = true,
   },
   {
     "simrat39/symbols-outline.nvim",

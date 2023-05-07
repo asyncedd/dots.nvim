@@ -1,0 +1,5 @@
+return {
+  window = {
+    border = "shadow",
+  },
+}
