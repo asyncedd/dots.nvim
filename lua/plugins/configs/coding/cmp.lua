@@ -31,7 +31,7 @@ local kind_icons = {
   Event = "",
   Operator = "󰆕",
   TypeParameter = "",
-  -- Codeium = "",
+  Codeium = "",
   TabNine = "",
 }
 
@@ -82,6 +82,7 @@ return {
     { name = "emoji" },
     { name = "buffer", keyword_length = 3 },
     { name = "cmp_tabnine", keyword_length = 3 },
+    { name = "codeium", keyword_length = 3 },
   }),
   formatting = {
     fields = { "abbr", "kind", "menu" },
@@ -94,6 +95,7 @@ return {
         buffer = "📝",
         emoji = "😃",
         cmdline = "🐧",
+        codeium = "🤖"
       },
       before = function(_, vim_item)
         vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
@@ -125,8 +127,6 @@ return {
     },
   },
   performance = {
-    debounce = 30,
-    throttle = 30,
-    fetching_timeout = 500,
+    fetching_timeout = 15,
   },
 }

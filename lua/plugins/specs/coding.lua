@@ -30,6 +30,7 @@ return {
       "hrsh7th/cmp-cmdline",
       "cmp-tabnine",
       "hrsh7th/cmp-emoji",
+      "codeium.nvim",
     },
   },
   {
@@ -177,5 +178,18 @@ return {
     dependencies = {
       "sqlite.lua",
     },
+  },
+  {
+    "jcdickinson/codeium.nvim",
+    opts = true,
+    dependencies = {
+      "http.nvim",
+      "plenary.nvim",
+      "nvim-cmp",
+    },
+  },
+  {
+    "jcdickinson/http.nvim",
+    build = "cargo build --workspace --release"
   },
 }
