@@ -17,7 +17,7 @@ return {
     },
     event = "VeryLazy",
     keys = {
-      { "gbp", "<cmd>BufferLinePick<CR>" },
+      { "gbp", "<cmd>BufferLinePick<CR>", desc = "Toggle Buffer picker" },
     },
   },
   {
