@@ -31,7 +31,7 @@ local kind_icons = {
   Event = "",
   Operator = "󰆕",
   TypeParameter = "",
-  Codeium = "",
+  -- Codeium = "",
   TabNine = "",
 }
 
