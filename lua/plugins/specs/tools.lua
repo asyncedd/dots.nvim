@@ -52,13 +52,6 @@ return {
     },
   },
   {
-    "kelly-lin/ranger.nvim",
-    config = true,
-    keys = {
-      { "<leader>ef", function() require("ranger-nvim").open() end },
-    },
-  },
-  {
     "pwntester/octo.nvim",
     cmd = "Octo",
     config = true,
