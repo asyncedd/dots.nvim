@@ -78,10 +78,10 @@ return {
       require("yanky").setup()
     end,
     keys = {
-      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
-      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
-      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
-      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Paste" },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "PASTE before" },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "GPaste" },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "GPASTE before" },
     },
     event = "VeryLazy",
   },
