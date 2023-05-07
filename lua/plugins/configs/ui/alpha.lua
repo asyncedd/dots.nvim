@@ -76,6 +76,7 @@ dashboard.section.buttons.val = {
   dashboard.button("g", "  Find word", ":Telescope live_grep<CR>"),
   dashboard.button("t", "  Open Neogit", ":Neogit<CR>"),
   dashboard.button("l", "󰒲  Open Lazygit", ":LazyGit<CR>"),
+  dashboard.button("s", "󰒲  Sync Lazy.nvim", ":Lazy sync<CR>"),
   dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
 }
 
