@@ -17,4 +17,3 @@ require("core.utils.hl")
 vim.schedule(function()
   require("keymaps")
 end)
-
