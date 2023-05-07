@@ -177,4 +177,9 @@ return {
       { "<C-p>", "<Up>", mode = "!" },
     },
   },
+  {
+    "abecodes/tabout.nvim",
+    opts = true,
+    event = "InsertEnter",
+  },
 }
