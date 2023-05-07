@@ -81,7 +81,6 @@ return {
     { name = "luasnip" },
     { name = "emoji" },
     { name = "buffer", keyword_length = 3 },
-    { name = "rg", keyword_length = 5 },
     { name = "cmp_tabnine", keyword_length = 3 },
   }),
   formatting = {
@@ -94,7 +93,6 @@ return {
         cmp_tabnine = "🧠",
         buffer = "📝",
         emoji = "😃",
-        rg = "🌌",
       },
       before = function(_, vim_item)
         vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)

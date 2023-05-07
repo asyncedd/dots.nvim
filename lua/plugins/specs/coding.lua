@@ -30,7 +30,6 @@ return {
       "hrsh7th/cmp-cmdline",
       "cmp-tabnine",
       "hrsh7th/cmp-emoji",
-      "lukas-reineke/cmp-rg",
     },
   },
   {
