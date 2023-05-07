@@ -99,8 +99,8 @@ return {
     "cbochs/portal.nvim",
     config = true,
     keys = {
-      { "<C-i>", "<cmd>Portal jumplist forward<CR>" },
-      { "<C-o>", "<cmd>Portal jumplist backward<CR>" },
+      { "<C-i>", "<cmd>Portal jumplist forward<CR>", desc = "Toggle portal foward" },
+      { "<C-o>", "<cmd>Portal jumplist backward<CR>", desc = "Toggle portal backwards" },
     },
   },
   {
