@@ -30,7 +30,10 @@ return {
     dependencies = {
       "nvim-treesitter",
       "nvim-web-devicons",
-      "nvim-telescope/telescope-fzf-native.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+      },
       "plenary.nvim",
     },
     keys = {
