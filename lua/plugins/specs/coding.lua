@@ -163,4 +163,20 @@ return {
     opts = true,
     event = "InsertEnter",
   },
+  {
+    "ecthelionvi/NeoComposer.nvim",
+    opts = true,
+    keys = {
+      "q",
+      "Q",
+      "yq",
+      "cq",
+      "<C-n>",
+      "<C-p>",
+      "<M-p>",
+    },
+    dependencies = {
+      "sqlite.lua",
+    },
+  },
 }
