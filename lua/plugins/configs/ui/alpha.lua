@@ -29,6 +29,18 @@ M.colors = {
       StartLogo8 = { fg = colors.yellow },
     })
   end,
+  function()
+    require("catppuccin.lib.highlighter").syntax({
+      StartLogo1 = { fg = colors.pink },
+      StartLogo2 = { fg = colors.pink },
+      StartLogo3 = { fg = colors.blue },
+      StartLogo4 = { fg = colors.blue },
+      StartLogo5 = { fg = colors.white },
+      StartLogo6 = { fg = colors.blue },
+      StartLogo7 = { fg = colors.pink },
+      StartLogo8 = { fg = colors.pink },
+    })
+  end,
 }
 
 math.randomseed(os.time())
