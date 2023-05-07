@@ -42,6 +42,7 @@ Dependencies:
 - `nvim` :)
 - `fzf` for Telescope!
 - `fd` for Telescope too!
+- `sqlite3` for sqlite.lua
 
 Other Dependencies:
 
