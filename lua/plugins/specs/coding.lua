@@ -157,4 +157,9 @@ return {
       { "<localleader>s", "<cmd>Spectre<CR>", desc = "Open spectre" },
     },
   },
+  {
+    "max397574/better-escape.nvim",
+    opts = true,
+    event = "InsertEnter",
+  },
 }
