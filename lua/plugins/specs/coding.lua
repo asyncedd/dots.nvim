@@ -154,7 +154,7 @@ return {
     config = true,
     cmd = "Spectre",
     keys = {
-      { "<localleader>s", "<cmd>Spectre<CR>" },
+      { "<localleader>s", "<cmd>Spectre<CR>", desc = "Open spectre" },
     },
   },
 }
