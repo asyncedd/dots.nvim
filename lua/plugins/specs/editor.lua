@@ -41,7 +41,7 @@ return {
     "simrat39/symbols-outline.nvim",
     config = true,
     keys = {
-      { "<leader>cc", "<cmd>SymbolsOutline<CR>" },
+      { "<leader>cc", "<cmd>SymbolsOutline<CR>", desc = "Open Symbol outline" },
     },
   },
 }
