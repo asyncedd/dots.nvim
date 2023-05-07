@@ -112,6 +112,7 @@ return {
           require("readline").kill_line()
         end,
         mode = "!",
+        desc = "Kill current line",
       },
       {
         "<C-u>",
@@ -119,6 +120,7 @@ return {
           require("readline").backward_kill_line()
         end,
         mode = "!",
+        desc = "Kill line backwards",
       },
       {
         "<M-d>",
@@ -126,6 +128,7 @@ return {
           require("readline").kill_word()
         end,
         mode = "!",
+        desc = "Kill word",
       },
       {
         "<M-BS>",
@@ -133,6 +136,7 @@ return {
           require("readline").backward_kill_word()
         end,
         mode = "!",
+        desc = "Kill word backwards",
       },
       {
         "<C-w>",
@@ -140,15 +144,17 @@ return {
           require("readline").unix_word_rubout()
         end,
         mode = "!",
+        desc = "Unix word rubout",
       },
-      { "<C-d>", "<Delete>", mode = "!" },
-      { "<C-h>", "<BS>", mode = "!" },
+      { "<C-d>", "<Delete>", mode = "!", desc = "Delete" },
+      { "<C-h>", "<BS>", mode = "!", desc = "Backspace" },
       {
         "<C-a>",
         function()
           require("readline").beginning_of_line()
         end,
         mode = "!",
+        desc = "Go to beginning of line",
       },
       {
         "<C-e>",
@@ -156,6 +162,7 @@ return {
           require("readline").end_of_line()
         end,
         mode = "!",
+        desc = "Go to end of line",
       },
       {
         "<M-f>",
@@ -163,6 +170,7 @@ return {
           require("readline").forward_word()
         end,
         mode = "!",
+        desc = "Go foward a word.",
       },
       {
         "<M-b>",
@@ -170,11 +178,12 @@ return {
           require("readline").backward_word()
         end,
         mode = "!",
+        desc = "Go backwards a word",
       },
-      { "<C-f>", "<Right>", mode = "!" },
-      { "<C-b>", "<Left>", mode = "!" },
-      { "<C-n>", "<Down>", mode = "!" },
-      { "<C-p>", "<Up>", mode = "!" },
+      { "<C-f>", "<Right>", mode = "!", desc = "Go right" },
+      { "<C-b>", "<Left>", mode = "!", desc = "Go left" },
+      { "<C-n>", "<Down>", mode = "!", desc = "Go down" },
+      { "<C-p>", "<Up>", mode = "!", desc = "Go up" },
     },
   },
   {
