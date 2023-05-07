@@ -96,18 +96,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "ggandor/leap-ast.nvim",
-    keys = {
-      {
-        "gs",
-        function()
-          require("leap-ast").leap()
-        end,
-        mode = { "n", "x", "o" },
-      },
-    },
-  },
-  {
     "cbochs/portal.nvim",
     config = true,
     keys = {
