@@ -134,7 +134,7 @@ return {
     "smjonas/inc-rename.nvim",
     opts = true,
     keys = {
-      { "<leader>gr", ":IncRename " },
+      { "<leader>gr", ":IncRename ", desc = "Toggle inc-rename" },
     },
   },
 }
