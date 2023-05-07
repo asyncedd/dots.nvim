@@ -3,4 +3,5 @@ return {
   "nvim-tree/nvim-web-devicons",
   "MunifTanjim/nui.nvim",
   "kkharji/sqlite.lua",
+  "stevearc/dressing.nvim",
 }
