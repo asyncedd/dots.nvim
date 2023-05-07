@@ -136,5 +136,6 @@ return {
     keys = {
       { "<leader>gr", ":IncRename ", desc = "Toggle inc-rename" },
     },
+    cmd = "IncRename",
   },
 }
