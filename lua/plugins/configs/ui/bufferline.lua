@@ -9,8 +9,12 @@ local icons = {
 
 return {
   options = {
-    close_command = function(n) require("mini.bufremove").delete(n, false) end,
-    right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
+    close_command = function(n)
+      require("mini.bufremove").delete(n, false)
+    end,
+    right_mouse_command = function(n)
+      require("mini.bufremove").delete(n, false)
+    end,
     mode = "buffer",
     numbers = "buffer_id",
     sort_by = "insert_after_current",

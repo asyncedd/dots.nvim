@@ -13,4 +13,3 @@ require("catppuccin").load("mocha")
 
 -- Set up highlights.
 require("core.utils.hl")
-

@@ -260,7 +260,7 @@ end)
 -- At max, I'm planing to have four items in my statuscolumn:
 --    Line/Relnumbers.
 --    Git
--- 
+--
 -- So, if I have a new diff, It'll not feel weird, by the signcolumn expanding
 
 o.scl = "yes:1"

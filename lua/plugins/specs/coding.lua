@@ -2,7 +2,9 @@ return {
   {
     "L3MON4D3/LuaSnip",
     build = "make install_jsregexp",
-    config = function() return require("plugins.configs.coding.luasnip") end,
+    config = function()
+      return require("plugins.configs.coding.luasnip")
+    end,
     dependencies = { "rafamadriz/friendly-snippets" },
     event = "VeryLazy",
   },

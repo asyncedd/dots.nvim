@@ -37,7 +37,7 @@ return {
   {
     "ggandor/flit.nvim",
     opts = {
-      labeled_modes = "nvoi"
+      labeled_modes = "nvoi",
     },
     config = true,
     dependencies = {
@@ -98,7 +98,13 @@ return {
   {
     "ggandor/leap-ast.nvim",
     keys = {
-      { "gs", function() require("leap-ast").leap() end, mode = { "n", "x", "o" } },
+      {
+        "gs",
+        function()
+          require("leap-ast").leap()
+        end,
+        mode = { "n", "x", "o" },
+      },
     },
   },
   {
@@ -132,17 +138,71 @@ return {
   {
     "linty-org/readline.nvim",
     keys = {
-      { "<C-k>", function() require("readline").kill_line() end, mode = "!" },
-      { "<C-u>", function() require("readline").backward_kill_line() end, mode = "!" },
-      { "<M-d>", function() require("readline").kill_word() end, mode = "!" },
-      { "<M-BS>", function() require("readline").backward_kill_word() end, mode = "!" },
-      { "<C-w>", function() require("readline").unix_word_rubout() end, mode = "!" },
+      {
+        "<C-k>",
+        function()
+          require("readline").kill_line()
+        end,
+        mode = "!",
+      },
+      {
+        "<C-u>",
+        function()
+          require("readline").backward_kill_line()
+        end,
+        mode = "!",
+      },
+      {
+        "<M-d>",
+        function()
+          require("readline").kill_word()
+        end,
+        mode = "!",
+      },
+      {
+        "<M-BS>",
+        function()
+          require("readline").backward_kill_word()
+        end,
+        mode = "!",
+      },
+      {
+        "<C-w>",
+        function()
+          require("readline").unix_word_rubout()
+        end,
+        mode = "!",
+      },
       { "<C-d>", "<Delete>", mode = "!" },
       { "<C-h>", "<BS>", mode = "!" },
-      { "<C-a>", function() require("readline").beginning_of_line() end, mode = "!" },
-      { "<C-e>", function() require("readline").end_of_line() end, mode = "!" },
-      { "<M-f>", function() require("readline").forward_word() end, mode = "!" },
-      { "<M-b>", function() require("readline").backward_word() end, mode = "!" },
+      {
+        "<C-a>",
+        function()
+          require("readline").beginning_of_line()
+        end,
+        mode = "!",
+      },
+      {
+        "<C-e>",
+        function()
+          require("readline").end_of_line()
+        end,
+        mode = "!",
+      },
+      {
+        "<M-f>",
+        function()
+          require("readline").forward_word()
+        end,
+        mode = "!",
+      },
+      {
+        "<M-b>",
+        function()
+          require("readline").backward_word()
+        end,
+        mode = "!",
+      },
       { "<C-f>", "<Right>", mode = "!" },
       { "<C-b>", "<Left>", mode = "!" },
       { "<C-n>", "<Down>", mode = "!" },
