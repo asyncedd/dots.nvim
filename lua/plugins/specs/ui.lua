@@ -146,4 +146,10 @@ return {
     config = true,
     event = { "CursorHold", "CursorHoldI", "VeryLazy" },
   },
+  {
+    -- TODO: Add Todo-comments.nvim
+    "folke/todo-comments.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
