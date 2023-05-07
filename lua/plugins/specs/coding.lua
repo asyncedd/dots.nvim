@@ -2,9 +2,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     build = "make install_jsregexp",
-    config = function()
-      return require("plugins.configs.coding.luasnip")
-    end,
+    config = function() return require("plugins.configs.coding.luasnip") end,
     dependencies = { "rafamadriz/friendly-snippets" },
     event = "VeryLazy",
   },
@@ -129,7 +127,7 @@ return {
     },
     event = "VeryLazy",
     keys = {
-      { "gS", "<cmd>lua require('treesj').toggle()<CR>" },
+      { "gS", "<cmd>lua require('treesj').toggle()<CR>", mode = { "n", "x" } },
     },
   },
   {
