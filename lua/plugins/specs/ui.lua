@@ -138,4 +138,12 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "folke/drop.nvim",
+    opts = function()
+      return require("plugins.configs.ui.drop")
+    end,
+    config = true,
+    event = { "CursorHold", "CursorHoldI", "VeryLazy" },
+  },
 }
