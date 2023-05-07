@@ -12,7 +12,6 @@ cmp.setup.cmdline({ "@" }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = "cmdline" },
-    { name = "cmdline_history" },
   },
 })
 
@@ -23,7 +22,6 @@ cmp.setup.cmdline(":", {
     { name = "path" },
   }, {
       { name = "cmdline" },
-      { name = "cmdline_history" },
     }),
 })
 
