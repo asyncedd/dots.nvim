@@ -28,7 +28,7 @@
 -- You can now go to each category by: "/ [CODE_GOES_HERE]"
 -- To go back to the legend, you can press "gg". This will go to the first line in a buffer.
 --
--- (NOTE: None of these codes mean anything. I've generated them randomly via Random.org's random string generator.
+-- NOTE: None of these codes mean anything. I've generated them randomly via Random.org's random string generator.
 
 -- CODE: R9i
 -- #############################
