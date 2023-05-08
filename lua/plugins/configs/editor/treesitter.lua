@@ -3,6 +3,8 @@ return {
   ensure_installed = {
     "vim",
     "lua",
+    -- Enable highlighting for Vim help files.
+    -- EG: :h LSP
     "vimdoc",
     "query",
     "regex",
