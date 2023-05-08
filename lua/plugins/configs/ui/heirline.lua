@@ -55,7 +55,8 @@ M.ViMode = {
     self.mode = vim.fn.mode(1)
   end,
   static = {
-    mode_names = { -- change the strings if you like it vvvvverbose!
+    mode_names = {
+                   -- change the strings if you like it vvvvverbose!
       n = "N",
       no = "N?",
       nov = "N?",
@@ -166,12 +167,30 @@ M.FileName = {
   hl = { fg = utils.get_highlight("Directory").fg },
 }
 
+M.FileFlags = {
+  {
+    condition = function()
+      return vim.bo.modified
+    end,
+    provider = "[+]",
+    hl = { fg = "green" },
+  },
+  {
+    condition = function()
+      return not vim.bo.modifiable or vim.bo.readonly
+    end,
+    provider = "",
+    hl = { fg = "orange" },
+  },
+}
+
 -- let's add the children to our FileNameBlock component
 M.FileNameBlock = utils.insert(
   M.FileNameBlock,
   M.FileIcon,
   utils.insert(M.FileName), -- a new table where FileName is a child of FileNameModifier
-  { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
+  M.FileFlags,
+  { provider = "%<" }       -- this means that the statusline is cut here when there's not enough space
 )
 
 M.Scrollbar = {
@@ -274,7 +293,6 @@ M.LSPActive = {
 M.icons = require("core.utils.icons")
 
 M.Diagnostics = {
-
   condition = conditions.has_diagnostics,
 
   init = function(self)
@@ -323,7 +341,8 @@ M.Git = {
 
   hl = { fg = "orange" },
 
-  { -- git branch name
+  {
+    -- git branch name
     provider = function(self)
       return " " .. self.status_dict.head .. " "
     end,
