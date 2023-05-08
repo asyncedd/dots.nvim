@@ -29,7 +29,9 @@ return {
       return require("plugins.configs.editor.gitsigns")
     end,
     config = true,
-    event = { "BufReadPost" },
+    init = function()
+      require("core.utils.lazy_load")("gitsigns.nvim")
+    end,
   },
   {
     "folke/which-key.nvim",
