@@ -1,6 +1,9 @@
 return {
   -- NOTE: Install all of these.
   ensure_installed = {
+    -- NOTE: You may think that you don't need the Vimscript parser if you mainly use Lua.
+    -- But, that's simply not true (unless you don't use `vim.cmd` or something similar).
+    -- It actually shows syntax highlighting in `vim.cmd`!
     "vim",
     "lua",
     -- Enable highlighting for Vim help files.
