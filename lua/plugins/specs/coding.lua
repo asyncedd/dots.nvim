@@ -133,6 +133,14 @@ return {
     end,
     config = function(_, opts)
       require("cmp_tabnine.config"):setup(opts)
+      require("cmp_tabnine"):prefetch(vim.fn.expand("%:p"))
+
+      vim.api.nvim_create_autocmd("BufRead", {
+        group = vim.api.nvim_create_augroup("prefetch", { clear = true }),
+        callback = function()
+          require("cmp_tabnine"):prefetch(vim.fn.expand("%:p"))
+        end
+      })
     end,
     build = "./install.sh",
   },
