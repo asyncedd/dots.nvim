@@ -51,6 +51,7 @@ require("lazy").setup({ import = "plugins.specs" }, {
         "nvim",
         "tutor",
         "spellfile",
+        "man",
       },
     },
   },
