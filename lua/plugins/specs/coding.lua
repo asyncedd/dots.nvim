@@ -31,6 +31,7 @@ return {
       "cmp-tabnine",
       "hrsh7th/cmp-emoji",
       "codeium.nvim",
+      "lukas-reineke/cmp-rg",
     },
   },
   {
