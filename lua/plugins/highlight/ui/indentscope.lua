@@ -7,9 +7,3 @@ end
 require("catppuccin.lib.highlighter").syntax({
   MiniIndentscopeSymbol = { fg = tint(colors.sky) }
 })
---
--- require("catppuccin.lib.highlighter").syntax({
---   IlluminatedWordText = { bg = U.darken(C.surface1, 0.7, C.base) },
---   IlluminatedWordRead = { bg = U.darken(C.surface1, 0.7, C.base) },
---   IlluminatedWordWrite = { bg = U.darken(C.surface1, 0.7, C.base) },
--- })
