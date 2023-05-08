@@ -12,7 +12,7 @@ return function(plugin)
         -- This deferring only happens only when we do "nvim filename"
         if plugin ~= "nvim-treesitter" then
           vim.schedule(function()
-            require("lazy").load { plugins = plugin }
+            require("lazy").load({ plugins = plugin })
 
             if plugin == "nvim-lspconfig" or plugin == "null-ls.nvim" then
               vim.cmd("silent! do FileType")

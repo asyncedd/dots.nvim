@@ -139,7 +139,7 @@ return {
         group = vim.api.nvim_create_augroup("prefetch", { clear = true }),
         callback = function()
           require("cmp_tabnine"):prefetch(vim.fn.expand("%:p"))
-        end
+        end,
       })
     end,
     build = "./install.sh",

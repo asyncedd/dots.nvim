@@ -95,7 +95,7 @@ return {
     },
     init = function()
       require("core.utils.lazy_load")("lspsaga.nvim")
-    end
+    end,
   },
   {
     "folke/trouble.nvim",
