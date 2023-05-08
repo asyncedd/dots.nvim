@@ -9,7 +9,9 @@ return {
 
       require("plugins.highlight.editor.treesitter")
     end,
-    event = { "BufReadPost", "BufNewFile", "BufWinEnter" },
+    init = function()
+      require("core.utils.lazy_load")("nvim-treesitter")
+    end,
     build = ":TSUpdate",
   },
   {
