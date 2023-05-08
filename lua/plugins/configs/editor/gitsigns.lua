@@ -8,4 +8,5 @@ return {
     untracked = { text = "▎" },
   },
   current_line_blame = true,
+  trouble = false,
 }
