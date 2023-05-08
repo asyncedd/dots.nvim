@@ -52,6 +52,8 @@ return {
     end,
     config = function(_, opts)
       require("mini.indentscope").setup(opts)
+
+      require("plugins.highlight.ui.indentscope")
     end,
   },
   {
