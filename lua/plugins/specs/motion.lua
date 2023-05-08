@@ -1,7 +1,6 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    event = "VeryLazy",
     init = function()
       -- PERF: no need to load the plugin, if we only need its queries for mini.ai
       local plugin = require("lazy.core.config").spec.plugins["nvim-treesitter"]
@@ -59,6 +58,9 @@ return {
       require("mini.ai").setup(opts)
     end,
     event = "VeryLazy",
+    dependencies = {
+      "nvim-treesitter-textobjects",
+    },
   },
   {
     "chrisgrieser/nvim-various-textobjs",
