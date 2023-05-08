@@ -11,6 +11,7 @@ return {
     "luap",
     "luadoc",
     "git_rebase",
+    "gitcommit",
   },
 
   auto_install = true,
