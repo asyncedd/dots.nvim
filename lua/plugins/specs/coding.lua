@@ -122,11 +122,6 @@ return {
     },
   },
   {
-    "chrisgrieser/nvim-alt-substitute",
-    opts = true,
-    event = "Cmdlineenter",
-  },
-  {
     "tzachar/cmp-tabnine",
     opts = function()
       return require("plugins.configs.coding.tabnine")
