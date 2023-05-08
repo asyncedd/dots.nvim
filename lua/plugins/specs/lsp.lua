@@ -116,19 +116,8 @@ return {
       },
     },
     init = function()
-      vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWinEnter", "WinEnter" }, {
-        callback = function()
-          vim.schedule(function()
-            local file = vim.fn.expand("%")
-            local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
-            if condition then
-              require("lazy").load({ plugins = "lspsaga.nvim" })
-              vim.cmd("silent! do FileType")
-            end
-          end)
-        end,
-      })
-    end,
+      require("core.utils.lazy_load")("lspsaga.nvim")
+    end
   },
   {
     "folke/trouble.nvim",
