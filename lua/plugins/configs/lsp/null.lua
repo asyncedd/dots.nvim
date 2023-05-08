@@ -16,7 +16,9 @@ return {
         group = group,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format({ bufnr = bufnr })
+          if vim.bo.modified then
+            vim.lsp.buf.format({ bufnr = bufnr })
+          end
         end,
       })
     end
