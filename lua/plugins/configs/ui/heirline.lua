@@ -56,7 +56,7 @@ M.ViMode = {
   end,
   static = {
     mode_names = {
-                   -- change the strings if you like it vvvvverbose!
+      -- change the strings if you like it vvvvverbose!
       n = "N",
       no = "N?",
       nov = "N?",
@@ -190,7 +190,7 @@ M.FileNameBlock = utils.insert(
   M.FileIcon,
   utils.insert(M.FileName), -- a new table where FileName is a child of FileNameModifier
   M.FileFlags,
-  { provider = "%<" }       -- this means that the statusline is cut here when there's not enough space
+  { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
 )
 
 M.Scrollbar = {
