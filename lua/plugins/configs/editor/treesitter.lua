@@ -23,6 +23,8 @@ return {
     -- HACK: Since, we override filetypes for NEOGITCOMMITMESSAGE filetypes, so Treesitter might not install these.
     "git_rebase",
     "gitcommit",
+    -- NOTE: Diff is needed for LSPsaga.
+    "diff",
   },
 
   -- Auto install parsers once we enter a buffer.
