@@ -34,6 +34,7 @@ _Q 🙋 Why should I use this?_
 
 - If want to exit Neovim, just plug out your computer (or for laptop users...
   >:) You don't want to). I meant, that'll never work.
+- Auto-installing parsers via `auto_install = true` will send out a bunch of errors. Check: [this](https://github.com/nvim-treesitter/nvim-treesitter/issues/4250)
 
 ## 🤨 Crash course: Installing
 
