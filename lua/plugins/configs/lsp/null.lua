@@ -3,7 +3,11 @@ local group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 
 return {
   sources = {
-    nls.builtins.formatting.stylua,
+    nls.builtins.formatting.stylua.with({
+      condition = function(utils)
+        return utils.root_has_file({ "stylua.toml" })
+      end,
+    }),
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
