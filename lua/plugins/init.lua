@@ -50,6 +50,7 @@ require("lazy").setup({ import = "plugins.specs" }, {
         "rplugin",
         "nvim",
         "tutor",
+        "spellfile",
       },
     },
   },
