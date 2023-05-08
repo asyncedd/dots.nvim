@@ -10,6 +10,7 @@ return {
       require("plugins.highlight.editor.treesitter")
     end,
     event = { "BufReadPost", "BufNewFile", "BufWinEnter" },
+    build = ":TSUpdate",
   },
   {
     "kevinhwang91/nvim-ufo",
