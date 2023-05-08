@@ -105,7 +105,10 @@ return {
     }),
   },
   experimental = {
-    ghost_text = true,
+    ghost_text = {
+      -- HACK: Avoid this super weird error.
+      hl_group = "Comment",
+    },
   },
   sorting = {
     priority_weight = 0.8,
