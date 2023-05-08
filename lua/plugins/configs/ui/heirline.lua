@@ -361,7 +361,7 @@ M.wpm = {
     return wpm.wpm() .. " | " .. wpm.historic_graph()
   end,
   hl = { fg = "blue" },
-  update = { "InsertCharPre" }
+  update = { "InsertCharPre" },
 }
 
 M.StatusLine = {
@@ -398,4 +398,3 @@ return {
   },
   statusline = M.StatusLines,
 }
-
