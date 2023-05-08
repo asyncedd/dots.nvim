@@ -1,5 +1,6 @@
 local utils = require("heirline.utils")
 local conditions = require("heirline.conditions")
+local wpm = require("wpm")
 
 local M = {}
 
@@ -356,9 +357,8 @@ M.wpm = {
   condition = function()
     return true
   end,
-  provider = function(self)
-    local data = require("wpm").wpm()
-    return data .. " | " .. require("wpm").historic_graph()
+  provider = function()
+    return wpm.wpm() .. " | " .. wpm.historic_graph()
   end,
   hl = { fg = "blue" },
   update = { "InsertCharPre" }
