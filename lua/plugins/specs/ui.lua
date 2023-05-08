@@ -73,6 +73,13 @@ return {
     end,
     config = true,
     event = { "VeryLazy", "BufReadPost" },
+    dependencies = {
+      {
+        "jcdickinson/wpm.nvim",
+        config = true,
+      },
+      "nvim-web-devicons",
+    },
   },
   {
     "RRethy/vim-illuminate",

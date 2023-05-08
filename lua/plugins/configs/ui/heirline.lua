@@ -352,6 +352,18 @@ M.Git = {
   },
 }
 
+M.wpm = {
+  condition = function()
+    return true
+  end,
+  provider = function(self)
+    local data = require("wpm").wpm()
+    return data .. " | " .. require("wpm").historic_graph()
+  end,
+  hl = { fg = "blue" },
+  update = { "InsertCharPre" }
+}
+
 M.StatusLine = {
   M.ViMode,
   M.Space,
@@ -362,6 +374,8 @@ M.StatusLine = {
   M.LSPActive,
   M.Align,
   M.Diagnostics,
+  M.Space,
+  M.wpm,
   M.Space,
   M.Scrollbar,
 }
@@ -384,3 +398,4 @@ return {
   },
   statusline = M.StatusLines,
 }
+
