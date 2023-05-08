@@ -63,14 +63,6 @@ return {
     },
   },
   {
-    "chrisgrieser/nvim-various-textobjs",
-    opts = {
-      useDefaultKeymaps = true,
-    },
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "RRethy/nvim-treesitter-textsubjects",
     opts = function()
       return require("plugins.configs.motion.textsubjects")
