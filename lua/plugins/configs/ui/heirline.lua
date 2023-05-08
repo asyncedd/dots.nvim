@@ -358,7 +358,7 @@ M.wpm = {
   end,
   provider = function()
     local wpm = require("wpm")
-    return wpm.wpm() .. " | " .. wpm.historic_graph()
+    return "WPM: " .. wpm.wpm() .. " | " .. wpm.historic_graph()
   end,
   hl = { fg = "blue" },
   update = { "InsertCharPre" },
