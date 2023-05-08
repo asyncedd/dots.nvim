@@ -5,5 +5,5 @@ local tint = function(tint)
 end
 
 require("catppuccin.lib.highlighter").syntax({
-  MiniIndentscopeSymbol = { fg = tint(colors.sky) }
+  MiniIndentscopeSymbol = { fg = tint(colors.sky) },
 })
