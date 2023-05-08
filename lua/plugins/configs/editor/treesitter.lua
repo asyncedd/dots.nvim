@@ -12,6 +12,8 @@ return {
     "query",
     "regex",
     "bash",
+    -- NOTE: If you don't do Markdown stuff (I bet you do Markdown stuff though), you still don't want to remove this.
+    -- Noice.nvim requires this parser so, we have some Markdown-highighting in some other places! 🤯
     "markdown",
     "markdown_inline",
     -- Enable Lua patterns highlighting.
