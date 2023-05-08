@@ -44,6 +44,8 @@ require("lazy").setup({ import = "plugins.specs" }, {
         "tarPlugin",
         "tohtml",
         "zipPlugin",
+        "matchit",
+        "matchparen",
       },
     },
   },
