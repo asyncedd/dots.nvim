@@ -190,6 +190,6 @@ return {
   },
   {
     "jcdickinson/http.nvim",
-    build = "cargo build --workspace --release"
+    build = "cargo build --workspace --release",
   },
 }
