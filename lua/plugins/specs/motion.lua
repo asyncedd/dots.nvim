@@ -190,6 +190,8 @@ return {
     keys = {
       { "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>", mode = { "o", "x" } },
       { "gW", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>", mode = { "o", "x" } },
+      { "i_", "<cmd>lua require('various-textobjs').lineCharacterwise(true)<CR>", mode = { "o", "x" } },
+      { "a_", "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>", mode = { "o", "x" } },
     },
   },
 }
