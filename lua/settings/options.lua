@@ -253,6 +253,13 @@ o.foldenable = true
 
 vim.schedule(function()
   o.udf = true
+
+  -- Set "unnamedplus" as the clipboard register.
+  --
+  -- Use the "+" clipboard register for all clipboard stuff.
+  -- That includes: yank, delete, change and put.
+
+  o.cb = "unnamedplus"
 end)
 
 -- Set sign column to be 4.

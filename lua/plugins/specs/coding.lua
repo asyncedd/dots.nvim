@@ -73,21 +73,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "gbprod/yanky.nvim",
-    config = function()
-      vim.opt.cb = "unnamedplus"
-
-      require("yanky").setup()
-    end,
-    keys = {
-      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Paste" },
-      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "PASTE before" },
-      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "GPaste" },
-      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "GPASTE before" },
-    },
-    event = "VeryLazy",
-  },
-  {
     "andymass/vim-matchup",
     opts = function()
       return require("plugins.configs.coding.matchup")
