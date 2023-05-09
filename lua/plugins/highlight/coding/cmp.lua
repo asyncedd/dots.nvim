@@ -48,4 +48,6 @@ require("catppuccin.lib.highlighter").syntax({
 
   CmpItemKindColor = { fg = C.pink, bg = tint(C.pink) },
   CmpItemKindTypeParameter = { fg = C.maroon, bg = tint(C.maroon) },
+
+  CmpItemKindCodeium = { fg = C.green, bg = tint(C.green) },
 })
