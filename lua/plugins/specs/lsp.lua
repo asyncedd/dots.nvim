@@ -33,6 +33,10 @@ return {
     dependencies = {
       "mason-lspconfig.nvim",
       "neodev.nvim",
+      {
+        "simrat39/rust-tools.nvim",
+        opts = true,
+      },
     },
     init = function()
       require("core.utils.lazy_load")("nvim-lspconfig")
@@ -71,7 +75,15 @@ return {
     end,
     keys = {
       { "gh", "<cmd>Lspsaga lsp_finder<CR>", desc = "Find the symbols's definition" },
-      { "<leader>ca", "<cmd>Lspsaga code_action<CR>", desc = "Open a code action (if any)", mode = { "n", "x" } },
+      {
+        "<leader>ca",
+        "<cmd>Lspsaga code_action<CR>",
+        desc = "Open a code action (if any)",
+        mode = {
+          "n",
+          "x",
+        },
+      },
       -- Renaming is handled by Spectre.nvim and, I don't want it to be handled by Lspsaga.
       { "<leader>lp", "<cmd>Lspsaga peek_definition<CR>", desc = "Take a peek of the definition for the symbol" },
       { "<leader>lo", "<cmd>Lspsaga goto_definition<CR>", desc = "Goto definition for the symbol." },
@@ -103,7 +115,11 @@ return {
     keys = {
       { "<leader>xx", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
       { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Toggle Trouble for workspace" },
-      { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Toggle Trouble for the current document" },
+      {
+        "<leader>xd",
+        "<cmd>TroubleToggle document_diagnostics<cr>",
+        desc = "Toggle Trouble for the current document",
+      },
       { "<leader>xl", "<cmd>TroubleToggle loclist<cr>", desc = "Toggle Trouble for loclist" },
       { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", desc = "Toggle Trouble for quickfix" },
       { "gR", "<cmd>TroubleToggle lsp_references<cr>", desc = "Toggle Trouble for LSP references" },

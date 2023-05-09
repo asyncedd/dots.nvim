@@ -1,4 +1,7 @@
 return {
-  ensure_installed = { "stylua" },
+  ensure_installed = {
+    "stylua",
+    "rustfmt",
+  },
   automatic_installation = true,
 }
