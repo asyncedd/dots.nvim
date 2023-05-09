@@ -91,11 +91,7 @@ vim.api.nvim_create_autocmd("User", {
   group = group,
   pattern = "AlphaReady",
   callback = function()
-    vim.opt.showtabline = 0
-    vim.opt.showmode = false
     vim.opt.laststatus = 0
-    vim.opt.showcmd = false
-    vim.opt.ruler = false
   end,
 })
 
@@ -103,11 +99,7 @@ vim.api.nvim_create_autocmd("BufUnload", {
   group = group,
   pattern = "<buffer>",
   callback = function()
-    vim.opt.showtabline = 2
-    vim.opt.showmode = true
     vim.opt.laststatus = 3
-    vim.opt.showcmd = true
-    vim.opt.ruler = true
   end,
 })
 
