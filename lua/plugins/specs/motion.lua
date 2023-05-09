@@ -189,6 +189,7 @@ return {
     "chrisgrieser/nvim-various-textobjs",
     keys = {
       { "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>", mode = { "o", "x" } },
+      { "gW", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>", mode = { "o", "x" } },
     },
   },
 }
