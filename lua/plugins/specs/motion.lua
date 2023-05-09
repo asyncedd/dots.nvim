@@ -185,4 +185,10 @@ return {
     opts = true,
     event = "InsertEnter",
   },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    keys = {
+      { "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>", mode = { "o", "x" } },
+    },
+  },
 }
