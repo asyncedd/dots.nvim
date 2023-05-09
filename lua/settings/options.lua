@@ -262,16 +262,6 @@ vim.schedule(function()
   o.cb = "unnamedplus"
 end)
 
--- Set sign column to be 4.
---
--- At max, I'm planing to have four items in my statuscolumn:
---    Line/Relnumbers.
---    Git
---
--- So, if I have a new diff, It'll not feel weird, by the signcolumn expanding
-
-o.scl = "yes:1"
-
 -- CODE: hFy
 -- #############################
 -- #           3. UI           #
@@ -321,6 +311,16 @@ o.rnu = true
 -- FACT: "cul" abbreviates to "cursorline"
 
 o.cul = true
+
+-- Set sign column to be 4.
+--
+-- At max, I'm planing to have four items in my statuscolumn:
+--    Line/Relnumbers.
+--    Git
+--
+-- So, if I have a new diff, It'll not feel weird, by the signcolumn expanding
+
+o.scl = "yes:1"
 
 -- Enable TermGUIColors.
 --
