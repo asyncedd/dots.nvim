@@ -131,4 +131,10 @@ return {
       border = "shadow",
     },
   },
+  performance = {
+    -- mostly arbitrary numbers
+    debounce = 10,
+    throttle = 30,
+    fetching_timeout = 200,
+  },
 }
