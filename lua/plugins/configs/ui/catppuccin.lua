@@ -9,6 +9,11 @@ return {
     return {
       -- Treesitter
       ["@variable"] = { fg = C.flamingo },
+      ["@float"] = { link = "Float" }, -- For floats.
+      ["@function.call"] = { link = "Function" }, -- function calls
+      ["@method"] = { link = "Function" }, -- For method calls and definitions.
+      ["@method.call"] = { link = "Function" }, -- method calls
+      ["@constant"] = { link = "Constant" }, -- For constants
 
       -- Cmp
       CmpItemAbbr = { fg = C.overlay2 },
@@ -79,6 +84,21 @@ return {
 
       -- Indentscope
       MiniIndentscopeSymbol = { fg = tint(C.sky) },
+
+      -- Semantic tokens
+
+      ["@lsp.type.interface"] = { fg = C.flamingo },
+      -- Semantic tokens
+      ["@class"] = {},
+      ["@struct"] = {},
+      ["@enum"] = {},
+      ["@enumMember"] = {},
+      ["@event"] = {},
+      ["@interface"] = {},
+      ["@modifier"] = {},
+      ["@regexp"] = {},
+      ["@typeParameter"] = {},
+      ["@decorator"] = {},
     }
   end,
   -- compile_path = nil,
