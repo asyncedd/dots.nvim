@@ -131,7 +131,4 @@ return {
       border = "shadow",
     },
   },
-  performance = {
-    fetching_timeout = 15,
-  },
 }
