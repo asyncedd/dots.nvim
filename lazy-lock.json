@@ -49,7 +49,7 @@
   "null-ls.nvim": { "branch": "main", "commit": "71797bb303ac99a4435592e15068f127970513d7" },
   "nvim-autopairs": { "branch": "master", "commit": "7747bbae60074acf0b9e3a4c13950be7a2dff444" },
   "nvim-cmp": { "branch": "main", "commit": "935b4069ce73b60ba9075bf05ee6ab50ed3af1a9" },
-  "nvim-lspconfig": { "branch": "master", "commit": "f9be670aa1f0fc250f4db7713e9a4fa72e525d22" },
+  "nvim-lspconfig": { "branch": "master", "commit": "84717430fb6f51c9e9cc8d63da10cceafc91500c" },
   "nvim-navic": { "branch": "master", "commit": "15704c607569d6c5cfeab486d3ef9459645a70ce" },
   "nvim-notify": { "branch": "master", "commit": "159c6cf1be25a933f35e97499314c9faab55c98f" },
   "nvim-spectre": { "branch": "master", "commit": "46b9883c0760db6547f152dc97a651611ba6486d" },
@@ -83,6 +83,6 @@
   "vim-be-good": { "branch": "master", "commit": "c290810728a4f75e334b07dc0f3a4cdea908d351" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
   "vim-matchup": { "branch": "master", "commit": "6c8909b682803d8c3a054259079f158a73a0e30f" },
-  "which-key.nvim": { "branch": "main", "commit": "af8f26bfbb61b5f722c9fbc72b296dc9db0bcfdc" },
+  "which-key.nvim": { "branch": "main", "commit": "912ef1a9b018bbe45df1529345e42ae0ac896d63" },
   "wpm.nvim": { "branch": "main", "commit": "968c213143311cd07acb299ebe5445f68ae57a67" }
 }
