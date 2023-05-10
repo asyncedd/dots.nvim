@@ -81,5 +81,5 @@ return {
       MiniIndentscopeSymbol = { fg = tint(C.sky) },
     }
   end,
-  compile_path = nil,
+  -- compile_path = nil,
 }
