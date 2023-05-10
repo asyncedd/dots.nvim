@@ -6,8 +6,6 @@ return {
     end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
-
-      require("plugins.highlight.editor.treesitter")
     end,
     init = function()
       require("core.utils.lazy_load")("nvim-treesitter")

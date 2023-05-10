@@ -16,8 +16,6 @@ return {
     config = function(_, opts)
       require("cmp").setup(opts)
 
-      require("plugins.highlight.coding.cmp")
-
       require("plugins.configs.coding.cmp-cmd")
     end,
     event = { "InsertEnter", "VeryLazy", "CmdlineEnter" },

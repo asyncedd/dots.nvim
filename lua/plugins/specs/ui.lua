@@ -1,5 +1,12 @@
 return {
-  "catppuccin/nvim",
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = function()
+      return require("plugins.configs.ui.catppuccin")
+    end,
+    config = true,
+  },
   {
     "akinsho/bufferline.nvim",
     opts = function()
@@ -52,8 +59,6 @@ return {
     end,
     config = function(_, opts)
       require("mini.indentscope").setup(opts)
-
-      require("plugins.highlight.ui.indentscope")
     end,
   },
   {
@@ -85,7 +90,6 @@ return {
     "RRethy/vim-illuminate",
     config = function()
       require("illuminate").configure()
-      require("plugins.highlight.ui.illuminate")
     end,
     event = "VeryLazy",
   },
