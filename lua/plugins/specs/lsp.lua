@@ -33,10 +33,7 @@ return {
     dependencies = {
       "mason-lspconfig.nvim",
       "neodev.nvim",
-      {
-        "simrat39/rust-tools.nvim",
-        opts = true,
-      },
+      "rust-tools.nvim",
     },
     init = function()
       require("core.utils.lazy_load")("nvim-lspconfig")
@@ -132,5 +129,9 @@ return {
       { "<leader>gr", ":IncRename ", desc = "Toggle inc-rename" },
     },
     cmd = "IncRename",
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    opts = true,
   },
 }
