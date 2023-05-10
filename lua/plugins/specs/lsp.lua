@@ -71,7 +71,7 @@ return {
       return require("plugins.configs.lsp.saga")
     end,
     keys = {
-      { "gh", "<cmd>Lspsaga lsp_finder<CR>", desc = "Find the symbols's definition" },
+      { "gf", "<cmd>Lspsaga lsp_finder<CR>", desc = "Find the symbols's definition" },
       {
         "<leader>ca",
         "<cmd>Lspsaga code_action<CR>",
