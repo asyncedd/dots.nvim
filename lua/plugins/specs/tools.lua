@@ -58,14 +58,17 @@ return {
     config = true,
   },
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = {
-      "NvimTreeToggle",
-      "NvimTree",
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      "plenary.nvim",
+      "nvim-web-devicons",
+      "nui.nvim",
     },
-    config = true,
+    cmd = {
+      "Neotree",
+    },
     keys = {
-      { "<leader>tt", "<cmd>NvimTreeToggle<CR>", desc = "NvimTree Tree Toggle" },
+      { "<leader>tt", "<cmd>Neotree<CR>" },
     },
   },
 }
