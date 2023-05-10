@@ -24,8 +24,6 @@ return {
     "nvim-telescope/telescope.nvim",
     config = function()
       require("telescope").setup()
-
-      require("plugins.highlight.tools.telescope")
     end,
     dependencies = {
       "nvim-treesitter",
