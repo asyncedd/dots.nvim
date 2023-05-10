@@ -124,5 +124,15 @@ return {
       zshKSHFunction = { link = "Function" },
     }
   end,
+  integrations = {
+    cmp = true,
+    dashboard = false,
+    gitsigns = true,
+    nvimtree = false,
+    telescope = false,
+    treesitter = true,
+    ts_rainbow = false,
+    ts_rainbow2 = false,
+  },
   -- compile_path = nil,
 }
