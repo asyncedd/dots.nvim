@@ -99,6 +99,25 @@ return {
       ["@regexp"] = {},
       ["@typeParameter"] = {},
       ["@decorator"] = {},
+
+      -- Language spectific
+      -- bash
+      ["@function.builtin.bash"] = { fg = C.red, style = { "italic" } },
+
+      -- java
+      ["@constant.java"] = { fg = C.teal },
+
+      ["@constructor.lua"] = { fg = C.flamingo }, -- For constructor calls and definitions: = { } in Lua.
+      ["@field.lua"] = { fg = C.lavender },
+
+      -- C/CPP
+      ["@type.builtin.c"] = { style = {} },
+      ["@property.cpp"] = { fg = C.text },
+      ["@type.builtin.cpp"] = { style = {} },
+
+      -- Misc
+      gitcommitSummary = { fg = C.rosewater, style = { "italic" } },
+      zshKSHFunction = { link = "Function" },
     }
   end,
   -- compile_path = nil,
