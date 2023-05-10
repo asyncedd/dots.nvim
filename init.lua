@@ -1,5 +1,4 @@
 -- Enable the experimental new loader.
--- re
 vim.loader.enable()
 
 -- Set some options.
