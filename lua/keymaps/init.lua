@@ -34,3 +34,4 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window w
 
 map({ "n", "o", "x" }, "gl", "$", { desc = "Go to the last character in the line" })
 map({ "n", "o", "x" }, "gh", "0", { desc = "Go to the first character in the line" })
+map({ "n", "o", "x" }, "gs", "^", { desc = "Go to the first non-blank character in the line" })
