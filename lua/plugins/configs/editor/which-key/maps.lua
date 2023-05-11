@@ -11,7 +11,7 @@ wk.register({
 
 wk.register({
   ["i"] = {
-    name = "Inside... textobject",
+    name = "inner textobject",
     rf = {
       function()
         require("leap").leap({
@@ -21,7 +21,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside function",
+      "inner function",
     },
     ro = {
       function()
@@ -32,7 +32,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside blocks, conditionals and loops",
+      "inner blocks, conditionals and loops",
     },
     rc = {
       function()
@@ -43,7 +43,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside classes",
+      "inner classes",
     },
     rs = {
       function()
@@ -54,7 +54,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside scopes",
+      "inner scopes",
     },
   },
   ["a"] = {
@@ -68,7 +68,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select around function",
+      "around function",
     },
     ro = {
       function()
@@ -79,7 +79,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select around blocks, conditionals and loops",
+      "around blocks, conditionals and loops",
     },
     rc = {
       function()
@@ -90,7 +90,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select aruound classes",
+      "aruound classes",
     },
     rs = {
       function()
@@ -101,7 +101,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select around scopes",
+      "around scopes",
     },
   },
 }, { mode = "o" })
