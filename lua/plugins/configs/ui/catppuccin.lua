@@ -87,7 +87,7 @@ return {
       IlluminatedWordWrite = { bg = U.darken(C.surface1, 0.7, C.base) },
 
       -- Indentscope
-      MiniIndentscopeSymbol = { fg = tint(C.sky) },
+      MiniIndentscopeSymbol = { fg = utils.blend(C.sky, C.base, 0.3) },
 
       -- Semantic tokens
 
