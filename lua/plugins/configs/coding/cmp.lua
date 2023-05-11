@@ -123,12 +123,4 @@ return {
       compare.order,
     },
   },
-  window = {
-    completion = {
-      border = "shadow",
-    },
-    documentation = {
-      border = "shadow",
-    },
-  },
 }
