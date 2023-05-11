@@ -23,6 +23,17 @@ wk.register({
       end,
       "Select inside function",
     },
+    ro = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vio"
+          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+        })
+      end,
+      "Select inside function",
+    },
   },
   ["a"] = {
     name = "Around... textobject",
@@ -32,6 +43,17 @@ wk.register({
           target_windows = { vim.fn.win_getid() },
           action = require("leap-spooky").spooky_action(function()
             return "vaf"
+          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+        })
+      end,
+      "Select inside function",
+    },
+    ro = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vao"
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
