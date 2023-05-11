@@ -25,7 +25,7 @@ wk.register({
     },
   },
   ["a"] = {
-    name = "Inside... textobject",
+    name = "Around... textobject",
     rf = {
       function()
         require("leap").leap({
