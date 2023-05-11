@@ -18,4 +18,6 @@ vim.schedule(function()
   require("keymaps")
   -- Set up highlights.
   require("core.utils.hl")
+  -- Set up autocmds
+  require("settings.autocmds")
 end)
