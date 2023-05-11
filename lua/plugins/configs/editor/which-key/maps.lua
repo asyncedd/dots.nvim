@@ -32,7 +32,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside function",
+      "Select inside blocks, conditionals and loops",
     },
     rc = {
       function()
@@ -43,7 +43,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside function",
+      "Select inside classes",
     },
     rs = {
       function()
@@ -54,7 +54,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside function",
+      "Select inside scopes",
     },
   },
   ["a"] = {
@@ -68,7 +68,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside function",
+      "Select around function",
     },
     ro = {
       function()
@@ -79,7 +79,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside function",
+      "Select around blocks, conditionals and loops",
     },
     rc = {
       function()
@@ -90,7 +90,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside function",
+      "Select aruound classes",
     },
     rs = {
       function()
@@ -101,7 +101,7 @@ wk.register({
           end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
         })
       end,
-      "Select inside function",
+      "Select around scopes",
     },
   },
 }, { mode = "o" })
