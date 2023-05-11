@@ -54,6 +54,9 @@ return {
     "kylechui/nvim-surround",
     config = true,
     event = "VeryLazy",
+    keys = {
+      { "S", mode = "x" },
+    },
   },
   {
     "numToStr/Comment.nvim",
