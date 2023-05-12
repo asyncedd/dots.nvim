@@ -122,6 +122,9 @@ return {
       -- Misc
       gitcommitSummary = { fg = C.rosewater, style = { "italic" } },
       zshKSHFunction = { link = "Function" },
+
+      -- Lazy.nvim
+      LazyH1 = { bg = C.sky, fg = C.crust, style = { "bold", "italic" } },
     }
   end,
   integrations = {
