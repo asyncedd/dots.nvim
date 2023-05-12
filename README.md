@@ -201,13 +201,8 @@ way out! >:D
 - [abzcoding's dots](https://github.com/abzcoding/lvim) - Also for the snippets.
 - [folke's neodev](https://github.com/folke/neodev.nvim) - For his lazy plugin
   thingy!
-- [mini.basics](https://github.com/echasnovski/mini.basics) - For some of the
-  options :D
 - [lazyvim](https://github.com/LazyVim/LazyVim) - Stole some configurations and
   some autocmds i think
-- [chrisgrieser and yutkat](https://github.com/chrisgrieser/.config) For his DAP
-  configurations.
-- [mawkler](https://github.com/mawkler/nvim) - For a DAP keymap.
 - [yukat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D and
   basically about a billion more stuff.
 - [JoseConseco](https://github.com/JoseConseco) - For the CMP sorting
