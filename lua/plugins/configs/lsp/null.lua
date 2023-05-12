@@ -21,9 +21,8 @@ return {
         buffer = bufnr,
         callback = function()
           vim.lsp.buf.format({ bufnr = bufnr })
-        end
+        end,
       })
     end
   end,
 }
-
