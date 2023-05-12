@@ -107,14 +107,6 @@ return {
     end,
   },
   {
-    "smjonas/inc-rename.nvim",
-    opts = true,
-    keys = {
-      { "<leader>gr", ":IncRename ", desc = "Toggle inc-rename" },
-    },
-    cmd = "IncRename",
-  },
-  {
     "simrat39/rust-tools.nvim",
     opts = true,
   },
