@@ -98,49 +98,6 @@ Specs:
 
 ![blank buffer](https://github.com/asyncedd/dots.nvim/blob/master/screenshots/2023-04-30_09-12.png?raw=true)
 ![a normal buffer](https://github.com/asyncedd/dots.nvim/blob/master/screenshots/2023-04-30_09-13.png?raw=true)
-```!-- - `nvim --clean` - -->
-<!--   [source](https://github.com/asyncedd/dots.nvim/blob/master/clean.log): -->
-<!---->
-<!-- ``` -->
-<!-- 012.370  000.076: VimEnter autocommands -->
-<!-- 012.373  000.003: UIEnter autocommands -->
-<!-- 012.374  000.001: before starting main loop -->
-<!-- 013.192  000.818: first screen update -->
-<!-- 013.202  000.010: --- NVIM STARTED --- -->
-<!-- ``` -->
-<!---->
-<!-- - `nvim` - -->
-<!--   [source](https://github.com/asyncedd/dots.nvim/blob/master/normal.log): -->
-<!---->
-<!-- ``` -->
-<!-- 026.451  000.384  000.384: require('dashboard.theme.hyper') -->
-<!-- 026.779  001.861: UIEnter autocommands -->
-<!-- 026.782  000.003: before starting main loop -->
-<!-- 027.179  000.397: first screen update -->
-<!-- 027.181  000.002: --- NVIM STARTED --- -->
-<!-- ``` -->
-<!---->
-<!-- - `nvim init.lua --clean` - -->
-<!--   [source](https://github.com/asyncedd/dots.nvim/blob/master/cleanedit.log) -->
-<!---->
-<!-- ``` -->
-<!-- 029.448  000.080: VimEnter autocommands -->
-<!-- 029.451  000.003: UIEnter autocommands -->
-<!-- 029.452  000.001: before starting main loop -->
-<!-- 030.247  000.795: first screen update -->
-<!-- 030.250  000.003: --- NVIM STARTED --- -->
-<!-- ``` -->
-<!---->
-<!-- - `nvim init.lua` - -->
-<!--   [source](https://github.com/asyncedd/dots.nvim/blob/master/edit.log) -->
-<!---->
-<!-- ``` -->
-<!-- 034.959  000.021: VimEnter autocommands -->
-<!-- 034.990  000.030: UIEnter autocommands -->
-<!-- 034.992  000.002: before starting main loop -->
-<!-- 036.897  001.905: first screen update -->
-<!-- 036.900  000.003: --- NVIM STARTED --- -->
-<!-- ``` -->
 
 ~~As you can see, my Neovim configuration is FASTER than `nvim --clean`. This is
 because, I disabled unneeded RTP (runtime plugins) which took `125ms+`. That's
