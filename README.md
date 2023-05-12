@@ -202,14 +202,13 @@ way out! >:D
 - [akinsho's dots](https://github.com/akinsho/dotfiles/tree/nightly/.config/nvim) -
   For some snippets too!
 - [abzcoding's dots](https://github.com/abzcoding/lvim) - Also for the snippets.
-- [lazyvim](https://github.com/LazyVim/LazyVim) - Stole some configurations and
+- [LazyVim](https://github.com/LazyVim/LazyVim) - Stole some configurations and
   some autocmds i think
-- [yukat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D and
+- [Yukat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D and
   basically about a billion more stuff.
 - [JoseConseco](https://github.com/JoseConseco) - For the CMP sorting
   configuration.
 - [vsedov's config](https://github.com/vsedov/nvim) - For lots of configs!
-- [yuki uthman](https://www.youtube.com/@yukiuthman8358) - For his great cmp
+- [Yuki Uthman](https://www.youtube.com/@yukiuthman8358) - For his great cmp
   turtorials.
-- [matthewsia98](https://github.com/matthewsia98/dotfiles) - For some cmp configurations.
 - [pigeon's dots](https://github.com/backwardspy/dotfiles) - For some configs
