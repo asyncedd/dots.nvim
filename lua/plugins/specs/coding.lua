@@ -168,6 +168,7 @@ return {
       "plenary.nvim",
       "nvim-cmp",
     },
+    commit = "2f28f61",
   },
   {
     "jcdickinson/http.nvim",
