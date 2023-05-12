@@ -19,4 +19,12 @@ return {
     "alec-gibson/nvim-tetris",
     cmd = "Tetris",
   },
+  {
+    "alanfortlink/blackjack.nvim",
+    cmd = {
+      "BlackJackNewGame",
+      "BlackJackQuit",
+      "BlackJackResetScores",
+    },
+  },
 }
