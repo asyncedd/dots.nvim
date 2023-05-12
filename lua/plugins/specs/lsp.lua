@@ -107,22 +107,6 @@ return {
     end,
   },
   {
-    "folke/trouble.nvim",
-    opts = true,
-    keys = {
-      { "<leader>xx", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
-      { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Toggle Trouble for workspace" },
-      {
-        "<leader>xd",
-        "<cmd>TroubleToggle document_diagnostics<cr>",
-        desc = "Toggle Trouble for the current document",
-      },
-      { "<leader>xl", "<cmd>TroubleToggle loclist<cr>", desc = "Toggle Trouble for loclist" },
-      { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", desc = "Toggle Trouble for quickfix" },
-      { "gR", "<cmd>TroubleToggle lsp_references<cr>", desc = "Toggle Trouble for LSP references" },
-    },
-  },
-  {
     "smjonas/inc-rename.nvim",
     opts = true,
     keys = {
