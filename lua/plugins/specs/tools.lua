@@ -71,4 +71,17 @@ return {
       { "<leader>tt", "<cmd>Neotree<CR>" },
     },
   },
+  {
+    "stevearc/aerial.nvim",
+    opts = function()
+      return require("plugins.configs.tools.aerial")
+    end,
+    config = true,
+    cmd = {
+      "AerialToggle",
+    },
+    keys = {
+      { "<leader>cc", "<cmd>AerialToggle<CR>" },
+    },
+  },
 }
