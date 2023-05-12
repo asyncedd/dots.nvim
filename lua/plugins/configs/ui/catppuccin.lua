@@ -125,6 +125,12 @@ return {
 
       -- Lazy.nvim
       LazyH1 = { bg = C.sky, fg = C.crust, style = { "bold", "italic" } },
+
+      -- Leap
+      LeapBackdrop = { link = "Comment" },
+      LeapMatch = { fg = C.text, style = { "bold", "nocombine" } },
+      LeapLabelPrimary = { fg = C.pink, style = { "bold", "nocombine" } },
+      LeapLabelSecondary = { fg = C.sky, style = { "bold", "nocombine" } },
     }
   end,
   integrations = {
