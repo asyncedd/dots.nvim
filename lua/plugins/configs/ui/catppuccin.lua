@@ -10,7 +10,7 @@ return {
       -- General
       Search = { bg = C.surface1, fg = C.pink, style = { "bold" } }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
       IncSearch = { bg = C.pink, fg = C.surface1 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-
+      Pmenu = { bg = C.mantle },
       -- Treesitter
       ["@variable"] = { fg = C.flamingo },
       ["@float"] = { link = "Float" }, -- For floats.

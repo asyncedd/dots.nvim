@@ -16,8 +16,6 @@ require("catppuccin").load()
 vim.schedule(function()
   -- TODO: Find a better way to load keymaps?
   require("keymaps")
-  -- Set up highlights.
-  require("core.utils.hl")
   -- Set up autocmds
   require("settings.autocmds")
 end)
