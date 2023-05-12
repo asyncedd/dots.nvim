@@ -185,12 +185,6 @@ Specs:
 ![blank buffer](https://i.imgur.com/LelATuA.png)
 ![a normal buffer](https://i.imgur.com/Wc66GFP.png)
 
-~~As you can see, my Neovim configuration is FASTER than `nvim --clean`. This is
-because, I disabled unneeded RTP (runtime plugins) which took `125ms+`. That's
-1.2 seconds! In my case, I have **24** plugins. I lazy loaded them so, it's
-blazingly fast!~~ As I've been adding more plugins (LSP, Completion etc...) It's
-a bit slower now. But it's quite fast though!
-
 ## 😰 Quitting Nvim.
 
 You're stuck here forever! Muahahahah! You fell RIGHT into my trap! There's no
