@@ -182,8 +182,8 @@ Specs:
 1073741824 bytes (1.1 GB, 1.0 GiB) copied, 0.642741 s, 1.7 GB/s
 ```
 
-![blank buffer](https://github.com/asyncedd/dots.nvim/blob/master/screenshots/2023-04-30_09-12.png?raw=true)
-![a normal buffer](https://github.com/asyncedd/dots.nvim/blob/master/screenshots/2023-04-30_09-13.png?raw=true)
+![blank buffer](https://i.imgur.com/LelATuA.png)
+![a normal buffer](https://i.imgur.com/Wc66GFP.png)
 
 ~~As you can see, my Neovim configuration is FASTER than `nvim --clean`. This is
 because, I disabled unneeded RTP (runtime plugins) which took `125ms+`. That's
