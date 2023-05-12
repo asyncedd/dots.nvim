@@ -202,8 +202,6 @@ way out! >:D
 - [akinsho's dots](https://github.com/akinsho/dotfiles/tree/nightly/.config/nvim) -
   For some snippets too!
 - [abzcoding's dots](https://github.com/abzcoding/lvim) - Also for the snippets.
-- [folke's neodev](https://github.com/folke/neodev.nvim) - For his lazy plugin
-  thingy!
 - [lazyvim](https://github.com/LazyVim/LazyVim) - Stole some configurations and
   some autocmds i think
 - [yukat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D and
