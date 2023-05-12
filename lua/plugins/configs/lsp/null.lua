@@ -16,15 +16,14 @@ return {
         buffer = bufnr,
       })
 
-      vim.api.nvim_create_autocmd("BufWritePre", {
+      vim.api.nvim_create_autocmd("BufWritePost", {
         group = group,
         buffer = bufnr,
         callback = function()
-          if vim.bo.modified then
-            vim.lsp.buf.format({ bufnr = bufnr })
-          end
-        end,
+          vim.lsp.buf.format({ bufnr = bufnr })
+        end
       })
     end
   end,
 }
+
