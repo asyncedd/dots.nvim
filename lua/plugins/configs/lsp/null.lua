@@ -8,6 +8,10 @@ return {
         return utils.root_has_file({ "stylua.toml" })
       end,
     }),
+    nls.builtins.diagnostics.zsh,
+    nls.builtins.formatting.beautysh.with({
+      extra_args = { "-i", "2" },
+    }),
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
