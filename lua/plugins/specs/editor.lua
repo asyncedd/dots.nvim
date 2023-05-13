@@ -42,11 +42,11 @@ return {
   },
   {
     "olimorris/persisted.nvim",
-    opts = function()
-      return require("plugins.configs.editor.persisted")
-    end,
+    opts = true,
     config = function(_, opts)
       require("persisted").setup(opts)
+
+      vim.cmd("SessionStart")
 
       require("telescope").load_extension("persisted")
     end,
