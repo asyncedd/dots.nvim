@@ -130,7 +130,7 @@ return {
       LeapBackdrop = { link = "Comment" },
       LeapMatch = { fg = C.text, style = { "bold", "nocombine" } },
       LeapLabelPrimary = { fg = C.pink, style = { "bold", "nocombine" } },
-      LeapLabelSecondary = { fg = C.sky, style = { "bold", "nocombine" } },
+      LeapLabelSecondary = { fg = C.sky, style = { "bold", "nocombine" } }
     }
   end,
   integrations = {
@@ -142,6 +142,21 @@ return {
     treesitter = true,
     ts_rainbow = false,
     ts_rainbow2 = false,
+    native_lsp = {
+      enabled = true,
+      virtual_text = {
+        errors = { "italic" },
+        hints = { "italic" },
+        warnings = { "italic" },
+        information = { "italic" },
+      },
+      underlines = {
+        errors = { "undercurl" },
+        hints = { "undercurl" },
+        warnings = { "undercurl" },
+        information = { "undercurl" },
+      },
+    },
   },
   -- compile_path = nil,
 }
