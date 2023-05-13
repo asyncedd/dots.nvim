@@ -40,4 +40,22 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "olimorris/persisted.nvim",
+    opts = function()
+      return require("plugins.configs.editor.persisted")
+    end,
+    config = function(_, opts)
+      require("persisted").setup(opts)
+
+      require("telescope").load_extension("persisted")
+    end,
+    cmd = {
+      "SessionLoad",
+      -- Load all other Session commands when, "Session" is typed.
+      -- Thus, providing autocompletion for other commands.
+      "Session",
+    },
+    event = { "VeryLazy" },
+  },
 }
