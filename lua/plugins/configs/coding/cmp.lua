@@ -77,9 +77,9 @@ return {
     ["<C-e>"] = cmp.mapping.abort(),
   },
   sources = cmp.config.sources({
+    { name = "emoji" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    { name = "emoji" },
     { name = "buffer", keyword_length = 3 },
     { name = "cmp_tabnine", keyword_length = 3 },
     -- { name = "codeium", keyword_length = 3 },
