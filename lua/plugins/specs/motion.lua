@@ -188,10 +188,10 @@ return {
   {
     "chrisgrieser/nvim-various-textobjs",
     keys = {
-      { "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>", mode = { "o", "x" } },
-      { "gW", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>", mode = { "o", "x" } },
-      { "i_", "<cmd>lua require('various-textobjs').lineCharacterwise(true)<CR>", mode = { "o", "x" } },
-      { "a_", "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>", mode = { "o", "x" } },
+      { "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>", mode = { "o", "x" }, desc = "Select entire buffer" },
+      { "gW", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>", mode = { "o", "x" }, desc = "Select the current visible area" },
+      { "i_", "<cmd>lua require('various-textobjs').lineCharacterwise(true)<CR>", mode = { "o", "x" }, desc = "Select inner line Characterwise" },
+      { "a_", "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>", mode = { "o", "x" }, desc = "Select around line Characterwise" },
     },
   },
   {
