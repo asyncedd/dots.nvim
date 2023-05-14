@@ -200,10 +200,30 @@ return {
       "plenary.nvim",
     },
     keys = {
-      { "<leader>hh", function() require("harpoon.mark").add_file() end },
-      { "<leader>hm", function() require("harpoon.ui").toggle_quick_menu() end },
-      { "[h", function() require("harpoon.ui").nav_next() end },
-      { "]h", function() require("harpoon.ui").nav_prev() end },
+      {
+        "<leader>hh",
+        function()
+          require("harpoon.mark").add_file()
+        end,
+      },
+      {
+        "<leader>hm",
+        function()
+          require("harpoon.ui").toggle_quick_menu()
+        end,
+      },
+      {
+        "[h",
+        function()
+          require("harpoon.ui").nav_next()
+        end,
+      },
+      {
+        "]h",
+        function()
+          require("harpoon.ui").nav_prev()
+        end,
+      },
     },
   },
 }
