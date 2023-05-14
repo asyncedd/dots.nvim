@@ -370,10 +370,13 @@ M.wpm = {
   hl = function(self)
     return {
       fg = self:mode_color(),
+      bg = "bright_bg",
     }
   end,
   update = { "InsertCharPre", "ModeChanged" },
 }
+
+M.wpm = utils.surround({ "", "" }, "bright_bg", { M.wpm })
 
 M.StatusLine = {
   M.ViMode,
