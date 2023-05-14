@@ -188,10 +188,30 @@ return {
   {
     "chrisgrieser/nvim-various-textobjs",
     keys = {
-      { "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>", mode = { "o", "x" }, desc = "Select entire buffer" },
-      { "gW", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>", mode = { "o", "x" }, desc = "Select the current visible area" },
-      { "i_", "<cmd>lua require('various-textobjs').lineCharacterwise(true)<CR>", mode = { "o", "x" }, desc = "Select inner line Characterwise" },
-      { "a_", "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>", mode = { "o", "x" }, desc = "Select around line Characterwise" },
+      {
+        "gG",
+        "<cmd>lua require('various-textobjs').entireBuffer()<CR>",
+        mode = { "o", "x" },
+        desc = "Select entire buffer",
+      },
+      {
+        "gW",
+        "<cmd>lua require('various-textobjs').visibleInWindow()<CR>",
+        mode = { "o", "x" },
+        desc = "Select the current visible area",
+      },
+      {
+        "i_",
+        "<cmd>lua require('various-textobjs').lineCharacterwise(true)<CR>",
+        mode = { "o", "x" },
+        desc = "Select inner line Characterwise",
+      },
+      {
+        "a_",
+        "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>",
+        mode = { "o", "x" },
+        desc = "Select around line Characterwise",
+      },
     },
   },
   {
@@ -205,24 +225,28 @@ return {
         function()
           require("harpoon.mark").add_file()
         end,
+        desc = "Add file",
       },
       {
         "<leader>hm",
         function()
           require("harpoon.ui").toggle_quick_menu()
         end,
+        desc = "Toggle quick menu",
       },
       {
         "[h",
         function()
           require("harpoon.ui").nav_next()
         end,
+        desc = "Go to the next harpoon",
       },
       {
         "]h",
         function()
           require("harpoon.ui").nav_prev()
         end,
+        desc = "Go to the prev harpoon",
       },
     },
   },
