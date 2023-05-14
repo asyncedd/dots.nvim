@@ -124,4 +124,7 @@ return {
       compare.order,
     },
   },
+  performance = {
+    fetching_timeout = 30,
+  },
 }
