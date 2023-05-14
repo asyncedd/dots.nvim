@@ -106,8 +106,4 @@ return {
       require("core.utils.lazy_load")("lspsaga.nvim")
     end,
   },
-  {
-    "simrat39/rust-tools.nvim",
-    opts = true,
-  },
 }

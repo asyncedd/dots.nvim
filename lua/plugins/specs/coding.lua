@@ -175,4 +175,10 @@ return {
   --   "jcdickinson/http.nvim",
   --   build = "cargo build --workspace --release",
   -- },
+  {
+    "simrat39/rust-tools.nvim",
+    opts = function()
+      return require("plugins.configs.coding.rust-tools")
+    end,
+  },
 }
