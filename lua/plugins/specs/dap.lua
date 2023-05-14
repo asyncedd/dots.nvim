@@ -11,7 +11,11 @@ return {
       { "<leader>do", "<cmd>lua require('dap').step_over()<CR>", desc = "Step over" },
       { "<leader>di", "<cmd>lua require('dap').step_into()<CR>", desc = "Step into" },
       { "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", desc = "Toggle breakpoint" },
-      { "<leader>dB", "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')<CR>", desc = "Set breakpoint" },
+      {
+        "<leader>dB",
+        "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')<CR>",
+        desc = "Set breakpoint",
+      },
       { "<leader>dr", "<cmd>lua require('dap').repl_toggle<CR>", desc = "Toggle REPL" },
       { "<leader>dl", "<cmd>lua require('dap').run_last<CR>", desc = "Run last" },
     },

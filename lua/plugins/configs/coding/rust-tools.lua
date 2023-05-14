@@ -24,7 +24,10 @@ capabilities.textDocument.completion.completionItem = {
 
 return {
   dap = {
-    adapter = require("rust-tools.dap").get_codelldb_adapter(ex_path .. "adapter/codelldb", ex_path .. "lldb/lib/liblldb.dylib")
+    adapter = require("rust-tools.dap").get_codelldb_adapter(
+      ex_path .. "adapter/codelldb",
+      ex_path .. "lldb/lib/liblldb.dylib"
+    ),
   },
   server = {
     capabilities = capabilities,
