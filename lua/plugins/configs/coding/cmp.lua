@@ -115,6 +115,7 @@ return {
   sorting = {
     priority_weight = 0.8,
     comparators = {
+      compare.exact,
       compare.scopes,
       compare.locality,
       compare.score,
