@@ -26,10 +26,13 @@ return {
       require("telescope").setup()
 
       require("telescope").load_extension("fzf")
+
+      require("telescope").load_extension("persisted")
     end,
     dependencies = {
       "nvim-treesitter",
       "nvim-web-devicons",
+      "persisted.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",

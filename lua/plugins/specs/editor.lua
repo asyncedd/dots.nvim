@@ -47,8 +47,6 @@ return {
       require("persisted").setup(opts)
 
       vim.cmd("SessionStart")
-
-      require("telescope").load_extension("persisted")
     end,
     cmd = {
       "SessionLoad",
