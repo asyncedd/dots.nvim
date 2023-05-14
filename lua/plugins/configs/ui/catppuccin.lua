@@ -130,7 +130,7 @@ return {
       LeapBackdrop = { link = "Comment" },
       LeapMatch = { fg = C.text, style = { "bold", "nocombine" } },
       LeapLabelPrimary = { fg = C.pink, style = { "bold", "nocombine" } },
-      LeapLabelSecondary = { fg = C.sky, style = { "bold", "nocombine" } }
+      LeapLabelSecondary = { fg = C.sky, style = { "bold", "nocombine" } },
     }
   end,
   integrations = {
