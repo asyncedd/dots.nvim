@@ -216,6 +216,9 @@ return {
   },
   {
     "ThePrimeagen/harpoon",
+    opts = function()
+      return require("plugins.configs.motion.harpoon")
+    end,
     dependencies = {
       "plenary.nvim",
     },
