@@ -92,8 +92,11 @@ return {
   },
   {
     "echasnovski/mini.bracketed",
-    config = function()
-      require("mini.bracketed").setup()
+    opts = function()
+      return require("plugins.configs.coding.bracketed")
+    end,
+    config = function(_, opts)
+      require("mini.bracketed").setup(opts)
     end,
     event = "VeryLazy",
   },
