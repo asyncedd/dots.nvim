@@ -184,4 +184,19 @@ return {
       return require("plugins.configs.coding.rust-tools")
     end,
   },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    opts = true,
+    keys = {
+      {
+        "<leader>rr",
+        "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+        mode = "x",
+        noremap = true,
+      },
+    },
+    dependencies = {
+      "plenary.nvim",
+    },
+  },
 }
