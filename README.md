@@ -169,6 +169,9 @@ Go to TabNineHub or something and, turn code completion to CLOUD. Not Hybird nor
 - [smart-open.nvim](danielfalk/smart-open.nvim) - 🧠 Smart fast file-finding for Telescope
 - [persisted.nvim](olimorris/persisted.nvim) - 💾 Simple Session management
 - [blackjack.nvim](alanfortlink/blackjack.nvim) - 🖤 Blackjack in Neovim
+- [harpoon](https://github.com/ThePrimeagen/harpoon) - 🎣 Blazingly fast file management
+- [twilight.nvim](https://github.com/folke/twilight.nvim) - 🌅 Dim inactive parts of the code
+- [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) - 🧘 Distraction free coding
 
 ## ⚡ Performance
 
