@@ -5,7 +5,10 @@ return {
     config = function()
       return require("plugins.configs.coding.luasnip")
     end,
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      "honza/vim-snippets",
+    },
     event = "VeryLazy",
   },
   {
