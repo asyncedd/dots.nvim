@@ -172,6 +172,8 @@ Go to TabNineHub or something and, turn code completion to CLOUD. Not Hybird nor
 - [harpoon](https://github.com/ThePrimeagen/harpoon) - 🎣 Blazingly fast file management
 - [twilight.nvim](https://github.com/folke/twilight.nvim) - 🌅 Dim inactive parts of the code
 - [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) - 🧘 Distraction free coding
+- [nvim-dap](https://github.com/mfussenegger/nvim-dap) - 🤓 DAP integration for Neovim
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) - 🤓 Pretty UI for DAP
 
 ## ⚡ Performance
 
