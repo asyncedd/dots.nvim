@@ -166,6 +166,9 @@ Go to TabNineHub or something and, turn code completion to CLOUD. Not Hybird nor
 - [nvim-telescope](https://github.com/nvim-telescope/telescope.nvim) - 🔭 Fuzzy find, filter, pick, all, Lua.
 - [readline.nvim](https://github.com/linty-org/readline.nvim) - 🤓 Emacs.nvim essentially. But, actually might be useful for insert/cmdline mode though.
 - [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) - ⚡ Fzf natively for Telescope
+- [smart-open.nvim](danielfalk/smart-open.nvim) - 🧠 Smart fast file-finding for Telescope
+- [persisted.nvim](olimorris/persisted.nvim) - 💾 Simple Session management
+- [blackjack.nvim](alanfortlink/blackjack.nvim) - 🖤 Blackjack in Neovim
 
 ## ⚡ Performance
 
