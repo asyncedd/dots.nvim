@@ -28,7 +28,7 @@ return {
       "hrsh7th/cmp-cmdline",
       "cmp-tabnine",
       "hrsh7th/cmp-emoji",
-      "codeium.nvim",
+      -- "codeium.nvim",
       "lukas-reineke/cmp-rg",
     },
   },
