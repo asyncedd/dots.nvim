@@ -367,8 +367,12 @@ M.wpm = {
     local wpm = require("wpm")
     return "WPM: " .. wpm.wpm() .. " | " .. wpm.historic_graph()
   end,
-  hl = { fg = "blue" },
-  update = { "InsertCharPre" },
+  hl = function(self)
+    return {
+      fg = self:mode_color(),
+    }
+  end,
+  update = { "InsertCharPre", "ModeChanged" },
 }
 
 M.StatusLine = {
