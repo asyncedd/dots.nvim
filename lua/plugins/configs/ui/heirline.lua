@@ -139,6 +139,11 @@ M.FileIcon = {
 }
 
 M.FileName = {
+  init = function(self)
+    local filename = self.filename
+    local extension = vim.fn.fnamemodify(filename, ":e")
+    self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+  end,
   provider = function(self)
     -- first, trim the pattern relative to the current directory. For other
     -- options, see :h filename-modifers
@@ -152,7 +157,9 @@ M.FileName = {
     filename = vim.fn.pathshorten(filename)
     return filename
   end,
-  hl = { fg = utils.get_highlight("Directory").fg },
+  hl = function(self)
+    return { fg = self.icon_color }
+  end,
 }
 
 M.FileFlags = {
