@@ -174,7 +174,6 @@ Go to TabNineHub or something and, turn code completion to CLOUD. Not Hybird nor
 - [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) - 🧘 Distraction free coding
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap) - 🤓 DAP integration for Neovim
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) - 🤓 Pretty UI for DAP
-- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) - 📦 A bunch of snippets
 - [vim-snippets](https://github.com/honza/vim-snippets) - 📦 More snippets :D
 
 ## ⚡ Performance
