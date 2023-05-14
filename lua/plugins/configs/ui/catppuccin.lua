@@ -131,6 +131,10 @@ return {
       LeapMatch = { fg = C.text, style = { "bold", "nocombine" } },
       LeapLabelPrimary = { fg = C.pink, style = { "bold", "nocombine" } },
       LeapLabelSecondary = { fg = C.sky, style = { "bold", "nocombine" } },
+
+      -- Harpoon
+      HarpoonWindow = { fg = C.text, bg = C.mantle },
+      HarpoonBorder = { fg = C.mantle, bg = C.mantle },
     }
   end,
   integrations = {
