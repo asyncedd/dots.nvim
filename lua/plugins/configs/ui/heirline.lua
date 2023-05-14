@@ -187,7 +187,7 @@ M.WorkDir = {
     if not conditions.width_percent_below(#cwd, 0.25) then
       cwd = vim.fn.pathshorten(cwd)
     end
-    local trail = cwd:sub(-1) == '/' and '' or "/"
+    local trail = cwd:sub(-1) == "/" and "" or "/"
     return icon .. cwd .. trail
   end,
   hl = { fg = "blue", bold = true },
@@ -407,9 +407,9 @@ M.StatusLine = {
   M.FileNameBlock,
   M.Space,
   M.Git,
-  M.Space,
-  M.LSPActive,
   M.Align,
+  M.LSPActive,
+  M.Space,
   M.Diagnostics,
   M.Space,
   M.wpm,
