@@ -178,4 +178,17 @@ return {
       end, 0)
     end,
   },
+  {
+    "folke/zen-mode.nvim",
+    dependencies = {
+      { "folke/twilight.nvim", opts = true },
+    },
+    opts = true,
+    cmd = {
+      "ZenMode",
+    },
+    keys = {
+      { "<leader>az", "<cmd>ZenMode<CR>" },
+    },
+  },
 }
