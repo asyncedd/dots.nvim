@@ -72,7 +72,7 @@ dashboard.section.buttons.val = {
   { type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
   { type = "padding", val = 1 },
   dashboard.button("p", "  Load latest session", ":SessionLoad<CR>"),
-  dashboard.button("e", "  New file", ":ene | startinsert <CR>"),
+  dashboard.button("e", "  Scratch File", ":ene | startinsert <CR>"),
   dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
   dashboard.button("g", "  Find word", ":Telescope live_grep<CR>"),
   dashboard.button("t", "  Open Neogit", ":Neogit<CR>"),
