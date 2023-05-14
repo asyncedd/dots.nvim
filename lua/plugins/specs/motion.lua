@@ -194,4 +194,16 @@ return {
       { "a_", "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>", mode = { "o", "x" } },
     },
   },
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = {
+      "plenary.nvim",
+    },
+    keys = {
+      { "<leader>hh", function() require("harpoon.mark").add_file() end },
+      { "<leader>hm", function() require("harpoon.ui").toggle_quick_menu() end },
+      { "<leader>[h", function() require("harpoon.ui").nav_next() end },
+      { "<leader>]h", function() require("harpoon.ui").nav_prev() end },
+    },
+  },
 }
