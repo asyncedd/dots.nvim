@@ -115,7 +115,7 @@ M.ViMode = {
   hl = function(self)
     local mode = self.mode:sub(1, 1) -- get only the first mode character
     return {
-      fg = self.mode_colors[mode],
+      bg = self.mode_colors[mode],
       bold = true,
     }
   end,
@@ -129,6 +129,10 @@ M.ViMode = {
     end),
   },
 }
+
+M.ViMode = utils.surround({ "", "" }, function(self)
+  return self:mode_color()
+end, { M.ViMode, hl = { fg = "black" } })
 
 M.FileNameBlock = {
   init = function(self)
@@ -400,6 +404,27 @@ M.StatusLine = {
 }
 
 M.StatusLines = {
+  static = {
+    mode_colors_map = {
+      n = "red",
+      i = "green",
+      v = "cyan",
+      V = "cyan",
+      ["\22"] = "cyan",
+      c = "orange",
+      s = "purple",
+      S = "purple",
+      ["\19"] = "purple",
+      R = "orange",
+      r = "orange",
+      ["!"] = "red",
+      t = "green",
+    },
+    mode_color = function(self)
+      local mode = conditions.is_active() and vim.fn.mode() or "n"
+      return self.mode_colors_map[mode]
+    end,
+  },
   hl = function()
     if conditions.is_active() then
       return "Normal"
