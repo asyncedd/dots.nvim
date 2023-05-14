@@ -29,6 +29,8 @@ return {
     event = "VeryLazy",
     keys = {
       { "gbp", "<cmd>BufferLinePick<CR>", desc = "Toggle Buffer picker" },
+      { "[b", "<cmd>BufferLineCycleNext<CR>", desc = "Cycle to the next buffer" },
+      { "]b", "<cmd>BufferLineCyclePrev<CR>", desc = "Cycle to the prev buffer" },
     },
   },
   {
