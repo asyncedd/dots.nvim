@@ -23,6 +23,21 @@ M.colors = {
   git_change = utils.get_highlight("diffChanged").fg,
 }
 
+local function setup_colors()
+  return M.colors
+end
+
+-- require("heirline").load_colors(setup_colors)
+-- or pass it to config.opts.colors
+
+vim.api.nvim_create_augroup("Heirline", { clear = true })
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    utils.on_colorscheme(setup_colors)
+  end,
+  group = "Heirline",
+})
+
 M.null_ls_providers = function(filetype)
   local registered = {}
   -- try to load null-ls
