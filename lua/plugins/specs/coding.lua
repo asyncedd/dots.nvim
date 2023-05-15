@@ -68,11 +68,14 @@ return {
     end,
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
+      "echasnovski/mini.comment",
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts.treesitter)
 
       require("Comment").setup(opts.Comment)
+
+      require("mini.comment").setup(opts.Mini)
     end,
     event = "VeryLazy",
   },
