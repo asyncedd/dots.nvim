@@ -147,11 +147,6 @@ return {
     },
   },
   {
-    "max397574/better-escape.nvim",
-    opts = true,
-    event = "InsertEnter",
-  },
-  {
     "ecthelionvi/NeoComposer.nvim",
     opts = true,
     keys = {
