@@ -7,7 +7,9 @@ return {
       callSnippet = "Both",
     },
     diagnostics = {
-      globals = "vim",
+      globals = {
+        "vim"
+      },
       neededFileStatus = {
         ["codestyle-check"] = "Any",
       },
