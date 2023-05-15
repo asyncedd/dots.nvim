@@ -8,7 +8,7 @@ return {
     },
     diagnostics = {
       globals = {
-        "vim"
+        "vim",
       },
       neededFileStatus = {
         ["codestyle-check"] = "Any",
