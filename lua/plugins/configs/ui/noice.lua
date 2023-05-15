@@ -19,7 +19,6 @@ return {
   views = {
     cmdline_popup = {
       border = {
-        style = "shadow",
         padding = { 2, 3 },
       },
       filter_options = {},
