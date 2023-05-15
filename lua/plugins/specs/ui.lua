@@ -137,13 +137,6 @@ return {
     end,
   },
   {
-    "edluffy/specs.nvim",
-    opts = function()
-      return require("plugins.configs.ui.specs")
-    end,
-    event = "VeryLazy",
-  },
-  {
     "karb94/neoscroll.nvim",
     opts = function()
       return require("plugins.configs.ui.neoscroll")
