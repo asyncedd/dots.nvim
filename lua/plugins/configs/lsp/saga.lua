@@ -3,7 +3,7 @@ return {
     enable_in_insert = false,
   },
   ui = {
-    border = "shadow",
+    border = "none",
   },
   symbol_in_winbar = {
     enable = false,
