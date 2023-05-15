@@ -10,9 +10,6 @@ return {
       globals = {
         "vim",
       },
-      neededFileStatus = {
-        ["codestyle-check"] = "Any",
-      },
     },
     workspace = {
       library = {
