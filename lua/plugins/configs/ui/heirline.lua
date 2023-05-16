@@ -94,7 +94,7 @@ M.ViMode = {
     },
   },
   provider = function(self)
-    return " %2(" .. self.mode_names[self.mode] .. "%)"
+    return " %(" .. self.mode_names[self.mode] .. "%) "
   end,
   -- Same goes for the highlight. Now the foreground will change according to the current mode.
   hl = function(self)
@@ -114,9 +114,32 @@ M.ViMode = {
   },
 }
 
-M.ViMode = utils.surround({ "", "" }, function(self)
+M.Vim = {
+  provider = " ",
+  hl = function(self)
+    return {
+      fg = self:mode_color(),
+    }
+  end,
+}
+
+M.Sym = {
+  provider = "",
+  hl = function(self)
+    return {
+      fg = self:mode_color(),
+    }
+  end,
+}
+
+M.ViMode = utils.surround({ "", "" }, function(self)
   return self:mode_color()
 end, { M.ViMode, hl = { fg = "black" } })
+
+M.Vim = {
+  M.Sym,
+  utils.surround({ "", "" }, "bright_bg", { M.ViMode, M.Space, M.Vim }),
+}
 
 M.FileNameBlock = {
   init = function(self)
@@ -394,7 +417,7 @@ M.wpm = {
 }
 
 M.StatusLine = {
-  M.ViMode,
+  M.Vim,
   M.Space,
   M.WorkDir,
   M.Space,
