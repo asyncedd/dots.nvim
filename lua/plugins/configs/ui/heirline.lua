@@ -170,7 +170,7 @@ M.FileName = {
   provider = function(self)
     -- first, trim the pattern relative to the current directory. For other
     -- options, see :h filename-modifers
-    local filename = vim.fn.fnamemodify(self.filename, ":.")
+    local filename = vim.fn.fnamemodify(self.filename, ":t")
     if filename == "" then
       return "[Scratch]"
     end
