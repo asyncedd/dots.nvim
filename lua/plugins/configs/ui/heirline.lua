@@ -4,7 +4,7 @@ local conditions = require("heirline.conditions")
 local M = {}
 
 M.colors = {
-  bright_bg = utils.get_highlight("Folded").bg,
+  bright_bg = "#313244",
   bright_fg = utils.get_highlight("Folded").fg,
   red = utils.get_highlight("DiagnosticError").fg,
   dark_red = utils.get_highlight("DiffDelete").bg,
