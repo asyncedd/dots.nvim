@@ -392,7 +392,7 @@ M.Git = {
 M.wpm = {
   provider = function()
     local wpm = require("wpm")
-    return "WPM: " .. wpm.wpm() .. " | " .. wpm.historic_graph()
+    return wpm.historic_graph()
   end,
   hl = function(self)
     return {
