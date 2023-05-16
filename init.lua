@@ -7,6 +7,9 @@ require("settings.options")
 -- Require lazy.nvim.
 require("plugins")
 
+-- Set up autocmds
+require("settings.autocmds")
+
 -- Catppuccinify the editor.
 -- vim.cmd("colorscheme catppuccin")
 -- PERF: directly call catppuccin. (not via `vim.cmd("colorscheme x")`)
@@ -16,6 +19,4 @@ require("catppuccin").load()
 vim.schedule(function()
   -- TODO: Find a better way to load keymaps?
   require("keymaps")
-  -- Set up autocmds
-  require("settings.autocmds")
 end)
