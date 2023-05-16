@@ -21,10 +21,6 @@ return {
           require("mini.bufremove").setup()
         end,
       },
-      {
-        "tiagovla/scope.nvim",
-        opts = true,
-      },
     },
     event = "VeryLazy",
     keys = {
