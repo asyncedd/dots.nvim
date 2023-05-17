@@ -177,7 +177,7 @@ return {
       "ZenMode",
     },
     keys = {
-      { "<leader>az", "<cmd>ZenMode<CR>" },
+      { "<leader>az", "<cmd>ZenMode<CR>", desc = "Toggle ZenMode" },
     },
   },
 }
