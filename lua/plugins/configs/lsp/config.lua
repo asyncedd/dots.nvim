@@ -31,6 +31,12 @@ lspconfig.lua_ls.setup({
   settings = require("plugins.configs.lsp.servers.lua_ls"),
 })
 
+lspconfig.rust_analyzer.setup({
+  capabilities = capabilities,
+
+  settings = require("plugins.configs.lsp.servers.rust-analyzer")
+})
+
 lspconfig.cssls.setup({
   capabilities = capabilities,
 })

@@ -176,12 +176,6 @@ return {
   --   build = "cargo build --workspace --release",
   -- },
   {
-    "simrat39/rust-tools.nvim",
-    opts = function()
-      return require("plugins.configs.coding.rust-tools")
-    end,
-  },
-  {
     "ThePrimeagen/refactoring.nvim",
     opts = true,
     keys = {

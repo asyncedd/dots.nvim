@@ -33,7 +33,6 @@ return {
     dependencies = {
       "mason-lspconfig.nvim",
       "neodev.nvim",
-      "rust-tools.nvim",
     },
     init = function()
       require("core.utils.lazy_load")("nvim-lspconfig")
