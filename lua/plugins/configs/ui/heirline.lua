@@ -52,94 +52,104 @@ M.Space = { provider = " " }
 M.Align = { provider = "%=" }
 
 M.ViMode = {
-  init = function(self)
-    self.mode = vim.fn.mode(1)
-  end,
-  static = {
-    mode_names = {
-      -- change the strings if you like it vvvvverbose!
-      n = "N",
-      no = "N?",
-      nov = "N?",
-      noV = "N?",
-      ["no\22"] = "N?",
-      niI = "Ni",
-      niR = "Nr",
-      niV = "Nv",
-      nt = "Nt",
-      v = "V",
-      vs = "Vs",
-      V = "V_",
-      Vs = "Vs",
-      ["\22"] = "^V",
-      ["\22s"] = "^V",
-      s = "S",
-      S = "S_",
-      ["\19"] = "^S",
-      i = "I",
-      ic = "Ic",
-      ix = "Ix",
-      R = "R",
-      Rc = "Rc",
-      Rx = "Rx",
-      Rv = "Rv",
-      Rvc = "Rv",
-      Rvx = "Rv",
-      c = "C",
-      cv = "Ex",
-      r = "...",
-      rm = "M",
-      ["r?"] = "?",
-      ["!"] = "!",
-      t = "T",
+  {
+    provider = "",
+    hl = function(self)
+      return {
+        fg = self:mode_color(),
+      }
+    end,
+  },
+    {
+    init = function(self)
+      self.mode = vim.fn.mode(1)
+    end,
+    static = {
+      mode_names = {
+        -- change the strings if you like it vvvvverbose!
+        n = "N",
+        no = "N?",
+        nov = "N?",
+        noV = "N?",
+        ["no\22"] = "N?",
+        niI = "Ni",
+        niR = "Nr",
+        niV = "Nv",
+        nt = "Nt",
+        v = "V",
+        vs = "Vs",
+        V = "V_",
+        Vs = "Vs",
+        ["\22"] = "^V",
+        ["\22s"] = "^V",
+        s = "S",
+        S = "S_",
+        ["\19"] = "^S",
+        i = "I",
+        ic = "Ic",
+        ix = "Ix",
+        R = "R",
+        Rc = "Rc",
+        Rx = "Rx",
+        Rv = "Rv",
+        Rvc = "Rv",
+        Rvx = "Rv",
+        c = "C",
+        cv = "Ex",
+        r = "...",
+        rm = "M",
+        ["r?"] = "?",
+        ["!"] = "!",
+        t = "T",
+      },
+    },
+    provider = function(self)
+      return " %(" .. self.mode_names[self.mode] .. "%) "
+    end,
+    -- Same goes for the highlight. Now the foreground will change according to the current mode.
+    hl = function(self)
+      return {
+        bg = self:mode_color(),
+        fg = "bright_bg",
+        bold = true,
+      }
+    end,
+    -- Re-evaluate the component only on ModeChanged event!
+    -- Also allows the statusline to be re-evaluated when entering operator-pending mode
+    update = {
+      "ModeChanged",
+      pattern = "*:*",
+      callback = vim.schedule_wrap(function()
+        vim.cmd("redrawstatus")
+      end),
     },
   },
-  provider = function(self)
-    return " %(" .. self.mode_names[self.mode] .. "%) "
-  end,
-  -- Same goes for the highlight. Now the foreground will change according to the current mode.
-  hl = function(self)
-    return {
-      bg = self:mode_color(),
-      bold = true,
-    }
-  end,
-  -- Re-evaluate the component only on ModeChanged event!
-  -- Also allows the statusline to be re-evaluated when entering operator-pending mode
-  update = {
-    "ModeChanged",
-    pattern = "*:*",
-    callback = vim.schedule_wrap(function()
-      vim.cmd("redrawstatus")
-    end),
+  {
+    provider = "",
+    hl = function(self)
+      return {
+        fg = self:mode_color(),
+        bg = "bright_bg",
+      }
+    end,
   },
-}
-
-M.Vim = {
-  provider = " ",
-  hl = function(self)
-    return {
-      fg = self:mode_color(),
-    }
-  end,
-}
-
-M.Sym = {
-  provider = "",
-  hl = function(self)
-    return {
-      fg = self:mode_color(),
-    }
-  end,
-}
-
-M.ViMode = utils.surround({ "", "" }, function(self)
-  return self:mode_color()
-end, { M.ViMode, hl = { fg = "black" } })
-
-M.Vim = {
-  M.Sym,
-  utils.surround({ "", "" }, "bright_bg", { M.ViMode, M.Space, M.Vim }),
+  {
+    provider = "  ",
+    hl = function(self)
+      return {
+        fg = self:mode_color(),
+        bg = "bright_bg",
+      }
+    end,
+  },
+  {
+    provider = "",
+    hl = function()
+      return {
+        fg = "bright_bg",
+      }
+    end,
+  },
 }
 
 M.FileNameBlock = {
@@ -560,7 +570,7 @@ M.wpm = {
 }
 
 M.StatusLine = {
-  M.Vim,
+  M.ViMode,
   M.Space,
   M.Space,
   M.FileNameBlock,
