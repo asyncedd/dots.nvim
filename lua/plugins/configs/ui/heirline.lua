@@ -436,6 +436,9 @@ M.Diagnostics = {
 }
 
 M.LSP = {
+  condition = conditions.lsp_attached and function()
+    return vim.g.lsp_attached
+  end or conditions.has_diagnostics,
   {
     provider = "",
     hl = function()
