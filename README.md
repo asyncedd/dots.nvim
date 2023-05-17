@@ -16,17 +16,8 @@ Really, the thing that matters for Neovim configs are:
 
 - The overall editing experience
 
-Not gonna lie, startup time doesn't really matter for Neovim configurations.
-It's about the overall editing experience of the editor. Copy-pasting
-stuff from this should be super easy, no nonsense spaggehti code and whatsoever.
-
-It had optimized my workspace and, improve my productivity.
-
-_Q 🙋 Why should I use this?_
-
-> A: Don't. Do-not. Please don't. For the love of god. If you just use someone
-> else's config, you're not really gonna boost your productivity. Just use this
-> to steal configs and the file tree, I don't mind :)
+Not gonna lie, startup time doesn't really matter for Neovim configurations. Especially for when we're talking about the miliseconds.
+But, it's about the overall editing experience of the editor.
 
 ## Wow, a really good place to put: ⚠️ DISCLAIMER! ⚠️
 
