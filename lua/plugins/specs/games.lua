@@ -27,11 +27,4 @@ return {
       "BlackJackResetScores",
     },
   },
-  {
-    "tamton-aquib/mpv.nvim",
-    opts = true,
-    cmd = {
-      "MpvToggle",
-    },
-  },
 }
