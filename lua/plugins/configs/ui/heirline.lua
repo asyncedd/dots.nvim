@@ -429,7 +429,7 @@ M.Diagnostics = {
   },
   {
     provider = function(self)
-      return self.hints > 0 and (M.icons.Hint .. self.hints)
+      return self.hints > 0 and (M.icons.Hint .. self.hints .. " ")
     end,
     hl = { fg = "diag_hint" },
   },
@@ -448,12 +448,6 @@ M.LSP = {
     end,
   },
   M.Diagnostics,
-  {
-    M.Space,
-    hl = {
-      bg = "bright_bg",
-    },
-  },
   {
     provider = "",
     hl = function()
