@@ -5,7 +5,8 @@ local M = {}
 
 M.colors = {
   bright_bg = "#313244",
-  bright_fg = utils.get_highlight("Folded").fg,
+  Normal = utils.get_highlight("Normal").fg,
+  bright_fg = utils.get_highlight("Folded").bg,
   red = utils.get_highlight("DiagnosticError").fg,
   dark_red = utils.get_highlight("DiffDelete").bg,
   green = utils.get_highlight("String").fg,
@@ -392,6 +393,25 @@ M.Diagnostics = {
   },
 }
 
+-- {
+--     provider = "",
+--     hl = function(self)
+--       return {
+--         fg = self:icon_color(),
+--       }
+--     end,
+--   },
+--   M.FileNameBlock,
+--   {
+--     provider = "",
+--     hl = function()
+--       return {
+--         fg = "bright_bg",
+--       }
+--     end,
+--   },
+--
+
 M.Git = {
   condition = conditions.is_git_repo,
 
@@ -403,32 +423,62 @@ M.Git = {
   hl = { fg = "orange" },
 
   {
+    provider = "",
+    hl = { fg = "orange" },
+  },
+  {
     -- git branch name
     provider = function(self)
-      return " " .. self.status_dict.head .. " "
+      return " " .. self.status_dict.head
     end,
-    hl = { bold = true },
+    hl = {
+      bold = true,
+      fg = "bright_bg",
+      bg = "orange",
+    },
+  },
+  {
+    provider = " ",
+    hl = {
+      fg = "orange",
+      bg = "bright_bg",
+    },
   },
   {
     provider = function(self)
       local count = self.status_dict.added or 0
       return count > 0 and (" " .. count .. " ")
     end,
-    hl = { fg = "git_add" },
+    hl = {
+      fg = "git_add",
+      bg = "bright_bg",
+    },
   },
   {
     provider = function(self)
       local count = self.status_dict.removed or 0
       return count > 0 and (" " .. count .. " ")
     end,
-    hl = { fg = "git_del" },
+    hl = {
+      fg = "git_del",
+      bg = "bright_bg",
+    },
   },
   {
     provider = function(self)
       local count = self.status_dict.changed or 0
       return count > 0 and (" " .. count .. " ")
     end,
-    hl = { fg = "git_change" },
+    hl = {
+      fg = "git_change",
+      bg = "bright_bg",
+    },
+  },
+  {
+    provider = "",
+    hl = {
+      fg = "bright_bg",
+    },
   },
 }
 
