@@ -341,7 +341,11 @@ M.LSPActive = {
     end
     return " " .. table.concat(buf_client_names, ", ")
   end,
-  hl = { fg = "green", bold = true },
+  hl = {
+    bg = "green",
+    fg = "bright_bg",
+    bold = true,
+  },
   on_click = {
     callback = function()
       vim.defer_fn(function()
@@ -355,6 +359,10 @@ M.LSPActive = {
 M.icons = require("core.utils.icons")
 
 M.Diagnostics = {
+  hl = {
+    bg = "bright_bg",
+  },
+
   condition = conditions.has_diagnostics,
 
   init = function(self)
@@ -390,6 +398,42 @@ M.Diagnostics = {
       return self.hints > 0 and (M.icons.Hint .. self.hints)
     end,
     hl = { fg = "diag_hint" },
+  },
+}
+
+M.LSP = {
+  {
+    provider = "",
+    hl = function()
+      return {
+        fg = "bright_bg",
+      }
+    end,
+  },
+  M.Diagnostics,
+  {
+    M.Space,
+    hl = {
+      bg = "bright_bg"
+    },
+  },
+  {
+    provider = "",
+    hl = function()
+      return {
+        fg = "green",
+        bg = "bright_bg",
+      }
+    end,
+  },
+  M.LSPActive,
+  {
+    provider = "",
+    hl = function()
+      return {
+        fg = "green",
+      }
+    end,
   },
 }
 
@@ -484,9 +528,7 @@ M.StatusLine = {
   M.Space,
   M.Git,
   M.Align,
-  M.LSPActive,
-  M.Space,
-  M.Diagnostics,
+  M.LSP,
   M.Space,
   M.wpm,
   M.Space,
