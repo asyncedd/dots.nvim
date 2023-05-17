@@ -80,6 +80,8 @@ Go to TabNineHub or something and, turn code completion to CLOUD. Not Hybird nor
 
 ## ⚡ Performance
 
+**⚠️ Super outdated!**
+
 TODO Redo it once ~~I get it to be more faster (troll)~~ Unlazy
 This is really outdated btw.
 
