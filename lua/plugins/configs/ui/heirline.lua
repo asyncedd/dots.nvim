@@ -274,7 +274,7 @@ M.Scrollbar = {
 }
 
 M.LSPActive = {
-  condition = conditions.lsp_attached,
+  condition = conditions.lsp_attached and function() return vim.g.lsp_attached end,
   update = {
     "LspAttach",
     "LspDetach",

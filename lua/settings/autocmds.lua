@@ -7,7 +7,7 @@ autocmd("TextYankPost", {
 })
 
 -- go to last loc when opening a buffer
-vim.api.nvim_create_autocmd("BufReadPost", {
+autocmd("BufReadPost", {
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
     local lcount = vim.api.nvim_buf_line_count(0)
@@ -17,3 +17,8 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
+autocmd("LSPAttach", {
+  callback = function()
+    vim.g.lsp_attached = true
+  end,
+})
