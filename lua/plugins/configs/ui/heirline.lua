@@ -60,7 +60,7 @@ M.ViMode = {
       }
     end,
   },
-    {
+  {
     init = function(self)
       self.mode = vim.fn.mode(1)
     end,
@@ -393,10 +393,6 @@ M.LSPActive = {
 M.icons = require("core.utils.icons")
 
 M.Diagnostics = {
-  hl = {
-    bg = "bright_bg",
-  },
-
   condition = conditions.has_diagnostics,
 
   init = function(self)
@@ -409,37 +405,7 @@ M.Diagnostics = {
   update = { "DiagnosticChanged", "LspAttach" },
 
   {
-    provider = function(self)
-      -- 0 is just another output, we can decide to print it or not!
-      return self.errors > 0 and (M.icons.Error .. self.errors .. " ")
-    end,
-    hl = { fg = "diag_error" },
-  },
-  {
-    provider = function(self)
-      return self.warnings > 0 and (M.icons.Warn .. self.warnings .. " ")
-    end,
-    hl = { fg = "diag_warn" },
-  },
-  {
-    provider = function(self)
-      return self.info > 0 and (M.icons.Info .. self.info .. " ")
-    end,
-    hl = { fg = "diag_info" },
-  },
-  {
-    provider = function(self)
-      return self.hints > 0 and (M.icons.Hint .. self.hints .. " ")
-    end,
-    hl = { fg = "diag_hint" },
-  },
-}
-
-M.LSP = {
-  condition = conditions.lsp_attached and function()
-    return vim.g.lsp_attached
-  end or conditions.has_diagnostics,
-  {
+    condition = conditions.has_diagnostics,
     provider = "",
     hl = function()
       return {
@@ -447,6 +413,49 @@ M.LSP = {
       }
     end,
   },
+  {
+    provider = function(self)
+      -- 0 is just another output, we can decide to print it or not!
+      return self.errors > 0 and (M.icons.Error .. self.errors .. " ")
+    end,
+    hl = {
+      fg = "diag_error",
+      bg = "bright_bg",
+    },
+  },
+  {
+    provider = function(self)
+      return self.warnings > 0 and (M.icons.Warn .. self.warnings .. " ")
+    end,
+    hl = {
+      fg = "diag_warn",
+      bg = "bright_bg",
+    },
+  },
+  {
+    provider = function(self)
+      return self.info > 0 and (M.icons.Info .. self.info .. " ")
+    end,
+    hl = {
+      fg = "diag_info",
+      bg = "bright_bg",
+    },
+  },
+  {
+    provider = function(self)
+      return self.hints > 0 and (M.icons.Hint .. self.hints .. " ")
+    end,
+    hl = {
+      fg = "diag_hint",
+      bg = "bright_bg",
+    },
+  },
+}
+
+M.LSP = {
+  condition = conditions.lsp_attached and function()
+    return vim.g.lsp_attached
+  end or conditions.has_diagnostics,
   M.Diagnostics,
   {
     provider = "",
