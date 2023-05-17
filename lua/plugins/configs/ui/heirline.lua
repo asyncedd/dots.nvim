@@ -393,25 +393,6 @@ M.Diagnostics = {
   },
 }
 
--- {
---     provider = "",
---     hl = function(self)
---       return {
---         fg = self:icon_color(),
---       }
---     end,
---   },
---   M.FileNameBlock,
---   {
---     provider = "",
---     hl = function()
---       return {
---         fg = "bright_bg",
---       }
---     end,
---   },
---
-
 M.Git = {
   condition = conditions.is_git_repo,
 
