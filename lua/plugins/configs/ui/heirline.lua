@@ -182,7 +182,7 @@ M.FileName = {
   hl = function(self)
     return {
       bg = self:icon_color(),
-      fg = "bright_bg"
+      fg = "bright_bg",
     }
   end,
 }
@@ -196,9 +196,9 @@ M.FileFlags = {
     hl = function(self)
       return {
         fg = "green",
-        bg = self:icon_color()
+        bg = self:icon_color(),
       }
-    end
+    end,
   },
   {
     condition = function()
@@ -210,7 +210,7 @@ M.FileFlags = {
         fg = "orange",
         bg = self:icon_color(),
       }
-    end
+    end,
   },
 }
 
@@ -227,7 +227,7 @@ M.FileNameBlock = utils.insert(
         bg = "bright_bg",
       }
     end,
-  M.FileIcon,
+    M.FileIcon,
   },
   { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
 )
@@ -318,7 +318,9 @@ M.Scrollbar = {
 }
 
 M.LSPActive = {
-  condition = conditions.lsp_attached and function() return vim.g.lsp_attached end,
+  condition = conditions.lsp_attached and function()
+    return vim.g.lsp_attached
+  end,
   update = {
     "LspAttach",
     "LspDetach",
@@ -414,7 +416,7 @@ M.LSP = {
   {
     M.Space,
     hl = {
-      bg = "bright_bg"
+      bg = "bright_bg",
     },
   },
   {
@@ -508,16 +510,31 @@ M.Git = {
 }
 
 M.wpm = {
-  provider = function()
-    local wpm = require("wpm")
-    return wpm.historic_graph()
-  end,
-  hl = function(self)
-    return {
-      fg = self:mode_color(),
-    }
-  end,
-  update = { "InsertCharPre", "ModeChanged" },
+  {
+    provider = "",
+    hl = {
+      fg = "bright_bg",
+    },
+  },
+  {
+    provider = function()
+      local wpm = require("wpm")
+      return wpm.historic_graph()
+    end,
+    hl = function(self)
+      return {
+        fg = self:mode_color(),
+        bg = "bright_bg",
+      }
+    end,
+    update = { "InsertCharPre", "ModeChanged" },
+  },
+  {
+    provider = " ",
+    hl = {
+      fg = "bright_bg",
+    },
+  },
 }
 
 M.StatusLine = {
