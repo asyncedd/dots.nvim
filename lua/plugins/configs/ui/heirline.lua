@@ -142,31 +142,29 @@ M.Vim = {
 }
 
 M.FileNameBlock = {
-  init = function(self)
-    self.filename = vim.api.nvim_buf_get_name(0)
-  end,
+  -- init = function(self)
+  --   self.filename = vim.api.nvim_buf_get_name(0)
+  -- end,
 }
 
 M.FileIcon = {
   init = function(self)
     local filename = self.filename
     local extension = vim.fn.fnamemodify(filename, ":e")
-    self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+    self.icon, _ = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
   end,
   provider = function(self)
-    return self.icon and (self.icon .. " ")
+    return self.icon and (" " .. self.icon .. " ")
   end,
   hl = function(self)
-    return { fg = self.icon_color }
+    return {
+      fg = self:icon_color(),
+      bg = "bright_bg",
+    }
   end,
 }
 
 M.FileName = {
-  init = function(self)
-    local filename = self.filename
-    local extension = vim.fn.fnamemodify(filename, ":e")
-    self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
-  end,
   provider = function(self)
     -- first, trim the pattern relative to the current directory. For other
     -- options, see :h filename-modifers
@@ -181,7 +179,10 @@ M.FileName = {
     return filename
   end,
   hl = function(self)
-    return { fg = self.icon_color }
+    return {
+      bg = self:icon_color(),
+      fg = "bright_bg"
+    }
   end,
 }
 
@@ -191,25 +192,67 @@ M.FileFlags = {
       return vim.bo.modified
     end,
     provider = "  ",
-    hl = { fg = "green" },
+    hl = function(self)
+      return {
+        fg = "green",
+        bg = self:icon_color()
+      }
+    end
   },
   {
     condition = function()
       return not vim.bo.modifiable or vim.bo.readonly
     end,
     provider = "  ",
-    hl = { fg = "orange" },
+    hl = function(self)
+      return {
+        fg = "orange",
+        bg = self:icon_color(),
+      }
+    end
   },
 }
 
 -- let's add the children to our FileNameBlock component
 M.FileNameBlock = utils.insert(
   M.FileNameBlock,
-  M.FileIcon,
   utils.insert(M.FileName), -- a new table where FileName is a child of FileNameModifier
   M.FileFlags,
+  {
+    provider = "",
+    hl = function(self)
+      return {
+        fg = self:icon_color(),
+        bg = "bright_bg",
+      }
+    end,
+  M.FileIcon,
+  },
   { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
 )
+
+M.FileNameBlock = {
+  {
+    provider = "",
+    hl = function(self)
+      return {
+        fg = self:icon_color(),
+      }
+    end,
+  },
+  M.FileNameBlock,
+  {
+    provider = "",
+    hl = function()
+      return {
+        fg = "bright_bg",
+      }
+    end,
+  },
+  init = function(self)
+    self.filename = vim.api.nvim_buf_get_name(0)
+  end,
+}
 
 M.Scrollbar = {
   provider = function()
@@ -441,6 +484,13 @@ M.StatusLines = {
     mode_color = function(self)
       local mode = conditions.is_active() and vim.fn.mode() or "n"
       return self.mode_colors_map[mode]
+    end,
+    icon_color = function(self)
+      local filename = self.filename
+      local extension = vim.fn.fnamemodify(filename, ":e")
+      local _, icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+
+      return icon_color
     end,
   },
   hl = function()
