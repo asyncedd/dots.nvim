@@ -219,8 +219,14 @@ return {
     opts = function()
       return require("plugins.configs.motion.harpoon")
     end,
+    config = function(_, opts)
+      require("harpoon").setup(opts)
+
+      require("telescope").load_extension("harpoon")
+    end,
     dependencies = {
       "plenary.nvim",
+      "telescope.nvim",
     },
     keys = {
       {
