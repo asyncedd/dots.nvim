@@ -56,4 +56,14 @@ return {
     },
     event = { "VeryLazy" },
   },
+  {
+    "echasnovski/mini.basics",
+    opts = function()
+      return require("plugins.configs.editor.basics")
+    end,
+    config = function(_, opts)
+      require("mini.basics").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
 }
