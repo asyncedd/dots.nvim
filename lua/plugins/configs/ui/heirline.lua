@@ -459,10 +459,14 @@ M.LSP = {
   M.Diagnostics,
   {
     provider = "",
-    hl = function()
+    hl = function(self)
+      local bg
+      if self.errors or self.warnings or self.info or self.hints then
+        bg = "bright_bg"
+      end
       return {
         fg = "green",
-        bg = "bright_bg",
+        bg = bg
       }
     end,
   },
