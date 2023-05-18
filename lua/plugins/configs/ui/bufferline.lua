@@ -39,5 +39,12 @@ return {
         separator = true,
       },
     },
+    custom_areas = {
+      left = function()
+        return {
+          { text = " ", fg = "#a6e3a1" },
+        }
+      end,
+    },
   },
 }
