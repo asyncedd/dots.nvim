@@ -261,6 +261,11 @@ return {
         end,
         desc = "Go to the prev harpoon",
       },
+      {
+        "<leader>fh",
+        "<cmd>Telescope harpoon marks<CR>",
+        desc = "Open Telescope for seletcting harpoons",
+      },
     },
   },
 }
