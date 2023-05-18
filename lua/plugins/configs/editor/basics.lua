@@ -7,7 +7,7 @@ return {
   mappings = {
     basic = true,
     windows = true,
-    move_with_alt = true,
+    move_with_alt = false,
   },
   autocommands = {
     basic = false,
