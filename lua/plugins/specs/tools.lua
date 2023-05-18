@@ -39,11 +39,6 @@ return {
     },
   },
   {
-    "pwntester/octo.nvim",
-    cmd = "Octo",
-    config = true,
-  },
-  {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = {
       "plenary.nvim",
