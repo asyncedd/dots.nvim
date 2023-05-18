@@ -11,5 +11,5 @@ return {
     c = ai.gen_spec.treesitter({ a = "@comment.outer", i = "@comment.inner" }, {}),
     s = ai.gen_spec.treesitter({ a = "@scope", i = "@scope.inner" }, {}),
   },
-  search_method = "cover_or_nearest",
+  search_method = "cover_or_next",
 }
