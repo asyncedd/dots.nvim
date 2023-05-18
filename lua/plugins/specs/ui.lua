@@ -25,7 +25,8 @@ return {
     event = "VeryLazy",
     keys = {
       { "gbp", "<cmd>BufferLinePick<CR>", desc = "Toggle Buffer picker" },
-      { "gbd", "<cmd>lua require('mini.bufremove').delete(0, false)<CR>" },
+      { "gbd", "<cmd>lua require('mini.bufremove').delete(0, false)<CR>", desc = "Delete current buffer" },
+      { "gbc", "<cmd>BufferLinePickClose<CR>", desc = "Toggle buffer picker closer" },
       { "[b", "<cmd>BufferLineCycleNext<CR>", desc = "Cycle to the next buffer" },
       { "]b", "<cmd>BufferLineCyclePrev<CR>", desc = "Cycle to the prev buffer" },
     },
