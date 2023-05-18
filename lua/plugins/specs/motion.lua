@@ -235,30 +235,22 @@ return {
     keys = {
       {
         "<leader>hh",
-        function()
-          require("harpoon.mark").add_file()
-        end,
+        "<cmd>require('harpoon.mark').add_file()<CR>",
         desc = "Add file",
       },
       {
         "<leader>hm",
-        function()
-          require("harpoon.ui").toggle_quick_menu()
-        end,
+        "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
         desc = "Toggle quick menu",
       },
       {
         "[h",
-        function()
-          require("harpoon.ui").nav_next()
-        end,
+        "<cmd>lua require('harpoon.ui').nav_next()<CR>",
         desc = "Go to the next harpoon",
       },
       {
         "]h",
-        function()
-          require("harpoon.ui").nav_prev()
-        end,
+        "<cmd>lua require('harpoon.ui').nav_prev()<CR>",
         desc = "Go to the prev harpoon",
       },
       {
