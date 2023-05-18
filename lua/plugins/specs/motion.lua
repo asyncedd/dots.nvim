@@ -86,15 +86,19 @@ return {
     dependencies = {
       "leap.nvim",
     },
-    config = true,
+    opts = true,
     event = "VeryLazy",
   },
   {
     "cbochs/portal.nvim",
-    config = true,
+    opts = true,
     keys = {
       { "<C-i>", "<cmd>Portal jumplist forward<CR>", desc = "Toggle portal foward" },
       { "<C-o>", "<cmd>Portal jumplist backward<CR>", desc = "Toggle portal backwards" },
+      { "<leader>hj", "<cmd>lua require('portal.builtin').harpoon.tunnel()<CR>", desc = "Toggle portal for harpoon" },
+    },
+    dependencies = {
+      "portal.nvim",
     },
   },
   {
