@@ -466,7 +466,7 @@ M.LSP = {
       end
       return {
         fg = "green",
-        bg = bg
+        bg = bg,
       }
     end,
   },
@@ -519,7 +519,7 @@ M.Git = {
         fg = "orange",
         bg = bg,
       }
-    end
+    end,
   },
   {
     condition = function(self)
