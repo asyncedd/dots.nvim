@@ -508,10 +508,18 @@ M.Git = {
   },
   {
     provider = "",
-    hl = {
-      fg = "orange",
-      bg = "bright_bg",
-    },
+    hl = function(self)
+      local bg
+
+      if self.has_changes then
+        bg = "bright_bg"
+      end
+
+      return {
+        fg = "orange",
+        bg = bg,
+      }
+    end
   },
   {
     condition = function(self)
@@ -553,6 +561,9 @@ M.Git = {
     },
   },
   {
+    condition = function(self)
+      return self.has_changes
+    end,
     provider = "",
     hl = {
       fg = "bright_bg",
