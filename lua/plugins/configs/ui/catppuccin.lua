@@ -128,9 +128,9 @@ return {
 
       -- Leap
       LeapBackdrop = { link = "Comment" },
-      LeapMatch = { fg = C.text, style = { "bold", "nocombine" } },
-      LeapLabelPrimary = { fg = C.pink, style = { "bold", "nocombine" } },
-      LeapLabelSecondary = { fg = C.sky, style = { "bold", "nocombine" } },
+      LeapMatch = { fg = C.sky, style = { "bold", "nocombine" } },
+      LeapLabelPrimary = { fg = C.blue, style = { "bold", "nocombine" } },
+      LeapLabelSecondary = { fg = C.sapphire, style = { "bold", "nocombine" } },
 
       -- Harpoon
       HarpoonWindow = { fg = C.text, bg = C.mantle },
