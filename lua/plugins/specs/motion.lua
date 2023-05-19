@@ -65,10 +65,10 @@ return {
       "leap.nvim",
     },
     keys = {
-      { "f", mode = { "n", "x", "o" }, desc = "f" },
-      { "F", mode = { "n", "x", "o" }, desc = "F" },
-      { "t", mode = { "n", "x", "o" }, desc = "t" },
-      { "T", mode = { "n", "x", "o" }, desc = "T" },
+      { "f", mode = { "n", "x", "o" }, desc = "Move to next char" },
+      { "F", mode = { "n", "x", "o" }, desc = "Move to prev char" },
+      { "t", mode = { "n", "x", "o" }, desc = "Move before next char" },
+      { "T", mode = { "n", "x", "o" }, desc = "Move before prev char" },
     },
   },
   {
