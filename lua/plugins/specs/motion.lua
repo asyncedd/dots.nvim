@@ -289,6 +289,6 @@ return {
     },
     keys = {
       { "gn", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "n", "o" } },
-    }
+    },
   },
 }
