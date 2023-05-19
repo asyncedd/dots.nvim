@@ -53,6 +53,31 @@ return {
         end,
         mode = { "n", "x", "o" },
       },
+      -- https://github.com/GCBallesteros/nixfiles/blob/9dc4af5c954bb3800c78c4588d298da3a38cf6ba/neovim/lua/plugins/configs/leap.lua#L4
+      {
+        "<leader>k",
+        function()
+          local get_line_starts = require("plugins.configs.motion.leap.get_line_starts")
+          local winid = vim.api.nvim_get_current_win()
+          require("leap").leap({
+            target_windows = { winid },
+            targets = get_line_starts(winid, "down"),
+          })
+        end,
+        mode = { "n", "x", "o" },
+      },
+      {
+        "<leader>j",
+        function()
+          local get_line_starts = require("plugins.configs.motion.leap.get_line_starts")
+          local winid = vim.api.nvim_get_current_win()
+          require("leap").leap({
+            target_windows = { winid },
+            targets = get_line_starts(winid, "up"),
+          })
+        end,
+        mode = { "n", "x", "o" },
+      },
     },
   },
   {
