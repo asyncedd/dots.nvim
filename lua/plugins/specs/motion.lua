@@ -52,6 +52,7 @@ return {
           return true
         end,
         mode = { "n", "x", "o" },
+        desc = "Leap to matching words",
       },
       -- https://github.com/GCBallesteros/nixfiles/blob/9dc4af5c954bb3800c78c4588d298da3a38cf6ba/neovim/lua/plugins/configs/leap.lua#L4
       {
@@ -65,6 +66,7 @@ return {
           })
         end,
         mode = { "n", "x", "o" },
+        desc = "Leap up line-wise",
       },
       {
         "<leader>j",
@@ -77,6 +79,7 @@ return {
           })
         end,
         mode = { "n", "x", "o" },
+        desc = "Leap down line-wise",
       },
     },
   },
@@ -332,6 +335,7 @@ return {
           end
         end,
         mode = { "x", "n", "o" },
+        desc = "Leap to next match",
       },
       {
         "<leader>N",
@@ -343,21 +347,7 @@ return {
           end
         end,
         mode = { "x", "n", "o" },
-      },
-      {
-        "<leader>mn",
-        function()
-          require("leap-search").leap(
-            nil,
-            {
-              engines = {
-                { name = "string.find", plain = true, ignorecase = true },
-                -- { name = "kensaku.query" }, -- to search Japanese string with romaji with https://github.com/lambdalisue/kensaku.vim
-              },
-            },
-            { target_windows = { vim.api.nvim_get_current_win() } }
-          )
-        end,
+        desc = "Leap to prev match",
       },
     },
   },
