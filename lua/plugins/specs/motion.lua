@@ -282,4 +282,13 @@ return {
       },
     },
   },
+  {
+    "ggandor/leap-ast.nvim",
+    dependencies = {
+      "leap.nvim",
+    },
+    keys = {
+      { "gn", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "n", "o" } },
+    }
+  },
 }
