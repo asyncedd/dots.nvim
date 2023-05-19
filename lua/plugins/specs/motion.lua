@@ -34,6 +34,7 @@ return {
       {
         "gz",
         function()
+          -- https://www.reddit.com/r/neovim/comments/13l0p0p/leapnvim_meets_vimilluminate/
           local ref = require("illuminate.reference").buf_get_references(vim.api.nvim_get_current_buf())
           if not ref or #ref == 0 then
             return false
