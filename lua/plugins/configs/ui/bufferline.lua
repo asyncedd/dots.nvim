@@ -48,14 +48,17 @@ return {
       end,
     },
     groups = {
+      options = {
+        toggle_hidden_on_enter = true -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
+      },
       items = {
         {
           name = "Docs",
           matcher = function(buf)
-            return buf.path:match('%.md') or buf.path:match('%.txt')
+            return buf.path:match("%.md") or buf.path:match("%.txt")
           end,
           separator = { -- Optional
-            style = require('bufferline.groups').separator.tab
+            style = require("bufferline.groups").separator.tab,
           },
         },
       },
