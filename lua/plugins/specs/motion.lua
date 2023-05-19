@@ -28,9 +28,9 @@ return {
       { "s", "<Plug>(leap-forward-to)", mode = { "n", "x", "o" }, desc = "Leap foward to" },
       { "S", "<Plug>(leap-backward-to)", mode = { "n", "x", "o" }, desc = "Leap backward to", noremap = true },
       { "x", "<Plug>(leap-forward-till)", mode = { "x", "o" }, desc = "Leap foward till" },
-      { "X", "", mode = { "x", "o" }, desc = "Leap backward till" },
-      { "gs", mode = { "x", "o" }, desc = "Leap from window" },
-      { "gS", mode = { "x", "o" }, desc = "Leap backward to" },
+      { "X", "<Plug>(leap-backward-till)", mode = { "x", "o" }, desc = "Leap backward till" },
+      { "gs", "<Plug>(leap-from-window)", mode = { "x", "o" }, desc = "Leap from window" },
+      { "gS", "<Plug>(leap-cross-window)", mode = { "x", "o" }, desc = "Leap backward to" },
       {
         "gz",
         function()
