@@ -1,4 +1,5 @@
 local icon = require("core.utils.icons")
+local colors = require("catppuccin.palettes").get_palette()
 
 local icons = {
   ["warn"] = icon.Warn,
@@ -42,9 +43,22 @@ return {
     custom_areas = {
       left = function()
         return {
-          { text = " ", fg = "#a6e3a1" },
+          { text = " ", fg = colors.green },
         }
       end,
+    },
+    groups = {
+      items = {
+        {
+          name = "Docs",
+          matcher = function(buf)
+            return buf.path:match('%.md') or buf.path:match('%.txt')
+          end,
+          separator = { -- Optional
+            style = require('bufferline.groups').separator.tab
+          },
+        },
+      },
     },
   },
   highlights = require("catppuccin.groups.integrations.bufferline").get({
