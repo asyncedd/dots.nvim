@@ -17,9 +17,8 @@ return {
       return require("plugins.configs.coding.cmp")
     end,
     config = function(_, opts)
-      require("cmp").setup(opts)
-
-      require("plugins.configs.coding.cmp-cmd")
+      require("cmp").setup(opts.cmp)
+      opts.cmd()
     end,
     event = { "InsertEnter", "VeryLazy", "CmdlineEnter" },
     dependencies = {

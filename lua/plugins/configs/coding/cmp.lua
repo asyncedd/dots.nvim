@@ -1,3 +1,5 @@
+local M = {}
+
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local cmp = require("cmp")
@@ -35,7 +37,7 @@ local kind_icons = {
   TabNine = "",
 }
 
-return {
+M.cmp = {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -127,3 +129,32 @@ return {
     fetching_timeout = 30,
   },
 }
+
+M.cmd = function()
+  -- Use buffer s urce for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline({ "/", "?" }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = "buffer" },
+    },
+  })
+
+  cmp.setup.cmdline({ "@" }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = "cmdline" },
+    },
+  })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(":", {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = "path" },
+    }, {
+        { name = "cmdline" },
+      }),
+  })
+end
+
+return M
