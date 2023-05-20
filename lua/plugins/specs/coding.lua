@@ -173,4 +173,11 @@ return {
   --   "jcdickinson/http.nvim",
   --   build = "cargo build --workspace --release",
   -- },
+  {
+    "mizlan/iswap.nvim",
+    opts = true,
+    keys = {
+      { "<leader>is", "<cmd>ISwap<CR>" },
+    },
+  },
 }
