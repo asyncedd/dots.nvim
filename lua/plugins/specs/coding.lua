@@ -173,19 +173,4 @@ return {
   --   "jcdickinson/http.nvim",
   --   build = "cargo build --workspace --release",
   -- },
-  {
-    "ThePrimeagen/refactoring.nvim",
-    opts = true,
-    keys = {
-      {
-        "<leader>rr",
-        "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-        mode = "x",
-        noremap = true,
-      },
-    },
-    dependencies = {
-      "plenary.nvim",
-    },
-  },
 }
