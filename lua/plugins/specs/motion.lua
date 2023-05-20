@@ -356,4 +356,9 @@ return {
     "mg979/vim-visual-multi",
     event = "VeryLazy",
   },
+  {
+    "nacro90/numb.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
