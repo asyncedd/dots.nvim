@@ -11,7 +11,7 @@ return {
       },
       actions = {
         delete_all_trail_marks = "<leader>md",
-     },
+      },
     },
-  }
+  },
 }
