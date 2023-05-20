@@ -135,4 +135,7 @@ wk.register({
   ["s"] = {
     name = "Leap",
   },
+  ["l"] = {
+    name = "LSPSaga",
+  },
 }, { prefix = "<leader>" })

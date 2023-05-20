@@ -86,17 +86,17 @@ return {
       { "<leader>so", "<cmd>Lspsaga outline<CR>", desc = "Open Lspsaga's code outline" },
       { "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostic messages in the current line" },
       {
-        "<leader>sb",
+        "<leader>lb",
         "<cmd>Lspsaga show_buf_diagnostics<CR>",
         desc = "Show diagnostic messages in the current buffer",
       },
       {
-        "<leader>sw",
+        "<leader>lw",
         "<cmd>Lspsaga show_workspace_diagnostics<CR>",
         desc = "Show diagnostic messages in the current workspace",
       },
       {
-        "<leader>sc",
+        "<leader>lc",
         "<cmd>Lspsaga show_cursor_diagnostics<CR>",
         desc = "Show diagnostic messages in the hovered area",
       },
