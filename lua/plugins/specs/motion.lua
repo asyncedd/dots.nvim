@@ -81,12 +81,6 @@ return {
         mode = { "n", "x", "o" },
         desc = "Leap down line-wise",
       },
-      {
-        "<leader>sb",
-        function()
-          require("plugins.configs.motion.leap.multi-cursor")
-        end,
-      },
     },
   },
   {
