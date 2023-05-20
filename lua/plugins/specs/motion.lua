@@ -319,4 +319,14 @@ return {
       { "<leader>ss", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "n", "o" } },
     },
   },
+  {
+    "LeonHeidelbach/trailblazer.nvim",
+    opts = function()
+      return require("plugins.configs.motion.trailblazer")
+    end,
+    config = function(_, opts)
+      require("trailblazer").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
 }
