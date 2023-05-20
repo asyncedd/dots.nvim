@@ -52,7 +52,9 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    config = true,
+    opts = function()
+      return require("plugins.configs.coding.surround")
+    end,
     event = "VeryLazy",
     keys = {
       { "S", mode = "x" },
