@@ -1,5 +1,6 @@
 -- https://github.com/b0o/incline.nvim/discussions/31
 
+local C = require("catppuccin.palettes").get_palette()
 local icons = require("core.utils.icons")
 
 local function get_diagnostic_label(props)
@@ -96,5 +97,11 @@ return {
   window = {
     margin = { horizontal = 0 },
     padding = 0,
+  },
+  highlight = {
+    groups = {
+      InclineNormal = { guibg = C.base },
+      InclineNormalNC = { guibg = C.crust },
+    },
   },
 }
