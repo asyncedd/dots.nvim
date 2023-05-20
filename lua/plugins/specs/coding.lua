@@ -163,4 +163,14 @@ return {
       { "<leader>is", "<cmd>ISwap<CR>", desc = "Interactively swap" },
     },
   },
+  {
+    "echasnovski/mini.surround",
+    opts = function()
+      return require("plugins.configs.coding.mini-surround")
+    end,
+    config = function(_, opts)
+      require("mini.surround").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
 }
