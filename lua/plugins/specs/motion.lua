@@ -316,7 +316,7 @@ return {
       "leap.nvim",
     },
     keys = {
-      { "gn", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "n", "o" } },
+      { "<leader>ss", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "n", "o" } },
     },
   },
   {
@@ -326,7 +326,7 @@ return {
     },
     keys = {
       {
-        "<leader>n",
+        "<leader>sn",
         function()
           local pat = vim.fn.getreg("/")
           local leapable = require("leap-search").leap(pat)
@@ -338,7 +338,7 @@ return {
         desc = "Leap to next match",
       },
       {
-        "<leader>N",
+        "<leader>sN",
         function()
           local pat = vim.fn.getreg("/")
           local leapable = require("leap-search").leap(pat, {}, { backward = true })
