@@ -3,5 +3,6 @@ return {
     "lua_ls",
     "cssls",
     "rust_analyzer",
+    "jsonls",
   },
 }
