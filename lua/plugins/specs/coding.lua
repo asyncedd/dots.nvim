@@ -56,9 +56,6 @@ return {
       return require("plugins.configs.coding.surround")
     end,
     event = "VeryLazy",
-    keys = {
-      { "S", mode = "x" },
-    },
   },
   {
     "numToStr/Comment.nvim",
