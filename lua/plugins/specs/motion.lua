@@ -319,36 +319,4 @@ return {
       { "<leader>ss", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "n", "o" } },
     },
   },
-  {
-    "atusy/leap-search.nvim",
-    dependencies = {
-      "leap.nvim",
-    },
-    keys = {
-      {
-        "<leader>sn",
-        function()
-          local pat = vim.fn.getreg("/")
-          local leapable = require("leap-search").leap(pat)
-          if not leapable then
-            return vim.fn.search(pat)
-          end
-        end,
-        mode = { "x", "n", "o" },
-        desc = "Leap to next match",
-      },
-      {
-        "<leader>sN",
-        function()
-          local pat = vim.fn.getreg("/")
-          local leapable = require("leap-search").leap(pat, {}, { backward = true })
-          if not leapable then
-            return vim.fn.search(pat, "b")
-          end
-        end,
-        mode = { "x", "n", "o" },
-        desc = "Leap to prev match",
-      },
-    },
-  },
 }
