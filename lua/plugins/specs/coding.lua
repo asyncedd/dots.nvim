@@ -143,22 +143,6 @@ return {
       { "<localleader>s", "<cmd>Spectre<CR>", desc = "Open spectre" },
     },
   },
-  {
-    "ecthelionvi/NeoComposer.nvim",
-    opts = true,
-    keys = {
-      "q",
-      "Q",
-      "yq",
-      "cq",
-      "<C-n>",
-      "<C-p>",
-      "<M-p>",
-    },
-    dependencies = {
-      "sqlite.lua",
-    },
-  },
   -- {
   --   "jcdickinson/codeium.nvim",
   --   opts = true,
