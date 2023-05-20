@@ -2,6 +2,7 @@
   "Comment.nvim": { "branch": "master", "commit": "e1fe53117aab24c378d5e6deaad786789c360123" },
   "LuaSnip": { "branch": "master", "commit": "ec7fba1d119fb5090a901eb616145450ffb95e31" },
   "NeoComposer.nvim": { "branch": "main", "commit": "a22f5a5d7ff590f59cdeb0bf67fc617327452263" },
+  "SchemaStore.nvim": { "branch": "main", "commit": "22f5e69f395eb9a47289b66af1ccb07e8f783016" },
   "aerial.nvim": { "branch": "master", "commit": "3a17406d9d8f01f46d207f42d8849eb924eb0755" },
   "alpha-nvim": { "branch": "main", "commit": "1838ae926e8d49fe5330d1498ee8289ae2c340bc" },
   "barbecue.nvim": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },

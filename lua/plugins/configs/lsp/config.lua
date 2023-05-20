@@ -43,4 +43,6 @@ lspconfig.cssls.setup({
 
 lspconfig.jsonls.setup({
   capabilities = capabilities,
+
+  settings = require("plugins.configs.lsp.servers.jsonls"),
 })
