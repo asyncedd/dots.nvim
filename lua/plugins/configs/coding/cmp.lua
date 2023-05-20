@@ -79,7 +79,7 @@ M.cmp = {
     ["<C-e>"] = cmp.mapping.abort(),
   },
   sources = cmp.config.sources({
-    { name = "emoji" },
+    { name = "emoji", priority = 10000 },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer", keyword_length = 3 },
