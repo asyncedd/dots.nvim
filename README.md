@@ -6,7 +6,8 @@ My personal Neovim configuration
 
 ![Size](https://img.shields.io/github/repo-size/asyncedd/dots.nvim?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)
 
-![ss](https://i.imgur.com/5pSbIS4.png)
+<!-- ![ss](https://i.imgur.com/5pSbIS4.png) -->
+![ss](https://github.com/asyncedd/dots.nvim/blob/master/screenshots/Screenshot%20from%202023-05-20%2016-07-24.png?raw=true)
 
 ## 👋 Introduction
 
