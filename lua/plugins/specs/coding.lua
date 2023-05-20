@@ -177,7 +177,7 @@ return {
     "mizlan/iswap.nvim",
     opts = true,
     keys = {
-      { "<leader>is", "<cmd>ISwap<CR>" },
+      { "<leader>is", "<cmd>ISwap<CR>", desc = "Interactively swap" },
     },
   },
 }
