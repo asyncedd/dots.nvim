@@ -9,7 +9,7 @@ wk.register({
           target_windows = { vim.fn.win_getid() },
           action = require("leap-spooky").spooky_action(function()
             return "vif"
-          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+          end, { keeppos = true }),
         })
       end,
       "inner function",
@@ -20,7 +20,7 @@ wk.register({
           target_windows = { vim.fn.win_getid() },
           action = require("leap-spooky").spooky_action(function()
             return "vio"
-          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+          end, { keeppos = true }),
         })
       end,
       "inner blocks, conditionals and loops",
@@ -31,7 +31,7 @@ wk.register({
           target_windows = { vim.fn.win_getid() },
           action = require("leap-spooky").spooky_action(function()
             return "vic"
-          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+          end, { keeppos = true }),
         })
       end,
       "inner classes",
@@ -42,7 +42,7 @@ wk.register({
           target_windows = { vim.fn.win_getid() },
           action = require("leap-spooky").spooky_action(function()
             return "vis"
-          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+          end, { keeppos = true }),
         })
       end,
       "inner scopes",
@@ -73,7 +73,7 @@ wk.register({
           target_windows = { vim.fn.win_getid() },
           action = require("leap-spooky").spooky_action(function()
             return "vaf"
-          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+          end, { keeppos = true }),
         })
       end,
       "around function",
@@ -84,7 +84,7 @@ wk.register({
           target_windows = { vim.fn.win_getid() },
           action = require("leap-spooky").spooky_action(function()
             return "vao"
-          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+          end, { keeppos = true }),
         })
       end,
       "around blocks, conditionals and loops",
@@ -95,7 +95,7 @@ wk.register({
           target_windows = { vim.fn.win_getid() },
           action = require("leap-spooky").spooky_action(function()
             return "vac"
-          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+          end, { keeppos = true }),
         })
       end,
       "aruound classes",
@@ -106,7 +106,7 @@ wk.register({
           target_windows = { vim.fn.win_getid() },
           action = require("leap-spooky").spooky_action(function()
             return "vas"
-          end, { keeppos = true, on_return = (vim.v.operator == "y") and "p" }),
+          end, { keeppos = true }),
         })
       end,
       "around scopes",
