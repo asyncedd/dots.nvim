@@ -14,17 +14,6 @@ wk.register({
       end,
       "inner function",
     },
-    ro = {
-      function()
-        require("leap").leap({
-          target_windows = { vim.fn.win_getid() },
-          action = require("leap-spooky").spooky_action(function()
-            return "vio"
-          end, { keeppos = true }),
-        })
-      end,
-      "inner blocks, conditionals and loops",
-    },
     rc = {
       function()
         require("leap").leap({
@@ -57,17 +46,6 @@ wk.register({
         })
       end,
       "inner function",
-    },
-    mo = {
-      function()
-        require("leap").leap({
-          target_windows = { vim.fn.win_getid() },
-          action = require("leap-spooky").spooky_action(function()
-            return "vio"
-          end, { keeppos = true }),
-        })
-      end,
-      "inner blocks, conditionals and loops",
     },
     mc = {
       function()
@@ -122,17 +100,6 @@ wk.register({
       end,
       "around function",
     },
-    ro = {
-      function()
-        require("leap").leap({
-          target_windows = { vim.fn.win_getid() },
-          action = require("leap-spooky").spooky_action(function()
-            return "vao"
-          end, { keeppos = true }),
-        })
-      end,
-      "around blocks, conditionals and loops",
-    },
     rc = {
       function()
         require("leap").leap({
@@ -165,17 +132,6 @@ wk.register({
         })
       end,
       "around function",
-    },
-    mo = {
-      function()
-        require("leap").leap({
-          target_windows = { vim.fn.win_getid() },
-          action = require("leap-spooky").spooky_action(function()
-            return "vao"
-          end, { keeppos = true }),
-        })
-      end,
-      "around blocks, conditionals and loops",
     },
     mc = {
       function()
