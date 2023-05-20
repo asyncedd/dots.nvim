@@ -40,7 +40,7 @@ return {
       end
 
       if #diagnostics > 0 then
-        table.insert(result, { "| ", guifg = "grey" })
+        table.insert(result, { "| ", guifg = "gray" })
       end
 
       return result
@@ -64,7 +64,7 @@ return {
         end
       end
       if #labels > 0 then
-        table.insert(labels, { "| ", guifg = "grey" })
+        table.insert(labels, { "| ", guifg = "gray" })
       end
       return labels
     end
