@@ -1,6 +1,6 @@
 return function(winid, dir)
   local wininfo = vim.fn.getwininfo(winid)[1]
-  local cur_line = vim.fn.line "."
+  local cur_line = vim.fn.line(".")
 
   local function update_lnum(lnum)
     if dir == "down" then
@@ -23,7 +23,7 @@ return function(winid, dir)
 
   -- Get targets.
   local targets = {}
-  local lnum = vim.fn.line "."
+  local lnum = vim.fn.line(".")
   while loop_condition(lnum) do
     local fold_end = vim.fn.foldclosedend(lnum)
     -- Skip folded ranges.

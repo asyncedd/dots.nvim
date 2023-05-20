@@ -1,7 +1,9 @@
 local function paranormal(targets)
   -- Get the :normal sequence to be executed.
   local input = vim.fn.input("normal! ")
-  if #input < 1 then return end
+  if #input < 1 then
+    return
+  end
 
   local ns = vim.api.nvim_create_namespace("")
 
@@ -27,7 +29,7 @@ local function paranormal(targets)
 end
 
 -- Usage:
-require('leap').leap({
+require("leap").leap({
   target_windows = { vim.fn.win_getid() },
   action = paranormal,
   multiselect = true,
