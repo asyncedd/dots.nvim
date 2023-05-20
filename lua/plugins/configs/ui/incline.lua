@@ -35,7 +35,7 @@ return {
       local diagnostics = get_diagnostic_label(props)
       local result = {}
 
-       for _, buffer_ in ipairs(diagnostics) do
+      for _, buffer_ in ipairs(diagnostics) do
         table.insert(result, buffer_)
       end
 
