@@ -5,11 +5,11 @@ return {
     insert_line = "gC-ggZ",
     normal = "gz",
     normal_cur = "gZ",
-    normal_line = "gzgz",
-    normal_cur_line = "gZgZ",
+    normal_line = "gzz",
+    normal_cur_line = "gZZ",
     visual = "gz",
     visual_line = "gZ",
     delete = "gzd",
-    change = "gzc",
+    change = "gzr",
   }
 }
