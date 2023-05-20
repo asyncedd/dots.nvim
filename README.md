@@ -109,7 +109,7 @@ way out! >:D
 - [abzcoding's dots](https://github.com/abzcoding/lvim) - Also for the snippets.
 - [LazyVim](https://github.com/LazyVim/LazyVim) - Stole some configurations and
   some autocmds i think
-- [Yukat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D and
+- [Yutkat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D and
   basically about a billion more stuff.
 - [JoseConseco](https://github.com/JoseConseco) - For the CMP sorting
   configuration.
