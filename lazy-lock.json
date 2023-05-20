@@ -1,7 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e1fe53117aab24c378d5e6deaad786789c360123" },
   "LuaSnip": { "branch": "master", "commit": "ec7fba1d119fb5090a901eb616145450ffb95e31" },
-  "NeoComposer.nvim": { "branch": "main", "commit": "a22f5a5d7ff590f59cdeb0bf67fc617327452263" },
   "SchemaStore.nvim": { "branch": "main", "commit": "22f5e69f395eb9a47289b66af1ccb07e8f783016" },
   "aerial.nvim": { "branch": "master", "commit": "3a17406d9d8f01f46d207f42d8849eb924eb0755" },
   "alpha-nvim": { "branch": "main", "commit": "1838ae926e8d49fe5330d1498ee8289ae2c340bc" },
@@ -82,6 +81,7 @@
   "todo-comments.nvim": { "branch": "main", "commit": "8febc60a76feefd8203077ef78b6a262ea1a41f9" },
   "trailblazer.nvim": { "branch": "main", "commit": "674bb6254a376a234d0d243366224122fc064eab" },
   "treesj": { "branch": "main", "commit": "b1e2976c2d7ba922371cc7f3ab08b75136c27231" },
+  "trouble.nvim": { "branch": "main", "commit": "2173dffe91fc0914b3b833c6a2f6fe1d3fac2e17" },
   "twilight.nvim": { "branch": "main", "commit": "2e13bd1886562b737f38c418ed542677b41ef5cb" },
   "ultimate-autopair.nvim": { "branch": "main", "commit": "f4347c956c5155593056af1ab539d76ae99043ff" },
   "vim-be-good": { "branch": "master", "commit": "c290810728a4f75e334b07dc0f3a4cdea908d351" },
