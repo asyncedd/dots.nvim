@@ -13,6 +13,13 @@
           "lua"
         ],
         "path": "./lua.json"
+      },
+      {
+        "language": [
+          "gitcommit",
+          "NeogitCommitMessage"
+        ],
+        "path": "./gitcommit.json"
       }
     ]
   }

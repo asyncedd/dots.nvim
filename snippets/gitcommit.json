@@ -1,0 +1,20 @@
+{
+  "lazy conventional commit": {
+    "prefix": "lazy",
+    "body": [
+      "chore(lazy): 🔼 Sync lazy-lock",
+      "\nCHANGES:",
+      "\t- Synced lazy-lock"
+    ],
+    "description": "Sync lazy-lock conventional commit"
+  },
+  "stylua conventional commit": {
+    "prefix": "stylua",
+    "body": [
+      "style(stylua): 🎨 Style with Stylua",
+      "\nCHANGES:",
+      "\t- Styled with Stylua"
+    ],
+    "description": "Sync lazy-lock conventional commit"
+  }
+}
