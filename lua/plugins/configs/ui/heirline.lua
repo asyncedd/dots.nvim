@@ -134,6 +134,36 @@ M.ViMode = {
     end,
   },
   {
+    condition = function()
+      return vim.fn.reg_recording() ~= "" and vim.o.cmdheight == 0
+    end,
+    provider = " ",
+    hl = {
+      bg = "bright_bg",
+    },
+  },
+  {
+    condition = function()
+      return vim.fn.reg_recording() ~= "" and vim.o.cmdheight == 0
+    end,
+    provider = " ",
+    hl = { fg = "orange", bold = true },
+    utils.surround({ "[", "]" }, nil, {
+      provider = function()
+        return vim.fn.reg_recording()
+      end,
+      hl = {
+        fg = "green",
+        bold = true,
+        bg = "bright_bg",
+      },
+    }),
+    update = {
+      "RecordingEnter",
+      "RecordingLeave",
+    },
+  },
+  {
     provider = "  ",
     hl = function(self)
       return {
@@ -141,6 +171,27 @@ M.ViMode = {
         bg = "bright_bg",
       }
     end,
+  },
+  {
+    condition = function()
+      return vim.o.cmdheight == 0
+    end,
+    provider = ":%3.5(%S%)",
+    hl = function(self)
+      return {
+        bg = "bright_bg",
+        fg = self:mode_color(),
+      }
+    end,
+  },
+  {
+    condition = function()
+      return vim.o.cmdheight == 0
+    end,
+    provider = " ",
+    hl = {
+      bg = "bright_bg",
+    },
   },
   {
     provider = "",

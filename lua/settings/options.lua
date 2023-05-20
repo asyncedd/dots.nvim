@@ -392,3 +392,9 @@ o.gfn = "Cartograph CF:h10"
 -- Of course, this isn't true if there aren't enough lines above and below.
 
 o.so = 999
+
+-- Set show command location to be at the statusline  
+-- As of now, it's not being shown because cmdheight=0 so,
+-- We can enable it by making it present in the statusline :)
+
+o.sloc = "statusline"
