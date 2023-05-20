@@ -173,18 +173,6 @@ M.ViMode = {
     end,
   },
   {
-    condition = function()
-      return vim.o.cmdheight == 0
-    end,
-    provider = "%S",
-    hl = function(self)
-      return {
-        bg = "bright_bg",
-        fg = self:mode_color(),
-      }
-    end,
-  },
-  {
     provider = "",
     hl = function()
       return {
