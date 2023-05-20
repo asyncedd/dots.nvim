@@ -28,9 +28,23 @@ return {
 
     local bufname = vim.api.nvim_buf_get_name(props.buf)
     local filename = vim.fn.fnamemodify(bufname, ":t")
-    local diagnostics = get_diagnostic_label(props)
     local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "None"
     local filetype_icon, color = require("nvim-web-devicons").get_icon_color(filename)
+
+    local function get_diag_count()
+      local diagnostics = get_diagnostic_label(props)
+      local result = {}
+
+       for _, buffer_ in ipairs(diagnostics) do
+        table.insert(result, buffer_)
+      end
+
+      if #diagnostics > 0 then
+        table.insert(result, { "| ", guifg = "grey" })
+      end
+
+      return result
+    end
 
     local function get_git_diff()
       local git_icon = {
@@ -50,7 +64,7 @@ return {
         end
       end
       if #labels > 0 then
-        table.insert(labels, { "| " })
+        table.insert(labels, { "| ", guifg = "grey" })
       end
       return labels
     end
@@ -71,19 +85,13 @@ return {
       },
       { " " },
       { get_git_diff() },
-      { " " },
+      { get_diag_count() },
       { filetype_icon, guifg = color },
       { " " },
       { filename, gui = modified },
     }
 
-    if #diagnostics > 0 then
-      table.insert({ "| ", guifg = "grey" }, diagnostics)
-    end
-    for _, buffer_ in ipairs(buffer) do
-      table.insert(diagnostics, buffer_)
-    end
-    return diagnostics
+    return buffer
   end,
   window = {
     margin = { horizontal = 0 },
