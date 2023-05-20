@@ -21,7 +21,6 @@ return {
       return ""
     end
 
-    local count = vim.fn.searchcount({ recompute = 1, maxcount = -1 })
     local contents = vim.fn.getreg("/")
     if string.len(contents) == 0 then
       return ""
@@ -71,20 +70,6 @@ return {
     end
 
     local buffer = {
-      -- https://github.com/davidosomething/dotfiles/issues/498#issuecomment-1458400313
-      {
-        " ? ",
-        group = "dkoStatusKey",
-      },
-      {
-        (" %s "):format(contents),
-        group = "IncSearch",
-      },
-      {
-        (" %d/%d "):format(count.current, count.total),
-        group = "dkoStatusValue",
-      },
-      { " " },
       { get_git_diff() },
       { get_diag_count() },
       { filetype_icon, guifg = color },
