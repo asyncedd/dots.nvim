@@ -1,0 +1,5 @@
+return {
+  popup = {
+    winhl = "Cursor",
+  },
+}
