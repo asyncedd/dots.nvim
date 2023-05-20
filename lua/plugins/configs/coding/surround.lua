@@ -2,7 +2,7 @@ return {
   keymaps = {
     -- https://github.com/ggandor/leap.nvim/discussions/59#discussioncomment-3842315
     insert = "<C-g>z",
-    insert_line = "gC-ggZ",
+    insert_line = "<C-g>Z",
     normal = "gz",
     normal_cur = "gZ",
     normal_line = "gzz",
@@ -11,5 +11,5 @@ return {
     visual_line = "gZ",
     delete = "gzd",
     change = "gzr",
-  }
+  },
 }
