@@ -4,4 +4,5 @@ return {
   "MunifTanjim/nui.nvim",
   "kkharji/sqlite.lua",
   "stevearc/dressing.nvim",
+  "tpope/vim-repeat",
 }
