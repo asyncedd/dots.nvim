@@ -47,6 +47,50 @@ wk.register({
       end,
       "inner scopes",
     },
+    mf = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vif"
+          end, { keeppos = true }),
+        })
+      end,
+      "inner function",
+    },
+    mo = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vio"
+          end, { keeppos = true }),
+        })
+      end,
+      "inner blocks, conditionals and loops",
+    },
+    mc = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vic"
+          end, { keeppos = true }),
+        })
+      end,
+      "inner classes",
+    },
+    ms = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vis"
+          end, { keeppos = true }),
+        })
+      end,
+      "inner scopes",
+    },
     rw = "inner word",
     rW = "inner WORD",
     rp = "inner paragraph",
@@ -101,6 +145,50 @@ wk.register({
       "aruound classes",
     },
     rs = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vas"
+          end, { keeppos = true }),
+        })
+      end,
+      "around scopes",
+    },
+    mf = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vaf"
+          end, { keeppos = true }),
+        })
+      end,
+      "around function",
+    },
+    mo = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vao"
+          end, { keeppos = true }),
+        })
+      end,
+      "around blocks, conditionals and loops",
+    },
+    mc = {
+      function()
+        require("leap").leap({
+          target_windows = { vim.fn.win_getid() },
+          action = require("leap-spooky").spooky_action(function()
+            return "vac"
+          end, { keeppos = true }),
+        })
+      end,
+      "aruound classes",
+    },
+    ms = {
       function()
         require("leap").leap({
           target_windows = { vim.fn.win_getid() },
