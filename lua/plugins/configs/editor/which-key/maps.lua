@@ -130,3 +130,9 @@ wk.register({
     ["r`"] = "string in backticks without the backticks",
   },
 }, { mode = "o" })
+
+wk.register({
+  ["s"] = {
+    name = "Leap",
+  },
+}, { prefix = "<leader>" })
