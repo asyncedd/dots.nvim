@@ -203,16 +203,6 @@ return {
     event = "CmdlineEnter",
   },
   {
-    "tamton-aquib/keys.nvim",
-    opts = { enable_on_startup = true },
-    event = "VeryLazy",
-    config = function(_, opts)
-      require("keys").setup(opts)
-
-      vim.cmd("KeysToggle")
-    end,
-  },
-  {
     "tamton-aquib/mpv.nvim",
     opts = true,
     cmd = {
