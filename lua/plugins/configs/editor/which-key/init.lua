@@ -4,4 +4,9 @@ return {
   window = {
     border = "shadow",
   },
+  plugins = {
+    presets = {
+      operators = false,
+    },
+  },
 }

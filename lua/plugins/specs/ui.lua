@@ -197,4 +197,11 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "mvllow/modes.nvim",
+    opts = function()
+      return require("plugins.configs.ui.modes")
+    end,
+    event = "VeryLazy",
+  },
 }
