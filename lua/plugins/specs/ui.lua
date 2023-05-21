@@ -229,4 +229,11 @@ return {
       vim.cmd("KeysToggle")
     end,
   },
+  {
+    "tamton-aquib/mpv.nvim",
+    opts = true,
+    cmd = {
+      "MpvToggle",
+    },
+  },
 }
