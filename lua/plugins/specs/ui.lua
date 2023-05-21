@@ -202,11 +202,4 @@ return {
     opts = true,
     event = "CmdlineEnter",
   },
-  {
-    "tamton-aquib/mpv.nvim",
-    opts = true,
-    cmd = {
-      "MpvToggle",
-    },
-  },
 }
