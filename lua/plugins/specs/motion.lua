@@ -367,15 +367,6 @@ return {
     },
   },
   {
-    "ggandor/leap-ast.nvim",
-    dependencies = {
-      "leap.nvim",
-    },
-    keys = {
-      { "<leader>ss", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "n", "o" } },
-    },
-  },
-  {
     "LeonHeidelbach/trailblazer.nvim",
     opts = function()
       return require("plugins.configs.motion.trailblazer")
