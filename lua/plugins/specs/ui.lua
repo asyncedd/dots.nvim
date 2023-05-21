@@ -215,11 +215,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "tamton-aquib/flirt.nvim",
-    opts = true,
-    event = "VeryLazy",
-  },
-  {
     "tamton-aquib/keys.nvim",
     opts = { enable_on_startup = true },
     event = "VeryLazy",
