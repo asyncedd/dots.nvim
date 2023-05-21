@@ -173,6 +173,11 @@ return {
       require("mini.surround").setup(opts)
     end,
     event = "VeryLazy",
+    keys = {
+      "gzx",
+      "gzX",
+      "gzc",
+    }
   },
   {
     "echasnovski/mini.move",
