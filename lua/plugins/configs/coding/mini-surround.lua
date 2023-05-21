@@ -6,7 +6,7 @@ return {
     delete = "",
     find = "gzx",
     find_left = "gzX",
-    highlight = "gzp",
+    highlight = "gzc",
     replace = "",
     update_n_lines = "",
   },
