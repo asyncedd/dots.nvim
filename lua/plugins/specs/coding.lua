@@ -274,4 +274,54 @@ return {
       { "gx", "<cmd>ISwap<CR>" },
     },
   },
+  {
+    "gbprod/yanky.nvim",
+    opts = true,
+    keys = {
+      {
+        "<leader>P",
+        function()
+          require("telescope").extensions.yank_history.yank_history({})
+        end,
+        desc = "Paste from Yanky",
+      },
+      {
+        "y",
+        "<Plug>(YankyYank)",
+        mode = { "n", "x" },
+      },
+      {
+        "p",
+        "<Plug>(YankyPutAfter)",
+        mode = { "x", "n" },
+      },
+      {
+        "P",
+        "<Plug>(YankyPutBefore)",
+        mode = { "x", "n" },
+      },
+      {
+        "gp",
+        "<Plug>(YankyGPutAfter)",
+        mode = { "x", "n" },
+      },
+      {
+        "gP",
+        "<Plug>(YankyGPutBefore)",
+        mode = { "x", "n" },
+      },
+      { "[y", "<Plug>(YankyCycleForward)" },
+      { "]y", "<Plug>(YankyCycleBackward)" },
+      { "]p", "<Plug>(YankyPutIndentAfterLinewise)" },
+      { "[p", "<Plug>(YankyPutIndentBeforeLinewise)" },
+      { "]P", "<Plug>(YankyPutIndentAfterLinewise)" },
+      { "[P", "<Plug>(YankyPutIndentBeforeLinewise)" },
+      { ">p", "<Plug>(YankyPutIndentAfterShiftRight)" },
+      { "<p", "<Plug>(YankyPutIndentAfterShiftLeft)" },
+      { ">P", "<Plug>(YankyPutIndentBeforeShiftRight)" },
+      { "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)" },
+      { "=p", "<Plug>(YankyPutAfterFilter)" },
+      { "=P", "<Plug>(YankyPutBeforeFilter)" },
+    },
+  },
 }
