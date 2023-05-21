@@ -138,6 +138,113 @@ return {
     },
     opts = true,
     event = "VeryLazy",
+    keys = {
+      {
+        "arf",
+        function()
+          require("leap").leap({
+            target_windows = { vim.fn.win_getid() },
+            action = require("leap-spooky").spooky_action(function()
+              return "vaf"
+            end, { keeppos = true }),
+          })
+        end,
+        desc = "inner function",
+        mode = { "x", "o" },
+      },
+      {
+        "irf",
+        function()
+          require("leap").leap({
+            target_windows = { vim.fn.win_getid() },
+            action = require("leap-spooky").spooky_action(function()
+              return "vif"
+            end, { keeppos = true }),
+          })
+        end,
+        desc = "inner function",
+        mode = { "x", "o" },
+      },
+      {
+        "amf",
+        function()
+          require("leap").leap({
+            target_windows = { vim.fn.win_getid() },
+            action = require("leap-spooky").spooky_action(function()
+              return "vaf"
+            end, { keeppos = true }),
+          })
+        end,
+        desc = "inner function",
+        mode = { "x", "o" },
+      },
+      {
+        "imf",
+        function()
+          require("leap").leap({
+            target_windows = { vim.fn.win_getid() },
+            action = require("leap-spooky").spooky_action(function()
+              return "vif"
+            end, { keeppos = true }),
+          })
+        end,
+        desc = "inner function",
+        mode = { "x", "o" },
+      },
+      {
+        "arc",
+        function()
+          require("leap").leap({
+            target_windows = { vim.fn.win_getid() },
+            action = require("leap-spooky").spooky_action(function()
+              return "vac"
+            end, { keeppos = true }),
+          })
+        end,
+        desc = "inner function",
+        mode = { "x", "o" },
+      },
+      {
+        "irc",
+        function()
+          require("leap").leap({
+            target_windows = { vim.fn.win_getid() },
+            action = require("leap-spooky").spooky_action(function()
+              return "vic"
+            end, { keeppos = true }),
+          })
+        end,
+        desc = "inner function",
+        mode = { "x", "o" },
+      },
+      {
+        "amc",
+        function()
+          require("leap").leap({
+            target_windows = { vim.fn.win_getid() },
+            action = require("leap-spooky").spooky_action(function()
+              return "vac"
+            end, { keeppos = true }),
+          })
+        end,
+        desc = "inner function",
+        mode = { "x", "o" },
+      },
+      {
+        "imc",
+        function()
+          require("leap").leap({
+            target_windows = { vim.fn.win_getid() },
+            action = require("leap-spooky").spooky_action(function()
+              return "vic"
+            end, { keeppos = true }),
+          })
+        end,
+        desc = "inner function",
+        mode = { "x", "o" },
+      },
+
+    }
   },
   {
     "cbochs/portal.nvim",

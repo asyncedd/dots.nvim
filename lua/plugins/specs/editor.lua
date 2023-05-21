@@ -34,13 +34,6 @@ return {
     end,
   },
   {
-    "folke/which-key.nvim",
-    opts = function()
-      return require("plugins.configs.editor.which-key")
-    end,
-    event = "VeryLazy",
-  },
-  {
     "olimorris/persisted.nvim",
     opts = true,
     config = function(_, opts)
