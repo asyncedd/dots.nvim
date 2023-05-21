@@ -219,4 +219,14 @@ return {
     opts = true,
     event = "VeryLazy",
   },
+  {
+    "tamton-aquib/keys.nvim",
+    opts = { enable_on_startup = true },
+    event = "VeryLazy",
+    config = function(_, opts)
+      require("keys").setup(opts)
+
+      vim.cmd("KeysToggle")
+    end,
+  },
 }
