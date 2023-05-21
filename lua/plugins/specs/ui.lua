@@ -209,4 +209,9 @@ return {
     opts = true,
     event = "CmdlineEnter",
   },
+  {
+    "gen740/SmoothCursor.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
