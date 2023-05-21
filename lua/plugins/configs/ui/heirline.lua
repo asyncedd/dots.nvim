@@ -227,6 +227,26 @@ M.FileName = {
   end,
 }
 
+M.FileFormat = {
+  provider = function()
+    local fmt = vim.bo.fileformat
+
+    local icons = {
+      ["unix"] = "  ",
+      ["osx"] = "  ",
+      ["dos"] = "  ",
+    }
+
+    return icons[fmt]
+  end,
+  hl = function(self)
+    return {
+      fg = self:icon_color(),
+      bg = "bright_bg",
+    }
+  end,
+}
+
 M.FileFlags = {
   {
     condition = function()
@@ -267,6 +287,7 @@ M.FileNameBlock = utils.insert(
         bg = "bright_bg",
       }
     end,
+    M.FileFormat,
     M.FileIcon,
   },
   { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
