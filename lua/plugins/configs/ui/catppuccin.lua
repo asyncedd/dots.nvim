@@ -24,8 +24,8 @@ return {
       CmpItemAbbrDeprecated = { fg = C.overlay0, style = { "strikethrough" } },
       CmpItemKind = { fg = C.blue },
       CmpItemMenu = { fg = C.text },
-      CmpItemAbbrMatch = { fg = C.pink, style = { "bold" } },
-      CmpItemAbbrMatchFuzzy = { fg = C.pink, style = { "bold" } },
+      CmpItemAbbrMatch = { fg = C.sky, style = { "bold" } },
+      CmpItemAbbrMatchFuzzy = { fg = C.sky, style = { "bold" } },
 
       -- kind support
       CmpItemKindField = { fg = C.rosewater, bg = tint(C.rosewater) },
