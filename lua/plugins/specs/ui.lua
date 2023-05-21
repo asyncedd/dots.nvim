@@ -214,4 +214,9 @@ return {
     opts = true,
     event = "VeryLazy",
   },
+  {
+    "tamton-aquib/flirt.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
