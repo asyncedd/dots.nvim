@@ -25,12 +25,12 @@ return {
       require("plugins.configs.motion.leap")
     end,
     keys = {
-      { "s", "<Plug>(leap-forward-to)", mode = { "n", "x", "o" }, desc = "Leap foward to" },
-      { "S", "<Plug>(leap-backward-to)", mode = { "n", "o" }, desc = "Leap backward to", noremap = true },
-      { "x", "<Plug>(leap-forward-till)", mode = { "x", "o" }, desc = "Leap foward till" },
-      { "X", "<Plug>(leap-backward-till)", mode = { "x", "o" }, desc = "Leap backward till" },
-      { "gs", "<Plug>(leap-from-window)", mode = { "x", "o" }, desc = "Leap from window" },
-      { "gS", "<Plug>(leap-cross-window)", mode = { "x", "o" }, desc = "Leap backward to" },
+      { "s", mode = { "n", "x", "o" }, desc = "Leap foward to" },
+      { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
+      { "x", mode = { "x", "o" }, desc = "Leap foward till" },
+      { "X", mode = { "x", "o" }, desc = "Leap backward till" },
+      { "gs", mode = { "x", "o" }, desc = "Leap from window" },
+      { "gS", mode = { "x", "o" }, desc = "Leap backward to" },
     },
   },
   {
