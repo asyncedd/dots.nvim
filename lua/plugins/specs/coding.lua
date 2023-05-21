@@ -267,4 +267,11 @@ return {
       require("plugins.configs.coding.dial").config()
     end,
   },
+  {
+    "mizlan/iswap.nvim",
+    opts = true,
+    keys = {
+      { "gx", "<cmd>ISwap<CR>" },
+    },
+  },
 }
