@@ -184,13 +184,6 @@ return {
     },
   },
   {
-    "b0o/incline.nvim",
-    opts = function()
-      return require("plugins.configs.ui.incline")
-    end,
-    event = "VeryLazy",
-  },
-  {
     "edluffy/specs.nvim",
     opts = function()
       return require("plugins.configs.ui.specs")
