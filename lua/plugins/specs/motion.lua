@@ -31,29 +31,6 @@ return {
       { "X", "<Plug>(leap-backward-till)", mode = { "x", "o" }, desc = "Leap backward till" },
       { "gs", "<Plug>(leap-from-window)", mode = { "x", "o" }, desc = "Leap from window" },
       { "gS", "<Plug>(leap-cross-window)", mode = { "x", "o" }, desc = "Leap backward to" },
-      {
-        "zs",
-        function()
-          -- https://www.reddit.com/r/neovim/comments/13l0p0p/leapnvim_meets_vimilluminate/
-          local ref = require("illuminate.reference").buf_get_references(vim.api.nvim_get_current_buf())
-          if not ref or #ref == 0 then
-            return false
-          end
-
-          local targets = {}
-          for _, v in pairs(ref) do
-            table.insert(targets, {
-              pos = { v[1][1] + 1, v[1][2] + 1 },
-            })
-          end
-
-          require("leap").leap({ targets = targets, target_windows = { vim.api.nvim_get_current_win() } })
-
-          return true
-        end,
-        mode = { "n", "x", "o" },
-        desc = "Leap to matching words",
-      },
       -- https://github.com/GCBallesteros/nixfiles/blob/9dc4af5c954bb3800c78c4588d298da3a38cf6ba/neovim/lua/plugins/configs/leap.lua#L4
       {
         "<leader>k",
@@ -243,8 +220,7 @@ return {
         desc = "inner function",
         mode = { "x", "o" },
       },
-
-    }
+    },
   },
   {
     "cbochs/portal.nvim",
