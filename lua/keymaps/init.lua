@@ -16,10 +16,6 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map({ "n", "x", "o" }, "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
 map({ "n", "x", "o" }, "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
--- https://github.com/mhinz/vim-galore#saner-command-line-history
-map("c", "<C-n>", "wildmenumode() ? '<C-n>' : '<Down>'", { expr = true, desc = "Go to next item." })
-map("c", "<C-p>", "wildmenumode() ? '<C-p>' : '<Up>'", { expr = true, desc = "Go to next prev." })
-
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
