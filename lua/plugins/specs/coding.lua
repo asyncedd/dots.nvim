@@ -48,6 +48,7 @@ return {
     dependencies = {
       "windwp/nvim-autopairs",
     },
+    commit = "f92801d",
     event = { "InsertEnter", "CmdlineEnter" },
   },
   {
