@@ -23,7 +23,7 @@ M.config = function()
         "not",
       },
       word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
-      cyclic = true,  -- "or" is incremented into "and".
+      cyclic = true, -- "or" is incremented into "and".
     }),
   }
 

@@ -190,14 +190,74 @@ return {
   {
     "monaqa/dial.nvim",
     keys = {
-      { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
-      { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Increment" },
-      { "g<C-a>", function() return require("dial.map").inc_gnormal() end, expr = true, desc = "gIncrement" },
-      { "g<C-x>", function() return require("dial.map").dec_gnormal() end, expr = true, desc = "gIncrement" },
-      { "<C-a>", function() return require("dial.map").inc_visual() end, expr = true, desc = "Increment", mode = "x" },
-      { "<C-x>", function() return require("dial.map").dec_visual() end, expr = true, desc = "Increment", mode = "x" },
-      { "g<C-a>", function() return require("dial.map").inc_gvisual() end, expr = true, desc = "gIncrement", mode = "x" },
-      { "g<C-x>", function() return require("dial.map").dec_gvisual() end, expr = true, desc = "gIncrement", mode = "x" },
+      {
+        "<C-a>",
+        function()
+          return require("dial.map").inc_normal()
+        end,
+        expr = true,
+        desc = "Increment",
+      },
+      {
+        "<C-x>",
+        function()
+          return require("dial.map").dec_normal()
+        end,
+        expr = true,
+        desc = "Increment",
+      },
+      {
+        "g<C-a>",
+        function()
+          return require("dial.map").inc_gnormal()
+        end,
+        expr = true,
+        desc = "gIncrement",
+      },
+      {
+        "g<C-x>",
+        function()
+          return require("dial.map").dec_gnormal()
+        end,
+        expr = true,
+        desc = "gIncrement",
+      },
+      {
+        "<C-a>",
+        function()
+          return require("dial.map").inc_visual()
+        end,
+        expr = true,
+        desc = "Increment",
+        mode = "x",
+      },
+      {
+        "<C-x>",
+        function()
+          return require("dial.map").dec_visual()
+        end,
+        expr = true,
+        desc = "Increment",
+        mode = "x",
+      },
+      {
+        "g<C-a>",
+        function()
+          return require("dial.map").inc_gvisual()
+        end,
+        expr = true,
+        desc = "gIncrement",
+        mode = "x",
+      },
+      {
+        "g<C-x>",
+        function()
+          return require("dial.map").dec_gvisual()
+        end,
+        expr = true,
+        desc = "gIncrement",
+        mode = "x",
+      },
     },
     config = function()
       require("plugins.configs.coding.dial").config()
