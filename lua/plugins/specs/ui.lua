@@ -140,7 +140,17 @@ return {
     opts = function()
       return require("plugins.configs.ui.neoscroll")
     end,
-    event = "VeryLazy",
+    keys = {
+      { "<C-u>", modes = { "n", "x", "o" } },
+      { "<C-d>", modes = { "n", "x", "o" } },
+      { "<C-b>", modes = { "n", "x", "o" } },
+      { "<C-f>", modes = { "n", "x", "o" } },
+      { "<C-y>", modes = { "n", "x", "o" } },
+      { "<C-e>", modes = { "n", "x", "o" } },
+      { "zt", modes = { "n", "x", "o" } },
+      { "zz", modes = { "n", "x", "o" } },
+      { "zb", modes = { "n", "x", "o" } },
+    },
   },
   {
     "folke/drop.nvim",
