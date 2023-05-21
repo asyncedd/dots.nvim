@@ -44,9 +44,9 @@ return {
     -- additional_vim_regex_highlighting = true
   },
 
-  indent = {
-    -- Enable Treesitter-based indentation.
-    -- It'll override the `=` operator and, others.
-    enable = true,
-  },
+  -- indent = {
+  --   -- Enable Treesitter-based indentation.
+  --   -- It'll override the `=` operator and, others.
+  --   enable = true,
+  -- },
 }

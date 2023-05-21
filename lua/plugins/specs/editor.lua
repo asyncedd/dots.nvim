@@ -6,6 +6,14 @@ return {
     end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
+
+      vim.schedule(function()
+        require("nvim-treesitter.configs").setup({
+          indent = {
+            enable = true,
+          },
+        })
+      end)
     end,
     init = function()
       require("core.utils.lazy_load")("nvim-treesitter")
