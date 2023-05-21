@@ -210,11 +210,6 @@ return {
     event = "CmdlineEnter",
   },
   {
-    "gen740/SmoothCursor.nvim",
-    opts = true,
-    event = "VeryLazy",
-  },
-  {
     "tamton-aquib/keys.nvim",
     opts = { enable_on_startup = true },
     event = "VeryLazy",
