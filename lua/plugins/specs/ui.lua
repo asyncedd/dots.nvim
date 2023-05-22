@@ -200,4 +200,9 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "folke/paint.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
