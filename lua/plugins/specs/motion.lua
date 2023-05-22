@@ -380,4 +380,11 @@ return {
     "mg979/vim-visual-multi",
     event = "VeryLazy",
   },
+  {
+    "ggandor/leap-ast.nvim",
+    dependencies = "leap.nvim",
+    keys = {
+      { "<leader><leader>", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "n", "o" } },
+    },
+  },
 }
