@@ -262,6 +262,30 @@ vim.schedule(function()
   o.cb = "unnamedplus"
 end)
 
+-- Virtual edit
+--
+-- We'll be setting virtual edit to be "block".
+-- What it does in question is that it'll make us able to select more than EOL in virtual block mode
+--
+-- EXAMPLE:
+--
+-- Normal mode:
+-- AAAAA█A -> $l -> AAAAAA█
+--
+-- You see, it's not going over EOL.
+--
+-- But, in visual block mode. (<C-v>)
+--
+-- it can go oer EOL
+--
+-- like:
+--
+-- ████ -> ra aaaa
+-- ████       aaaa
+-- Wow, there's a funny square
+
+o.ve = "block"
+
 -- CODE: hFy
 -- #############################
 -- #           3. UI           #
