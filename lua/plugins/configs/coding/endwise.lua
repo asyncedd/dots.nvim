@@ -1,0 +1,5 @@
+return {
+  endwise = {
+    enable = true,
+  },
+}
