@@ -38,18 +38,8 @@ return {
     opts = function()
       return require("plugins.configs.coding.autopairs")
     end,
-    config = function(opts)
-      require("ultimate-autopair").setup(opts.upair)
-
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-      local cmp = require("cmp")
-      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-    end,
-    dependencies = {
-      "windwp/nvim-autopairs",
-    },
-    commit = "f92801d",
     event = { "InsertEnter", "CmdlineEnter" },
+    commit = "dace596",
   },
   {
     "kylechui/nvim-surround",
