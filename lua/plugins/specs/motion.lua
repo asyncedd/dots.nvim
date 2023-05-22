@@ -34,6 +34,22 @@ return {
     },
   },
   {
+    "ggandor/flit.nvim",
+    opts = {
+      labeled_modes = "nvoi",
+    },
+    config = true,
+    dependencies = {
+      "leap.nvim",
+    },
+    keys = {
+      { "f", mode = { "n", "x", "o" }, desc = "Move to next char" },
+      { "F", mode = { "n", "x", "o" }, desc = "Move to prev char" },
+      { "t", mode = { "n", "x", "o" }, desc = "Move before next char" },
+      { "T", mode = { "n", "x", "o" }, desc = "Move before prev char" },
+    },
+  },
+  {
     "echasnovski/mini.ai",
     opts = function()
       return require("plugins.configs.motion.ai")
@@ -369,30 +385,6 @@ return {
     dependencies = "leap.nvim",
     keys = {
       { "<leader><leader>", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "n", "o" } },
-    },
-  },
-  {
-    "jinh0/eyeliner.nvim",
-    opts = function()
-      return require("plugins.configs.motion.eyeliner")
-    end,
-    keys = {
-      {
-        "f",
-        mode = { "n", "x", "o" },
-      },
-      {
-        "F",
-        mode = { "n", "x", "o" },
-      },
-      {
-        "t",
-        mode = { "n", "x", "o" },
-      },
-      {
-        "T",
-        mode = { "n", "x", "o" },
-      },
     },
   },
 }
