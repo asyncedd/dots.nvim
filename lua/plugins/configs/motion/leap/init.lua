@@ -5,3 +5,5 @@
 -- `x`/`X` to leap foward and backwards until x respectively. (for visual and operator mode)
 
 require("leap").opts.highlight_unlabeled_phase_one_targets = true
+
+require("leap").add_default_mappings()
