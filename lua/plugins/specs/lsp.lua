@@ -54,15 +54,9 @@ return {
   },
   {
     "folke/neodev.nvim",
-    opts = {
-      library = {
-        plugins = false,
-        runtime = true,
-        types = true,
-      },
-      -- lspconfig = false,
-      pathStrict = true,
-    },
+    opts = function()
+      return require("plugins.configs.lsp.neodev")
+    end,
     config = true,
   },
   {
