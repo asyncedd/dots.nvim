@@ -20,7 +20,7 @@ return {
       "smart-open.nvim",
     },
     keys = {
-      { "<leader>ff", "<cmd>Telescope smart_open<CR>", desc = "Find files" },
+      { "<leader>ff", "<cmd>lua require('telescope').extensions.smart_open.smart_open({ cwd_only = true })<CR>", desc = "Find files" },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Find grep" },
       { "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>>", desc = "Fuzzy find in buffer" },
     },
@@ -67,9 +67,6 @@ return {
   },
   {
     "danielfalk/smart-open.nvim",
-    config = function()
-      require("telescope").load_extension("smart_open")
-    end,
     dependencies = {
       "kkharji/sqlite.lua",
     },
