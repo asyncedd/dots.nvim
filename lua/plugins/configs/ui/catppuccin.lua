@@ -146,6 +146,16 @@ return {
       KillerPoop = { bg = C.text, fg = C.text },
       KillerLevel = { bg = C.blue, fg = C.text },
       KillerLevelX = { bg = C.yellow, fg = C.blue },
+
+      -- Alpha
+      StartLogo1 = { fg = C.blue },
+      StartLogo2 = { fg = C.blue },
+      StartLogo3 = { fg = C.blue },
+      StartLogo4 = { fg = C.blue },
+      StartLogo5 = { fg = C.blue },
+      StartLogo6 = { fg = C.yellow },
+      StartLogo7 = { fg = C.yellow },
+      StartLogo8 = { fg = C.yellow },
     }
   end,
   integrations = {
