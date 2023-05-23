@@ -7,4 +7,6 @@ return {
     insert = C.green,
     visual = C.pink,
   },
+  set_cursorline = true,
+  set_number = true,
 }
