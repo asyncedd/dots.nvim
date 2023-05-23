@@ -1,5 +1,8 @@
 return {
   Lua = {
+    hint = {
+      enable = true,
+    },
     runtime = {
       pathStrict = true,
     },

@@ -25,6 +25,10 @@ capabilities.textDocument.foldingRange = {
   lineFoldingOnly = true,
 }
 
+capabilities.textDocument = {
+  inlayHint = true,
+}
+
 lspconfig.lua_ls.setup({
   capabilities = capabilities,
 
