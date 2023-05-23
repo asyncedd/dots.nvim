@@ -134,4 +134,9 @@ return {
       })
     end,
   },
+  {
+    "VidocqH/lsp-lens.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
