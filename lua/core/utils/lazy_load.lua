@@ -10,7 +10,7 @@ return function(plugin)
 
         -- dont defer for treesitter as it will show slow highlighting
         -- This deferring only happens only when we do "nvim filename"
-        if plugin ~= "nvim-treesitter" then
+        if plugin ~= "nvim-treesitter" and plugin ~= "heirline.nvim" then
           vim.schedule(function()
             require("lazy").load({ plugins = plugin })
 

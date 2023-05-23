@@ -82,7 +82,10 @@ return {
       return require("plugins.configs.ui.heirline")
     end,
     config = true,
-    event = { "VeryLazy", "BufReadPost" },
+    event = "VeryLazy",
+    init = function()
+      require("core.utils.lazy_load")("heirline.nvim")
+    end,
     dependencies = {
       {
         "jcdickinson/wpm.nvim",
