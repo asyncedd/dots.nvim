@@ -131,7 +131,20 @@ return {
     opts = function()
       return require("plugins.configs.ui.alpha")
     end,
-    config = true,
+    config = function(_, opts)
+      -- close Lazy and re-open when the dashboard is ready
+      if vim.o.filetype == "lazy" then
+        vim.cmd.close()
+        vim.api.nvim_create_autocmd("User", {
+          pattern = "AlphaReady",
+          callback = function()
+            require("lazy").show()
+          end,
+        })
+      end
+
+      require("alpha").setup(opts)
+    end,
     init = function()
       if vim.fn.expand("%") == "" then
         require("lazy").load({ plugins = "alpha-nvim" })
