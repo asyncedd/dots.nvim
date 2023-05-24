@@ -36,6 +36,8 @@ Dependencies:
 - `fzf` for Telescope!
 - `fd` for Telescope too!
 - `sqlite3` for sqlite.lua
+- `npm` for some LSP servers
+- `cargo` just in case.
 
 Other Dependencies:
 
