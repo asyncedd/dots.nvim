@@ -82,6 +82,16 @@ M.cmp = {
     { name = "emoji", priority = 10000 },
     { name = "nvim_lsp" },
     { name = "luasnip" },
+    {
+      name = "spell",
+      option = {
+        keep_all_entries = false,
+        enable_in_context = function()
+          -- Only enable spell inside @spell Treesitter captures
+          return require('cmp.config.context').in_treesitter_capture('spell')
+        end,
+      },
+    },
     { name = "buffer", keyword_length = 3 },
     { name = "cmp_tabnine", keyword_length = 3 },
     -- { name = "codeium", keyword_length = 3 },
@@ -99,6 +109,7 @@ M.cmp = {
         emoji = "😃",
         cmdline = "🐧",
         codeium = "🤖",
+        spell = "🤓"
         -- rg = "🔭",
       },
       before = function(_, vim_item)
@@ -131,7 +142,7 @@ M.cmp = {
 }
 
 M.cmd = function()
-  -- Use buffer s urce for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+  -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
