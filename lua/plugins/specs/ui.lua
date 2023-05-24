@@ -1,3 +1,9 @@
+-- lua/plugins/specs/ui.lua
+--
+--  ┌
+--  │               Plugins that improve the UI
+--  └
+
 return {
   {
     "catppuccin/nvim",

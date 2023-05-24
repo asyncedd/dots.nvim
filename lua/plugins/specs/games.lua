@@ -1,3 +1,10 @@
+-- lua/plugins/specs/games.lua
+--
+--  ┌
+--  │    Add games into the best editor (hands down) whilst
+--  │               stealing ideas from an Emacs
+--  └
+
 return {
   {
     "ThePrimeagen/vim-be-good",

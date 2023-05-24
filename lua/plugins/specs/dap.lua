@@ -1,3 +1,9 @@
+-- lua/plugins/specs/dap.lua
+--
+--  ┌
+--  │              Plugins for debugging purposes
+--  └
+
 return {
   {
     "mfussenegger/nvim-dap",

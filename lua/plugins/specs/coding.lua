@@ -1,3 +1,9 @@
+-- lua/plugins/specs/coding.lua
+--
+--  ┌
+--  │       Add better coding functionality into Neovim
+--  └
+
 return {
   {
     "L3MON4D3/LuaSnip",

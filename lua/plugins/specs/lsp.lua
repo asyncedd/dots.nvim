@@ -1,3 +1,10 @@
+-- lua/plugins/specs/lsp.lua
+--
+--  ┌
+--  │     Make Vim better than VSCode, even though it has
+--  │                   always have been 🔫
+--  └
+
 return {
   {
     "williamboman/mason.nvim",

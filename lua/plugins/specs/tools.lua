@@ -1,3 +1,9 @@
+-- lua/plugins/specs/tools.lua
+--
+--  ┌
+--  │              Some tools for the best editor
+--  └
+
 return {
   {
     "nvim-telescope/telescope.nvim",

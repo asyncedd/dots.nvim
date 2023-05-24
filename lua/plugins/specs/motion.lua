@@ -1,3 +1,9 @@
+-- lua/plugins/specs/motion.lua
+--
+--  ┌
+--  │  Easy motions but, powerful motions. (and textobjects)
+--  └
+
 return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",

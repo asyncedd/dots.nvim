@@ -1,3 +1,9 @@
+-- lua/plugins/specs/editor.lua
+--
+--  ┌
+--  │             Plugins for enhancing the editor
+--  └
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
