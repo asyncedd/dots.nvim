@@ -67,4 +67,8 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "zdharma-continuum/zinit-vim-syntax",
+    ft = "zsh",
+  },
 }
