@@ -40,7 +40,6 @@ return {
       return require("plugins.configs.coding.autopairs")
     end,
     event = { "InsertEnter", "CmdlineEnter" },
-    commit = "dace596",
   },
   {
     "kylechui/nvim-surround",
