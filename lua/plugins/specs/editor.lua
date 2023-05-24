@@ -71,4 +71,12 @@ return {
     "zdharma-continuum/zinit-vim-syntax",
     ft = "zsh",
   },
+  {
+    "fladson/vim-kitty",
+    ft = {
+      "conf",
+      "session",
+      "kitty",
+    },
+  },
 }
