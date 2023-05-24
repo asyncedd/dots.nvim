@@ -16,7 +16,7 @@ return {
     opts = function()
       return require("plugins.configs.coding.cmp")
     end,
-    tree = "async",
+    branch = "async",
     config = function(_, opts)
       require("cmp").setup(opts.cmp)
       opts.cmd()
