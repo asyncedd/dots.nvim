@@ -133,14 +133,14 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     opts = true,
-    config = function()
-      return require("plugins.configs.dap.ui")
+    config = function(_, opts)
+      return require("plugins.configs.dap.ui")(_, opts)
     end,
     keys = {
       {
         "<leader>du",
         function()
-          require("dapui").toggle()
+          require("dapui").toggle({ })
         end,
         desc = "UI",
       },
