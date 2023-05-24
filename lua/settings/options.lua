@@ -161,7 +161,7 @@ o.ai = true
 
 o.si = true
 
--- Set Shiftwith to 2.
+-- Set Shiftwidth to 2.
 --
 -- Shiftwidth sets the number of spaces of each (auto)indent.
 -- Used for "cindent" >> and <<.
@@ -170,13 +170,13 @@ o.si = true
 -- When zero, the "tabstop" will be used.
 --
 -- SOME PERSONAL FACTORS:
--- Why I've used 2 is a matter of personal prefences.
+-- Why I've used 2 is a matter of personal preferences.
 -- But, here are some reasons on why:
 --   * Spaces (which we'll be using) are more flexible than tabs and, more "global" than tabs.
 --   * Two is the perfect balance of readability and screen real estate.
 --   * Most people uses 2 spaces.
 --
--- So, in summary, they're simply a matter of personal prefences.
+-- So, in summary, they're simply a matter of personal preferences.
 --
 -- FACT: "sw" abbreviates "shift width"
 
@@ -187,7 +187,7 @@ o.sw = 2
 -- If "shiftwidth" is two, it's only logical to also set <Tab>s to two.
 --
 -- I'll go for a very brief explanation on what Tabstop does.
--- It's bascially saying to Neovim to use two spaces for each <Tab> inserted.
+-- It's basically saying to Neovim to use two spaces for each <Tab> inserted.
 -- So, it's mainly for consistency.
 --
 -- FACT: "ts" abbreviations of "tabstop"
@@ -196,7 +196,7 @@ o.ts = 2
 
 -- Enable Expandtab.
 --
--- In Insert Mode: Use the appropiate number of spaces to insert a <Tab>.
+-- In Insert Mode: Use the appropriate number of spaces to insert a <Tab>.
 -- Spaces will also be used in indents too!
 --
 -- TIP: To insert a real tab when, "expandtab" is turned on, use <C-v><Tab>!
@@ -246,7 +246,7 @@ o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
 
--- Unfofile
+-- Undofile
 --
 -- Automatically save undo history to an undo file when writing a buffer to a file, and when reading a file, restores undo history from the same file on buffer read.
 -- The directory used is set by 'undodir'.
@@ -284,6 +284,18 @@ end)
 -- ████       aaaa
 -- Wow, there's a funny square
 
+-- Setting up spell
+--
+-- Neovim has a builtin spell checker (Ha! Take that VSCode!) and, it's quite good (Spellsitter included)
+-- So, we're going to enable spell and enable it for EN-US.
+
+-- Enabling spell
+o.spell = true
+
+-- Setting the spell locale to be EN-US
+
+o.spelllang = "en_us"
+
 o.ve = "block"
 
 -- CODE: hFy
@@ -299,7 +311,7 @@ o.ve = "block"
 -- Print the corresponding line number before each line.
 -- I don't really have any more context for this so, I'll end it right here.
 --
--- EXPAMPLE:
+-- EXAMPLE:
 --  1  -- init.lua
 --  2
 --  3  -- Blanklines and comments are counted!
@@ -310,30 +322,7 @@ o.ve = "block"
 
 o.nu = true
 
--- Enable Relativenumber.
---
--- Print the correspoding relative numbe rbefore each line.
--- So, for each line, it's basically a diff of the current line and the other line.
---
--- EXAMPLE:
---  3  -- init.lua
---  2
---  1  -- Blanklines and comments are counted!
--- 4   print("wow, this is so cool!")
---  1
---
--- FACT: "rnu" abbreviates "relativenumber"
-
 o.rnu = true
-
--- Enable Cursorline.
---
--- Highlight the text line of the cursor with cursorline hl-CursorLine.
--- VERY useful for figuring out where the cursor is.
--- BUT, will make screen redrawing a bit slower.
--- In VISUAL mode, it's disabled to make it easier to spot the selected text.
---
--- FACT: "cul" abbreviates to "cursorline"
 
 o.cul = true
 
