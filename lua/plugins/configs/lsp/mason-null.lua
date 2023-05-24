@@ -3,6 +3,7 @@ return {
     "stylua",
     "rustfmt",
     "beautysh",
+    "prettier",
   },
   automatic_installation = true,
 }

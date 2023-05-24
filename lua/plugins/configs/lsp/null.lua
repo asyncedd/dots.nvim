@@ -11,6 +11,7 @@ return {
     nls.builtins.formatting.beautysh.with({
       extra_args = { "-i", "2" },
     }),
+    nls.builtins.formatting.prettier,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
