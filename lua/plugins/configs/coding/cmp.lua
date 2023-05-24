@@ -84,7 +84,7 @@ M.cmp = {
     { name = "luasnip" },
     { name = "buffer", keyword_length = 3 },
     { name = "cmp_tabnine", keyword_length = 3 },
-    { name = "codeium", keyword_length = 3 },
+    -- { name = "codeium", keyword_length = 3 },
     -- { name = "rg", keyword_length = 3 },
   }),
   formatting = {
