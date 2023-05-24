@@ -284,6 +284,8 @@ end)
 -- ████       aaaa
 -- Wow, there's a funny square
 
+o.ve = "block"
+
 -- Setting up spell
 --
 -- Neovim has a builtin spell checker (Ha! Take that VSCode!) and, it's quite good (Spellsitter included)
@@ -296,7 +298,8 @@ o.spell = true
 
 o.spelllang = "en_us"
 
-o.ve = "block"
+-- Spell options
+-- Every 
 
 -- CODE: hFy
 --
