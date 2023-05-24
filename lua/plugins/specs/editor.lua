@@ -79,4 +79,16 @@ return {
       "kitty",
     },
   },
+  {
+    "LudoPinelli/comment-box.nvim",
+    opts = true,
+    keys = {
+      { "<leader>gcc", "<cmd>CBccbox<CR>", desc = "Center aligned comment box" },
+      { "<leader>gca", "<cmd>CBacbox<CR>", desc = "Center adapted comment box" },
+      { "<leader>gch", "<cmd>CBllbox<CR>", desc = "Left aligned comment box" },
+      { "<leader>gcl", "<cmd>CBrrbox<CR>", desc = "Right aligned comment box" },
+      { "<leader>gco", "<cmd>lua require('comment-box').catalog()<CR>", desc = "Open comment box catolog" },
+      { "<leader>gcp", ":CBcbox ", desc = "Pick comment box" },
+    },
+  },
 }
