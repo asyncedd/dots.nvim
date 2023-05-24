@@ -12,10 +12,11 @@ return {
     event = "VeryLazy",
   },
   {
-    "hrsh7th/nvim-cmp",
+    "folke/nvim-cmp",
     opts = function()
       return require("plugins.configs.coding.cmp")
     end,
+    tree = "async",
     config = function(_, opts)
       require("cmp").setup(opts.cmp)
       opts.cmd()
