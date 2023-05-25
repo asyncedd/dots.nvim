@@ -22,7 +22,6 @@ return {
     opts = function()
       return require("plugins.configs.coding.cmp")
     end,
-    branch = "async",
     config = function(_, opts)
       require("cmp").setup(opts.cmp)
       opts.cmd()
