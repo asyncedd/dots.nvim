@@ -640,7 +640,7 @@ M.wpm = {
         bg = "bright_bg",
       }
     end,
-    update = { "InsertCharPre", "ModeChanged" },
+    update = { "InsertCharPre", "ModeChanged", "User WPM" },
   },
   {
     provider = " ",

@@ -94,7 +94,7 @@ return {
     end,
     dependencies = {
       {
-        "jcdickinson/wpm.nvim",
+        "asyncedd/wpm.nvim",
         config = true,
       },
       "nvim-web-devicons",
