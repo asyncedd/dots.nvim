@@ -286,21 +286,6 @@ end)
 
 o.ve = "block"
 
--- Setting up spell
---
--- Neovim has a builtin spell checker (Ha! Take that VSCode!) and, it's quite good (Spellsitter included)
--- So, we're going to enable spell and enable it for EN-US.
-
--- Enabling spell
-o.spell = true
-
--- Setting the spell locale to be EN-US
-
-o.spelllang = "en_us"
-
--- Spell options
--- Every 
-
 -- CODE: hFy
 --
 --  ╭──────────────────────────────────────────────────────────╮
