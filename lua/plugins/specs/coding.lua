@@ -18,7 +18,7 @@ return {
     event = "VeryLazy",
   },
   {
-    "folke/nvim-cmp",
+    "hrsh7th/nvim-cmp",
     opts = function()
       return require("plugins.configs.coding.cmp")
     end,
