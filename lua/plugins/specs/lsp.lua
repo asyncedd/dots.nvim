@@ -63,9 +63,6 @@ return {
     config = function(_, opts)
       require("plugins.configs.lsp.null")(opts)
     end,
-    dependencies = {
-      "jay-babu/mason-null-ls.nvim",
-    },
     init = function()
       require("core.utils.lazy_load")("null-ls.nvim")
     end,
