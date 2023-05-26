@@ -319,17 +319,4 @@ return {
       { "=P", "<Plug>(YankyPutBeforeFilter)" },
     },
   },
-  {
-    "RRethy/nvim-treesitter-endwise",
-    opts = function()
-      return require("plugins.configs.coding.endwise")
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
-    dependencies = {
-      "nvim-treesitter",
-    },
-    event = "InsertEnter",
-  },
 }

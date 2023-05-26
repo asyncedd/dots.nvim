@@ -1,5 +1,0 @@
-return {
-  endwise = {
-    enable = true,
-  },
-}
