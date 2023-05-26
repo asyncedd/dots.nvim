@@ -68,6 +68,7 @@ local servers = {
   },
   tailwindcss = {},
   marksman = {},
+  ["prosemd_lsp"] = {},
 }
 
 local setup = function(server)
