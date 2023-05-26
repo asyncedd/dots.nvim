@@ -35,8 +35,33 @@ return {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-      require("plugins.configs.lsp.null")
+    opts = function()
+      local nls = require("null-ls")
+      return {
+        -- A list of sources to install
+        ---@type string[]
+        ensure_installed = {
+          "stylua",
+          "beautysh",
+          "prettier",
+        },
+        sources = {
+          nls.builtins.formatting.fish_indent,
+          nls.builtins.diagnostics.fish,
+          nls.builtins.formatting.stylua.with({
+            condition = function(utils)
+              return utils.root_has_file({ "stylua.toml" })
+            end,
+          }),
+          nls.builtins.formatting.beautysh.with({
+            extra_args = { "-i", "2" },
+          }),
+          nls.builtins.formatting.prettier,
+        },
+      }
+    end,
+    config = function(_, opts)
+      require("plugins.configs.lsp.null")(opts)
     end,
     dependencies = {
       "jay-babu/mason-null-ls.nvim",
