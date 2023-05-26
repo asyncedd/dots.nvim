@@ -1,6 +1,18 @@
--- Enable the experimental new loader.
+-- Enable the experimental Lua loader.
+--
+-- What it does is:
+-- - Overrides loadfile
+-- - Adds the Lua loader using the byte-compilation cache
+-- - Adds the libs loader
+-- - Removes the default Neovim loader
+--
+-- The default Neovim loader is:
+-- https://neovim.io/doc/user/starting#initialization
+--
+-- This only starts from step 7 in the initialization process.
 vim.loader.enable()
 
+-- Check it at lua/settings/options.lua as I've documented heavily
 -- Set some options.
 require("settings.options")
 
