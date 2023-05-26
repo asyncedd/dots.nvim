@@ -1,5 +1,3 @@
-local lspconfig = require("lspconfig")
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 capabilities.textDocument = {
@@ -31,13 +29,43 @@ capabilities.textDocument = {
 
 local servers = {
   lua_ls = {
-    settings = require("plugins.configs.lsp.servers.lua_ls"),
+    Lua = {
+      hint = {
+        enable = true,
+      },
+      runtime = {
+        pathStrict = true,
+      },
+      completion = {
+        callSnippet = "Both",
+      },
+      diagnostics = {
+        globals = {
+          "vim",
+        },
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          -- [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+          [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
+        },
+        maxPreload = 100000,
+        preloadFileSize = 10000,
+        checkThirdParty = false,
+      },
+    },
   },
-  rust_analyzer = {
-    settings = require("plugins.configs.lsp.servers.rust-analyzer"),
-  },
+  rust_analyzer = {},
   cssls = {},
-  jsonls = {},
+  jsonls = {
+    settings = {
+      json = {
+        schemas = require("schemastore").json.schemas(),
+        validate = { enable = true },
+      },
+    },
+  },
   tailwindcss = {},
 }
 
@@ -45,7 +73,7 @@ local setup = function(server)
   local server_opts = vim.tbl_deep_extend("force", {
     capabilities = vim.deepcopy(capabilities),
   }, servers[server] or {})
-  require("lspconfig")[server].setup(server_opts)
+  require("lspconfig")[server].setup({ settings = server_opts })
 end
 
 -- get all the servers that are available thourgh mason-lspconfig
