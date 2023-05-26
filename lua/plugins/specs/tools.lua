@@ -7,8 +7,11 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    config = function()
-      require("telescope").setup()
+    opts = function()
+      return require("plugins.configs.tools.telescope")
+    end,
+    config = function(_, opts)
+      require("telescope").setup(opts)
 
       require("telescope").load_extension("fzf")
 
