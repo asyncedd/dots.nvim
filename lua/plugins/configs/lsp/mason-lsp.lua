@@ -4,5 +4,6 @@ return {
     "cssls",
     "rust_analyzer",
     "jsonls",
+    "tailwindcss",
   },
 }

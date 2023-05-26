@@ -50,3 +50,7 @@ lspconfig.jsonls.setup({
 
   settings = require("plugins.configs.lsp.servers.jsonls"),
 })
+
+lspconfig.tailwindcss.setup({
+  capabilities = capabilities,
+})
