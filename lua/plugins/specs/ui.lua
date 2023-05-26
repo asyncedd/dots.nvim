@@ -189,20 +189,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "NvChad/nvim-colorizer.lua",
-    init = function()
-      require("core.utils.lazy_load")("nvim-colorizer.lua")
-    end,
-    config = function(_, opts)
-      require("colorizer").setup(opts)
-
-      -- execute colorizer as soon as possible
-      vim.defer_fn(function()
-        require("colorizer").attach_to_buffer(0)
-      end, 0)
-    end,
-  },
-  {
     "folke/zen-mode.nvim",
     dependencies = {
       { "folke/twilight.nvim", opts = true },
@@ -226,6 +212,16 @@ return {
     "mvllow/modes.nvim",
     opts = function()
       return require("plugins.configs.ui.modes")
+    end,
+    event = "VeryLazy",
+  },
+  {
+    "echasnovski/mini.hipatterns",
+    opts = function()
+      return require("plugins.configs.ui.hipatterns")
+    end,
+    config = function(_, opts)
+      require("mini.hipatterns").setup(opts)
     end,
     event = "VeryLazy",
   },
