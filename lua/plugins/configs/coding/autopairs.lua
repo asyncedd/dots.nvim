@@ -12,9 +12,13 @@ M.ultimate = {
     indent_ignore = true,
   },
   cr = {
-    enable = true,
-    autoclose = true,
+    enable = false,
   },
+}
+
+M.autopairs = {
+  map_bs = false,
+  map_cr = true,
 }
 
 return M

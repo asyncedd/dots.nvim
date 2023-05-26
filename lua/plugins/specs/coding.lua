@@ -54,6 +54,13 @@ return {
     event = { "InsertEnter", "CmdlineEnter" },
   },
   {
+    "windwp/nvim-autopairs",
+    opts = function()
+      return require("plugins.configs.coding.autopairs").autopairs
+    end,
+    event = "InsertEnter",
+  },
+  {
     "kylechui/nvim-surround",
     opts = function()
       return require("plugins.configs.coding.surround")
