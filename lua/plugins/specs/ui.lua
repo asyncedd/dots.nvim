@@ -214,4 +214,12 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "haringsrob/nvim_context_vt",
+    opts = true,
+    dependencies = {
+      "nvim-treesitter",
+    },
+    event = "VeryLazy",
+  },
 }
