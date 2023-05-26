@@ -12,7 +12,7 @@ local hipatterns = require("mini.hipatterns")
 return {
   highlighters = {
     -- Hex color is Hex color
-    hex_color = hipatterns.gen_highlighter.hex_color({ priority = 5000 }),
+    hex_color = hipatterns.gen_highlighter.hex_color({ priority = 5000, style = "#" }),
     word_color = { pattern = "%S+", group = require("plugins.configs.ui.hipatterns.words") },
     tailwind = {
       pattern = require("plugins.configs.ui.hipatterns.tailwind").pattern,
@@ -20,6 +20,3 @@ return {
     },
   },
 }
-
--- TEST:
--- #ffffff
