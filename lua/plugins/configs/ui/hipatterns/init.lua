@@ -1,7 +1,4 @@
-local M = {}
-
 local hipatterns = require("mini.hipatterns")
-local hex_color = hipatterns.gen_highlighter.hex_color({ priority = 5000 })
 
 -- These are some colors for Tailwind CSS
 --
@@ -15,7 +12,7 @@ local hex_color = hipatterns.gen_highlighter.hex_color({ priority = 5000 })
 return {
   highlighters = {
     -- Hex color is Hex color
-    hex_color = hex_color,
+    hex_color = hipatterns.gen_highlighter.hex_color({ priority = 5000 }),
     word_color = { pattern = "%S+", group = require("plugins.configs.ui.hipatterns.words") },
     tailwind = {
       pattern = require("plugins.configs.ui.hipatterns.tailwind").pattern,
