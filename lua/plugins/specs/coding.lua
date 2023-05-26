@@ -29,7 +29,11 @@ return {
       return require("plugins.configs.coding.cmp")
     end,
     config = function(_, opts)
-      require("cmp").setup(opts.cmp)
+      local cmp = require("cmp")
+      -- Auto pairs
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+      cmp.setup(opts.cmp)
       opts.cmd()
     end,
     event = { "InsertEnter", "VeryLazy", "CmdlineEnter" },
