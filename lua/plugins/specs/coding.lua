@@ -7,7 +7,13 @@
 return {
   {
     "L3MON4D3/LuaSnip",
-    build = "make install_jsregexp",
+    build = function()
+      if not jit.os:find("Windows") then
+        return "echo -e 'NOTE: jsregexp is optional, so not a big deal if it fails to build\n'; make install_jsregexp"
+      else
+        return nil
+      end
+    end,
     config = function()
       return require("plugins.configs.coding.luasnip")
     end,
