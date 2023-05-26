@@ -13,7 +13,7 @@ return {
     }),
     nls.builtins.formatting.prettier,
   },
-  on_attach = function(client, bufnr)
+  on_attach = function(client)
     if
       client.config
       and client.config.capabilities
