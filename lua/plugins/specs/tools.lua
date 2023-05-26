@@ -23,7 +23,6 @@ return {
         build = "make",
       },
       "plenary.nvim",
-      "smart-open.nvim",
     },
     keys = {
       -- { "<leader>ff", "<cmd>lua require('telescope').extensions.smart_open.smart_open({ cwd_only = true })<CR>", desc = "Find files" },
@@ -70,12 +69,6 @@ return {
     },
     keys = {
       { "<leader>cc", "<cmd>AerialToggle<CR>" },
-    },
-  },
-  {
-    "danielfalk/smart-open.nvim",
-    dependencies = {
-      "kkharji/sqlite.lua",
     },
   },
 }
