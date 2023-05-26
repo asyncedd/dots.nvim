@@ -18,6 +18,7 @@ return {
   highlighters = {
     -- Hex color is Hex color
     hex_color = hex_color,
+    word_color = { pattern = "%S+", group = require("plugins.configs.ui.hipatterns.words") },
     tailwind = {
       pattern = function()
         if not vim.tbl_contains(tailwind_ft, vim.bo.filetype) then
