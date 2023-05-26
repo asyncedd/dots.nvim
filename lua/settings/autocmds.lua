@@ -1,11 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
 
-autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
 -- go to last loc when opening a buffer
 autocmd("BufReadPost", {
   callback = function()
