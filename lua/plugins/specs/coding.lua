@@ -42,6 +42,7 @@ return {
       "hrsh7th/cmp-cmdline",
       "cmp-tabnine",
       "hrsh7th/cmp-emoji",
+      "tailwindcss-colorizer-cmp.nvim",
       -- "codeium.nvim",
     },
   },
@@ -338,5 +339,9 @@ return {
       { "=p", "<Plug>(YankyPutAfterFilter)" },
       { "=P", "<Plug>(YankyPutBeforeFilter)" },
     },
+  },
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    opts = true,
   },
 }
