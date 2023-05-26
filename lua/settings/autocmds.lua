@@ -19,3 +19,18 @@ autocmd("LSPAttach", {
     vim.g.lsp_attached = true
   end,
 })
+
+autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinNew" }, {
+  callback = function()
+    local file = vim.fn.expand("%")
+    local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+
+    if condition then
+      vim.api.nvim_exec_autocmds("User", { pattern = "UI" })
+      vim.schedule(function()
+        vim.api.nvim_exec_autocmds("User", { pattern = "After" })
+        vim.cmd("silent! do FileType")
+      end)
+    end
+  end,
+})

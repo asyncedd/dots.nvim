@@ -21,9 +21,7 @@ return {
         })
       end)
     end,
-    init = function()
-      require("core.utils.lazy_load")("nvim-treesitter")
-    end,
+    event = "User UI",
     build = ":TSUpdate",
   },
   {
@@ -43,9 +41,7 @@ return {
       return require("plugins.configs.editor.gitsigns")
     end,
     config = true,
-    init = function()
-      require("core.utils.lazy_load")("gitsigns.nvim")
-    end,
+    event = "User After",
   },
   {
     "olimorris/persisted.nvim",

@@ -88,10 +88,7 @@ return {
       return require("plugins.configs.ui.heirline")
     end,
     config = true,
-    event = "VeryLazy",
-    init = function()
-      require("core.utils.lazy_load")("heirline.nvim")
-    end,
+    event = "User UI",
     dependencies = {
       {
         "jcdickinson/wpm.nvim",
@@ -127,10 +124,8 @@ return {
     event = {
       "LSPAttach",
       "VeryLazy",
+      "User After",
     },
-    init = function()
-      require("core.utils.lazy_load")("barbecue.nvim")
-    end,
   },
   {
     "goolord/alpha-nvim",

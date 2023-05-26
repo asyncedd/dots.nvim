@@ -102,9 +102,7 @@ return {
     dependencies = {
       "nvim-treesitter",
     },
-    init = function()
-      require("core.utils.lazy_load")("vim-matchup")
-    end,
+    event = "User After",
   },
   {
     "echasnovski/mini.bracketed",
