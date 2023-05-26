@@ -1,4 +1,12 @@
-return {
+local M = {}
+
+M.hipatterns = require("mini.hipatterns")
+
+M.hex_color = M.hipatterns.gen_highlighter.hex_color({ priority = 5000 })
+
+M.tailwind_ft = { "typescriptreact", "javascriptreact", "css", "javascript", "typescript", "html" }
+
+M.colors = {
   slate = {
     [50] = "f8fafc",
     [100] = "f1f5f9",
@@ -307,3 +315,19 @@ return {
     [950] = "4c0519",
   },
 }
+
+M.pattern = function()
+  if not vim.tbl_contains(M.tailwind_ft, vim.bo.filetype) then
+    return
+  end
+  return "%f[%w:-]()[%w:-]+%-[a-z%-]+%-%d+()%f[^%w:-]"
+end
+M.group = function(_, match)
+  local color, shade = match:match("[%w-]+%-([a-z%-]+)%-(%d+)")
+  local hex = vim.tbl_get(M.colors, color, tonumber(shade))
+  if hex then
+    return M.hex_color.group(nil, nil, { full_match = "#" .. hex })
+  end
+end
+
+return M
