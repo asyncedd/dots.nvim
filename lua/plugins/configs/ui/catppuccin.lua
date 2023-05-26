@@ -26,6 +26,7 @@ return {
       CmpItemMenu = { fg = C.text },
       CmpItemAbbrMatch = { fg = C.sky, style = { "bold" } },
       CmpItemAbbrMatchFuzzy = { fg = C.sky, style = { "bold" } },
+      PmenuSel = { bg = C.sky, fg = C.mantle, style = { "bold" } },
 
       -- kind support
       CmpItemKindField = { fg = C.rosewater, bg = tint(C.rosewater) },
