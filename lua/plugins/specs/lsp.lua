@@ -35,14 +35,6 @@ return {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    opts = {
-      -- A list of Null-LS sources to install
-      ---@type string[]
-      sources = {
-        "stylua",
-        "beautysh",
-      },
-    },
     config = function()
       require("plugins.configs.lsp.null")
     end,
