@@ -26,7 +26,11 @@ require("settings.autocmds")
 -- vim.cmd("colorscheme catppuccin")
 -- PERF: directly call catppuccin. (not via `vim.cmd("colorscheme x")`)
 -- HACK: Try to make this less hacky?
+
 require("catppuccin").load()
+
+-- Execute "Colorscheme" autocommands as they may be needed
+vim.api.nvim_exec_autocmds("Colorscheme", {})
 
 vim.schedule(function()
   -- TODO: Find a better way to load keymaps?
