@@ -1,5 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+-- ShaDa does save the last location of a buffer so, we can use that information to go back!
 -- go to last loc when opening a buffer
 autocmd("BufReadPost", {
   callback = function()
@@ -11,6 +12,8 @@ autocmd("BufReadPost", {
   end,
 })
 
+-- When a LSP server is attached, we'll set the vim.g.lsp_attached global to true.
+-- Then, we can use that for heirline to determine if there's a LSP server that is attached.
 autocmd("LSPAttach", {
   callback = function()
     vim.g.lsp_attached = true
