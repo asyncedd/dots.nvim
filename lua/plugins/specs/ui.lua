@@ -207,7 +207,7 @@ return {
     config = function(_, opts)
       require("mini.hipatterns").setup(opts)
     end,
-    event = "VeryLazy",
+    event = "User After",
   },
   {
     "haringsrob/nvim_context_vt",
@@ -215,6 +215,6 @@ return {
     dependencies = {
       "nvim-treesitter",
     },
-    event = "VeryLazy",
+    event = "User After",
   },
 }
