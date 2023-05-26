@@ -101,7 +101,7 @@
   "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" },
   "vim-snippets": { "branch": "master", "commit": "76e35f37aa9e47a8b7f2909de222844ae38c7007" },
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
-  "wpm.nvim": { "branch": "main", "commit": "bc76dc86777dda92d1c3d0b50f9f0b4f82ee2927" },
+  "wpm.nvim": { "branch": "main", "commit": "968c213143311cd07acb299ebe5445f68ae57a67" },
   "yanky.nvim": { "branch": "main", "commit": "4b4a36b49062992a353f44c3e95187952e319b29" },
   "zen-mode.nvim": { "branch": "main", "commit": "68f554702de63f4b7b6b6d4bcb10178f41a0acc7" },
   "zinit-vim-syntax": { "branch": "main", "commit": "109eea5ff87dc046b2bc9f5e9a765941936f30e0" }
