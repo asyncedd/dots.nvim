@@ -12,10 +12,6 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = function()
-      return require("plugins.configs.lsp.mason-lsp")
-    end,
-    config = true,
     dependencies = {
       "williamboman/mason.nvim",
     },
