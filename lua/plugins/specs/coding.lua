@@ -131,7 +131,13 @@ return {
         end,
       })
     end,
-    build = "./install.sh",
+    build = function()
+      if not jit.os:find("Windows") then
+        return "./install.sh"
+      else
+        return "powershell ./install.ps1"
+      end
+    end,
   },
   {
     "nvim-pack/nvim-spectre",
