@@ -78,9 +78,9 @@ return {
       TelescopePromptBorder = { bg = C.surface0, fg = C.surface0 },
       TelescopeResultsBorder = { bg = C.mantle, fg = C.mantle },
       TelescopePreviewBorder = { bg = C.crust, fg = C.crust },
-      TelescopePromptTitle = { fg = C.surface0, bg = C.surface0 },
-      TelescopeResultsTitle = { fg = C.mantle, bg = C.mantle },
-      TelescopePreviewTitle = { fg = C.crust, bg = C.crust },
+      TelescopePromptTitle = { fg = C.surface0, bg = C.sky },
+      TelescopeResultsTitle = { fg = C.mantle, bg = C.mauve },
+      TelescopePreviewTitle = { fg = C.crust, bg = C.green },
 
       -- Illumiate
       IlluminatedWordText = { bg = U.darken(C.surface1, 0.7, C.base) },
