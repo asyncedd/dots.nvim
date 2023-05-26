@@ -1,4 +1,6 @@
-return {
+local M = {}
+
+M.ultimate = {
   space = {
     enable = true,
   },
@@ -14,3 +16,5 @@ return {
     autoclose = true,
   },
 }
+
+return M

@@ -49,7 +49,7 @@ return {
   {
     "altermo/ultimate-autopair.nvim",
     opts = function()
-      return require("plugins.configs.coding.autopairs")
+      return require("plugins.configs.coding.autopairs").ultimate
     end,
     event = { "InsertEnter", "CmdlineEnter" },
   },
