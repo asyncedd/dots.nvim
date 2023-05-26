@@ -17,16 +17,6 @@ return {
     },
   },
   {
-    "jay-babu/mason-null-ls.nvim",
-    opts = function()
-      return require("plugins.configs.lsp.mason-null")
-    end,
-    config = true,
-    dependencies = {
-      "williamboman/mason.nvim",
-    },
-  },
-  {
     "neovim/nvim-lspconfig",
     config = function()
       require("plugins.configs.lsp.config")
@@ -45,12 +35,19 @@ return {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    opts = function()
-      return require("plugins.configs.lsp.null")
+    opts = {
+      -- A list of Null-LS sources to install
+      ---@type string[]
+      sources = {
+        "stylua",
+        "beautysh",
+      },
+    },
+    config = function()
+      require("plugins.configs.lsp.null")
     end,
-    config = true,
     dependencies = {
-      "mason-null-ls.nvim",
+      "jay-babu/mason-null-ls.nvim",
     },
     init = function()
       require("core.utils.lazy_load")("null-ls.nvim")
