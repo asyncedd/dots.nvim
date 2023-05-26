@@ -7,6 +7,7 @@ My personal Neovim configuration
 ![Size](https://img.shields.io/github/repo-size/asyncedd/dots.nvim?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)
 
 <!-- ![ss](https://i.imgur.com/5pSbIS4.png) -->
+
 ![ss](https://github.com/asyncedd/dots.nvim/blob/master/screenshots/Screenshot%20from%202023-05-20%2016-07-24.png?raw=true)
 
 ## 👋 Introduction
@@ -25,7 +26,7 @@ But, it's about the overall editing experience of the editor.
 > Here's some DISCLAIMERS!
 
 - If want to exit Neovim, just plug out your computer (or for laptop users...
-  >:) You don't want to). I meant, that'll never work.
+  :) You don't want to). I meant, that'll never work.
 - Auto-installing parsers via `auto_install = true` will send out a bunch of errors. Check: [this](https://github.com/nvim-treesitter/nvim-treesitter/issues/4250)
 
 ## 🤨 Crash course: Installing
@@ -49,13 +50,14 @@ favorite package manager or,
 [Install from source](https://dev.to/asyncedd/building-neovim-from-source-1794).
 Then clone this repository.
 
-# For *Nix (Linux/MacOS) systems:
+# For \*Nix (Linux/MacOS) systems:
 
 ```bash
 mkdir ~/.config/nvim/
 git clone https://github.com/asycnedd/nvim.git ~/.config/nvim/
 nvim --headless "+Lazy! sync" +qa
 ```
+
 # For Windows systems:
 
 ```powershell
@@ -81,10 +83,12 @@ This is really outdated btw.
 
 Check [this](https://github.com/asyncedd/dots.nvim/tree/master/profiles)
 Specs:
+
 - Intel i7-6500U
 - Bloated Arco Linux install.
 - 16GB DDR3 RAM.
 - Old SSD.
+
 ```
  ❯ sync; dd if=/dev/zero of=tempfile bs=1M count=1024; sync
 1024+0 records in
