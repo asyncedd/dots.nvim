@@ -3,6 +3,8 @@ local group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 
 return {
   sources = {
+    nls.builtins.formatting.fish_indent,
+    nls.builtins.diagnostics.fish,
     nls.builtins.formatting.stylua.with({
       condition = function(utils)
         return utils.root_has_file({ "stylua.toml" })
