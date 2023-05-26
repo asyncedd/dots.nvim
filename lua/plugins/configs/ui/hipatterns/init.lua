@@ -20,7 +20,7 @@ return {
     hex_color = hex_color,
     tailwind = {
       pattern = function()
-        if not vim.list_contains(tailwind_ft, vim.bo.filetype) then
+        if not vim.tbl_contains(tailwind_ft, vim.bo.filetype) then
           return
         end
         return "%f[%w:-]()[%w:-]+%-[a-z%-]+%-%d+()%f[^%w:-]"
