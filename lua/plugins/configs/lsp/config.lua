@@ -67,6 +67,7 @@ local servers = {
     },
   },
   tailwindcss = {},
+  marksman = {},
 }
 
 local setup = function(server)
