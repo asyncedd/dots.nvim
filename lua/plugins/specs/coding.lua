@@ -43,7 +43,7 @@ return {
       "cmp-tabnine",
       "hrsh7th/cmp-emoji",
       "tailwindcss-colorizer-cmp.nvim",
-      -- "codeium.nvim",
+      "codeium.nvim",
     },
   },
   {
@@ -342,6 +342,10 @@ return {
   },
   {
     "roobert/tailwindcss-colorizer-cmp.nvim",
+    opts = true,
+  },
+  {
+    "jcdickinson/codeium.nvim",
     opts = true,
   },
 }
