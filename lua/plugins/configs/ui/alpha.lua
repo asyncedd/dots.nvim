@@ -1,6 +1,5 @@
 local dashboard = require("alpha.themes.dashboard")
 local fortune = require("alpha.fortune")
-local colors = require("catppuccin.palettes").get_palette()
 
 -- Inspired by https://github.com/glepnir/dashboard-nvim with my own flair
 local header = {
