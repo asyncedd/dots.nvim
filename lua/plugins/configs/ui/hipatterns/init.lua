@@ -32,7 +32,7 @@ return {
           return hex_color.group(nil, nil, { full_match = "#" .. hex })
         end
       end,
-    }
+    },
   },
 }
 

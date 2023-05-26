@@ -90,10 +90,15 @@ return {
     opts = true,
     keys = {
       { "<leader>gcc", "<cmd>CBccbox<CR>", desc = "Center aligned comment box", mode = { "x", "n" } },
-      { "<leader>gca", "<cmd>CBacbox<CR>", desc = "Center adapted comment box", mode = { "x", "n"  } },
+      { "<leader>gca", "<cmd>CBacbox<CR>", desc = "Center adapted comment box", mode = { "x", "n" } },
       { "<leader>gch", "<cmd>CBllbox<CR>", desc = "Left aligned comment box", mode = { "x", "n" } },
       { "<leader>gcl", "<cmd>CBrrbox<CR>", desc = "Right aligned comment box", mode = { "x", "n" } },
-      { "<leader>gco", "<cmd>lua require('comment-box').catalog()<CR>", desc = "Open comment box catolog", mode = { "x", "n"  } },
+      {
+        "<leader>gco",
+        "<cmd>lua require('comment-box').catalog()<CR>",
+        desc = "Open comment box catolog",
+        mode = { "x", "n" },
+      },
       { "<leader>gcp", ":CBcbox ", desc = "Pick comment box" },
     },
   },
