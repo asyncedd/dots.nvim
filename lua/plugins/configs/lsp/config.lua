@@ -2,55 +2,50 @@ local lspconfig = require("lspconfig")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-capabilities.textDocument.completion.completionItem = {
-  documentationFormat = { "markdown", "plaintext" },
-  snippetSupport = true,
-  preselectSupport = true,
-  insertReplaceSupport = true,
-  labelDetailsSupport = true,
-  deprecatedSupport = true,
-  commitCharactersSupport = true,
-  tagSupport = { valueSet = { 1 } },
-  resolveSupport = {
-    properties = {
-      "documentation",
-      "detail",
-      "additionalTextEdits",
+capabilities.textDocument = {
+  completion = {
+    completionItem = {
+      documentationFormat = { "markdown", "plaintext" },
+      snippetSupport = true,
+      preselectSupport = true,
+      insertReplaceSupport = true,
+      labelDetailsSupport = true,
+      deprecatedSupport = true,
+      commitCharactersSupport = true,
+      tagSupport = { valueSet = { 1 } },
+      resolveSupport = {
+        properties = {
+          "documentation",
+          "detail",
+          "additionalTextEdits",
+        },
+      },
     },
   },
-}
-
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
-
-capabilities.textDocument = {
+  foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+  },
   inlayHint = true,
 }
 
-lspconfig.lua_ls.setup({
-  capabilities = capabilities,
+local servers = {
+  lua_ls = {
+    settings = require("plugins.configs.lsp.servers.lua_ls"),
+  },
+  rust_analyzer = {
+    settings = require("plugins.configs.lsp.servers.rust-analyzer"),
+  },
+  cssls = {},
+  jsonls = {},
+  tailwindcss = {},
+}
 
-  settings = require("plugins.configs.lsp.servers.lua_ls"),
-})
 
-lspconfig.rust_analyzer.setup({
-  capabilities = capabilities,
+for server, server_opts in pairs(servers) do
+  lspconfig[server].setup({
+    capabilities = capabilities,
 
-  settings = require("plugins.configs.lsp.servers.rust-analyzer"),
-})
-
-lspconfig.cssls.setup({
-  capabilities = capabilities,
-})
-
-lspconfig.jsonls.setup({
-  capabilities = capabilities,
-
-  settings = require("plugins.configs.lsp.servers.jsonls"),
-})
-
-lspconfig.tailwindcss.setup({
-  capabilities = capabilities,
-})
+    settings = server_opts.settings,
+  })
+end
