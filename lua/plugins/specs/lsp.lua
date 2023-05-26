@@ -132,7 +132,6 @@ return {
   {
     "lvimuser/lsp-inlayhints.nvim",
     opts = {},
-    branch = "anticonceal",
     config = function(_, opts)
       require("lsp-inlayhints").setup(opts)
 
