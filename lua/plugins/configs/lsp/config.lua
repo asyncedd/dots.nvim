@@ -41,11 +41,31 @@ local servers = {
   tailwindcss = {},
 }
 
+local setup = function(server)
+  local server_opts = vim.tbl_deep_extend("force", {
+    capabilities = vim.deepcopy(capabilities),
+  }, servers[server] or {})
+  require("lspconfig")[server].setup(server_opts)
+end
+
+-- get all the servers that are available thourgh mason-lspconfig
+local have_mason, mlsp = pcall(require, "mason-lspconfig")
+local all_mslp_servers = {}
+if have_mason then
+  all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
+end
+
+local ensure_installed = {} ---@type string[]
 
 for server, server_opts in pairs(servers) do
-  lspconfig[server].setup({
-    capabilities = capabilities,
+  server_opts = server_opts == true and {} or server_opts
+  if not vim.tbl_contains(all_mslp_servers, server) then
+    setup(server)
+  else
+    ensure_installed[#ensure_installed + 1] = server
+  end
+end
 
-    settings = server_opts.settings,
-  })
+if have_mason then
+  mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
 end
