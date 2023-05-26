@@ -6,6 +6,8 @@ return {
     layout_strategy = "horizontal",
     winblend = 0,
     prompt_prefix = "   ",
+    selection_caret = "  ",
+    entry_prefix = "  ",
     color_devicons = true,
     layout_config = {
       horizontal = {
