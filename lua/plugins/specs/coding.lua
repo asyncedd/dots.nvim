@@ -42,7 +42,6 @@ return {
       "hrsh7th/cmp-buffer",
       "LuaSnip",
       "saadparwaiz1/cmp_luasnip",
-      "onsails/lspkind.nvim",
       "hrsh7th/cmp-cmdline",
       "cmp-tabnine",
       "hrsh7th/cmp-emoji",

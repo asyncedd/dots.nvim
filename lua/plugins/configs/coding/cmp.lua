@@ -1,9 +1,19 @@
 local M = {}
 
 local luasnip = require("luasnip")
-local lspkind = require("lspkind")
 local cmp = require("cmp")
 local compare = require("cmp.config.compare")
+
+local kind_emoji = {
+  nvim_lsp = "🔍",
+  luasnip = "📦",
+  cmp_tabnine = "🧠",
+  buffer = "📝",
+  emoji = "😃",
+  cmdline = "🐧",
+  codeium = "🤖",
+  -- rg = "🔭"
+}
 
 local kind_icons = {
   -- if you change or add symbol here
@@ -89,24 +99,12 @@ M.cmp = {
   }),
   formatting = {
     fields = { "abbr", "kind", "menu" },
-    format = lspkind.cmp_format({
-      maxwidth = 30,
-      menu = {
-        nvim_lsp = "🔍",
-        luasnip = "📦",
-        cmp_tabnine = "🧠",
-        buffer = "📝",
-        emoji = "😃",
-        cmdline = "🐧",
-        codeium = "🤖",
-        -- rg = "🔭",
-      },
-      before = function(_, vim_item)
-        vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-        vim_item.kind = vim_item.kind .. " "
-        return vim_item
-      end,
-    }),
+    format = function(entry, vim_item)
+      vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
+      vim_item.kind = vim_item.kind .. " "
+      vim_item.menu = (kind_emoji)[entry.source.name]
+      return vim_item
+    end,
   },
   experimental = {
     ghost_text = {
