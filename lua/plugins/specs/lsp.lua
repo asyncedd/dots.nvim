@@ -18,8 +18,55 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      require("plugins.configs.lsp.config")
+    opts = function()
+      return {
+        servers = {
+          lua_ls = {
+            Lua = {
+              hint = {
+                enable = true,
+              },
+              runtime = {
+                pathStrict = true,
+              },
+              completion = {
+                callSnippet = "Both",
+              },
+              diagnostics = {
+                globals = {
+                  "vim",
+                },
+              },
+              workspace = {
+                library = {
+                  [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                  -- [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+                  [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
+                },
+                maxPreload = 100000,
+                preloadFileSize = 10000,
+                checkThirdParty = false,
+              },
+            },
+          },
+          rust_analyzer = {},
+          cssls = {},
+          jsonls = {
+            settings = {
+              json = {
+                schemas = require("schemastore").json.schemas(),
+                validate = { enable = true },
+              },
+            },
+          },
+          tailwindcss = {},
+          marksman = {},
+          ["prosemd_lsp"] = {},
+        },
+      }
+    end,
+    config = function(_, opts)
+      require("plugins.configs.lsp.config")(opts)
 
       require("plugins.configs.lsp.native")
     end,
