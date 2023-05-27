@@ -9,9 +9,8 @@ return {
       -- Add options here.
       -- If you're curious about the options check: https://github.com/tzachar/cmp-tabnine
       max_lines = 500,
-      -- For example if you want to show the prediction strength (which isn't possible because of the cmp config) you can:
-      -- show_prediction_strength = true
-      -- NOTE: This doesn't work because of the current nvim-cmp config
+      -- For example if you want to show the prediction strength, you can:
+      show_prediction_strength = true,
     },
     config = function(_, opts)
       require("cmp_tabnine.config"):setup(opts)
