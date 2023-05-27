@@ -4,17 +4,6 @@ local luasnip = require("luasnip")
 local cmp = require("cmp")
 local compare = require("cmp.config.compare")
 
-local kind_emoji = {
-  nvim_lsp = "🔍",
-  luasnip = "📦",
-  cmp_tabnine = "🧠",
-  buffer = "📝",
-  emoji = "😃",
-  cmdline = "🐧",
-  codeium = "🤖",
-  -- rg = "🔭"
-}
-
 local kind_icons = {
   -- if you change or add symbol here
   -- replace corresponding line in readme
@@ -99,10 +88,9 @@ M.cmp = {
   }),
   formatting = {
     fields = { "abbr", "kind", "menu" },
-    format = function(entry, vim_item)
+    format = function(_, vim_item)
       vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
       vim_item.kind = " " .. vim_item.kind .. " "
-      vim_item.menu = (kind_emoji)[entry.source.name]
       return vim_item
     end,
   },
