@@ -173,19 +173,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "folke/zen-mode.nvim",
-    dependencies = {
-      { "folke/twilight.nvim", opts = true },
-    },
-    opts = true,
-    cmd = {
-      "ZenMode",
-    },
-    keys = {
-      { "<leader>az", "<cmd>ZenMode<CR>", desc = "Toggle ZenMode" },
-    },
-  },
-  {
     "edluffy/specs.nvim",
     opts = function()
       return require("plugins.configs.ui.specs")
