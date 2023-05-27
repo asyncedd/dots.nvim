@@ -356,4 +356,16 @@ return {
     "jcdickinson/codeium.nvim",
     opts = true,
   },
+  {
+    "windwp/nvim-ts-autotag",
+    opts = {
+      autotag = {
+        enable = true,
+      },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
+    event = "InsertEnter",
+  },
 }
