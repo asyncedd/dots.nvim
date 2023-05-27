@@ -147,7 +147,7 @@ M.ViMode = {
       return vim.fn.reg_recording() ~= "" and vim.o.cmdheight == 0
     end,
     provider = " ",
-    hl = { fg = "orange", bold = true },
+    hl = { fg = "orange", bg = "bright_bg", bold = true },
     utils.surround({ "[", "]" }, nil, {
       provider = function()
         return vim.fn.reg_recording()
