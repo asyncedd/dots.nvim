@@ -101,7 +101,7 @@ M.cmp = {
     fields = { "abbr", "kind", "menu" },
     format = function(entry, vim_item)
       vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-      vim_item.kind = vim_item.kind .. " "
+      vim_item.kind = " " .. vim_item.kind .. " "
       vim_item.menu = (kind_emoji)[entry.source.name]
       return vim_item
     end,
