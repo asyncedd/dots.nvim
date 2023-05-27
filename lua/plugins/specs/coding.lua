@@ -15,7 +15,10 @@ return {
       end
     end,
     config = function()
-      return require("plugins.configs.coding.luasnip")
+      require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip.loaders.from_snipmate").lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+      require("luasnip.loaders.from_lua").lazy_load({ paths = { "./luasnip" } })
     end,
     dependencies = {
       "rafamadriz/friendly-snippets",
