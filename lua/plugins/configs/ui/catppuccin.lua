@@ -184,12 +184,12 @@ return {
         information = { "undercurl" },
       },
     },
-    integration = {
-      dap = {
-        enabled = true,
-        enable_ui = true, -- enable nvim-dap-ui
-      },
-    },
+    -- integration = {
+    --   dap = {
+    --     enabled = true,
+    --     enable_ui = true, -- enable nvim-dap-ui
+    --   },
+    -- },
   },
   -- compile_path = nil,
 }
