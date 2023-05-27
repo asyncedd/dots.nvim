@@ -69,6 +69,7 @@ return {
       CmpItemKindTabNine = { fg = C.lavender, bg = tint(C.lavender) },
 
       -- Telescope
+      TelescopeMatching = { fg = C.sky },
       TelescopeSelection = { bg = C.surface0 },
       TelescopePromptCounter = { fg = C.mauve, style = { "bold" } },
       TelescopePromptPrefix = { bg = C.surface0 },
