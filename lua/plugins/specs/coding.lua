@@ -92,21 +92,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "andymass/vim-matchup",
-    opts = function()
-      return require("plugins.configs.coding.matchup")
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
-      vim.cmd("silent! do FileType")
-    end,
-    dependencies = {
-      "nvim-treesitter",
-    },
-    event = "User After",
-  },
-  {
     "echasnovski/mini.bracketed",
     opts = function()
       return require("plugins.configs.coding.bracketed")

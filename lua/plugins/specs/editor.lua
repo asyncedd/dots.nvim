@@ -6,25 +6,6 @@
 
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function()
-      return require("plugins.configs.editor.treesitter")
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
-      vim.schedule(function()
-        require("nvim-treesitter.configs").setup({
-          indent = {
-            enable = true,
-          },
-        })
-      end)
-    end,
-    event = "User UI",
-    build = ":TSUpdate",
-  },
-  {
     "kevinhwang91/nvim-ufo",
     opts = function()
       return require("plugins.configs.editor.ufo")
