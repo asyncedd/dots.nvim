@@ -114,6 +114,7 @@ return {
     "folke/neodev.nvim",
     opts = {
       library = {
+        ---@type string[]
         plugins = {
           "nvim-dap-ui",
           "catppuccin",
