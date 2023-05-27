@@ -107,10 +107,7 @@ M.cmp = {
     end,
   },
   experimental = {
-    ghost_text = {
-      -- HACK: Avoid this super weird error.
-      hl_group = "Comment",
-    },
+    ghost_text = true,
   },
   sorting = {
     priority_weight = 0.8,
