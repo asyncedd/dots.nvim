@@ -112,9 +112,18 @@ return {
   },
   {
     "folke/neodev.nvim",
-    opts = function()
-      return require("plugins.configs.lsp.neodev")
-    end,
+    opts = {
+      library = {
+        plugins = {
+          "nvim-dap-ui",
+          "catppuccin",
+        },
+        runtime = true,
+        types = true,
+      },
+      -- lspconfig = false,
+      pathStrict = true,
+    },
     config = true,
   },
   {
