@@ -105,11 +105,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "nvim-treesitter/nvim-treesitter-context",
-    opts = true,
-    event = "VeryLazy",
-  },
-  {
     "utilyre/barbecue.nvim",
     opts = function()
       return require("plugins.configs.ui.barbecue")
@@ -194,14 +189,6 @@ return {
     config = function(_, opts)
       require("mini.hipatterns").setup(opts)
     end,
-    event = "User After",
-  },
-  {
-    "haringsrob/nvim_context_vt",
-    opts = true,
-    dependencies = {
-      "nvim-treesitter",
-    },
     event = "User After",
   },
 }

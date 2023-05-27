@@ -64,4 +64,17 @@ return {
       end
     end,
   },
+  {
+    "haringsrob/nvim_context_vt",
+    opts = true,
+    dependencies = {
+      "nvim-treesitter",
+    },
+    event = "User After",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
