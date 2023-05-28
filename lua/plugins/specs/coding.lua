@@ -319,7 +319,7 @@ return {
       enable = true,
     },
     config = function(_, opts)
-      require("plugins.configs.coding.autotags")(opts)
+      require("plugins.configs.coding.autotag")(opts)
     end,
     event = "InsertEnter",
   },
