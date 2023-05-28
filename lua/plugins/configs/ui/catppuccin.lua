@@ -148,6 +148,9 @@ return {
       KillerPoop = { bg = C.text, fg = C.text },
       KillerLevel = { bg = C.blue, fg = C.text },
       KillerLevelX = { bg = C.yellow, fg = C.blue },
+
+      -- LazyGit
+      LazyGitFloat = { bg = C.mantle },
     }
   end,
   integrations = {
