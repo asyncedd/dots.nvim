@@ -43,7 +43,27 @@ return {
     config = function(_, opts)
       require("mini.ai").setup(opts)
     end,
-    event = "VeryLazy",
+    keys = {
+      { "(", mode = { "x", "o" } },
+      { "[", mode = { "x", "o" } },
+      { "{", mode = { "x", "o" } },
+      { "<", mode = { "x", "o" } },
+      { ")", mode = { "x", "o" } },
+      { "]", mode = { "x", "o" } },
+      { "}", mode = { "x", "o" } },
+      { ">", mode = { "x", "o" } },
+      { "b", mode = { "x", "o" } },
+      { '"', mode = { "x", "o" } },
+      { "'", mode = { "x", "o" } },
+      { "`", mode = { "x", "o" } },
+      { "q", mode = { "x", "o" } },
+      { "?", mode = { "x", "o" } },
+      { "t", mode = { "x", "o" } },
+      { "f", mode = { "x", "o" } },
+      { "f", mode = { "x", "o" } },
+      { "a", mode = { "x", "o" } },
+      { " ", mode = { "x", "o" } },
+    },
     dependencies = {
       "nvim-treesitter-textobjects",
     },
