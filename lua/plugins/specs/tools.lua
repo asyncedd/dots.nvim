@@ -79,9 +79,6 @@ return {
   },
   {
     "danielfalk/smart-open.nvim",
-    config = function()
-      require("telescope").load_extension("smart_open")
-    end,
     dependencies = {
       "telescope.nvim",
       "nvim-telescope/telescope-fzy-native.nvim",
@@ -89,7 +86,11 @@ return {
     },
     branch = "0.2.x",
     keys = {
-      { "<leader>ff", "<cmd>Telescope smart_open<CR>", desc = "Find files" },
+      {
+        "<leader>ff",
+        "<cmd>lua require('telescope').extensions.smart_open.smart_open({ cwd_only = true })<CR>",
+        desc = "Find files",
+      },
     },
   },
 }
