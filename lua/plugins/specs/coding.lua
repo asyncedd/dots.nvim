@@ -332,12 +332,10 @@ return {
   {
     "windwp/nvim-ts-autotag",
     opts = {
-      autotag = {
-        enable = true,
-      },
+      enable = true,
     },
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      require("plugins.configs.coding.autotags")(opts)
     end,
     event = "InsertEnter",
   },
