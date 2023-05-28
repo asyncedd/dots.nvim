@@ -68,10 +68,31 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    opts = function()
-      return require("plugins.configs.coding.surround")
-    end,
-    event = "VeryLazy",
+    opts = {
+      keymaps = {
+        -- https://github.com/ggandor/leap.nvim/discussions/59#discussioncomment-3842315
+        insert = "<C-g>z",
+        insert_line = "<C-g>Z",
+        normal = "gz",
+        normal_cur = "gZ",
+        normal_line = "gzz",
+        normal_cur_line = "gZZ",
+        visual = "gz",
+        visual_line = "gZ",
+        delete = "gzd",
+        change = "gzr",
+      },
+    },
+    keys = {
+      { "<C-g>z", mode = "i" },
+      { "<C-g>Z", mode = "i" },
+      { "gz", mode = { "n", "x" } },
+      { "gZ", mode = { "n", "x" } },
+      { "gzz", mode = { "n", "x" } },
+      { "gZZ", mode = { "n", "x" } },
+      "gzd",
+      "gzr",
+    },
   },
   {
     "numToStr/Comment.nvim",
