@@ -144,20 +144,6 @@ return {
       { "<localleader>s", "<cmd>Spectre<CR>", desc = "Open spectre" },
     },
   },
-  -- {
-  --   "jcdickinson/codeium.nvim",
-  --   opts = true,
-  --   dependencies = {
-  --     "http.nvim",
-  --     "plenary.nvim",
-  --     "nvim-cmp",
-  --   },
-  --   commit = "2f28f61",
-  -- },
-  -- {
-  --   "jcdickinson/http.nvim",
-  --   build = "cargo build --workspace --release",
-  -- },
   {
     "mizlan/iswap.nvim",
     opts = true,
