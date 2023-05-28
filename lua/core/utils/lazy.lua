@@ -1,6 +1,5 @@
 return function(plugin)
   vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
-    group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),
     callback = function()
       local file = vim.fn.expand("%")
       local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
@@ -14,6 +13,10 @@ return function(plugin)
 
             if plugin == "nvim-lspconfig" or plugin == "null-ls.nvim" or plugin == "vim-matchup" then
               vim.cmd("silent! do FileType")
+
+              if plugin == "null-ls.nvim" then
+                require("null-ls.state").register_conditional_sources()
+              end
             end
           end)
         else
