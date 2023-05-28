@@ -72,7 +72,8 @@ Just run a `nvim` in your terminal :D
 
 # 🚶 After
 
-Go to TabNineHub or something and, turn code completion to CLOUD. Not Hybird nor local. Otherwise, you'll have severe performance issues! (on my machine)
+If you have some performance issues or have a weaker machine, TabNine might be the cause of it.
+If you do, please go use `:CmpTabNineHub` to go to the TabNineHub and try experiementing which is performant.
 
 ## ⚡ Performance
 
