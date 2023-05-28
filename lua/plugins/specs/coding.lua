@@ -24,7 +24,6 @@ return {
       "rafamadriz/friendly-snippets",
       "honza/vim-snippets",
     },
-    event = "VeryLazy",
   },
   {
     "hrsh7th/nvim-cmp",
