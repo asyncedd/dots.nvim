@@ -47,8 +47,6 @@ return {
   {
     "fladson/vim-kitty",
     ft = {
-      "conf",
-      "session",
       "kitty",
     },
   },
