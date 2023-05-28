@@ -380,9 +380,4 @@ return {
       { "<leader><leader>", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "o" } },
     },
   },
-  {
-    "smjonas/duplicate.nvim",
-    opts = true,
-    event = "VeryLazy",
-  },
 }
