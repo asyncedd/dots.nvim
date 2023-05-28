@@ -26,12 +26,6 @@ return {
         end,
       })
     end,
-    build = function()
-      if not jit.os:find("Windows") then
-        return "./install.sh"
-      else
-        return "powershell ./install.ps1"
-      end
-    end,
+    build = (not jit.os:find("Windows") and "./install.sh" or "powershell ./install.ps1"),
   },
 }
