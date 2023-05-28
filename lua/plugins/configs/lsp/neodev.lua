@@ -1,11 +1,14 @@
-return {
-  library = {
-    plugins = {
-      "nvim-dap-ui",
+return function(opts)
+  local status, neodev = pcall(require, "neodev")
+  if not status then
+    return false
+  end
+
+  neodev.setup({
+    library = {
+      plugins = opts.plugins,
+      runtime = opts.runtime,
+      types = opts.types,
     },
-    runtime = true,
-    types = true,
-  },
-  -- lspconfig = false,
-  pathStrict = true,
-}
+  })
+end
