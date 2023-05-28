@@ -1,3 +1,4 @@
+local C = require("catppuccin.palettes").get_palette()
 local dashboard = require("alpha.themes.dashboard")
 local fortune = require("alpha.fortune")
 
@@ -12,6 +13,37 @@ local header = {
   [[ ███████████ ███    ███ █████████ █████ █████ ████ █████ ]],
   [[██████  █████████████████████ ████ █████ █████ ████ ██████]],
 }
+
+local colors = {
+  function()
+    require("catppuccin.lib.highlighter").syntax({
+      StartLogo1 = { fg = C.red },
+      StartLogo2 = { fg = C.red },
+      StartLogo3 = { fg = C.peach },
+      StartLogo4 = { fg = C.yellow },
+      StartLogo5 = { fg = C.green },
+      StartLogo6 = { fg = C.sapphire },
+      StartLogo7 = { fg = C.blue },
+      StartLogo8 = { fg = C.lavender },
+    })
+  end,
+  function()
+    require("catppuccin.lib.highlighter").syntax({
+      StartLogo1 = { fg = C.blue },
+      StartLogo2 = { fg = C.blue },
+      StartLogo3 = { fg = C.blue },
+      StartLogo4 = { fg = C.blue },
+      StartLogo5 = { fg = C.blue },
+      StartLogo6 = { fg = C.yellow },
+      StartLogo7 = { fg = C.yellow },
+      StartLogo8 = { fg = C.yellow },
+    })
+  end,
+}
+
+math.randomseed(os.time() * os.time())
+
+colors[math.random(1, #colors)]()
 
 -- Make the header a bit more fun with some color!
 local function colorize_header()
