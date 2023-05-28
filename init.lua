@@ -32,8 +32,14 @@ require("settings.autocmds")
 require("catppuccin").load()
 
 -- Execute "Colorscheme" autocommands as they may be needed
+-- Some plugins may use this autocommand to synchronize the colorscheme.
 vim.api.nvim_exec_autocmds("Colorscheme", {})
 
+-- The possibility of one pressing a keymap under a few ms is unlikely.
+-- So, to improve responsiveness, we wrap it inside a function.
+--
+-- vim.schedule, schedules the function inside it to be involed soon by the main event-loop.
+-- It's useful to avoid textlock or other temporary restrictions.
 vim.schedule(function()
   -- TODO: Find a better way to load keymaps?
   require("keymaps")
