@@ -27,10 +27,6 @@ autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinNew" }, {
 
     if condition then
       vim.api.nvim_exec_autocmds("User", { pattern = "UI" })
-      vim.schedule(function()
-        vim.api.nvim_exec_autocmds("User", { pattern = "After" })
-        vim.cmd("silent! do FileType")
-      end)
     end
   end,
 })

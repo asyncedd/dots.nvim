@@ -65,6 +65,9 @@ return {
         },
       }
     end,
+    init = function()
+      require("core.utils.lazy")("nvim-lspconfig")
+    end,
     config = function(_, opts)
       require("plugins.configs.lsp.config")(opts)
 
@@ -75,7 +78,6 @@ return {
       "neodev.nvim",
       "b0o/SchemaStore.nvim",
     },
-    event = "User After",
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -107,7 +109,9 @@ return {
     config = function(_, opts)
       require("plugins.configs.lsp.null")(opts)
     end,
-    event = "User After",
+    init = function()
+      require("core.utils.lazy")("null-ls.nvim")
+    end,
   },
   {
     "folke/neodev.nvim",
@@ -176,7 +180,9 @@ return {
         desc = "Show diagnostic messages in the hovered area",
       },
     },
-    event = "User After",
+    init = function()
+      require("core.utils.lazy")("lspsaga.nvim")
+    end,
   },
   {
     "folke/trouble.nvim",

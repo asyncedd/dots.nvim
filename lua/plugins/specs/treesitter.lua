@@ -32,7 +32,9 @@ return {
     dependencies = {
       "nvim-treesitter",
     },
-    event = "User After",
+    init = function()
+      require("core.utils.lazy")("vim-matchup")
+    end,
   },
   {
     "RRethy/nvim-treesitter-textsubjects",
@@ -70,7 +72,7 @@ return {
     dependencies = {
       "nvim-treesitter",
     },
-    event = "User After",
+    event = "VeryLazy",
   },
   {
     "nvim-treesitter/nvim-treesitter-context",

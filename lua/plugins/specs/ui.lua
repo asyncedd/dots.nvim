@@ -119,8 +119,10 @@ return {
     event = {
       "LSPAttach",
       "VeryLazy",
-      "User After",
     },
+    init = function()
+      require("core.utils.lazy")("barbecue.nvim")
+    end,
   },
   {
     "goolord/alpha-nvim",
@@ -172,6 +174,8 @@ return {
     config = function(_, opts)
       require("mini.hipatterns").setup(opts)
     end,
-    event = "User After",
+    init = function()
+      require("core.utils.lazy")("mini.hipatterns")
+    end,
   },
 }
