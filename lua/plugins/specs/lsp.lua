@@ -107,6 +107,7 @@ return {
           "prettier",
         },
         sources = {
+          nls.builtins.code_actions.gitsigns,
           nls.builtins.formatting.fish_indent,
           nls.builtins.diagnostics.fish,
           nls.builtins.formatting.stylua.with({
