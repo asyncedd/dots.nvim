@@ -105,8 +105,10 @@ return {
           "stylua",
           "beautysh",
           "prettier",
+          "actionlint",
         },
         sources = {
+          nls.builtins.diagnostics.actionlint,
           nls.builtins.code_actions.gitsigns,
           nls.builtins.formatting.fish_indent,
           nls.builtins.diagnostics.fish,
