@@ -105,6 +105,7 @@ return {
             },
           },
           html = {},
+          emmet_ls = {},
         },
       }
     end,
