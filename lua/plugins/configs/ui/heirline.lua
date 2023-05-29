@@ -255,7 +255,7 @@ M.FileFlags = {
     provider = "  ",
     hl = function(self)
       return {
-        fg = "green",
+        fg = "bright_bg",
         bg = self:icon_color(),
       }
     end,
