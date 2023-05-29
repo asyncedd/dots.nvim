@@ -185,6 +185,8 @@ return {
       plugins = {
         "nvim-dap-ui",
         "catppuccin",
+        "null-ls.nvim",
+        "lazy.nvim",
       },
       -- If runtime = true, it'll add the runtime (excluding the plugins I think?) to the workspace.
       -- If it's false, it'll not have intellisense for your configuration.
