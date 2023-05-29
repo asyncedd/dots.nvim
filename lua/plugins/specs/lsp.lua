@@ -107,8 +107,10 @@ return {
           "prettier",
           "actionlint",
           "flake8",
+          "gitlint",
         },
         sources = {
+          nls.builtins.diagnostics.gitlint,
           nls.builtins.diagnostics.flake8,
           nls.builtins.diagnostics.actionlint,
           nls.builtins.code_actions.gitsigns,
