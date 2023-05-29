@@ -115,7 +115,13 @@ return {
           nls.builtins.diagnostics.gitlint,
           nls.builtins.diagnostics.flake8,
           nls.builtins.diagnostics.actionlint,
-          nls.builtins.code_actions.gitsigns,
+          nls.builtins.code_actions.gitsigns.with({
+            config = {
+              filter_actions = function(title)
+                return title:lower():match("blame") == nil -- filter out blame actions
+              end,
+            },
+          }),
           nls.builtins.formatting.fish_indent,
           nls.builtins.diagnostics.fish,
           nls.builtins.formatting.stylua.with({
