@@ -1,19 +1,19 @@
 return {
   color_overrides = {
     mocha = {
-      rosewater = "#F5E0DC",
-      flamingo = "#F2CDCD",
-      mauve = "#DDB6F2",
-      pink = "#F5C2E7",
-      red = "#F28FAD",
-      maroon = "#E8A2AF",
-      peach = "#F8BD96",
-      yellow = "#FAE3B0",
-      green = "#ABE9B3",
-      blue = "#96CDFB",
-      sky = "#89DCEB",
-      teal = "#B5E8E0",
-      lavender = "#C9CBFF",
+      -- rosewater = "#F5E0DC",
+      -- flamingo = "#F2CDCD",
+      -- mauve = "#DDB6F2",
+      -- pink = "#F5C2E7",
+      -- red = "#F28FAD",
+      -- maroon = "#E8A2AF",
+      -- peach = "#F8BD96",
+      -- yellow = "#FAE3B0",
+      -- green = "#ABE9B3",
+      -- blue = "#96CDFB",
+      -- sky = "#89DCEB",
+      -- teal = "#B5E8E0",
+      -- lavender = "#C9CBFF",
 
       text = "#D9E0EE",
       subtext1 = "#BAC2DE",
@@ -42,7 +42,7 @@ return {
       Search = { bg = C.surface1, fg = C.sky, style = { "bold" } }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
       IncSearch = { bg = C.sky, fg = C.surface1 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
       Pmenu = { bg = C.mantle },
-      MatchParen = { fg = C.peach, bg = "", style = { "bold" } },
+      MatchParen = { fg = C.peach, bg = tint(C.peach), style = { "bold" } },
       -- Treesitter
       ["@variable"] = { fg = C.flamingo },
       ["@float"] = { link = "Float" }, -- For floats.
