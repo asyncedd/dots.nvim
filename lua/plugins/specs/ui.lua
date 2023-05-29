@@ -105,26 +105,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "utilyre/barbecue.nvim",
-    opts = function()
-      return require("plugins.configs.ui.barbecue")
-    end,
-    config = function(_, opts)
-      require("barbecue").setup(opts)
-    end,
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    event = {
-      "LSPAttach",
-      "VeryLazy",
-    },
-    init = function()
-      require("core.utils.lazy")("barbecue.nvim")
-    end,
-  },
-  {
     "goolord/alpha-nvim",
     opts = function()
       return require("plugins.configs.ui.alpha")
@@ -176,6 +156,13 @@ return {
     end,
     init = function()
       require("core.utils.lazy")("mini.hipatterns")
+    end,
+  },
+  {
+    "Bekaboo/dropbar.nvim",
+    opts = true,
+    init = function()
+      require("core.utils.lazy")("dropbar.nvim")
     end,
   },
 }
