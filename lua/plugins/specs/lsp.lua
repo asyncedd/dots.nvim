@@ -108,8 +108,10 @@ return {
           "actionlint",
           "flake8",
           "gitlint",
+          "ruff",
         },
         sources = {
+          nls.builtins.diagnostics.ruff,
           nls.builtins.diagnostics.gitlint,
           nls.builtins.diagnostics.flake8,
           nls.builtins.diagnostics.actionlint,
