@@ -22,7 +22,9 @@ return {
       return require("plugins.configs.editor.gitsigns")
     end,
     config = true,
-    event = "User After",
+    init = function()
+      require("core.utils.lazy")("gitsigns.nvim")
+    end,
   },
   {
     "olimorris/persisted.nvim",
