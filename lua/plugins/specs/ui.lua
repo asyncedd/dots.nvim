@@ -91,7 +91,7 @@ return {
     event = "User UI",
     dependencies = {
       {
-        "asyncedd/wpm.nvim",
+        "jcdickinson/wpm.nvim",
         config = true,
       },
       "nvim-web-devicons",
