@@ -16,7 +16,8 @@ return {
         })
       end)
     end,
-    event = "User UI",
+    -- event = "User UI",
+    event = "BufReadPost",
     build = ":TSUpdate",
   },
   {
