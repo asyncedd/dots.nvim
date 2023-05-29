@@ -106,8 +106,10 @@ return {
           "beautysh",
           "prettier",
           "actionlint",
+          "flake8",
         },
         sources = {
+          nls.builtins.diagnostics.flake8,
           nls.builtins.diagnostics.actionlint,
           nls.builtins.code_actions.gitsigns,
           nls.builtins.formatting.fish_indent,
