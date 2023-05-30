@@ -147,6 +147,16 @@ return {
     event = "VeryLazy",
   },
   {
+    "echasnovski/mini.hipatterns",
+    opts = function()
+      return require("plugins.configs.ui.hipatterns")
+    end,
+    config = function(_, opts)
+      require("mini.hipatterns").setup(opts)
+    end,
+    event = "VeryLazy",
+  },
+  {
     "NvChad/nvim-colorizer.lua",
     opts = {
       user_default_options = {
@@ -155,12 +165,13 @@ return {
         rgb_fn = true,
         hsl_fn = true,
         tailwind = true,
+        names = false,
       },
     },
     config = function(_, opts)
       require("colorizer").setup(opts)
 
-      require("colorizer").attach_to_buffer(0, {})
+      require("colorizer").attach_to_buffer(0)
     end,
     init = function()
       require("core.utils.lazy")("nvim-colorizer.lua")
