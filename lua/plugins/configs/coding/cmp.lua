@@ -42,6 +42,11 @@ M.cmp = {
       luasnip.lsp_expand(args.body)
     end,
   },
+  window = {
+    completion = {
+      scrollbar = false,
+    },
+  },
   mapping = {
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
