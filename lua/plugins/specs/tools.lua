@@ -51,20 +51,6 @@ return {
     },
   },
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    dependencies = {
-      "plenary.nvim",
-      "nvim-web-devicons",
-      "nui.nvim",
-    },
-    cmd = {
-      "Neotree",
-    },
-    keys = {
-      { "<leader>tt", "<cmd>Neotree<CR>" },
-    },
-  },
-  {
     "stevearc/aerial.nvim",
     opts = function()
       return require("plugins.configs.tools.aerial")
