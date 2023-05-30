@@ -695,6 +695,19 @@ M.StatusLines = {
   M.StatusLine,
 }
 
+vim.schedule(function()
+  local setup_colors = function()
+    return M.colors
+  end
+  vim.api.nvim_create_augroup("Heirline", { clear = true })
+  vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+      utils.on_colorscheme(setup_colors)
+    end,
+    group = "Heirline",
+  })
+end)
+
 return {
   opts = {
     colors = M.colors,
