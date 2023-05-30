@@ -19,7 +19,7 @@ return {
       TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
 
       -- Lazygit
-      LazyGitFloat = { bg = theme.yu.bg_m1 },
+      LazyGitFloat = { bg = theme.ui.bg_m1 },
     }
   end,
 }
