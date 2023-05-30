@@ -14,6 +14,13 @@ return {
     config = true,
   },
   {
+    "rebelot/kanagawa.nvim",
+    opts = function()
+      return require("plugins.configs.ui.kanagawa")
+    end,
+    config = true,
+  },
+  {
     "akinsho/bufferline.nvim",
     opts = function()
       return require("plugins.configs.ui.bufferline")

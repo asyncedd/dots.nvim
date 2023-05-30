@@ -170,17 +170,6 @@ return {
       HarpoonWindow = { fg = C.text, bg = C.mantle },
       HarpoonBorder = { fg = C.mantle, bg = C.mantle },
 
-      -- Killersheep
-      introHL = { fg = C.teal, style = { "bold" } },
-      KillerBlood = { fg = C.red },
-      killerCannon = { fg = C.blue },
-      killerBullet = { bg = C.red },
-      KillerSheep = { fg = C.green },
-      KillerSheep2 = { fg = C.cyan },
-      KillerPoop = { bg = C.text, fg = C.text },
-      KillerLevel = { bg = C.blue, fg = C.text },
-      KillerLevelX = { bg = C.yellow, fg = C.blue },
-
       -- LazyGit
       LazyGitFloat = { bg = C.mantle },
     }

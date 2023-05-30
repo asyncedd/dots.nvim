@@ -27,9 +27,18 @@ require("settings.autocmds")
 -- PERF: directly call catppuccin. (not via `vim.cmd("colorscheme x")`)
 -- HACK: Try to make this less hacky?
 
--- In Catppuccin, the colorscheme file is a Lua block (via vimscript) that requires the exact same thing.
--- So, by doing this we can optimize whilst not loosing maintainability.
-require("catppuccin").load()
+local colorscheme = require("settings.settings").colorscheme
+
+if colorscheme == "catppuccin" then
+  -- In Catppuccin, the colorscheme file is a Lua block (via vimscript) that requires the exact same thing.
+  -- So, by doing this we can optimize whilst not loosing maintainability.
+  require("catppuccin").load()
+elseif colorscheme == "kanagawa" then
+  require("kanagawa").load()
+else
+  print("Unknown colorscheme.")
+  require("catppuccin").load()
+end
 
 -- Execute "Colorscheme" autocommands as they may be needed
 -- Some plugins may use this autocommand to synchronize the colorscheme.
