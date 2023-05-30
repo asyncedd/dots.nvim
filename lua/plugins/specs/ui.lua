@@ -164,7 +164,7 @@ return {
         AARRGGBB = true,
         rgb_fn = true,
         hsl_fn = true,
-        tailwind = true,
+        tailwind = false,
         names = false,
       },
     },
