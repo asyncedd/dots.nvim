@@ -245,15 +245,4 @@ return {
       require("core.utils.lazy")("lspsaga.nvim")
     end,
   },
-  {
-    "folke/trouble.nvim",
-    opts = true,
-    keys = {
-      { "<leader>xx", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
-      { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Show workspace diagnostics" },
-      { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Show document diagnostics" },
-      { "<leader>xq", "<cmd>TroubleToggle loclist<cr>", desc = "Show loclist" },
-      { "<leader>xl", "<cmd>TroubleToggle quickfix<cr>", desc = "Show Quickfix" },
-    },
-  },
 }
