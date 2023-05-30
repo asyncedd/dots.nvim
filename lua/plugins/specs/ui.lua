@@ -22,6 +22,13 @@ return {
     build = ":kanagawaCompile",
   },
   {
+    "folke/tokyonight.nvim",
+    opts = function()
+      return require("plugins.configs.ui.tokyonight")
+    end,
+    config = true,
+  },
+  {
     "akinsho/bufferline.nvim",
     opts = function()
       return require("plugins.configs.ui.bufferline")

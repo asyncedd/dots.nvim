@@ -1,4 +1,4 @@
 return {
-  -- It can be catppuccin, or kanagawa
+  -- It can be catppuccin tokyonight, or kanagawa
   colorscheme = "catppuccin",
 }

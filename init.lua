@@ -35,6 +35,8 @@ if colorscheme == "catppuccin" then
   require("catppuccin").load()
 elseif colorscheme == "kanagawa" then
   require("kanagawa").load()
+elseif colorscheme == "tokyonight" then
+  require("tokyonight")._load()
 else
   print("Unknown colorscheme.")
   require("catppuccin").load()
