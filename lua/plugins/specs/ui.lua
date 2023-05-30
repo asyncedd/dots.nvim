@@ -19,6 +19,7 @@ return {
       return require("plugins.configs.ui.kanagawa")
     end,
     config = true,
+    build = ":kanagawaCompile",
   },
   {
     "akinsho/bufferline.nvim",
