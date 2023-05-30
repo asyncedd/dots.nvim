@@ -250,18 +250,6 @@ M.FileFormat = {
 M.FileFlags = {
   {
     condition = function()
-      return vim.bo.modified
-    end,
-    provider = "  ",
-    hl = function(self)
-      return {
-        fg = "bright_bg",
-        bg = self:icon_color(),
-      }
-    end,
-  },
-  {
-    condition = function()
       return not vim.bo.modifiable or vim.bo.readonly
     end,
     provider = "  ",
