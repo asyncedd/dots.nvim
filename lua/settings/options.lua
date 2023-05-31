@@ -286,6 +286,20 @@ end)
 
 o.ve = "block"
 
+-- Searching
+
+-- Ignore case
+--
+-- Ignore case in search patterns.
+-- Kinda useful if you want to search but without the cAsE sEsEtIvEnEsS
+-- This can be overruled via "\c" and "\C" - lower case and uppercase respectively.
+o.ic = true
+
+-- Smart case
+--
+-- Do NOT ignore case in search patterns if an uppercase letter is in it.
+o.scs = true
+
 -- CODE: hFy
 --
 --  ╭──────────────────────────────────────────────────────────╮
