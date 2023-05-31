@@ -5,12 +5,16 @@ return {
       telescope_results = "require('onedarkpro.helpers').darken('bg', 4, 'onedark')",
       telescope_preview = "require('onedarkpro.helpers').darken('bg', 6, 'onedark')",
       telescope_selection = "require('onedarkpro.helpers').darken('bg', 8, 'onedark')",
+
+      illuminate = "require('onedarkpro.helpers').lighten('bg', 7, 'onedark')",
     },
     light = {
       telescope_prompt = "require('onedarkpro.helpers').darken('bg', 2, 'onelight')",
       telescope_results = "require('onedarkpro.helpers').darken('bg', 5, 'onelight')",
       telescope_preview = "require('onedarkpro.helpers').darken('bg', 7, 'onelight')",
       telescope_selection = "require('onedarkpro.helpers').darken('bg', 9, 'onelight')",
+
+      illuminate = "require('onedarkpro.helpers').darken('bg', 7, 'onelight')",
     },
   },
   highlights = {
@@ -67,6 +71,19 @@ return {
     PmenuSel = {
       bg = "${blue}",
       fg = "${black}",
+    },
+
+    -- Illuminate
+    IlluminatedWordText = {
+      bg = "${illuminate}",
+    },
+
+    IlluminatedWordRead = {
+      bg = "${illuminate}",
+    },
+
+    IlluminatedWordWrite = {
+      bg = "${illuminate}",
     },
   },
 }
