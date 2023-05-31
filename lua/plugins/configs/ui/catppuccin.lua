@@ -69,7 +69,7 @@ return {
       TelescopePromptBorder = { bg = C.surface0, fg = C.surface0 },
       TelescopeResultsBorder = { bg = C.mantle, fg = C.mantle },
       TelescopePreviewBorder = { bg = C.crust, fg = C.crust },
-      TelescopePromptTitle = { fg = C.surface0, bg = C.sky },
+      TelescopePromptTitle = { fg = C.surface0, bg = C.mauve },
       TelescopeResultsTitle = { fg = C.mantle, bg = C.mantle },
       TelescopePreviewTitle = { fg = C.crust, bg = C.green },
 
