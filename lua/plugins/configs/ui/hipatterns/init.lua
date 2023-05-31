@@ -5,7 +5,13 @@ return {
       group = function(_, match)
         local hipatterns = require("mini.hipatterns")
 
-        local words = require("plugins.configs.ui.hipatterns.words." .. require("settings.settings").colorscheme)
+        local status, words =
+          pcall(require, "plugins.configs.ui.hipatterns.words." .. require("settings.settings").colorscheme)
+
+        if not status then
+          print("Unknown colorscheme: " .. require("settings.settings").colorscheme)
+          words = require("plugins.configs.ui.hipatterns.words.catppuccin")
+        end
 
         local hex = words[match]
         if hex == nil then
