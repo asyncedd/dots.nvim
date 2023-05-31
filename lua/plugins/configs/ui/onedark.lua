@@ -62,5 +62,11 @@ return {
     LeapLabelSecondary = {
       fg = "${green}",
     },
+
+    -- PMenu
+    PmenuSel = {
+      bg = "${blue}",
+      fg = "${black}",
+    },
   },
 }
