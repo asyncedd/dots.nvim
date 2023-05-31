@@ -85,7 +85,7 @@
   "tokyonight.nvim": { "branch": "main", "commit": "161114bd39b990995e08dbf941f6821afbdcd666" },
   "trailblazer.nvim": { "branch": "main", "commit": "674bb6254a376a234d0d243366224122fc064eab" },
   "treesj": { "branch": "main", "commit": "b1e2976c2d7ba922371cc7f3ab08b75136c27231" },
-  "ultimate-autopair.nvim": { "branch": "main", "commit": "b7047f34a0dba464b39f7ace96b70e94ced0a45a" },
+  "ultimate-autopair.nvim": { "branch": "main", "commit": "8c1382afd1dd6d3ad1bb9763d82bc2305a171b7f" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
   "vim-kitty": { "branch": "main", "commit": "11ed0c3f97596e402c9aef226535e2fefd65f3d7" },
   "vim-matchup": { "branch": "master", "commit": "02b906cf772811a6845f2d5caaa81152beb65d6b" },
