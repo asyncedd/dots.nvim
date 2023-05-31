@@ -38,6 +38,7 @@ return {
       IncSearch = { bg = C.sky, fg = C.surface1 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
       Pmenu = { bg = C.mantle },
       MatchParen = { fg = C.peach, bg = "", style = { "bold" } },
+      FloatBorder = { fg = C.mantle, bg = C.mantle },
       -- Treesitter
       ["@variable"] = { fg = C.flamingo },
       ["@float"] = { link = "Float" }, -- For floats.

@@ -89,6 +89,11 @@ return {
     MiniIndentscopeSymbol = {
       fg = "${blue}",
     },
+
+    FloatBorder = {
+      fg = "${black}",
+      bg = "${black}",
+    },
   },
   plugins = {
     polygot = false,

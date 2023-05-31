@@ -250,7 +250,9 @@ return {
     "ray-x/lsp_signature.nvim",
     opts = {
       noice = true,
-      floating_window = false,
+      handler_opts = {
+        border = "single",
+      },
       hint_inline = function()
         return true
       end,

@@ -41,5 +41,7 @@ return {
     hl.CmpItemKindCodeium = { fg = c.green }
     hl.CmpItemKindTabNine = { fg = c.purple }
     hl.CmpItemKindSnippet = { fg = c.red }
+
+    hl.FloatBorder = { fg = c.bg_dark, bg = c.bg_dark }
   end,
 }
