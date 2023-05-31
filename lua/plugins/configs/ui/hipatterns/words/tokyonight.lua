@@ -1,7 +1,6 @@
 local C = require("tokyonight.colors").setup()
 
 return {
-  none = C.none,
   bg_dark = C.bg_dark,
   bg = C.bg,
   bg_highlight = C.bg_highlight,
