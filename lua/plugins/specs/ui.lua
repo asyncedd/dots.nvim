@@ -30,6 +30,9 @@ return {
   },
   {
     "olimorris/onedarkpro.nvim",
+    opts = function()
+      return require("plugins.configs.ui.onedark")
+    end,
   },
   {
     "akinsho/bufferline.nvim",
