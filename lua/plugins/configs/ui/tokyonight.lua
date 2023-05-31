@@ -37,5 +37,9 @@ return {
       bg = c.bg_dark,
       fg = c.bg_dark,
     }
+
+    hl.CmpItemKindCodeium = { fg = c.green }
+    hl.CmpItemKindTabNine = { fg = c.purple }
+    hl.CmpItemKindSnippet = { fg = c.red }
   end,
 }
