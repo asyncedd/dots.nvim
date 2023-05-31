@@ -121,6 +121,7 @@ return {
       "mason-lspconfig.nvim",
       "neodev.nvim",
       "b0o/SchemaStore.nvim",
+      "lsp_signature.nvim",
     },
   },
   {
@@ -244,5 +245,15 @@ return {
     init = function()
       require("core.utils.lazy")("lspsaga.nvim")
     end,
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    opts = {
+      noice = true,
+      floating_window = false,
+      hint_inline = function()
+        return true
+      end,
+    },
   },
 }
