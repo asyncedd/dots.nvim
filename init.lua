@@ -29,17 +29,12 @@ require("settings.autocmds")
 
 local colorscheme = require("settings.settings").colorscheme
 
-if colorscheme == "catppuccin" then
+if colorscheme == "catppuccin" or colorscheme == "onedark" or colorscheme == "kanagawa" then
   -- In Catppuccin, the colorscheme file is a Lua block (via vimscript) that requires the exact same thing.
   -- So, by doing this we can optimize whilst not loosing maintainability.
-  require("catppuccin").load()
-elseif colorscheme == "kanagawa" then
-  require("kanagawa").load()
+  require(colorscheme).load()
 elseif colorscheme == "tokyonight" then
   require("tokyonight")._load()
-elseif colorscheme == "onedark" then
-  require("onedarkpro").load()
-else
   print("Unknown colorscheme.")
   require("catppuccin").load()
 end
