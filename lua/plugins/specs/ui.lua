@@ -67,15 +67,10 @@ return {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "notify" },
+    },
     event = "VeryLazy",
-    init = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "notify" },
-        callback = function()
-          vim.b.miniindentscope_disable = true
-        end,
-      })
-    end,
   },
   {
     "echasnovski/mini.indentscope",
@@ -85,7 +80,7 @@ return {
     event = "VeryLazy",
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "notify" },
         callback = function()
           vim.b.miniindentscope_disable = true
         end,
