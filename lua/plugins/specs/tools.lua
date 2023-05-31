@@ -13,7 +13,7 @@ return {
     config = function(_, opts)
       require("telescope").setup(opts)
 
-      require("telescope").load_extension("fzf")
+      require("telescope").load_extension("fzy_native")
 
       require("telescope").load_extension("persisted")
     end,
@@ -21,10 +21,7 @@ return {
       "nvim-treesitter",
       "nvim-web-devicons",
       "persisted.nvim",
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-      },
+      "nvim-telescope/telescope-fzy-native.nvim",
       "plenary.nvim",
     },
     keys = {
