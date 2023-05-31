@@ -97,5 +97,7 @@ return {
     vim_ultest = false,
     startify = false,
     packer = false,
+    nvim_ts_rainbow = false,
+    nvim_ts_rainbow2 = false,
   },
 }
