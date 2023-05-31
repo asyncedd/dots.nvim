@@ -67,7 +67,7 @@ nvim --headless "+Lazy! sync" +qa
 
 Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim).
 Then you can get a cup of [mocha ☕](https://github.com/catppuccin/nvim) while
-you wait. (Not that long btw) Then once it finished, you're done! (actually)
+you wait. (Not that long btw) Then once it finished, you're done for! ([actually](https://github.com/asyncedd/dots.nvim#-quitting-nvim))
 Just run a `nvim` in your terminal :D
 
 # 🚶 After
