@@ -1,5 +1,9 @@
 return {
   on_highlights = function(hl, c)
+    hl["@variable"] = {
+      fg = c.teal,
+    }
+    -- Telescope
     local prompt = "#2d3149"
     hl.TelescopeNormal = {
       bg = c.bg_dark,
