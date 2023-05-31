@@ -60,12 +60,10 @@ return {
       items = {
         {
           name = "Docs",
+          highlight = { sp = colors.green },
           matcher = function(buf)
             return buf.name:match("%.md") or buf.name:match("%.txt")
           end,
-          separator = { -- Optional
-            style = require("bufferline.groups").separator.tab,
-          },
         },
       },
     },
