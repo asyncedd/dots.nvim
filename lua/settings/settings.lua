@@ -1,6 +1,6 @@
 local M = {}
 
--- It can be catppuccin tokyonight, onedark, or kanagawa
+-- It can be catppuccin tokyonight, or onedark
 M.colorscheme = "catppuccin"
 
 M.tokyonight = {
