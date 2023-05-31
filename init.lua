@@ -37,6 +37,8 @@ elseif colorscheme == "kanagawa" then
   require("kanagawa").load()
 elseif colorscheme == "tokyonight" then
   require("tokyonight")._load()
+elseif colorscheme == "onedark" then
+  require("onedarkpro").load()
 else
   print("Unknown colorscheme.")
   require("catppuccin").load()

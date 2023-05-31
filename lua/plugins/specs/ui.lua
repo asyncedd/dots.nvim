@@ -29,6 +29,9 @@ return {
     config = true,
   },
   {
+    "olimorris/onedarkpro.nvim",
+  },
+  {
     "akinsho/bufferline.nvim",
     opts = function()
       return require("plugins.configs.ui.bufferline")
