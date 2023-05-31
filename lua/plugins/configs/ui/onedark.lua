@@ -14,9 +14,11 @@ return {
     },
   },
   highlights = {
+    -- CMP
     CmpItemKindCodeium = { fg = "${green}" },
     CmpItemKindTabNine = { fg = "${purple}" },
 
+    -- Telescope
     TelescopeBorder = {
       fg = "${telescope_results}",
       bg = "${telescope_results}",
@@ -48,5 +50,17 @@ return {
     TelescopeSelection = { bg = "${telescope_selection}" },
     TelescopePreviewNormal = { bg = "${telescope_preview}" },
     TelescopePreviewBorder = { fg = "${telescope_preview}", bg = "${telescope_preview}" },
+
+    -- Leap
+    LeapBackdrop = { link = "Comment" },
+    LeapMatch = {
+      fg = "${blue}",
+    },
+    LeapLabelPrimary = {
+      fg = "${red}",
+    },
+    LeapLabelSecondary = {
+      fg = "${green}",
+    },
   },
 }
