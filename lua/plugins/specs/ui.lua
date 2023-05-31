@@ -14,14 +14,6 @@ return {
     config = true,
   },
   {
-    "rebelot/kanagawa.nvim",
-    opts = function()
-      return require("plugins.configs.ui.kanagawa")
-    end,
-    config = true,
-    build = ":kanagawaCompile",
-  },
-  {
     "folke/tokyonight.nvim",
     opts = function()
       return require("plugins.configs.ui.tokyonight")
