@@ -90,4 +90,12 @@ return {
       fg = "${blue}",
     },
   },
+  plugins = {
+    polygot = false,
+    neo_tree = false,
+    neotest = false,
+    vim_ultest = false,
+    startify = false,
+    packer = false,
+  },
 }
