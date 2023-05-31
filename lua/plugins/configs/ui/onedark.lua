@@ -85,5 +85,9 @@ return {
     IlluminatedWordWrite = {
       bg = "${illuminate}",
     },
+
+    MiniIndentscopeSymbol = {
+      fg = "${blue}",
+    },
   },
 }
