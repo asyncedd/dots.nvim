@@ -36,8 +36,11 @@ if colorscheme == "catppuccin" or colorscheme == "kanagawa" or colorscheme == "o
 elseif colorscheme == "tokyonight" then
   require("tokyonight")._load()
 else
-  print("Unknown colorscheme.")
-  require("catppuccin").load()
+  local ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
+  if not ok then
+    print("Unknown colorscheme.")
+    require("catppuccin").load()
+  end
 end
 
 -- Execute "Colorscheme" autocommands as they may be needed
