@@ -118,6 +118,7 @@ return {
     dependencies = {
       "mason-nvim-dap.nvim",
       "nvim-dap-ui",
+      "nvim-dap-virtual-text",
     },
   },
   {
@@ -164,5 +165,9 @@ return {
         dapui.close({})
       end
     end,
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    opts = {},
   },
 }
