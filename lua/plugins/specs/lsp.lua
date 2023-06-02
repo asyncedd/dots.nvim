@@ -140,8 +140,10 @@ return {
           "flake8",
           "gitlint",
           "ruff",
+          "gofumpt",
         },
         sources = {
+          nls.builtins.formatting.gofumpt,
           nls.builtins.diagnostics.ruff,
           nls.builtins.diagnostics.gitlint,
           nls.builtins.diagnostics.flake8,
