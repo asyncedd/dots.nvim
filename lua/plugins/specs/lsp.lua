@@ -106,6 +106,7 @@ return {
           },
           html = {},
           emmet_ls = {},
+          gopls = {},
         },
       }
     end,
