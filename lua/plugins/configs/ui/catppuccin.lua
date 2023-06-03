@@ -1,4 +1,7 @@
 return {
+  dim_inactive = {
+    enabled = true,
+  },
   color_overrides = {
     mocha = {
       text = "#D9E0EE",
