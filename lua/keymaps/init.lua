@@ -23,3 +23,6 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window w
 -- A couple Helix/Kakoune keymaps
 map({ "n", "o", "x" }, "gl", "$", { desc = "Go to the last character in the line" })
 map({ "n", "o", "x" }, "gh", "0", { desc = "Go to the first character in the line" })
+
+-- Super fun keymap wow!
+map({ "n" }, "<C-C>", "ciw", { desc = "Change inside word" })
