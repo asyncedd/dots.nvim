@@ -74,7 +74,7 @@ Just run a `nvim` in your terminal :D
 # 🚶 After
 
 If you have some performance issues or have a weaker machine, TabNine might be the cause of it.
-If you do, please go use `:CmpTabNineHub` to go to the TabNineHub and try experiementing which is performant.
+If you do, please go use `:CmpTabNineHub` to go to the TabNineHub and try experiementing on which is performant.
 
 ## ⚡ Performance
 
