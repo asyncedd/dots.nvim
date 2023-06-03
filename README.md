@@ -80,24 +80,6 @@ If you do, please go use `:CmpTabNineHub` to go to the TabNineHub and try experi
 
 **⚠️ Super outdated!**
 
-TODO Redo it once ~~I get it to be more faster (troll)~~ Unlazy
-This is really outdated btw.
-
-Check [this](https://github.com/asyncedd/dots.nvim/tree/master/profiles)
-Specs:
-
-- Intel i7-6500U
-- Bloated Arco Linux install.
-- 16GB DDR3 RAM.
-- Old SSD.
-
-```
- ❯ sync; dd if=/dev/zero of=tempfile bs=1M count=1024; sync
-1024+0 records in
-1024+0 records out
-1073741824 bytes (1.1 GB, 1.0 GiB) copied, 0.642741 s, 1.7 GB/s
-```
-
 ![blank buffer](https://i.imgur.com/LelATuA.png)
 ![a normal buffer](https://i.imgur.com/Wc66GFP.png)
 
