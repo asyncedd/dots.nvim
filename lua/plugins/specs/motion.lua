@@ -376,8 +376,8 @@ return {
     "ggandor/leap-ast.nvim",
     dependencies = "leap.nvim",
     keys = {
-      { "<leader><leader>", "v<cmd>lua require('leap-ast').leap()<CR>" },
-      { "<leader><leader>", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "o" } },
+      { "<CR>", "v<cmd>lua require('leap-ast').leap()<CR>" },
+      { "<CR>", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "o" } },
     },
   },
 }
