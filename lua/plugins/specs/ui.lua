@@ -201,4 +201,9 @@ return {
       require("core.utils.lazy")("dropbar.nvim")
     end,
   },
+  {
+    "karb94/neoscroll.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
