@@ -49,7 +49,16 @@ return {
               },
             },
           },
-          rust_analyzer = {},
+          rust_analyzer = {
+            root_dir = require("lspconfig.util").root_pattern("Cargo.toml"),
+            settings = {
+              ["rust=analyzer"] = {
+                cargo = {
+                  allFeatures = true,
+                },
+              },
+            },
+          },
           cssls = {},
           jsonls = {
             settings = {
