@@ -67,14 +67,6 @@ return {
             pyright = {
               autoImportCompletion = true,
             },
-            python = {
-              analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "openFilesOnly",
-                useLibraryCodeForTypes = true,
-                typeCheckingMode = "off",
-              },
-            },
           },
           svelte = {},
           -- https://github.com/folke/dot/blob/master/nvim/lua/plugins/lsp.lua
