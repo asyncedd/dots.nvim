@@ -206,12 +206,4 @@ return {
     opts = true,
     event = "VeryLazy",
   },
-  {
-    "winston0410/range-highlight.nvim",
-    dependencies = {
-      "winston0410/cmd-parser.nvim",
-    },
-    opts = {},
-    event = "CmdlineEnter",
-  },
 }
