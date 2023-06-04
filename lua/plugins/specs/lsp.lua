@@ -129,6 +129,7 @@ return {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function()
       local nls = require("null-ls")
+      local B = nls.builtins
       return {
         -- A list of sources to install
         ---@type string[]
@@ -143,33 +144,39 @@ return {
           "gofumpt",
           "goimports",
           "goimports-reviser",
+          "mypy",
+          "ruff",
+          "black",
         },
         sources = {
-          nls.builtins.formatting.goimports,
-          nls.builtins.formatting.goimports_reviser,
-          nls.builtins.formatting.gofumpt,
-          nls.builtins.diagnostics.ruff,
-          nls.builtins.diagnostics.gitlint,
-          nls.builtins.diagnostics.flake8,
-          nls.builtins.diagnostics.actionlint,
-          nls.builtins.code_actions.gitsigns.with({
+          B.formatting.black,
+          B.diagnostics.ruff,
+          B.diagnostics.mypy,
+          B.formatting.goimports,
+          B.formatting.goimports_reviser,
+          B.formatting.gofumpt,
+          B.diagnostics.ruff,
+          B.diagnostics.gitlint,
+          B.diagnostics.flake8,
+          B.diagnostics.actionlint,
+          B.code_actions.gitsigns.with({
             config = {
               filter_actions = function(title)
                 return title:lower():match("blame") == nil -- filter out blame actions
               end,
             },
           }),
-          nls.builtins.formatting.fish_indent,
-          nls.builtins.diagnostics.fish,
-          nls.builtins.formatting.stylua.with({
+          B.formatting.fish_indent,
+          B.diagnostics.fish,
+          B.formatting.stylua.with({
             condition = function(utils)
               return utils.root_has_file({ "stylua.toml" })
             end,
           }),
-          nls.builtins.formatting.beautysh.with({
+          B.formatting.beautysh.with({
             extra_args = { "-i", "2" },
           }),
-          nls.builtins.formatting.prettier,
+          B.formatting.prettier,
         },
       }
     end,
