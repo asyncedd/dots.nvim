@@ -126,6 +126,7 @@ return {
     opts = {
       ensure_installed = {
         "delve",
+        "debugpy",
       },
       handlers = {},
       automatic_installation = true,
@@ -169,5 +170,23 @@ return {
   {
     "theHamsta/nvim-dap-virtual-text",
     opts = {},
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    config = function()
+      require("dap-python").setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
+    end,
+    dependencies = {
+      "nvim-dap",
+    },
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
+        callback = function()
+          if vim.bo.filetype == "python" then
+            require("lazy").load({ plugins = "nvim-dap-python" })
+          end
+        end,
+      })
+    end,
   },
 }
