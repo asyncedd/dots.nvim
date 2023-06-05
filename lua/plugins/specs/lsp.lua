@@ -294,7 +294,21 @@ return {
       },
     },
     config = function(_, opts)
-      require("mason-lspconfig").setup({ ensure_installed = { "rust_analyzer" } })
+      require("mason").setup()
+      local mr = require("mason-registry")
+      if mr.refresh then
+        mr.refresh(function()
+          local p = mr.get_package("rust_analyzer")
+          if not p:is_installed() then
+            p:install()
+          end
+        end)
+      else
+        local p = mr.get_package("rust_analyzer")
+        if not p:is_installed() then
+          p:install()
+        end
+      end
       require("rust-tools").setup(opts)
       vim.cmd("silent! do FileType")
     end,
