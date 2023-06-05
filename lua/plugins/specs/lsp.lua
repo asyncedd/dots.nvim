@@ -151,13 +151,6 @@ return {
           B.diagnostics.gitlint,
           B.diagnostics.flake8,
           B.diagnostics.actionlint,
-          B.code_actions.gitsigns.with({
-            config = {
-              filter_actions = function(title)
-                return title:lower():match("blame") == nil -- filter out blame actions
-              end,
-            },
-          }),
           B.formatting.fish_indent,
           B.diagnostics.fish,
           B.formatting.stylua.with({
@@ -287,9 +280,11 @@ return {
       inlay_hints = {
         auto = false,
       },
-      server = {
-        cargo = {
-          allFeatures = true,
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = {
+            allFeatures = true,
+          },
         },
       },
     },
