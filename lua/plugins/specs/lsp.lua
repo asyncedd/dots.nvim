@@ -134,6 +134,7 @@ return {
         -- A list of sources to install
         ---@type string[]
         ensure_installed = {
+          "rustfmt",
           "stylua",
           "beautysh",
           "prettier",
@@ -271,5 +272,19 @@ return {
         return true
       end,
     },
+  },
+  {
+    "rust-lang/rust.vim",
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
+        callback = function()
+          if vim.bo.filetype == "rust" then
+            require("lazy").load({ plugins = "rust.vim" })
+            vim.g.rustfmt_autosave = 1
+            vim.cmd("silent! do FileType")
+          end
+        end,
+      })
+    end,
   },
 }
