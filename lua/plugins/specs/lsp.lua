@@ -298,13 +298,13 @@ return {
       local mr = require("mason-registry")
       if mr.refresh then
         mr.refresh(function()
-          local p = mr.get_package("rust_analyzer")
+          local p = mr.get_package("rust-analyzer")
           if not p:is_installed() then
             p:install()
           end
         end)
       else
-        local p = mr.get_package("rust_analyzer")
+        local p = mr.get_package("rust-analyzer")
         if not p:is_installed() then
           p:install()
         end

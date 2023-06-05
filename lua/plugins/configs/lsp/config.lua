@@ -1,6 +1,12 @@
 return function(opts)
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+  capabilities.general = {
+    positionEncodings = {
+      "utf-32",
+    },
+  }
+
   capabilities.textDocument = {
     completion = {
       completionItem = {

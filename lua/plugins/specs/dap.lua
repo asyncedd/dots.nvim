@@ -127,10 +127,12 @@ return {
       ensure_installed = {
         "delve",
         "debugpy",
+        "codelldb",
       },
       handlers = {},
       automatic_installation = true,
     },
+    event = "VeryLazy",
   },
   {
     "rcarriga/nvim-dap-ui",
