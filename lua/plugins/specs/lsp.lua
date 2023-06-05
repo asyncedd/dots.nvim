@@ -327,4 +327,27 @@ return {
     opts = {},
     branch = "anticonceal",
   },
+  {
+    "saecki/crates.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function(_, opts)
+      local crates = require("crates")
+      crates.setup(opts)
+      crates.show()
+    end,
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
+        callback = function()
+          if vim.bo.filetype == "rust" or vim.bo.filetype == "toml" then
+            vim.schedule(function()
+              require("lazy").load({ plugins = "crates.nvim" })
+              vim.cmd("silent! do FileType")
+            end)
+          end
+        end,
+      })
+    end,
+  },
 }
