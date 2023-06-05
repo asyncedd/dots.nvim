@@ -340,7 +340,8 @@ return {
     init = function()
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
         callback = function()
-          if vim.bo.filetype == "rust" or vim.bo.filetype == "toml" then
+          local filetype = vim.bo.filetype
+          if filetype == "rust" or filetype == "toml" then
             vim.schedule(function()
               require("lazy").load({ plugins = "crates.nvim" })
               vim.cmd("silent! do FileType")
