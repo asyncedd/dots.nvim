@@ -214,6 +214,6 @@ return {
         },
       }
     end,
-    dependencies = "one-small-step-for-vimkind",
+    dependencies = "nvim-dap",
   },
 }
