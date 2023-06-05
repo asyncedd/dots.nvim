@@ -280,11 +280,13 @@ return {
         callback = function()
           if vim.bo.filetype == "rust" then
             require("lazy").load({ plugins = "rust.vim" })
-            vim.g.rustfmt_autosave = 1
             vim.cmd("silent! do FileType")
           end
         end,
       })
+    end,
+    config = function()
+      vim.g.rustfmt_autosave = 1
     end,
   },
 }
