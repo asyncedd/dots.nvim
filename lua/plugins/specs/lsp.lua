@@ -49,15 +49,6 @@ return {
               },
             },
           },
-          rust_analyzer = {
-            settings = {
-              ["rust=analyzer"] = {
-                cargo = {
-                  allFeatures = true,
-                },
-              },
-            },
-          },
           cssls = {},
           jsonls = {
             settings = {
@@ -288,6 +279,36 @@ return {
     end,
     config = function()
       vim.g.rustfmt_autosave = 1
+    end,
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    opts = {
+      inlay_hints = {
+        auto = false,
+      },
+      server = {
+        cargo = {
+          allFeatures = true,
+        },
+      },
+    },
+    config = function(_, opts)
+      require("mason-lspconfig").setup({ ensure_installed = { "rust_analyzer" } })
+      require("rust-tools").setup(opts)
+    end,
+    dependencies = "nvim-lspconfig",
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
+        callback = function()
+          if vim.bo.filetype == "rust" then
+            vim.schedule(function()
+              require("lazy").load({ plugins = "rust-tools.nvim" })
+              vim.cmd("silent! do FileType")
+            end)
+          end
+        end,
+      })
     end,
   },
 }
