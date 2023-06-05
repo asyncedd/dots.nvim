@@ -296,6 +296,7 @@ return {
     config = function(_, opts)
       require("mason-lspconfig").setup({ ensure_installed = { "rust_analyzer" } })
       require("rust-tools").setup(opts)
+      vim.cmd("silent! do FileType")
     end,
     dependencies = "nvim-lspconfig",
     init = function()
