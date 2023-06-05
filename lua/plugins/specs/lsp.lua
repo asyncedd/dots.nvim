@@ -98,6 +98,7 @@ return {
           html = {},
           emmet_ls = {},
           gopls = {},
+          ["rust_analyzer"] = {},
         },
       }
     end,
@@ -289,21 +290,6 @@ return {
       },
     },
     config = function(_, opts)
-      require("mason").setup()
-      local mr = require("mason-registry")
-      if mr.refresh then
-        mr.refresh(function()
-          local p = mr.get_package("rust-analyzer")
-          if not p:is_installed() then
-            p:install()
-          end
-        end)
-      else
-        local p = mr.get_package("rust-analyzer")
-        if not p:is_installed() then
-          p:install()
-        end
-      end
       require("rust-tools").setup(opts)
       vim.cmd("silent! do FileType")
     end,
