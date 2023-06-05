@@ -279,8 +279,9 @@ return {
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
         callback = function()
           if vim.bo.filetype == "rust" then
-            require("lazy").load({ plugins = "rust.vim" })
-            vim.cmd("silent! do FileType")
+            vim.schedule(function()
+              require("lazy").load({ plugins = "rust.vim" })
+            end)
           end
         end,
       })
