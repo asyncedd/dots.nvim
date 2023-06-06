@@ -363,16 +363,6 @@ return {
     },
   },
   {
-    "LeonHeidelbach/trailblazer.nvim",
-    opts = function()
-      return require("plugins.configs.motion.trailblazer")
-    end,
-    config = function(_, opts)
-      require("trailblazer").setup(opts)
-    end,
-    event = "VeryLazy",
-  },
-  {
     "ggandor/leap-ast.nvim",
     dependencies = "leap.nvim",
     keys = {
