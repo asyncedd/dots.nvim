@@ -107,6 +107,10 @@ return {
       enable_ui = true, -- enable nvim-dap-ui
     },
     notify = true,
+    dropbar = {
+      enabled = true,
+      color_mode = true, -- enable color for kind's texts, not just kind's icons
+    },
   },
   -- compile_path = nil,
 }
