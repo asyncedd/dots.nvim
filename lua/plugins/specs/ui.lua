@@ -241,7 +241,17 @@ return {
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
-    opts = true,
+    opts = function()
+      return {
+        open_files_do_not_replace_types = {
+          "terminal",
+          "Trouble",
+          "qf",
+          "Outline",
+          "edgy",
+        },
+      }
+    end,
     keys = {
       { "<leader>tt", "<cmd>NeoTreeShowToggle<CR>" },
     },
