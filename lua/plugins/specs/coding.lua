@@ -50,6 +50,7 @@ return {
       "tailwindcss-colorizer-cmp.nvim",
       "codeium.nvim",
     },
+    commit = "950d0e3",
   },
   {
     "altermo/ultimate-autopair.nvim",
