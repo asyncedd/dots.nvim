@@ -220,6 +220,13 @@ return {
           size = { height = 0.5 },
         },
       },
+      right = {
+        {
+          title = " Symbol Outline",
+          ft = "aerial",
+          size = { height = 0.5 },
+        },
+      },
       bottom = {
         {
           ft = "help",
