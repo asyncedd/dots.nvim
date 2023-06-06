@@ -220,6 +220,16 @@ return {
           size = { height = 0.5 },
         },
       },
+      bottom = {
+        {
+          ft = "help",
+          size = { height = 20 },
+          -- only show help buffers
+          filter = function(buf)
+            return vim.bo[buf].buftype == "help"
+          end,
+        },
+      },
     },
     event = "VeryLazy",
   },
