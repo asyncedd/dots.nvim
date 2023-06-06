@@ -1,7 +1,4 @@
 return {
-  dim_inactive = {
-    enabled = true,
-  },
   color_overrides = {
     mocha = {
       text = "#D9E0EE",
@@ -62,6 +59,9 @@ return {
       TelescopePromptTitle = { fg = C.surface0, bg = C.mauve },
       TelescopeResultsTitle = { fg = C.mantle, bg = C.mantle },
       TelescopePreviewTitle = { fg = C.crust, bg = C.green },
+
+      -- Lazygit
+      LazyGitFloat = { bg = C.mantle },
 
       -- Illumiate
       IlluminatedWordText = { bg = U.darken(C.surface1, 0.7, C.base) },
