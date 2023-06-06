@@ -15,47 +15,41 @@ local header = {
 }
 
 local colors = {
-  function()
-    require("catppuccin.lib.highlighter").syntax({
-      StartLogo1 = { fg = C.red },
-      StartLogo2 = { fg = C.red },
-      StartLogo3 = { fg = C.peach },
-      StartLogo4 = { fg = C.yellow },
-      StartLogo5 = { fg = C.green },
-      StartLogo6 = { fg = C.sapphire },
-      StartLogo7 = { fg = C.blue },
-      StartLogo8 = { fg = C.lavender },
-    })
-  end,
-  function()
-    require("catppuccin.lib.highlighter").syntax({
-      StartLogo1 = { fg = C.blue },
-      StartLogo2 = { fg = C.blue },
-      StartLogo3 = { fg = C.blue },
-      StartLogo4 = { fg = C.blue },
-      StartLogo5 = { fg = C.blue },
-      StartLogo6 = { fg = C.yellow },
-      StartLogo7 = { fg = C.yellow },
-      StartLogo8 = { fg = C.yellow },
-    })
-  end,
-  function()
-    require("catppuccin.lib.highlighter").syntax({
-      StartLogo1 = { fg = "#94E2D5" },
-      StartLogo2 = { fg = "#A2DDD8" },
-      StartLogo3 = { fg = "#B0D9DA" },
-      StartLogo4 = { fg = "#BED4DD" },
-      StartLogo5 = { fg = "#CBD0DF" },
-      StartLogo6 = { fg = "#D9CBE2" },
-      StartLogo7 = { fg = "#E7C7E4" },
-      StartLogo8 = { fg = "#F5C2E7" },
-    })
-  end,
+  {
+    StartLogo1 = { fg = C.red },
+    StartLogo2 = { fg = C.red },
+    StartLogo3 = { fg = C.peach },
+    StartLogo4 = { fg = C.yellow },
+    StartLogo5 = { fg = C.green },
+    StartLogo6 = { fg = C.sapphire },
+    StartLogo7 = { fg = C.blue },
+    StartLogo8 = { fg = C.lavender },
+  },
+  {
+    StartLogo1 = { fg = C.blue },
+    StartLogo2 = { fg = C.blue },
+    StartLogo3 = { fg = C.blue },
+    StartLogo4 = { fg = C.blue },
+    StartLogo5 = { fg = C.blue },
+    StartLogo6 = { fg = C.yellow },
+    StartLogo7 = { fg = C.yellow },
+    StartLogo8 = { fg = C.yellow },
+  },
+  {
+    StartLogo1 = { fg = "#94E2D5" },
+    StartLogo2 = { fg = "#A2DDD8" },
+    StartLogo3 = { fg = "#B0D9DA" },
+    StartLogo4 = { fg = "#BED4DD" },
+    StartLogo5 = { fg = "#CBD0DF" },
+    StartLogo6 = { fg = "#D9CBE2" },
+    StartLogo7 = { fg = "#E7C7E4" },
+    StartLogo8 = { fg = "#F5C2E7" },
+  },
 }
 
 math.randomseed(os.time() * os.time())
 
-colors[math.random(1, #colors)]()
+require("catppuccin.lib.highlighter").syntax(colors[math.random(1, #colors)])
 
 -- Make the header a bit more fun with some color!
 local function colorize_header()
