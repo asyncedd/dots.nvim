@@ -184,9 +184,6 @@ return {
       -- It'll be good to only add the plugins you use into the list.
       ---@type string[]
       plugins = {
-        "nvim-dap-ui",
-        "catppuccin",
-        "null-ls.nvim",
         "lazy.nvim",
       },
       -- If runtime = true, it'll add the runtime (excluding the plugins I think?) to the workspace.
