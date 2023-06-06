@@ -248,6 +248,7 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
+    optional = true,
     opts = function()
       local Offset = require("bufferline.offset")
       if not Offset.edgy then
