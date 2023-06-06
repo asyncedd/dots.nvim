@@ -81,6 +81,7 @@ return {
   integrations = {
     cmp = true,
     dashboard = false,
+    alpha = false,
     gitsigns = true,
     nvimtree = false,
     telescope = false,
