@@ -89,9 +89,25 @@ return {
       { "<leader>to", "<cmd>Oil<CR>", desc = "Toggle Oil" },
     },
     init = function()
-      local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf())
-      if vim.uv.fs_stat(bufname) and vim.loop.fs_stat(bufname).type == "directory" then
-        require("lazy").load({ plugins = "oil.nvim" })
+      if vim.fn.argc() == 1 then
+        local stat = vim.loop.fs_stat(vim.fn.argv(0))
+        -- Capture the protocol and lazy load oil if it is "oil-ssh", besides also lazy
+        -- loading it when the first argument is a directory.
+        local adapter = string.match(vim.fn.argv(0), "^([%l-]*)://")
+        if (stat and stat.type == "directory") or adapter == "oil-ssh" then
+          require("lazy").load({ plugins = { "oil.nvim" } })
+        end
+      end
+      if not require("lazy.core.config").plugins["oil.nvim"]._.loaded then
+        vim.api.nvim_create_autocmd("BufNew", {
+          callback = function()
+            if vim.fn.isdirectory(vim.fn.expand("<afile>")) == 1 then
+              require("lazy").load({ plugins = { "oil.nvim" } })
+              -- Once oil is loaded, we can delete this autocmd
+              return true
+            end
+          end,
+        })
       end
     end,
   },
