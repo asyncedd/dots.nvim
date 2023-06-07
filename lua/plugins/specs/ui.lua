@@ -61,7 +61,7 @@ return {
     config = true,
     dependencies = {
       "nui.nvim",
-      "rcarriga/nvim-notify",
+      "nvim-notify",
     },
   },
   {
