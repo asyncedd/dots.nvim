@@ -69,7 +69,7 @@ return {
       IlluminatedWordWrite = { bg = U.darken(C.surface1, 0.7, C.base) },
 
       -- Indentscope
-      MiniIndentscopeSymbol = { fg = U.blend(C.sky, C.base, 0.3) },
+      MiniIndentscopeSymbol = { fg = C.sky },
 
       -- Leap
       LeapBackdrop = { link = "Comment" },
