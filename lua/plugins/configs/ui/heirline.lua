@@ -282,91 +282,6 @@ M.FileNameBlock = {
     self.filename = vim.api.nvim_buf_get_name(0)
   end,
 }
-
-M.Scrollbar = {
-  init = function(self)
-    local position = math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
-    local fg
-
-    if position <= 5 then
-      fg = "aqua"
-    elseif position >= 95 then
-      fg = "red"
-    else
-      fg = "purple"
-    end
-
-    self.scroll_color = fg
-  end,
-  {
-    provider = "",
-    hl = function(self)
-      return {
-        fg = self.scroll_color,
-      }
-    end,
-  },
-  {
-    provider = function()
-      local chars = {
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-      }
-      local line_ratio = vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0)
-      local position = math.floor(line_ratio * 100)
-
-      if position <= 5 then
-        return " TOP"
-      elseif position >= 95 then
-        return " BOT"
-      else
-        return chars[math.floor(line_ratio * #chars)] .. position
-      end
-    end,
-    hl = function(self)
-      return {
-        bg = self.scroll_color,
-        fg = "bright_bg",
-        bold = true,
-      }
-    end,
-  },
-  {
-    provider = "",
-    hl = function(self)
-      return {
-        fg = self.scroll_color,
-      }
-    end,
-  },
-}
-
 M.LSPActive = {
   condition = conditions.lsp_attached and function()
     return vim.g.lsp_attached
@@ -628,8 +543,6 @@ M.StatusLine = {
   M.LSP,
   M.Space,
   M.wpm,
-  M.Space,
-  M.Scrollbar,
 }
 
 local C = require("catppuccin.palettes").get_palette()
