@@ -90,7 +90,7 @@ return {
     },
     init = function()
       local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf())
-      if vim.loop.fs_stat(bufname) and vim.loop.fs_stat(bufname).type == "directory" then
+      if vim.uv.fs_stat(bufname) and vim.loop.fs_stat(bufname).type == "directory" then
         require("lazy").load({ plugins = "oil.nvim" })
       end
     end,

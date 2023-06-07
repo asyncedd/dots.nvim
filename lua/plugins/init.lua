@@ -2,7 +2,7 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 -- If it's not found - indicating that it's not found - Git clone it.
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   -- Show a lovely message indicating that we're boostrapping lazy :)
   print(" Bootstrapping lazy.nvim!")
 
