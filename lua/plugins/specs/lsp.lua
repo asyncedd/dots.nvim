@@ -99,6 +99,7 @@ return {
           emmet_ls = {},
           gopls = {},
           ["rust_analyzer"] = {},
+          ruff_lsp = {},
         },
       }
     end,
@@ -133,7 +134,6 @@ return {
           "actionlint",
           "flake8",
           "gitlint",
-          "ruff",
           "gofumpt",
           "goimports",
           "goimports-reviser",
@@ -143,7 +143,6 @@ return {
         },
         sources = {
           B.formatting.black,
-          B.diagnostics.ruff,
           B.diagnostics.mypy,
           B.formatting.goimports,
           B.formatting.goimports_reviser,
