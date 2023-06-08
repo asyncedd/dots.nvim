@@ -21,9 +21,9 @@ local colors = {
     StartLogo3 = { fg = C.peach },
     StartLogo4 = { fg = C.yellow },
     StartLogo5 = { fg = C.green },
-    StartLogo6 = { fg = C.sapphire },
-    StartLogo7 = { fg = C.blue },
-    StartLogo8 = { fg = C.lavender },
+    StartLogo6 = { fg = C.teal },
+    StartLogo7 = { fg = C.sapphire },
+    StartLogo8 = { fg = C.blue },
   },
   {
     StartLogo1 = { fg = C.blue },
