@@ -209,6 +209,7 @@ return {
   {
     "folke/edgy.nvim",
     opts = {
+      exit_when_last = true,
       left = {
         -- Neo-tree filesystem always takes half the screen height
         {
