@@ -26,7 +26,7 @@ return {
     },
   },
   {
-    "hrsh7th/nvim-cmp",
+    "folke/nvim-cmp",
     opts = function()
       return require("plugins.configs.coding.cmp")
     end,
@@ -50,7 +50,7 @@ return {
       "tailwindcss-colorizer-cmp.nvim",
       "codeium.nvim",
     },
-    commit = "950d0e3",
+    branch = "filter_sync",
   },
   {
     "altermo/ultimate-autopair.nvim",
