@@ -94,6 +94,15 @@ return {
       fg = "${black}",
       bg = "${black}",
     },
+
+    StartLogo1 = { fg = "#94E2D5" },
+    StartLogo2 = { fg = "#A2DDD8" },
+    StartLogo3 = { fg = "#B0D9DA" },
+    StartLogo4 = { fg = "#BED4DD" },
+    StartLogo5 = { fg = "#CBD0DF" },
+    StartLogo6 = { fg = "#D9CBE2" },
+    StartLogo7 = { fg = "#E7C7E4" },
+    StartLogo8 = { fg = "#F5C2E7" },
   },
   plugins = {
     polygot = false,
