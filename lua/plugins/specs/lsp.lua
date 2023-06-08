@@ -140,8 +140,10 @@ return {
           "mypy",
           "ruff",
           "black",
+          "isort",
         },
         sources = {
+          B.formatting.isort,
           B.formatting.black.with({
             args = {
               "--fast",
