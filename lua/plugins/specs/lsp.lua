@@ -142,7 +142,15 @@ return {
           "black",
         },
         sources = {
-          B.formatting.black,
+          B.formatting.black.with({
+            args = {
+              "--fast",
+              "--quiet",
+              "--stdin-filename",
+              "$FILENAME",
+              "-",
+            },
+          }),
           B.diagnostics.mypy,
           B.formatting.goimports,
           B.formatting.goimports_reviser,
