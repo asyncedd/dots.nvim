@@ -187,7 +187,7 @@ return {
     "mfussenegger/nvim-dap-python",
     config = function()
       vim.keymap.set("n", "<leader>dpr", function()
-        require("nvim-dap-python").test_method()
+        require("dap-python").test_method()
       end, { desc = "Test method" })
       require("dap-python").setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
     end,
