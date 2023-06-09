@@ -549,7 +549,7 @@ M.StatusLines = {
   },
   hl = function()
     if conditions.is_active() then
-      return "StatusLine"
+      return "Normal"
     else
       return "StatusLineNC"
     end
