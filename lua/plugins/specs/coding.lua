@@ -46,7 +46,6 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-emoji",
-      "tailwindcss-colorizer-cmp.nvim",
     },
     branch = "filter_sync",
   },
@@ -307,10 +306,6 @@ return {
       { "=p", "<Plug>(YankyPutAfterFilter)" },
       { "=P", "<Plug>(YankyPutBeforeFilter)" },
     },
-  },
-  {
-    "roobert/tailwindcss-colorizer-cmp.nvim",
-    opts = true,
   },
   {
     "windwp/nvim-ts-autotag",
