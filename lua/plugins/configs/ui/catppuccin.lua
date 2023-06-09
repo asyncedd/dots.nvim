@@ -42,9 +42,6 @@ return {
       CmpItemAbbrMatchFuzzy = { fg = C.sky, style = { "bold" } },
       PmenuSel = { bg = C.sky, fg = C.mantle, style = { "bold" } },
 
-      CmpItemKindCodeium = { fg = C.green },
-      CmpItemKindTabNine = { fg = C.lavender },
-
       -- Telescope
       TelescopeMatching = { fg = C.sky },
       TelescopeSelection = { bg = C.surface0 },
