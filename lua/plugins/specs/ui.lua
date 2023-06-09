@@ -157,13 +157,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "mvllow/modes.nvim",
-    opts = function()
-      return require("plugins.configs.ui.modes")
-    end,
-    event = "VeryLazy",
-  },
-  {
     "echasnovski/mini.hipatterns",
     opts = function()
       return require("plugins.configs.ui.hipatterns")
