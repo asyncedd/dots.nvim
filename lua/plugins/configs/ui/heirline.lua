@@ -504,34 +504,6 @@ M.Git = {
   },
 }
 
-M.wpm = {
-  {
-    provider = "",
-    hl = {
-      fg = "bright_bg",
-    },
-  },
-  {
-    provider = function()
-      local wpm = require("wpm")
-      return wpm.historic_graph()
-    end,
-    hl = function(self)
-      return {
-        fg = self:mode_color(),
-        bg = "bright_bg",
-      }
-    end,
-    update = { "InsertCharPre", "ModeChanged", "User WPM" },
-  },
-  {
-    provider = " ",
-    hl = {
-      fg = "bright_bg",
-    },
-  },
-}
-
 M.StatusLine = {
   M.ViMode,
   M.Space,
@@ -542,7 +514,6 @@ M.StatusLine = {
   M.Align,
   M.LSP,
   M.Space,
-  M.wpm,
 }
 
 local C = require("catppuccin.palettes").get_palette()

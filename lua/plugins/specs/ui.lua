@@ -127,10 +127,6 @@ return {
     config = true,
     event = "User UI",
     dependencies = {
-      {
-        "jcdickinson/wpm.nvim",
-        config = true,
-      },
       "nvim-web-devicons",
     },
   },
