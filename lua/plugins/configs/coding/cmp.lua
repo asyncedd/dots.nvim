@@ -108,11 +108,14 @@ M.cmp = {
     priority_weight = 0.8,
     comparators = {
       compare.score,
-      compare.offset,
       compare.exact,
-      compare.recently_used,
+      compare.offset,
+      compare.sort_text,
       compare.scopes,
+      compare.recently_used,
       compare.order,
+      compare.kind,
+      compare.length,
     },
   },
   performance = {
