@@ -69,4 +69,42 @@ return {
       { "<leader>gcp", ":CBcbox ", desc = "Pick comment box" },
     },
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      -- Because nvim-treesitter.configs am I right? xd
+      return require("plugins.configs.treesitter.configs")
+    end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+
+      vim.schedule(function()
+        require("nvim-treesitter.configs").setup({
+          indent = {
+            enable = true,
+          },
+        })
+      end)
+    end,
+    -- event = "User UI",
+    event = "BufReadPost",
+    build = ":TSUpdate",
+  },
+  {
+    "andymass/vim-matchup",
+    opts = function()
+      return require("plugins.configs.coding.matchup")
+    end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+
+      vim.cmd("silent! do FileType")
+    end,
+    dependencies = {
+      "nvim-treesitter",
+    },
+    init = function()
+      require("core.utils.lazy")("vim-matchup")
+    end,
+  },
 }
