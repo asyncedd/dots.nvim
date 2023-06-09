@@ -79,7 +79,10 @@ M.cmp = {
         end
       end,
       s = cmp.mapping.confirm({ select = false }),
-      c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
+      c = cmp.mapping.confirm({
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = false,
+      }),
     }),
     ["<C-e>"] = cmp.mapping.abort(),
   },
