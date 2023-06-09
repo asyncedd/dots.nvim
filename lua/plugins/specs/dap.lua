@@ -208,8 +208,7 @@ return {
     "jbyuki/one-small-step-for-vimkind",
     -- stylua: ignore
     keys = {
-      { "<leader>daL", function() require("osv").launch({ port = "${port}" }) end, desc = "Adapter Lua Server" },
-      { "<leader>dal", function() require("osv").run_this() end, desc = "Adapter Lua" },
+      { "<leader>dpr", function() require("osv").run_this() end, desc = "Adapter Lua" },
     },
     config = function()
       local dap = require("dap")
