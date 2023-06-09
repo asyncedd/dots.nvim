@@ -248,23 +248,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = function()
-      return {
-        open_files_do_not_replace_types = {
-          "terminal",
-          "Trouble",
-          "qf",
-          "Outline",
-          "edgy",
-        },
-      }
-    end,
-    keys = {
-      { "<leader>tt", "<cmd>NeoTreeShowToggle<CR>" },
-    },
-  },
-  {
     "akinsho/bufferline.nvim",
     optional = true,
     opts = function()
