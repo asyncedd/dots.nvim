@@ -26,7 +26,7 @@ return {
     },
   },
   {
-    "folke/nvim-cmp",
+    "hrsh7th/nvim-cmp",
     opts = function()
       return require("plugins.configs.coding.cmp")
     end,
@@ -47,7 +47,6 @@ return {
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-emoji",
     },
-    branch = "filter_sync",
   },
   {
     "altermo/ultimate-autopair.nvim",
