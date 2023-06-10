@@ -299,6 +299,16 @@ return {
     "chrisgrieser/nvim-various-textobjs",
     keys = {
       {
+        "aw",
+        "<cmd>lua require('various-textobjs').subword(false)<CR>",
+        mode = { "o", "x" },
+      },
+      {
+        "iw",
+        "<cmd>lua require('various-textobjs').subword(true)<CR>",
+        mode = { "o", "x" },
+      },
+      {
         "gG",
         "<cmd>lua require('various-textobjs').entireBuffer()<CR>",
         mode = { "o", "x" },
