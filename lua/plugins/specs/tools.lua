@@ -89,18 +89,38 @@ return {
       { "<leader>to", "<cmd>Oil<CR>", desc = "Toggle Oil" },
     },
     init = function()
+      -- vim.fn.argc() returns an integer on how much arguments that Neovim has been started with.
+      --
+      -- For ex.
+      --
+      -- "nvim" -> 0
+      -- "nvim ." -> 1
+      -- "nvim . ." -> 2
+      -- "nvim 1 2 3 4 5 6 7 8 9 0" -> 10
+      --
+      -- So, using this, we'll check if vim.fn.argc() is 1 or over 1
       if vim.fn.argc() >= 1 then
+        -- Get the information of the file/directory of vim.fn.argv(0)
+        --
+        -- vim.fn.argv(0) it self is the first argument that Neovim was started with.
         local stat = vim.loop.fs_stat(vim.fn.argv(0))
         -- Capture the protocol and lazy load oil if it is "oil-ssh", besides also lazy
         -- loading it when the first argument is a directory.
+        -- Check if it's a "oil-ssh"
         local adapter = string.match(vim.fn.argv(0), "^([%l-]*)://")
+        -- If it's either a direcotry or a "oil-ssh" adapter,
+        -- load "oil.nvim"
         if (stat and stat.type == "directory") or adapter == "oil-ssh" then
           require("lazy").load({ plugins = { "oil.nvim" } })
         end
       end
+      -- If Neovim wasn't started with all of that, check if oil.nvim was loaded
+      -- once, we load it, we don't have to load it twice, sooo...
       if not require("lazy.core.config").plugins["oil.nvim"]._.loaded then
+        -- If it doesn't, create a new "BufNew" autocommand
         vim.api.nvim_create_autocmd("BufNew", {
           callback = function()
+            -- If that file is a directory, load oil.nvim
             if vim.fn.isdirectory(vim.fn.expand("<afile>")) == 1 then
               require("lazy").load({ plugins = { "oil.nvim" } })
               -- Once oil is loaded, we can delete this autocmd
