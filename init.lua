@@ -57,8 +57,8 @@ else
   -- The only thing that matters is the "ok" variable below so, we can just define the other with a blank variable
   local ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
   --            ^^^^  ^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^
-  --            │              │               │
-  --            │              │               │
+  --             │             │               │
+  --             │             │               │
   --      protected call       │               │
   --                           │               │
   --           Define what function we want to do
