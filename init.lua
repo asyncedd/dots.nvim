@@ -87,6 +87,5 @@ vim.api.nvim_exec_autocmds("Colorscheme", {})
 -- vim.schedule, schedules the function inside it to be involed soon by the main event-loop.
 -- It's useful to avoid textlock or other temporary restrictions.
 vim.schedule(function()
-  -- TODO: Find a better way to load keymaps?
   require("keymaps")
 end)

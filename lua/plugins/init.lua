@@ -39,7 +39,6 @@ require("lazy").setup({ import = "plugins.specs" }, {
       disabled_plugins = {
         -- PERF: Disable some RTP plugins to improve performance.
         -- NOTE: I can disable more plugins such as `rplugin` and `netrw`, it'll decrease functionality.
-        -- TODO: I'll go find some plugins I could disable later on.
         "gzip",
         "tarPlugin",
         "tohtml",
