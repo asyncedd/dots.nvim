@@ -42,7 +42,22 @@ return {
       },
       { "tiagovla/scope.nvim", opts = true },
     },
-    event = "VeryLazy",
+    init = function()
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+          local load_bufferline = function()
+            require("lazy").load({ plugins = "bufferline.nvim" })
+          end
+          if vim.fn.argc() > 1 then
+            load_bufferline()
+          else
+            vim.schedule(function()
+              load_bufferline()
+            end)
+          end
+        end,
+      })
+    end,
     keys = {
       { "gbb", "<cmd>BufferLinePick<CR>", desc = "Toggle Buffer picker" },
       { "gbp", "<cmd>BufferLineTogglePin<CR>", desc = "Toggle Buffer pin" },
