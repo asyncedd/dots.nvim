@@ -510,7 +510,7 @@ M.Scrollbar = {
     local fg
 
     if position <= 5 then
-      fg = "aqua"
+      fg = "blue"
     elseif position >= 95 then
       fg = "red"
     else
