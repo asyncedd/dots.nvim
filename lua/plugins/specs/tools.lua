@@ -89,7 +89,7 @@ return {
       { "<leader>to", "<cmd>Oil<CR>", desc = "Toggle Oil" },
     },
     init = function()
-      if vim.fn.argc() == 1 then
+      if vim.fn.argc() >= 1 then
         local stat = vim.loop.fs_stat(vim.fn.argv(0))
         -- Capture the protocol and lazy load oil if it is "oil-ssh", besides also lazy
         -- loading it when the first argument is a directory.
