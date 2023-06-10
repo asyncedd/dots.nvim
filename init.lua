@@ -1,3 +1,5 @@
+-- init.lua
+--
 -- Enable the experimental Lua loader.
 --
 -- What it does is:

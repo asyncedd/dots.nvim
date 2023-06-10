@@ -48,7 +48,6 @@ require("lazy").setup({ import = "plugins.specs" }, {
         "matchparen",
         "netrwPlugin",
         "rplugin",
-        "nvim",
         "tutor",
         "spellfile",
         "editorconfig",
