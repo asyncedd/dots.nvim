@@ -57,14 +57,14 @@ else
   -- The only thing that matters is the "ok" variable below so, we can just define the other with a blank variable
   local ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
   --            ^^^^  ^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^
-  --             │             │               │
-  --             │             │               │
-  --      protected call       │               │
-  --                           │               │
+  --             │             │                │
+  --             │             │                │
+  --        protected call     │                │
+  --                           │                │
   --           Define what function we want to do
-  --                                           │
+  --                                            │
   --                                       the colorscheme local.
-  --                             Defined in `lua/settings/settings.colorscheme`
+  --                          Defined in `lua/settings/settings.colorscheme`
   --
   -- If it loads, we'll just go continue on, no problems :)
   if not ok then
