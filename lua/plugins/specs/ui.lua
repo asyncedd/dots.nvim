@@ -225,11 +225,6 @@ return {
     end,
   },
   {
-    "karb94/neoscroll.nvim",
-    opts = true,
-    event = "VeryLazy",
-  },
-  {
     "folke/edgy.nvim",
     opts = {
       exit_when_last = true,
