@@ -50,7 +50,7 @@
   "nui.nvim": { "branch": "main", "commit": "64bdc579873fa5bd303f6951ead2b419493c88e8" },
   "null-ls.nvim": { "branch": "main", "commit": "a138b14099e9623832027ea12b4631ddd2a49256" },
   "nvim-autopairs": { "branch": "master", "commit": "59df87a84c80a357ca8d8fe86e451b93ac476ccc" },
-  "nvim-cmp": { "branch": "main", "commit": "69e7d280cbe17e318b549a10ae3cae5810946be6" },
+  "nvim-cmp": { "branch": "main", "commit": "b8c2a62b3bd3827aa059b43be3dd4b5c45037d65" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "dde3084106a70b9a79d48f426f6d6fec6fd203f7" },
   "nvim-dap": { "branch": "master", "commit": "7c1d47cf7188fc31acdf951f9eee22da9d479152" },
   "nvim-dap-go": { "branch": "main", "commit": "cdf604a5703838f65fdee7c198f6cb59b563ef6f" },
