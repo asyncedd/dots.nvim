@@ -26,7 +26,9 @@ require("settings.autocmds")
 
 -- Catppuccinify the editor.
 -- vim.cmd("colorscheme catppuccin")
--- PERF: directly call catppuccin. (not via `vim.cmd("colorscheme x")`)
+-- PERF: directly call the colorscheme. (not via `vim.cmd("colorscheme x")`)
+-- lua blocks are expensive as I heard.
+-- this actually seems like an unnessearu premature optimization though
 -- HACK: Try to make this less hacky?
 
 local colorscheme = require("settings.settings").colorscheme
