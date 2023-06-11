@@ -167,14 +167,6 @@ return {
     end,
   },
   {
-    "folke/drop.nvim",
-    opts = function()
-      return require("plugins.configs.ui.drop")
-    end,
-    config = true,
-    event = { "CursorHold", "CursorHoldI", "VeryLazy" },
-  },
-  {
     "folke/todo-comments.nvim",
     opts = true,
     event = "VeryLazy",
