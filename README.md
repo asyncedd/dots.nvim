@@ -71,11 +71,6 @@ Then you can get a cup of [mocha ☕](https://github.com/catppuccin/nvim) while
 you wait. (Not that long btw) Then once it finished, you're done for! ([actually](https://github.com/asyncedd/dots.nvim#-quitting-nvim))
 Just run a `nvim` in your terminal :D
 
-# 🚶 After
-
-If you have some performance issues or have a weaker machine, TabNine might be the cause of it.
-If you do, please go use `:CmpTabNineHub` to go to the TabNineHub and try experiementing on which is performant.
-
 ## ⚡ Performance
 
 **⚠️ Super outdated!**
