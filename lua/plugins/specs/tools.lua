@@ -89,6 +89,8 @@ return {
       { "<leader>to", "<cmd>Oil<CR>", desc = "Toggle Oil" },
     },
     init = function()
+      -- BUG: If Oil.nvim is started as an "alternative" buffer, it doesn't really work
+
       -- vim.fn.argc() returns an integer on how much arguments that Neovim has been started with.
       --
       -- For ex.
