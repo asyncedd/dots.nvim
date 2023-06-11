@@ -61,12 +61,12 @@ else
   -- It'll be true if it does.
   local ok = pcall(vim.cmd.colorscheme, colorscheme)
   --         ^^^^^ ^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^
-  --           │             │                │
-  --           │             │                │
-  --      protected call     │                │
-  --                         │                │
-  --         Define what function we want to do
-  --                                          │
+  --           │             │               │
+  --           │             │               │
+  --      protected call     │               │
+  --                         │               │
+  --        Define what function we want to do
+  --                                         │
   --                                the colorscheme local.
   --                        Defined in `lua/settings/settings.colorscheme`
   --
