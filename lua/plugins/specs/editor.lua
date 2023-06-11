@@ -86,8 +86,9 @@ return {
         })
       end)
     end,
-    -- event = "User UI",
-    event = "BufReadPost",
+    init = function()
+      require("core.utils.lazy")("nvim-treesitter")
+    end,
     build = ":TSUpdate",
   },
   {
