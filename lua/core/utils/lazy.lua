@@ -1,10 +1,7 @@
 return function(plugin)
   vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
     callback = function()
-      local file = vim.fn.expand("%")
-      local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
-
-      if condition then
+      if vim.fn.expand("%") ~= "" then
         -- dont defer for treesitter as it will show slow highlighting
         -- This deferring only happens only when we do "nvim filename"
         if plugin ~= "nvim-treesitter" then
