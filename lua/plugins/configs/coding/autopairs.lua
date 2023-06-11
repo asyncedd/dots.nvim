@@ -9,6 +9,7 @@ M.ultimate = {
   },
   bs = {
     enable = true,
+    space = "balance",
     indent_ignore = true,
   },
   cr = {
