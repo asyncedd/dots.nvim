@@ -25,8 +25,6 @@ return {
       "plenary.nvim",
     },
     keys = {
-      -- { "<leader>ff", "<cmd>lua require('telescope').extensions.smart_open.smart_open({ cwd_only = true })<CR>", desc = "Find files" },
-      -- { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find files" },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Find grep" },
       { "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>>", desc = "Fuzzy find in buffer" },
     },
@@ -89,7 +87,7 @@ return {
       { "<leader>to", "<cmd>Oil<CR>", desc = "Toggle Oil" },
     },
     init = function()
-      -- BUG: If Oil.nvim is started as an "alternative" buffer, it doesn't really work
+      -- BUG: If Neovim is started with multiple buffers, Oil.nvim doesn't hijack the buffer right
 
       -- vim.fn.argc() returns an integer on how much arguments that Neovim has been started with.
       --
