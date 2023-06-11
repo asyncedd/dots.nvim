@@ -54,8 +54,10 @@ else
   -- If the colroscheme local doesn't match the ones in the if/elseif blocks,
   -- we'll just go ahead and `pcall` "vim.cmd.colorscheme" to try and load it.
   --
-  -- The only thing that matters is the "ok" variable below so, we can just define the other with a blank variable
-  local ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
+  -- We'll go and use the variable "ok".
+  -- It'll be false if the colorscheme doesn't exist.
+  -- It'll be true if it does.
+  local ok = pcall(vim.cmd.colorscheme, colorscheme)
   --            ^^^^  ^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^
   --             │             │                │
   --             │             │                │
