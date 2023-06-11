@@ -391,6 +391,16 @@ o.emo = false
 
 -- Enable global status.
 --
+-- Set laststatus to 3
+--
+-- Here are some options:
+-- - 0: Never show the statusline
+-- - 1: Only show if there's two+ windows
+-- - 2: Show always but, for all windows
+-- - 3: show always but ONLY for the last window
+--
+-- I personally think that the 3rd looks the prettiest
+--
 -- If there are two windows, it'll always and ONLY show the one window last accessed.
 
 o.ls = 3
