@@ -147,20 +147,6 @@ return {
     },
   },
   {
-    "echasnovski/mini.surround",
-    opts = function()
-      return require("plugins.configs.coding.mini-surround")
-    end,
-    config = function(_, opts)
-      require("mini.surround").setup(opts)
-    end,
-    keys = {
-      "gzx",
-      "gzX",
-      "gzc",
-    },
-  },
-  {
     "echasnovski/mini.move",
     opts = function()
       return require("plugins.configs.coding.move")
