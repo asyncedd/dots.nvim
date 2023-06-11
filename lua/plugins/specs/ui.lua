@@ -309,4 +309,9 @@ return {
       })
     end,
   },
+  {
+    "stevearc/dressing.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }

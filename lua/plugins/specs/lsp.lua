@@ -212,47 +212,6 @@ return {
     end,
   },
   {
-    "nvimdev/lspsaga.nvim",
-    opts = function()
-      return require("plugins.configs.lsp.saga")
-    end,
-    keys = {
-      { "gf", "<cmd>Lspsaga lsp_finder<CR>", desc = "Find the symbols's definition" },
-      {
-        "<leader>ca",
-        "<cmd>Lspsaga code_action<CR>",
-        desc = "Open a code action (if any)",
-        mode = {
-          "n",
-          "x",
-        },
-      },
-      -- Renaming is handled by Spectre.nvim and, I don't want it to be handled by Lspsaga.
-      { "<leader>lp", "<cmd>Lspsaga peek_definition<CR>", desc = "Take a peek of the definition for the symbol" },
-      { "<leader>lo", "<cmd>Lspsaga goto_definition<CR>", desc = "Goto definition for the symbol." },
-      { "<leader>so", "<cmd>Lspsaga outline<CR>", desc = "Open Lspsaga's code outline" },
-      { "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostic messages in the current line" },
-      {
-        "<leader>lb",
-        "<cmd>Lspsaga show_buf_diagnostics<CR>",
-        desc = "Show diagnostic messages in the current buffer",
-      },
-      {
-        "<leader>lw",
-        "<cmd>Lspsaga show_workspace_diagnostics<CR>",
-        desc = "Show diagnostic messages in the current workspace",
-      },
-      {
-        "<leader>lc",
-        "<cmd>Lspsaga show_cursor_diagnostics<CR>",
-        desc = "Show diagnostic messages in the hovered area",
-      },
-    },
-    init = function()
-      require("core.utils.lazy")("lspsaga.nvim")
-    end,
-  },
-  {
     "rust-lang/rust.vim",
     init = function()
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
