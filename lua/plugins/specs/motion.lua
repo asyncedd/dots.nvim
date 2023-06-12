@@ -377,14 +377,6 @@ return {
     },
   },
   {
-    "ggandor/leap-ast.nvim",
-    dependencies = "leap.nvim",
-    keys = {
-      { "<CR>", "v<cmd>lua require('leap-ast').leap()<CR>" },
-      { "<CR>", "<cmd>lua require('leap-ast').leap()<CR>", mode = { "x", "o" } },
-    },
-  },
-  {
     "RRethy/nvim-treesitter-textsubjects",
     opts = function()
       return require("plugins.configs.motion.textsubjects")
