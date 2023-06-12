@@ -197,7 +197,11 @@ return {
   },
   {
     "cbochs/portal.nvim",
-    opts = true,
+    opts = {
+      window_options = {
+        height = 6,
+      },
+    },
     keys = {
       { "<C-i>", "<cmd>Portal jumplist forward<CR>", desc = "Toggle portal foward" },
       { "<C-o>", "<cmd>Portal jumplist backward<CR>", desc = "Toggle portal backwards" },
