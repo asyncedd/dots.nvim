@@ -207,9 +207,6 @@ return {
       { "<C-o>", "<cmd>Portal jumplist backward<CR>", desc = "Toggle portal backwards" },
       { "<leader>hj", "<cmd>lua require('portal.builtin').harpoon.tunnel()<CR>", desc = "Toggle portal for harpoon" },
     },
-    dependencies = {
-      "portal.nvim",
-    },
   },
   {
     "linty-org/readline.nvim",
