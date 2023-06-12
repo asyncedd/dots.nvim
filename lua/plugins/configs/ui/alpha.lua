@@ -81,7 +81,7 @@ dashboard.section.buttons.val = {
   dashboard.button("g", "  Find word", ":Telescope live_grep<CR>"),
   dashboard.button("l", "  Open Lazygit", ":LazyGit<CR>"),
   dashboard.button("s", "󰒲  Sync Lazy.nvim", ":Lazy sync<CR>"),
-  dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
+  dashboard.button("q", "󰩈  Quit NVIM", ":qa<CR>"),
 }
 
 -- Everyone could use a good fortune cookie from time to time, right?
