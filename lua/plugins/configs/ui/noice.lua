@@ -1,5 +1,5 @@
 return {
-  border = { style = "shadow" },
+  border = { style = "none" },
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {
@@ -26,6 +26,19 @@ return {
       win_options = {
         winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
       },
+    },
+  },
+  routes = {
+    {
+      filter = {
+        event = "msg_show",
+        any = {
+          { find = "%d+L, %d+B" },
+          { find = "; after #%d+" },
+          { find = "; before #%d+" },
+        },
+      },
+      view = "mini",
     },
   },
 }
