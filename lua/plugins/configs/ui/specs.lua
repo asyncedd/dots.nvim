@@ -1,5 +1,0 @@
-return {
-  popup = {
-    winhl = "Cursor",
-  },
-}
