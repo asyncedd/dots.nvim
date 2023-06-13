@@ -357,4 +357,9 @@ return {
     opts = true,
     event = "VeryLazy",
   },
+  {
+    "folke/which-key.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
