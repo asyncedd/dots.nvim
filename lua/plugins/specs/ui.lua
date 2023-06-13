@@ -273,6 +273,10 @@ return {
           end,
           size = { height = 0.5 },
         },
+        { ft = "dapui_watches" },
+        { ft = "dapui_stacks" },
+        { ft = "dapui_breakpoints" },
+        { ft = "dapui_scopes" },
       },
       right = {
         {
@@ -296,6 +300,8 @@ return {
             height = 0.4,
           },
         },
+        { ft = "dapui_console" },
+        { ft = "dap-repl" },
       },
     },
     event = "VeryLazy",
