@@ -143,6 +143,7 @@ return {
           "isort",
         },
         sources = {
+          B.formatting.rustfmt,
           B.formatting.isort,
           B.formatting.black.with({
             args = {
@@ -209,23 +210,6 @@ return {
     },
     config = function(_, opts)
       require("plugins.configs.lsp.neodev")(opts)
-    end,
-  },
-  {
-    "rust-lang/rust.vim",
-    init = function()
-      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
-        callback = function()
-          if vim.bo.filetype == "rust" then
-            vim.schedule(function()
-              require("lazy").load({ plugins = "rust.vim" })
-            end)
-          end
-        end,
-      })
-    end,
-    config = function()
-      vim.g.rustfmt_autosave = 1
     end,
   },
   {
