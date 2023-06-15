@@ -594,9 +594,11 @@ M.StatusLine = {
   M.Space,
   M.FileNameBlock,
   M.Space,
+  M.Space,
   M.Git,
   M.Align,
   M.LSP,
+  M.Space,
   M.Space,
   M.Scrollbar,
 }
