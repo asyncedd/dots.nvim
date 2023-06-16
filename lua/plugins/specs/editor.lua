@@ -93,11 +93,16 @@ return {
   },
   {
     "andymass/vim-matchup",
-    opts = function()
-      return require("plugins.configs.coding.matchup")
-    end,
+    opts = {
+      matchup = {
+        enable = true,
+        enable_quotes = true,
+      },
+    },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
+
+      vim.g.matchup_matchparen_offscreen = {}
 
       vim.cmd("silent! do FileType")
     end,
