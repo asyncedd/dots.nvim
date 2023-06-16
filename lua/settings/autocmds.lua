@@ -50,3 +50,11 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
     end
   end,
 })
+
+-- Make Bash language stuff baked right inside zsh (since they have a similar syntax)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "zsh",
+  callback = function()
+    vim.bo.filetype = "sh"
+  end,
+})
