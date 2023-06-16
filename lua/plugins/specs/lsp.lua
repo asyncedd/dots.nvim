@@ -295,4 +295,10 @@ return {
     event = "LspAttach",
     branch = "anticonceal",
   },
+  {
+    "smjonas/inc-rename.nvim",
+    keys = {
+      { "<leader>rn", ":IncRename " },
+    },
+  },
 }
