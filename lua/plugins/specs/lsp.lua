@@ -215,9 +215,6 @@ return {
   {
     "simrat39/rust-tools.nvim",
     opts = {
-      inlay_hints = {
-        auto = false,
-      },
       settings = {
         ["rust-analyzer"] = {
           cargo = {
