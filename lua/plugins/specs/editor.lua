@@ -12,8 +12,8 @@ return {
     end,
     dependencies = {
       "kevinhwang91/promise-async",
+      "statuscol.nvim",
     },
-    config = true,
     event = "VeryLazy",
   },
   {

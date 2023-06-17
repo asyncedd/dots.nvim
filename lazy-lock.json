@@ -78,6 +78,7 @@
   "smart-open.nvim": { "branch": "0.2.x", "commit": "e67d3cc01cfa863f7d5e16b2b2f0bf2bf46f6283" },
   "specs.nvim": { "branch": "main", "commit": "2743e412bbe21c9d73954c403d01e8de7377890d" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },
+  "statuscol.nvim": { "branch": "main", "commit": "98d335ca2c0781ad0d06189441cf7d9e4b0cf073" },
   "tabout.nvim": { "branch": "master", "commit": "0d275c8d25f32457e67b5c66d6ae43f26a61bce5" },
   "telescope-fzy-native.nvim": { "branch": "master", "commit": "282f069504515eec762ab6d6c89903377252bf5b" },
   "telescope.nvim": { "branch": "master", "commit": "00cf15074a2997487813672a75f946d2ead95eb0" },
