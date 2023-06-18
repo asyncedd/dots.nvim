@@ -124,6 +124,23 @@ return {
         end,
         desc = "Widgets",
       },
+      {
+        "<leader>dpr",
+        function()
+          local ft = vim.bo.filetype
+
+          if ft == "python" then
+            require("lazy").load({ plugins = "nvim-dap-python" })
+            require("dap-python").test_method()
+          elseif ft == "lua" then
+            require("lazy").load({ plugins = "one-small-step-for-vimkind" })
+            require("osv").run_this()
+          elseif ft == "go" then
+            require("lazy").load({ plugins = "nvim-dap-go" })
+            require("dap-go").debug_test()
+          end
+        end,
+      },
     },
     dependencies = {
       "mason-nvim-dap.nvim",
@@ -186,9 +203,6 @@ return {
   {
     "mfussenegger/nvim-dap-python",
     config = function()
-      vim.keymap.set("n", "<leader>dpr", function()
-        require("dap-python").test_method()
-      end, { desc = "Test method" })
       require("dap-python").setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
     end,
     dependencies = "nvim-dap",
@@ -208,7 +222,6 @@ return {
     "jbyuki/one-small-step-for-vimkind",
     -- stylua: ignore
     keys = {
-      { "<leader>dpr", function() require("osv").run_this() end, desc = "Adapter Lua" },
     },
     config = function()
       local dap = require("dap")
@@ -259,9 +272,6 @@ return {
     },
     config = function(_, opts)
       require("dap-go").setup(opts)
-      vim.keymap.set("n", "<leader>dpr", function()
-        require("dap-go").debug_test()
-      end, {})
     end,
     init = function()
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
