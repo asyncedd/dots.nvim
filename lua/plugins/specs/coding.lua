@@ -4,6 +4,12 @@
 --  │       Add better coding functionality into Neovim
 --  └
 
+local does_ft_exist = function()
+  local ft = vim.bo.filetype
+  local exists = require("plugins.configs.coding.dial").ft[ft] and ft or nil
+  return exists
+end
+
 return {
   {
     "L3MON4D3/LuaSnip",
@@ -163,7 +169,7 @@ return {
       {
         "<C-a>",
         function()
-          return require("dial.map").inc_normal()
+          return require("dial.map").inc_normal(does_ft_exist())
         end,
         expr = true,
         desc = "Increment",
@@ -171,7 +177,7 @@ return {
       {
         "<C-x>",
         function()
-          return require("dial.map").dec_normal()
+          return require("dial.map").dec_normal(does_ft_exist())
         end,
         expr = true,
         desc = "Increment",
@@ -179,7 +185,7 @@ return {
       {
         "g<C-a>",
         function()
-          return require("dial.map").inc_gnormal()
+          return require("dial.map").inc_gnormal(does_ft_exist())
         end,
         expr = true,
         desc = "gIncrement",
@@ -187,7 +193,7 @@ return {
       {
         "g<C-x>",
         function()
-          return require("dial.map").dec_gnormal()
+          return require("dial.map").dec_gnormal(does_ft_exist())
         end,
         expr = true,
         desc = "gIncrement",
@@ -195,7 +201,7 @@ return {
       {
         "<C-a>",
         function()
-          return require("dial.map").inc_visual()
+          return require("dial.map").inc_visual(does_ft_exist())
         end,
         expr = true,
         desc = "Increment",
@@ -204,7 +210,7 @@ return {
       {
         "<C-x>",
         function()
-          return require("dial.map").dec_visual()
+          return require("dial.map").dec_visual(does_ft_exist())
         end,
         expr = true,
         desc = "Increment",
@@ -213,7 +219,7 @@ return {
       {
         "g<C-a>",
         function()
-          return require("dial.map").inc_gvisual()
+          return require("dial.map").inc_gvisual(does_ft_exist())
         end,
         expr = true,
         desc = "gIncrement",
@@ -222,7 +228,7 @@ return {
       {
         "g<C-x>",
         function()
-          return require("dial.map").dec_gvisual()
+          return require("dial.map").dec_gvisual(does_ft_exist())
         end,
         expr = true,
         desc = "gIncrement",
@@ -230,7 +236,7 @@ return {
       },
     },
     config = function()
-      require("plugins.configs.coding.dial").config()
+      require("plugins.configs.coding.dial").config(does_ft_exist())
     end,
   },
   {
