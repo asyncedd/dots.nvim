@@ -20,6 +20,8 @@ local M = {}
 
 M.ft = {}
 
+-- TODO: Somehow make it possible to handle modes too? :D
+
 M.ft["lua"] = {
   augend.constant.new({
     elements = {
