@@ -35,6 +35,28 @@ M.ft["lua"] = {
 
 M.config = function()
   local default = {
+    augend.constant.new({
+      elements = {
+        "+",
+        "-",
+        "*",
+        "/",
+        "%",
+        "^",
+      },
+      word = true,
+    }),
+    augend.constant.new({
+      elements = {
+        "==",
+        "~=",
+        "<",
+        "<=",
+        ">",
+        ">=",
+      },
+      word = true,
+    }),
     augend.constant.alias.bool,
     augend.semver.alias.semver,
     augend.integer.new({
