@@ -1,6 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "176e85eeb63f1a5970d6b88f1725039d85ca0055" },
-  "LuaSnip": { "branch": "master", "commit": "4964cd11e19de4671189b97de37f3c4930d43191" },
+  "LuaSnip": { "branch": "master", "commit": "ae11a08e2b920120a78864dd4e3841c552b2ad15" },
   "SchemaStore.nvim": { "branch": "main", "commit": "335569380e25ef49b4837195f295f144012e3c87" },
   "aerial.nvim": { "branch": "master", "commit": "c30fb2c9bd09592351eed676f4c20e7a6411020e" },
   "alpha-nvim": { "branch": "main", "commit": "9e33db324b8bb7a147bce9ea5496686ee859461d" },
@@ -36,7 +36,6 @@
   "mini.bracketed": { "branch": "main", "commit": "4d5d8d8cfadb82b4e2d9196da2ecd5cd938a9c48" },
   "mini.bufremove": { "branch": "main", "commit": "14805473144fffbd019d07e51bed2d176e065ee9" },
   "mini.comment": { "branch": "main", "commit": "877acea5b2a32ff55f808fc0ebe9aa898648318c" },
-  "mini.hipatterns": { "branch": "main", "commit": "eb93970cf1f92233e6475008dfc10fac7b025475" },
   "mini.indentscope": { "branch": "main", "commit": "f60e9b51a6214c73a170ffc5445ce91560981031" },
   "mini.move": { "branch": "main", "commit": "3afd39873eb9171684e554a214c055482444a47d" },
   "neodev.nvim": { "branch": "main", "commit": "b41da3926ce1c022a2f6a7ea8858889c3a8be4d7" },

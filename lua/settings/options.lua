@@ -246,7 +246,17 @@ o.foldcolumn = "1"
 o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
-o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+o.statuscolumn = "%s%=%l %#FoldColumn#%{"
+  .. "foldlevel(v:lnum) > foldlevel(v:lnum - 1)"
+  .. "? foldclosed(v:lnum) == -1"
+  .. '? ""'
+  .. ': ""'
+  .. ": foldlevel(v:lnum) == 0"
+  .. '? " "'
+  .. ': " "'
+  .. "} "
+  .. " "
 
 -- Undofile
 --

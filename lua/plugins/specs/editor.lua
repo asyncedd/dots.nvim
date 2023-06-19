@@ -44,7 +44,6 @@ return {
     },
     dependencies = {
       "kevinhwang91/promise-async",
-      "statuscol.nvim",
     },
     event = "VeryLazy",
   },
