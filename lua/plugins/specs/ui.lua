@@ -222,16 +222,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "echasnovski/mini.hipatterns",
-    opts = function()
-      return require("plugins.configs.ui.hipatterns")
-    end,
-    config = function(_, opts)
-      require("mini.hipatterns").setup(opts)
-    end,
-    event = "VeryLazy",
-  },
-  {
     "NvChad/nvim-colorizer.lua",
     opts = {
       user_default_options = {

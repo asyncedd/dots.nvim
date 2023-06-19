@@ -102,6 +102,7 @@ return {
           ["rust_analyzer"] = {},
           ruff_lsp = {},
           bashls = {},
+          eslint = {},
         },
       }
     end,
