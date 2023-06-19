@@ -45,7 +45,15 @@ return {
     dependencies = {
       "kevinhwang91/promise-async",
     },
-    event = "VeryLazy",
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
+        callback = function()
+          vim.schedule(function()
+            require("lazy").load({ plugins = "nvim-ufo" })
+          end)
+        end,
+      })
+    end,
   },
   {
     "lewis6991/gitsigns.nvim",
