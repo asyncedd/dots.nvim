@@ -247,16 +247,8 @@ o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
 
-o.statuscolumn = "%s%=%l %#FoldColumn#%{"
-  .. "foldlevel(v:lnum) > foldlevel(v:lnum - 1)"
-  .. "? foldclosed(v:lnum) == -1"
-  .. '? ""'
-  .. ': ""'
-  .. ": foldlevel(v:lnum) == 0"
-  .. '? " "'
-  .. ': " "'
-  .. "} "
-  .. " "
+-- stylua: ignore
+o.statuscolumn = [[%s%=%l %#FoldColumn#%{ foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? foldclosed(v:lnum) == -1 ? "" : "" : foldlevel(v:lnum) == 0 ? " " : " " }  ]]
 
 -- Undofile
 --
