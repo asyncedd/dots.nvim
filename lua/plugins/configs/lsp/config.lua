@@ -25,17 +25,27 @@ return function(opts)
       dynamicRegistration = false,
       lineFoldingOnly = true,
     },
-    inlayHint = true,
   }
 
   local servers = opts.servers
+
+  local on_attach = function(bufnr, client)
+    vim.lsp.buf.inlay_hint(0, true)
+    vim.api.nvim_create_autocmd({ "BufEnter" }, {
+      callback = function()
+        if #vim.lsp.get_active_clients({ bufnr = 0 }) ~= 0 then
+          vim.lsp.buf.inlay_hint(0, true)
+        end
+      end,
+    })
+  end
 
   local setup = function(server)
     if server ~= "rust_analyzer" then
       local server_opts = vim.tbl_deep_extend("force", {
         capabilities = vim.deepcopy(capabilities),
       }, servers[server] or {})
-      require("lspconfig")[server].setup({ settings = server_opts })
+      require("lspconfig")[server].setup({ settings = server_opts, on_attach = on_attach })
     end
   end
 

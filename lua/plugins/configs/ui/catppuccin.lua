@@ -32,6 +32,8 @@ return {
       ["@method"] = { link = "Function" }, -- For method calls and definitions.
       ["@method.call"] = { link = "Function" }, -- method calls
       ["@constant"] = { link = "Constant" }, -- For constants
+      -- LSP
+      LspInlayHint = { link = "Comment" },
 
       -- Cmp
       CmpItemAbbr = { fg = C.overlay2 },
