@@ -29,15 +29,10 @@ return function(opts)
 
   local servers = opts.servers
 
-  local on_attach = function(bufnr, client)
-    vim.lsp.buf.inlay_hint(0, true)
-    vim.api.nvim_create_autocmd({ "BufEnter" }, {
-      callback = function()
-        if #vim.lsp.get_active_clients({ bufnr = 0 }) ~= 0 then
-          vim.lsp.buf.inlay_hint(0, true)
-        end
-      end,
-    })
+  local on_attach = function(client, buffer)
+    if client.server_capabilities.inlayHintProvider then
+      vim.lsp.buf.inlay_hint(buffer, true)
+    end
   end
 
   local setup = function(server)
