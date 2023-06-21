@@ -71,13 +71,25 @@ return {
           svelte = {},
           -- https://github.com/folke/dot/blob/master/nvim/lua/plugins/lsp.lua
           tsserver = {
+            init_options = {
+              preferences = {
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+                importModuleSpecifierPreference = "non-relative",
+              },
+            },
             settings = {
               typescript = {
                 inlayHints = {
-                  includeInlayParameterNameHints = "literal",
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                  includeInlayParameterNameHints = "all",
+                  includeInlayParameterNameHintsWhenArgumentMatchesName = true,
                   includeInlayFunctionParameterTypeHints = true,
-                  includeInlayVariableTypeHints = false,
+                  includeInlayVariableTypeHints = true,
                   includeInlayPropertyDeclarationTypeHints = true,
                   includeInlayFunctionLikeReturnTypeHints = true,
                   includeInlayEnumMemberValueHints = true,
@@ -86,7 +98,7 @@ return {
               javascript = {
                 inlayHints = {
                   includeInlayParameterNameHints = "all",
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                  includeInlayParameterNameHintsWhenArgumentMatchesName = true,
                   includeInlayFunctionParameterTypeHints = true,
                   includeInlayVariableTypeHints = true,
                   includeInlayPropertyDeclarationTypeHints = true,
