@@ -12,6 +12,11 @@ return {
         mode = "fuzzy",
         incremental = true,
       },
+      highlight = {
+        label = {
+          current = true,
+        },
+      },
     },
     keys = {
       {
