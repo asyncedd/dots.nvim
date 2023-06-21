@@ -17,6 +17,9 @@ return {
           current = true,
         },
       },
+      jump = {
+        autojump = true,
+      },
     },
     keys = {
       {
