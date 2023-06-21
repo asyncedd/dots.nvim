@@ -240,13 +240,6 @@ return {
     end,
   },
   {
-    "mizlan/iswap.nvim",
-    opts = true,
-    keys = {
-      { "gx", "<cmd>ISwap<CR>" },
-    },
-  },
-  {
     "gbprod/yanky.nvim",
     opts = true,
     keys = {
