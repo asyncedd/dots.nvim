@@ -263,4 +263,12 @@ return {
       end
     end,
   },
+  {
+    "smjonas/duplicate.nvim",
+    opts = true,
+    keys = {
+      "yd",
+      "ydd",
+    },
+  },
 }
