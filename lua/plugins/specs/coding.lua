@@ -299,4 +299,35 @@ return {
     end,
     event = "InsertEnter",
   },
+  {
+    "gbprod/substitute.nvim",
+    opts = true,
+    keys = {
+      {
+        "gx",
+        function()
+          require("substitute").operate()
+        end,
+      },
+      {
+        "gxx",
+        function()
+          require("substitute").line()
+        end,
+      },
+      {
+        "gX",
+        function()
+          require("substitute").eol()
+        end,
+      },
+      {
+        "gx",
+        function()
+          require("substitute").visual()
+        end,
+        mode = "x",
+      },
+    },
+  },
 }
