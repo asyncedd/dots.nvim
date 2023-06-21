@@ -99,9 +99,8 @@ g.mapsubleader = ";"
 --
 -- Should be enabled by default. But, we're going to enable it anyways.
 --
--- FACT: "ai" is a abbreviation for "autoindent"
 
-o.ai = true
+o.autoindent = true
 
 -- Enable Smartindent.
 -- Do smart auto-indenting when starting a new line.
@@ -157,9 +156,8 @@ o.ai = true
 -- }
 --
 --
--- FACT: "si" abbreviates "smart indent"
 
-o.si = true
+o.smartindent = true
 
 -- Set Shiftwidth to 2.
 --
@@ -180,7 +178,7 @@ o.si = true
 --
 -- FACT: "sw" abbreviates "shift width"
 
-o.sw = 2
+o.shiftwidth = 2
 
 -- Set Tabstop to 2.
 --
@@ -190,9 +188,8 @@ o.sw = 2
 -- It's basically saying to Neovim to use two spaces for each <Tab> inserted.
 -- So, it's mainly for consistency.
 --
--- FACT: "ts" abbreviations of "tabstop"
 
-o.ts = 2
+o.tabstop = 2
 
 -- Enable Expandtab.
 --
@@ -201,9 +198,8 @@ o.ts = 2
 --
 -- TIP: To insert a real tab when, "expandtab" is turned on, use <C-v><Tab>!
 --
--- FACT: "et" abbreviates "expandtab"
 
-o.et = true
+o.expandtab = true
 
 -- Jumplist options for <C-i> and <C-o> jump motions.
 -- The following option allows you to modify how jumplist works in Neovim.
@@ -212,25 +208,25 @@ o.et = true
 -- The relative location of entries in the jumplist is preserved, but subsequent entries
 -- are discarded when navigating backwards in the jumplist and then jumping to a location.
 
-o.jop = "stack"
+o.jumpoptions = "stack"
 
 -- Enable mouse movement tracking in Neovim.
 -- This option allows plugins to track mouse movements in Neovim.
 -- o.mousemev = true: When set to true, mouse movements can be tracked in Neovim.
 
-o.mousemev = true
+o.mousemoveevent = true
 
 -- Enable breakindent.
 -- This option allows you to visually indent every wrapped line.
 -- o.bri = true: When set to true, every wrapped line will continue to be visually indented.
 
-o.bri = true
+o.breakindent = true
 
 -- Enable linebreak.
 -- This option allows you to wrap long lines at a word instead of the final character.
 -- o.lbr = true: When set to true, long lines will be wrapped at a word instead of the final character.
 
-o.lbr = true
+o.linebreak = true
 
 -- Fold-related options.
 -- The following options allow you to modify how folds are displayed in Neovim.
@@ -255,14 +251,14 @@ vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 -- The directory used is set by 'undodir'.
 
 vim.schedule(function()
-  o.udf = true
+  o.undofile = true
 
   -- Set "unnamedplus" as the clipboard register.
   --
   -- Use the "+" clipboard register for all clipboard stuff.
   -- That includes: yank, delete, change and put.
 
-  o.cb = "unnamedplus"
+  o.clipboard = "unnamedplus"
 end)
 
 -- Virtual edit
@@ -287,7 +283,7 @@ end)
 -- ████       aaaa
 -- Wow, there's a funny square
 
-o.ve = "block"
+o.virtualedit = "block"
 
 -- Searching
 
@@ -296,19 +292,19 @@ o.ve = "block"
 -- Ignore case in search patterns.
 -- Kinda useful if you want to search but without the cAsE sEsEtIvEnEsS
 -- This can be overruled via "\c" and "\C" - lower case and uppercase respectively.
-o.ic = true
+o.ignorecase = true
 
 -- Smart case
 --
 -- Do NOT ignore case in search patterns if an uppercase letter is in it.
-o.scs = true
+o.smartcase = true
 
 -- Disable showmode
 --
 -- If in insert, replace or visual mode, it'll put a message in the last line.
 -- This would generally take no effect when in "cmdheight" is 0, but because we're using noice, it does matter.
 
-o.smd = false
+o.showmode = false
 
 -- CODE: hFy
 --
@@ -330,13 +326,37 @@ o.smd = false
 --  4  print("wow, this is so cool!")
 --  5
 --
--- FACT: "nu" abbreviates "numbers"
 
-o.nu = true
+o.number = true
 
-o.rnu = true
+-- Enable relative numbers
+--
+-- Print the corresponding relative numbers before each line.
+--
+-- EXAMPLE:
+--  4 -- init.lua
+--  3
+--  2 -- Blanklines and comments are counted too!
+--   4 print("wow, this is so cool!")
+--  1
 
-o.cul = true
+o.relativenumber = true
+
+-- Enable cursorline.
+--
+-- Highlight the current line.
+--
+-- EXAMPLE:
+--
+-- (With relativenumbers)
+--
+-- 4 -- init.lua
+-- 3
+-- 2 -- Blanklines and comments are counted too!
+--  4 print("wow, this is so cool!") <- This is highlighted
+-- 1
+
+o.cursorline = true
 
 -- Set sign column to be 4.
 --
@@ -346,13 +366,13 @@ o.cul = true
 --
 -- So, if I have a new diff, It'll not feel weird, by the signcolumn expanding
 
-o.scl = "yes:1"
+o.signcolumn = "yes:1"
 
 -- Enable TermGUIColors.
 --
 -- Enables 24-bit RGB colors in the TUI. Uses "gui" :highlight attributes instead of "cterm" attributes. BUT, requires an ISO-8613-3 compatible terminal. (most terminals)
 
-o.tgc = true
+o.termguicolors = true
 
 -- Blinking cursor.
 --
@@ -360,7 +380,7 @@ o.tgc = true
 -- I find it cool :)
 --
 -- This is from the help docs, it enables mode shapes, "Cursor" highlight, and blinking
-o.gcr = {
+o.guicursor = {
   [[n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50]],
   [[a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor]],
   [[sm:block-blinkwait175-blinkoff150-blinkon175]],
@@ -371,13 +391,13 @@ o.gcr = {
 -- Making the pum menu a bit transparent.
 -- NOTE: This is pseudo-transparent.
 
-o.pb = 25
+o.pumblend = 25
 
 -- Making pum menu a bit limited in the terms of screen real estate.
 -- Basically it only shows 10 items into a popup menu.
 -- Otherwise, it can be shown via scrolling.
 
-o.ph = 10
+o.pumheight = 10
 
 -- Command line options.
 
@@ -389,7 +409,7 @@ o.ph = 10
 -- It basically prevents those wierd "Press ENTER or type command to continue" prompts.
 --
 
-o.ch = 0
+o.cmdheight = 0
 
 -- "Fix" emojis.
 --
@@ -397,7 +417,7 @@ o.ch = 0
 --
 -- For a small TL;DR: Emojis are weird in width and might cause issues when editing and even displaying in TMUX.
 
-o.emo = false
+o.emoji = false
 
 -- Enable global status.
 --
@@ -413,13 +433,13 @@ o.emo = false
 --
 -- If there are two windows, it'll always and ONLY show the one window last accessed.
 
-o.ls = 3
+o.laststatus = 3
 
 -- Set GUI font to Cartograph CF.
 --
 -- It doesn't really matter for the TUI but, it does on GUI versions.
 
-o.gfn = "Cartograph CF:h10"
+o.guifont = "Cartograph CF:h10"
 
 -- Set scrolloff to be at the max.
 --
@@ -427,4 +447,4 @@ o.gfn = "Cartograph CF:h10"
 -- Setting it to 999 - the largest you can set, makes it so that the cursor is always kept in the middle.
 -- Of course, this isn't true if there aren't enough lines above and below.
 
-o.so = 999
+o.scrolloff = 999
