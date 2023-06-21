@@ -274,4 +274,22 @@ return {
       "ydd",
     },
   },
+  {
+    "ThePrimeagen/harpoon",
+    opts = {
+      global_settings = {
+        tabline = false,
+      },
+    },
+    config = function(_, opts)
+      require("harpoon").setup(opts)
+      require("telescope").load_extension("harpoon")
+    end,
+    dependencies = "nvim-lua/plenary.nvim",
+    keys = {
+      { "<leader>hh", "<cmd>lua require('harpoon.mark').add_file()<CR>" },
+      { "<leader>hm", "<cmd>Telescope harpoon marks<CR>" },
+      { "<leader>h" .. vim.v.count, "<cmd>lua require('harpoon.ui').nav_file(" .. vim.v.count .. ")<CR>" },
+    },
+  },
 }
