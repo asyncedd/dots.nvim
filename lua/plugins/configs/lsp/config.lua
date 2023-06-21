@@ -1,4 +1,9 @@
 return function(opts)
+  local servers_to_not_setup = {
+    "rust_analyzer",
+    "clangd",
+  }
+
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
   capabilities.textDocument = {
@@ -27,6 +32,16 @@ return function(opts)
     },
   }
 
+  local checkIfExists = function(val, arr)
+    local y = false
+    for i in ipairs(arr) do
+      if arr[i] == val and y ~= true then
+        y = true
+      end
+    end
+    return y
+  end
+
   local servers = opts.servers
 
   local on_attach = function(client, buffer)
@@ -36,7 +51,7 @@ return function(opts)
   end
 
   local setup = function(server)
-    if server ~= "rust_analyzer" then
+    if not checkIfExists(server, servers_to_not_setup) then
       local server_opts = vim.tbl_deep_extend("force", {
         capabilities = vim.deepcopy(capabilities),
       }, servers[server] or {})
