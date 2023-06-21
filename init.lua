@@ -1,9 +1,13 @@
--- init.lua
---
--- 2023 Async hronous
+--[[
+-- File: init.lua
+-- Purpose: Initialize the Neovim configuration?
+-- Date: 04/26/2023
+-- Last modified: 06/21/2023
+-- License: Unlicense
 --
 -- The code provided below is licenced on the Unlicense licence.
 --
+--]]
 -- Enable the experimental Lua loader.
 --
 -- What it does is:
