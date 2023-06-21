@@ -115,6 +115,7 @@ return {
           ruff_lsp = {},
           bashls = {},
           eslint = {},
+          clangd = {},
         },
       }
     end,
@@ -289,5 +290,30 @@ return {
     keys = {
       { "<leader>rn", ":IncRename " },
     },
+  },
+  {
+    "https://git.sr.ht/~p00f/clangd_extensions.nvim",
+    opts = {
+      server = {
+        on_attach = function(client, bufnr)
+          vim.lsp.buf.inlay_hint(bufnr, true)
+        end,
+      },
+      extensions = {
+        autoSetHints = false,
+      },
+    },
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
+        callback = function()
+          if vim.bo.filetype == "c" or vim.bo.filetype == "cpp" then
+            vim.schedule(function()
+              require("lazy").load({ plugins = "clangd_extensions.nvim" })
+              vim.cmd("silent! do FileType")
+            end)
+          end
+        end,
+      })
+    end,
   },
 }

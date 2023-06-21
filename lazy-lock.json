@@ -6,6 +6,7 @@
   "alpha-nvim": { "branch": "main", "commit": "9e33db324b8bb7a147bce9ea5496686ee859461d" },
   "bufferline.nvim": { "branch": "main", "commit": "60734264a8655a7db3595159fb50076dc24c2f2c" },
   "catppuccin": { "branch": "main", "commit": "ad6305594737e16155c41c176c611e865c26bb6d" },
+  "clangd_extensions.nvim": { "branch": "main", "commit": "6d0bf36870d15c0c2284f4b6693a66552a6bf127" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-cmdline": { "branch": "main", "commit": "8ee981b4a91f536f52add291594e89fb6645e451" },
   "cmp-emoji": { "branch": "main", "commit": "19075c36d5820253d32e2478b6aaf3734aeaafa0" },
