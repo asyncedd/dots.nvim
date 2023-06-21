@@ -319,4 +319,13 @@ return {
       })
     end,
   },
+  {
+    "nvimdev/lspsaga.nvim",
+    opts = {
+      lightbulb = {
+        virtual_text = false,
+      },
+    },
+    event = "LspAttach",
+  },
 }
