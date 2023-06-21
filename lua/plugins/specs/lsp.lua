@@ -269,6 +269,7 @@ return {
   },
   {
     "saecki/crates.nvim",
+    opts = {},
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -279,14 +280,10 @@ return {
     end,
     init = function()
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
+        pattern = "Cargo.toml",
         callback = function()
-          local filetype = vim.bo.filetype
-          if filetype == "rust" or filetype == "toml" then
-            vim.schedule(function()
-              require("lazy").load({ plugins = "crates.nvim" })
-              vim.cmd("silent! do FileType")
-            end)
-          end
+          require("lazy").load({ plugins = "crates.nvim" })
+          vim.cmd("silent! do FileType")
         end,
       })
     end,
