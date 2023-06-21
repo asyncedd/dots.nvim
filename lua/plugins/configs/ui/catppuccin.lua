@@ -70,6 +70,11 @@ return {
       -- Indentscope
       MiniIndentscopeSymbol = { fg = C.sky },
 
+      -- Leap
+      FlashMatch = { fg = C.sky, style = { "bold", "nocombine" } },
+      FlashCurrent = { fg = C.pink, style = { "bold", "nocombine" } },
+      FlashLabel = { fg = C.mauve, style = { "bold", "nocombine" } },
+
       -- Notify
       NotifyERRORBody = { bg = C.mantle, fg = C.red },
       NotifyWARNBody = { bg = C.mantle, fg = C.yellow },
