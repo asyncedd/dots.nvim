@@ -289,7 +289,13 @@ return {
     keys = {
       { "<leader>hh", "<cmd>lua require('harpoon.mark').add_file()<CR>" },
       { "<leader>hm", "<cmd>Telescope harpoon marks<CR>" },
-      { "<leader>h" .. vim.v.count, "<cmd>lua require('harpoon.ui').nav_file(" .. vim.v.count .. ")<CR>" },
+      {
+        "<leader>h",
+        function()
+          local c = vim.v.count or 1
+          require("harpoon.ui").nav_file(c)
+        end,
+      },
     },
   },
 }
