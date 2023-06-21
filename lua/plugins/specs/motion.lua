@@ -6,33 +6,29 @@
 
 return {
   {
-    "ggandor/leap.nvim",
-    config = function()
-      require("plugins.configs.motion.leap")
-    end,
+    "folke/flash.nvim",
+    opts = {},
     keys = {
-      { "s", mode = { "n", "x", "o" }, desc = "Leap foward to" },
-      { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
-      { "x", mode = { "x", "o" }, desc = "Leap foward till" },
-      { "X", mode = { "x", "o" }, desc = "Leap backward till" },
-      { "gs", mode = { "x", "o" }, desc = "Leap from window" },
-      { "gS", mode = { "x", "o" }, desc = "Leap backward to" },
-    },
-  },
-  {
-    "ggandor/flit.nvim",
-    opts = {
-      labeled_modes = "nvoi",
-    },
-    config = true,
-    dependencies = {
-      "leap.nvim",
-    },
-    keys = {
-      { "f", mode = { "n", "x", "o" }, desc = "Move to next char" },
-      { "F", mode = { "n", "x", "o" }, desc = "Move to prev char" },
-      { "t", mode = { "n", "x", "o" }, desc = "Move before next char" },
-      { "T", mode = { "n", "x", "o" }, desc = "Move before prev char" },
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+      },
+      {
+        "S",
+        mode = { "n", "o", "x" },
+        function()
+          require("flash").jump()
+        end,
+      },
+      { "f", mode = { "n", "o", "x" } },
+      { "F", mode = { "n", "o", "x" } },
+      { "t", mode = { "n", "o", "x" } },
+      { "T", mode = { "n", "o", "x" } },
+      { "/", mode = { "n", "o", "x" } },
+      { "?", mode = { "n", "o", "x" } },
     },
   },
   {
@@ -79,120 +75,6 @@ return {
       { "E", "<cmd>lua require('spider').motion('e')<CR>", mode = { "n", "o", "x" }, desc = "e" },
       { "B", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" }, desc = "b" },
       { "gE", "<cmd>lua require('spider').motion('ge')<CR>", mode = { "n", "o", "x" }, desc = "ge" },
-    },
-  },
-  {
-    "ggandor/leap-spooky.nvim",
-    dependencies = {
-      "leap.nvim",
-    },
-    opts = true,
-    event = "VeryLazy",
-    keys = {
-      {
-        "arf",
-        function()
-          require("leap").leap({
-            target_windows = { vim.fn.win_getid() },
-            action = require("leap-spooky").spooky_action(function()
-              return "vaf"
-            end, { keeppos = true }),
-          })
-        end,
-        desc = "inner function",
-        mode = { "x", "o" },
-      },
-      {
-        "irf",
-        function()
-          require("leap").leap({
-            target_windows = { vim.fn.win_getid() },
-            action = require("leap-spooky").spooky_action(function()
-              return "vif"
-            end, { keeppos = true }),
-          })
-        end,
-        desc = "inner function",
-        mode = { "x", "o" },
-      },
-      {
-        "amf",
-        function()
-          require("leap").leap({
-            target_windows = { vim.fn.win_getid() },
-            action = require("leap-spooky").spooky_action(function()
-              return "vaf"
-            end, { keeppos = true }),
-          })
-        end,
-        desc = "inner function",
-        mode = { "x", "o" },
-      },
-      {
-        "imf",
-        function()
-          require("leap").leap({
-            target_windows = { vim.fn.win_getid() },
-            action = require("leap-spooky").spooky_action(function()
-              return "vif"
-            end, { keeppos = true }),
-          })
-        end,
-        desc = "inner function",
-        mode = { "x", "o" },
-      },
-      {
-        "arc",
-        function()
-          require("leap").leap({
-            target_windows = { vim.fn.win_getid() },
-            action = require("leap-spooky").spooky_action(function()
-              return "vac"
-            end, { keeppos = true }),
-          })
-        end,
-        desc = "inner function",
-        mode = { "x", "o" },
-      },
-      {
-        "irc",
-        function()
-          require("leap").leap({
-            target_windows = { vim.fn.win_getid() },
-            action = require("leap-spooky").spooky_action(function()
-              return "vic"
-            end, { keeppos = true }),
-          })
-        end,
-        desc = "inner function",
-        mode = { "x", "o" },
-      },
-      {
-        "amc",
-        function()
-          require("leap").leap({
-            target_windows = { vim.fn.win_getid() },
-            action = require("leap-spooky").spooky_action(function()
-              return "vac"
-            end, { keeppos = true }),
-          })
-        end,
-        desc = "inner function",
-        mode = { "x", "o" },
-      },
-      {
-        "imc",
-        function()
-          require("leap").leap({
-            target_windows = { vim.fn.win_getid() },
-            action = require("leap-spooky").spooky_action(function()
-              return "vic"
-            end, { keeppos = true }),
-          })
-        end,
-        desc = "inner function",
-        mode = { "x", "o" },
-      },
     },
   },
   {

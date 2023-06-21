@@ -70,12 +70,6 @@ return {
       -- Indentscope
       MiniIndentscopeSymbol = { fg = C.sky },
 
-      -- Leap
-      LeapBackdrop = { link = "Comment" },
-      LeapMatch = { fg = C.sky, style = { "bold", "nocombine" } },
-      LeapLabelPrimary = { fg = C.blue, style = { "bold", "nocombine" } },
-      LeapLabelSecondary = { fg = C.sapphire, style = { "bold", "nocombine" } },
-
       -- Notify
       NotifyERRORBody = { bg = C.mantle, fg = C.red },
       NotifyWARNBody = { bg = C.mantle, fg = C.yellow },
