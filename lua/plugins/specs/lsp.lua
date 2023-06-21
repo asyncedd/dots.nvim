@@ -236,6 +236,11 @@ return {
           },
         },
       },
+      server = {
+        on_attach = function(client, bufnr)
+          vim.lsp.buf.inlay_hint(bufnr, true)
+        end,
+      },
     },
     config = function(_, opts)
       require("rust-tools").setup(opts)
