@@ -1,5 +1,9 @@
 -- init.lua
 --
+-- 2023 Async hronous
+--
+-- The code provided below is licenced on the Unlicense licence.
+--
 -- Enable the experimental Lua loader.
 --
 -- What it does is:
