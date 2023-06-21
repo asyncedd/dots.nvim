@@ -7,7 +7,12 @@
 return {
   {
     "folke/flash.nvim",
-    opts = {},
+    opts = {
+      search = {
+        mode = "fuzzy",
+        incremental = true,
+      },
+    },
     keys = {
       {
         "s",
