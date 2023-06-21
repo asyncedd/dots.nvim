@@ -28,6 +28,13 @@ return {
           require("flash").jump()
         end,
       },
+      {
+        "<leader><leader>",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").treesitter()
+        end,
+      },
       { "f", mode = { "n", "o", "x" } },
       { "F", mode = { "n", "o", "x" } },
       { "t", mode = { "n", "o", "x" } },
