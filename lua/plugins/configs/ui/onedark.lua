@@ -7,6 +7,8 @@ return {
       telescope_selection = "require('onedarkpro.helpers').darken('bg', 8, 'onedark')",
 
       illuminate = "require('onedarkpro.helpers').lighten('bg', 7, 'onedark')",
+
+      notify = "require('onedarkpro.helpers').darken('bg', 5, 'onedark')",
     },
     light = {
       telescope_prompt = "require('onedarkpro.helpers').darken('bg', 2, 'onelight')",
@@ -109,6 +111,12 @@ return {
     FlashMatch = { fg = "${yellow}" },
     FlashCurrent = { fg = "${green}" },
     FlashLabel = { fg = "${blue}" },
+
+    -- Notify
+    NotifyERRORBody = { bg = "${notify}", fg = "${red}" },
+    NotifyWARNBody = { bg = "${notify}", fg = "${yellow}" },
+    NotifyINFOBody = { bg = "${notify}", fg = "${blue}" },
+    NotifyTRACEBody = { bg = "${notify}", fg = "${green}" },
   },
   plugins = {
     polygot = false,
