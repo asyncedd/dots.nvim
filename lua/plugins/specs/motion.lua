@@ -8,10 +8,6 @@ return {
   {
     "folke/flash.nvim",
     opts = {
-      search = {
-        mode = "fuzzy",
-        incremental = true,
-      },
       highlight = {
         label = {
           current = true,
