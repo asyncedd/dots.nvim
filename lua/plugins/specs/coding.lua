@@ -50,6 +50,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-emoji",
+      "codeium.nvim",
     },
   },
   {
@@ -329,5 +330,14 @@ return {
         mode = "x",
       },
     },
+  },
+  {
+    "jcdickinson/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    opts = {},
+    event = "VeryLazy",
   },
 }

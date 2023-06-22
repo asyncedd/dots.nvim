@@ -91,6 +91,7 @@ M.cmp = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer", keyword_length = 3 },
+    { name = "codeium", keyword_length = 3 },
     -- { name = "rg", keyword_length = 3 },
   }),
   formatting = {
