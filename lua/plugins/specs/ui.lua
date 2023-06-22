@@ -139,9 +139,10 @@ return {
         "mason",
         "notify",
         "oil_preview",
+        "vim",
       },
     },
-    event = "VeryLazy",
+    event = "BufReadPost",
   },
   {
     "echasnovski/mini.indentscope",
@@ -161,6 +162,7 @@ return {
           "mason",
           "notify",
           "oil_preview",
+          "vim",
         },
         callback = function()
           vim.b.miniindentscope_disable = true
