@@ -65,6 +65,12 @@ return {
       { "gbc", "<cmd>BufferLinePickClose<CR>", desc = "Toggle buffer picker closer" },
       { "]b", "<cmd>BufferLineCycleNext<CR>", desc = "Cycle to the next buffer" },
       { "[b", "<cmd>BufferLineCyclePrev<CR>", desc = "Cycle to the prev buffer" },
+      {
+        "<leader>b",
+        function()
+          require("bufferline").go_to(vim.v.count or 1)
+        end,
+      },
     },
   },
   {
