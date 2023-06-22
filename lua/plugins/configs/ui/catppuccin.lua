@@ -33,7 +33,10 @@ return {
       ["@method.call"] = { link = "Function" }, -- method calls
       ["@constant"] = { link = "Constant" }, -- For constants
       -- LSP
-      LspInlayHint = { link = "Comment" },
+      LspInlayHint = {
+        fg = C.overlay0,
+        bg = U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
+      },
 
       -- Cmp
       CmpItemAbbr = { fg = C.overlay2 },
