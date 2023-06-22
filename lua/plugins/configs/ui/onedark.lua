@@ -20,7 +20,6 @@ return {
   highlights = {
     -- CMP
     CmpItemKindCodeium = { fg = "${green}" },
-    CmpItemKindTabNine = { fg = "${purple}" },
 
     -- Telescope
     TelescopeBorder = {
@@ -105,6 +104,11 @@ return {
     StartLogo8 = { fg = "${yellow}" },
 
     LspInlayHint = { link = "Comment" },
+
+    -- Flash
+    FlashMatch = { fg = "${yellow}" },
+    FlashCurrent = { fg = "${green}" },
+    FlashLabel = { fg = "${blue}" },
   },
   plugins = {
     polygot = false,

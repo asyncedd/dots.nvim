@@ -71,7 +71,7 @@ return {
       -- Indentscope
       MiniIndentscopeSymbol = { fg = C.sky },
 
-      -- Leap
+      -- Flash
       FlashMatch = { fg = C.sky, style = { "bold", "nocombine" } },
       FlashCurrent = { fg = C.pink, style = { "bold", "nocombine" } },
       FlashLabel = { fg = C.mauve, style = { "bold", "nocombine" } },
