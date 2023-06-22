@@ -373,4 +373,9 @@ return {
     end,
     event = "User UI",
   },
+  {
+    "lewis6991/satellite.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
