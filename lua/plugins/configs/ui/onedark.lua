@@ -105,8 +105,6 @@ return {
     StartLogo7 = { fg = "${yellow}" },
     StartLogo8 = { fg = "${yellow}" },
 
-    LspInlayHint = { link = "Comment" },
-
     -- Flash
     FlashMatch = { fg = "${yellow}" },
     FlashCurrent = { fg = "${green}" },
