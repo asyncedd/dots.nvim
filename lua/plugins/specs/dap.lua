@@ -1,7 +1,30 @@
 return {
   {
     "mfussenegger/nvim-dap",
-    config = function()
+    opts = {
+      adapters = {
+        "delve",
+        "debugpy",
+        "codelldb",
+      },
+    },
+    config = function(_, opts)
+      local adapters_to_install = opts.adapters
+
+      local mr = require("mason-registry")
+      local function ensure_installed()
+        for _, tool in ipairs(adapters_to_install) do
+          local p = mr.get_package(tool)
+          if not p:is_installed() then
+            p:install()
+          end
+        end
+      end
+      if mr.refresh then
+        mr.refresh(ensure_installed)
+      else
+        ensure_installed()
+      end
       -- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
       require("dap")
 
@@ -143,23 +166,9 @@ return {
       },
     },
     dependencies = {
-      "mason-nvim-dap.nvim",
       "nvim-dap-ui",
       "nvim-dap-virtual-text",
     },
-  },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    opts = {
-      ensure_installed = {
-        "delve",
-        "debugpy",
-        "codelldb",
-      },
-      handlers = {},
-      automatic_installation = true,
-    },
-    event = "VeryLazy",
   },
   {
     "rcarriga/nvim-dap-ui",
