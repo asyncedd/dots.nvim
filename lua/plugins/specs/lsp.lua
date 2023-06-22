@@ -70,44 +70,7 @@ return {
           },
           svelte = {},
           -- https://github.com/folke/dot/blob/master/nvim/lua/plugins/lsp.lua
-          tsserver = {
-            init_options = {
-              preferences = {
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-                importModuleSpecifierPreference = "non-relative",
-              },
-            },
-            settings = {
-              typescript = {
-                inlayHints = {
-                  includeInlayParameterNameHints = "all",
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                  includeInlayFunctionParameterTypeHints = true,
-                  includeInlayVariableTypeHints = true,
-                  includeInlayPropertyDeclarationTypeHints = true,
-                  includeInlayFunctionLikeReturnTypeHints = true,
-                  includeInlayEnumMemberValueHints = true,
-                },
-              },
-              javascript = {
-                inlayHints = {
-                  includeInlayParameterNameHints = "all",
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                  includeInlayFunctionParameterTypeHints = true,
-                  includeInlayVariableTypeHints = true,
-                  includeInlayPropertyDeclarationTypeHints = true,
-                  includeInlayFunctionLikeReturnTypeHints = true,
-                  includeInlayEnumMemberValueHints = true,
-                },
-              },
-            },
-          },
+          tsserver = {},
           html = {},
           emmet_ls = {},
           gopls = {},
@@ -327,5 +290,22 @@ return {
       },
     },
     event = "LspAttach",
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    opts = {},
+    init = function()
+      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
+        callback = function()
+          local ft = vim.bo.filetype
+          if ft == "typescript" or ft == "javascript" or ft == "typescriptreact" or ft == "javascriptreact" then
+            vim.schedule(function()
+              require("lazy").load({ plugins = "typescript-tools.nvim" })
+              vim.cmd("silent! do FileType")
+            end)
+          end
+        end,
+      })
+    end,
   },
 }

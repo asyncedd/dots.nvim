@@ -2,6 +2,7 @@ return function(opts)
   local servers_to_not_setup = {
     "rust_analyzer",
     "clangd",
+    "tsserver",
   }
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()

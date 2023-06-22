@@ -87,6 +87,7 @@
   "todo-comments.nvim": { "branch": "main", "commit": "09b0b17d824d2d56f02ff15967e8a2499a89c731" },
   "tokyonight.nvim": { "branch": "main", "commit": "a0a7bfbc4c54348b56880a162afac9d103c618c1" },
   "treesj": { "branch": "main", "commit": "b1e2976c2d7ba922371cc7f3ab08b75136c27231" },
+  "typescript-tools.nvim": { "branch": "master", "commit": "1a1fc8fcc498ade3adf8b251e930abb2eb5b7983" },
   "ultimate-autopair.nvim": { "branch": "main", "commit": "d31cc988cd1ddf3f9918f2d938d1e7978be949ea" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
   "vim-matchup": { "branch": "master", "commit": "3a17944bfa3942da805a381750a1be4b314c64d2" },
