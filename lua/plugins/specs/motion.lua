@@ -42,6 +42,46 @@ return {
       { "T", mode = { "n", "o", "x" } },
       { "/", mode = { "n", "o", "x" } },
       { "?", mode = { "n", "o", "x" } },
+      -- https://github.com/folke/flash.nvim/discussions/24
+      -- This is flashy (flash + spooky)
+      {
+        "r",
+        function()
+          local operator = vim.v.operator
+          local register = vim.v.register
+          vim.api.nvim_feedkeys(vim.keycode("<esc>"), "o", true)
+          vim.schedule(function()
+            require("flash").jump({
+              action = function(match, state)
+                local op_func = vim.go.operatorfunc
+                local saved_view = vim.fn.winsaveview()
+                vim.api.nvim_set_current_win(match.win)
+                vim.api.nvim_win_set_cursor(match.win, match.pos)
+                _G.flash_op = function()
+                  local start = vim.api.nvim_buf_get_mark(0, "[")
+                  local finish = vim.api.nvim_buf_get_mark(0, "]")
+                  vim.api.nvim_cmd({ cmd = "normal", bang = true, args = { "v" } }, {})
+                  vim.api.nvim_win_set_cursor(0, { start[1], start[2] })
+                  vim.cmd("normal! o")
+                  vim.api.nvim_win_set_cursor(0, { finish[1], finish[2] })
+                  vim.api.nvim_input('"' .. register .. operator)
+
+                  vim.schedule(function()
+                    vim.api.nvim_set_current_win(state.win)
+                    vim.fn.winrestview(saved_view)
+                    vim.go.operatorfunc = op_func
+                  end)
+
+                  _G.flash_op = nil
+                end
+                vim.go.operatorfunc = "v:lua.flash_op"
+                vim.api.nvim_feedkeys("g@", "n", false)
+              end,
+            })
+          end)
+        end,
+        mode = "o",
+      },
     },
   },
   {
