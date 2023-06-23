@@ -322,8 +322,7 @@ return {
       {
         "<leader>h",
         function()
-          local c = vim.v.count or 1
-          require("harpoon.ui").nav_file(c)
+          require("harpoon.ui").nav_file(vim.v.count or 1)
         end,
       },
     },
