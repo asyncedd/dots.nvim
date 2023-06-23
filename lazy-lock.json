@@ -74,7 +74,6 @@
   "promise-async": { "branch": "main", "commit": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e" },
   "readline.nvim": { "branch": "master", "commit": "cab666cbd026dea9c817182e22255ecb3b3419b1" },
   "rust-tools.nvim": { "branch": "master", "commit": "71d2cf67b5ed120a0e31b2c8adb210dd2834242f" },
-  "satellite.nvim": { "branch": "main", "commit": "22c8cc5283c9533677e4b86b9d25d3beeca04667" },
   "scope.nvim": { "branch": "main", "commit": "066bdcf97a8634560428241c9176b9e6ef038055" },
   "smart-open.nvim": { "branch": "0.2.x", "commit": "e67d3cc01cfa863f7d5e16b2b2f0bf2bf46f6283" },
   "specs.nvim": { "branch": "main", "commit": "2743e412bbe21c9d73954c403d01e8de7377890d" },
