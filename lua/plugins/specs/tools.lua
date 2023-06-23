@@ -98,13 +98,9 @@ return {
         --
         -- vim.fn.argv(0) it self is the first argument that Neovim was started with.
         local stat = vim.loop.fs_stat(vim.fn.argv(0))
-        -- Capture the protocol and lazy load oil if it is "oil-ssh", besides also lazy
         -- loading it when the first argument is a directory.
-        -- Check if it's a "oil-ssh"
-        local adapter = string.match(vim.fn.argv(0), "^([%l-]*)://")
-        -- If it's either a direcotry or a "oil-ssh" adapter,
         -- load "mini.files"
-        if (stat and stat.type == "directory") or adapter == "oil-ssh" then
+        if stat and stat.type == "directory" then
           require("lazy").load({ plugins = { "mini.files" } })
         end
       end
