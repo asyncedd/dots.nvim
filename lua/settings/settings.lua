@@ -23,6 +23,17 @@ M.abbr = {
     "reutrn",
     "retrn",
   },
+  ["local"] = {
+    "locl",
+    "locla",
+    "locak",
+    "loal",
+    "locall",
+    "llocal",
+    "lcoal",
+    "loacl",
+    "loacl",
+  },
 }
 
 return M
