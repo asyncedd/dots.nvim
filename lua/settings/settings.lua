@@ -34,6 +34,10 @@ M.abbr = {
     "loacl",
     "loacl",
   },
+  ["const"] = {
+    "cons",
+    "cont",
+  },
 }
 
 return M
