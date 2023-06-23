@@ -44,7 +44,7 @@ return {
         "r",
         function()
           local operator = vim.v.operator
-          local register = vim.v.register
+          local register = vim--[[  ]].v.register
           vim.api.nvim_feedkeys(vim.keycode("<esc>"), "o", true)
           vim.schedule(function()
             require("flash").jump({
@@ -60,12 +60,12 @@ return {
                   vim.api.nvim_win_set_cursor(0, { start[1], start[2] })
                   vim.cmd("normal! o")
                   vim.api.nvim_win_set_cursor(0, { finish[1], finish[2] })
+                  vim.go.operatorfunc = op_func
                   vim.api.nvim_input('"' .. register .. operator)
 
                   vim.schedule(function()
                     vim.api.nvim_set_current_win(state.win)
                     vim.fn.winrestview(saved_view)
-                    vim.go.operatorfunc = op_func
                   end)
 
                   _G.flash_op = nil
