@@ -40,7 +40,7 @@ require("lazy").setup({ import = "plugins.specs" }, {
         -- PERF: Disable some RTP plugins to improve performance.
         -- NOTE: I can disable more plugins such as `rplugin` and `netrw`, but it'll decrease functionality.
         --
-        -- as for netrw, I've replaced that with oil.nvim
+        -- as for netrw, I've replaced that with mini.files
         -- Which is generally more powerful
         -- And, for both matchit/paren, I've replaced that with vim-matchup
         -- For, editorconfig, ATM I don't use it so, I don't really need it.

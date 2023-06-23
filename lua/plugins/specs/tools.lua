@@ -75,20 +75,14 @@ return {
     },
   },
   {
-    "stevearc/oil.nvim",
-    opts = true,
-    dependencies = {
-      "nvim-web-devicons",
-    },
-    cmd = {
-      "Oil",
-    },
-    keys = {
-      { "<leader>to", "<cmd>Oil<CR>", desc = "Toggle Oil" },
+    "echasnovski/mini.files",
+    opts = {
+      windows = {
+        -- Whether to show preview of directory under cursor
+        preview = true,
+      },
     },
     init = function()
-      -- BUG: If Neovim is started with multiple buffers, Oil.nvim doesn't hijack the buffer right
-
       -- vim.fn.argc() returns an integer on how much arguments that Neovim has been started with.
       --
       -- For ex.
@@ -109,20 +103,20 @@ return {
         -- Check if it's a "oil-ssh"
         local adapter = string.match(vim.fn.argv(0), "^([%l-]*)://")
         -- If it's either a direcotry or a "oil-ssh" adapter,
-        -- load "oil.nvim"
+        -- load "mini.files"
         if (stat and stat.type == "directory") or adapter == "oil-ssh" then
-          require("lazy").load({ plugins = { "oil.nvim" } })
+          require("lazy").load({ plugins = { "mini.files" } })
         end
       end
-      -- If Neovim wasn't started with all of that, check if oil.nvim was loaded
+      -- If Neovim wasn't started with all of that, check if mini.files was loaded
       -- once, we load it, we don't have to load it twice, sooo...
-      if not require("lazy.core.config").plugins["oil.nvim"]._.loaded then
+      if not require("lazy.core.config").plugins["mini.files"]._.loaded then
         -- If it doesn't, create a new "BufNew" autocommand
         vim.api.nvim_create_autocmd("BufNew", {
           callback = function()
-            -- If that file is a directory, load oil.nvim
+            -- If that file is a directory, load mini.files
             if vim.fn.isdirectory(vim.fn.expand("<afile>")) == 1 then
-              require("lazy").load({ plugins = { "oil.nvim" } })
+              require("lazy").load({ plugins = { "mini.files" } })
               -- Once oil is loaded, we can delete this autocmd
               return true
             end
@@ -130,5 +124,13 @@ return {
         })
       end
     end,
+    keys = {
+      {
+        "<leader>to",
+        function()
+          require("mini.files").open()
+        end,
+      },
+    },
   },
 }
