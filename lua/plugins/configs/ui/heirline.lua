@@ -1,5 +1,6 @@
 local utils = require("heirline.utils")
 local conditions = require("heirline.conditions")
+local U = require("catppuccin.utils.colors")
 
 local M = {}
 
@@ -199,8 +200,12 @@ M.FileIcon = {
   end,
   hl = function(self)
     return {
-      fg = self:icon_color(),
-      bg = "bright_bg",
+      bg = U.lighten(
+        self:icon_color(),
+        0.7,
+        string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true)["foreground"], 0.3) or 0
+      ),
+      fg = "bright_bg",
     }
   end,
 }
@@ -252,7 +257,11 @@ M.FileNameBlock = utils.insert(
     hl = function(self)
       return {
         fg = self:icon_color(),
-        bg = "bright_bg",
+        bg = U.lighten(
+          self:icon_color(),
+          0.7,
+          string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true)["foreground"], 0.3) or 0
+        ),
       }
     end,
     M.FileIcon,
@@ -272,9 +281,13 @@ M.FileNameBlock = {
   M.FileNameBlock,
   {
     provider = "",
-    hl = function()
+    hl = function(self)
       return {
-        fg = "bright_bg",
+        fg = U.lighten(
+          self:icon_color(),
+          0.7,
+          string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true)["foreground"], 0.3) or 0
+        ),
       }
     end,
   },
