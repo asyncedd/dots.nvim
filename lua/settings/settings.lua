@@ -8,4 +8,21 @@ M.tokyonight = {
   style = "moon",
 }
 
+M.abbr = {
+  ["return"] = {
+    "retu",
+    "retn",
+    "retun",
+    "retrun",
+    "returb",
+    "retunr",
+    "retunrn",
+    "retunr",
+    "rerturn",
+    "rreturn",
+    "reutrn",
+    "retrn",
+  },
+}
+
 return M
