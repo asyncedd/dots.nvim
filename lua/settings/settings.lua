@@ -38,6 +38,17 @@ M.abbr = {
     "cons",
     "cont",
   },
+  ["print"] = {
+    "prin",
+    "pritn",
+    "prnit",
+    "pirnt",
+    "prinr",
+    "pront",
+    "priht",
+    "prnt",
+    "prinnt",
+  },
 }
 
 return M
