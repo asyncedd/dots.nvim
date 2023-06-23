@@ -20,6 +20,13 @@ return {
     "neovim/nvim-lspconfig",
     opts = function()
       return {
+        -- A list of servers not to setup.
+        -- This is useful if you have some LSPs you want to setup with other plugins (eg. rust-tools.nvim)
+        servers_to_not_setup = {
+          "rust_analyzer",
+          "clangd",
+          "tsserver",
+        },
         servers = {
           lua_ls = {
             Lua = {
