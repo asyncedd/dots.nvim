@@ -93,7 +93,7 @@ return {
       require("core.utils.lazy")("nvim-lspconfig")
     end,
     config = function(_, opts)
-      require("plugins.configs.lsp.config")(opts)
+      require("plugins.configs.lsp.config").setup(opts)
 
       require("plugins.configs.lsp.native")
     end,
@@ -214,9 +214,7 @@ return {
         },
       },
       server = {
-        on_attach = function(client, bufnr)
-          vim.lsp.buf.inlay_hint(bufnr, true)
-        end,
+        on_attach = require("plugins.configs.lsp.config").on_attach,
       },
     },
     config = function(_, opts)
@@ -268,9 +266,7 @@ return {
     "https://git.sr.ht/~p00f/clangd_extensions.nvim",
     opts = {
       server = {
-        on_attach = function(client, bufnr)
-          vim.lsp.buf.inlay_hint(bufnr, true)
-        end,
+        on_attach = require("plugins.configs.lsp.config").on_attach,
       },
       extensions = {
         autoSetHints = false,
@@ -300,7 +296,9 @@ return {
   },
   {
     "pmizio/typescript-tools.nvim",
-    opts = {},
+    opts = {
+      on_attach = require("plugins.configs.lsp.config").on_attach,
+    },
     init = function()
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
         callback = function()

@@ -1,4 +1,12 @@
-return function(opts)
+local M = {}
+
+M.on_attach = function(client, buffer)
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.buf.inlay_hint(buffer, true)
+  end
+end
+
+M.setup = function(opts)
   local servers_to_not_setup = opts.servers_to_not_setup
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -41,18 +49,12 @@ return function(opts)
 
   local servers = opts.servers
 
-  local on_attach = function(client, buffer)
-    if client.server_capabilities.inlayHintProvider then
-      vim.lsp.buf.inlay_hint(buffer, true)
-    end
-  end
-
   local setup = function(server)
     if not checkIfExists(server, servers_to_not_setup) then
       local server_opts = vim.tbl_deep_extend("force", {
         capabilities = vim.deepcopy(capabilities),
       }, servers[server] or {})
-      require("lspconfig")[server].setup({ settings = server_opts, on_attach = on_attach })
+      require("lspconfig")[server].setup({ settings = server_opts, on_attach = M.on_attach })
     end
   end
 
@@ -78,3 +80,5 @@ return function(opts)
     mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
   end
 end
+
+return M
