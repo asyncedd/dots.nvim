@@ -48,9 +48,6 @@ return {
       "nvim-web-devicons",
       {
         "echasnovski/mini.bufremove",
-        config = function()
-          require("mini.bufremove").setup()
-        end,
       },
       { "tiagovla/scope.nvim", opts = true },
     },
@@ -181,17 +178,11 @@ return {
         end,
       })
     end,
-    config = function(_, opts)
-      require("mini.indentscope").setup(opts)
-    end,
   },
   {
     "echasnovski/mini.animate",
     opts = function()
       return require("plugins.configs.ui.animate")
-    end,
-    config = function(_, opts)
-      require("mini.animate").setup(opts)
     end,
     event = "VeryLazy",
   },

@@ -118,9 +118,6 @@ return {
     opts = function()
       return require("plugins.configs.coding.bracketed")
     end,
-    config = function(_, opts)
-      require("mini.bracketed").setup(opts)
-    end,
     event = "VeryLazy",
   },
   {
@@ -155,9 +152,6 @@ return {
     "echasnovski/mini.move",
     opts = function()
       return require("plugins.configs.coding.move")
-    end,
-    config = function(_, opts)
-      require("mini.move").setup(opts)
     end,
     keys = {
       { "<M-j>", mode = { "x", "n" } },
