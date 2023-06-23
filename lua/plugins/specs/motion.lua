@@ -78,6 +78,23 @@ return {
         end,
         mode = "o",
       },
+      {
+        "<leader>t",
+        function()
+          require("flash").jump({
+            action = function(match, state)
+              vim.api.nvim_win_call(match.win, function()
+                vim.api.nvim_win_set_cursor(match.win, match.pos)
+                require("flash").treesitter()
+                vim.schedule(function()
+                  vim.api.nvim_win_set_cursor(match.win, state.pos)
+                end)
+              end)
+            end,
+          })
+        end,
+        mode = "o",
+      },
     },
   },
   {
