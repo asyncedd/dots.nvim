@@ -163,4 +163,9 @@ return {
       require("core.utils.lazy")("vim-matchup")
     end,
   },
+  {
+    "tzachar/highlight-undo.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
