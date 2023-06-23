@@ -102,30 +102,7 @@ return {
     opts = function()
       return require("plugins.configs.motion.ai")
     end,
-    config = function(_, opts)
-      require("mini.ai").setup(opts)
-    end,
-    keys = {
-      { "(", mode = { "x", "o" } },
-      { "[", mode = { "x", "o" } },
-      { "{", mode = { "x", "o" } },
-      { "<", mode = { "x", "o" } },
-      { ")", mode = { "x", "o" } },
-      { "]", mode = { "x", "o" } },
-      { "}", mode = { "x", "o" } },
-      { ">", mode = { "x", "o" } },
-      { "b", mode = { "x", "o" } },
-      { '"', mode = { "x", "o" } },
-      { "'", mode = { "x", "o" } },
-      { "`", mode = { "x", "o" } },
-      { "q", mode = { "x", "o" } },
-      { "?", mode = { "x", "o" } },
-      { "t", mode = { "x", "o" } },
-      { "f", mode = { "x", "o" } },
-      { "f", mode = { "x", "o" } },
-      { "a", mode = { "x", "o" } },
-      { " ", mode = { "x", "o" } },
-    },
+    event = "VeryLazy",
     dependencies = {
       "nvim-treesitter-textobjects",
     },
