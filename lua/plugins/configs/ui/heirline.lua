@@ -54,10 +54,10 @@ M.Align = { provider = "%=" }
 
 M.ViMode = {
   {
-    provider = " ",
+    provider = "",
     hl = function(self)
       return {
-        bg = self:mode_color(),
+        fg = self:mode_color(),
       }
     end,
   },
