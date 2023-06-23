@@ -12,6 +12,10 @@ return {
       return require("plugins.configs.ui.catppuccin")
     end,
     config = true,
+    event = {
+      "CmdlineEnter",
+      "VeryLazy",
+    },
   },
   {
     "folke/tokyonight.nvim",
@@ -19,12 +23,20 @@ return {
       return require("plugins.configs.ui.tokyonight")
     end,
     config = true,
+    event = {
+      "CmdlineEnter",
+      "VeryLazy",
+    },
   },
   {
     "olimorris/onedarkpro.nvim",
     opts = function()
       return require("plugins.configs.ui.onedark")
     end,
+    event = {
+      "CmdlineEnter",
+      "VeryLazy",
+    },
   },
   {
     "akinsho/bufferline.nvim",
