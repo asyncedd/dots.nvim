@@ -278,14 +278,10 @@ return {
         tabline = false,
       },
     },
-    config = function(_, opts)
-      require("harpoon").setup(opts)
-      require("telescope").load_extension("harpoon")
-    end,
     dependencies = "nvim-lua/plenary.nvim",
     keys = {
       { "<leader>hh", "<cmd>lua require('harpoon.mark').add_file()<CR>" },
-      { "<leader>hm", "<cmd>Telescope harpoon marks<CR>" },
+      { "<leader>hm", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>" },
       {
         "<leader>h",
         function()
