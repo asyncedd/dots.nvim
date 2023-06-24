@@ -3,7 +3,9 @@ return function(opts)
   local sources = opts.sources
 
   for i in ipairs(sources) do
-    table.insert(names, sources[i].name)
+    local name = sources[i].name
+    name = name:gsub("_", "-")
+    table.insert(names, name)
   end
 
   local group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
