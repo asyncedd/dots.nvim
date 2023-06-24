@@ -87,6 +87,7 @@ return {
           eslint = {},
           clangd = {},
           solograph = {},
+          jdtls = {},
         },
       }
     end,
