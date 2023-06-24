@@ -8,7 +8,54 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     opts = function()
-      return require("plugins.configs.tools.telescope")
+      local function flash(prompt_bufnr)
+        require("flash").jump({
+          pattern = "^",
+          highlight = { label = { after = { 0, 0 } } },
+          search = {
+            mode = "search",
+            exclude = {
+              function(win)
+                return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "TelescopeResults"
+              end,
+            },
+          },
+          action = function(match)
+            local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+            picker:set_selection(match.pos[1] - 1)
+          end,
+        })
+      end
+      return {
+        defaults = {
+          initial_mode = "insert",
+          selection_strategy = "reset",
+          sorting_strategy = "ascending",
+          layout_strategy = "horizontal",
+          winblend = 0,
+          prompt_prefix = "   ",
+          selection_caret = "  ",
+          entry_prefix = "  ",
+          color_devicons = true,
+          layout_config = {
+            horizontal = {
+              prompt_position = "top",
+              preview_width = 0.55,
+              results_width = 0.8,
+            },
+            vertical = {
+              mirror = false,
+            },
+            width = 0.87,
+            height = 0.80,
+            preview_cutoff = 120,
+          },
+          mappings = {
+            n = { ["q"] = require("telescope.actions").close, s = flash },
+            i = { ["<c-s>"] = flash },
+          },
+        },
+      }
     end,
     config = function(_, opts)
       require("telescope").setup(opts)
