@@ -142,13 +142,6 @@ return {
     },
   },
   {
-    "mizlan/iswap.nvim",
-    opts = true,
-    keys = {
-      { "<leader>is", "<cmd>ISwap<CR>", desc = "Interactively swap" },
-    },
-  },
-  {
     "echasnovski/mini.move",
     opts = function()
       return require("plugins.configs.coding.move")
