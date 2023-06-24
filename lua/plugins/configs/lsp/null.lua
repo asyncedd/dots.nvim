@@ -1,13 +1,22 @@
 return function(opts)
+  local names = {}
+  local sources = opts.sources
+
+  for i in ipairs(sources) do
+    table.insert(names, sources[i].name)
+  end
+
   local group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 
-  require("mason").setup(opts.ensure_installed)
+  require("mason").setup(names)
   local mr = require("mason-registry")
   local function ensure_installed()
-    for _, tool in ipairs(opts.ensure_installed) do
-      local p = mr.get_package(tool)
-      if not p:is_installed() then
-        p:install()
+    for _, tool in ipairs(names) do
+      local ok, p = pcall(mr.get_package, tool)
+      if ok then
+        if not p:is_installed() then
+          p:install()
+        end
       end
     end
   end
@@ -18,7 +27,7 @@ return function(opts)
   end
 
   require("null-ls").setup({
-    sources = opts.sources,
+    sources = sources,
     on_attach = function(client)
       if
         client.config

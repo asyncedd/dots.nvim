@@ -110,23 +110,6 @@ return {
       local B = nls.builtins
       return {
         -- A list of sources to install
-        ---@type string[]
-        ensure_installed = {
-          "rustfmt",
-          "stylua",
-          "beautysh",
-          "prettier",
-          "actionlint",
-          "flake8",
-          "gitlint",
-          "gofumpt",
-          "goimports",
-          "goimports-reviser",
-          "mypy",
-          "ruff",
-          "black",
-          "isort",
-        },
         sources = {
           B.formatting.rustfmt,
           B.formatting.isort,
