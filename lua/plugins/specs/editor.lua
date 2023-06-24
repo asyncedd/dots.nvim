@@ -168,4 +168,8 @@ return {
     opts = true,
     event = "VeryLazy",
   },
+  {
+    "Fymyte/rasi.vim",
+    ft = "rasi",
+  },
 }
