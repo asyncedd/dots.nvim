@@ -167,4 +167,11 @@ return {
     "Fymyte/rasi.vim",
     ft = "rasi",
   },
+  {
+    "CKolkey/ts-node-action",
+    opts = true,
+    keys = {
+      { "<leader>n", "<cmd>NodeAction<CR>" },
+    },
+  },
 }
