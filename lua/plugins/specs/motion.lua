@@ -217,11 +217,6 @@ return {
     },
   },
   {
-    "abecodes/tabout.nvim",
-    opts = true,
-    event = "InsertEnter",
-  },
-  {
     "chrisgrieser/nvim-various-textobjs",
     keys = {
       {
