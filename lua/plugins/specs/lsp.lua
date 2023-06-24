@@ -86,7 +86,7 @@ return {
           bashls = {},
           eslint = {},
           clangd = {},
-          solograph = {},
+          solargraph = {},
           jdtls = {},
         },
       }
