@@ -164,11 +164,6 @@ return {
     end,
   },
   {
-    "tzachar/highlight-undo.nvim",
-    opts = true,
-    event = "VeryLazy",
-  },
-  {
     "Fymyte/rasi.vim",
     ft = "rasi",
   },
