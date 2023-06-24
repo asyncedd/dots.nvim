@@ -33,8 +33,14 @@ map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Open 
 
 local maps = require("settings.settings").abbr
 
-for key, values in pairs(maps) do
+for key, values in pairs(maps.I) do
   for _, value in ipairs(values) do
     vim.keymap.set("ia", value, key)
+  end
+end
+
+for key, values in pairs(maps.C) do
+  for _, value in ipairs(values) do
+    vim.keymap.set("ca", value, key)
   end
 end
