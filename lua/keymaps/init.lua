@@ -26,6 +26,7 @@ map({ "n", "o", "x" }, "gh", "0", { desc = "Go to the first character in the lin
 
 -- Super fun keymap wow!
 map({ "n" }, "<C-C>", "ciw", { desc = "Change inside word" })
+map({ "n" }, "<CR>", "ciw", { desc = "Change inside word" })
 
 -- Code action
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Open the current buffer's code actions" })
@@ -34,7 +35,6 @@ local maps = require("settings.settings").abbr
 
 for key, values in pairs(maps) do
   for _, value in ipairs(values) do
-    vim.keymap.set("ca", value, key)
     vim.keymap.set("ia", value, key)
   end
 end
