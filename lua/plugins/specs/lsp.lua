@@ -142,7 +142,9 @@ return {
           B.formatting.beautysh.with({
             extra_args = { "-i", "2" },
           }),
-          B.formatting.prettier,
+          B.formatting.prettier.with({
+            extra_filetypes = { "svelte", "toml" },
+          }),
         },
       }
     end,
