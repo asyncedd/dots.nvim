@@ -293,8 +293,16 @@ return {
     init = function()
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
         callback = function()
+          local std = require("std")
           local ft = vim.bo.filetype
-          if ft == "typescript" or ft == "javascript" or ft == "typescriptreact" or ft == "javascriptreact" then
+          if
+            std.exists_in_array({
+              "javascript",
+              "typescript",
+              "javascriptreact",
+              "typescriptreact",
+            }, ft)
+          then
             vim.schedule(function()
               require("lazy").load({ plugins = "typescript-tools.nvim" })
               vim.cmd("silent! do FileType")
