@@ -13,11 +13,7 @@ local function get_source_by_name(name)
       return require(string.format("null-ls.builtins.%s.%s", m, name))
     end)
     if ok then
-      if type(name) == "table" and next(name) ~= nil then
-        return builtin.with(t)
-      else
-        return builtin
-      end
+      return (type(name) == "table" and next(name) ~= nil) and builtin.with(t) or builtin
     end
   end
 end
@@ -65,11 +61,7 @@ local function setup_null_ls(opts)
   for name, config in pairs(sources) do
     local source = get_source_by_name(name)
     if source then
-      if type(config) == "table" and next(config) ~= nil then
-        table.insert(list_of_sources, source.with(config))
-      else
-        table.insert(list_of_sources, source)
-      end
+      table.insert(list_of_sources, (type(config) == "table" and next(config) ~= nil) and source.with(config) or source)
     end
   end
 
