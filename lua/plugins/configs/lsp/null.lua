@@ -56,6 +56,10 @@ local function setup_null_ls(opts)
   local sources = opts.sources
   local list_of_sources = {}
 
+  for i in ipairs(sources) do
+    table.insert(list_of_sources, sources[i])
+  end
+
   for name, config in pairs(sources) do
     local source = get_source_by_name(name)
     if source then
