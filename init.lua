@@ -82,7 +82,7 @@ else
   if not ok then
     -- But if it doesn't we'll just go ahead and print that, "hey, there's no colorscheme named <colorscheme>"
     -- And, after that we'll just load catppuccin as a fallback.
-    vim.notify("Unknown colorscheme.", vim.log.levels.ERROR, {})
+    vim.notify("Hey, there's no colorscheme named " .. colorscheme, vim.log.levels.ERROR, {})
     require("catppuccin").load()
   end
 end
