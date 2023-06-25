@@ -32,8 +32,16 @@ map({ "n" }, "<CR>", "ciw", { desc = "Change inside word" })
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Open the current buffer's code actions" })
 
 -- Terminal
-map("n", "<leader>gt", "<cmd>lua require('core.utils.lazyvim').float_term('shell', { ctrl_hjkl = false, esc_esc = true })<CR>")
-map("n", "<leader>gg", "<cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>")
+map(
+  "n",
+  "<leader>gt",
+  "<cmd>lua require('core.utils.lazyvim').float_term(nil, { ctrl_hjkl = false, esc_esc = true })<CR>"
+)
+map(
+  "n",
+  "<leader>gg",
+  "<cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>"
+)
 
 local maps = require("settings.settings").abbr
 
