@@ -47,7 +47,7 @@ local function setup_formatting(names)
           end
           return clientn.name ~= "null-ls"
         end,
-      }))
+      }, {}))
     end,
   })
 end
