@@ -58,9 +58,6 @@ return {
       TelescopeResultsTitle = { fg = C.mantle, bg = C.mantle },
       TelescopePreviewTitle = { fg = C.crust, bg = C.green },
 
-      -- Lazygit
-      LazyGitFloat = { bg = C.mantle },
-
       -- Illumiate
       IlluminatedWordText = { bg = U.darken(C.surface1, 0.7, C.base) },
       IlluminatedWordRead = { bg = U.darken(C.surface1, 0.7, C.base) },

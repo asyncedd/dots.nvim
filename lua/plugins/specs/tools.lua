@@ -78,21 +78,6 @@ return {
     cmd = "Telescope",
   },
   {
-    "kdheepak/lazygit.nvim",
-    config = function()
-      vim.g.lazygit_floating_window_border_chars = { "", "", "", "", "", "", "", "" }
-    end,
-    keys = {
-      { "<leader>gg", "<cmd>LazyGit<CR>", desc = "Toggle Lazygit" },
-    },
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-      "LazyGitFilter",
-      "LazyGitFilterCurrentFile",
-    },
-  },
-  {
     "stevearc/aerial.nvim",
     opts = function()
       return require("plugins.configs.tools.aerial")
