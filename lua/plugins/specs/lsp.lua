@@ -109,42 +109,47 @@ return {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function()
       local nls = require("null-ls")
-      local B = nls.builtins
       return {
         -- A list of sources to install
         sources = {
-          B.formatting.rustfmt,
-          B.formatting.isort,
-          B.formatting.black.with({
-            args = {
-              "--fast",
-              "--quiet",
-              "--stdin-filename",
-              "$FILENAME",
-              "-",
+          rustfmt = {},
+          isort = {},
+          black = {
+            with = {
+              args = {
+                "--fast",
+                "--quiet",
+                "--stdin-filename",
+                "$FILENAME",
+                "-",
+              },
             },
-          }),
-          B.diagnostics.mypy,
-          B.formatting.goimports,
-          B.formatting.goimports_reviser,
-          B.formatting.gofumpt,
-          B.diagnostics.ruff,
-          B.diagnostics.gitlint,
-          B.diagnostics.flake8,
-          B.diagnostics.actionlint,
-          B.formatting.fish_indent,
-          B.diagnostics.fish,
-          B.formatting.stylua.with({
+          },
+          mypy = {},
+          goimports = {},
+          goimports_reviser = {},
+          gofumpt = {},
+          ruff = {},
+          gitlint = {},
+          flake8 = {},
+          actionlint = {},
+          fish_indent = {},
+          fish = {},
+          stylua = {
             condition = function(utils)
               return utils.root_has_file({ "stylua.toml" })
             end,
-          }),
-          B.formatting.beautysh.with({
-            extra_args = { "-i", "2" },
-          }),
-          B.formatting.prettier.with({
-            extra_filetypes = { "svelte", "toml" },
-          }),
+          },
+          beautysh = {
+            with = {
+              extra_args = { "-i", "2" },
+            },
+          },
+          prettier = {
+            with = {
+              extra_filetypes = { "svelte", "toml" },
+            },
+          },
         },
       }
     end,

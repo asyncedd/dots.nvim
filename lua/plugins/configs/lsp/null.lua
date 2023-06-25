@@ -1,9 +1,49 @@
 return function(opts)
-  local names = {}
+  local cats = {
+    diagnostics = {},
+    formatting = {},
+    code_actions = {},
+    hover = {},
+    completion = {},
+    _test = {},
+  }
+
+  local function get_source_by_name(name)
+    for m, t in pairs(cats) do
+      local ok, builtin = pcall(function()
+        return require(string.format("null-ls.builtins.%s.%s", m, name))
+      end)
+      if ok then
+        if type(name) == "table" and next(name) ~= nil then
+          return builtin.with(t)
+        else
+          return builtin
+        end
+      end
+    end
+  end
+
   local sources = opts.sources
 
-  for i in ipairs(sources) do
-    local name = sources[i].name
+  local newTable = {}
+
+  for name, config in pairs(sources) do
+    local source = get_source_by_name(name)
+    if source then
+      if type(config) == "table" and next(config) ~= nil then
+        table.insert(newTable, source.with(config))
+      else
+        table.insert(newTable, source)
+      end
+    end
+  end
+
+  sources = newTable
+
+  local names = {}
+
+  for i, source in ipairs(sources) do
+    local name = source.name
     name = name:gsub("_", "-")
     table.insert(names, name)
   end
