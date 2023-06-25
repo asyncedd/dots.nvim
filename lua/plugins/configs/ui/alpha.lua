@@ -75,13 +75,17 @@ end
 dashboard.section.buttons.val = {
   { type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
   { type = "padding", val = 1 },
-  dashboard.button("p", "  Load latest session", ":SessionLoad<CR>"),
-  dashboard.button("e", "  Scratch File", ":ene | startinsert <CR>"),
-  dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
-  dashboard.button("g", "  Find word", ":Telescope live_grep<CR>"),
-  dashboard.button("l", "  Open Lazygit", ":LazyGit<CR>"),
-  dashboard.button("s", "󰒲  Sync Lazy.nvim", ":Lazy sync<CR>"),
-  dashboard.button("q", "󰩈  Quit NVIM", ":qa<CR>"),
+  dashboard.button("p", "  Load latest session", "<cmd>SessionLoad<CR>"),
+  dashboard.button("e", "  Scratch File", "<cmd>ene | startinsert <CR>"),
+  dashboard.button("f", "  Find file", "<cmd>Telescope find_files<CR>"),
+  dashboard.button("g", "  Find word", "<cmd>Telescope live_grep<CR>"),
+  dashboard.button(
+    "l",
+    "  Open Lazygit",
+    "<cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>"
+  ),
+  dashboard.button("s", "󰒲  Sync Lazy.nvim", "<cmd>Lazy sync<CR>"),
+  dashboard.button("q", "󰩈  Quit NVIM", "<cmd>qa<CR>"),
 }
 
 -- Everyone could use a good fortune cookie from time to time, right?
