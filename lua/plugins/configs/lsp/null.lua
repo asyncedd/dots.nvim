@@ -9,9 +9,7 @@ local function get_source_by_name(name)
   }
 
   for m, t in pairs(cats) do
-    local ok, builtin = pcall(function()
-      return require(string.format("null-ls.builtins.%s.%s", m, name))
-    end)
+    local ok, builtin = pcall(require, string.format("null-ls.builtins.%s.%s", m, name))
     if ok then
       return (type(name) == "table" and next(name) ~= nil) and builtin.with(t) or builtin
     end
@@ -49,7 +47,7 @@ local function setup_formatting(names)
           end
           return clientn.name ~= "null-ls"
         end,
-      }, {}))
+      }))
     end,
   })
 end
