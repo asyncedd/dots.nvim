@@ -115,3 +115,4 @@ way out! >:D
 - [Yuki Uthman](https://www.youtube.com/@yukiuthman8358) - For his great cmp
   turtorials.
 - [pigeon's dots](https://github.com/backwardspy/dotfiles) - For some configs
+- [Swayam](https://github.com/Swayam25) - For helping me with my null-ls.nvim configuration.
