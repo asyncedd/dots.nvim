@@ -298,7 +298,7 @@ M.LSPActive = {
     for _, client in pairs(vim.lsp.get_active_clients({ bufnr = self and self.bufnr or 0 })) do
       if client.name == "null-ls" then
         local nullls_sources = {}
-        for _, type in ipairs({ "FORMATTING", "DIAGNOSTICS" }) do
+        for _, type in ipairs({ "FORMATTING", "DIAGNOSTICS", "CODE_ACTION", "COMPLETION", "HOVER" }) do
           for _, source in ipairs(M.null_ls_sources(vim.bo.filetype, type)) do
             nullls_sources[source] = true
           end
