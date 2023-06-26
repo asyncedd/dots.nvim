@@ -19,6 +19,10 @@ return {
       char = {
         enable = true,
       },
+      remote_op = {
+        restore = true,
+        motion = true,
+      },
     },
     keys = {
       {
