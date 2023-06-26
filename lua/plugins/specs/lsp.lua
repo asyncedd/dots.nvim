@@ -146,7 +146,7 @@ return {
               extra_args = { "-i", "2" },
             },
           },
-          prettier = {
+          prettierd = {
             with = {
               extra_filetypes = { "svelte", "toml" },
             },
