@@ -98,7 +98,34 @@ return {
   {
     "numToStr/Comment.nvim",
     opts = function()
-      return require("plugins.configs.coding.comment")
+      return {
+        treesitter = {
+          comment_string = {
+            enable = true,
+            enable_autocmd = false,
+          },
+        },
+        Comment = {
+          pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+        },
+        Mini = {
+          options = {
+            custom_commentstring = function()
+              return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
+            end,
+          },
+          hooks = {
+            pre = function()
+              require("ts_context_commentstring.internal").update_commentstring()
+            end,
+          },
+          mappings = {
+            comment = "",
+            comment_line = "",
+            textobject = "gc",
+          },
+        },
+      }
     end,
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
