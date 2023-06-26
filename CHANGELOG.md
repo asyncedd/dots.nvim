@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/asyncedd/dots.nvim/compare/v1.0.0...v1.1.0) (2023-06-26)
+
+
+### Features
+
+* **flash:** make deleting lines easier. ([3aac22f](https://github.com/asyncedd/dots.nvim/commit/3aac22f8efd5a74b0ecc3e6cd835a99bdac37bf1))
+
+
+### Bug Fixes
+
+* **flash:** Fix local treesitter jump shutter ([53616e2](https://github.com/asyncedd/dots.nvim/commit/53616e2fec0b101fb94313360c7dc3fadfd3ff47))
+
 ## 1.0.0 (2023-06-26)
 
 
