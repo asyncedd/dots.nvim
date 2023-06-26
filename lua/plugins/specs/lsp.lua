@@ -114,7 +114,6 @@ return {
       return {
         -- A list of sources to install
         sources = {
-          deadnix = {},
           require("typescript.extensions.null-ls.code-actions"),
           rustfmt = {},
           isort = {},
