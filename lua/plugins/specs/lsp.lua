@@ -91,6 +91,7 @@ return {
           nil_ls = {},
           rnix = {},
         },
+        setup = {},
       }
     end,
     init = function()
