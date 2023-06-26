@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.0](https://github.com/asyncedd/dots.nvim/compare/v1.2.0...v1.3.0) (2023-06-26)
+
+
+### Features
+
+* **deadnix, nixpkg-fmt, statix:** initial commit ([918f3b7](https://github.com/asyncedd/dots.nvim/commit/918f3b76e02ba7209488673ed764485e9a19c318))
+* **nixfmt:** initial commit ([2746d2b](https://github.com/asyncedd/dots.nvim/commit/2746d2b94b6077b904a704e9b1d49f0d2e119fd7))
+* **rnix:** initial commit ([0b0383a](https://github.com/asyncedd/dots.nvim/commit/0b0383a0e14cf794a8d5c7868341a46b47a04550))
+* **statix:** Use the LSP version ([98c04e4](https://github.com/asyncedd/dots.nvim/commit/98c04e4514aff2200d3f43e190b9b2f2696e8a98))
+
 ## [1.2.0](https://github.com/asyncedd/dots.nvim/compare/v1.1.0...v1.2.0) (2023-06-26)
 
 
