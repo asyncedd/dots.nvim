@@ -112,6 +112,9 @@ return {
       return {
         -- A list of sources to install
         sources = {
+          deadnix = {},
+          nixpkg_fmt = {},
+          statix = {},
           require("typescript.extensions.null-ls.code-actions"),
           rustfmt = {},
           isort = {},
