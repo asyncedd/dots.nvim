@@ -198,4 +198,23 @@ return {
     "Fymyte/rasi.vim",
     ft = "rasi",
   },
+  {
+    "nvim-neorg/neorg",
+    opts = {
+      load = {
+        ["core.defaults"] = {},
+        ["core.dirman"] = {
+          config = {
+            workspaces = {
+              work = "~/notes/work",
+              home = "~/notes/home",
+            },
+          },
+        },
+        ["core.concealer"] = {},
+        ["core.autocommands"] = {},
+        ["core.integrations.treesitter"] = {},
+      },
+    },
+  },
 }
