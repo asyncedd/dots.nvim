@@ -161,8 +161,6 @@ return {
         mode = "!",
         desc = "Unix word rubout",
       },
-      { "<C-d>", "<Delete>", mode = "!", desc = "Delete" },
-      { "<C-h>", "<BS>", mode = "!", desc = "Backspace" },
       {
         "<C-a>",
         function()
@@ -195,10 +193,6 @@ return {
         mode = "!",
         desc = "Go backwards a word",
       },
-      { "<C-f>", "<Right>", mode = "!", desc = "Go right" },
-      { "<C-b>", "<Left>", mode = "!", desc = "Go left" },
-      { "<C-n>", "<Down>", mode = "!", desc = "Go down" },
-      { "<C-p>", "<Up>", mode = "!", desc = "Go up" },
     },
   },
   {
