@@ -69,6 +69,13 @@ return {
         end,
         mode = "o",
       },
+      {
+        "<CR>",
+        function()
+          require("flash").jump({ continue = true })
+        end,
+        mode = { "n", "x", "o" },
+      },
     },
   },
   {

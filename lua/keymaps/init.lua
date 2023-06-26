@@ -26,7 +26,6 @@ map({ "n", "o", "x" }, "gh", "0", { desc = "Go to the first character in the lin
 
 -- Super fun keymap wow!
 map({ "n" }, "<C-C>", "ciw", { desc = "Change inside word" })
-map({ "n", "x", "o" }, "<CR>", "<cmd>lua require('flash').jump({continue = true})<CR>")
 
 -- Code action
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Open the current buffer's code actions" })
