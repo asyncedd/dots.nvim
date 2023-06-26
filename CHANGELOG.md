@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.1](https://github.com/asyncedd/dots.nvim/compare/v1.1.0...v1.1.1) (2023-06-26)
+
+
+### Bug Fixes
+
+* **readline:** remove unneeded keymaps ([c283bfa](https://github.com/asyncedd/dots.nvim/commit/c283bfa64cf2d8236ae421ef327fc5ea80b7f643))
+
+
+### Performance Improvements
+
+* **prettierd:** use prettierd rather thn the prettier ([f5f9d1e](https://github.com/asyncedd/dots.nvim/commit/f5f9d1ea199e4e263720024303f34893f2de1389))
+
 ## [1.1.0](https://github.com/asyncedd/dots.nvim/compare/v1.0.0...v1.1.0) (2023-06-26)
 
 
