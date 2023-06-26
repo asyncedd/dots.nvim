@@ -90,6 +90,7 @@ return {
           jdtls = {},
           nil_ls = {},
           rnix = {},
+          statix = {},
         },
       }
     end,
@@ -114,7 +115,6 @@ return {
         -- A list of sources to install
         sources = {
           deadnix = {},
-          statix = {},
           require("typescript.extensions.null-ls.code-actions"),
           rustfmt = {},
           isort = {},
