@@ -90,7 +90,6 @@ return {
           jdtls = {},
           nil_ls = {},
           rnix = {},
-          statix = {},
         },
       }
     end,
