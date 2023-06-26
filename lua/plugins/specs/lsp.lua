@@ -89,6 +89,7 @@ return {
           solargraph = {},
           jdtls = {},
           nil_ls = {},
+          rnix = {},
         },
       }
     end,
