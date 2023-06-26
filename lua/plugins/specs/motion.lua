@@ -72,32 +72,9 @@ return {
       {
         "R",
         function()
-          local Treesitter = require("flash.plugins.treesitter")
-          local Search = require("flash.search")
-          require("flash").jump({
-            matcher = function(win, state, opts)
-              local search = Search.new(win, state)
-              local matches = {} ---@type Flash.Match[]
-              for _, m in ipairs(search:get(opts)) do
-                -- don't add labels to the search results
-                m.label = false
-                table.insert(matches, m)
-                for _, n in ipairs(Treesitter.get_nodes(win, m.pos)) do
-                  -- don't highlight treesitter nodes. Use labels only
-                  n.highlight = false
-                  table.insert(matches, n)
-                end
-              end
-              return matches
-            end,
-            jump = { pos = "range" },
-            highlight = {
-              label = { before = true, after = true, style = "inline" },
-            },
-            remote_op = { restore = true },
-          })
+          require("flash").treesitter_search()
         end,
-        mode = { "x", "o" },
+        mode = { "n", "x", "o" },
       },
       {
         "<CR>",
