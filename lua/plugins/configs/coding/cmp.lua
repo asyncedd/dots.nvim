@@ -88,6 +88,7 @@ M.cmp = {
   },
   sources = cmp.config.sources({
     { name = "emoji", priority = 10000 },
+    { name = "neorg" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "codeium", keyword_length = 3 },

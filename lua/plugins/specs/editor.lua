@@ -214,6 +214,9 @@ return {
         ["core.concealer"] = {},
         ["core.autocommands"] = {},
         ["core.integrations.treesitter"] = {},
+        ["core.completion"] = {
+          engine = "nvim-cmp",
+        },
       },
     },
   },
