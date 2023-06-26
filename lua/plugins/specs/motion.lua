@@ -45,8 +45,6 @@ return {
       { "T", mode = { "n", "o", "x" } },
       { "/", mode = { "n", "o", "x" } },
       { "?", mode = { "n", "o", "x" } },
-      -- https://github.com/folke/flash.nvim/discussions/24
-      -- This is flashy (flash + spooky)
       {
         "r",
         function()
