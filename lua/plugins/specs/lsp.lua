@@ -309,9 +309,11 @@ return {
   },
   {
     "pmizio/typescript-tools.nvim",
-    opts = {
-      on_attach = require("plugins.configs.lsp.config").on_attach,
-    },
+    opts = function()
+      return {
+        on_attach = require("plugins.configs.lsp.config").on_attach,
+      }
+    end,
     init = function()
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
         callback = function()
