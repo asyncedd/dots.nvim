@@ -215,10 +215,13 @@ return {
         ["core.autocommands"] = {},
         ["core.integrations.treesitter"] = {},
         ["core.completion"] = {
-          engine = "nvim-cmp",
+          config = {
+            engine = "nvim-cmp",
+          },
         },
       },
     },
+    ft = "norg",
   },
   {
     "Pocco81/true-zen.nvim",
