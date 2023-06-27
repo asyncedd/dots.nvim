@@ -223,10 +223,8 @@ return {
   {
     "Pocco81/true-zen.nvim",
     opts = {
-      minimalist = {
-        options = {
-          showmode = false,
-        },
+      integrations = {
+        twilight = true,
       },
     },
     cmd = {
@@ -235,5 +233,10 @@ return {
       "TZNarrow",
       "TZFocus",
     },
+    dependencies = "twilight.nvim",
+  },
+  {
+    "folke/twilight.nvim",
+    opts = true,
   },
 }
