@@ -226,9 +226,11 @@ return {
           },
         },
       },
-      server = {
-        on_attach = require("plugins.configs.lsp.config").on_attach,
-      },
+      server = function()
+        return {
+          on_attach = require("plugins.configs.lsp.config").on_attach,
+        }
+      end,
     },
     config = function(_, opts)
       require("rust-tools").setup(opts)
