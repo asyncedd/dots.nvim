@@ -1,4 +1,4 @@
--- lua/plugins/specs/editor.lua
+-- l
 --
 --  ┌
 --  │             Plugins for enhancing the editor
@@ -221,6 +221,8 @@ return {
         },
         ["core.integrations.truezen"] = {},
         ["core.integrations.telescope"] = {},
+        ["core.clipboard"] = {},
+        ["core.clipboard.code-blocks"] = {},
       },
     },
     config = function(_, opts)
