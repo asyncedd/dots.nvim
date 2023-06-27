@@ -55,7 +55,6 @@ if std.exists_in_array({ "catppuccin", "onedarkpro" }, colorscheme) then
   -- ]
   --
   -- For Catppuccin and Onedarkpro it's that.
-  -- Because of that small typo of "onedark", we'll just go ahead and go fix it.
   require(colorscheme).load()
   -- In Tokyonight it needs a "_" for some reason so, we just put that in a "elseif" block.
 elseif colorscheme == "tokyonight" then
