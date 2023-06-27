@@ -399,7 +399,7 @@ M.LSP = {
     self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
     self.filename = vim.api.nvim_buf_get_name(0)
 
-    self.dark_color = U.darken(self:icon_color(), 1.9, Normal)
+    self.dark_color = U.darken(self:icon_color(), 1.5, Normal)
 
     local filename = self.filename
     local extension = vim.fn.fnamemodify(filename, ":e")
