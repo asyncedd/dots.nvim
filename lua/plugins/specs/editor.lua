@@ -223,7 +223,11 @@ return {
         ["core.integrations.telescope"] = {},
         ["core.clipboard"] = {},
         ["core.clipboard.code-blocks"] = {},
-        ["core.presenter"] = {},
+        ["core.presenter"] = {
+          config = {
+            zen_mode = "truezen",
+          },
+        },
       },
     },
     config = function(_, opts)
