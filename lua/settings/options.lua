@@ -299,13 +299,6 @@ o.ignorecase = true
 -- Do NOT ignore case in search patterns if an uppercase letter is in it.
 o.smartcase = true
 
--- Disable showmode
---
--- If in insert, replace or visual mode, it'll put a message in the last line.
--- This would generally take no effect when in "cmdheight" is 0, but because we're using noice, it does matter.
-
-o.showmode = false
-
 -- CODE: hFy
 --
 --  ╭──────────────────────────────────────────────────────────╮

@@ -220,4 +220,20 @@ return {
       },
     },
   },
+  {
+    "Pocco81/true-zen.nvim",
+    opts = {
+      minimalist = {
+        options = {
+          showmode = false,
+        },
+      },
+    },
+    cmd = {
+      "TZAtaraxis",
+      "TZMinimalist",
+      "TZNarrow",
+      "TZFocus",
+    },
+  },
 }
