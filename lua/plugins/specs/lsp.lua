@@ -212,26 +212,26 @@ return {
   },
   {
     "simrat39/rust-tools.nvim",
-    opts = {
-      tools = {
-        inlay_hints = {
-          auto = false,
-          show_parameter_hints = false,
-        },
-      },
-      settings = {
-        ["rust-analyzer"] = {
-          cargo = {
-            allFeatures = true,
+    opts = function()
+      return {
+        tools = {
+          inlay_hints = {
+            auto = false,
+            show_parameter_hints = false,
           },
         },
-      },
-      server = function()
-        return {
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+            },
+          },
+        },
+        server = {
           on_attach = require("plugins.configs.lsp.config").on_attach,
-        }
-      end,
-    },
+        },
+      }
+    end,
     config = function(_, opts)
       require("rust-tools").setup(opts)
       vim.cmd("silent! do FileType")

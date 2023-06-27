@@ -284,6 +284,7 @@ M.FileNameBlock = {
     self.filename = vim.api.nvim_buf_get_name(0)
   end,
 }
+
 M.LSPActive = {
   condition = conditions.lsp_attached and function()
     return vim.g.lsp_attached
@@ -310,11 +311,13 @@ M.LSPActive = {
     end
     return " " .. table.concat(buf_client_names, ", ")
   end,
-  hl = {
-    bg = "green",
-    fg = "bright_bg",
-    bold = true,
-  },
+  hl = function(self)
+    return {
+      bg = self:icon_color(),
+      fg = "bright_bg",
+      bold = true,
+    }
+  end,
   on_click = {
     callback = function()
       vim.defer_fn(function()
@@ -330,21 +333,14 @@ M.icons = require("core.utils.icons")
 M.Diagnostics = {
   condition = conditions.has_diagnostics,
 
-  init = function(self)
-    self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
-    self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
-    self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
-    self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
-  end,
-
   update = { "DiagnosticChanged", "LspAttach" },
 
   {
     condition = conditions.has_diagnostics,
     provider = "",
-    hl = function()
+    hl = function(self)
       return {
-        fg = "bright_bg",
+        fg = self.dark_color,
       }
     end,
   },
@@ -353,41 +349,69 @@ M.Diagnostics = {
       -- 0 is just another output, we can decide to print it or not!
       return self.errors > 0 and (M.icons.Error .. self.errors .. " ")
     end,
-    hl = {
-      fg = "diag_error",
-      bg = "bright_bg",
-    },
+    hl = function(self)
+      return {
+        fg = "diag_error",
+        bg = self.dark_color,
+      }
+    end,
   },
   {
     provider = function(self)
       return self.warnings > 0 and (M.icons.Warn .. self.warnings .. " ")
     end,
-    hl = {
-      fg = "diag_warn",
-      bg = "bright_bg",
-    },
+    hl = function(self)
+      return {
+        fg = "diag_warn",
+        bg = self.dark_color,
+      }
+    end,
   },
   {
     provider = function(self)
       return self.info > 0 and (M.icons.Info .. self.info .. " ")
     end,
-    hl = {
-      fg = "diag_info",
-      bg = "bright_bg",
-    },
+    hl = function(self)
+      return {
+        fg = "diag_info",
+        bg = self.dark_color,
+      }
+    end,
   },
   {
     provider = function(self)
       return self.hints > 0 and (M.icons.Hint .. self.hints .. " ")
     end,
-    hl = {
-      fg = "diag_hint",
-      bg = "bright_bg",
-    },
+    hl = function(self)
+      return {
+        fg = "diag_hint",
+        bg = self.dark_color,
+      }
+    end,
   },
 }
 
 M.LSP = {
+  init = function(self)
+    self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+    self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+    self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
+    self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+    self.filename = vim.api.nvim_buf_get_name(0)
+
+    self.dark_color = U.darken(self:icon_color(), 1.9, Normal)
+
+    local filename = self.filename
+    local extension = vim.fn.fnamemodify(filename, ":e")
+    local _, icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+
+    return icon_color
+  end,
+  update = {
+    "DiagnosticChanged",
+    "LspAttach",
+    "LspDetach",
+  },
   condition = conditions.lsp_attached and function()
     return vim.g.lsp_attached
   end or conditions.has_diagnostics,
@@ -396,11 +420,11 @@ M.LSP = {
     provider = "",
     hl = function(self)
       local bg
-      if self.errors or self.warnings or self.info or self.hints then
-        bg = "bright_bg"
+      if self.errors >= 1 or self.warnings >= 1 or self.info >= 1 or self.hints >= 1 then
+        bg = self.dark_color
       end
       return {
-        fg = "green",
+        fg = self:icon_color(),
         bg = bg,
       }
     end,
@@ -408,9 +432,9 @@ M.LSP = {
   M.LSPActive,
   {
     provider = "",
-    hl = function()
+    hl = function(self)
       return {
-        fg = "green",
+        fg = self:icon_color(),
       }
     end,
   },
