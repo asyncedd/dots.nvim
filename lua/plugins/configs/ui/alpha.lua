@@ -73,7 +73,11 @@ local function colorize_header()
 end
 
 dashboard.section.buttons.val = {
-  { type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
+  {
+    type = "text",
+    val = "[ ━━━━━━ ❖  ━━━━━━ ]",
+    opts = { hl = "SpecialComment", position = "center" },
+  },
   { type = "padding", val = 1 },
   dashboard.button("p", "  Load latest session", "<cmd>SessionLoad<CR>"),
   dashboard.button("e", "  Scratch File", "<cmd>ene | startinsert <CR>"),
