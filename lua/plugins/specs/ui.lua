@@ -373,7 +373,7 @@ return {
           function(...)
             local opts = stages[1](...)
             if opts then
-              opts.border = "none"
+              opts.border = "solid"
             end
             return opts
           end,
