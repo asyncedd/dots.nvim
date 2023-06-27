@@ -75,7 +75,7 @@ end
 dashboard.section.buttons.val = {
   {
     type = "text",
-    val = "[ ━━━━━━ ❖  ━━━━━━ ]",
+    val = "[ ━━━━━━  ❖  ━━━━━━ ]",
     opts = { hl = "SpecialComment", position = "center" },
   },
   { type = "padding", val = 1 },
