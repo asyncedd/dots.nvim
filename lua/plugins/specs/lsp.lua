@@ -281,7 +281,9 @@ return {
     "https://git.sr.ht/~p00f/clangd_extensions.nvim",
     opts = {
       server = {
-        on_attach = require("plugins.configs.lsp.config").on_attach,
+        on_attach = function()
+          require("plugins.configs.lsp.config").on_attach()
+        end,
       },
       extensions = {
         autoSetHints = false,
