@@ -10,7 +10,10 @@ return {
     opts = {
       highlight = {
         label = {
-          current = true,
+          rainbow = {
+            enabled = true,
+            shade = 3,
+          },
         },
       },
       jump = {
