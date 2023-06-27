@@ -39,8 +39,9 @@ require("settings.autocmds")
 -- this actually seems like an unnessearu premature optimization though
 
 local colorscheme = require("settings.settings").colorscheme
+local std = require("std")
 
-if colorscheme == "catppuccin" or colorscheme == "onedarkpro" then
+if std.exists_in_array({ "catppuccin", "onedarkpro" }, colorscheme) then
   -- In Catppuccin, the colorscheme file is a Lua block (via vimscript) that requires the exact same thing.
   -- So, by doing this we can optimize whilst not loosing maintainability.
   --
