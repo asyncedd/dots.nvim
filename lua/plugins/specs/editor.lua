@@ -223,6 +223,7 @@ return {
         ["core.integrations.telescope"] = {},
         ["core.clipboard"] = {},
         ["core.clipboard.code-blocks"] = {},
+        ["core.presenter"] = {},
       },
     },
     config = function(_, opts)
