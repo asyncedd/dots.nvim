@@ -219,6 +219,7 @@ return {
             engine = "nvim-cmp",
           },
         },
+        ["core.integrations.truezen"] = {},
       },
     },
     ft = "norg",
