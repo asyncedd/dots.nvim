@@ -16,6 +16,7 @@ return {
           },
         },
       },
+      continue = true,
       jump = {
         autojump = true,
       },
