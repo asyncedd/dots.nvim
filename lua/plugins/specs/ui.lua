@@ -40,7 +40,9 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    opts = true,
+    opts = function()
+      return require("plugins.configs.ui.nightfox")
+    end,
   },
   {
     "akinsho/bufferline.nvim",
