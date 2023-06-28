@@ -159,14 +159,10 @@ return {
             end,
           },
           beautysh = {
-            with = {
-              extra_args = { "-i", "2" },
-            },
+            extra_args = { "-i", "2" },
           },
           prettierd = {
-            with = {
-              extra_filetypes = { "svelte", "toml" },
-            },
+            extra_filetypes = { "svelte", "toml" },
           },
         },
       }
