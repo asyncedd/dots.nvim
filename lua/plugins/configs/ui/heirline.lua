@@ -1,6 +1,6 @@
 local utils = require("heirline.utils")
 local conditions = require("heirline.conditions")
-local U = require("catppuccin.utils.colors")
+local U = require("core.utils.colors")
 local Normal = string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true)["foreground"], 0.3) or 0
 
 local M = {}

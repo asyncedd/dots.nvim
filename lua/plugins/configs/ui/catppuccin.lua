@@ -17,7 +17,7 @@ return {
     },
   },
   custom_highlights = function(C)
-    local U = require("catppuccin.utils.colors")
+    local U = require("core.utils.colors")
     return {
       -- General
       Search = { bg = C.surface1, fg = C.sky, style = { "bold" } }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
