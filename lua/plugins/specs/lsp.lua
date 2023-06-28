@@ -279,16 +279,16 @@ return {
   },
   {
     "https://git.sr.ht/~p00f/clangd_extensions.nvim",
-    opts = {
-      server = {
-        on_attach = function()
-          require("plugins.configs.lsp.config").on_attach()
-        end,
-      },
-      extensions = {
-        autoSetHints = false,
-      },
-    },
+    opts = function()
+      return {
+        server = {
+          on_attach = require("plugins.configs.lsp.config").on_attach,
+        },
+        extensions = {
+          autoSetHints = false,
+        },
+      }
+    end,
     init = function()
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
         callback = function()
