@@ -8,15 +8,12 @@ return {
   {
     "folke/flash.nvim",
     opts = {
-      highlight = {
-        label = {
-          rainbow = {
-            enabled = true,
-            shade = 3,
-          },
+      label = {
+        rainbow = {
+          enabled = true,
+          shade = 3,
         },
       },
-      continue = true,
       jump = {
         autojump = true,
       },
