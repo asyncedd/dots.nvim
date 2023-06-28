@@ -6,7 +6,7 @@ local Normal = string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true
 local M = {}
 
 M.colors = {
-  bright_bg = utils.get_highlight("Comment").fg,
+  bright_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.3),
   Normal = utils.get_highlight("Normal").fg,
   bright_fg = utils.get_highlight("Folded").bg,
   red = utils.get_highlight("DiagnosticError").fg,
