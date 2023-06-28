@@ -20,7 +20,9 @@ return {
         autojump = true,
       },
       char = {
-        enable = true,
+        search = {
+          wrap = true,
+        },
       },
       remote_op = {
         restore = true,
