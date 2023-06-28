@@ -39,6 +39,10 @@ return {
     },
   },
   {
+    "EdenEast/nightfox.nvim",
+    opts = true,
+  },
+  {
     "akinsho/bufferline.nvim",
     opts = function()
       return require("plugins.configs.ui.bufferline")
