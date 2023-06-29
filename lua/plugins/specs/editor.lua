@@ -414,4 +414,9 @@ return {
     opts = true,
     event = "InsertEnter",
   },
+  {
+    "max397574/better-escape.nvim",
+    opts = true,
+    event = "InsertEnter",
+  },
 }
