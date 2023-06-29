@@ -381,4 +381,33 @@ return {
       { "<leader>rr", "<cmd>lua require('refactoring').select_refactor()<CR>", mode = "x" },
     },
   },
+  {
+    "GCBallesteros/NotebookNavigator.nvim",
+    keys = {
+      {
+        "]n",
+        function()
+          require("notebook-navigator").move_cell("d")
+        end,
+      },
+      {
+        "[n",
+        function()
+          require("notebook-navigator").move_cell("u")
+        end,
+      },
+      { "<leader>X", "<cmd>lua require('notebook-navigator').run_cell()<cr>" },
+      { "<leader>x", "<cmd>lua require('notebook-navigator').run_and_move()<cr>" },
+    },
+    dependencies = {
+      "mini.comment",
+      "hkupty/iron.nvim",
+      "hydra.nvim",
+    },
+    event = "VeryLazy",
+    config = function()
+      local nn = require("notebook-navigator")
+      nn.setup({ activate_hydra_keys = "<leader>h" })
+    end,
+  },
 }

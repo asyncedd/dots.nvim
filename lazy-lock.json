@@ -1,6 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "176e85eeb63f1a5970d6b88f1725039d85ca0055" },
   "LuaSnip": { "branch": "master", "commit": "c7984d1cca3d8615e4daefc196597872a0b8d590" },
+  "NotebookNavigator.nvim": { "branch": "main", "commit": "b336dfd63161058604fa2c0cfaac89e64049ec81" },
   "SchemaStore.nvim": { "branch": "main", "commit": "7322390c9abff6f137774d9e04bddb3cd725afd1" },
   "aerial.nvim": { "branch": "master", "commit": "79644dbedc189d79573b2a60e247989bbd8f16e7" },
   "alpha-nvim": { "branch": "main", "commit": "9e33db324b8bb7a147bce9ea5496686ee859461d" },
@@ -30,6 +31,7 @@
   "hydra.nvim": { "branch": "master", "commit": "3ced42c0b6a6c85583ff0f221635a7f4c1ab0dd0" },
   "inc-rename.nvim": { "branch": "main", "commit": "ed0f6f2b917cac4eb3259f907da0a481b27a3b7e" },
   "indent-blankline.nvim": { "branch": "master", "commit": "7075d7861f7a6bbf0de0298c83f8a13195e6ec01" },
+  "iron.nvim": { "branch": "master", "commit": "9017061849e543d8e94b79d2a94b95e856ab6a10" },
   "lazy.nvim": { "branch": "main", "commit": "4c8b625bc873ca76b76eee0c28c98f1f7148f17f" },
   "lsp-lens.nvim": { "branch": "main", "commit": "450736ecde76e4e127a7724ec8f6e260870863f8" },
   "lspsaga.nvim": { "branch": "main", "commit": "4f075452c466df263e69ae142f6659dcf9324bf6" },
