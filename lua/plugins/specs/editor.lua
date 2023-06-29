@@ -1,4 +1,3 @@
--- l
 --
 --  ┌
 --  │             Plugins for enhancing the editor
