@@ -161,4 +161,20 @@ return {
       },
     },
   },
+  {
+    "sindrets/diffview.nvim",
+    opts = true,
+    keys = {
+      { "<leader>gdo", "<cmd>DiffviewOpen<CR>" },
+      { "<leader>gdc", "<cmd>DiffviewClose<CR>" },
+    },
+    cmd = {
+      "DiffviewOpen",
+      "DiffviewClose",
+      "DiffviewToggleFiles",
+      "DiffviewFocusFiles",
+      "DiffviewRefresh",
+      "DiffviewFileHistory",
+    },
+  },
 }

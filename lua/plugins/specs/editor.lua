@@ -283,7 +283,7 @@ return {
       local hint = [[
  _J_: next hunk   _s_: stage hunk        _d_: show deleted   _b_: blame line
  _K_: prev hunk   _u_: undo last stage   _p_: preview hunk   _B_: blame show full 
- ^ ^              _S_: stage buffer      ^ ^                 _/_: show base file
+ ^ ^              _S_: stage buffer      _v_: diff view      _/_: show base file
  ^
  ^ ^              _<Enter>_: Lazygit              _q_: exit
 ]]
@@ -358,6 +358,7 @@ return {
               { desc = "blame show full" },
             },
             { "/", gitsigns.show, { exit = true, desc = "show base file" } }, -- show the base of the file
+            { "v", "<cmd>DiffviewOpen<CR>", { exit = true, desc = "Diff view" } },
             {
               "<Enter>",
               "<Cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>",

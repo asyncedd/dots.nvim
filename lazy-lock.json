@@ -17,6 +17,7 @@
   "comment-box.nvim": { "branch": "main", "commit": "6672213bd5d2625a666a297b66307967effa50bc" },
   "crates.nvim": { "branch": "main", "commit": "258961973c2cbef5717d4a726c68a0730fb0f94b" },
   "dial.nvim": { "branch": "master", "commit": "b3916370c24c498117a4c790b2752c437dab661a" },
+  "diffview.nvim": { "branch": "main", "commit": "766a4f210e67e522659302dc6bd8a8d3b8c08c54" },
   "dressing.nvim": { "branch": "master", "commit": "e6eff7a5a950a853c3903d906dbcea03f778db5f" },
   "dropbar.nvim": { "branch": "master", "commit": "2cc0381cd7ef1d69d289a36715a3ea817bee2691" },
   "duplicate.nvim": { "branch": "main", "commit": "f0129f5560f297bb28fc10192c444a853ddb3d98" },
