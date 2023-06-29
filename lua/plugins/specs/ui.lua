@@ -275,7 +275,7 @@ return {
         AARRGGBB = true,
         rgb_fn = true,
         hsl_fn = true,
-        tailwind = false,
+        tailwind = true,
         names = false,
       },
     },
