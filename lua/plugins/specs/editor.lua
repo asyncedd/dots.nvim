@@ -373,4 +373,11 @@ return {
       require("plugins.configs.editor.hydra")(opts)
     end,
   },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    opts = true,
+    keys = {
+      { "<leader>rr", "<cmd>lua require('refactoring').select_refactor()<CR>", mode = "x" },
+    },
+  },
 }
