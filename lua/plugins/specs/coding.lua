@@ -161,13 +161,15 @@ return {
     event = "VeryLazy",
   },
   {
-    "Wansmer/treesj",
-    opts = {
-      use_default_keymaps = false,
-      max_join_length = 500,
-    },
+    "CKolkey/ts-node-action",
+    opts = true,
     keys = {
-      { "gS", "<cmd>lua require('treesj').toggle()<CR>", mode = { "n", "x" }, desc = "Toggle split/join" },
+      {
+        "gS",
+        "<cmd>lua require('ts-node-action').node_action()<CR>",
+        mode = { "n", "x" },
+        desc = "Toggle node action",
+      },
     },
   },
   {
