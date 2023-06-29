@@ -156,6 +156,7 @@ return {
         "oil_preview",
         "vim",
       },
+      use_treesitter = true,
     },
     event = "BufReadPost",
   },
