@@ -99,15 +99,10 @@ M.cmp = {
     fields = { "abbr", "kind", "menu" },
     format = function(entry, vim_item)
       local item = vim_item.kind
+      vim_item = require("cmp-tailwind-colors").format(entry, vim_item)
 
-      vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
+      vim_item.kind = string.format("%s %s", kind_icons[item], item)
       vim_item.kind = " " .. vim_item.kind .. " "
-
-      if item == "Color" then
-        vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
-
-        return vim_item
-      end
 
       return vim_item
     end,
