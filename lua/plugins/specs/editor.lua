@@ -410,4 +410,9 @@ return {
       nn.setup({ activate_hydra_keys = "<leader>h" })
     end,
   },
+  {
+    "abecodes/tabout.nvim",
+    opts = true,
+    event = "InsertEnter",
+  },
 }
