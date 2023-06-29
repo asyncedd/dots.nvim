@@ -91,6 +91,7 @@
   "substitute.nvim": { "branch": "main", "commit": "46a78e02b5b009d22df7566cbc25f4ef565c5731" },
   "telescope-fzy-native.nvim": { "branch": "master", "commit": "282f069504515eec762ab6d6c89903377252bf5b" },
   "telescope.nvim": { "branch": "master", "commit": "6074847b6ee4b725747c8fc540d9b6b128ac8a12" },
+  "tint.nvim": { "branch": "master", "commit": "80b15a91087991068d5834419437f652d1d4bc8e" },
   "todo-comments.nvim": { "branch": "main", "commit": "09b0b17d824d2d56f02ff15967e8a2499a89c731" },
   "tokyonight.nvim": { "branch": "main", "commit": "fd0a005fd8986ec0d98a1938dc570303e8d8444b" },
   "treesj": { "branch": "main", "commit": "3203aa553217921fd4dcb79245f9df07278910b2" },

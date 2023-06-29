@@ -414,4 +414,9 @@ return {
     end,
     event = "User UI",
   },
+  {
+    "levouh/tint.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
