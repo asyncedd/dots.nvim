@@ -347,6 +347,7 @@ return {
   },
   {
     "jcdickinson/codeium.nvim",
+    commit = "b3d8dbd",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
