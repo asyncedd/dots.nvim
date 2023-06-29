@@ -51,6 +51,7 @@ return {
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-emoji",
       "codeium.nvim",
+      "roobert/tailwindcss-colorizer-cmp.nvim",
     },
   },
   {
