@@ -164,6 +164,7 @@ return {
           prettierd = {
             extra_filetypes = { "svelte", "toml" },
           },
+          rustywind = {},
         },
       }
     end,
