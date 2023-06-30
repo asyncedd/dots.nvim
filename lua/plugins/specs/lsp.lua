@@ -104,6 +104,7 @@ return {
           nil_ls = {},
           rnix = {},
           taplo = {},
+          pylsp = {},
         },
         setup = {
           eslint = function()

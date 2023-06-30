@@ -212,7 +212,25 @@ return {
   {
     "mfussenegger/nvim-dap-python",
     config = function()
-      require("dap-python").setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
+      local python_env = function()
+        for _, client in pairs(vim.lsp.get_active_clients()) do
+          if client.name == "pyright" then
+            return client.config.settings.python
+          end
+        end
+        return nil
+      end
+
+      local dap_py = require("dap-python")
+      dap_py.resolve_python = function()
+        local env = python_env()
+        if env then
+          return env.pythonPath
+        else
+          return "python"
+        end
+      end
+      dap_py.setup()
     end,
     dependencies = "nvim-dap",
     init = function()
