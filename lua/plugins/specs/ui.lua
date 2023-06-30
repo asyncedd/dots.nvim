@@ -433,9 +433,4 @@ return {
     },
     event = "VeryLazy",
   },
-  {
-    "nacro90/numb.nvim",
-    opts = true,
-    event = "CmdlineEnter",
-  },
 }
