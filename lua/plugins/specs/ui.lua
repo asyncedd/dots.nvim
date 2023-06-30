@@ -422,8 +422,6 @@ return {
     "levouh/tint.nvim",
     opts = function()
       return {
-        tint = -1, -- Darken colors, use a positive value to brighten
-        tint_background_colors = true, -- Tint background portions of highlight groups
         highlight_ignore_patterns = { "WinSeparator", "Status.*" }, -- Highlight group patterns to ignore, see `string.find`
         window_ignore_function = function(winid)
           local bufid = vim.api.nvim_win_get_buf(winid)
