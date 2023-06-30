@@ -442,4 +442,9 @@ return {
     opts = true,
     event = "CmdlineEnter",
   },
+  {
+    "lewis6991/satellite.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }

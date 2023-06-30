@@ -86,6 +86,7 @@
   "readline.nvim": { "branch": "master", "commit": "cab666cbd026dea9c817182e22255ecb3b3419b1" },
   "refactoring.nvim": { "branch": "master", "commit": "859289acc0fda13bf42834dbeef10b8c1148d444" },
   "rust-tools.nvim": { "branch": "master", "commit": "71d2cf67b5ed120a0e31b2c8adb210dd2834242f" },
+  "satellite.nvim": { "branch": "main", "commit": "022c884978b888d5b5812052c64d0d243092155e" },
   "scope.nvim": { "branch": "main", "commit": "4a67c3e16867b2b241f5f2db2ab291497b76bece" },
   "smart-open.nvim": { "branch": "0.2.x", "commit": "20ac086494a6dda649b0cfb255565e8b248d0550" },
   "specs.nvim": { "branch": "main", "commit": "2743e412bbe21c9d73954c403d01e8de7377890d" },
