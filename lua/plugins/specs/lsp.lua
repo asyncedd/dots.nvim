@@ -79,7 +79,17 @@ return {
               autoImportCompletion = true,
             },
           },
-          svelte = {},
+          svelte = {
+            svelte = {
+              plugin = {
+                css = {
+                  diagnostics = {
+                    enable = false,
+                  },
+                },
+              },
+            },
+          },
           -- https://github.com/folke/dot/blob/master/nvim/lua/plugins/lsp.lua
           tsserver = {},
           html = {},
