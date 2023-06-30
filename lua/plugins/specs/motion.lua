@@ -27,7 +27,7 @@ return {
               return vim.fn.mode(true):find("o")
             end,
             jump_labels = function(motion)
-              return vim.v.count == 0 and motion:find("[ftFT]") and vim.fn.mode(true):find("o")
+              return true
             end,
             remote_op = {
               restore = true,
