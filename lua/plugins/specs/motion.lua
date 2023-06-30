@@ -7,25 +7,35 @@
 return {
   {
     "folke/flash.nvim",
-    opts = {
-      label = {
-        rainbow = {
-          enabled = true,
-          shade = 3,
+    opts = function()
+      return {
+        label = {
+          rainbow = {
+            enabled = true,
+            shade = 3,
+          },
         },
-      },
-      jump = {
-        autojump = true,
-      },
-      char = {
-        search = {
-          wrap = true,
+        jump = {
+          autojump = true,
         },
-      },
-      remote_op = {
-        restore = true,
-      },
-    },
+        modes = {
+          char = {
+            search = {
+              wrap = true,
+            },
+            autohide = function()
+              return vim.fn.mode(true):find("o")
+            end,
+            jump_labels = function(motion)
+              return vim.v.count == 0 and motion:find("[ftFT]") and vim.fn.mode(true):find("o")
+            end,
+            remote_op = {
+              restore = true,
+            },
+          },
+        },
+      }
+    end,
     keys = {
       {
         "s",
