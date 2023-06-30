@@ -90,6 +90,7 @@ return {
           jdtls = {},
           nil_ls = {},
           rnix = {},
+          taplo = {},
         },
         setup = {
           eslint = function()
