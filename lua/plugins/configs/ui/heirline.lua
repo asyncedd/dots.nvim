@@ -289,10 +289,6 @@ M.LSPActive = {
   condition = conditions.lsp_attached and function()
     return vim.g.lsp_attached
   end,
-  update = {
-    "LspAttach",
-    "LspDetach",
-  },
 
   provider = function(self)
     local buf_client_names = {}
