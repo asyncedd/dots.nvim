@@ -57,13 +57,17 @@ return {
               },
             },
           },
-          cssls = {},
-          jsonls = {
-            settings = {
-              json = {
-                schemas = require("schemastore").json.schemas(),
-                validate = { enable = true },
+          cssls = {
+            css = {
+              lint = {
+                unknownAtRules = "ignore",
               },
+            },
+          },
+          jsonls = {
+            json = {
+              schemas = require("schemastore").json.schemas(),
+              validate = { enable = true },
             },
           },
           tailwindcss = {},
