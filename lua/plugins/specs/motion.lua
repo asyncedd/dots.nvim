@@ -115,19 +115,6 @@ return {
     },
   },
   {
-    "cbochs/portal.nvim",
-    opts = {
-      window_options = {
-        height = 6,
-      },
-    },
-    keys = {
-      { "<C-i>", "<cmd>Portal jumplist forward<CR>", desc = "Toggle portal foward" },
-      { "<C-o>", "<cmd>Portal jumplist backward<CR>", desc = "Toggle portal backwards" },
-      { "<leader>hj", "<cmd>lua require('portal.builtin').harpoon.tunnel()<CR>", desc = "Toggle portal for harpoon" },
-    },
-  },
-  {
     "linty-org/readline.nvim",
     keys = {
       {
