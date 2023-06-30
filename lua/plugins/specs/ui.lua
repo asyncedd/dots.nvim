@@ -398,7 +398,7 @@ return {
     "folke/which-key.nvim",
     opts = {
       triggers_blacklist = {
-        n = { "<leader>g", "<leader>h" },
+        n = { "<leader>g", "<leader>n" },
       },
     },
     event = "VeryLazy",
