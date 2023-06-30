@@ -250,7 +250,12 @@ return {
   },
   {
     "saecki/crates.nvim",
-    opts = {},
+    opts = {
+      null_ls = {
+        enabled = true,
+        name = "crates.nvim",
+      },
+    },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
