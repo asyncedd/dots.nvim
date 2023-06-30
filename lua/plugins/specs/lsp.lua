@@ -98,7 +98,6 @@ return {
           rust_analyzer = {},
           ruff_lsp = {},
           bashls = {},
-          eslint = {},
           clangd = {},
           solargraph = {},
           jdtls = {},
@@ -176,10 +175,9 @@ return {
           beautysh = {
             extra_args = { "-i", "2" },
           },
-          prettierd = {
+          prettier = {
             extra_filetypes = { "svelte", "toml" },
           },
-          rustywind = {},
         },
       }
     end,

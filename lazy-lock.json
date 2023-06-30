@@ -105,6 +105,7 @@
   "typescript-tools.nvim": { "branch": "master", "commit": "4f4f3874475ea08fbc6ed7a002495bdd24376932" },
   "typescript.nvim": { "branch": "main", "commit": "de304087e6e49981fde01af8ccc5b21e8519306f" },
   "ultimate-autopair.nvim": { "branch": "main", "commit": "f383bf7eeafbc61fa06d0a05f9b8a3b15e8c6a74" },
+  "undotree": { "branch": "master", "commit": "485f01efde4e22cb1ce547b9e8c9238f36566f21" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
   "vim-matchup": { "branch": "master", "commit": "a5ca7ef39828d2bc92c9a39599c378bc0dea3cfc" },
   "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" },
