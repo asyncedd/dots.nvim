@@ -165,6 +165,7 @@ return {
             extra_filetypes = { "svelte", "toml" },
           },
           rustywind = {},
+          taplo = {},
         },
       }
     end,
