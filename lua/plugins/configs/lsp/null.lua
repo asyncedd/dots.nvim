@@ -29,7 +29,6 @@ end
 local function setup_formatting(names)
   local group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
   require("mason").setup(names)
-  ensure_installed(names)
 
   vim.api.nvim_create_autocmd("BufWritePre", {
     group = group,
@@ -75,6 +74,8 @@ local function setup_null_ls(opts)
     local name = source.name:gsub("_", "-")
     table.insert(names, name)
   end
+
+  ensure_installed(names)
 
   require("null-ls").setup({
     sources = list_of_sources,
