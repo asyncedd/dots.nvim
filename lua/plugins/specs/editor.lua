@@ -221,6 +221,8 @@ return {
       ^ ^                                   _e_: Equalize window sizes
       ^                       _Q_: Close current window _<C-q>_: Close current window
       ^
+      ^                                 _s_: Split below       _v_: Split vertically
+      ^
       ^ ^                               _q_: exit     _;_: exit     _<Esc>_: exit
       ]]
 
@@ -326,15 +328,19 @@ return {
             -- resizing window
             { "H", "<C-w>3<" },
             { "L", "<C-w>3>" },
-            { "K", "<C-w>2+" },
-            { "J", "<C-w>2-" },
+            { "K", "<C-w>2-" },
+            { "J", "<C-w>2+" },
 
             -- equalize window sizes
             { "e", "<C-w>=" },
 
             -- close active window
-            { "Q", ":q<cr>" },
-            { "<C-q>", ":q<cr>" },
+            { "Q", "<cmd>q<cr>" },
+            { "<C-q>", "<cmd>q<cr>" },
+
+            -- split
+            { "s", "<cmd>split<CR>" },
+            { "v", "<cmd>vsplit<CR>" },
 
             -- exit this Hydra
             { "q", nil, { exit = true, nowait = true } },
