@@ -356,6 +356,18 @@ return {
       },
     },
     event = "LspAttach",
+    keys = {
+      { "gh", "<cmd>Lspsaga lsp_finder<CR>" },
+      { "gp", "<cmd>Lspsaga peek_definition<CR>" },
+      { "gt", "<cmd>Lspsaga goto_type_definition<CR>" },
+      { "<leader>sgl", "<cmd>Lspsaga show_line_diagnostics<CR>" },
+      { "<leader>sgb", "<cmd>Lspsaga show_buffer_diagnostics<CR>" },
+      { "<leader>sgw", "<cmd>Lspsaga show_workspace_diagnostics<CR>" },
+      { "<leader>sgg", "<cmd>Lspsaga show_cursor_diagnostics<CR>" },
+      { "K", "<cmd>Lspsaga hover_doc ++keep<CR>" },
+      { "<leader>sci", "<cmd>Lspsaga ingoing_calls<CR>" },
+      { "<leader>sco", "<cmd>Lspsaga outgoing_calls<CR>" },
+    },
   },
   {
     "pmizio/typescript-tools.nvim",

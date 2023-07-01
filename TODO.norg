@@ -33,13 +33,14 @@
    - (_) Add logseq support inside Neovim
    - (_) Add otter.nvim
    - (_) Consider on adding other.nvim
-   - ( ) Create lspsaga.nvim mappings
+   - (x) Create lspsaga.nvim mappings
    - ( ) Add a hydra for nvim-dap
    - ( ) Try to add touchbar scrolling with satelite.nvim
    - ( ) Add and configure jdtls.nvim
    - ( ) Add a hydra for Comment.nvim
    - ( ) Decrease timeoutlen
    - (x) Add a hydra for window key jumps
+   - ( ) Add a hydra for LSPSaga
 
 ** fix
    - (x) Fix the presenter of neorg
@@ -51,6 +52,7 @@
    - ( ) Fix unsynchornized VimMode in heirline.nvim
    - ( ) Fix opening Telescope.nvim before nvim-ufo loads resulting in an error
    - ( ) Fix on satelite.nvim errors when deleting the most bottom line on the buffer
+   - ( ) Fix nvim-dap keymaps
 
 ** docs
    - (x) Resync screenshots in README
