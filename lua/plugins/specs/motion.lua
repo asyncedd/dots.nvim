@@ -341,18 +341,21 @@ return {
   {
     "LeonHeidelbach/trailblazer.nvim",
     opts = {
+      auto_save_trailblazer_state_on_exit = true,
+      auto_load_trailblazer_state_on_enter = true,
+      custom_session_storage_dir = vim.fn.stdpath("data") .. "/trail_blazer_sessions.", -- i.e. "~/trail_blazer_sessions/"
       mappings = {
         nv = {
           motions = {
-            new_trail_mark = "ml",
+            new_trail_mark = "mm",
             track_back = "mb",
             peek_move_next_down = "mJ",
             peek_move_previous_up = "mK",
             move_to_nearest = "mn",
-            toggle_trail_mark_list = "mm",
+            toggle_trail_mark_list = "ml",
           },
           actions = {
-            delete_all_trail_marks = "mL",
+            delete_all_trail_marks = "mM",
             paste_at_last_trail_mark = "mp",
             paste_at_all_trail_marks = "mP",
             set_trail_mark_select_mode = "mt",
