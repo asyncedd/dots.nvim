@@ -41,7 +41,7 @@
    - (x) Decrease timeoutlen
    - (x) Add a hydra for window key jumps
    - (x) Add a hydra for LSPSaga
-   - ( ) Use mini.bufremove for the windows hydras
+   - (_) Use mini.bufremove for the windows hydras
 
 ** fix
    - (x) Fix the presenter of neorg
