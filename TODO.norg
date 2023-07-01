@@ -38,7 +38,7 @@
    - ( ) Try to add touchbar scrolling with satelite.nvim
    - ( ) Add and configure jdtls.nvim
    - ( ) Add a hydra for Comment.nvim
-   - ( ) Decrease timeoutlen
+   - (x) Decrease timeoutlen
    - (x) Add a hydra for window key jumps
    - (x) Add a hydra for LSPSaga
 

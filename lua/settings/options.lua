@@ -299,6 +299,10 @@ o.ignorecase = true
 -- Do NOT ignore case in search patterns if an uppercase letter is in it.
 o.smartcase = true
 
+-- Timeout length
+-- Set the timeout length to be a little shorter
+o.timeoutlen = 500
+
 -- CODE: hFy
 --
 --  ╭──────────────────────────────────────────────────────────╮
