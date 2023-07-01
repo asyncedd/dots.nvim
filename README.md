@@ -86,10 +86,10 @@ Just run a `nvim` in your terminal :D
 <details>
 <summary>Expand to see screenshots!</summary>
 
-No arguments (`nvim`)
-![blank buffer](https://i.imgur.com/LelATuA.png)
-With Argumetns (`nvim some.file`)
-![a normal buffer](https://i.imgur.com/Wc66GFP.png)
+| Context                           | Screenshot                                          |
+| --------------------------------- | --------------------------------------------------- |
+| No arguments (`nvim`)             | ![blank buffer](https://i.imgur.com/LelATuA.png)    |
+| With Arguments (`nvim some.file`) | ![a normal buffer](https://i.imgur.com/Wc66GFP.png) |
 
 </details>
 
