@@ -227,6 +227,11 @@ return {
             zen_mode = "zen-mode",
           },
         },
+        ["core.keybinds"] = {},
+        ["core.mode"] = {},
+        ["core.neorgcmd"] = {},
+        ["core.queries.native"] = {},
+        ["core.ui"] = {},
       },
     },
     config = function(_, opts)
