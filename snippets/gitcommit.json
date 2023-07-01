@@ -16,5 +16,10 @@
       "\t- Styled with Stylua"
     ],
     "description": "Sync lazy-lock conventional commit"
+  },
+  "norg conventional commit": {
+    "prefix": "norg",
+    "body": ["chore(norg): 📝 Sync norg", "\nCHANGES:", "\t- Synced TODO.norg"],
+    "description": "Sync norg conventional commit"
   }
 }
