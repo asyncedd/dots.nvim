@@ -214,9 +214,9 @@ return {
 ]]
 
       local windows_hint = [[
-      _<C-h>_: Right window     _<C-l>_: Left window     _<C-k>_: The window above     _<C-j>_ The window below
+      ^       _h_: Right window     _l_: Left window     _k_: The window above     _j_ The window below
       ^
-      _H_:   Increase/Decrease width (of the right)     _L_: Increase left width     _K_: Increase height     _J_: Decrease height   
+      _H_:   Increase right width     _L_: Increase left width     _K_: Increase height     _J_: Decrease height   
       ^
       ^ ^                                   _e_: Equalize window sizes
       ^                       _Q_: Close current window _<C-q>_: Close current window
@@ -318,10 +318,10 @@ return {
           },
           heads = {
             -- move between windows
-            { "<C-h>", "<C-w>h" },
-            { "<C-j>", "<C-w>j" },
-            { "<C-k>", "<C-w>k" },
-            { "<C-l>", "<C-w>l" },
+            { "h", "<C-w>h" },
+            { "j", "<C-w>j" },
+            { "k", "<C-w>k" },
+            { "l", "<C-w>l" },
 
             -- resizing window
             { "H", "<C-w>3<" },
