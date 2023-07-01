@@ -14,6 +14,7 @@
 ** feat
    - (x) Add glow.nvim
    - (x) Add vim-visual-multi
+   - ( ) Add trailblazer.nvim
 
 ** fix
    - (x) Fix the presenter of neorg
