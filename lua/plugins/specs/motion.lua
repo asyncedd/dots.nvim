@@ -23,15 +23,13 @@ return {
             search = {
               wrap = true,
             },
-            autohide = function()
-              return vim.fn.mode(true):find("o")
+            config = function(opts)
+              opts.autohide = vim.fn.mode(true):find("o")
+              opts.jump_labels = true
             end,
-            jump_labels = function(motion)
-              return true
-            end,
-            remote_op = {
-              restore = true,
-            },
+          },
+          remote_op = {
+            restore = true,
           },
         },
       }
