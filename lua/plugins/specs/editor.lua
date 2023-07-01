@@ -233,6 +233,7 @@ return {
         ["core.queries.native"] = {},
         ["core.ui"] = {},
         ["core.summary"] = {},
+        ["core.itero"] = {},
       },
     },
     config = function(_, opts)
