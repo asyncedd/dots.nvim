@@ -248,4 +248,8 @@ return {
     opts = true,
     event = "VeryLazy",
   },
+  {
+    "vimwiki/vimwiki",
+    event = "VeryLazy",
+  },
 }

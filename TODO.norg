@@ -27,8 +27,8 @@
    - ( ) Replace glow.nvim with some kind of markdown preview plugin
    - (x) Consider on add obsidian.nvim
    - ( ) Improve integration for all the colorschemes not catppuccin to a catppuccin level
-   - ( ) Consider on adding vimwiki
-   - ( ) Add logseq support inside Neovim
+   - (x) Consider on adding vimwiki
+   - (_) Add logseq support inside Neovim
    - ( ) Add otter.nvim
    - ( ) Consider on adding other.nvim
 
