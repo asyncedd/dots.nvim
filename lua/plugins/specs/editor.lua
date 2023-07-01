@@ -232,6 +232,7 @@ return {
         ["core.neorgcmd"] = {},
         ["core.queries.native"] = {},
         ["core.ui"] = {},
+        ["core.summary"] = {},
       },
     },
     config = function(_, opts)
