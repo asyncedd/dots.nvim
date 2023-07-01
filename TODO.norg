@@ -11,6 +11,8 @@
    - (-) Optimize the configuration in general
    - (-) Optimize startup time
    - ( ) Make LSP servers smarter in general
+   - ( ) Make heirline prettier
+   - ( ) Make the heirline configuration better
 
 ** feat
    - (x) Add glow.nvim
@@ -30,7 +32,14 @@
    - (x) Consider on adding vimwiki
    - (_) Add logseq support inside Neovim
    - (_) Add otter.nvim
-   - ( ) Consider on adding other.nvim
+   - (_) Consider on adding other.nvim
+   - ( ) Create lspsaga.nvim mappings
+   - ( ) Add a hydra for nvim-dap
+   - ( ) Try to add touchbar scrolling with satelite.nvim
+   - ( ) Add and configure jdtls.nvim
+   - ( ) Add a hydra for Comment.nvim
+   - ( ) Decrease timeoutlen
+   - ( ) Add a hydra for window key jumps
 
 ** fix
    - (x) Fix the presenter of neorg
@@ -41,6 +50,7 @@
    - ( ) Entering help files with tint.nvim makes it weird 🤔
    - ( ) Fix unsynchornized VimMode in heirline.nvim
    - ( ) Fix opening Telescope.nvim before nvim-ufo loads resulting in an error
+   - ( ) Fix on satelite.nvim errors when deleting the most bottom line on the buffer
 
 ** docs
    - (x) Resync screenshots in README
@@ -54,6 +64,12 @@
    - (x) Use tables for the screenshots for the profiling stuff
    - (x) Update the screenshots for the profiling stuff
    - ( ) Add a table with all the possible keymaps in the README
+
+** perf
+   - ( ) Remove plugins
+   - ( ) Optimize the random function in alpha-nvim
+   - ( ) Replace slow LSP servers with faster ones
+   - ( ) Remove LSP servers
 
 ** 🪟 Windows
    - ( ) Basic Windows support
