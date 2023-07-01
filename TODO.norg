@@ -20,5 +20,6 @@
 
 ** docs
    - (x) Resync screenshots in README
-   - ( ) Update dependencies
+   - (-) Update dependencies
    - ( ) Make the TOC prettier
+   - ( ) Use tables for the dependency list
