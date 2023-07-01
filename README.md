@@ -49,6 +49,7 @@ Dependencies:
 - `nvim` :)
 - `fzf` for Telescope!
 - `fd` for Telescope too!
+- `rg` for Telescope
 - `sqlite3` for sqlite.lua
 - `npm` for some LSP servers
 - `cargo` just in case.
