@@ -205,17 +205,29 @@ return {
     "anuvyklack/hydra.nvim",
     opts = function()
       local gitsigns = require("gitsigns")
-      local hint = [[
+      local git_hint = [[
  _J_: next hunk   _s_: stage hunk        _d_: show deleted   _b_: blame line
  _K_: prev hunk   _u_: undo last stage   _p_: preview hunk   _B_: blame show full 
  ^ ^              _S_: stage buffer      _v_: diff view      _/_: show base file
  ^
  ^ ^              _<Enter>_: Lazygit              _q_: exit
 ]]
+
+      local windows_hint = [[
+      _<C-h>_: Right window     _<C-l>_: Left window     _<C-k>_: The window above     _<C-j>_ The window below
+      ^
+      _H_:   Increase/Decrease width (of the right)     _L_: Increase left width     _K_: Increase height     _J_: Decrease height   
+      ^
+      ^ ^                                   _e_: Equalize window sizes
+      ^                       _Q_: Close current window _<C-q>_: Close current window
+      ^
+      ^ ^                               _q_: exit     _;_: exit     _<Esc>_: exit
+      ]]
+
       return {
         {
           name = "Git",
-          hint = hint,
+          hint = git_hint,
           config = {
             buffer = true,
             color = "pink",
@@ -290,6 +302,44 @@ return {
               { exit = true, desc = "Lazygit" },
             },
             { "q", nil, { exit = true, nowait = true, desc = "exit" } },
+          },
+        },
+        {
+          name = "Change / Resize Window",
+          mode = { "n" },
+          body = "<C-w>",
+          hint = windows_hint,
+          config = {
+            hint = {
+              border = "rounded",
+            },
+            color = "pink",
+            invoke_on_body = true,
+          },
+          heads = {
+            -- move between windows
+            { "<C-h>", "<C-w>h" },
+            { "<C-j>", "<C-w>j" },
+            { "<C-k>", "<C-w>k" },
+            { "<C-l>", "<C-w>l" },
+
+            -- resizing window
+            { "H", "<C-w>3<" },
+            { "L", "<C-w>3>" },
+            { "K", "<C-w>2+" },
+            { "J", "<C-w>2-" },
+
+            -- equalize window sizes
+            { "e", "<C-w>=" },
+
+            -- close active window
+            { "Q", ":q<cr>" },
+            { "<C-q>", ":q<cr>" },
+
+            -- exit this Hydra
+            { "q", nil, { exit = true, nowait = true } },
+            { ";", nil, { exit = true, nowait = true } },
+            { "<Esc>", nil, { exit = true, nowait = true } },
           },
         },
       }

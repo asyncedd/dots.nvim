@@ -39,7 +39,7 @@
    - ( ) Add and configure jdtls.nvim
    - ( ) Add a hydra for Comment.nvim
    - ( ) Decrease timeoutlen
-   - ( ) Add a hydra for window key jumps
+   - (x) Add a hydra for window key jumps
 
 ** fix
    - (x) Fix the presenter of neorg
