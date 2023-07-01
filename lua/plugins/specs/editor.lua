@@ -417,4 +417,11 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  {
+    "ellisonleao/glow.nvim",
+    opts = true,
+    cmd = {
+      "Glow",
+    },
+  },
 }
