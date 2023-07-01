@@ -17,6 +17,8 @@
    - (x) Add trailblazer.nvim
    - (_) Do trailblazer.nvim session stuff
    - (x) Fix trailblazer.nvim ruining Treesitter.nvim stuffs :(
+   - ( ) Do some Neorg intero stuff
+   - (-) Improve Neorg stuff in general
 
 ** fix
    - (x) Fix the presenter of neorg
