@@ -63,7 +63,7 @@ return {
         mode = "o",
       },
       {
-        "r",
+        "<leader>r",
         mode = { "n" },
         function()
           local state = require("flash").jump({
