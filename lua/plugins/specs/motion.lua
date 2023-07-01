@@ -338,4 +338,39 @@ return {
       })
     end,
   },
+  {
+    "LeonHeidelbach/trailblazer.nvim",
+    opts = {
+      mappings = {
+        nv = {
+          motions = {
+            new_trail_mark = "ml",
+            track_back = "mb",
+            peek_move_next_down = "mJ",
+            peek_move_previous_up = "mK",
+            move_to_nearest = "mn",
+            toggle_trail_mark_list = "mm",
+          },
+          actions = {
+            delete_all_trail_marks = "mL",
+            paste_at_last_trail_mark = "mp",
+            paste_at_all_trail_marks = "mP",
+            set_trail_mark_select_mode = "mt",
+            switch_to_next_trail_mark_stack = "m.",
+            switch_to_previous_trail_mark_stack = "m,",
+            set_trail_mark_stack_sort_mode = "ms",
+          },
+        },
+        o = {
+          motions = {
+            track_back = "mb",
+            peek_move_next_down = "mJ",
+            peek_move_previous_up = "mK",
+            move_to_nearest = "mn",
+          },
+        },
+      },
+    },
+    event = "VeryLazy",
+  },
 }
