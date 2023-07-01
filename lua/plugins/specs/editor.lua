@@ -328,7 +328,7 @@ return {
             hint = {
               border = "rounded",
             },
-            color = "pink",
+            color = "amaranth",
             invoke_on_body = true,
           },
           heads = {

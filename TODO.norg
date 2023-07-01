@@ -53,7 +53,7 @@
    - ( ) Fix opening Telescope.nvim before nvim-ufo loads resulting in an error
    - ( ) Fix on satelite.nvim errors when deleting the most bottom line on the buffer
    - ( ) Fix nvim-dap keymaps
-   - ( ) Fix mappings for the windows hydra
+   - (x) Fix mappings for the windows hydra
 
 ** docs
    - (x) Resync screenshots in README
