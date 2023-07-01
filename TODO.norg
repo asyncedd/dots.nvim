@@ -15,6 +15,7 @@
    - (x) Add glow.nvim
    - (x) Add vim-visual-multi
    - (x) Add trailblazer.nvim
+   - ( ) Do trailblazer.nvim session stuff
 
 ** fix
    - (x) Fix the presenter of neorg
