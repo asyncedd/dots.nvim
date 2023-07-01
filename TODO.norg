@@ -12,7 +12,7 @@
    - (-) Optimize startup time
 
 ** feat
-   - (_) Add glow.nvim
+   - ( ) Add glow.nvim
 
 ** fix
    - (x) Fix the presenter of neorg
