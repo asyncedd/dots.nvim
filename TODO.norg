@@ -9,10 +9,15 @@
    - (!) make it minimal
    - ( ) improve cmp sorting to be super cool
    - (-) optimize startup time
+   - ( ) make the readme better in general
 
 ** fix
    - (x) fix the presenter of neorg
    - (x) Add a snippet for Neorg commits
    - ( ) fix weird lsp errors when nuking the workspace tree in lazygit
    - ( ) Fix tab indentation on GITCOMMIT files
+
+** readme stuff
    - (x) resync screenshots in README
+   - ( ) update dependencies
+   - ( ) make the toc prettier
