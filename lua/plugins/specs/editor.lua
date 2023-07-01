@@ -371,31 +371,4 @@ return {
       "MdEval",
     },
   },
-  {
-    "jmbuhr/otter.nvim",
-    opts = {
-      enabled_filetype = {
-        "python",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "javascriptreact",
-        "typescriptreact",
-        "lua",
-        "r",
-        "bash",
-        "powershell",
-      },
-    },
-    config = function(_, opts)
-      require("otter").activate(opts)
-    end,
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-      "neovim/nvim-lspconfig",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    event = "VeryLazy",
-  },
 }

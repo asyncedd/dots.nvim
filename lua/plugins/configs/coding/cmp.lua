@@ -94,7 +94,8 @@ M.cmp = {
     { name = "luasnip" },
     { name = "codeium", keyword_length = 3 },
     { name = "buffer", keyword_length = 3 },
-    -- { name = "rg", keyword_length = 3 },
+    { name = "obsidian", keyword_length = 3 },
+    { name = "obsidian_new", keyword_length = 3 },
   }),
   formatting = {
     fields = { "abbr", "kind", "menu" },

@@ -29,7 +29,7 @@
    - ( ) Improve integration for all the colorschemes not catppuccin to a catppuccin level
    - (x) Consider on adding vimwiki
    - (_) Add logseq support inside Neovim
-   - (x) Add otter.nvim
+   - (_) Add otter.nvim
    - ( ) Consider on adding other.nvim
 
 ** fix
