@@ -8,6 +8,7 @@
    - (-) make it prettier
    - (!) make it minimal
    - ( ) improve cmp sorting to be super cool
+   - (-) optimize startup time
 
 ** fix
    - (x) fix the presenter of neorg
