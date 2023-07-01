@@ -7,9 +7,10 @@
    - (-) Make it prettier
    - (!) Make it minimal
    - ( ) Improve nvim-cmp sorting to be super cool
-   - ( ) Make the README better in general
+   - (-) Make the README better in general
    - (-) Optimize the configuration in general
    - (-) Optimize startup time
+   - ( ) Make LSP servers smarter in general
 
 ** feat
    - (x) Add glow.nvim
@@ -19,6 +20,15 @@
    - (x) Fix trailblazer.nvim ruining Treesitter.nvim stuffs :(
    - (x) Do some Neorg intero stuff
    - (-) Improve Neorg stuff in general
+   - (-) Add repl functionality (SEE iron.nvim)
+   - ( ) Add mdeval.nvim
+   - ( ) Consider on adding Sniprun.nvim
+   - ( ) Add clipboard-image.nvim
+   - ( ) Replace glow.nvim with some kind of markdown preview plugin
+   - ( ) Consider on add obsidian.nvim
+   - ( ) Improve integration for all the colorschemes not catppuccin to a catppuccin level
+   - ( ) Consider on adding vimwiki
+   - ( ) Add logseq support inside Neovim
 
 ** fix
    - (x) Fix the presenter of neorg
@@ -27,6 +37,8 @@
    - ( ) Fix tab indentation on GITCOMMIT files
    - ( ) Remove unknown errors that occur every now and then
    - ( ) Entering help files with tint.nvim makes it weird 🤔
+   - ( ) Fix unsynchornized VimMode in heirline.nvim
+   - ( ) Fix opening Telescope.nvim before nvim-ufo loads resulting in an error
 
 ** docs
    - (x) Resync screenshots in README
@@ -39,6 +51,7 @@
    - (x) Add context for the screenshots for the profiling stuff
    - (x) Use tables for the screenshots for the profiling stuff
    - (x) Update the screenshots for the profiling stuff
+   - ( ) Add a table with all the possible keymaps in the README
 
 ** 🪟 Windows
-   - ( ) Windows support
+   - ( ) Basic Windows support
