@@ -445,4 +445,10 @@ return {
     opts = true,
     event = "VeryLazy",
   },
+  {
+    "folke/zen-mode.nvim",
+    opts = true,
+    dependencies = "twilight.nvim",
+    cmd = { "ZenMode" },
+  },
 }

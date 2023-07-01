@@ -218,13 +218,13 @@ return {
             engine = "nvim-cmp",
           },
         },
-        ["core.integrations.truezen"] = {},
+        ["core.integrations.zen_mode"] = {},
         ["core.integrations.telescope"] = {},
         ["core.clipboard"] = {},
         ["core.clipboard.code-blocks"] = {},
         ["core.presenter"] = {
           config = {
-            zen_mode = "truezen",
+            zen_mode = "zen-mode",
           },
         },
       },
@@ -255,21 +255,6 @@ return {
       "nvim-neorg/neorg-telescope",
     },
     ft = "norg",
-  },
-  {
-    "Pocco81/true-zen.nvim",
-    opts = {
-      integrations = {
-        twilight = true,
-      },
-    },
-    cmd = {
-      "TZAtaraxis",
-      "TZMinimalist",
-      "TZNarrow",
-      "TZFocus",
-    },
-    dependencies = "twilight.nvim",
   },
   {
     "folke/twilight.nvim",
