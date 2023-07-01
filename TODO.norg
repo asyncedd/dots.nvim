@@ -13,7 +13,7 @@
 
 ** feat
    - (x) Add glow.nvim
-   - ( ) Add vim-visual-multi
+   - (x) Add vim-visual-multi
 
 ** fix
    - (x) Fix the presenter of neorg

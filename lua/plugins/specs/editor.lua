@@ -424,4 +424,8 @@ return {
       "Glow",
     },
   },
+  {
+    "mg979/vim-visual-multi",
+    event = "VeryLazy",
+  },
 }
