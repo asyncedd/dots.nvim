@@ -83,8 +83,13 @@ Just run a `nvim` in your terminal :D
 
 **⚠️ Super outdated!**
 
+<details>
+<summary>Expand to see screenshots!</summary>
+
 ![blank buffer](https://i.imgur.com/LelATuA.png)
 ![a normal buffer](https://i.imgur.com/Wc66GFP.png)
+
+</details>
 
 ## 😰 Quitting Nvim.
 
