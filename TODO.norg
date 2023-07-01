@@ -11,12 +11,16 @@
    - (-) Optimize the configuration in general
    - (-) Optimize startup time
 
+** feat
+   - ( ) Add glow.nvim
+
 ** fix
    - (x) Fix the presenter of neorg
    - (x) Add a snippet for Neorg commits
    - ( ) Fix weird LSP errors when nuking the workspace tree in Lazygit
    - ( ) Fix tab indentation on GITCOMMIT files
    - ( ) Remove unknown errors that occur every now and then
+   - ( ) Entering help files with tint.nvim makes it weird 🤔
 
 ** docs
    - (x) Resync screenshots in README
