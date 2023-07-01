@@ -93,21 +93,15 @@ way out! >:D
 
 ## Inspirations / Credits
 
-- [NvChad](https://github.com/nvchad/nvchad) - For the lazyLoader function!
-- [Ayamir's nvimdots](https://github.com/ayamir/nvimdots) - For some structuring
-  and those snippets! (I actually started this repo 99% based on his structure)
-- [Glepnir's dots](https://github.com/glepnir/nvim) - For the snippets!
-- [akinsho's dots](https://github.com/akinsho/dotfiles/tree/nightly/.config/nvim) -
-  For some snippets too!
-- [abzcoding's dots](https://github.com/abzcoding/lvim) - Also for the snippets.
-- [LazyVim](https://github.com/LazyVim/LazyVim) - Stole some configurations and
-  some autocmds i think
-- [Yutkat](https://github.com/yutkat/dotfiles) - For some Luasnip snippets :D and
-  basically about a billion more stuff.
-- [JoseConseco](https://github.com/JoseConseco) - For the CMP sorting
-  configuration.
-- [vsedov's config](https://github.com/vsedov/nvim) - For lots of configs!
-- [Yuki Uthman](https://www.youtube.com/@yukiuthman8358) - For his great cmp
-  turtorials.
-- [pigeon's dots](https://github.com/backwardspy/dotfiles) - For some configs
-- [Swayam](https://github.com/Swayam25) - For helping me with my null-ls.nvim configuration.
+| Repo                                                                            | Why?                                                |
+| ------------------------------------------------------------------------------- | --------------------------------------------------- |
+| [NvChad](https://github.com/nvchad/nvchad)                                      | For the lazy loading function and more!             |
+| [Ayamir's nvimdots](https://github.com/ayamir/nvimdots)                         | For some structuring and those snippets!            |
+| [Glepnir's dots](https://github.com/glepnir/nvim)                               | For the snippets!                                   |
+| [Akinsho's dots](https://github.com/akinsho/dotfiles/tree/nightly/.config/nvim) | For some snippets too!                              |
+| [abzcoding's dots](https://github.com/abzcoding/lvim)                           | Also for the snippets!                              |
+| [LazyVim](https://github.com/LazyVim/LazyVim)                                   | Stole some configurations and some autocmds i think |
+| [Yutkat](https://www.youtube.com/@yukiuthman8358)                               | For his great config.                               |
+| [vsedov's config](https://github.com/vsedov/nvim)                               | For lots of configs!                                |
+| [pigeon's dots](https://github.com/backwardspy/dotfiles)                        | For some configs!                                   |
+| [Swayam](https://github.com/Swayam25)                                           | For helping me with my null-ls.nvim configuration.  |
