@@ -7,6 +7,7 @@
    - (-) optimize
    - (-) make it prettier
    - (!) make it minimal
+   - ( ) improve cmp sorting to be super cool
 
 ** fix
    - (x) fix the presenter of neorg
