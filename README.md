@@ -69,20 +69,10 @@ favorite package manager or,
 [Install from source](https://dev.to/asyncedd/building-neovim-from-source-1794).
 Then clone this repository.
 
-# For \*Nix (Linux/MacOS) systems:
-
-```bash
-mkdir ~/.config/nvim/
-git clone https://github.com/asycnedd/nvim.git ~/.config/nvim/
-nvim --headless "+Lazy! sync" +qa
-```
-
-# For Windows systems:
-
-```powershell
-git clone https://github.com/asyncedd/nvim.git ~/AppData/Local/nvim/
-nvim --headless "+Lazy! sync" +qa
-```
+| System        | Command                                                                                                                                             |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \*Nix systems | <pre lang="bash">mkdir ~/.config/nvim/<br>git clone https://github.com/asycnedd/nvim.git ~/.config/nvim/<br>nvim --headless "+Lazy! sync" +qa</pre> |
+| Windows       | <pre lang="powershell">git clone https://github.com/asyncedd/nvim.git ~/AppData/Local/nvim/<br>nvim --headless "+Lazy! sync" +qa</pre>              |
 
 Then it should bootstrap [lazy.nvim 💤](https://github.com/folke/lazy.nvim).
 Then you can get a cup of [mocha ☕](https://github.com/catppuccin/nvim) while
