@@ -21,7 +21,7 @@
    - (x) Do some Neorg intero stuff
    - (-) Improve Neorg stuff in general
    - (-) Add repl functionality (SEE iron.nvim)
-   - ( ) Add mdeval.nvim
+   - (x) Add mdeval.nvim
    - ( ) Consider on adding Sniprun.nvim
    - ( ) Add clipboard-image.nvim
    - ( ) Replace glow.nvim with some kind of markdown preview plugin

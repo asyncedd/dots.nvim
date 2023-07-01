@@ -430,4 +430,11 @@ return {
     "mg979/vim-visual-multi",
     event = "VeryLazy",
   },
+  {
+    "jubnzv/mdeval.nvim",
+    opts = true,
+    cmd = {
+      "MdEval",
+    },
+  },
 }

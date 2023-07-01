@@ -39,6 +39,7 @@
   "lspsaga.nvim": { "branch": "main", "commit": "4f075452c466df263e69ae142f6659dcf9324bf6" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "4f1c72767bec31397d59554f84096909b2887195" },
   "mason.nvim": { "branch": "main", "commit": "b68d3be4b664671002221d43c82e74a0f1006b26" },
+  "mdeval.nvim": { "branch": "master", "commit": "2654caf8ecaad702b50199d18e39cff23d81e0ba" },
   "middleclass": { "branch": "master", "commit": "9fab4d5bca67262614960960ca35c4740eb2be2c" },
   "mini.ai": { "branch": "main", "commit": "5218ea75e635df78a807bc9d5a7162594fb76d02" },
   "mini.animate": { "branch": "main", "commit": "b0978ee3dd0dafd644d0bc6c37c396dbe8658342" },
