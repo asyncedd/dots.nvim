@@ -21,7 +21,7 @@ My personal Neovim configuration
 
 <!-- ![ss](https://i.imgur.com/5pSbIS4.png) -->
 
-![ss](https://github.com/asyncedd/dots.nvim/blob/master/screenshots/Screenshot%20from%202023-05-20%2016-07-24.png?raw=true)
+![ss](https://files.catbox.moe/bm96wl.png)
 
 ## 👋 Introduction
 
