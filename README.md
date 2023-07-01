@@ -1,5 +1,7 @@
 <!--toc:start-->
 
+## 📜 TOC
+
 - [🏗️ DotsDotNvim (dots.nvim)](#%EF%B8%8F-dotsdotnvim-dotsnvim)
 - [👋 Introduction](#-introduction)
 - [Wow, a really good place to put: ⚠️ DISCLAIMER! ⚠️](#wow-a-really-good-place-to-put-️-disclaimer-️)
