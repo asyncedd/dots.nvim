@@ -46,21 +46,23 @@ But, it's about the overall editing experience of the editor.
 
 ## 🤨 Crash course: Installing
 
-Dependencies:
+**Dependencies**:
 
-- `nvim` :)
-- `fzf` for Telescope!
-- `fd` for Telescope too!
-- `rg` for Telescope
-- `sqlite3` for sqlite.lua
-- `npm` for some LSP servers
-- `cargo` just in case.
-- `go` for Go LSPs
+| Programs  | The why                                                       |
+| --------- | ------------------------------------------------------------- |
+| `nvim`    | because, yes.                                                 |
+| `fzf`     | for Telescope.nvim                                            |
+| `fd`      | for Telescope.nvim                                            |
+| `rg`      | for Telescope.nvim                                            |
+| `sqlite3` | for sqlite.lua                                                |
+| `npm`     | for some LSP servers written in a Javascript related language |
+| `cargo`   | For LSPs written in Rust.                                     |
+| `go`      | For LSPs writte in Go.                                        |
 
-Other Dependencies:
+**Other Dependencies**:
 
-`:checkhealth`
-`:checkhealth mason`
+- `:checkhealth`
+- `:checkhealth mason`
 
 To install this configuration, you need a Neovim build. You can use your
 favorite package manager or,
