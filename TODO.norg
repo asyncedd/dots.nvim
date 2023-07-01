@@ -1,23 +1,24 @@
 * TODO
-  A funny list of TODOs to do.
+  A list of TODOs to keep track of my memos
 
 * The list of TODOs
 
-** ultra big goals
-   - (-) optimize
-   - (-) make it prettier
-   - (!) make it minimal
-   - ( ) improve cmp sorting to be super cool
-   - (-) optimize startup time
-   - ( ) make the readme better in general
+** Big goals
+   - (-) Make it prettier
+   - (!) Make it minimal
+   - ( ) Improve nvim-cmp sorting to be super cool
+   - ( ) Make the README better in general
+   - (-) Optimize the configuration in general
+   - (-) Optimize startup time
 
 ** fix
-   - (x) fix the presenter of neorg
+   - (x) Fix the presenter of neorg
    - (x) Add a snippet for Neorg commits
-   - ( ) fix weird lsp errors when nuking the workspace tree in lazygit
+   - ( ) Fix weird LSP errors when nuking the workspace tree in Lazygit
    - ( ) Fix tab indentation on GITCOMMIT files
+   - ( ) Remove unknown errors that occur every now and then
 
-** readme stuff
-   - (x) resync screenshots in README
-   - ( ) update dependencies
-   - ( ) make the toc prettier
+** docs
+   - (x) Resync screenshots in README
+   - ( ) Update dependencies
+   - ( ) Make the TOC prettier
