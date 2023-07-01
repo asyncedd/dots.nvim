@@ -81,6 +81,7 @@
   "obsidian.nvim": { "branch": "main", "commit": "4d2e1d0efcd857907ac1553517f88f860adbfb8f" },
   "one-small-step-for-vimkind": { "branch": "main", "commit": "f239ca0dc772f214e7ff0627ccbd45bceae88bf8" },
   "onedarkpro.nvim": { "branch": "main", "commit": "f97db0e46ea5e55874892ac3e3cb2fc619d74c7f" },
+  "otter.nvim": { "branch": "main", "commit": "fb98d7e2e5c14476d35ff77e5c4c55522a977ff6" },
   "persisted.nvim": { "branch": "main", "commit": "b03c863731eafacd973912383297ea5d8fdb006a" },
   "plenary.nvim": { "branch": "master", "commit": "102c02903c74b93c705406bf362049383abc87c8" },
   "promise-async": { "branch": "main", "commit": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e" },
