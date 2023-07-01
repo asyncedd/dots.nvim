@@ -16,7 +16,7 @@
    - (x) Add vim-visual-multi
    - (x) Add trailblazer.nvim
    - (_) Do trailblazer.nvim session stuff
-   - ( ) Fix trailblazer.nvim ruining Treesitter.nvim stuffs :(
+   - (x) Fix trailblazer.nvim ruining Treesitter.nvim stuffs :(
 
 ** fix
    - (x) Fix the presenter of neorg
