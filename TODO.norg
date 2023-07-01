@@ -23,12 +23,14 @@
    - (-) Add repl functionality (SEE iron.nvim)
    - (x) Add mdeval.nvim
    - ( ) Consider on adding Sniprun.nvim
-   - ( ) Add clipboard-image.nvim
+   - (_) Add clipboard-image.nvim
    - ( ) Replace glow.nvim with some kind of markdown preview plugin
    - ( ) Consider on add obsidian.nvim
    - ( ) Improve integration for all the colorschemes not catppuccin to a catppuccin level
    - ( ) Consider on adding vimwiki
    - ( ) Add logseq support inside Neovim
+   - ( ) Add otter.nvim
+   - ( ) Consider on adding other.nvim
 
 ** fix
    - (x) Fix the presenter of neorg
