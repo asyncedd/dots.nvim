@@ -63,6 +63,23 @@ return {
         mode = "o",
       },
       {
+        "r",
+        mode = { "n" },
+        function()
+          local state = require("flash").jump({
+            remote_op = { restore = false },
+          })
+
+          vim.api.nvim_create_autocmd("TextChanged", {
+            once = true,
+            buffer = vim.api.nvim_get_current_buf(),
+            callback = function()
+              state:restore()
+            end,
+          })
+        end,
+      },
+      {
         "R",
         function()
           require("flash").treesitter_search()
