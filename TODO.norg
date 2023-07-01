@@ -40,7 +40,7 @@
    - ( ) Add a hydra for Comment.nvim
    - ( ) Decrease timeoutlen
    - (x) Add a hydra for window key jumps
-   - ( ) Add a hydra for LSPSaga
+   - (x) Add a hydra for LSPSaga
 
 ** fix
    - (x) Fix the presenter of neorg

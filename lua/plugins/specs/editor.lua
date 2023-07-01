@@ -210,7 +210,9 @@ return {
  _K_: prev hunk   _u_: undo last stage   _p_: preview hunk   _B_: blame show full 
  ^ ^              _S_: stage buffer      _v_: diff view      _/_: show base file
  ^
- ^ ^              _<Enter>_: Lazygit              _q_: exit
+ ^ ^                             _<Enter>_: Lazygit
+ ^
+ ^ ^                        _q_: exit _;_: exit _<Esc>_: exit
 ]]
 
       local windows_hint = [[
@@ -219,11 +221,21 @@ return {
       _H_:   Increase right width     _L_: Increase left width     _K_: Increase height     _J_: Decrease height   
       ^
       ^ ^                                   _e_: Equalize window sizes
+      ^
       ^                       _Q_: Close current window _<C-q>_: Close current window
       ^
       ^                                 _s_: Split below       _v_: Split vertically
       ^
       ^ ^                               _q_: exit     _;_: exit     _<Esc>_: exit
+      ]]
+
+      local lspsaga_hint = [[
+      ^                         DIAGNOSTICS
+      ^ ^     _l_: Line    _b_: Buffer    _w_: Workspace    _s_: Cursor              
+      ^                            CALLS
+      ^            _i_: ingoing              _o_: outgoing
+      ^
+      ^ ^                 _q_: exit _;_: exit _<Esc>_: exit
       ]]
 
       return {
@@ -249,7 +261,6 @@ return {
               vim.cmd("loadview")
               vim.api.nvim_win_set_cursor(0, cursor_pos)
               vim.cmd("normal zv")
-              gitsigns.toggle_signs(false)
               gitsigns.toggle_linehl(false)
               gitsigns.toggle_deleted(false)
             end,
@@ -304,6 +315,8 @@ return {
               { exit = true, desc = "Lazygit" },
             },
             { "q", nil, { exit = true, nowait = true, desc = "exit" } },
+            { ";", nil, { exit = true, nowait = true } },
+            { "<Esc>", nil, { exit = true, nowait = true } },
           },
         },
         {
@@ -343,6 +356,30 @@ return {
             { "v", "<cmd>vsplit<CR>" },
 
             -- exit this Hydra
+            { "q", nil, { exit = true, nowait = true } },
+            { ";", nil, { exit = true, nowait = true } },
+            { "<Esc>", nil, { exit = true, nowait = true } },
+          },
+        },
+        {
+          name = "lspsaga",
+          mode = { "n" },
+          hint = lspsaga_hint,
+          config = {
+            hint = {
+              border = "rounded",
+            },
+            color = "pink",
+            invoke_on_body = true,
+          },
+          body = "<leader>s",
+          heads = {
+            { "l", "<cmd>Lspsaga show_line_diagnostics<CR>" },
+            { "b", "<cmd>Lspsaga show_buffer_diagnostics<CR>" },
+            { "w", "<cmd>Lspsaga show_workspace_diagnostics<CR>" },
+            { "s", "<cmd>Lspsaga show_cursor_diagnostics<CR>" },
+            { "i", "<cmd>Lspsaga ingoing_calls<CR>" },
+            { "o", "<cmd>Lspsaga outgoing_calls<CR>" },
             { "q", nil, { exit = true, nowait = true } },
             { ";", nil, { exit = true, nowait = true } },
             { "<Esc>", nil, { exit = true, nowait = true } },
