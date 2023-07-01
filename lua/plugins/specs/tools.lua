@@ -243,4 +243,9 @@ return {
     },
     ft = "norg",
   },
+  {
+    "epwalsh/obsidian.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }

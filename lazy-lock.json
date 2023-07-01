@@ -78,6 +78,7 @@
   "nvim-ufo": { "branch": "main", "commit": "43e39ec74cd57c45ca9d8229a796750f6083b850" },
   "nvim-various-textobjs": { "branch": "main", "commit": "6dd4d07bd0065abbf8c4c0e141c26e4ad07a7c1b" },
   "nvim-web-devicons": { "branch": "master", "commit": "9ab9b0b894b2388a9dbcdee5f00ce72e25d85bf9" },
+  "obsidian.nvim": { "branch": "main", "commit": "4d2e1d0efcd857907ac1553517f88f860adbfb8f" },
   "one-small-step-for-vimkind": { "branch": "main", "commit": "f239ca0dc772f214e7ff0627ccbd45bceae88bf8" },
   "onedarkpro.nvim": { "branch": "main", "commit": "f97db0e46ea5e55874892ac3e3cb2fc619d74c7f" },
   "persisted.nvim": { "branch": "main", "commit": "b03c863731eafacd973912383297ea5d8fdb006a" },
