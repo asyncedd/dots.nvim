@@ -15,3 +15,4 @@
    - (x) Add a snippet for Neorg commits
    - ( ) fix weird lsp errors when nuking the workspace tree in lazygit
    - ( ) Fix tab indentation on GITCOMMIT files
+   - ( ) resync screenshots in README
