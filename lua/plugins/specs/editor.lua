@@ -192,15 +192,15 @@ return {
 ]]
 
       local windows_hint = [[
-      ^       _h_: Right window     _l_: Left window     _k_: The window above     _j_ The window below
+      ^       _<C-h>_: Right window     _<C-l>_: Left window     _<C-k>_: The window above     _<C-j>_ The window below       
       ^
-      _H_:   Increase right width     _L_: Increase left width     _K_: Increase height     _J_: Decrease height   
+      ^       _H_:   Increase right width     _L_: Increase left width     _K_: Increase height     _J_: Decrease height   
       ^
-      ^ ^                                   _e_: Equalize window sizes
+      ^ ^                                     _e_: Equalize window sizes
       ^
-      ^                       _Q_: Close current window _<C-q>_: Close current window
+      ^                         _Q_: Close current window _<C-q>_: Close current window
       ^
-      ^                                 _s_: Split below       _v_: Split vertically
+      ^                                 _j_: Split below       _l_: Split vertically
       ^
       ^ ^                               _q_: exit     _;_: exit     _<Esc>_: exit
       ]]
@@ -305,15 +305,15 @@ return {
             hint = {
               border = "rounded",
             },
-            color = "amaranth",
+            color = "pink",
             invoke_on_body = true,
           },
           heads = {
             -- move between windows
-            { "h", "<C-w>h" },
-            { "j", "<C-w>j" },
-            { "k", "<C-w>k" },
-            { "l", "<C-w>l" },
+            { "<C-h>", "<C-w>h" },
+            { "<C-j>", "<C-w>j" },
+            { "<C-k>", "<C-w>k" },
+            { "<C-l>", "<C-w>l" },
 
             -- resizing window
             { "H", "<C-w>3<" },
@@ -329,8 +329,8 @@ return {
             { "<C-q>", "<cmd>q<cr>" },
 
             -- split
-            { "s", "<cmd>split<CR>" },
-            { "v", "<cmd>vsplit<CR>" },
+            { "j", "<cmd>split<CR>" },
+            { "l", "<cmd>vsplit<CR>" },
 
             -- exit this Hydra
             { "q", nil, { exit = true, nowait = true } },
