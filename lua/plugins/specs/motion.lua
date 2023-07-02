@@ -93,6 +93,14 @@ return {
         end,
         mode = { "n", "x", "o" },
       },
+      {
+        "<C-s>",
+        mode = "c",
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
+      },
     },
   },
   {
