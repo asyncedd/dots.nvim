@@ -451,4 +451,9 @@ return {
     dependencies = "twilight.nvim",
     cmd = { "ZenMode" },
   },
+  {
+    "tzachar/highlight-undo.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
