@@ -13,6 +13,23 @@ end
 return {
   {
     "L3MON4D3/LuaSnip",
+    opts = function()
+      local types = require("luasnip.util.types")
+      return {
+        history = true,
+        delete_check_events = "TextChanged",
+        -- Display a cursor-like placeholder in unvisited nodes
+        -- of the snippet.
+        ext_opts = {
+          [types.insertNode] = {
+            unvisited = {
+              virt_text = { { "|", "Conceal" } },
+              virt_text_pos = "inline",
+            },
+          },
+        },
+      }
+    end,
     build = function()
       if not jit.os:find("Windows") then
         return "echo -e 'NOTE: jsregexp is optional, so not a big deal if it fails to build\n'; make install_jsregexp"
@@ -20,10 +37,12 @@ return {
         return nil
       end
     end,
-    config = function()
+    config = function(_, opts)
       require("luasnip.loaders.from_vscode").lazy_load()
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
       require("luasnip.loaders.from_lua").lazy_load({ paths = { "./luasnip" } })
+
+      require("luasnip").setup(opts)
     end,
     dependencies = {
       "rafamadriz/friendly-snippets",
