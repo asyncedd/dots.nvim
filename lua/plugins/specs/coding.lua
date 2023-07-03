@@ -166,9 +166,23 @@ return {
     keys = {
       {
         "gS",
-        "<cmd>lua require('ts-node-action').node_action()<CR>",
+        function()
+          local ok = require("ts-node-action").available_actions() ~= nil
+
+          if not ok then
+            require("treesj").toggle()
+          else
+            require("ts-node-action").node_action()
+          end
+        end,
         mode = { "n", "x" },
         desc = "Toggle node action",
+      },
+    },
+    dependencies = {
+      "Wansmer/treesj",
+      opts = {
+        use_default_keymaps = false,
       },
     },
   },
