@@ -241,7 +241,29 @@ return {
       "plenary.nvim",
       "nvim-neorg/neorg-telescope",
     },
-    ft = "norg",
+    init = function()
+      local setup_fn = function()
+        require("lazy").load({ plugins = { "neorg" } })
+      end
+
+      local filename = vim.api.nvim_buf_get_name(0)
+      local extension = vim.fn.fnamemodify(filename, ":e")
+
+      if extension == "norg" then
+        setup_fn()
+      end
+
+      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
+        callback = function()
+          local filename = vim.api.nvim_buf_get_name(0)
+          local extension = vim.fn.fnamemodify(filename, ":e")
+
+          if extension == "norg" then
+            setup_fn()
+          end
+        end,
+      })
+    end,
   },
   {
     "epwalsh/obsidian.nvim",
