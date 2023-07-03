@@ -29,45 +29,51 @@ return {
         },
         servers = {
           lua_ls = {
-            Lua = {
-              hint = {
-                enable = true,
-                arrayIndex = "Disable",
-              },
-              runtime = {
-                pathStrict = true,
-              },
-              completion = {
-                callSnippet = "Both",
-              },
-              diagnostics = {
-                globals = {
-                  "vim",
+            settings = {
+              Lua = {
+                hint = {
+                  enable = true,
+                  arrayIndex = "Disable",
                 },
-              },
-              workspace = {
-                library = {
-                  [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                  -- [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
-                  [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
+                runtime = {
+                  pathStrict = true,
                 },
-                maxPreload = 100000,
-                preloadFileSize = 10000,
-                checkThirdParty = false,
+                completion = {
+                  callSnippet = "Both",
+                },
+                diagnostics = {
+                  globals = {
+                    "vim",
+                  },
+                },
+                workspace = {
+                  library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    -- [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+                    [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
+                  },
+                  maxPreload = 100000,
+                  preloadFileSize = 10000,
+                  checkThirdParty = false,
+                },
               },
             },
           },
           cssls = {
-            css = {
-              lint = {
-                unknownAtRules = "ignore",
+            settings = {
+              css = {
+                lint = {
+                  unknownAtRules = "ignore",
+                },
               },
             },
           },
           jsonls = {
-            json = {
-              schemas = require("schemastore").json.schemas(),
-              validate = { enable = true },
+            settings = {
+              json = {
+                schemas = require("schemastore").json.schemas(),
+                validate = { enable = true },
+              },
             },
           },
           tailwindcss = {},
@@ -75,22 +81,26 @@ return {
           prosemd_lsp = {},
           -- https://www.reddit.com/r/neovim/comments/135fqp9/why_is_pyright_constantly_analyzing_files_it/
           pyright = {
-            python = {
-              analysis = {
-                autoImportCompletions = true,
-                typeCheckingMode = "off",
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                diagnosticMode = "workspace", -- "openFilesOnly",
+            settings = {
+              python = {
+                analysis = {
+                  autoImportCompletions = true,
+                  typeCheckingMode = "off",
+                  autoSearchPaths = true,
+                  useLibraryCodeForTypes = true,
+                  diagnosticMode = "workspace", -- "openFilesOnly",
+                },
               },
             },
           },
           svelte = {
-            svelte = {
-              plugin = {
-                css = {
-                  diagnostics = {
-                    enable = false,
+            settings = {
+              svelte = {
+                plugin = {
+                  css = {
+                    diagnostics = {
+                      enable = false,
+                    },
                   },
                 },
               },

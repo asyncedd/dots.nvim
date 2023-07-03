@@ -53,6 +53,7 @@ M.setup = function(opts)
     if not checkIfExists(server, servers_to_not_setup) then
       local server_opts = vim.tbl_deep_extend("force", {
         capabilities = vim.deepcopy(capabilities),
+        on_attach = M.on_attach,
       }, servers[server] or {})
       if opts.setup[server] then
         if opts.setup[server](server, server_opts) then
@@ -63,7 +64,7 @@ M.setup = function(opts)
           return
         end
       end
-      require("lspconfig")[server].setup({ settings = server_opts, on_attach = M.on_attach })
+      require("lspconfig")[server].setup(server_opts)
     end
   end
 
