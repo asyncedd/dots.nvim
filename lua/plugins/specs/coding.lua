@@ -41,7 +41,6 @@ return {
       require("luasnip.loaders.from_vscode").lazy_load()
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
       require("luasnip.loaders.from_lua").lazy_load({ paths = { "./luasnip" } })
-      require("luasnip.loaders.from_snipmate").lazy_load()
 
       require("luasnip").setup(opts)
     end,
@@ -49,7 +48,6 @@ return {
       "rafamadriz/friendly-snippets",
       "fivethree-team/vscode-svelte-snippets",
       "johnpapa/vscode-angular-snippets",
-      "honza/vim-snippets",
     },
   },
   {
