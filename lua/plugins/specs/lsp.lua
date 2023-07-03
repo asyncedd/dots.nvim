@@ -75,8 +75,14 @@ return {
           prosemd_lsp = {},
           -- https://www.reddit.com/r/neovim/comments/135fqp9/why_is_pyright_constantly_analyzing_files_it/
           pyright = {
-            pyright = {
-              autoImportCompletion = true,
+            python = {
+              analysis = {
+                autoImportCompletions = true,
+                typeCheckingMode = "off",
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = "workspace", -- "openFilesOnly",
+              },
             },
           },
           svelte = {
