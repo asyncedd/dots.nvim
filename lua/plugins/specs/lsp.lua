@@ -109,7 +109,16 @@ return {
           -- https://github.com/folke/dot/blob/master/nvim/lua/plugins/lsp.lua
           tsserver = {},
           html = {},
-          emmet_ls = {},
+          emmet_ls = {
+            init_options = {
+              html = {
+                options = {
+                  -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                  ["bem.enabled"] = true,
+                },
+              },
+            },
+          },
           gopls = {},
           rust_analyzer = {},
           ruff_lsp = {},
