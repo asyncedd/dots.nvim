@@ -28,6 +28,7 @@ return {
     dependencies = {
       "rafamadriz/friendly-snippets",
       "fivethree-team/vscode-svelte-snippets",
+      "johnpapa/vscode-angular-snippets",
     },
   },
   {
