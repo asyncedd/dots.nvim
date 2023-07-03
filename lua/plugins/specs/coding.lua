@@ -27,6 +27,7 @@ return {
     end,
     dependencies = {
       "rafamadriz/friendly-snippets",
+      "fivethree-team/vscode-svelte-snippets",
     },
   },
   {
