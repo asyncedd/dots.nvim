@@ -121,6 +121,32 @@ return {
               end,
             })
           end,
+          pyright = function()
+            local on_attach = function(on_attach)
+              vim.api.nvim_create_autocmd("LspAttach", {
+                callback = function(args)
+                  local bufnr = args.buf
+                  local client = vim.lsp.get_client_by_id(args.data.client_id)
+                  on_attach(client, bufnr)
+                end,
+              })
+            end
+            on_attach(function(client, bufnr)
+              local map = function(mode, lhs, rhs, desc)
+                if desc then
+                  desc = desc
+                end
+                vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc, buffer = bufnr, noremap = true })
+              end
+              -- stylua: ignore
+              if client.name == "pyright" then
+                map("n", "<leader>lo", "<cmd>PyrightOrganizeImports<cr>",  "Organize Imports" )
+                map("n", "<leader>lC", function() require("dap-python").test_class() end,  "Debug Class" )
+                map("n", "<leader>lM", function() require("dap-python").test_method() end,  "Debug Method" )
+                map("v", "<leader>lE", function() require("dap-python").debug_selection() end, "Debug Selection" )
+              end
+            end)
+          end,
         },
       }
     end,
