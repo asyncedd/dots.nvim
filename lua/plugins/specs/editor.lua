@@ -434,4 +434,20 @@ return {
     "mg979/vim-visual-multi",
     event = "VeryLazy",
   },
+  {
+    "uga-rosa/ccc.nvim",
+    opts = function()
+      local RgbHslCmykInput = require("plugins.configs.editor.ccc")
+      return {
+        highlighter = {
+          auto_enable = false,
+          lsp = true,
+        },
+        inputs = {
+          RgbHslCmykInput,
+        },
+      }
+    end,
+    event = "VeryLazy",
+  },
 }
