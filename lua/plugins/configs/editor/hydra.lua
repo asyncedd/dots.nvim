@@ -208,7 +208,7 @@ local opts = function()
         },
 
         -- equalize window sizes
-        { "e", "<C-w>=" },
+        { "e", "<cmd>WindowsEqualize<CR>" },
 
         -- close active window
         { "Q", "<cmd>q<cr>" },
