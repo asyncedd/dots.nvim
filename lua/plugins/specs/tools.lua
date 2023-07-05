@@ -273,4 +273,9 @@ return {
       "UndotreeToggle",
     },
   },
+  {
+    "vuki656/package-info.nvim",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
