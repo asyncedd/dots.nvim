@@ -29,6 +29,8 @@ return not _G.config.filetypes.typescript == true and {}
                 "typescript",
                 "javascriptreact",
                 "typescriptreact",
+                "typescript.jsx",
+                "javascript.jsx",
               }, ft)
             then
               vim.schedule(function()
@@ -40,5 +42,10 @@ return not _G.config.filetypes.typescript == true and {}
         })
       end,
     },
-    {},
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        ensure_installed = { "typescript" },
+      },
+    },
   }
