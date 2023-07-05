@@ -3,6 +3,7 @@
   "LuaSnip": { "branch": "master", "commit": "db0aba4a39b28ff5564def07c25bb4bd06a78fdc" },
   "NotebookNavigator.nvim": { "branch": "main", "commit": "b336dfd63161058604fa2c0cfaac89e64049ec81" },
   "SchemaStore.nvim": { "branch": "main", "commit": "0ba3914a03a4689441170d6b6796500a09b5c189" },
+  "advanced-git-search.nvim": { "branch": "main", "commit": "de813bcc20779e5c5207299550f316fafd663d21" },
   "aerial.nvim": { "branch": "master", "commit": "79644dbedc189d79573b2a60e247989bbd8f16e7" },
   "alpha-nvim": { "branch": "main", "commit": "9e33db324b8bb7a147bce9ea5496686ee859461d" },
   "animation.nvim": { "branch": "main", "commit": "fb77091ab72ec9971aee0562e7081182527aaa6a" },

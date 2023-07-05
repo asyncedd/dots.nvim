@@ -278,4 +278,13 @@ return {
     opts = true,
     event = "VeryLazy",
   },
+  {
+    "aaronhallaert/advanced-git-search.nvim",
+    config = function()
+      require("telescope").load_extension("advanced_git_search")
+    end,
+    cmd = {
+      "AdvancedGitSearch",
+    },
+  },
 }
