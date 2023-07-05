@@ -34,7 +34,7 @@
    - (_) Add otter.nvim
    - (_) Consider on adding other.nvim
    - (x) Create lspsaga.nvim mappings
-   - ( ) Add a hydra for nvim-dap
+   - (_) Add a hydra for nvim-dap
    - ( ) Try to add touchbar scrolling with satelite.nvim
    - ( ) Add and configure jdtls.nvim
    - ( ) Add a hydra for Comment.nvim
@@ -42,6 +42,7 @@
    - (x) Add a hydra for window key jumps
    - (x) Add a hydra for LSPSaga
    - (_) Use mini.bufremove for the windows hydras
+   - ( ) Add a Hydra for []
 
 ** fix
    - (x) Fix the presenter of neorg
