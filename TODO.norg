@@ -55,6 +55,7 @@
    - ( ) Fix on satelite.nvim errors when deleting the most bottom line on the buffer
    - ( ) Fix nvim-dap keymaps
    - (x) Fix mappings for the windows hydra
+   - ( ) Fix some heirline highlights for dark filetype highlights
 
 ** docs
    - (x) Resync screenshots in README
