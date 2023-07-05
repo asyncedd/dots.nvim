@@ -17,13 +17,13 @@ local opts = function()
       ^
       ^           _<leader>h_: Swap left   _<leader>l_: Swap right   _<leader>j_: Swap down   _<leader>k_: Swap up
       ^
-      ^ ^                                     _e_: Equalize window sizes
-      ^
       ^                         _Q_: Close current window _<C-q>_: Close current window
       ^
-      ^                                 _j_: Split below       _l_: Split vertically
-      ^
+      ^ ^                                      _e_: Equalize window sizes
+
       ^                                          _z_: Maximize window
+      ^
+      ^                                 _j_: Split below       _l_: Split vertically
       ^
       ^ ^                               _q_: exit     _;_: exit     _<Esc>_: exit
       ]]
