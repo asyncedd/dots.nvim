@@ -267,11 +267,6 @@ return {
     end,
   },
   {
-    "epwalsh/obsidian.nvim",
-    opts = true,
-    event = "VeryLazy",
-  },
-  {
     "mbbill/undotree",
     event = "VeryLazy",
     cmd = {
