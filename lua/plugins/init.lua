@@ -1,3 +1,5 @@
+require("settings.settings")
+
 -- NOTE: vim.fn.stdpath("data") is in Linux systems: ~/.local/nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
