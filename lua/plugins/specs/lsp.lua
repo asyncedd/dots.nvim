@@ -25,7 +25,6 @@ return {
         servers_to_not_setup = {
           "rust_analyzer",
           "clangd",
-          "tsserver",
         },
         servers = {
           cssls = {
@@ -76,7 +75,6 @@ return {
             },
           },
           -- https://github.com/folke/dot/blob/master/nvim/lua/plugins/lsp.lua
-          tsserver = {},
           html = {},
           emmet_ls = {
             init_options = {
@@ -317,35 +315,6 @@ return {
       { "gt", "<cmd>Lspsaga goto_type_definition<CR>" },
       { "K", "<cmd>Lspsaga hover_doc ++keep<CR>" },
     },
-  },
-  {
-    "pmizio/typescript-tools.nvim",
-    opts = function()
-      return {
-        on_attach = require("plugins.configs.lsp.config").on_attach,
-      }
-    end,
-    init = function()
-      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
-        callback = function()
-          local std = require("std")
-          local ft = vim.bo.filetype
-          if
-            std.exists_in_array({
-              "javascript",
-              "typescript",
-              "javascriptreact",
-              "typescriptreact",
-            }, ft)
-          then
-            vim.schedule(function()
-              require("lazy").load({ plugins = "typescript-tools.nvim" })
-              vim.cmd("silent! do FileType")
-            end)
-          end
-        end,
-      })
-    end,
   },
   {
     "VidocqH/lsp-lens.nvim",

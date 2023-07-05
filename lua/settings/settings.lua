@@ -10,6 +10,9 @@ M.tokyonight = {
 
 M.filetypes = {
   lua = true,
+  typescript = true,
 }
+
+_G.config = M
 
 return M
