@@ -267,13 +267,6 @@ return {
     end,
   },
   {
-    "mbbill/undotree",
-    event = "VeryLazy",
-    cmd = {
-      "UndotreeToggle",
-    },
-  },
-  {
     "vuki656/package-info.nvim",
     opts = true,
     event = "VeryLazy",
