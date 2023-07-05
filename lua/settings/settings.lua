@@ -8,4 +8,8 @@ M.tokyonight = {
   style = "moon",
 }
 
+M.filetypes = {
+  lua = true,
+}
+
 return M

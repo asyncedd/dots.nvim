@@ -17,7 +17,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- NOTE: import plugins from `lua/plugins/specs`
-require("lazy").setup({ import = "plugins.specs" }, {
+require("lazy").setup({ { import = "plugins.specs" }, { import = "plugins.specs.languages" } }, {
   defaults = {
     -- PERF: Lazy-load by default.
     lazy = true,

@@ -246,26 +246,6 @@ return {
     end,
   },
   {
-    "jbyuki/one-small-step-for-vimkind",
-    -- stylua: ignore
-    keys = {
-    },
-    config = function()
-      local dap = require("dap")
-      dap.adapters.nlua = function(callback, config)
-        callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or "${port}" })
-      end
-      dap.configurations.lua = {
-        {
-          type = "nlua",
-          request = "attach",
-          name = "Attach to running Neovim instance",
-        },
-      }
-    end,
-    dependencies = "nvim-dap",
-  },
-  {
     "leoluz/nvim-dap-go",
     opts = {
       -- Additional dap configurations can be added.
