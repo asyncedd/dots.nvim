@@ -188,9 +188,14 @@ return {
   },
   {
     "echasnovski/mini.animate",
-    opts = function()
-      return require("plugins.configs.ui.animate")
-    end,
+    opts = {
+      scroll = {
+        enable = false,
+      },
+      resize = {
+        enable = false,
+      },
+    },
     event = "VeryLazy",
   },
   {

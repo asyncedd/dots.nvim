@@ -1,5 +1,0 @@
-return {
-  scroll = {
-    enable = false,
-  },
-}
