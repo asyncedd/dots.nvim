@@ -13,6 +13,7 @@ M.filetypes = {
   typescript = true,
   svelte = true,
   fish = true,
+  rust = true,
 }
 
 _G.config = M

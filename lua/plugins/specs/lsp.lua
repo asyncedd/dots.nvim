@@ -23,7 +23,6 @@ return {
         -- A list of servers not to setup.
         -- This is useful if you have some LSPs you want to setup with other plugins (eg. rust-tools.nvim)
         servers_to_not_setup = {
-          "rust_analyzer",
           "clangd",
         },
         servers = {
@@ -74,7 +73,6 @@ return {
             },
           },
           gopls = {},
-          rust_analyzer = {},
           ruff_lsp = {},
           bashls = {},
           clangd = {},
@@ -184,75 +182,6 @@ return {
     end,
     init = function()
       require("core.utils.lazy")("null-ls.nvim")
-    end,
-  },
-  {
-    "simrat39/rust-tools.nvim",
-    opts = function()
-      return {
-        tools = {
-          inlay_hints = {
-            auto = false,
-            show_parameter_hints = false,
-          },
-        },
-        settings = {
-          ["rust-analyzer"] = {
-            cargo = {
-              allFeatures = true,
-            },
-          },
-        },
-        server = {
-          on_attach = require("plugins.configs.lsp.config").on_attach,
-        },
-      }
-    end,
-    config = function(_, opts)
-      require("rust-tools").setup(opts)
-      vim.cmd("silent! do FileType")
-    end,
-    dependencies = {
-      "nvim-lspconfig",
-      "nvim-dap",
-    },
-    init = function()
-      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
-        callback = function()
-          if vim.bo.filetype == "rust" then
-            vim.schedule(function()
-              require("lazy").load({ plugins = "rust-tools.nvim" })
-              vim.cmd("silent! do FileType")
-            end)
-          end
-        end,
-      })
-    end,
-  },
-  {
-    "saecki/crates.nvim",
-    opts = {
-      null_ls = {
-        enabled = true,
-        name = "crates.nvim",
-      },
-    },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    config = function(_, opts)
-      local crates = require("crates")
-      crates.setup(opts)
-      crates.show()
-    end,
-    init = function()
-      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
-        pattern = "Cargo.toml",
-        callback = function()
-          require("lazy").load({ plugins = "crates.nvim" })
-          vim.cmd("silent! do FileType")
-        end,
-      })
     end,
   },
   {
