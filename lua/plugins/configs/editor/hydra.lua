@@ -1,53 +1,76 @@
 local opts = function()
   local gitsigns = require("gitsigns")
   local git_hint = [[
- _J_: next hunk   _s_: stage hunk        _d_: show deleted   _b_: blame line
- _K_: prev hunk   _u_: undo last stage   _p_: preview hunk   _B_: blame show full 
- _r_: reset buf   _S_: stage buffer      _v_: diff view      _/_: show base file
- ^
- ^ ^                             _<Enter>_: Lazygit
- ^
- ^ ^                        _q_: exit _;_: exit _<Esc>_: exit
+  HUNK:
+  _J_: next hunk _s_: stage hunk _K_: prev hunk _p_: preview hunk
+
+  SHOW:
+  _b_: blame line _B_: blame show full   _d_: show deleted
+
+  UNDO/RESET:
+  _u_: undo last stage   _r_: reset buf
+
+  STAGE:
+  _S_: stage buffer
+
+  EXTERNAL TOOLS:
+  _v_: diff view   _<Enter>_: Lazygit
+
+  _q_: exit _;_: exit _<Esc>_: exit
 ]]
 
   local windows_hint = [[
-      ^       _<C-h>_: Right window     _<C-l>_: Left window     _<C-k>_: The window above     _<C-j>_ The window below       
-      ^
-      ^       _H_:   Increase right width     _L_: Increase left width     _K_: Increase height     _J_: Decrease height   
-      ^
-      ^           _<leader>h_: Swap left   _<leader>l_: Swap right   _<leader>j_: Swap down   _<leader>k_: Swap up
-      ^
-      ^                         _Q_: Close current window _<C-q>_: Close current window
-      ^
-      ^ ^                                      _e_: Equalize window sizes
+  MOVE:
+  _<C-h>_: Right window _<C-l>_: Left window _<C-k>_: The window above _<C-j>_ The window below
 
-      ^                                          _z_: Maximize window
-      ^
-      ^                                 _j_: Split below       _l_: Split vertically
-      ^
-      ^ ^                               _q_: exit     _;_: exit     _<Esc>_: exit
-      ]]
+  RESIZE:
+  _H_:   Increase right width _L_: Increase left width _K_: Increase height _J_: Decrease height
+
+  SWAP:
+  _<leader>h_: Swap left _<leader>l_: Swap right _<leader>j_: Swap down _<leader>k_: Swap up
+
+  CLOSE:
+  _Q_: Close current window _<C-q>_: Close current window
+
+ EQUALIZE:
+  _e_: Equalize window sizes
+
+  MAXIMIZE:
+  _z_: Maximize window
+
+ SPLIT:
+  _j_: Split below _l_: Split vertically
+
+  EXIT:
+  _q_: exit _;_: exit _<Esc>_: exit
+  ]]
 
   local lspsaga_hint = [[
-      ^                         DIAGNOSTICS
-      ^ ^     _l_: Line    _b_: Buffer    _w_: Workspace    _s_: Cursor              
-      ^                            CALLS
-      ^            _i_: ingoing              _o_: outgoing
-      ^
-      ^ ^                 _q_: exit _;_: exit _<Esc>_: exit
-      ]]
+  DIAGNOSTICS
+  _l_: Line _b_: Buffer _w_: Workspace _s_: Cursor
+
+  CALLS
+  _i_: ingoing _o_: outgoing
+
+  _q_: exit _;_: exit _<Esc>_: exit
+  ]]
 
   local dap_hint = [[
   BREAKPOINT:
   _B_: Breakpoint condition _b_: Toggle breakpoint
+
   RUN:
   _c_: Continue _C_: Run to Cursor _pr_: Run (if a plugin provides a function)
+
   GO:
   _g_: Go to line (no execute)
+
   UP/DOWN:
   _j_: Down _k_: Up
+  
   STEP:
   _i_: Step into _o_: Step out _O_: Step over
+
   OTHERS:
   _p_: Pause _r_: Toggle REPL _s_: session _t_: terminal _w_: widgets
   ]]
@@ -121,7 +144,6 @@ local opts = function()
           end,
           { desc = "blame show full" },
         },
-        { "/", gitsigns.show, { exit = true, desc = "show base file" } }, -- show the base of the file
         { "v", "<cmd>DiffviewOpen<CR>", { exit = true, desc = "Diff view" } },
         { "r", gitsigns.reset_buffer },
         {
