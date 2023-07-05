@@ -37,6 +37,21 @@ local opts = function()
       ^ ^                 _q_: exit _;_: exit _<Esc>_: exit
       ]]
 
+  local dap_hint = [[
+  BREAKPOINT:
+  _B_: Breakpoint condition _b_: Toggle breakpoint
+  RUN:
+  _c_: Continue _C_: Run to Cursor _pr_: Run (if a plugin provides a function)
+  GO:
+  _g_: Go to line (no execute)
+  UP/DOWN:
+  _j_: Down _k_: Up
+  STEP:
+  _i_: Step into _o_: Step out _O_: Step over
+  OTHERS:
+  _p_: Pause _r_: Toggle REPL _s_: session _t_: terminal _w_: widgets
+  ]]
+
   return {
     {
       name = "Git",
@@ -250,6 +265,131 @@ local opts = function()
         { "q", nil, { exit = true, nowait = true } },
         { ";", nil, { exit = true, nowait = true } },
         { "<Esc>", nil, { exit = true, nowait = true } },
+      },
+    },
+    {
+      name = "dap",
+      mode = { "n" },
+      hint = dap_hint,
+      config = {
+        color = "pink",
+        invoke_on_body = true,
+      },
+      body = "<leader>d",
+      heads = {
+        {
+          "B",
+          function()
+            require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+          end,
+        },
+        {
+          "b",
+          function()
+            require("dap").toggle_breakpoint()
+          end,
+        },
+        {
+          "c",
+          function()
+            require("dap").continue()
+          end,
+        },
+        {
+          "C",
+          function()
+            require("dap").run_to_cursor()
+          end,
+        },
+        {
+          "g",
+          function()
+            require("dap").goto_()
+          end,
+        },
+        {
+          "i",
+          function()
+            require("dap").step_into()
+          end,
+        },
+        {
+          "j",
+          function()
+            require("dap").down()
+          end,
+        },
+        {
+          "k",
+          function()
+            require("dap").up()
+          end,
+        },
+        {
+          "l",
+          function()
+            require("dap").run_last()
+          end,
+        },
+        {
+          "o",
+          function()
+            require("dap").step_out()
+          end,
+        },
+        {
+          "O",
+          function()
+            require("dap").step_over()
+          end,
+        },
+        {
+          "p",
+          function()
+            require("dap").pause()
+          end,
+        },
+        {
+          "r",
+          function()
+            require("dap").repl.toggle()
+          end,
+        },
+        {
+          "s",
+          function()
+            require("dap").session()
+          end,
+        },
+        {
+          "t",
+          function()
+            require("dap").terminate()
+          end,
+        },
+        {
+          "w",
+          function()
+            require("dap.ui.widgets").hover()
+          end,
+        },
+        {
+          "pr",
+          function()
+            local ft = vim.bo.filetype
+
+            if ft == "python" then
+              require("lazy").load({ plugins = "nvim-dap-python" })
+              require("dap-python").test_method()
+            elseif ft == "lua" then
+              require("lazy").load({ plugins = "one-small-step-for-vimkind" })
+              require("osv").run_this()
+            elseif ft == "go" then
+              require("lazy").load({ plugins = "nvim-dap-go" })
+              require("dap-go").debug_test()
+            end
+          end,
+        },
       },
     },
   }
