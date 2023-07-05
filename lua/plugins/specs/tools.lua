@@ -272,10 +272,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "vimwiki/vimwiki",
-    event = "VeryLazy",
-  },
-  {
     "mbbill/undotree",
     event = "VeryLazy",
     cmd = {
