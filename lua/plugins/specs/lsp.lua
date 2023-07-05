@@ -137,7 +137,6 @@ return {
     end,
     dependencies = {
       "mason-lspconfig.nvim",
-      "neodev.nvim",
       "b0o/SchemaStore.nvim",
     },
   },

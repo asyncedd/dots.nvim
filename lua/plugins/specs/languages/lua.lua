@@ -37,6 +37,7 @@ return not _G.config.filetypes.lua == true and {}
           },
         },
       },
+      dependencies = "neodev.nvim",
     },
     {
       "jose-elias-alvarez/null-ls.nvim",
