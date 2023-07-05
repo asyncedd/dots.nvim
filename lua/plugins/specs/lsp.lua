@@ -61,19 +61,6 @@ return {
               },
             },
           },
-          svelte = {
-            settings = {
-              svelte = {
-                plugin = {
-                  css = {
-                    diagnostics = {
-                      enable = false,
-                    },
-                  },
-                },
-              },
-            },
-          },
           -- https://github.com/folke/dot/blob/master/nvim/lua/plugins/lsp.lua
           html = {},
           emmet_ls = {

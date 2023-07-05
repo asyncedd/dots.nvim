@@ -11,6 +11,7 @@ M.tokyonight = {
 M.filetypes = {
   lua = true,
   typescript = true,
+  svelte = true,
 }
 
 _G.config = M
