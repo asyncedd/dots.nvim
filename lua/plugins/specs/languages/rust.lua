@@ -88,4 +88,15 @@ return not _G.config.filetypes.rust == true and {}
         })
       end,
     },
+    {
+      "nvim-neotest/neotest",
+      opts = function()
+        return {
+          adapters = {
+            require("neotest-rust"),
+          },
+        }
+      end,
+      dependencies = "rouge8/neotest-rust",
+    },
   }
