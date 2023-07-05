@@ -18,4 +18,12 @@ return not _G.config.filetypes.shell == true and {}
         },
       },
     },
+    {
+      "mfussenegger/nvim-dap",
+      opts = {
+        adapters = {
+          "bash-debug-adapter",
+        },
+      },
+    },
   }
