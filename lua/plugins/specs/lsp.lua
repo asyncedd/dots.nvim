@@ -195,7 +195,6 @@ return {
       return {
         -- A list of sources to install
         sources = {
-          require("typescript.extensions.null-ls.code-actions"),
           rustfmt = {},
           isort = {},
           black = {
@@ -239,9 +238,6 @@ return {
     init = function()
       require("core.utils.lazy")("null-ls.nvim")
     end,
-    dependencies = {
-      "jose-elias-alvarez/typescript.nvim",
-    },
   },
   {
     "folke/neodev.nvim",
