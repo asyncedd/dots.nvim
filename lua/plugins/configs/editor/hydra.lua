@@ -15,6 +15,8 @@ local opts = function()
       ^
       ^       _H_:   Increase right width     _L_: Increase left width     _K_: Increase height     _J_: Decrease height   
       ^
+      ^           _<leader>h_: Swap left   _<leader>l_: Swap right   _<leader>j_: Swap down   _<leader>k_: Swap up
+      ^
       ^ ^                                     _e_: Equalize window sizes
       ^
       ^                         _Q_: Close current window _<C-q>_: Close current window
