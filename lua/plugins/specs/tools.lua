@@ -112,6 +112,7 @@ return {
       windows = {
         -- Whether to show preview of directory under cursor
         preview = true,
+        width_preview = 100,
       },
     },
     init = function()
