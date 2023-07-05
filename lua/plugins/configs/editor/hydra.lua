@@ -23,6 +23,8 @@ local opts = function()
       ^
       ^                                 _j_: Split below       _l_: Split vertically
       ^
+      ^                                          _z_: Maximize window
+      ^
       ^ ^                               _q_: exit     _;_: exit     _<Esc>_: exit
       ]]
 
@@ -209,6 +211,8 @@ local opts = function()
 
         -- equalize window sizes
         { "e", "<cmd>WindowsEqualize<CR>" },
+
+        { "z", "<cmd>WindowsMaximize<CR>" },
 
         -- close active window
         { "Q", "<cmd>q<cr>" },
