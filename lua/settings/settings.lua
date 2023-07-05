@@ -16,6 +16,7 @@ M.filetypes = {
   rust = true,
   markdown = true,
   shell = false,
+  python = true,
 }
 
 _G.config = M
