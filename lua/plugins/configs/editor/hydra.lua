@@ -129,16 +129,81 @@ local opts = function()
       },
       heads = {
         -- move between windows
-        { "<C-h>", "<C-w>h" },
-        { "<C-j>", "<C-w>j" },
-        { "<C-k>", "<C-w>k" },
-        { "<C-l>", "<C-w>l" },
+        {
+          "<C-h>",
+          function()
+            require("smart-splits").move_cursor_left()
+          end,
+        },
+        {
+          "<C-j>",
+          function()
+            require("smart-splits").move_cursor_down()
+          end,
+        },
+        {
+          "<C-k>",
+          function()
+            require("smart-splits").move_cursor_up()
+          end,
+        },
+        {
+          "<C-l>",
+          function()
+            require("smart-splits").move_cursor_right()
+          end,
+        },
 
         -- resizing window
-        { "H", "<C-w>3<" },
-        { "L", "<C-w>3>" },
-        { "K", "<C-w>2-" },
-        { "J", "<C-w>2+" },
+        {
+          "H",
+          function()
+            require("smart-splits").resize_left()
+          end,
+        },
+        {
+          "L",
+          function()
+            require("smart-splits").resize_right()
+          end,
+        },
+        {
+          "K",
+          function()
+            require("smart-splits").resize_up()
+          end,
+        },
+        {
+          "J",
+          function()
+            require("smart-splits").resize_down()
+          end,
+        },
+
+        {
+          "<leader>h",
+          function()
+            require("smart-splits").swap_buf_left()
+          end,
+        },
+        {
+          "<leader>l",
+          function()
+            require("smart-splits").swap_buf_right()
+          end,
+        },
+        {
+          "<leader>j",
+          function()
+            require("smart-splits").swap_buf_down()
+          end,
+        },
+        {
+          "<leader>k",
+          function()
+            require("smart-splits").swap_buf_up()
+          end,
+        },
 
         -- equalize window sizes
         { "e", "<C-w>=" },

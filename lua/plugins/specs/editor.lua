@@ -258,4 +258,9 @@ return {
       { "<leader>zh", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle Highlighter" },
     },
   },
+  {
+    "mrjones2014/smart-splits.nvim",
+    opts = true,
+    build = "./kitty/install-kittens.bash",
+  },
 }
