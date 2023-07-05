@@ -70,12 +70,6 @@ return {
       FlashMatch = { fg = C.sky, style = { "bold", "nocombine" } },
       FlashCurrent = { fg = C.pink, style = { "bold", "nocombine" } },
       FlashLabel = { fg = C.mauve, style = { "bold", "nocombine" } },
-
-      -- Notify
-      NotifyERRORBody = { bg = C.mantle, fg = C.red },
-      NotifyWARNBody = { bg = C.mantle, fg = C.yellow },
-      NotifyINFOBody = { bg = C.mantle, fg = C.peach },
-      NotifyTRACEBody = { bg = C.mantle, fg = C.rosewater },
     }
   end,
   integrations = {

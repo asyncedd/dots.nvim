@@ -109,12 +109,6 @@ return {
     FlashMatch = { fg = "${yellow}" },
     FlashCurrent = { fg = "${green}" },
     FlashLabel = { fg = "${blue}" },
-
-    -- Notify
-    NotifyERRORBody = { bg = "${notify}", fg = "${red}" },
-    NotifyWARNBody = { bg = "${notify}", fg = "${yellow}" },
-    NotifyINFOBody = { bg = "${notify}", fg = "${blue}" },
-    NotifyTRACEBody = { bg = "${notify}", fg = "${green}" },
   },
   plugins = {
     polygot = false,
