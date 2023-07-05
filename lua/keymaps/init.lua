@@ -29,3 +29,8 @@ map(
   "<leader>gg",
   "<cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>"
 )
+map(
+  "n",
+  "<leader>g<CR>",
+  "<cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>"
+)
