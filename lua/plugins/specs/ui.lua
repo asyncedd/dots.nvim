@@ -362,6 +362,7 @@ return {
         n = { "<leader>g", "<leader>n" },
       },
     },
+    dependencies = "hydra.nvim",
     event = "VeryLazy",
   },
   {
