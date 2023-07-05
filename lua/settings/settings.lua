@@ -12,6 +12,7 @@ M.filetypes = {
   lua = true,
   typescript = true,
   svelte = true,
+  fish = true,
 }
 
 _G.config = M

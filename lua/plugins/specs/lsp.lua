@@ -170,8 +170,6 @@ return {
           gitlint = {},
           flake8 = {},
           actionlint = {},
-          fish_indent = {},
-          fish = {},
           beautysh = {
             extra_args = { "-i", "2" },
           },
