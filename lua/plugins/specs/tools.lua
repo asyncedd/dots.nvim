@@ -275,11 +275,4 @@ return {
     "vimwiki/vimwiki",
     event = "VeryLazy",
   },
-  {
-    "michaelb/sniprun",
-    keys = {},
-    opts = {},
-    build = "bash ./install.sh 1",
-    cmd = "SnipRun",
-  },
 }
