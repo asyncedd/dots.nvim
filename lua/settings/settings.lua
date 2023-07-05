@@ -15,6 +15,7 @@ M.filetypes = {
   fish = true,
   rust = true,
   markdown = true,
+  shell = false,
 }
 
 _G.config = M

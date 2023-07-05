@@ -72,7 +72,6 @@ return {
           },
           gopls = {},
           ruff_lsp = {},
-          bashls = {},
           clangd = {},
           solargraph = {},
           jdtls = {},
@@ -165,9 +164,6 @@ return {
           gitlint = {},
           flake8 = {},
           actionlint = {},
-          beautysh = {
-            extra_args = { "-i", "2" },
-          },
           prettier = {
             extra_filetypes = { "svelte", "toml" },
           },
