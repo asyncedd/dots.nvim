@@ -144,19 +144,6 @@ return {
         -- A list of sources to install
         sources = {
           rustfmt = {},
-          isort = {},
-          black = {
-            with = {
-              args = {
-                "--fast",
-                "--quiet",
-                "--stdin-filename",
-                "$FILENAME",
-                "-",
-              },
-            },
-          },
-          mypy = {},
           goimports = {},
           goimports_reviser = {},
           gofumpt = {},
