@@ -14,6 +14,7 @@ M.filetypes = {
   svelte = true,
   fish = true,
   rust = true,
+  markdown = true,
 }
 
 _G.config = M

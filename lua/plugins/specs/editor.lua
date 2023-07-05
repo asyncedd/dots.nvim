@@ -234,13 +234,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "ellisonleao/glow.nvim",
-    opts = true,
-    cmd = {
-      "Glow",
-    },
-  },
-  {
     "mg979/vim-visual-multi",
     event = "VeryLazy",
   },
