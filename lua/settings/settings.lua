@@ -17,6 +17,7 @@ M.filetypes = {
   markdown = true,
   shell = false,
   python = true,
+  web = true,
 }
 
 _G.config = M
