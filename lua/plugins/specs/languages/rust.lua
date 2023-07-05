@@ -54,7 +54,14 @@ return not _G.config.filetypes.rust == true and {}
         })
       end,
     },
-
+    {
+      "jose-elias-alvarez/null-ls.nvim",
+      opts = {
+        sources = {
+          rustfmt = {},
+        },
+      },
+    },
     {
       "saecki/crates.nvim",
       opts = {

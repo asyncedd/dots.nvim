@@ -143,13 +143,10 @@ return {
       return {
         -- A list of sources to install
         sources = {
-          rustfmt = {},
           goimports = {},
           goimports_reviser = {},
           gofumpt = {},
-          ruff = {},
           gitlint = {},
-          flake8 = {},
           actionlint = {},
           prettier = {
             extra_filetypes = { "svelte", "toml" },
