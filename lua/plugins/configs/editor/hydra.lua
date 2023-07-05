@@ -14,7 +14,7 @@ local opts = function()
   _S_: stage buffer
 
   EXTERNAL TOOLS:
-  _v_: diff view   _<Enter>_: Lazygit
+  _v_: diff view   _<Enter>_: Lazygit _g_: Lazygit
 
   _q_: exit _;_: exit _<Esc>_: exit
 ]]
@@ -148,6 +148,11 @@ local opts = function()
         { "r", gitsigns.reset_buffer },
         {
           "<Enter>",
+          "<Cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>",
+          { exit = true, desc = "Lazygit" },
+        },
+        {
+          "g",
           "<Cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>",
           { exit = true, desc = "Lazygit" },
         },
