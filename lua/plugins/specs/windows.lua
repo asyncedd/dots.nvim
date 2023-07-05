@@ -79,4 +79,11 @@ return {
       end
     end,
   },
+  {
+    "sindrets/winshift.nvim",
+    opts = true,
+    cmd = {
+      "WinShift",
+    },
+  },
 }

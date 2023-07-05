@@ -24,7 +24,7 @@ local opts = function()
   _<C-h>_: Right window _<C-l>_: Left window _<C-k>_: The window above _<C-j>_ The window below
 
   RESIZE:
-  _H_:   Increase right width _L_: Increase left width _K_: Increase height _J_: Decrease height
+  _H_:   Increase right width _L_: Increase left width _K_: Increase height _J_: Decrease height _s_: WinShift
 
   SWAP:
   _<leader>h_: Swap left _<leader>l_: Swap right _<leader>j_: Swap down _<leader>k_: Swap up
@@ -253,6 +253,7 @@ local opts = function()
 
         -- equalize window sizes
         { "e", "<cmd>WindowsEqualize<CR>" },
+        { "s", "<cmd>WinShift<CR>" },
 
         { "z", "<cmd>WindowsMaximize<CR>" },
 
