@@ -35,7 +35,7 @@
    - (_) Consider on adding other.nvim
    - (x) Create lspsaga.nvim mappings
    - (_) Add a hydra for nvim-dap
-   - ( ) Try to add touchbar scrolling with satelite.nvim
+   - (_) Try to add touchbar scrolling with satelite.nvim
    - ( ) Add and configure jdtls.nvim
    - ( ) Add a hydra for Comment.nvim
    - (x) Decrease timeoutlen
@@ -43,18 +43,18 @@
    - (x) Add a hydra for LSPSaga
    - (_) Use mini.bufremove for the windows hydras
    - ( ) Add a Hydra for []
+   - (x) Add a snippet for Neorg commits
 
 ** fix
    - (x) Fix the presenter of neorg
-   - (x) Add a snippet for Neorg commits
    - ( ) Fix weird LSP errors when nuking the workspace tree in Lazygit
    - ( ) Fix tab indentation on GITCOMMIT files
    - ( ) Remove unknown errors that occur every now and then
    - ( ) Entering help files with tint.nvim makes it weird 🤔
    - ( ) Fix unsynchornized VimMode in heirline.nvim
    - ( ) Fix opening Telescope.nvim before nvim-ufo loads resulting in an error
-   - ( ) Fix on satelite.nvim errors when deleting the most bottom line on the buffer
-   - ( ) Fix nvim-dap keymaps
+   - (_) Fix on satelite.nvim errors when deleting the most bottom line on the buffer
+   - (_) Fix nvim-dap keymaps
    - (x) Fix mappings for the windows hydra
    - ( ) Fix some heirline highlights for dark filetype highlights
 
