@@ -226,15 +226,6 @@ return {
     event = "InsertEnter",
   },
   {
-    "anuvyklack/windows.nvim",
-    dependencies = {
-      "anuvyklack/middleclass",
-      "anuvyklack/animation.nvim",
-    },
-    config = true,
-    event = "VeryLazy",
-  },
-  {
     "mg979/vim-visual-multi",
     event = "VeryLazy",
   },
