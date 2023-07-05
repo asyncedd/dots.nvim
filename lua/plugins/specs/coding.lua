@@ -176,9 +176,9 @@ return {
   },
   {
     "echasnovski/mini.bracketed",
-    opts = function()
-      return require("plugins.configs.coding.bracketed")
-    end,
+    opts = {
+      buffer = { suffix = "", options = {} },
+    },
     event = "VeryLazy",
   },
   {

@@ -1,3 +1,0 @@
-return {
-  buffer = { suffix = "", options = {} },
-}
