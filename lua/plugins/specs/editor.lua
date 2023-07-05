@@ -86,7 +86,6 @@ return {
         -- But, that's simply not true (unless you don't use `vim.cmd` or something similar).
         -- It actually shows syntax highlighting in `vim.cmd`!
         "vim",
-        "lua",
         -- Enable highlighting for Vim help files.
         -- EG: :h LSP
         "vimdoc",
@@ -97,10 +96,6 @@ return {
         -- Noice.nvim requires this parser so, we have some Markdown-highighting in some other places! 🤯
         "markdown",
         "markdown_inline",
-        -- Enable Lua patterns highlighting.
-        "luap",
-        -- Enable Lua docs.
-        "luadoc",
         -- HACK: Since, we override filetypes for NEOGITCOMMITMESSAGE filetypes, so Treesitter might not install these.
         "git_rebase",
         "gitcommit",

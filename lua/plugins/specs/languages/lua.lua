@@ -99,4 +99,10 @@ return not _G.config.filetypes.lua == true and {}
         require("plugins.configs.lsp.neodev")(opts)
       end,
     },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        ensure_installed = { "lua", "luadoc", "luap" },
+      },
+    },
   }
