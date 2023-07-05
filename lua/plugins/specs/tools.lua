@@ -275,4 +275,11 @@ return {
     "vimwiki/vimwiki",
     event = "VeryLazy",
   },
+  {
+    "mbbill/undotree",
+    event = "VeryLazy",
+    cmd = {
+      "UndotreeToggle",
+    },
+  },
 }
