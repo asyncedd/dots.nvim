@@ -35,6 +35,7 @@ return not _G.config.filetypes.c == true and {}
               clangdFileStatus = true,
             },
           },
+          ccls = {},
         },
       },
     },
