@@ -1,9 +1,10 @@
 return not _G.config.filetypes.c == true and {}
   or {
     {
-      "neovim/nvim-lspconfig",
+      "p00f/clangd_extensions.nvim",
       opts = {
-        servers = {
+        server = {
+          -- Ensure mason installs the server
           clangd = {
             keys = {
               { "<leader>cR", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
@@ -36,31 +37,31 @@ return not _G.config.filetypes.c == true and {}
             },
           },
         },
+        extensions = {
+          inlay_hints = {
+            inline = false,
+          },
+          ast = {
+            --These require codicons (https://github.com/microsoft/vscode-codicons)
+            role_icons = {
+              type = "",
+              declaration = "",
+              expression = "",
+              specifier = "",
+              statement = "",
+              ["template argument"] = "",
+            },
+            kind_icons = {
+              Compound = "",
+              Recovery = "",
+              TranslationUnit = "",
+              PackExpansion = "",
+              TemplateTypeParm = "",
+              TemplateTemplateParm = "",
+              TemplateParamObject = "",
+            },
+          },
+        },
       },
-    },
-    {
-      "https://git.sr.ht/~p00f/clangd_extensions.nvim",
-      opts = function()
-        return {
-          server = {
-            on_attach = require("plugins.configs.lsp.config").on_attach,
-          },
-          extensions = {
-            autoSetHints = false,
-          },
-        }
-      end,
-      init = function()
-        vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
-          callback = function()
-            if vim.bo.filetype == "c" or vim.bo.filetype == "cpp" then
-              vim.schedule(function()
-                require("lazy").load({ plugins = "clangd_extensions.nvim" })
-                vim.cmd("silent! do FileType")
-              end)
-            end
-          end,
-        })
-      end,
     },
   }
