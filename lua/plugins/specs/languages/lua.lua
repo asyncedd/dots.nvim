@@ -102,8 +102,10 @@ return not _G.config.filetypes.lua == true and {}
     },
     {
       "nvim-treesitter/nvim-treesitter",
-      opts = {
-        ensure_installed = { "lua", "luadoc", "luap" },
-      },
+      opts = function(_, opts)
+        if type(opts.ensure_installed) == "table" then
+          vim.list_extend(opts.ensure_installed, { "lua" })
+        end
+      end,
     },
   }

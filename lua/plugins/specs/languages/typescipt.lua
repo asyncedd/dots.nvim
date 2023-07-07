@@ -44,8 +44,10 @@ return not _G.config.filetypes.typescript == true and {}
     },
     {
       "nvim-treesitter/nvim-treesitter",
-      opts = {
-        ensure_installed = { "typescript" },
-      },
+      opts = function(_, opts)
+        if type(opts.ensure_installed) == "table" then
+          vim.list_extend(opts.ensure_installed, { "typescript" })
+        end
+      end,
     },
   }

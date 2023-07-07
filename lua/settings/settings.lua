@@ -19,6 +19,7 @@ M.filetypes = {
   python = true,
   web = true,
   c = true,
+  astro = true,
 }
 
 _G.config = M

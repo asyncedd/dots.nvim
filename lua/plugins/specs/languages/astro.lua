@@ -1,11 +1,10 @@
-return _G.config.filetypes.fish and {}
+return not _G.config.filetypes.astro == true and {}
   or {
     {
-      "jose-elias-alvarez/null-ls.nvim",
+      "neovim/nvim-lspconfig",
       opts = {
-        sources = {
-          fish = {},
-          fish_indent = {},
+        servers = {
+          astro = {},
         },
       },
     },
@@ -13,7 +12,7 @@ return _G.config.filetypes.fish and {}
       "nvim-treesitter/nvim-treesitter",
       opts = function(_, opts)
         if type(opts.ensure_installed) == "table" then
-          vim.list_extend(opts.ensure_installed, { "fish" })
+          vim.list_extend(opts.ensure_installed, { "astro" })
         end
       end,
     },

@@ -22,8 +22,10 @@ return not _G.config.filetypes.svelte == true and {}
     },
     {
       "nvim-treesitter/nvim-treesitter",
-      opts = {
-        ensure_installed = { "svelte", "typescript", "javascript", "css", "scss" },
-      },
+      opts = function(_, opts)
+        if type(opts.ensure_installed) == "table" then
+          vim.list_extend(opts.ensure_installed, { "svelte", "typescript", "javascript", "css", "scss" })
+        end
+      end,
     },
   }
