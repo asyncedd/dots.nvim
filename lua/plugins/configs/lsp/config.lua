@@ -1,9 +1,15 @@
 local M = {}
 
-M.on_attach = function(client, buffer)
-  if client.server_capabilities.inlayHintProvider then
-    vim.lsp.buf.inlay_hint(buffer, true)
-  end
+M.on_attach = function()
+  vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+      local bufnr = args.buf
+      local client = vim.lsp.get_client_by_id(args.data.client_id)
+      if client.server_capabilities.inlayHintProvider then
+        vim.lsp.inlay_hint(bufnr, true)
+      end
+    end,
+  })
 end
 
 M.setup = function(opts)
@@ -49,25 +55,23 @@ M.setup = function(opts)
 
   local servers = opts.servers
 
-  local setup = function(server)
-    if not checkIfExists(server, servers_to_not_setup) then
-      local server_opts = vim.tbl_deep_extend("force", {
-        capabilities = vim.deepcopy(capabilities),
-        on_attach = M.on_attach,
-      }, servers[server] or {})
-      if opts.setup[server] then
-        if opts.setup[server](server, server_opts) then
-          return
-        end
-      elseif opts.setup["*"] then
-        if opts.setup["*"](server, server_opts) then
-          return
-        end
-      end
-      require("lspconfig")[server].setup(server_opts)
-    end
-  end
+  local function setup(server)
+    local server_opts = vim.tbl_deep_extend("force", {
+      capabilities = vim.deepcopy(capabilities),
+    }, servers[server] or {})
 
+    if opts.setup[server] then
+      if opts.setup[server](server, server_opts) then
+        return
+      end
+    elseif opts.setup["*"] then
+      if opts.setup["*"](server, server_opts) then
+        return
+      end
+    end
+    require("lspconfig")[server].setup(server_opts)
+    M.on_attach()
+  end
   -- get all the servers that are available thourgh mason-lspconfig
   local have_mason, mlsp = pcall(require, "mason-lspconfig")
   local all_mslp_servers = {}
