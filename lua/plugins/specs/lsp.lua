@@ -22,9 +22,6 @@ return {
       return {
         -- A list of servers not to setup.
         -- This is useful if you have some LSPs you want to setup with other plugins (eg. rust-tools.nvim)
-        servers_to_not_setup = {
-          "clangd",
-        },
         servers = {
           cssls = {
             settings = {
@@ -72,7 +69,6 @@ return {
           },
           gopls = {},
           ruff_lsp = {},
-          clangd = {},
           solargraph = {},
           jdtls = {},
           nil_ls = {},
@@ -166,31 +162,6 @@ return {
     keys = {
       { "gr", ":IncRename " },
     },
-  },
-  {
-    "https://git.sr.ht/~p00f/clangd_extensions.nvim",
-    opts = function()
-      return {
-        server = {
-          on_attach = require("plugins.configs.lsp.config").on_attach,
-        },
-        extensions = {
-          autoSetHints = false,
-        },
-      }
-    end,
-    init = function()
-      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
-        callback = function()
-          if vim.bo.filetype == "c" or vim.bo.filetype == "cpp" then
-            vim.schedule(function()
-              require("lazy").load({ plugins = "clangd_extensions.nvim" })
-              vim.cmd("silent! do FileType")
-            end)
-          end
-        end,
-      })
-    end,
   },
   {
     "nvimdev/lspsaga.nvim",

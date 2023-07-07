@@ -18,6 +18,7 @@ M.filetypes = {
   shell = false,
   python = true,
   web = true,
+  c = true,
 }
 
 _G.config = M
