@@ -1,4 +1,4 @@
-return not dots.filetypes.svelte == true and {}
+return dots.filetypes.svelte ~= true and {}
   or {
     {
       "neovim/nvim-lspconfig",

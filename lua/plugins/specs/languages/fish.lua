@@ -1,4 +1,4 @@
-return dots.filetypes.fish and {}
+return dots.filetypes.fish ~= true and {}
   or {
     {
       "jose-elias-alvarez/null-ls.nvim",

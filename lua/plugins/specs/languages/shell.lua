@@ -1,4 +1,4 @@
-return not dots.filetypes.shell == true and {}
+return dots.filetypes.shell ~= true and {}
   or {
     {
       "neovim/nvim-lspconfig",

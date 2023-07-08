@@ -1,4 +1,4 @@
-return not dots.filetypes.web == true and {}
+return dots.filetypes.web ~= true and {}
   or {
     {
       "nvim-neotest/neotest",

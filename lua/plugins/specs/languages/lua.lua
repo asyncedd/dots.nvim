@@ -1,4 +1,4 @@
-return not dots.filetypes.lua == true and {}
+return dots.filetypes.lua ~= true and {}
   or {
     {
       "neovim/nvim-lspconfig",
