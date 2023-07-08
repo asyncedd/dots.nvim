@@ -1,4 +1,4 @@
-return not _G.config.filetypes.lua == true and {}
+return not dots.filetypes.lua == true and {}
   or {
     {
       "neovim/nvim-lspconfig",

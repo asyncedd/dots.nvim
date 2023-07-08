@@ -1,4 +1,4 @@
-return not _G.config.filetypes.python == true and {}
+return not dots.filetypes.python == true and {}
   or {
     {
       "neovim/nvim-lspconfig",

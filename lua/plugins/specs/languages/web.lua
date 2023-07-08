@@ -1,4 +1,4 @@
-return not _G.config.filetypes.web == true and {}
+return not dots.filetypes.web == true and {}
   or {
     {
       "nvim-neotest/neotest",

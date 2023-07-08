@@ -1,5 +1,5 @@
 return {
-  style = _G.config.tokyonight.style,
+  style = dots.tokyonight.style,
   on_highlights = function(hl, c)
     hl["@variable"] = {
       fg = c.teal,

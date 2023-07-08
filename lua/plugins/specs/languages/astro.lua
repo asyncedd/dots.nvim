@@ -1,4 +1,4 @@
-return not _G.config.filetypes.astro == true and {}
+return not dots.filetypes.astro == true and {}
   or {
     {
       "neovim/nvim-lspconfig",

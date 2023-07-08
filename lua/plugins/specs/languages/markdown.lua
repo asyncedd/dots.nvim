@@ -1,4 +1,4 @@
-return not _G.config.filetypes.markdown == true and {}
+return not dots.filetypes.markdown == true and {}
   or {
     {
       "neovim/nvim-lspconfig",

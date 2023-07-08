@@ -22,6 +22,6 @@ M.filetypes = {
   astro = true,
 }
 
-_G.config = M
+dots = M
 
 return M

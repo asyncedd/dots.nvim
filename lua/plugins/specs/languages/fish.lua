@@ -1,4 +1,4 @@
-return _G.config.filetypes.fish and {}
+return dots.filetypes.fish and {}
   or {
     {
       "jose-elias-alvarez/null-ls.nvim",
