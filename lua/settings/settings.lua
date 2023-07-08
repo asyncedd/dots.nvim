@@ -38,15 +38,13 @@ M.disabled_plugins = {
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
 -- It'll lead to unexpected behavior!
 
+-- Register the confiugration above as a global variable.
 dots = M
 
-local plugs = M.disabled_plugins
 local ret = {}
 
-for _, plug in ipairs(plugs) do
+for _, plug in ipairs(M.disabled_plugins) do
   table.insert(ret, { plug, enabled = false })
 end
 
-plugs = ret
-
-return plugs
+return ret
