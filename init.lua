@@ -26,6 +26,8 @@ vim.loader.enable()
 -- Set some options.
 require("settings.options")
 
+vim.ui.inputsecret = vim.ui.inputsecret or vim.ui.input
+
 -- Require lazy.nvim.
 require("plugins")
 
