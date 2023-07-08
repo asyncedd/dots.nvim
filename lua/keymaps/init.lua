@@ -21,7 +21,7 @@ map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Open 
 -- Terminal
 map(
   "n",
-  "<leader>gt",
+  "<leader>tt",
   "<cmd>lua require('core.utils.lazyvim').float_term(nil, { ctrl_hjkl = false, esc_esc = true })<CR>"
 )
 map(
