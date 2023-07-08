@@ -51,6 +51,7 @@
   "mini.files": { "branch": "main", "commit": "4c8cb663d88473afdc1dbb30654419cfbd159a94" },
   "mini.indentscope": { "branch": "main", "commit": "f60e9b51a6214c73a170ffc5445ce91560981031" },
   "mini.move": { "branch": "main", "commit": "3afd39873eb9171684e554a214c055482444a47d" },
+  "neo-tree.nvim": { "branch": "v2.x", "commit": "7f6fa04dbd8e8c79d1af33bc90e856b65d8641da" },
   "neodev.nvim": { "branch": "main", "commit": "0705c72c281626f45c78d0916151d3e2bfb53fae" },
   "neorg": { "branch": "main", "commit": "32bae172814611f82e90b696b72cac99ff8de0e9" },
   "neorg-telescope": { "branch": "main", "commit": "d24f445c912451ddbf17cbe8da36561b51b10d39" },
