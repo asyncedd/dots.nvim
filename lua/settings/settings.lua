@@ -29,15 +29,10 @@ M.disabled_plugins = {
 dots = M
 
 local plugs = M.disabled_plugins
-
 local ret = {}
 
-for i = 1, #plugs do
-  local plugin = {
-    plugs[i],
-    enabled = false,
-  }
-  table.insert(ret, plugin)
+for _, plug in ipairs(plugs) do
+  table.insert(ret, { plug, enabled = false })
 end
 
 plugs = ret
