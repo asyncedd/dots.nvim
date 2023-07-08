@@ -1,5 +1,5 @@
 return {
-  style = require("settings.settings").tokyonight.style,
+  style = _G.config.tokyonight.style,
   on_highlights = function(hl, c)
     hl["@variable"] = {
       fg = c.teal,
