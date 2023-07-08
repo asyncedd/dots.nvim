@@ -1,4 +1,4 @@
-require("settings.settings")
+local dis_plugs = require("settings.settings")
 
 -- NOTE: vim.fn.stdpath("data") is in Linux systems: ~/.local/nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -19,7 +19,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- NOTE: import plugins from `lua/plugins/specs`
-require("lazy").setup({ { import = "plugins.specs" }, { import = "plugins.specs.languages" } }, {
+require("lazy").setup({ { import = "plugins.specs" }, { import = "plugins.specs.languages" }, dis_plugs }, {
   defaults = {
     -- PERF: Lazy-load by default.
     lazy = true,

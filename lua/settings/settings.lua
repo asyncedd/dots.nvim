@@ -22,6 +22,24 @@ M.filetypes = {
   astro = true,
 }
 
+M.disabled_plugins = {
+  "nvim-neo-tree/neo-tree.nvim",
+}
+
 dots = M
 
-return M
+local plugs = M.disabled_plugins
+
+local ret = {}
+
+for i = 1, #plugs do
+  local plugin = {
+    plugs[i],
+    enabled = false,
+  }
+  table.insert(ret, plugin)
+end
+
+plugs = ret
+
+return plugs
