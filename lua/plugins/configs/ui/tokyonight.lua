@@ -1,5 +1,5 @@
 return {
-  style = dots.tokyonight.style,
+  style = "moon",
   on_highlights = function(hl, c)
     hl["@variable"] = {
       fg = c.teal,
