@@ -178,4 +178,10 @@ return {
       { "K", "<cmd>Lspsaga hover_doc ++keep<CR>" },
     },
   },
+  {
+    "dgagn/diagflow.nvim",
+    opts = {},
+    event = "LspAttach",
+    enabled = dots.lsp.diagnostics.helix,
+  },
 }

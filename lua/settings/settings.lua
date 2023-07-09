@@ -38,6 +38,13 @@ M.disabled_plugins = {
   "ziontee113/deliberate.nvim",
 }
 
+M.lsp = {
+  diagnostics = {
+    -- Helix like diagnostics.
+    helix = true,
+  },
+}
+
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
 -- It'll lead to unexpected behavior!
 
