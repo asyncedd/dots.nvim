@@ -25,8 +25,8 @@ M.filetypes = {
   python = true,
   web = true,
   c = true,
-  astro = true,
-  go = true,
+  astro = false,
+  go = false,
 }
 
 -- A list of plugins to disable.
