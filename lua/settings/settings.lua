@@ -34,6 +34,7 @@ M.filetypes = {
 M.disabled_plugins = {
   "nvim-neo-tree/neo-tree.nvim",
   "max397574/better-escape.nvim",
+  "ziontee113/deliberate.nvim",
 }
 
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
