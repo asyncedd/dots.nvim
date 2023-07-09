@@ -26,6 +26,7 @@ M.filetypes = {
   web = true,
   c = true,
   astro = true,
+  go = true,
 }
 
 -- A list of plugins to disable.
