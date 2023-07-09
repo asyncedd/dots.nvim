@@ -28,4 +28,10 @@ return dots.filetypes.svelte ~= true and {}
         end
       end,
     },
+    {
+      "L3MON4D3/LuaSnip",
+      dependencies = {
+        "fivethree-team/vscode-svelte-snippets",
+      },
+    },
   }
