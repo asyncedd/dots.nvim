@@ -165,10 +165,6 @@ return {
     end,
   },
   {
-    "Fymyte/rasi.vim",
-    ft = "rasi",
-  },
-  {
     "folke/twilight.nvim",
     opts = true,
   },
