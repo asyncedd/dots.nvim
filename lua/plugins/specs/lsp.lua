@@ -158,12 +158,6 @@ return {
     end,
   },
   {
-    "smjonas/inc-rename.nvim",
-    keys = {
-      { "gr", ":IncRename " },
-    },
-  },
-  {
     "nvimdev/lspsaga.nvim",
     opts = {
       lightbulb = {

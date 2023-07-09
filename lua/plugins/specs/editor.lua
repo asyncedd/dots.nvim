@@ -255,4 +255,10 @@ return {
     opts = true,
     build = "./kitty/install-kittens.bash",
   },
+  {
+    "smjonas/inc-rename.nvim",
+    keys = {
+      { "gr", ":IncRename " },
+    },
+  },
 }
