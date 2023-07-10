@@ -15,7 +15,7 @@ return {
     event = {
       "VeryLazy",
     },
-    enabled = dots.colorscheme == "catppuccin",
+    cond = dots.colorscheme == "catppuccin",
   },
   {
     "folke/tokyonight.nvim",
@@ -26,7 +26,7 @@ return {
     event = {
       "VeryLazy",
     },
-    enabled = dots.colorscheme == "tokyonight",
+    cond = dots.colorscheme == "tokyonight",
   },
   {
     "olimorris/onedarkpro.nvim",
@@ -36,14 +36,14 @@ return {
     event = {
       "VeryLazy",
     },
-    enabled = dots.colorscheme == "onedarkpro",
+    cond = dots.colorscheme == "onedarkpro",
   },
   {
     "EdenEast/nightfox.nvim",
     opts = function()
       return require("plugins.configs.ui.nightfox")
     end,
-    enabled = dots.colorscheme == "nightfox",
+    cond = dots.colorscheme == "nightfox",
   },
   {
     "folke/noice.nvim",
