@@ -108,6 +108,7 @@ M.notes = {
     -- Your obsidian path
     path = vim.fn.expand("~") .. "/obsidian",
   },
+  vimwiki = false,
 }
 
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!

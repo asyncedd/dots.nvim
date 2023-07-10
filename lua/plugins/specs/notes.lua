@@ -104,4 +104,9 @@ return {
       },
     },
   },
+  {
+    "vimwiki/vimwiki",
+    event = "BufRead " .. vim.fn.expand("~") .. "/vimwiki/**.wiki",
+    enabled = dots.notes.vimwiki,
+  },
 }

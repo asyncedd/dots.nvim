@@ -118,6 +118,7 @@
   "vim-matchup": { "branch": "master", "commit": "61cef7921ecbb412f341a6d1a7f9ad1ca55243de" },
   "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" },
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
+  "vimwiki": { "branch": "dev", "commit": "09804c2a5f1009fde29e32c5f3a6093e4684433a" },
   "vscode-angular-snippets": { "branch": "main", "commit": "7a8b23de660044ba578a7362fa7557b36aad96e7" },
   "vscode-svelte-snippets": { "branch": "master", "commit": "564ac3300bfeda01ff0bf6b89152cef43f85a4ce" },
   "which-key.nvim": { "branch": "main", "commit": "d871f2b664afd5aed3dc1d1573bef2fb24ce0484" },
