@@ -86,6 +86,8 @@ M.buffer = {
     enabled = true,
     vertical = "top",
     horizontal = "center",
+    display = "row",
+    border = "solid",
   },
   mini = {
     enabled = false,

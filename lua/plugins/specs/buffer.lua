@@ -49,6 +49,8 @@ return {
     opts = {
       vertical = dots.buffer.tomiis4.vertical,
       horizontal = dots.buffer.tomiis4.horizontal,
+      display = dots.buffer.tomiis4.display,
+      border = dots.buffer.tomiis4.border,
     },
     enabled = dots.buffer.tomiis4.enabled,
     event = "BufRead",
