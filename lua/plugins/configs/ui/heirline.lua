@@ -625,24 +625,22 @@ M.StatusLine = {
   M.Scrollbar,
 }
 
-local C = require("catppuccin.palettes").get_palette()
-
 M.StatusLines = {
   static = {
     mode_colors_map = {
-      n = C.blue,
-      i = C.green,
-      v = C.pink,
-      V = C.pink,
-      ["\22"] = C.pink,
-      c = C.yellow,
-      s = C.mauve,
-      S = C.mauve,
-      ["\19"] = C.mauve,
-      R = C.maroon,
-      r = C.maroon,
+      n = "blue",
+      i = "green",
+      v = "pink",
+      V = "pink",
+      ["\22"] = "pink",
+      c = "yellow",
+      s = "purple",
+      S = "purple",
+      ["\19"] = "purple",
+      R = "orange",
+      r = "orange",
       ["!"] = "red",
-      t = C.green,
+      t = "green",
     },
     mode_color = function(self)
       local mode = conditions.is_active() and vim.fn.mode() or "n"

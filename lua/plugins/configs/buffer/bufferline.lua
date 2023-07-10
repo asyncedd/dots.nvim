@@ -1,5 +1,4 @@
 local icon = require("core.utils.icons")
-local colors = require("catppuccin.palettes").get_palette()
 
 local icons = {
   ["warn"] = icon.Warn,
@@ -46,25 +45,9 @@ return {
         separator = true,
       },
     },
-    custom_areas = {
-      left = function()
-        return {
-          { text = " ", fg = colors.green },
-        }
-      end,
-    },
     groups = {
       options = {
         toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
-      },
-      items = {
-        {
-          name = "Docs",
-          highlight = { sp = colors.green },
-          matcher = function(buf)
-            return buf.name:match("%.md") or buf.name:match("%.txt")
-          end,
-        },
       },
     },
   },

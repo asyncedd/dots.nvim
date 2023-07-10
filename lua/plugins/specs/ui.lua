@@ -13,9 +13,9 @@ return {
     end,
     config = true,
     event = {
-      "CmdlineEnter",
       "VeryLazy",
     },
+    enabled = dots.colorscheme == "catppuccin",
   },
   {
     "folke/tokyonight.nvim",
@@ -24,9 +24,9 @@ return {
     end,
     config = true,
     event = {
-      "CmdlineEnter",
       "VeryLazy",
     },
+    enabled = dots.colorscheme == "tokyonight",
   },
   {
     "olimorris/onedarkpro.nvim",
@@ -34,15 +34,16 @@ return {
       return require("plugins.configs.ui.onedark")
     end,
     event = {
-      "CmdlineEnter",
       "VeryLazy",
     },
+    enabled = dots.colorscheme == "onedarkpro",
   },
   {
     "EdenEast/nightfox.nvim",
     opts = function()
       return require("plugins.configs.ui.nightfox")
     end,
+    enabled = dots.colorscheme == "nightfox",
   },
   {
     "folke/noice.nvim",
