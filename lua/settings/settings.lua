@@ -103,6 +103,11 @@ M.buffer = {
 
 M.notes = {
   neorg = true,
+  obsidian = {
+    enabled = true,
+    -- Your obsidian path
+    path = vim.fn.expand("~") .. "/obsidian",
+  },
 }
 
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!

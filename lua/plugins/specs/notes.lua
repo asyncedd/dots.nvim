@@ -88,4 +88,20 @@ return {
     end,
     enabled = dots.notes.neorg,
   },
+  dots.notes.obsidian.enabled and {
+    {
+      "epwalsh/obsidian.nvim",
+      event = "BufRead " .. dots.notes.obsidian.path .. "/**.md",
+      opts = {
+        dir = dots.notes.obsidian.path,
+      },
+    },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        ensure_installed = { "markdown", "markdown_inline" },
+        additional_vim_regex_highlighting = { "markdown" },
+      },
+    },
+  },
 }
