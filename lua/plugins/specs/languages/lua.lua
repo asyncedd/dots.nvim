@@ -1,4 +1,4 @@
-return not dots.filetypes.lua and {}
+return not dots.languages.lua and {}
   or {
     {
       "neovim/nvim-lspconfig",
@@ -115,6 +115,6 @@ return not dots.filetypes.lua and {}
         "Luapad",
         "LuaRun",
       },
-      enabled = dots.filetypes.lua.luapad,
+      enabled = dots.languages.lua.luapad,
     },
   }

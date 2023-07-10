@@ -1,4 +1,4 @@
-return dots.filetypes.astro ~= true and {}
+return dots.languages.astro ~= true and {}
   or {
     {
       "neovim/nvim-lspconfig",

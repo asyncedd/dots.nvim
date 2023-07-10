@@ -1,4 +1,4 @@
-return dots.filetypes.rust ~= true and {}
+return dots.languages.rust ~= true and {}
   or {
     {
       "neovim/nvim-lspconfig",

@@ -1,4 +1,4 @@
-return dots.filetypes.web ~= true and {}
+return dots.languages.web ~= true and {}
   or {
     {
       "nvim-neotest/neotest",

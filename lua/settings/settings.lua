@@ -14,7 +14,7 @@ M.colorscheme = "catppuccin"
 -- The filetypes below are the only supported ones for now.
 -- For example to disable Lua integration change the `lua = true,` to `lua = false,`
 -- FUN FACT: The language servers will still start so, make sure to go `:Mason` and uninstall them!
-M.filetypes = {
+M.languages = {
   lua = {
     luapad = true,
   },

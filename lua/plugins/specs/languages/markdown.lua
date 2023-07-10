@@ -1,4 +1,4 @@
-return not dots.filetypes.markdown and {}
+return not dots.languages.markdown and {}
   or {
     {
       "neovim/nvim-lspconfig",
@@ -20,6 +20,6 @@ return not dots.filetypes.markdown and {}
       "lukas-reineke/headlines.nvim",
       opts = {},
       ft = "markdown",
-      enabled = dots.filetypes.markdown.headlines,
+      enabled = dots.languages.markdown.headlines,
     },
   }

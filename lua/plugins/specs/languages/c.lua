@@ -1,4 +1,4 @@
-return dots.filetypes.c ~= true and {}
+return dots.languages.c ~= true and {}
   or {
     {
       "p00f/clangd_extensions.nvim",

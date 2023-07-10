@@ -1,4 +1,4 @@
-return dots.filetypes.go ~= true and {}
+return dots.languages.go ~= true and {}
   or {
     {
       "leoluz/nvim-dap-go",
