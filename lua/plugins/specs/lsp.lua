@@ -178,4 +178,17 @@ return {
     event = "LspAttach",
     enabled = dots.lsp.diagnostics.helix,
   },
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    opts = true,
+    config = function(_, opts)
+      require("lsp_lines").setup(opts)
+
+      vim.diagnostic.config({
+        virtual_text = not dots.lsp.diagnostics.lines.enabled,
+      })
+    end,
+    event = "LspAttach",
+    enabled = dots.lsp.diagnostics.lines.enabled,
+  },
 }

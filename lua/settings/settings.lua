@@ -42,7 +42,11 @@ M.disabled_plugins = {
 M.lsp = {
   diagnostics = {
     -- Helix like diagnostics.
-    helix = true,
+    helix = false,
+    -- Use lsp_lines.nvim for the diagnostics
+    lines = {
+      enabled = true,
+    },
   },
 }
 
