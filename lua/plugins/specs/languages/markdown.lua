@@ -1,4 +1,4 @@
-return dots.filetypes.markdown ~= true and {}
+return not dots.filetypes.markdown and {}
   or {
     {
       "neovim/nvim-lspconfig",
@@ -15,5 +15,11 @@ return dots.filetypes.markdown ~= true and {}
       cmd = {
         "Glow",
       },
+    },
+    {
+      "lukas-reineke/headlines.nvim",
+      opts = {},
+      ft = "markdown",
+      enabled = dots.filetypes.markdown.headlines,
     },
   }
