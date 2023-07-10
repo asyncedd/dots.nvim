@@ -43,21 +43,6 @@ return {
       PmenuSel = { bg = C.sky, fg = C.mantle, style = { "bold" } },
       CmpItemKindCodeium = { fg = C.green },
 
-      -- Telescope
-      TelescopeMatching = { fg = C.sky },
-      TelescopeSelection = { bg = C.surface0 },
-      TelescopePromptCounter = { fg = C.mauve, style = { "bold" } },
-      TelescopePromptPrefix = { bg = C.surface0 },
-      TelescopePromptNormal = { bg = C.surface0 },
-      TelescopeResultsNormal = { bg = C.mantle },
-      TelescopePreviewNormal = { bg = C.crust },
-      TelescopePromptBorder = { bg = C.surface0, fg = C.surface0 },
-      TelescopeResultsBorder = { bg = C.mantle, fg = C.mantle },
-      TelescopePreviewBorder = { bg = C.crust, fg = C.crust },
-      TelescopePromptTitle = { fg = C.surface0, bg = C.mauve },
-      TelescopeResultsTitle = { fg = C.mantle, bg = C.mantle },
-      TelescopePreviewTitle = { fg = C.crust, bg = C.green },
-
       -- Illumiate
       IlluminatedWordText = { bg = U.darken(C.surface1, 0.7, C.base) },
       IlluminatedWordRead = { bg = U.darken(C.surface1, 0.7, C.base) },
@@ -78,7 +63,10 @@ return {
     alpha = false,
     gitsigns = true,
     nvimtree = false,
-    telescope = false,
+    telescope = {
+      enbled = true,
+      style = "nvchad",
+    },
     treesitter = true,
     ts_rainbow = false,
     ts_rainbow2 = false,
