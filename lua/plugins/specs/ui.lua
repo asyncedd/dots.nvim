@@ -12,10 +12,10 @@ return {
       return require("plugins.configs.ui.catppuccin")
     end,
     config = true,
-    event = {
+    event = dots.colorscheme.load_on_VeryLazy and {
       "VeryLazy",
-    },
-    cond = dots.colorscheme == "catppuccin",
+    } or nil,
+    cond = dots.colorscheme.current == "catppuccin" or not dots.colorscheme.disable_non_current,
   },
   {
     "folke/tokyonight.nvim",
@@ -23,27 +23,30 @@ return {
       return require("plugins.configs.ui.tokyonight")
     end,
     config = true,
-    event = {
+    event = dots.colorscheme.load_on_VeryLazy and {
       "VeryLazy",
-    },
-    cond = dots.colorscheme == "tokyonight",
+    } or nil,
+    cond = dots.colorscheme.current == "tokyonight" or not dots.colorscheme.disable_non_current,
   },
   {
     "olimorris/onedarkpro.nvim",
     opts = function()
       return require("plugins.configs.ui.onedark")
     end,
-    event = {
+    event = dots.colorscheme.load_on_VeryLazy and {
       "VeryLazy",
-    },
-    cond = dots.colorscheme == "onedarkpro",
+    } or nil,
+    cond = dots.colorscheme.current == "onedarkpro" or not dots.colorscheme.disable_non_current,
   },
   {
     "EdenEast/nightfox.nvim",
     opts = function()
       return require("plugins.configs.ui.nightfox")
     end,
-    cond = dots.colorscheme == "nightfox",
+    event = dots.colorscheme.load_on_VeryLazy and {
+      "VeryLazy",
+    } or nil,
+    cond = dots.colorscheme.current == "nightfox" or not dots.colorscheme.disable_non_current,
   },
   {
     "folke/noice.nvim",

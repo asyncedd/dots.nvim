@@ -40,7 +40,7 @@ require("settings.autocmds")
 -- lua blocks are expensive as I heard.
 -- this actually seems like an unnessearu premature optimization though
 
-local colorscheme = dots.colorscheme
+local colorscheme = dots.colorscheme.current
 local std = require("std")
 
 if std.exists_in_array({ "catppuccin", "onedarkpro", "nightfox" }, colorscheme) then

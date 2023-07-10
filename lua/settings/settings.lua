@@ -8,7 +8,11 @@ local M = {}
 -- TIP: Installed some other colorscheme? Will, just add it!
 -- for eg. You can use the vim.cmd.colorscheme (:colorscheme) <name>
 -- and just put the name below and it'll be used!
-M.colorscheme = "catppuccin"
+M.colorscheme = {
+  current = "catppuccin",
+  disable_non_current = false,
+  load_on_VeryLazy = false,
+}
 
 -- Language integration to use.
 -- The filetypes below are the only supported ones for now.
