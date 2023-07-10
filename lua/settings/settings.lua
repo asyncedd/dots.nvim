@@ -62,6 +62,16 @@ M.lsp = {
   saga = true,
 }
 
+M.coding = {
+  codeium = {
+    -- Whetever or not to enable codeium
+    enabled = true,
+    -- Use http.nvim or not.
+    -- It might reduce latency but it'll take some time to compile
+    http = false,
+  },
+}
+
 M.UI = {
   -- Have rainbow delimiters
   rainbow_delimiters = false,

@@ -399,8 +399,13 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
+      dots.coding.codeium.http and {
+        "jcdickinson/http.nvim",
+        build = "cargo build --workspace --release",
+      } or nil,
     },
     opts = {},
     event = "VeryLazy",
+    enabled = dots.coding.codeium.enabled,
   },
 }
