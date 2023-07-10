@@ -106,6 +106,7 @@ return {
       enabled = true,
       color_mode = true, -- enable color for kind's texts, not just kind's icons
     },
+    rainbow_delimiters = dots.UI.rainbow_delimiters,
   },
   -- compile_path = nil,
 }

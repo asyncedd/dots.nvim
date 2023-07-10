@@ -58,6 +58,11 @@ M.lsp = {
   },
 }
 
+M.UI = {
+  -- Have rainbow delimiters
+  rainbow_delimiters = false,
+}
+
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
 -- It'll lead to unexpected behavior!
 
