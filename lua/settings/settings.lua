@@ -92,6 +92,9 @@ M.buffer = {
   mini = {
     enabled = false,
   },
+  cybu = {
+    enabled = true,
+  },
 }
 
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!

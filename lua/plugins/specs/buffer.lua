@@ -61,4 +61,13 @@ return {
     event = "BufRead",
     enabled = dots.buffer.mini.enabled,
   },
+  {
+    "ghillb/cybu.nvim",
+    opts = true,
+    keys = {
+      { "<leader>bn", "<Plug>(CybuNext)" },
+      { "<leader>bp", "<Plug>(CybuPrev)" },
+    },
+    enabled = dots.buffer.cybu.enabled,
+  },
 }
