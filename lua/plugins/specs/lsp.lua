@@ -171,6 +171,7 @@ return {
       { "gt", "<cmd>Lspsaga goto_type_definition<CR>" },
       { "K", "<cmd>Lspsaga hover_doc ++keep<CR>" },
     },
+    enabled = dots.lsp.saga,
   },
   {
     "dgagn/diagflow.nvim",

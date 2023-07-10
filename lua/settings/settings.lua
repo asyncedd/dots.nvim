@@ -58,6 +58,8 @@ M.lsp = {
       properly_lazyload = true,
     },
   },
+  -- Whetever or not to enable lspsaga
+  saga = true,
 }
 
 M.UI = {
