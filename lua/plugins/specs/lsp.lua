@@ -191,4 +191,16 @@ return {
     event = "LspAttach",
     enabled = dots.lsp.diagnostics.lines.enabled,
   },
+  {
+    "folke/trouble.nvim",
+    opts = true,
+    keys = {
+      { "<leader>xx", "<cmd>TroubleToggle<CR>" },
+      { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<CR>" },
+      { "<leader>xl", "<cmd>TroubleToggle loclist<CR>" },
+      { "<leader>xq", "<cmd>TroubleToggle quickfix<CR>" },
+      { "<leader>xR", "<cmd>TroubleToggle lsp_references<CR>" },
+    },
+    enabled = dots.lsp.diagnostics.trouble.enabled,
+  },
 }

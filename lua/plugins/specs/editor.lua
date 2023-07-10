@@ -40,7 +40,7 @@ return {
       },
       current_line_blame = true,
       current_line_blame_formatter = "󰧮 <author>, <author_time:%Y-%m-%d> - <summary>",
-      trouble = false,
+      trouble = dots.lsp.diagnostics.trouble.properly_lazyload,
       on_attach = function(buffer)
         local gs = package.loaded.gitsigns
 

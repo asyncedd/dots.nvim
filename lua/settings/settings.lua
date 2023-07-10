@@ -49,6 +49,12 @@ M.lsp = {
     lines = {
       enabled = true,
     },
+    -- Pretty list for diagnostics
+    trouble = {
+      enabled = true,
+      -- Disable trouble.nvim for Gitsigns hunks
+      properly_lazyload = true,
+    },
   },
 }
 
