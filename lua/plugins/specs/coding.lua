@@ -182,7 +182,7 @@ return {
   },
   {
     "CKolkey/ts-node-action",
-    opts = true,
+    opts = {},
     keys = {
       {
         "gS",

@@ -34,4 +34,12 @@ return dots.languages.svelte ~= true and {}
         "fivethree-team/vscode-svelte-snippets",
       },
     },
+    {
+      "CKolkey/ts-node-action",
+      opts = function(_, opts)
+        opts.svelte = {
+          ["attribute_value"] = require("ts-node-action.actions").conceal_string(),
+        }
+      end,
+    },
   }
