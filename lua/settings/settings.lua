@@ -77,6 +77,18 @@ M.UI = {
   rainbow_delimiters = false,
 }
 
+M.buffer = {
+  akinsho = {
+    enabled = false,
+    dont_show_if_only_one = true,
+  },
+  tomiis4 = {
+    enabled = true,
+    vertical = "top",
+    horizontal = "center",
+  },
+}
+
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
 -- It'll lead to unexpected behavior!
 

@@ -30,7 +30,7 @@ return {
       level = level:match("warn") and "warn" or level
       return (icons[level] or "?") .. " " .. count
     end,
-    always_show_bufferline = false,
+    always_show_bufferline = not dots.buffer.akinsho.dont_show_if_only_one,
     offsets = {
       {
         filetype = "NvimTree",

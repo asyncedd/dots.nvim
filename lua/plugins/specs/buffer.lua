@@ -42,5 +42,15 @@ return {
         end,
       },
     },
+    enabled = dots.buffer.akinsho.enabled,
+  },
+  {
+    "tomiis4/BufferTabs.nvim",
+    opts = {
+      vertical = dots.buffer.tomiis4.vertical,
+      horizontal = dots.buffer.tomiis4.horizontal,
+    },
+    enabled = dots.buffer.tomiis4.enabled,
+    event = "BufRead",
   },
 }
