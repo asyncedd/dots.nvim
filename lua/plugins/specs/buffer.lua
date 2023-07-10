@@ -53,4 +53,10 @@ return {
     enabled = dots.buffer.tomiis4.enabled,
     event = "BufRead",
   },
+  {
+    "echasnovski/mini.tabline",
+    opts = true,
+    event = "BufRead",
+    enabled = dots.buffer.mini.enabled,
+  },
 }

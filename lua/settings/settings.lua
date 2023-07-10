@@ -79,13 +79,16 @@ M.UI = {
 
 M.buffer = {
   akinsho = {
-    enabled = false,
+    enabled = true,
     dont_show_if_only_one = true,
   },
   tomiis4 = {
     enabled = true,
     vertical = "top",
     horizontal = "center",
+  },
+  mini = {
+    enabled = false,
   },
 }
 
