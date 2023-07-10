@@ -367,5 +367,6 @@ return {
       }
     end,
     event = "BufRead",
+    enabled = dots.UI.rainbow_delimiters,
   },
 }
