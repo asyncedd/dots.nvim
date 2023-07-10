@@ -79,7 +79,7 @@ M.UI = {
 
 M.buffer = {
   akinsho = {
-    enabled = true,
+    enabled = false,
     dont_show_if_only_one = true,
   },
   tomiis4 = {
