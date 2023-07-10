@@ -176,7 +176,7 @@ return {
   {
     "echasnovski/mini.bracketed",
     opts = {
-      buffer = { suffix = "", options = {} },
+      dots.buffer.akinsho.enabled and nil or { buffer = { suffix = "", options = {} } },
     },
     event = "VeryLazy",
   },
