@@ -86,5 +86,6 @@ return {
         end,
       })
     end,
+    enabled = dots.notes.neorg,
   },
 }

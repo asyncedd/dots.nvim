@@ -101,6 +101,10 @@ M.buffer = {
   },
 }
 
+M.notes = {
+  neorg = true,
+}
+
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
 -- It'll lead to unexpected behavior!
 
