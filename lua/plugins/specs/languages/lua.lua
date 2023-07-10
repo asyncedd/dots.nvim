@@ -1,4 +1,4 @@
-return dots.filetypes.lua ~= true and {}
+return not dots.filetypes.lua and {}
   or {
     {
       "neovim/nvim-lspconfig",
@@ -107,5 +107,14 @@ return dots.filetypes.lua ~= true and {}
           vim.list_extend(opts.ensure_installed, { "lua" })
         end
       end,
+    },
+    {
+      "rafcamlet/nvim-luapad",
+      opts = true,
+      cmd = {
+        "Luapad",
+        "LuaRun",
+      },
+      enabled = dots.filetypes.lua.luapad,
     },
   }

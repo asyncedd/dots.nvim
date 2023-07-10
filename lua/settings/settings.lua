@@ -15,7 +15,9 @@ M.colorscheme = "catppuccin"
 -- For example to disable Lua integration change the `lua = true,` to `lua = false,`
 -- FUN FACT: The language servers will still start so, make sure to go `:Mason` and uninstall them!
 M.filetypes = {
-  lua = true,
+  lua = {
+    luapad = true,
+  },
   typescript = true,
   svelte = true,
   fish = true,
