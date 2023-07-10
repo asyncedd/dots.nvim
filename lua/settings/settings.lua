@@ -54,7 +54,7 @@ M.lsp = {
 -- It'll lead to unexpected behavior!
 
 -- Register the confiugration above as a global variable.
-dots = M
+_G.dots = M
 
 local ret = {}
 
