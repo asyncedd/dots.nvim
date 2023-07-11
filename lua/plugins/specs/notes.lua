@@ -103,10 +103,29 @@ return {
         additional_vim_regex_highlighting = { "markdown" },
       },
     },
-  },
+  } or nil,
   {
     "vimwiki/vimwiki",
     event = "BufRead " .. vim.fn.expand("~") .. "/vimwiki/**.wiki",
     enabled = dots.notes.vimwiki,
   },
+  dots.notes.orgmode and {
+    {
+      "nvim-orgmode/orgmode",
+      opts = true,
+      ft = "org",
+      config = function(_, opts)
+        local org = require("orgmode")
+
+        org.setup(opts)
+        org.setup_ts_grammar()
+      end,
+    },
+    {
+      "hrsh7th/nvim-cmp",
+      opts = function(_, opts)
+        table.insert(opts.cmp.sources, { name = "org" })
+      end,
+    },
+  } or nil,
 }
