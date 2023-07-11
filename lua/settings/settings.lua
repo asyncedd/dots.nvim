@@ -57,9 +57,9 @@ M.lsp = {
     },
     -- Pretty list for diagnostics
     trouble = {
-      enabled = true,
+      enabled = false,
       -- Disable trouble.nvim for Gitsigns hunks
-      properly_lazyload = true,
+      properly_lazyload = false,
     },
   },
   -- Whetever or not to enable lspsaga
