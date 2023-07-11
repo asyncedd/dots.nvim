@@ -53,7 +53,7 @@ M.lsp = {
     helix = false,
     -- Use lsp_lines.nvim for the diagnostics
     lines = {
-      enabled = true,
+      enabled = false,
     },
     -- Pretty list for diagnostics
     trouble = {
