@@ -56,21 +56,23 @@ M.setup = function(opts)
   local servers = opts.servers
 
   local function setup(server)
-    local server_opts = vim.tbl_deep_extend("force", {
-      capabilities = vim.deepcopy(capabilities),
-    }, servers[server] or {})
+    if not checkIfExists(server, servers_to_not_setup) then
+      local server_opts = vim.tbl_deep_extend("force", {
+        capabilities = vim.deepcopy(capabilities),
+      }, servers[server] or {})
 
-    if opts.setup[server] then
-      if opts.setup[server](server, server_opts) then
-        return
+      if opts.setup[server] then
+        if opts.setup[server](server, server_opts) then
+          return
+        end
+      elseif opts.setup["*"] then
+        if opts.setup["*"](server, server_opts) then
+          return
+        end
       end
-    elseif opts.setup["*"] then
-      if opts.setup["*"](server, server_opts) then
-        return
-      end
+      require("lspconfig")[server].setup(server_opts)
+      M.on_attach()
     end
-    require("lspconfig")[server].setup(server_opts)
-    M.on_attach()
   end
   -- get all the servers that are available thourgh mason-lspconfig
   local have_mason, mlsp = pcall(require, "mason-lspconfig")
