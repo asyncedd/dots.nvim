@@ -1,21 +1,4 @@
 return {
-  color_overrides = {
-    mocha = {
-      text = "#D9E0EE",
-      subtext1 = "#BAC2DE",
-      subtext0 = "#A6ADC8",
-      overlay2 = "#C3BAC6",
-      overlay1 = "#988BA2",
-      overlay0 = "#6E6C7E",
-      surface2 = "#6E6C7E",
-      surface1 = "#575268",
-      surface0 = "#302D41",
-
-      base = "#1E1E2E",
-      mantle = "#1A1826",
-      crust = "#161320",
-    },
-  },
   custom_highlights = function(C)
     local U = require("core.utils.colors")
     return {
