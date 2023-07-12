@@ -20,11 +20,4 @@ return dots.languages.c ~= true and {}
         },
       },
     },
-    {
-      "jay-babu/mason-nvim-dap.nvim",
-      dependencies = {
-        "mason.nvim",
-        "nvim-dap",
-      },
-    },
   }

@@ -218,6 +218,6 @@ return {
       "mason.nvim",
       "nvim-dap",
     },
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
 }
