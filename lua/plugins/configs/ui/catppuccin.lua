@@ -55,6 +55,19 @@ return {
       FlashMatch = { fg = C.sky, style = { "bold", "nocombine" } },
       FlashCurrent = { fg = C.pink, style = { "bold", "nocombine" } },
       FlashLabel = { fg = C.mauve, style = { "bold", "nocombine" } },
+
+      DiagnosticVirtualTextError = {
+        bg = C.none,
+      }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+      DiagnosticVirtualTextWarn = {
+        bg = C.none,
+      }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+      DiagnosticVirtualTextInfo = {
+        bg = C.none
+      }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+      DiagnosticVirtualTextHint = {
+        bg = C.none
+      }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
     }
   end,
   integrations = {
@@ -72,12 +85,6 @@ return {
     ts_rainbow2 = false,
     native_lsp = {
       enabled = true,
-      virtual_text = {
-        errors = { "italic" },
-        hints = { "italic" },
-        warnings = { "italic" },
-        information = { "italic" },
-      },
       underlines = {
         errors = { "undercurl" },
         hints = { "undercurl" },
