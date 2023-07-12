@@ -79,6 +79,9 @@ M.coding = {
 M.UI = {
   -- Have rainbow delimiters
   rainbow_delimiters = false,
+  statusline = {
+    type = "heirline",
+  },
 }
 
 M.buffer = {

@@ -168,6 +168,13 @@ return {
     dependencies = {
       "nvim-web-devicons",
     },
+    enabled = dots.UI.statusline.type == "heirline",
+  },
+  {
+    "echasnovski/mini.statusline",
+    opts = true,
+    event = "User UI",
+    enabled = dots.UI.statusline.type == "mini",
   },
   {
     "RRethy/vim-illuminate",
