@@ -63,10 +63,10 @@ return {
         bg = C.none,
       }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
       DiagnosticVirtualTextInfo = {
-        bg = C.none
+        bg = C.none,
       }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
       DiagnosticVirtualTextHint = {
-        bg = C.none
+        bg = C.none,
       }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
     }
   end,
