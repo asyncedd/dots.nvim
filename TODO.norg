@@ -28,7 +28,7 @@
    - (_) Add clipboard-image.nvim
    - ( ) Replace glow.nvim with some kind of markdown preview plugin
    - (x) Consider on add obsidian.nvim
-   - ( ) Improve integration for all the colorschemes not catppuccin to a catppuccin level
+   - (x) Improve integration for all the colorschemes not catppuccin to a catppuccin level
    - (x) Consider on adding vimwiki
    - (_) Add logseq support inside Neovim
    - (_) Add otter.nvim
