@@ -80,6 +80,7 @@ M.UI = {
   -- Have rainbow delimiters
   rainbow_delimiters = false,
   statusline = {
+    -- heirline, mini, lualine
     type = "heirline",
   },
 }

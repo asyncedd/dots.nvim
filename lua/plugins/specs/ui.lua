@@ -177,6 +177,12 @@ return {
     enabled = dots.UI.statusline.type == "mini",
   },
   {
+    "nvim-lualine/lualine.nvim",
+    opts = true,
+    event = "VeryLazy",
+    enabled = dots.UI.statusline.type == "lualine",
+  },
+  {
     "RRethy/vim-illuminate",
     opts = {
       delay = 200,
