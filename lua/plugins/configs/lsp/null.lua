@@ -46,6 +46,7 @@ local function setup_formatting(names)
           end
           return clientn.name ~= "null-ls"
         end,
+        timeout_ms = 2000,
       }, {}))
     end,
   })
