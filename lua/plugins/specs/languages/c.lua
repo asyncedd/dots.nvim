@@ -20,4 +20,12 @@ return dots.languages.c ~= true and {}
         },
       },
     },
+    {
+      "mfussenegger/nvim-dap",
+      opts = {
+        adapters = {
+          "codelldb",
+        },
+      },
+    },
   }

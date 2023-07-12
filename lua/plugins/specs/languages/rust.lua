@@ -108,4 +108,12 @@ return dots.languages.rust ~= true and {}
       end,
       dependencies = "rouge8/neotest-rust",
     },
+    {
+      "mfussenegger/nvim-dap",
+      opts = {
+        adapters = {
+          "codelldb",
+        },
+      },
+    },
   }

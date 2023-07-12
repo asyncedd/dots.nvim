@@ -5,7 +5,6 @@ return {
       adapters = {
         "delve",
         "debugpy",
-        "codelldb",
       },
     },
     config = function(_, opts)
