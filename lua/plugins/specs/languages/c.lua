@@ -6,6 +6,8 @@ return dots.languages.c ~= true and {}
         clangd = {
           on_attach = function(client, bufnr)
             client.server_capabilities.signatureHelpProvider = false
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
           end,
         },
       },

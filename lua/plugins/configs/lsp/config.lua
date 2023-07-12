@@ -8,8 +8,6 @@ M.on_attach = function()
       if client.server_capabilities.inlayHintProvider then
         vim.lsp.inlay_hint(bufnr, true)
       end
-      client.server_capabilities.documentFormattingProvider = false
-      client.server_capabilities.documentRangeFormattingProvider = false
     end,
   })
 end
