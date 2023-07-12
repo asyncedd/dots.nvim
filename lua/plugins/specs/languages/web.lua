@@ -20,4 +20,12 @@ return dots.languages.web ~= true and {}
         "thenbe/neotest-playwright",
       },
     },
+    {
+      "neovim/nvim-lspconfig",
+      opts = {
+        servers = {
+          emmet_language_server = {},
+        },
+      },
+    },
   }

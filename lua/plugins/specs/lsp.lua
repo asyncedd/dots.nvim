@@ -57,16 +57,6 @@ return {
           },
           -- https://github.com/folke/dot/blob/master/nvim/lua/plugins/lsp.lua
           html = {},
-          emmet_ls = {
-            init_options = {
-              html = {
-                options = {
-                  -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-                  ["bem.enabled"] = true,
-                },
-              },
-            },
-          },
           gopls = {},
           ruff_lsp = {},
           solargraph = {},
