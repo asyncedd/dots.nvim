@@ -8,6 +8,8 @@ M.on_attach = function()
       if client.server_capabilities.inlayHintProvider then
         vim.lsp.inlay_hint(bufnr, true)
       end
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
     end,
   })
 end
@@ -16,6 +18,13 @@ M.setup = function(opts)
   local servers_to_not_setup = opts.servers_to_not_setup
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+  capabilities = vim.tbl_deep_extend("force", capabilities, {
+    offsetEncoding = { "utf-16" },
+    general = {
+      positionEncodings = { "utf-16" },
+    },
+  })
 
   capabilities.textDocument = {
     completion = {
