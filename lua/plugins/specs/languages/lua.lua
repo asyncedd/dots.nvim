@@ -117,4 +117,15 @@ return not dots.languages.lua and {}
       },
       enabled = dots.languages.lua.luapad,
     },
+    {
+      "KaitlynEthylia/Evalua",
+      config = function()
+        require("Evalua")
+      end,
+      dependencies = "nvim-treesitter/nvim-treesitter",
+      cmd = {
+        "Evalua",
+      },
+      enabled = dots.languages.lua.evalua,
+    },
   }

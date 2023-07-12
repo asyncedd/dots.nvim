@@ -20,7 +20,8 @@ M.colorscheme = {
 -- FUN FACT: The language servers will still start so, make sure to go `:Mason` and uninstall them!
 M.languages = {
   lua = {
-    luapad = true,
+    luapad = false,
+    evalua = false,
   },
   typescript = true,
   svelte = true,
