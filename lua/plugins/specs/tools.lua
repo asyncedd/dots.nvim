@@ -238,6 +238,9 @@ return {
     opts = {
       disable_commit_confirmation = true,
       use_telescope = true,
+      telescope_sorter = function()
+        return require("telescope").extensions.fzf.native_fzf_sorter()
+      end,
     },
     cmd = {
       "Neogit",
