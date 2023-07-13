@@ -1,4 +1,4 @@
-return dots.languages.web ~= true and {}
+return (dots.languages.web ~= true or dots.languages.svelte ~= true or dots.languages.typescript ~= true) and {}
   or {
     {
       "nvim-neotest/neotest",
