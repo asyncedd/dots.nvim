@@ -236,7 +236,7 @@ return {
   {
     "NeogitOrg/neogit",
     opts = {
-      disable_commit_confirmation = true,
+      use_telescope = true,
     },
     cmd = {
       "Neogit",
