@@ -83,11 +83,7 @@ dashboard.section.buttons.val = {
   dashboard.button("e", "  Scratch File", "<cmd>ene | startinsert <CR>"),
   dashboard.button("f", "  Find file", "<cmd>Telescope find_files<CR>"),
   dashboard.button("g", "  Find word", "<cmd>Telescope live_grep<CR>"),
-  dashboard.button(
-    "l",
-    "  Open Lazygit",
-    "<cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>"
-  ),
+  dashboard.button("l", "  Open Neogit", "<cmd>Neogit<CR>"),
   dashboard.button("s", "󰒲  Sync Lazy.nvim", "<cmd>Lazy sync<CR>"),
   dashboard.button("q", "󰩈  Quit NVIM", "<cmd>qa<CR>"),
 }

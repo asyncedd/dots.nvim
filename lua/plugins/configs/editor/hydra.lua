@@ -14,7 +14,7 @@ local opts = function()
   _S_: stage buffer
 
   EXTERNAL TOOLS:
-  _v_: diff view   _<Enter>_: Lazygit _g_: Lazygit
+  _v_: diff view   _<Enter>_: Lazygit _g_: Neogit
 
   _q_: exit _;_: exit _<Esc>_: exit
 ]]
@@ -152,7 +152,12 @@ local opts = function()
           { exit = true, desc = "Lazygit" },
         },
         {
-          "g",
+          "l",
+          "<cmd>Neogit<CR>",
+          { exit = true, desc = "Neogit" },
+        },
+        {
+          "<CR>",
           "<Cmd>lua require('core.utils.lazyvim').float_term('lazygit', { ctrl_hjkl = false, esc_esc = true })<CR>",
           { exit = true, desc = "Lazygit" },
         },

@@ -26,5 +26,5 @@ local openterm = function(command)
 end
 
 map("n", "<leader>tt", openterm())
-map("n", "<leader>gg", openterm("lazygit"))
+map("n", "<leader>gg", "<cmd>Neogit<CR>")
 map("n", "<leader>g<CR>", openterm("lazygit"))

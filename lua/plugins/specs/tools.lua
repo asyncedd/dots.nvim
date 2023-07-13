@@ -241,5 +241,8 @@ return {
     cmd = {
       "Neogit",
     },
+    keys = {
+      { "<leader>gg", "<cmd>Neogit<CR>" },
+    },
   },
 }
