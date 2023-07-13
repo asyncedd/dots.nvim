@@ -239,5 +239,12 @@ return {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
     },
+    init = function()
+      -- HACK https://github.com/TimUntersberger/neogit/issues/405
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "NeogitCommitMessage",
+        command = "silent! set filetype=gitcommit",
+      })
+    end,
   },
 }
