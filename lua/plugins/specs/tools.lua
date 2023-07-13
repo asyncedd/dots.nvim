@@ -233,4 +233,11 @@ return {
       { "<leader>tn", "<cmd>Neotree<CR>" },
     },
   },
+  {
+    "NeogitOrg/neogit",
+    opts = true,
+    cmd = {
+      "Neogit",
+    },
+  },
 }

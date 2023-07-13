@@ -52,6 +52,7 @@
   "mini.indentscope": { "branch": "main", "commit": "f60e9b51a6214c73a170ffc5445ce91560981031" },
   "mini.move": { "branch": "main", "commit": "3afd39873eb9171684e554a214c055482444a47d" },
   "neodev.nvim": { "branch": "main", "commit": "8c3effe405163aef19737a148711418e1dccf2f4" },
+  "neogit": { "branch": "master", "commit": "75467a89c3fcd005bd421fd229c79d98f7e2c2ef" },
   "neorg": { "branch": "main", "commit": "c801ae5165423f4c70841e548208c74da86acf72" },
   "neorg-telescope": { "branch": "main", "commit": "d24f445c912451ddbf17cbe8da36561b51b10d39" },
   "neotest": { "branch": "master", "commit": "e46eae5739c470aa011ee43108ea8a730736174e" },
