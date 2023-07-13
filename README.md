@@ -51,7 +51,6 @@ But, it's about the overall editing experience of the editor.
 | Programs  | The why                                                       |
 | --------- | ------------------------------------------------------------- |
 | `nvim`    | because, yes.                                                 |
-| `fzf`     | for Telescope.nvim                                            |
 | `fd`      | for Telescope.nvim                                            |
 | `rg`      | for Telescope.nvim                                            |
 | `sqlite3` | for sqlite.lua                                                |
