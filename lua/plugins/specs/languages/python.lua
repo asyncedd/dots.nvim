@@ -5,6 +5,19 @@ return dots.languages.python ~= true and {}
       opts = {
         servers = {
           ruff_lsp = {},
+          pyright = {
+            settings = {
+              python = {
+                analysis = {
+                  autoImportCompletions = true,
+                  typeCheckingMode = "off",
+                  autoSearchPaths = true,
+                  useLibraryCodeForTypes = true,
+                  diagnosticMode = "workspace", -- "openFilesOnly",
+                },
+              },
+            },
+          },
         },
       },
     },

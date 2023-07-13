@@ -41,20 +41,6 @@ return {
             },
           },
           tailwindcss = {},
-          -- https://www.reddit.com/r/neovim/comments/135fqp9/why_is_pyright_constantly_analyzing_files_it/
-          pyright = {
-            settings = {
-              python = {
-                analysis = {
-                  autoImportCompletions = true,
-                  typeCheckingMode = "off",
-                  autoSearchPaths = true,
-                  useLibraryCodeForTypes = true,
-                  diagnosticMode = "workspace", -- "openFilesOnly",
-                },
-              },
-            },
-          },
           -- https://github.com/folke/dot/blob/master/nvim/lua/plugins/lsp.lua
           html = {},
           gopls = {},
