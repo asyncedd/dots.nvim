@@ -81,6 +81,8 @@ local function setup_null_ls(opts)
   require("null-ls").setup({
     sources = list_of_sources,
     on_attach = function(client)
+      require("plugins.configs.lsp.config").on_attach()
+
       if
         client.config
         and client.config.capabilities
