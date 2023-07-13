@@ -28,7 +28,6 @@ end
 
 local function setup_formatting(names)
   local group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
-  require("mason").setup(names)
 
   vim.api.nvim_create_autocmd("BufWritePre", {
     group = group,
@@ -77,6 +76,7 @@ local function setup_null_ls(opts)
   end
 
   ensure_installed(names)
+  require("mason").setup(names)
 
   require("null-ls").setup({
     sources = list_of_sources,
