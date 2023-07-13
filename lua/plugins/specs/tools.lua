@@ -163,22 +163,6 @@ return {
     },
   },
   {
-    "sindrets/diffview.nvim",
-    opts = true,
-    keys = {
-      { "<leader>gdo", "<cmd>DiffviewOpen<CR>" },
-      { "<leader>gdc", "<cmd>DiffviewClose<CR>" },
-    },
-    cmd = {
-      "DiffviewOpen",
-      "DiffviewClose",
-      "DiffviewToggleFiles",
-      "DiffviewFocusFiles",
-      "DiffviewRefresh",
-      "DiffviewFileHistory",
-    },
-  },
-  {
     "vuki656/package-info.nvim",
     opts = true,
     event = "VeryLazy",
@@ -241,12 +225,19 @@ return {
       telescope_sorter = function()
         return require("telescope").extensions.fzf.native_fzf_sorter()
       end,
+      integrations = {
+        diffview = true,
+      },
     },
     cmd = {
       "Neogit",
     },
     keys = {
       { "<leader>gg", "<cmd>Neogit<CR>" },
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
     },
   },
 }
