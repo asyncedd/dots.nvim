@@ -86,6 +86,7 @@ return {
     },
     rainbow_delimiters = dots.UI.rainbow_delimiters,
     mini = true,
+    neogit = true,
   },
   -- compile_path = nil,
 }
