@@ -228,6 +228,12 @@ return {
       integrations = {
         diffview = true,
       },
+      signs = {
+        -- { CLOSED, OPENED }
+        section = { "", "" },
+        item = { "", "" },
+        hunk = { "", "" },
+      },
     },
     cmd = {
       "Neogit",
