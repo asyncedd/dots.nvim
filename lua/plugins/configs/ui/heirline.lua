@@ -659,7 +659,7 @@ M.StatusLines = {
     if conditions.is_active() then
       return "Normal"
     else
-      return "StatusLineNC"
+      return "Normal"
     end
   end,
 
