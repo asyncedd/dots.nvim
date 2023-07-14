@@ -26,31 +26,6 @@ local function ensure_installed(names)
   end
 end
 
-local function setup_formatting(names)
-  local group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
-
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    group = group,
-    callback = function()
-      local buf = vim.api.nvim_get_current_buf()
-      local ft = vim.bo[buf].filetype
-      local have_nls = package.loaded["null-ls"]
-        and (#require("null-ls.sources").get_available(ft, "NULL_LS_FORMATTING") > 0)
-
-      vim.lsp.buf.format(vim.tbl_deep_extend("force", {
-        bufnr = buf,
-        filter = function(clientn)
-          if have_nls then
-            return clientn.name == "null-ls"
-          end
-          return clientn.name ~= "null-ls"
-        end,
-        timeout_ms = 2000,
-      }, {}))
-    end,
-  })
-end
-
 local function setup_null_ls(opts)
   local sources = opts.sources
   local list_of_sources = {}
@@ -78,11 +53,11 @@ local function setup_null_ls(opts)
   ensure_installed(names)
   require("mason").setup(names)
 
+  local augroup = vim.api.nvim_create_augroup("NullLsFormatting", { clear = true })
+
   require("null-ls").setup({
     sources = list_of_sources,
-    on_attach = function(client)
-      require("plugins.configs.lsp.config").on_attach()
-
+    on_attach = function(client, bufnr)
       if
         client.config
         and client.config.capabilities
@@ -90,9 +65,28 @@ local function setup_null_ls(opts)
       then
         return
       end
+
       if client.supports_method("textDocument/formatting") then
-        setup_formatting(names)
+        vim.api.nvim_clear_autocmds({
+          group = augroup,
+          buffer = bufnr,
+        })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          group = augroup,
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.buf.format({
+              bufnr = bufnr,
+              timeout_ms = 5000,
+              filter = function(clientn)
+                return clientn.name == "null-ls"
+              end,
+            })
+          end,
+        })
       end
+
+      require("plugins.configs.lsp.config").on_attach()
     end,
   })
 end
