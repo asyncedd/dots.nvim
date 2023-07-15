@@ -123,6 +123,11 @@ M.image = {
   backend = "kitty",
 }
 
+M.hover = {
+  -- lewis6991, pretty
+  type = "pretty",
+}
+
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
 -- It'll lead to unexpected behavior!
 
