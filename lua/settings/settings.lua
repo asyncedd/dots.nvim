@@ -120,15 +120,16 @@ M.notes = {
   orgmode = false,
 }
 
-M.image = {
-  enabled = true,
-  -- kitty, ueberzug
-  backend = "kitty",
-}
-
-M.hover = {
-  -- lewis6991, pretty
-  type = "pretty",
+M.goodies = {
+  image = {
+    enabled = true,
+    -- kitty, ueberzug
+    backend = "kitty",
+  },
+  hover = {
+    -- lewis6991, pretty
+    type = "pretty",
+  },
 }
 
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!

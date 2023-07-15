@@ -1,9 +1,9 @@
-return dots.image.enabled ~= true and {}
+return dots.goodies.image.enabled ~= true and {}
   or {
     {
       "3rd/image.nvim",
       opts = {
-        backend = dots.image.backend,
+        backend = dots.goodies.image.backend,
       },
       event = "VeryLazy",
     },
