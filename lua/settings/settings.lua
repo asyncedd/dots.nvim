@@ -117,6 +117,12 @@ M.notes = {
   orgmode = false,
 }
 
+M.image = {
+  enabled = true,
+  -- kitty, ueberzug
+  backend = "kitty",
+}
+
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
 -- It'll lead to unexpected behavior!
 
