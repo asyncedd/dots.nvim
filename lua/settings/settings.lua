@@ -46,7 +46,6 @@ M.languages = {
 -- You simply add plugins to disable, that's it!
 -- (You might break things so beware)
 M.disabled_plugins = {
-  "nvim-neo-tree/neo-tree.nvim",
   "max397574/better-escape.nvim",
   "ziontee113/deliberate.nvim",
 }
@@ -132,6 +131,11 @@ M.goodies = {
   },
   fun = {
     cellular_automation = true,
+  },
+  tree = {
+    neotree = false,
+    nvim_tree = false,
+    chadtree = false,
   },
 }
 
