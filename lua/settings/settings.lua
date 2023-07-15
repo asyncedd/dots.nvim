@@ -137,6 +137,10 @@ M.goodies = {
     nvim_tree = false,
     chadtree = false,
   },
+  -- Image snippets
+  snippets = {
+    rayso = false,
+  },
 }
 
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
