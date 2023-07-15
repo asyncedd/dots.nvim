@@ -133,7 +133,7 @@ M.goodies = {
     cellular_automation = true,
   },
   tree = {
-    neotree = false,
+    neotree = true,
     nvim_tree = false,
     chadtree = false,
   },
