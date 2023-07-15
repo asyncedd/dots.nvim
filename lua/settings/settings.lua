@@ -130,6 +130,9 @@ M.goodies = {
     -- lewis6991, pretty
     type = "pretty",
   },
+  fun = {
+    cellular_automation = true,
+  },
 }
 
 -- WARNING: DO NOT MODIFY STUFF UNDER THIS!
