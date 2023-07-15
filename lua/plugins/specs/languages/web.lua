@@ -1,4 +1,8 @@
-return (not dots.languages.web or dots.languages.svelte ~= true or dots.languages.typescript ~= true) and {}
+return (
+  (not dots.languages.web or dots.languages.svelte ~= true or dots.languages.typescript ~= true)
+  and not dots.languages.web
+)
+    and {}
   or {
     {
       "nvim-neotest/neotest",
