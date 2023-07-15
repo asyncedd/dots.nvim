@@ -1,4 +1,4 @@
-return (dots.languages.web ~= true or dots.languages.svelte ~= true or dots.languages.typescript ~= true) and {}
+return (not dots.languages.web or dots.languages.svelte ~= true or dots.languages.typescript ~= true) and {}
   or {
     {
       "nvim-neotest/neotest",
@@ -24,7 +24,8 @@ return (dots.languages.web ~= true or dots.languages.svelte ~= true or dots.lang
       "neovim/nvim-lspconfig",
       opts = {
         servers = {
-          emmet_language_server = {},
+          emmet_language_server = dots.languages.web.emmet == "olrtg" and {} or nil,
+          emmet_ls = dots.languages.web.emmet == "aca" and {} or nil,
         },
       },
     },

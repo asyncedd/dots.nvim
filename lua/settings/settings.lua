@@ -32,7 +32,10 @@ M.languages = {
   },
   shell = false,
   python = true,
-  web = true,
+  web = {
+    -- olrtg, aca
+    emmet = "olrtg",
+  },
   c = true,
   astro = false,
   go = false,
