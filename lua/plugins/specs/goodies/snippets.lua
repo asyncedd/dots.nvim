@@ -10,4 +10,11 @@ return not dots.goodies.snippets ~= false and {}
       end,
       enabled = dots.goodies.snippets.rayso,
     },
+    {
+      "ellisonleao/carbon-now.nvim",
+      opts = true,
+      cmd = {
+        "CarbonNow",
+      },
+    },
   }

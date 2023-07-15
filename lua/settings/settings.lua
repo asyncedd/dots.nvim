@@ -140,6 +140,7 @@ M.goodies = {
   -- Image snippets
   snippets = {
     rayso = false,
+    carbonnow = false,
   },
 }
 
