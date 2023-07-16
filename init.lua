@@ -38,12 +38,19 @@ require("settings.autocmds")
 -- vim.cmd("colorscheme catppuccin")
 -- PERF: directly call the colorscheme. (not via `vim.cmd("colorscheme x")`)
 -- lua blocks are expensive as I heard.
--- this actually seems like an unnessearu premature optimization though
+-- this actually seems like an unnesseary premature optimization though
 
 local colorscheme = dots.colorscheme.current
-local std = require("std")
 
-if std.exists_in_array({ "catppuccin", "onedarkpro", "nightfox" }, colorscheme) then
+-- Define a table of colorscheme loaders.
+local colorscheme_loaders = {
+  catppuccin = "catppuccin",
+  onedarkpro = "onedarkpro",
+  nightfox = "nightfox",
+  tokyonight = "tokyonight",
+}
+
+if colorscheme_loaders[colorscheme] then
   -- In Catppuccin, the colorscheme file is a Lua block (via vimscript) that requires the exact same thing.
   -- So, by doing this we can optimize whilst not loosing maintainability.
   --
