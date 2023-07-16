@@ -126,11 +126,11 @@ M.goodies = {
     backend = "kitty",
   },
   hover = {
-    -- lewis6991, pretty
-    type = "pretty",
+    -- lewis6991, pretty, false
+    type = false,
   },
   fun = {
-    cellular_automation = true,
+    cellular_automation = false,
   },
   tree = {
     neotree = true,
