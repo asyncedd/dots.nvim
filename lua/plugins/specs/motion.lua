@@ -80,13 +80,6 @@ return {
         end,
       },
       {
-        "R",
-        function()
-          require("flash").treesitter_search()
-        end,
-        mode = { "n", "x", "o" },
-      },
-      {
         "<CR>",
         function()
           require("flash").jump({ continue = true })
@@ -100,41 +93,6 @@ return {
           require("flash").toggle()
         end,
         desc = "Toggle Flash Search",
-      },
-      {
-        "gm",
-        function()
-          local prev_timeout = vim.opt.timeout
-
-          vim.opt.timeout = false
-
-          require("flash").jump({
-            action = function(match, state)
-              state:hide()
-
-              local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-
-              vim.api.nvim_set_current_win(match.win)
-              vim.api.nvim_win_set_cursor(match.win, match.pos)
-
-              local key = vim.api.nvim_replace_termcodes("<Ignore>" .. "g", true, true, true)
-
-              vim.api.nvim_feedkeys(key, "i", false)
-
-              vim.schedule(function()
-                vim.api.nvim_win_set_cursor(match.win, { row, col })
-                vim.opt.timeout = prev_timeout
-              end)
-            end,
-            search = {
-              max_length = 2,
-            },
-            label = {
-              before = { 0, 2 },
-              after = false,
-            },
-          })
-        end,
       },
     },
   },
