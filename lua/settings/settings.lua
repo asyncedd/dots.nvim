@@ -34,7 +34,7 @@ M.languages = {
   python = true,
   web = {
     -- olrtg, aca
-    emmet = "olrtg",
+    emmet = "aca",
   },
   c = true,
   astro = false,
