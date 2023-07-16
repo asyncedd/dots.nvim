@@ -44,10 +44,10 @@ local colorscheme = dots.colorscheme.current
 
 -- Define a table of colorscheme loaders.
 local colorscheme_loaders = {
-  catppuccin = "catppuccin",
-  onedarkpro = "onedarkpro",
-  nightfox = "nightfox",
-  tokyonight = "tokyonight",
+  "catppuccin",
+  "onedarkpro",
+  "nightfox",
+  "tokyonight",
 }
 
 if colorscheme_loaders[colorscheme] then
