@@ -103,6 +103,9 @@ M.LSP = {
       },
     },
   },
+  null = {
+    enabled = true,
+  },
 }
 
 M.coding = {
