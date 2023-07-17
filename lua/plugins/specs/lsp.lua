@@ -1,7 +1,7 @@
 return not dots.LSP.enabled and {} or {
   {
     "neovim/nvim-lspconfig",
-    opts = dots.LSP.opts,
+    opts = dots.LSP.opts or {},
     config = function(_, opts)
       local M = {}
 
