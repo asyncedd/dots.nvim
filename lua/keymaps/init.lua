@@ -12,9 +12,6 @@ map({ "n", "x", "o" }, "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev
 map({ "n", "o", "x" }, "gl", "$", { desc = "Go to the last character in the line" })
 map({ "n", "o", "x" }, "gh", "0", { desc = "Go to the first character in the line" })
 
--- Super fun keymap wow!
-map({ "n" }, "<C-C>", "ciw", { desc = "Change inside word" })
-
 -- Code action
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Open the current buffer's code actions" })
 
