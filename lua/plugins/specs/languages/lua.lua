@@ -12,7 +12,7 @@ return not (dots.languages.lua or dots.languages.lua.enable) and {} or {
         lua_ls = {}
       },
     },
-    dependencies = dots.languages.lua.LSP.neodev.enabled and {
+    dependencies = dots.languages.lua.LSP.neodev.enable and {
       {
         "folke/neodev.nvim",
         opts = dots.languages.lua.LSP.neodev.opts or {},
