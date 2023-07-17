@@ -8,7 +8,7 @@ M.lazy = {
 }
 
 M.UI = {
-  icons ={
+  icons = {
     LSP = {
       Error = " ",
       Warn = " ",
@@ -62,7 +62,7 @@ M.languages = {
             plugins = false,
           },
         },
-      }
+      },
     },
   },
 }
