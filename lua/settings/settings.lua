@@ -121,7 +121,7 @@ M.notes = {
 
 M.goodies = {
   image = {
-    enabled = true,
+    enabled = false,
     -- kitty, ueberzug
     backend = "kitty",
   },
