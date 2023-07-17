@@ -8,3 +8,5 @@ require("settings.options")
 
 -- Setup the plugins
 require("plugins")
+
+vim.cmd("colorscheme " .. dots.colorscheme.enabled or "habamax")
