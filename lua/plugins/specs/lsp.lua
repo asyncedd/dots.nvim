@@ -1,10 +1,7 @@
 return not dots.LSP.enabled and {} or {
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      servers_to_not_setup = {},
-      servers = {},
-    },
+    opts = dots.LSP.opts,
     config = function(_, opts)
       local M = {}
 

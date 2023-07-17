@@ -41,6 +41,10 @@ M.treesitter = {
 
 M.LSP = {
   enabled = true,
+  opts = {
+    servers_to_not_setup = {},
+    servers = {},
+  },
 }
 
 _G.dots = M
