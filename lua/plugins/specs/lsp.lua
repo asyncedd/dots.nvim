@@ -120,5 +120,9 @@ return not dots.LSP.enabled and {} or {
         end,
       })
     end,
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
   },
 }
