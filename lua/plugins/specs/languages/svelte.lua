@@ -42,4 +42,12 @@ return dots.languages.svelte ~= true and {}
         }
       end,
     },
+    {
+      "mfussenegger/nvim-dap",
+      opts = {
+        adapters = {
+          "js-debug-adapter",
+        },
+      },
+    },
   }
