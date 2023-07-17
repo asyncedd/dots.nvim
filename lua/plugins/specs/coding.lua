@@ -41,6 +41,7 @@ return not dots.coding.enabled and {} or {
                 fallback()
               end
             end, { "i", "s" }),
+            ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
           }),
           formatting = {
             fields = { "abbr", "kind", "menu" },
