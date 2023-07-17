@@ -46,7 +46,7 @@ return dots.languages.typescript ~= true and {}
       "nvim-treesitter/nvim-treesitter",
       opts = function(_, opts)
         if type(opts.ensure_installed) == "table" then
-          vim.list_extend(opts.ensure_installed, { "typescript" })
+          vim.list_extend(opts.ensure_installed, { "typescript", "tsx" })
         end
       end,
     },

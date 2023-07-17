@@ -51,6 +51,7 @@ return {
           rnix = {},
           taplo = {},
           pylsp = {},
+          eslint = {},
         },
         setup = {
           eslint = function()
