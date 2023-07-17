@@ -15,6 +15,8 @@ require("lazy").setup({
 {
   defaults = {
     lazy = dots.lazy.defaults.lazy,
+  },
+  install = {
     colorscheme = { dots.lazy.default_to_current_colorscheme and dots.colorscheme.enabled },
   },
 })
