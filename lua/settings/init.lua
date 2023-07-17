@@ -15,6 +15,9 @@ M.languages = {
       luadoc = false,
       patterns = true,
     },
+    LSP = {
+      enable = true,
+    },
   },
 }
 

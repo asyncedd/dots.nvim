@@ -1,7 +1,13 @@
 return not dots.LSP.enabled and {} or {
   {
     "neovim/nvim-lspconfig",
-    opts = dots.LSP.opts or {},
+    opts = {
+      servers_to_not_setup = {},
+      servers = {
+        lua_ls = {},
+      },
+      setup = {},
+    },
     config = function(_, opts)
       local M = {}
 
@@ -17,55 +23,51 @@ return not dots.LSP.enabled and {} or {
         })
       end
 
-      M.setup = function(opts)
-        local servers_to_not_setup = opts.servers_to_not_setup or {}
+      M.setup = function()
+        local servers_to_not_setup = opts.servers_to_not_setup
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
 
         capabilities = vim.tbl_deep_extend("force", capabilities, {
           offsetEncoding = { "utf-16" },
-          general = {
-            positionEncodings = { "utf-16" },
-          },
-        })
-
-        capabilities.textDocument = {
-          completion = {
-            completionItem = {
-              documentationFormat = { "markdown", "plaintext" },
-              snippetSupport = true,
-              preselectSupport = true,
-              insertReplaceSupport = true,
-              labelDetailsSupport = true,
-              deprecatedSupport = true,
-              commitCharactersSupport = true,
-              tagSupport = { valueSet = { 1 } },
-              resolveSupport = {
-                properties = {
-                  "documentation",
-                  "detail",
-                  "additionalTextEdits",
+          textDocument = {
+            completion = {
+              completionItem = {
+                documentationFormat = { "markdown", "plaintext" },
+                snippetSupport = true,
+                preselectSupport = true,
+                insertReplaceSupport = true,
+                labelDetailsSupport = true,
+                deprecatedSupport = true,
+                commitCharactersSupport = true,
+                tagSupport = { valueSet = { 1 } },
+                resolveSupport = {
+                  properties = {
+                    "documentation",
+                    "detail",
+                    "additionalTextEdits",
+                  },
                 },
               },
             },
+            foldingRange = {
+              dynamicRegistration = false,
+              lineFoldingOnly = true,
+            },
           },
-          foldingRange = {
-            dynamicRegistration = false,
-            lineFoldingOnly = true,
-          },
-        }
+        })
 
         local checkIfExists = function(val, arr)
           local y = false
-          for i in ipairs(arr) do
-            if arr[i] == val and y ~= true then
+          for i, v in ipairs(arr) do
+            if v == val and y ~= true then
               y = true
             end
           end
           return y
         end
 
-        local servers = opts.servers or {}
+        local servers = opts.servers
 
         local function setup(server)
           if not checkIfExists(server, servers_to_not_setup) then
@@ -86,14 +88,15 @@ return not dots.LSP.enabled and {} or {
             M.on_attach()
           end
         end
-        -- get all the servers that are available thourgh mason-lspconfig
+
+        -- get all the servers that are available through mason-lspconfig
         local have_mason, mlsp = pcall(require, "mason-lspconfig")
         local all_mslp_servers = {}
         if have_mason then
           all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
         end
 
-        local ensure_installed = {} ---@type string[]
+        local ensure_installed = {}
 
         for server, server_opts in pairs(servers) do
           server_opts = server_opts == true and {} or server_opts
@@ -109,20 +112,28 @@ return not dots.LSP.enabled and {} or {
         end
       end
 
-      return M
+      M.setup()
     end,
     init = function()
       vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
         callback = function()
           vim.schedule(function()
             require("lazy").load({ plugins = "nvim-lspconfig" })
+            vim.cmd("silent! do FileType")
           end)
         end,
       })
     end,
     dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      {
+        "williamboman/mason-lspconfig.nvim",
+        dependencies = {
+          {
+            "williamboman/mason.nvim",
+            opts = true,
+          },
+        },
+      },
     },
   },
 }
