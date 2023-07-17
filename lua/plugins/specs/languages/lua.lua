@@ -42,11 +42,11 @@ return not (dots.languages.lua or dots.languages.lua.enable) and {} or {
         },
       },
     },
-  },
-  dependencies = dots.languages.lua.LSP.neodev.enable and {
-    {
-      "folke/neodev.nvim",
-      opts = dots.languages.lua.LSP.neodev.opts or {},
+    dependencies = dots.languages.lua.LSP.neodev.enable and {
+      {
+        "folke/neodev.nvim",
+        opts = dots.languages.lua.LSP.neodev.opts or {},
+      },
     },
   },
 }
