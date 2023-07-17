@@ -16,9 +16,9 @@ return not dots.coding.enabled and {}
             },
             sources = {
               dots.coding.cmp.sources.luasnip and { name = "luasnip" },
+              dots.coding.cmp.sources.lsp and { name = "nvim_lsp" },
               dots.coding.cmp.sources.buffer and { name = "buffer" },
               dots.coding.cmp.sources.path and { name = "path" },
-              dots.coding.cmp.sources.lsp and { name = "nvim_lsp" },
             },
             mapping = cmp.mapping.preset.insert({
               ["<Tab>"] = cmp.mapping(function(fallback)
