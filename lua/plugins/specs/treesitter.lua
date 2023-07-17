@@ -5,11 +5,11 @@ return not dots.treesitter and {} or {
     opts = {
       ensure_installed = {},
       highlight = {
-        enabled = true,
+        enable = true,
       }
     },
     config = function(_, opts)
-      require("nvim-treesitter").setup(opts)
+      require("nvim-treesitter.configs").setup(opts)
     end,
     event = {
       "BufRead", "BufWinEnter", "BufNewFile"
