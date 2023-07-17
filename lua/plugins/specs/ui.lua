@@ -13,4 +13,11 @@ return {
     end,
     name = "catppuccin",
   },
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      vim.notify = require("notify")
+    end,
+    event = "UIEnter",
+  },
 }

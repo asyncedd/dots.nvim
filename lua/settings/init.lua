@@ -8,6 +8,9 @@ M.lazy = {
 }
 
 M.UI = {
+  notify = {
+    enabled = true,
+  },
   icons = {
     LSP = {
       Error = " ",
