@@ -11,6 +11,9 @@ M.UI = {
   notify = {
     enabled = true,
   },
+  noice = {
+    enabled = true,
+  },
   icons = {
     LSP = {
       Error = " ",
