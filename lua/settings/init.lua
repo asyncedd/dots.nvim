@@ -90,10 +90,18 @@ M.treesitter = {
 
 M.LSP = {
   enabled = true,
-  opts = {
-    servers_to_not_setup = {},
-    servers = {},
-    setup = {},
+  config = {
+    enabled = true,
+    opts = {
+      servers_to_not_setup = {},
+      servers = {},
+      setup = {},
+    },
+    specs = {
+      {
+        "neovim/nvim-lspconfig",
+      },
+    },
   },
 }
 
