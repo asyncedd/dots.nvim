@@ -39,4 +39,8 @@ M.treesitter = {
   },
 }
 
+M.LSP = {
+  enabled = true,
+}
+
 _G.dots = M
