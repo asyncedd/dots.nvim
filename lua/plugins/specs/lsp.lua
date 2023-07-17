@@ -18,7 +18,7 @@ return not dots.LSP.enabled and {} or {
       end
 
       M.setup = function(opts)
-        local servers_to_not_setup = opts.servers_to_not_setup
+        local servers_to_not_setup = opts.servers_to_not_setup or {}
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -65,7 +65,7 @@ return not dots.LSP.enabled and {} or {
           return y
         end
 
-        local servers = opts.servers
+        local servers = opts.servers or {}
 
         local function setup(server)
           if not checkIfExists(server, servers_to_not_setup) then
