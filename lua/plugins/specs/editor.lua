@@ -40,23 +40,29 @@ return not dots.editor.enabled and {}
         )
       end,
     },
-    {
-      "chrisgrieser/nvim-various-textobjs",
-      opts = {},
-      event = "VeryLazy",
-      config = function(_, opts)
-        require("various-textobjs").setup(opts)
-        local keymap = vim.keymap.set
+    dots.editor.textobjs.enabled
+      and {
+        "chrisgrieser/nvim-various-textobjs",
+        opts = {},
+        event = "VeryLazy",
+        config = function(_, opts)
+          require("various-textobjs").setup(opts)
+          local keymap = vim.keymap.set
 
-        keymap({ "x", "o" }, "iW", "<cmd>lua require('various-textobjs').subword(true)<CR>", { desc = "inner subword" })
-        keymap(
-          { "x", "o" },
-          "aW",
-          "<cmd>lua require('various-textobjs').subword(false)<CR>",
-          { desc = "outer subword" }
-        )
-      end,
-    },
+          keymap(
+            { "x", "o" },
+            "iW",
+            "<cmd>lua require('various-textobjs').subword(true)<CR>",
+            { desc = "inner subword" }
+          )
+          keymap(
+            { "x", "o" },
+            "aW",
+            "<cmd>lua require('various-textobjs').subword(false)<CR>",
+            { desc = "outer subword" }
+          )
+        end,
+      },
     dots.editor.surround.enabled and {
       "kylechui/nvim-surround",
       opts = true,

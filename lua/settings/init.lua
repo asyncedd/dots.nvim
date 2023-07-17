@@ -131,6 +131,9 @@ M.editor = {
   spider = {
     enabled = true,
   },
+  textobjs = {
+    enabled = true,
+  },
   surround = {
     enabled = true,
   },
