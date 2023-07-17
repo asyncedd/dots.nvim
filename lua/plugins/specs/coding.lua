@@ -5,6 +5,8 @@ return not dots.coding.enabled and {} or {
       opts = function(_, opts)
         local luasnip = require("luasnip")
         local cmp = require("cmp")
+        local kind_icons = dots.UI.icons
+
         return {
           snippet = {
             expand = dots.coding.cmp.snippet or function(args)
@@ -40,6 +42,16 @@ return not dots.coding.enabled and {} or {
               end
             end, { "i", "s" }),
           }),
+          formatting = {
+            fields = { "abbr", "kind", "menu" },
+            format = function(_, vim_item)
+              local item = vim_item.kind
+              vim_item.kind = string.format("%s %s", kind_icons[item], item)
+              vim_item.kind = " " .. vim_item.kind .. " "
+
+              return vim_item
+            end,
+          },
         }
       end,
       event = "InsertEnter",
