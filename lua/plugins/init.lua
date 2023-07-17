@@ -11,12 +11,23 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "plugins.specs" },
   { import = "plugins.specs.languages" },
-},
-{
+}, {
   defaults = {
     lazy = dots.lazy.defaults.lazy,
   },
   install = {
     colorscheme = { dots.lazy.default_to_current_colorscheme and dots.colorscheme.enabled },
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
   },
 })
