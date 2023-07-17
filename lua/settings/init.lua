@@ -107,6 +107,7 @@ M.coding = {
       path = true,
       lsp = true,
     },
+    ghost_text = true,
     snippet = function(args)
       require("luasnip").lsp_expand(args.body)
     end,

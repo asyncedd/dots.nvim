@@ -52,6 +52,9 @@ return not dots.coding.enabled and {} or {
               return vim_item
             end,
           },
+          experimental = {
+            ghost_text = dots.coding.cmp.ghost_text,
+          },
         }
       end,
       event = "InsertEnter",
