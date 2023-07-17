@@ -9,60 +9,81 @@ return not dots.editor.enabled and {}
       config = function(_, opts)
         require("spider").setup(opts)
         local keymap = vim.keymap.set
+        local maps = {
+          { { "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" } },
+          { { "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" } },
+          { { "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" } },
+          { { "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" } },
+          {
+            { "n", "o", "x" },
+            "W",
+            "<cmd>lua require('spider').motion('w', { skipInsignificantPunctuation = true })<CR>",
+            { desc = "Spider-W" },
+          },
+          {
+            { "n", "o", "x" },
+            "E",
+            "<cmd>lua require('spider').motion('e', { skipInsignificantPunctuation = true })<CR>",
+            { desc = "Spider-E" },
+          },
+          {
+            { "n", "o", "x" },
+            "B",
+            "<cmd>lua require('spider').motion('b', { skipInsignificantPunctuation = true } )<CR>",
+            { desc = "Spider-B" },
+          },
+          {
+            { "n", "o", "x" },
+            "gB",
+            "<cmd>lua require('spider').motion('ge', { skipInsignificantPunctuation = true })<CR>",
+            { desc = "Spider-W" },
+          },
+        }
 
-        keymap({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
-        keymap({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
-        keymap({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
-        keymap({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
-        keymap(
-          { "n", "o", "x" },
-          "W",
-          "<cmd>lua require('spider').motion('w', { skipInsignificantPunctuation = true })<CR>",
-          { desc = "Spider-e" }
-        )
-        keymap(
-          { "n", "o", "x" },
-          "E",
-          "<cmd>lua require('spider').motion('e', { skipInsignificantPunctuation = true })<CR>",
-          { desc = "Spider-e" }
-        )
-        keymap(
-          { "n", "o", "x" },
-          "B",
-          "<cmd>lua require('spider').motion('B', { skipInsignificantPunctuation = true })<CR>",
-          { desc = "Spider-b" }
-        )
-        keymap(
-          { "n", "o", "x" },
-          "gE",
-          "<cmd>lua require('spider').motion('ge', { skipInsignificantPunctuation = true })<CR>",
-          { desc = "Spider-ge" }
-        )
+        for i, _ in ipairs(maps) do
+          keymap(maps[i][1], maps[i][2], maps[i][3], maps[i][4])
+        end
       end,
     },
-    dots.editor.textobjs.enabled
-      and {
-        "chrisgrieser/nvim-various-textobjs",
-        opts = {},
-        event = "VeryLazy",
-        config = function(_, opts)
-          require("various-textobjs").setup(opts)
-          local keymap = vim.keymap.set
-
-          keymap(
+    dots.editor.textobjs.enabled and {
+      "chrisgrieser/nvim-various-textobjs",
+      opts = {},
+      event = "VeryLazy",
+      config = function(_, opts)
+        require("various-textobjs").setup(opts)
+        local keymap = vim.keymap.set
+        local maps = {
+          {
+            { "x", "o" },
+            "iw",
+            "<cmd>lua require('various-textobjs').subword(true)<cr>",
+            { desc = "inner subword" },
+          },
+          {
+            { "x", "o" },
+            "aw",
+            "<cmd>lua require('various-textobjs').subword(false)<cr>",
+            { desc = "outer subword" },
+          },
+          {
             { "x", "o" },
             "iW",
-            "<cmd>lua require('various-textobjs').subword(true)<CR>",
-            { desc = "inner subword" }
-          )
-          keymap(
+            "<cmd>lua require('various-textobjs').subword(true)<cr>",
+            { desc = "inner subword" },
+          },
+          {
             { "x", "o" },
             "aW",
-            "<cmd>lua require('various-textobjs').subword(false)<CR>",
-            { desc = "outer subword" }
-          )
-        end,
-      },
+            "<cmd>lua require('various-textobjs').subword(false)<cr>",
+            { desc = "outer subword" },
+          },
+        }
+
+        for i, _ in ipairs(maps) do
+          keymap(maps[i][1], maps[i][2], maps[i][3], maps[i][4])
+        end
+      end,
+    },
     dots.editor.surround.enabled and {
       "kylechui/nvim-surround",
       opts = true,
