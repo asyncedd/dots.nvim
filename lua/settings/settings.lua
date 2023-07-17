@@ -85,6 +85,12 @@ M.UI = {
   statusline = {
     -- heirline, mini, lualine
     type = "heirline",
+    heirline = {
+      dividers = {
+        "",
+        "",
+      },
+    },
   },
 }
 

@@ -5,6 +5,9 @@ local Normal = string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true
 
 local M = {}
 
+local D1 = dots.UI.statusline.heirline.dividers[1]
+local D2 = dots.UI.statusline.heirline.dividers[2]
+
 M.colors = {
   bright_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.3),
   Normal = utils.get_highlight("Normal").fg,
@@ -58,7 +61,7 @@ M.ViMode = {
   -- Re-evaluate the component only on ModeChanged event!
   -- Also allows the statusline to be re-evaluated when entering operator-pending mode
   {
-    provider = "",
+    provider = D1,
     hl = function(self)
       return {
         fg = self:mode_color(),
@@ -136,7 +139,7 @@ M.ViMode = {
     end,
   },
   {
-    provider = "",
+    provider = D2,
     hl = function(self)
       return {
         fg = self:mode_color(),
@@ -194,7 +197,7 @@ M.ViMode = {
     },
   },
   {
-    provider = "",
+    provider = D2,
     hl = function()
       return {
         fg = "bright_bg",
@@ -269,7 +272,7 @@ M.FileNameBlock = utils.insert(
   utils.insert(M.FileName), -- a new table where FileName is a child of FileNameModifier
   M.FileFlags,
   {
-    provider = "",
+    provider = D2,
     hl = function(self)
       return {
         fg = self:icon_color(),
@@ -283,7 +286,7 @@ M.FileNameBlock = utils.insert(
 
 M.FileNameBlock = {
   {
-    provider = "",
+    provider = D1,
     hl = function(self)
       return {
         fg = self:icon_color(),
@@ -292,7 +295,7 @@ M.FileNameBlock = {
   },
   M.FileNameBlock,
   {
-    provider = "",
+    provider = D2,
     hl = function(self)
       return {
         fg = U.lighten(self:icon_color(), 0.7, Normal),
@@ -352,7 +355,7 @@ M.Diagnostics = {
 
   {
     condition = conditions.has_diagnostics,
-    provider = "",
+    provider = D1,
     hl = function(self)
       return {
         fg = self.dark_color,
@@ -432,7 +435,7 @@ M.LSP = {
   end or conditions.has_diagnostics,
   M.Diagnostics,
   {
-    provider = "",
+    provider = D1,
     hl = function(self)
       local bg
       if self.errors >= 1 or self.warnings >= 1 or self.info >= 1 or self.hints >= 1 then
@@ -446,7 +449,7 @@ M.LSP = {
   },
   M.LSPActive,
   {
-    provider = "",
+    provider = D2,
     hl = function(self)
       return {
         fg = self:icon_color(),
@@ -466,7 +469,7 @@ M.Git = {
   hl = { fg = "orange" },
 
   {
-    provider = "",
+    provider = D1,
     hl = { fg = "orange" },
   },
   {
@@ -481,7 +484,7 @@ M.Git = {
     },
   },
   {
-    provider = "",
+    provider = D2,
     hl = function(self)
       local bg
 
@@ -538,7 +541,7 @@ M.Git = {
     condition = function(self)
       return self.has_changes
     end,
-    provider = "",
+    provider = D2,
     hl = {
       fg = "bright_bg",
     },
@@ -561,7 +564,7 @@ M.Scrollbar = {
     self.scroll_color = fg
   end,
   {
-    provider = "",
+    provider = D1,
     hl = function(self)
       return {
         fg = self.scroll_color,
@@ -620,7 +623,7 @@ M.Scrollbar = {
     end,
   },
   {
-    provider = "",
+    provider = D2,
     hl = function(self)
       return {
         fg = self.scroll_color,
