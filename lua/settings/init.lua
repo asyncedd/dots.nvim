@@ -131,6 +131,9 @@ M.editor = {
   spider = {
     enabled = true,
   },
+  surround = {
+    enabled = true,
+  },
 }
 
 _G.dots = M

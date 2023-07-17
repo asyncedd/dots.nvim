@@ -57,4 +57,9 @@ return not dots.editor.enabled and {}
         )
       end,
     },
+    dots.editor.surround.enabled and {
+      "kylechui/nvim-surround",
+      opts = true,
+      evnet = "VeryLazy",
+    },
   }
