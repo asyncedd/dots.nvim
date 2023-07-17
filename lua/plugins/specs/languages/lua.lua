@@ -49,4 +49,16 @@ return not (dots.languages.lua or dots.languages.lua.enable) and {} or {
       },
     },
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    opts = {
+      sources = {
+        stylua = {
+          condition = function(utils)
+            return utils.root_has_file({ "stylua.toml" })
+          end,
+        },
+      },
+    },
+  },
 }
