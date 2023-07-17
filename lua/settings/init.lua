@@ -47,6 +47,7 @@ M.LSP = {
   opts = {
     servers_to_not_setup = {},
     servers = {},
+    setup = {},
   },
 }
 
