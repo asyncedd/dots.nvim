@@ -34,6 +34,10 @@ return {
         },
       }
     end,
+    config = function(_, opts)
+      require("plugins.configs.motion.flash")
+      require("flash").setup(opts)
+    end,
     keys = {
       {
         "s",
