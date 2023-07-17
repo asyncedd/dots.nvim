@@ -4,6 +4,7 @@ return not dots.coding.enabled and {} or {
       "hrsh7th/nvim-cmp",
       opts = function(_, opts)
         local luasnip = require("luasnip")
+        local cmp = require("cmp")
         return {
           snippet = {
             expand = dots.coding.cmp.snippet or function(args)
@@ -16,6 +17,29 @@ return not dots.coding.enabled and {} or {
             dots.coding.cmp.sources.path and { name = "path" },
             dots.coding.cmp.sources.lsp and { name = "nvim_lsp" },
           },
+          mapping = cmp.mapping.preset.insert({
+            ["<Tab>"] = cmp.mapping(function(fallback)
+              if cmp.visible() then
+                cmp.select_next_item()
+                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
+                -- they way you will only jump inside the snippet region
+              elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+              else
+                fallback()
+              end
+            end, { "i", "s" }),
+
+            ["<S-Tab>"] = cmp.mapping(function(fallback)
+              if cmp.visible() then
+                cmp.select_prev_item()
+              elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+              else
+                fallback()
+              end
+            end, { "i", "s" }),
+          }),
         }
       end,
       event = "InsertEnter",
