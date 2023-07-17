@@ -67,7 +67,6 @@ return not dots.coding.enabled and {}
           dots.coding.cmp.sources.lsp and "hrsh7th/cmp-nvim-lsp",
         },
       },
-      dots.coding.cmp.specs,
     },
     dots.coding.luasnip.enabled and {
       {
@@ -81,6 +80,5 @@ return not dots.coding.enabled and {}
           require("luasnip").setup(opts)
         end,
       },
-      dots.coding.luasnip.enabled and dots.coding.luasnip.specs,
     },
   }

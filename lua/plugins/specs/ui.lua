@@ -1,5 +1,4 @@
 return {
-  dots.colorscheme.specs,
   {
     "catppuccin/nvim",
     opts = function(_, opts)

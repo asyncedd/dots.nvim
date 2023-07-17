@@ -1,9 +1,9 @@
 return not dots.treesitter and {}
   or {
-    dots.treesitter.specs,
     {
       "nvim-treesitter/nvim-treesitter",
       opts = {
+        auto_install = true,
         ensure_installed = {},
         highlight = {
           enable = true,

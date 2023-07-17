@@ -136,7 +136,6 @@ return not dots.LSP.enabled and {}
           },
         },
       },
-      dots.LSP.config.specs,
     },
     dots.LSP.null.enabled and {
       "jose-elias-alvarez/null-ls.nvim",

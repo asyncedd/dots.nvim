@@ -69,23 +69,11 @@ M.languages = {
 
 M.colorscheme = {
   enabled = "catppuccin",
-  specs = {
-    {
-      "catppuccin/nvim",
-      name = "catppuccin",
-    },
-  },
 }
 
 M.treesitter = {
   enabled = true,
   provider = "nvim-treesitter",
-  specs = {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      auto_install = true,
-    },
-  },
 }
 
 M.LSP = {
@@ -96,11 +84,6 @@ M.LSP = {
       servers_to_not_setup = {},
       servers = {},
       setup = {},
-    },
-    specs = {
-      {
-        "neovim/nvim-lspconfig",
-      },
     },
   },
   null = {
@@ -122,21 +105,11 @@ M.coding = {
     snippet = function(args)
       require("luasnip").lsp_expand(args.body)
     end,
-    specs = {
-      {
-        "hrsh7th/nvim-cmp",
-      },
-    },
   },
   luasnip = {
     enabled = true,
     snippets = {
       friendly_snippets = true,
-    },
-    specs = {
-      {
-        "L3MON4D3/LuaSnip",
-      },
     },
   },
 }
