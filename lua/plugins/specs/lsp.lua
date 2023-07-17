@@ -123,6 +123,7 @@ return {
           prettier = {
             extra_filetypes = { "svelte", "toml" },
           },
+          gitsigns = {},
         },
       }
     end,
