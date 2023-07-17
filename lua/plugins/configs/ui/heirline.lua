@@ -57,13 +57,6 @@ M.Align = { provider = "%=" }
 M.ViMode = {
   -- Re-evaluate the component only on ModeChanged event!
   -- Also allows the statusline to be re-evaluated when entering operator-pending mode
-  update = {
-    "ModeChanged",
-    pattern = "*:*",
-    callback = vim.schedule_wrap(function()
-      vim.cmd("redrawstatus")
-    end),
-  },
   {
     provider = "",
     hl = function(self)
@@ -71,11 +64,26 @@ M.ViMode = {
         fg = self:mode_color(),
       }
     end,
+    update = {
+      "ModeChanged",
+      pattern = "*:*",
+      callback = vim.schedule_wrap(function()
+        vim.cmd("redrawstatus")
+      end),
+    },
   },
   {
     init = function(self)
       self.mode = vim.fn.mode(1)
     end,
+    update = {
+      "ModeChanged",
+      pattern = "*:*",
+      callback = vim.schedule_wrap(function()
+        vim.cmd("redrawstatus")
+      end),
+    },
+
     static = {
       mode_names = {
         -- change the strings if you like it vvvvverbose!
@@ -135,6 +143,13 @@ M.ViMode = {
         bg = "bright_bg",
       }
     end,
+    update = {
+      "ModeChanged",
+      pattern = "*:*",
+      callback = vim.schedule_wrap(function()
+        vim.cmd("redrawstatus")
+      end),
+    },
   },
   {
     condition = function()
@@ -150,16 +165,12 @@ M.ViMode = {
       return vim.fn.reg_recording() ~= "" and vim.o.cmdheight == 0
     end,
     provider = " ",
-    hl = { fg = "orange", bg = "bright_bg", bold = true },
+    hl = { fg = "orange", bold = true, bg = "bright_bg" },
     utils.surround({ "[", "]" }, nil, {
       provider = function()
         return vim.fn.reg_recording()
       end,
-      hl = {
-        fg = "green",
-        bold = true,
-        bg = "bright_bg",
-      },
+      hl = { fg = "green", bold = true },
     }),
     update = {
       "RecordingEnter",
@@ -174,6 +185,13 @@ M.ViMode = {
         bg = "bright_bg",
       }
     end,
+    update = {
+      "ModeChanged",
+      pattern = "*:*",
+      callback = vim.schedule_wrap(function()
+        vim.cmd("redrawstatus")
+      end),
+    },
   },
   {
     provider = "",
