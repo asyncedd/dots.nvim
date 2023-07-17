@@ -7,6 +7,7 @@ return {
         custom_highlights = function(C)
           return {
             ["@variable"] = { fg = C.flamingo },
+            Pmenu = { bg = C.mantle },
           }
         end,
       }, opts)
