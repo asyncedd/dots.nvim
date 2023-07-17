@@ -71,6 +71,14 @@ return not dots.coding.enabled and {} or {
   dots.coding.luasnip.enabled and {
     {
       "L3MON4D3/LuaSnip",
+      opts = {},
+      dependencies = {
+        dots.coding.luasnip.snippets.friendly_snippets and "rafamadriz/friendly-snippets",
+      },
+      config = function(_, opts)
+        require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip").setup(opts)
+      end,
     },
     dots.coding.luasnip.enabled and dots.coding.luasnip.specs,
   },

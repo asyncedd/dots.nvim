@@ -119,6 +119,9 @@ M.coding = {
   },
   luasnip = {
     enabled = true,
+    snippets = {
+      friendly_snippets = true,
+    },
     specs = {
       {
         "L3MON4D3/LuaSnip",
