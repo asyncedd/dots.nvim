@@ -17,6 +17,14 @@ M.languages = {
     },
     LSP = {
       enable = true,
+      neodev = {
+        enable = true,
+        opts = {
+          library = {
+            plugins = false,
+          },
+        },
+      }
     },
   },
 }
