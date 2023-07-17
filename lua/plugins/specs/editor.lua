@@ -1,6 +1,6 @@
 return not dots.editor.enabled and {}
   or {
-    {
+    dots.editor.spider.enabled and {
       "chrisgrieser/nvim-spider",
       opts = {
         skipInsignificantPunctuation = false,
