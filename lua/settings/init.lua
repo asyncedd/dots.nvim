@@ -115,6 +115,9 @@ M.coding = {
   ultimate_autopairs = {
     enabled = true,
   },
+  comment = {
+    enabled = true,
+  },
 }
 
 _G.dots = M

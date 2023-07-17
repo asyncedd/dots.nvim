@@ -95,4 +95,9 @@ return not dots.coding.enabled and {}
       },
       event = "InsertEnter",
     },
+    dots.coding.comment.enabled and {
+      "numToStr/Comment.nvim",
+      opts = true,
+      event = "VeryLazy",
+    },
   }
