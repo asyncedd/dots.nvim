@@ -126,4 +126,11 @@ M.coding = {
   },
 }
 
+M.editor = {
+  enabled = true,
+  spider = {
+    enabled = true,
+  },
+}
+
 _G.dots = M
