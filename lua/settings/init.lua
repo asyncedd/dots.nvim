@@ -12,6 +12,7 @@ M.colorscheme = {
   specs = {
     {
       "catppuccin/nvim",
+      name = "catppuccin",
     },
   },
 }

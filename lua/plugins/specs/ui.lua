@@ -2,7 +2,6 @@ return {
   dots.colorscheme.specs,
   {
     "catppuccin/nvim",
-    optional = true,
     opts = function(_, opts)
       return vim.tbl_deep_extend("force", {
         custom_highlights = function(C)
