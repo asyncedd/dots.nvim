@@ -7,3 +7,12 @@ if not vim.uv.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  { import = "plugins.specs" },
+},
+{
+  defaults = {
+    lazy = true,
+  },
+})
