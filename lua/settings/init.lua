@@ -70,4 +70,33 @@ M.LSP = {
   },
 }
 
+M.coding = {
+  enabled = true,
+  cmp = {
+    enabled = true,
+    sources = {
+      luasnip = true,
+      buffer = true,
+      path = true,
+      lsp = true,
+    },
+    snippet = function(args)
+      require("luasnip").lsp_expand(args.body)
+    end,
+    specs = {
+      {
+        "hrsh7th/nvim-cmp",
+      },
+    },
+  },
+  luasnip = {
+    enabled = true,
+    specs = {
+      {
+        "L3MON4D3/LuaSnip",
+      },
+    },
+  },
+}
+
 _G.dots = M
