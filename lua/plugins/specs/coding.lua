@@ -1,3 +1,10 @@
+local sources = dots.coding.cmp.sources
+local ret = {}
+
+for i, _ in ipairs(sources) do
+  table.insert(ret, sources[i].source)
+end
+
 return not dots.coding.enabled and {}
   or {
     dots.coding.cmp.enabled and {
@@ -7,6 +14,10 @@ return not dots.coding.enabled and {}
           local luasnip = require("luasnip")
           local cmp = require("cmp")
           local kind_icons = dots.UI.icons
+          local s = {}
+          for i, _ in ipairs(sources) do
+            table.insert(s, { name = sources[i].name })
+          end
 
           return {
             snippet = {
@@ -14,12 +25,7 @@ return not dots.coding.enabled and {}
                 luasnip.lsp_expand(args.body)
               end,
             },
-            sources = {
-              dots.coding.cmp.sources.luasnip and { name = "luasnip" },
-              dots.coding.cmp.sources.lsp and { name = "nvim_lsp" },
-              dots.coding.cmp.sources.buffer and { name = "buffer" },
-              dots.coding.cmp.sources.path and { name = "path" },
-            },
+            sources = s,
             mapping = cmp.mapping.preset.insert({
               ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
@@ -60,12 +66,7 @@ return not dots.coding.enabled and {}
           }
         end,
         event = "InsertEnter",
-        dependencies = {
-          dots.coding.cmp.sources.luasnip and "saadparwaiz1/cmp_luasnip",
-          dots.coding.cmp.sources.buffer and "hrsh7th/cmp-buffer",
-          dots.coding.cmp.sources.path and "hrsh7th/cmp-path",
-          dots.coding.cmp.sources.lsp and "hrsh7th/cmp-nvim-lsp",
-        },
+        dependencies = ret,
       },
     },
     dots.coding.luasnip.enabled and {

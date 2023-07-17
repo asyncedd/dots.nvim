@@ -96,10 +96,10 @@ M.coding = {
   cmp = {
     enabled = true,
     sources = {
-      luasnip = true,
-      buffer = true,
-      path = true,
-      lsp = true,
+      { name = "luasnip", source = "saadparwaiz1/cmp_luasnip" },
+      { name = "nvim_lsp", source = "hrsh7th/cmp-nvim-lsp" },
+      { name = "buffer", source = "hrsh7th/cmp-buffer" },
+      { name = "path", source = "hrsh7th/cmp-path" },
     },
     ghost_text = true,
     snippet = function(args)
