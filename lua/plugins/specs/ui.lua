@@ -238,15 +238,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "edluffy/specs.nvim",
-    opts = {
-      popup = {
-        winhl = "Cursor",
-      },
-    },
-    event = "VeryLazy",
-  },
-  {
     "NvChad/nvim-colorizer.lua",
     opts = {
       user_default_options = {
