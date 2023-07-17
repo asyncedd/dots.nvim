@@ -7,6 +7,17 @@ M.lazy = {
   default_to_current_colorscheme = true,
 }
 
+M.UI = {
+  icons ={
+    LSP = {
+      Error = " ",
+      Warn = " ",
+      Hint = "󱧡 ",
+      Info = " ",
+    }
+  }
+}
+
 M.languages = {
   lua = {
     enable = true,
