@@ -112,6 +112,9 @@ M.coding = {
       friendly_snippets = true,
     },
   },
+  ultimate_autopairs = {
+    enabled = true,
+  },
 }
 
 _G.dots = M

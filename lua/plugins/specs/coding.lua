@@ -81,4 +81,17 @@ return not dots.coding.enabled and {}
         end,
       },
     },
+    dots.coding.ultimate_autopairs and {
+      "altermo/ultimate-autopair.nvim",
+      opts = {
+        space2 = {
+          enable = true,
+          multi = true,
+        },
+        bs = {
+          indent_ignore = true,
+        },
+      },
+      event = "InsertEnter",
+    },
   }
