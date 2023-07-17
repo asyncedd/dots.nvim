@@ -46,4 +46,10 @@ return dots.languages.c ~= true and {}
         },
       },
     },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        table.insert(opts.ensure_installed, { "c", "cpp", "objc", "cuda", "proto" })
+      end,
+    },
   }
