@@ -11,4 +11,12 @@ return not dots.languages.svelte.enable and {}
         })
       end,
     },
+    {
+      "neovim/nvim-lspconfig",
+      opts = {
+        servers = {
+          svelte = dots.languages.svelte.LSP.enable and {} or nil,
+        },
+      },
+    },
   }
