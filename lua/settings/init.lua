@@ -161,4 +161,11 @@ M.editor = {
   },
 }
 
+M.tools = {
+  enabled = true,
+  telescope = {
+    enabled = true,
+  },
+}
+
 _G.dots = M

@@ -8,6 +8,9 @@ return {
           Pmenu = { bg = C.mantle },
         }
       end,
+      integrations = {
+        telescope = { style = "nvchad" },
+      },
     },
     name = "catppuccin",
   },
