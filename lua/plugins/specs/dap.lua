@@ -158,4 +158,11 @@ return not dots.DAP.enabled and {}
         },
       },
     },
+    {
+      "jay-babu/mason-nvim-dap.nvim",
+      opts = {
+        handlers = {},
+      },
+      event = "VeryLazy",
+    },
   }
