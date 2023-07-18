@@ -559,4 +559,32 @@ return {
     },
     event = "VeryLazy",
   },
+  {
+    "echasnovski/mini.indentscope",
+    opts = {
+      symbol = "│",
+      options = { try_as_border = true },
+    },
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "help",
+          "terminal",
+          "lazy",
+          "lspinfo",
+          "TelescopePrompt",
+          "TelescopeResults",
+          "mason",
+          "lazyterm",
+          "toggleterm",
+          "noice",
+          "",
+        },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+    end,
+    event = "VeryLazy",
+  },
 }
