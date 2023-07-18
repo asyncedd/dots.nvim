@@ -106,6 +106,11 @@ return not dots.LSP.enabled and {}
 
           M.setup()
           vim.cmd("silent! do FileType")
+          vim.api.nvim_create_autocmd("WinEnter", {
+            callback = function()
+              vim.cmd("silent! do FileType")
+            end,
+          })
         end,
         dependencies = {
           {
@@ -221,6 +226,12 @@ return not dots.LSP.enabled and {}
           end,
         })
         vim.cmd("silent! do FileType")
+        vim.api.nvim_create_autocmd("WinEnter", {
+          callback = function()
+            require("null-ls.state").register_conditional_sources()
+            vim.cmd("silent! do FileType")
+          end,
+        })
       end,
       dependencies = "nvim-lua/plenary.nvim",
     },
