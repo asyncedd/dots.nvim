@@ -1,5 +1,4 @@
 vim.api.nvim_create_autocmd("BufReadPost", {
-  group = augroup("last_loc"),
   callback = function()
     local exclude = { "gitcommit" }
     local buf = vim.api.nvim_get_current_buf()
