@@ -21,6 +21,11 @@ M.UI = {
       Hint = "󱧡 ",
       Info = " ",
     },
+    Git = {
+      add = "",
+      del = "",
+      mod = "",
+    },
     Text = "󰉿",
     Method = "󰆧",
     Function = "󰊕",
