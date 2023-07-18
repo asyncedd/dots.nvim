@@ -83,6 +83,9 @@ M.languages = {
         },
       },
     },
+    DAP = {
+      enabled = true,
+    },
   },
 }
 
