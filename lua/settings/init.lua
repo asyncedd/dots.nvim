@@ -87,6 +87,15 @@ M.languages = {
       enabled = true,
     },
   },
+  svelte = {
+    enable = true,
+    treesitter = {
+      base = true,
+      javascript = true,
+      typescript = true,
+      rust = true,
+    },
+  },
 }
 
 M.colorscheme = {
