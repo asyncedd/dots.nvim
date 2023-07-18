@@ -140,4 +140,33 @@ return not dots.editor.enabled and {}
       },
       enabled = dots.treesitter.enabled,
     },
+    {
+      "folke/flash.nvim",
+      opts = {
+        label = {
+          rainbow = {
+            enabled = true,
+            shade = 3,
+          },
+        },
+        modes = {
+          char = {
+            search = {
+              wrap = true,
+            },
+            config = function(opts)
+              opts.autohide = vim.fn.mode(true):find("o")
+              opts.jump_labels = true
+            end,
+          },
+        },
+      },
+      enabled = dots.editor.flash.enabled,
+      keys = {
+        { "f", mode = { "x", "n", "o" } },
+        { "F", mode = { "x", "n", "o" } },
+        { "t", mode = { "x", "n", "o" } },
+        { "T", mode = { "x", "n", "o" } },
+      },
+    },
   }

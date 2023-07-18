@@ -153,6 +153,9 @@ M.editor = {
   surround = {
     enabled = true,
   },
+  flash = {
+    enabled = true,
+  },
 }
 
 _G.dots = M
