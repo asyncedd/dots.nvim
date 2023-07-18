@@ -17,8 +17,8 @@ M.UI = {
   icons = {
     LSP = {
       Error = " ",
-      Warn = " ",
-      Hint = "󱧡 ",
+      Warn = " ",
+      Hint = "󰌵 ",
       Info = " ",
     },
     Git = {
