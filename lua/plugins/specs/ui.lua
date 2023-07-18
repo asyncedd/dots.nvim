@@ -15,12 +15,14 @@ return {
   },
   dots.UI.notify.enabled and {
     "rcarriga/nvim-notify",
-    config = function()
-      vim.notify = require("notify")
+    init = function()
+      vim.notify = function(...)
+        require("lazy").load({ plugins = "nvim-notify" })
+        require("notify")(...)
+      end
     end,
-    event = "UIEnter",
   },
-  dots.UI.noice.enabled and {
+  {
     "folke/noice.nvim",
     opts = {
       lsp = {
@@ -42,6 +44,7 @@ return {
       },
     },
     event = "VeryLazy",
+    enabled = dots.UI.noice.enabled,
     dependencies = {
       "MunifTanjim/nui.nvim",
     },
