@@ -9,6 +9,7 @@ return not dots.LSP.enabled and {}
           setup = dots.LSP.config.opts.setup or {},
         },
         enabled = dots.LSP.config.enabled,
+        event = "VeryLazy",
         config = function(_, opts)
           vim.cmd("silent! do FileType")
           local M = {}
