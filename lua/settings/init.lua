@@ -167,6 +167,9 @@ M.editor = {
   gitsigns = {
     enabled = true,
   },
+  illuminate = {
+    enabled = true,
+  },
 }
 
 M.tools = {
