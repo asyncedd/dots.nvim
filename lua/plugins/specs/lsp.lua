@@ -11,7 +11,6 @@ return not dots.LSP.enabled and {}
         enabled = dots.LSP.config.enabled,
         event = "VeryLazy",
         config = function(_, opts)
-          vim.cmd("silent! do FileType")
           local M = {}
 
           M.on_attach = dots.LSP.on_attach
@@ -106,6 +105,7 @@ return not dots.LSP.enabled and {}
           end
 
           M.setup()
+          vim.cmd("silent! do FileType")
         end,
         dependencies = {
           {
@@ -128,7 +128,6 @@ return not dots.LSP.enabled and {}
       enabled = dots.LSP.null.enabled,
       event = "VeryLazy",
       config = function(_, opts)
-        vim.cmd("silent! do FileType")
         local function get_source_by_name(name)
           local cats = {
             diagnostics = {},
@@ -221,6 +220,7 @@ return not dots.LSP.enabled and {}
             end
           end,
         })
+        vim.cmd("silent! do FileType")
       end,
       dependencies = "nvim-lua/plenary.nvim",
     },
