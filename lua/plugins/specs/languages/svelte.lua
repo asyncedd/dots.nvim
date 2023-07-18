@@ -19,4 +19,11 @@ return not dots.languages.svelte.enable and {}
         },
       },
     },
+    {
+      "jay-babu/mason-nvim-dap.nvim",
+      opts = {
+        ensure_installed = { dots.languages.svelte.DAP.enable and "js" },
+        handlers = {},
+      },
+    },
   }

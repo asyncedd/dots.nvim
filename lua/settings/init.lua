@@ -98,6 +98,9 @@ M.languages = {
     LSP = {
       enable = true,
     },
+    DAP = {
+      enable = true,
+    },
   },
 }
 
