@@ -155,6 +155,14 @@ return {
             local mode = self.mode:sub(1, 1)
             return { fg = self.mode_colors[mode], bold = true }
           end,
+
+          update = {
+            "ModeChanged",
+            pattern = "*:*",
+            callback = vim.schedule_wrap(function()
+              vim.cmd("redrawstatus")
+            end),
+          },
         },
         {
           provider = " ",
@@ -163,6 +171,31 @@ return {
             local mode = self.mode:sub(1, 1) -- get only the first mode character
             return { bg = self.mode_colors[mode], fg = "Normal", bold = true }
           end,
+
+          update = {
+            "ModeChanged",
+            pattern = "*:*",
+            callback = vim.schedule_wrap(function()
+              vim.cmd("redrawstatus")
+            end),
+          },
+        },
+        {
+          condition = function()
+            return vim.fn.reg_recording() ~= "" and vim.o.cmdheight == 0
+          end,
+          provider = "  ",
+          hl = { fg = "orange", bg = "bright_bg", bold = true },
+          utils.surround({ "[", "]" }, nil, {
+            provider = function()
+              return vim.fn.reg_recording()
+            end,
+            hl = { fg = "green", bg = "bright_bg", bold = true },
+          }),
+          update = {
+            "RecordingEnter",
+            "RecordingLeave",
+          },
         },
         {
           provider = function(self)
@@ -176,21 +209,27 @@ return {
               bold = true,
             }
           end,
+
+          update = {
+            "ModeChanged",
+            pattern = "*:*",
+            callback = vim.schedule_wrap(function()
+              vim.cmd("redrawstatus")
+            end),
+          },
         },
         {
           provider = "",
           hl = function()
             return { fg = "bright_bg", bold = true }
           end,
-        },
-        -- Re-evaluate the component only on ModeChanged event!
-        -- Also allows the statusline to be re-evaluated when entering operator-pending mode
-        update = {
-          "ModeChanged",
-          pattern = "*:*",
-          callback = vim.schedule_wrap(function()
-            vim.cmd("redrawstatus")
-          end),
+          update = {
+            "ModeChanged",
+            pattern = "*:*",
+            callback = vim.schedule_wrap(function()
+              vim.cmd("redrawstatus")
+            end),
+          },
         },
       }
 
