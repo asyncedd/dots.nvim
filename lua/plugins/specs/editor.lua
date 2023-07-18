@@ -253,4 +253,23 @@ return not dots.editor.enabled and {}
         end
       end,
     },
+    {
+      "nvim-pack/nvim-spectre",
+      opts = true,
+      keys = {
+        { "<leader>s", "<cmd>lua require('spectre').open()<CR>", desc = "Open Spectr" },
+        {
+          "<leader>sw",
+          "<cmd>lua require('spectre').open_visual({ select_word=true })<CR>",
+          desc = "Search current word",
+        },
+        { "<leader>sw", "<cmd>lua require('spectre').open_visual()<CR>", mode = "x", desc = "Search current word" },
+        {
+          "<leader>sp",
+          "<cmd>lua require('spectre').open_file_search({ select_word=true })CR>",
+          mode = "n",
+          desc = "Search on current word",
+        },
+      },
+    },
   }
