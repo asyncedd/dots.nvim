@@ -272,4 +272,18 @@ return not dots.editor.enabled and {}
         },
       },
     },
+    {
+      "andymass/vim-matchup",
+      config = function()
+        require("nvim-treesitter.configs").setup({
+          matchup = {
+            enable = true,
+          },
+        })
+        vim.cmd("silent! do FileType")
+      end,
+      dependencies = "nvim-treesitter/nvim-treesitter",
+      enabled = dots.editor.matchup.enabled,
+      event = "VeryLazy",
+    },
   }

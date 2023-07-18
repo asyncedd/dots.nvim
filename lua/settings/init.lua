@@ -188,6 +188,9 @@ M.editor = {
   illuminate = {
     enabled = true,
   },
+  matchup = {
+    enabled = true,
+  },
 }
 
 M.tools = {
