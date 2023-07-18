@@ -57,7 +57,6 @@ return {
   {
     "rebelot/heirline.nvim",
     opts = function()
-      local M = {}
       local U = require("core.utils.colors")
       local conditions = require("heirline.conditions")
       local utils = require("heirline.utils")
@@ -65,7 +64,7 @@ return {
       local Align = { provider = "%=" }
       local Space = { provider = " " }
 
-      M.colors = {
+      local colors = {
         bright_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.7),
         brighter_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.5),
         Normal = utils.get_highlight("Normal").bg,
@@ -87,7 +86,7 @@ return {
         git_change = utils.get_highlight("diffChanged").fg,
       }
 
-      M.ViMode = {
+      local ViMode = {
         -- get vim current mode, this information will be required by the provider
         -- and the highlight functions, so we compute it only once per component
         -- evaluation and store it as a component attribute
@@ -241,7 +240,7 @@ return {
         },
       }
 
-      M.FileNameBlock = {
+      local FileNameBlock = {
         -- let's first set up some attributes needed by this component and it's children
         init = function(self)
           self.filename = vim.api.nvim_buf_get_name(0)
@@ -253,7 +252,7 @@ return {
       }
       -- We can now define some children separately and add them later
 
-      M.FileIcon = {
+      local FileIcon = {
         {
           provider = "",
           hl = function(self)
@@ -270,7 +269,7 @@ return {
         },
       }
 
-      M.FileName = {
+      local FileName = {
         provider = function(self)
           -- first, trim the pattern relative to the current directory. For other
           -- options, see :h filename-modifers
@@ -291,7 +290,7 @@ return {
         end,
       }
 
-      M.FileFlags = {
+      local FileFlags = {
         condition = function()
           return not vim.bo.modifiable or vim.bo.readonly
         end,
@@ -300,12 +299,12 @@ return {
       }
 
       -- let's add the children to our FileNameBlock component
-      M.FileNameBlock = utils.insert(
-        M.FileNameBlock,
-        M.FileIcon,
+      FileNameBlock = utils.insert(
+        FileNameBlock,
+        FileIcon,
         { Space, hl = { bg = "bright_bg" } },
-        utils.insert(M.FileName, M.FileFlags), -- a new table where FileName is a child of FileNameModifier
-        { provider = "%<" }, -- this means that the statusline is cut here when there's not enough space
+        utils.insert(FileName, FileFlags),
+        { provider = "%<" },
         {
           provider = "",
           hl = function()
@@ -314,7 +313,7 @@ return {
         }
       )
 
-      M.Git = {
+      local Git = {
         condition = conditions.is_git_repo,
 
         init = function(self)
@@ -355,7 +354,7 @@ return {
         },
       }
 
-      M.Diagnostics = {
+      local Diagnostics = {
 
         condition = conditions.has_diagnostics,
 
@@ -402,7 +401,7 @@ return {
         },
       }
 
-      M.LSPActive = {
+      local LSPActive = {
         condition = conditions.lsp_attached,
         update = { "LspAttach", "LspDetach" },
 
@@ -430,7 +429,7 @@ return {
         },
       }
 
-      M.WorkDir = {
+      local WorkDir = {
         {
           provider = "",
           hl = { fg = "blue" },
@@ -452,7 +451,7 @@ return {
         },
       }
 
-      M.Scrollbar = {
+      local Scrollbar = {
         {
           provider = "",
           hl = { fg = "purple" },
@@ -471,23 +470,23 @@ return {
         },
       }
 
-      M.StatusLine = {
-        M.ViMode,
+      local StatusLine = {
+        ViMode,
         Space,
-        M.FileNameBlock,
+        FileNameBlock,
         Space,
-        M.Git,
+        Git,
         Align,
-        M.Diagnostics,
+        Diagnostics,
         Space,
-        M.LSPActive,
+        LSPActive,
         Space,
-        M.WorkDir,
+        WorkDir,
         Space,
-        M.Scrollbar,
+        Scrollbar,
       }
 
-      M.StatusLines = {
+      local StatusLines = {
         static = {
           mode_colors_map = {
             n = "blue",
@@ -524,14 +523,14 @@ return {
           end
         end,
 
-        M.StatusLine,
+        StatusLine,
       }
 
       return {
         opts = {
-          colors = M.colors,
+          colors = colors,
         },
-        statusline = M.StatusLines,
+        statusline = StatusLines,
       }
     end,
     event = "VeryLazy",
