@@ -152,6 +152,14 @@ return not dots.editor.enabled and {}
       },
       enabled = dots.editor.flash.enabled,
       keys = {
+        {
+          "r",
+          mode = "o",
+          function()
+            require("flash").remote()
+          end,
+          desc = "Remote Flash",
+        },
         { "f", mode = { "x", "n", "o" } },
         { "F", mode = { "x", "n", "o" } },
         { "t", mode = { "x", "n", "o" } },
