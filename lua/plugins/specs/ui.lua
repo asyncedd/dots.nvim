@@ -397,6 +397,25 @@ return {
         },
       }
 
+      M.Scrollbar = {
+        {
+          provider = "",
+          hl = { fg = "purple" },
+        },
+        {
+          provider = " ",
+          hl = { bg = "purple", fg = "Normal" },
+        },
+        {
+          provider = " %l/%c",
+          hl = { bg = "bright_bg" },
+        },
+        {
+          provider = "",
+          hl = { fg = "bright_bg" },
+        },
+      }
+
       M.StatusLine = {
         M.ViMode,
         Space,
@@ -409,6 +428,8 @@ return {
         M.LSPActive,
         Space,
         M.WorkDir,
+        Space,
+        M.Scrollbar,
       }
 
       M.StatusLines = {
