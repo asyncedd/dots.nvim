@@ -291,12 +291,20 @@ return {
         end,
       }
 
+      M.FileFlags = {
+        condition = function()
+          return not vim.bo.modifiable or vim.bo.readonly
+        end,
+        provider = " ",
+        hl = { fg = "orange" },
+      }
+
       -- let's add the children to our FileNameBlock component
       M.FileNameBlock = utils.insert(
         M.FileNameBlock,
         M.FileIcon,
         { Space, hl = { bg = "bright_bg" } },
-        utils.insert(M.FileName), -- a new table where FileName is a child of FileNameModifier
+        utils.insert(M.FileName, M.FileFlags), -- a new table where FileName is a child of FileNameModifier
         { provider = "%<" }, -- this means that the statusline is cut here when there's not enough space
         {
           provider = "",
