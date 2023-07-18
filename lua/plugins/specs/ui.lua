@@ -11,6 +11,7 @@ return {
       integrations = {
         telescope = { style = "nvchad" },
         illuminate = true,
+        notify = true,
       },
     },
     name = "catppuccin",
