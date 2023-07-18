@@ -11,17 +11,7 @@ return not dots.LSP.enabled and {}
         config = function(_, opts)
           local M = {}
 
-          M.on_attach = function()
-            vim.api.nvim_create_autocmd("LspAttach", {
-              callback = function(args)
-                local bufnr = args.buf
-                local client = vim.lsp.get_client_by_id(args.data.client_id)
-                if client.server_capabilities.inlayHintProvider then
-                  vim.lsp.inlay_hint(bufnr, true)
-                end
-              end,
-            })
-          end
+          M.on_attach = dots.LSP.on_attach
 
           M.setup = function()
             local servers_to_not_setup = opts.servers_to_not_setup
@@ -231,17 +221,8 @@ return not dots.LSP.enabled and {}
                   })
                 end,
               })
+              dots.LSP.on_attach()
             end
-
-            vim.api.nvim_create_autocmd("LspAttach", {
-              callback = function(args)
-                local bufnr = args.buf
-                local client = vim.lsp.get_client_by_id(args.data.client_id)
-                if client.server_capabilities.inlayHintProvider then
-                  vim.lsp.inlay_hint(bufnr, true)
-                end
-              end,
-            })
           end,
         })
       end,
