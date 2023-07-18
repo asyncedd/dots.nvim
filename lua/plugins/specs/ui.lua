@@ -13,7 +13,7 @@ return {
     end,
     name = "catppuccin",
   },
-  dots.UI.notify.enabled and {
+  {
     "rcarriga/nvim-notify",
     init = function()
       vim.notify = function(...)
@@ -21,6 +21,7 @@ return {
         require("notify")(...)
       end
     end,
+    enabled = dots.UI.notify.enabled,
   },
   {
     "folke/noice.nvim",

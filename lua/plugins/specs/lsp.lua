@@ -1,6 +1,6 @@
 return not dots.LSP.enabled and {}
   or {
-    dots.LSP.config.enabled and {
+    {
       {
         "neovim/nvim-lspconfig",
         opts = {
@@ -8,6 +8,7 @@ return not dots.LSP.enabled and {}
           servers = dots.LSP.config.opts.servers or {},
           setup = dots.LSP.config.opts.setup or {},
         },
+        enabled = dots.LSP.config.enabled,
         config = function(_, opts)
           local M = {}
 
@@ -127,11 +128,12 @@ return not dots.LSP.enabled and {}
         },
       },
     },
-    dots.LSP.null.enabled and {
+    {
       "jose-elias-alvarez/null-ls.nvim",
       opts = {
         sources = {},
       },
+      enabled = dots.LSP.null.enabled,
       config = function(_, opts)
         local function get_source_by_name(name)
           local cats = {

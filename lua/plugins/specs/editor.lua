@@ -1,10 +1,11 @@
 return not dots.editor.enabled and {}
   or {
-    dots.editor.spider.enabled and {
+    {
       "chrisgrieser/nvim-spider",
       opts = {
         skipInsignificantPunctuation = false,
       },
+      enabled = dots.editor.spider.enabled,
       event = "VeryLazy",
       config = function(_, opts)
         require("spider").setup(opts)
@@ -45,10 +46,11 @@ return not dots.editor.enabled and {}
         end
       end,
     },
-    dots.editor.textobjs.enabled and {
+    {
       "chrisgrieser/nvim-various-textobjs",
       opts = {},
       event = "VeryLazy",
+      enabled = dots.editor.textobjs.enabled,
       config = function(_, opts)
         require("various-textobjs").setup(opts)
         local keymap = vim.keymap.set
@@ -84,10 +86,11 @@ return not dots.editor.enabled and {}
         end
       end,
     },
-    dots.editor.surround.enabled and {
+    {
       "kylechui/nvim-surround",
       opts = true,
-      evnet = "VeryLazy",
+      event = "VeryLazy",
+      enabled = dots.editor.surround.enabled,
     },
     {
       "lewis6991/gitsigns.nvim",
@@ -117,5 +120,24 @@ return not dots.editor.enabled and {}
           untracked = { text = "▎" },
         },
       },
+    },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        auto_install = true,
+        ensure_installed = {},
+        highlight = {
+          enable = true,
+        },
+      },
+      config = function(_, opts)
+        require("nvim-treesitter.configs").setup(opts)
+      end,
+      event = {
+        "BufRead",
+        "BufWinEnter",
+        "BufNewFile",
+      },
+      enabled = dots.treesitter.enabled,
     },
   }

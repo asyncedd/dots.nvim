@@ -7,7 +7,7 @@ end
 
 return not dots.coding.enabled and {}
   or {
-    dots.coding.cmp.enabled and {
+    {
       {
         "hrsh7th/nvim-cmp",
         opts = function(_, opts)
@@ -67,9 +67,10 @@ return not dots.coding.enabled and {}
         end,
         event = "InsertEnter",
         dependencies = ret,
+        enabled = dots.coding.cmp.enabled,
       },
     },
-    dots.coding.luasnip.enabled and {
+    {
       {
         "L3MON4D3/LuaSnip",
         opts = {},
@@ -80,9 +81,10 @@ return not dots.coding.enabled and {}
           require("luasnip.loaders.from_vscode").lazy_load()
           require("luasnip").setup(opts)
         end,
+        enabled = dots.coding.luasnip.enabled,
       },
     },
-    dots.coding.ultimate_autopairs and {
+    {
       "altermo/ultimate-autopair.nvim",
       opts = {
         space2 = {
@@ -94,10 +96,12 @@ return not dots.coding.enabled and {}
         },
       },
       event = "InsertEnter",
+      enabled = dots.coding.ultimate_autopairs,
     },
-    dots.coding.comment.enabled and {
+    {
       "numToStr/Comment.nvim",
       opts = true,
       event = "VeryLazy",
+      enabled = dots.coding.comment.enabled,
     },
   }
