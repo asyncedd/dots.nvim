@@ -375,6 +375,28 @@ return {
         },
       }
 
+      M.WorkDir = {
+        {
+          provider = "",
+          hl = { fg = "blue" },
+        },
+        {
+          provider = " ",
+          hl = { fg = "Normal", bg = "blue" },
+        },
+        {
+          provider = function()
+            local dir = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+            return " " .. dir
+          end,
+          hl = { fg = "blue", bg = "bright_bg", bold = true },
+        },
+        {
+          provider = "",
+          hl = { fg = "bright_bg" },
+        },
+      }
+
       M.StatusLine = {
         M.ViMode,
         Space,
@@ -385,6 +407,8 @@ return {
         M.Diagnostics,
         Space,
         M.LSPActive,
+        Space,
+        M.WorkDir,
       }
 
       M.StatusLines = {
