@@ -179,4 +179,14 @@ M.tools = {
   },
 }
 
+M.DAP = {
+  enabled = true,
+  UI = {
+    enabled = true,
+  },
+  virtual = {
+    enabled = true,
+  },
+}
+
 _G.dots = M
