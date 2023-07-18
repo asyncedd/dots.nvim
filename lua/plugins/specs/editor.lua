@@ -79,6 +79,7 @@ return not dots.editor.enabled and {}
     {
       "lewis6991/gitsigns.nvim",
       ft = { "gitcommit", "diff" },
+      enabled = dots.editor.gitsigns.enabled,
       init = function()
         -- load gitsigns only when a git file is opened
         vim.api.nvim_create_autocmd({ "BufRead" }, {

@@ -156,6 +156,9 @@ M.editor = {
   flash = {
     enabled = true,
   },
+  gitsigns = {
+    enabled = true,
+  },
 }
 
 _G.dots = M
