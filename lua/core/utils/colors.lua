@@ -1,7 +1,3 @@
--- I got this from catppuccin!
--- All credit goes to catppuccin.
--- Catppuccin is life, catppuccin is love, catppuccin is everything!
-
 local M = {}
 
 local hsluv = require("core.utils.hsluv")

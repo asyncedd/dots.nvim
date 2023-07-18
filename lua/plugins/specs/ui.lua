@@ -1,379 +1,590 @@
--- lua/plugins/specs/ui.lua
---
---  ┌
---  │               Plugins that improve the UI
---  └
-
 return {
   {
     "catppuccin/nvim",
+    opts = {
+      custom_highlights = function(C)
+        return {
+          ["@variable"] = { fg = C.flamingo },
+          Pmenu = { bg = C.mantle },
+        }
+      end,
+      integrations = {
+        telescope = { style = "nvchad" },
+        illuminate = true,
+        notify = true,
+        mini = true,
+      },
+    },
     name = "catppuccin",
-    opts = function()
-      return require("plugins.configs.ui.catppuccin")
-    end,
-    config = true,
-    event = dots.colorscheme.load_on_VeryLazy and {
-      "VeryLazy",
-    } or nil,
-    cond = dots.colorscheme.current == "catppuccin" or not dots.colorscheme.disable_non_current,
   },
   {
-    "folke/tokyonight.nvim",
-    opts = function()
-      return require("plugins.configs.ui.tokyonight")
+    "rcarriga/nvim-notify",
+    init = function()
+      vim.notify = function(...)
+        require("lazy").load({ plugins = "nvim-notify" })
+        require("notify")(...)
+      end
     end,
-    config = true,
-    event = dots.colorscheme.load_on_VeryLazy and {
-      "VeryLazy",
-    } or nil,
-    cond = dots.colorscheme.current == "tokyonight" or not dots.colorscheme.disable_non_current,
-  },
-  {
-    "olimorris/onedarkpro.nvim",
-    opts = function()
-      return require("plugins.configs.ui.onedark")
-    end,
-    event = dots.colorscheme.load_on_VeryLazy and {
-      "VeryLazy",
-    } or nil,
-    cond = dots.colorscheme.current == "onedarkpro" or not dots.colorscheme.disable_non_current,
-  },
-  {
-    "EdenEast/nightfox.nvim",
-    opts = function()
-      return require("plugins.configs.ui.nightfox")
-    end,
-    event = dots.colorscheme.load_on_VeryLazy and {
-      "VeryLazy",
-    } or nil,
-    cond = dots.colorscheme.current == "nightfox" or not dots.colorscheme.disable_non_current,
+    enabled = dots.UI.notify.enabled,
   },
   {
     "folke/noice.nvim",
     opts = {
-      border = { style = "none" },
       lsp = {
-        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
         },
       },
-      -- you can enable a preset for easier configuration
       presets = {
         bottom_search = true, -- use a classic bottom cmdline for search
         command_palette = true, -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = true, -- enables an input dialog for inc-rename.nvim
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = false, -- add a border to hover docs and signature help
       },
-      views = {
-        cmdline_popup = {
-          border = {
-            style = "none",
-            padding = { 2, 3 },
-          },
-          filter_options = {},
-          win_options = {
-            winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-          },
-        },
-      },
-      routes = {
-        {
-          filter = {
-            event = "msg_show",
-            any = {
-              { find = "%d+L, %d+B" },
-              { find = "; after #%d+" },
-              { find = "; before #%d+" },
-            },
-          },
-          view = "mini",
-        },
+      cmdline = {
+        view = "cmdline",
       },
     },
     event = "VeryLazy",
-    config = true,
+    enabled = dots.UI.noice.enabled,
     dependencies = {
-      "nui.nvim",
-      "nvim-notify",
+      "MunifTanjim/nui.nvim",
     },
+  },
+  {
+    "rebelot/heirline.nvim",
+    opts = function()
+      local U = require("core.utils.colors")
+      local conditions = require("heirline.conditions")
+      local utils = require("heirline.utils")
+      local Normal = string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true)["foreground"], 0.3) or 0
+      local Align = { provider = "%=" }
+      local Space = { provider = " " }
+
+      local colors = {
+        bright_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.7),
+        brighter_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.5),
+        Normal = utils.get_highlight("Normal").bg,
+        bright_fg = utils.get_highlight("Folded").fg,
+        red = utils.get_highlight("DiagnosticError").fg,
+        dark_red = utils.get_highlight("DiffDelete").bg,
+        green = utils.get_highlight("String").fg,
+        blue = utils.get_highlight("Function").fg,
+        gray = utils.get_highlight("NonText").fg,
+        orange = utils.get_highlight("Constant").fg,
+        purple = utils.get_highlight("Statement").fg,
+        cyan = utils.get_highlight("Special").fg,
+        diag_warn = utils.get_highlight("DiagnosticWarn").fg,
+        diag_error = utils.get_highlight("DiagnosticError").fg,
+        diag_hint = utils.get_highlight("DiagnosticHint").fg,
+        diag_info = utils.get_highlight("DiagnosticInfo").fg,
+        git_del = utils.get_highlight("diffRemoved").fg,
+        git_add = utils.get_highlight("diffAdded").fg,
+        git_change = utils.get_highlight("diffChanged").fg,
+      }
+
+      local ViMode = {
+        -- get vim current mode, this information will be required by the provider
+        -- and the highlight functions, so we compute it only once per component
+        -- evaluation and store it as a component attribute
+        init = function(self)
+          self.mode = vim.fn.mode(1) -- :h mode()
+        end,
+        -- Now we define some dictionaries to map the output of mode() to the
+        -- corresponding string and color. We can put these into `static` to compute
+        -- them at initialisation time.
+        static = {
+          mode_names = { -- change the strings if you like it vvvvverbose!
+            n = "N",
+            no = "N?",
+            nov = "N?",
+            noV = "N?",
+            ["no\22"] = "N?",
+            niI = "Ni",
+            niR = "Nr",
+            niV = "Nv",
+            nt = "Nt",
+            v = "V",
+            vs = "Vs",
+            V = "V_",
+            Vs = "Vs",
+            ["\22"] = "^V",
+            ["\22s"] = "^V",
+            s = "S",
+            S = "S_",
+            ["\19"] = "^S",
+            i = "I",
+            ic = "Ic",
+            ix = "Ix",
+            R = "R",
+            Rc = "Rc",
+            Rx = "Rx",
+            Rv = "Rv",
+            Rvc = "Rv",
+            Rvx = "Rv",
+            c = "C",
+            cv = "Ex",
+            r = "...",
+            rm = "M",
+            ["r?"] = "?",
+            ["!"] = "!",
+            t = "T",
+          },
+          mode_colors = {
+            n = "blue",
+            i = "green",
+            v = "pink",
+            V = "pink",
+            ["\22"] = "pink",
+            c = "yellow",
+            s = "purple",
+            S = "purple",
+            ["\19"] = "purple",
+            R = "orange",
+            r = "orange",
+            ["!"] = "red",
+            t = "green",
+          },
+        },
+        -- We can now access the value of mode() that, by now, would have been
+        -- computed by `init()` and use it to index our strings dictionary.
+        -- note how `static` fields become just regular attributes once the
+        -- component is instantiated.
+        -- To be extra meticulous, we can also add some vim statusline syntax to
+        -- control the padding and make sure our string is always at least 2
+        -- characters long. Plus a nice Icon.
+        {
+          provider = "",
+          hl = function(self)
+            local mode = self.mode:sub(1, 1)
+            return { fg = self.mode_colors[mode], bold = true }
+          end,
+
+          update = {
+            "ModeChanged",
+            pattern = "*:*",
+            callback = vim.schedule_wrap(function()
+              vim.cmd("redrawstatus")
+            end),
+          },
+        },
+        {
+          provider = " ",
+          -- Same goes for the highlight. Now the foreground will change according to the current mode.
+          hl = function(self)
+            local mode = self.mode:sub(1, 1) -- get only the first mode character
+            return { bg = self.mode_colors[mode], fg = "Normal", bold = true }
+          end,
+
+          update = {
+            "ModeChanged",
+            pattern = "*:*",
+            callback = vim.schedule_wrap(function()
+              vim.cmd("redrawstatus")
+            end),
+          },
+        },
+        {
+          condition = function()
+            return vim.fn.reg_recording() ~= "" and vim.o.cmdheight == 0
+          end,
+          provider = "  ",
+          hl = { fg = "orange", bg = "bright_bg", bold = true },
+          utils.surround({ "[", "]" }, nil, {
+            provider = function()
+              return vim.fn.reg_recording()
+            end,
+            hl = { fg = "green", bg = "bright_bg", bold = true },
+          }),
+          update = {
+            "RecordingEnter",
+            "RecordingLeave",
+          },
+        },
+        {
+          provider = function(self)
+            return "%2(" .. self.mode_names[self.mode] .. "%)"
+          end,
+          hl = function(self)
+            local mode = self.mode:sub(1, 1)
+            return {
+              fg = self.mode_colors[mode],
+              bg = "bright_bg",
+              bold = true,
+            }
+          end,
+
+          update = {
+            "ModeChanged",
+            pattern = "*:*",
+            callback = vim.schedule_wrap(function()
+              vim.cmd("redrawstatus")
+            end),
+          },
+        },
+        {
+          provider = "",
+          hl = function()
+            return { fg = "bright_bg", bold = true }
+          end,
+          update = {
+            "ModeChanged",
+            pattern = "*:*",
+            callback = vim.schedule_wrap(function()
+              vim.cmd("redrawstatus")
+            end),
+          },
+        },
+      }
+
+      local FileNameBlock = {
+        -- let's first set up some attributes needed by this component and it's children
+        init = function(self)
+          self.filename = vim.api.nvim_buf_get_name(0)
+          local filename = self.filename
+          local extension = vim.fn.fnamemodify(filename, ":e")
+          self.icon, self.icon_color =
+            require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+        end,
+      }
+      -- We can now define some children separately and add them later
+
+      local FileIcon = {
+        {
+          provider = "",
+          hl = function(self)
+            return { fg = self.icon_color }
+          end,
+        },
+        {
+          provider = function(self)
+            return self.icon and (self.icon .. " ")
+          end,
+          hl = function(self)
+            return { bg = self.icon_color, fg = "Normal" }
+          end,
+        },
+      }
+
+      local FileName = {
+        provider = function(self)
+          -- first, trim the pattern relative to the current directory. For other
+          -- options, see :h filename-modifers
+          local filename = vim.fn.fnamemodify(self.filename, ":t")
+          if filename == "" then
+            return "[No Name]"
+          end
+          -- now, if the filename would occupy more than 1/4th of the available
+          -- space, we trim the file path to its initials
+          -- See Flexible Components section below for dynamic truncation
+          if not conditions.width_percent_below(#filename, 0.25) then
+            filename = vim.fn.pathshorten(filename)
+          end
+          return filename
+        end,
+        hl = function(self)
+          return { fg = self.icon_color, bg = "bright_bg" }
+        end,
+      }
+
+      local FileFlags = {
+        condition = function()
+          return not vim.bo.modifiable or vim.bo.readonly
+        end,
+        provider = " ",
+        hl = { fg = "orange" },
+      }
+
+      -- let's add the children to our FileNameBlock component
+      FileNameBlock = utils.insert(
+        FileNameBlock,
+        FileIcon,
+        { Space, hl = { bg = "bright_bg" } },
+        utils.insert(FileName, FileFlags),
+        { provider = "%<" },
+        {
+          provider = "",
+          hl = function()
+            return { fg = "bright_bg", bold = true }
+          end,
+        }
+      )
+
+      local Git = {
+        condition = conditions.is_git_repo,
+
+        init = function(self)
+          self.status_dict = vim.b.gitsigns_status_dict
+          self.has_changes = self.status_dict.added ~= 0
+            or self.status_dict.removed ~= 0
+            or self.status_dict.changed ~= 0
+        end,
+
+        hl = { fg = "orange" },
+
+        { -- git branch name
+          provider = function(self)
+            return " " .. self.status_dict.head .. " "
+          end,
+          hl = { bold = true },
+        },
+        {
+          provider = function(self)
+            local count = self.status_dict.added or 0
+            return count > 0 and (dots.UI.icons.Git.add .. " " .. count .. " ")
+          end,
+          hl = { fg = "brighter_bg" },
+        },
+        {
+          provider = function(self)
+            local count = self.status_dict.removed or 0
+            return count > 0 and (dots.UI.icons.Git.del .. " " .. count .. " ")
+          end,
+          hl = { fg = "brighter_bg" },
+        },
+        {
+          provider = function(self)
+            local count = self.status_dict.changed or 0
+            return count > 0 and (dots.UI.icons.Git.mod .. " " .. count .. " ")
+          end,
+          hl = { fg = "brighter_bg" },
+        },
+      }
+
+      local Diagnostics = {
+
+        condition = conditions.has_diagnostics,
+
+        static = {
+          error_icon = dots.UI.icons.LSP.Error,
+          warn_icon = dots.UI.icons.LSP.Warn,
+          info_icon = dots.UI.icons.LSP.Info,
+          hint_icon = dots.UI.icons.LSP.Hint,
+        },
+
+        init = function(self)
+          self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+          self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+          self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
+          self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+        end,
+
+        update = { "DiagnosticChanged", "BufEnter" },
+
+        {
+          provider = function(self)
+            -- 0 is just another output, we can decide to print it or not!
+            return self.errors > 0 and (self.error_icon .. self.errors .. " ")
+          end,
+          hl = { fg = "diag_error" },
+        },
+        {
+          provider = function(self)
+            return self.warnings > 0 and (self.warn_icon .. self.warnings .. " ")
+          end,
+          hl = { fg = "diag_warn" },
+        },
+        {
+          provider = function(self)
+            return self.info > 0 and (self.info_icon .. self.info .. " ")
+          end,
+          hl = { fg = "diag_info" },
+        },
+        {
+          provider = function(self)
+            return self.hints > 0 and (self.hint_icon .. self.hints)
+          end,
+          hl = { fg = "diag_hint" },
+        },
+      }
+
+      local LSPActive = {
+        condition = conditions.lsp_attached,
+        update = { "LspAttach", "LspDetach" },
+
+        {
+          provider = "",
+          hl = { fg = "green" },
+        },
+        {
+          provider = " ",
+          hl = { bg = "green", fg = "Normal" },
+        },
+        {
+          provider = function()
+            local names = {}
+            for i, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
+              table.insert(names, server.name)
+            end
+            return " " .. table.concat(names, " ")
+          end,
+          hl = { fg = "green", bg = "bright_bg", bold = true },
+        },
+        {
+          provider = "",
+          hl = { fg = "bright_bg" },
+        },
+      }
+
+      local WorkDir = {
+        {
+          provider = "",
+          hl = { fg = "blue" },
+        },
+        {
+          provider = " ",
+          hl = { fg = "Normal", bg = "blue" },
+        },
+        {
+          provider = function()
+            local dir = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+            return " " .. dir
+          end,
+          hl = { fg = "blue", bg = "bright_bg", bold = true },
+        },
+        {
+          provider = "",
+          hl = { fg = "bright_bg" },
+        },
+      }
+
+      local Scrollbar = {
+        {
+          provider = "",
+          hl = { fg = "purple" },
+        },
+        {
+          provider = " ",
+          hl = { bg = "purple", fg = "Normal" },
+        },
+        {
+          provider = " %l/%c",
+          hl = { bg = "bright_bg" },
+        },
+        {
+          provider = "",
+          hl = { fg = "bright_bg" },
+        },
+      }
+
+      local StatusLine = {
+        ViMode,
+        Space,
+        FileNameBlock,
+        Space,
+        Git,
+        Align,
+        Diagnostics,
+        Space,
+        LSPActive,
+        Space,
+        WorkDir,
+        Space,
+        Scrollbar,
+      }
+
+      local StatusLines = {
+        static = {
+          mode_colors_map = {
+            n = "blue",
+            i = "green",
+            v = "pink",
+            V = "pink",
+            ["\22"] = "pink",
+            c = "yellow",
+            s = "purple",
+            S = "purple",
+            ["\19"] = "purple",
+            R = "orange",
+            r = "orange",
+            ["!"] = "red",
+            t = "green",
+          },
+          mode_color = function(self)
+            local mode = conditions.is_active() and vim.fn.mode() or "n"
+            return self.mode_colors_map[mode]
+          end,
+          icon_color = function(self)
+            local filename = self.filename
+            local extension = vim.fn.fnamemodify(filename, ":e")
+            local _, icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+
+            return icon_color
+          end,
+        },
+        hl = function()
+          if conditions.is_active() then
+            return "Normal"
+          else
+            return "Normal"
+          end
+        end,
+
+        StatusLine,
+      }
+
+      return {
+        opts = {
+          colors = colors,
+        },
+        statusline = StatusLines,
+      }
+    end,
+    event = "VeryLazy",
+    dependencies = "nvim-tree/nvim-web-devicons",
   },
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
+      indentLine_enabled = 1,
       filetype_exclude = {
         "help",
-        "alpha",
-        "dashboard",
-        "neo-tree",
-        "Trouble",
+        "terminal",
         "lazy",
+        "lspinfo",
+        "TelescopePrompt",
+        "TelescopeResults",
         "mason",
-        "notify",
-        "oil_preview",
-        "vim",
+        "lazyterm",
+        "toggleterm",
+        "noice",
+        "",
       },
-      use_treesitter = true,
+      buftype_exclude = { "terminal" },
+      show_trailing_blankline_indent = false,
+      show_first_indent_level = false,
     },
-    event = "BufReadPost",
+    event = "VeryLazy",
   },
   {
     "echasnovski/mini.indentscope",
-    opts = function()
-      return require("plugins.configs.ui.indentscope")
-    end,
-    event = "VeryLazy",
+    opts = {
+      symbol = "│",
+      options = { try_as_border = true },
+    },
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
         pattern = {
           "help",
-          "alpha",
-          "dashboard",
-          "neo-tree",
-          "Trouble",
+          "terminal",
           "lazy",
+          "lspinfo",
+          "TelescopePrompt",
+          "TelescopeResults",
           "mason",
-          "notify",
-          "oil_preview",
-          "vim",
+          "lazyterm",
+          "toggleterm",
+          "noice",
+          "",
         },
         callback = function()
           vim.b.miniindentscope_disable = true
         end,
       })
     end,
-  },
-  {
-    "echasnovski/mini.animate",
-    opts = {
-      scroll = {
-        enable = false,
-      },
-      resize = {
-        enable = false,
-      },
-    },
     event = "VeryLazy",
-  },
-  {
-    "rebelot/heirline.nvim",
-    opts = function()
-      return require("plugins.configs.ui.heirline")
-    end,
-    config = true,
-    event = "User UI",
-    dependencies = {
-      "nvim-web-devicons",
-    },
-    enabled = dots.UI.statusline.type == "heirline",
-  },
-  {
-    "echasnovski/mini.statusline",
-    opts = true,
-    event = "User UI",
-    enabled = dots.UI.statusline.type == "mini",
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    opts = true,
-    event = "VeryLazy",
-    enabled = dots.UI.statusline.type == "lualine",
-  },
-  {
-    "RRethy/vim-illuminate",
-    opts = {
-      delay = 200,
-      large_file_cutoff = 2000,
-      large_file_overrides = {
-        providers = { "lsp" },
-      },
-    },
-    config = function(opts)
-      require("illuminate").configure(opts)
-
-      local function map(key, dir, buffer)
-        vim.keymap.set("n", key, function()
-          require("illuminate")["goto_" .. dir .. "_reference"](false)
-        end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
-      end
-
-      map("]]", "next")
-      map("[[", "prev")
-
-      -- also set it after loading ftplugins, since a lot overwrite [[ and ]]
-      vim.api.nvim_create_autocmd("FileType", {
-        callback = function()
-          local buffer = vim.api.nvim_get_current_buf()
-          map("]]", "next", buffer)
-          map("[[", "prev", buffer)
-        end,
-      })
-    end,
-    event = "VeryLazy",
-    keys = {
-      { "]]", desc = "Next Reference" },
-      { "[[", desc = "Prev Reference" },
-    },
-  },
-  {
-    "goolord/alpha-nvim",
-    opts = function()
-      return require("plugins.configs.ui.alpha")
-    end,
-    config = function(_, opts)
-      require("alpha").setup(opts)
-    end,
-    init = function()
-      if vim.fn.expand("%") == "" then
-        require("lazy").load({ plugins = "alpha-nvim" })
-      end
-    end,
-  },
-  {
-    "folke/todo-comments.nvim",
-    opts = true,
-    event = "VeryLazy",
-  },
-  {
-    "NvChad/nvim-colorizer.lua",
-    opts = {
-      user_default_options = {
-        RRGGBBAA = true,
-        AARRGGBB = true,
-        rgb_fn = true,
-        hsl_fn = true,
-        tailwind = true,
-        names = false,
-      },
-    },
-    config = function(_, opts)
-      require("colorizer").setup(opts)
-
-      require("colorizer").attach_to_buffer(0)
-    end,
-    init = function()
-      require("core.utils.lazy")("nvim-colorizer.lua")
-    end,
-  },
-  {
-    "Bekaboo/dropbar.nvim",
-    opts = true,
-    init = function()
-      require("core.utils.lazy")("dropbar.nvim")
-    end,
-  },
-  {
-    "rcarriga/nvim-notify",
-    config = function()
-      local stages = require("notify.stages.fade_in_slide_out")("top_down")
-      local notify = require("notify")
-      notify.setup({
-        on_open = function(win)
-          vim.api.nvim_win_set_config(win, { focusable = false })
-        end,
-        stages = {
-          function(...)
-            local opts = stages[1](...)
-            if opts then
-              opts.border = "solid"
-            end
-            return opts
-          end,
-          unpack(stages, 2),
-        },
-      })
-    end,
-  },
-  {
-    "stevearc/dressing.nvim",
-    opts = true,
-    event = "VeryLazy",
-  },
-  {
-    "folke/which-key.nvim",
-    opts = {
-      triggers_blacklist = {
-        n = { "<leader>g", "<leader>n" },
-      },
-    },
-    dependencies = "hydra.nvim",
-    event = "VeryLazy",
-  },
-  {
-    "luukvbaal/statuscol.nvim",
-    config = function()
-      local builtin = require("statuscol.builtin")
-      require("statuscol").setup({
-        relculright = true,
-        segments = {
-          { text = { "%s" }, click = "v:lua.ScSa" },
-          { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
-          { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-        },
-      })
-    end,
-    event = "User UI",
-  },
-  {
-    "levouh/tint.nvim",
-    opts = function()
-      return {
-        highlight_ignore_patterns = { "WinSeparator", "Status.*" }, -- Highlight group patterns to ignore, see `string.find`
-        window_ignore_function = function(winid)
-          local bufid = vim.api.nvim_win_get_buf(winid)
-          local buftype = vim.api.nvim_buf_get_option(bufid, "buftype")
-          local floating = vim.api.nvim_win_get_config(winid).relative ~= ""
-
-          -- Do not tint `terminal` or floating windows, tint everything else
-          return buftype == "terminal" or floating
-        end,
-      }
-    end,
-    event = "VeryLazy",
-  },
-  {
-    "nacro90/numb.nvim",
-    opts = true,
-    event = "CmdlineEnter",
-  },
-  {
-    "lewis6991/satellite.nvim",
-    opts = true,
-    event = "VeryLazy",
-  },
-  {
-    "folke/zen-mode.nvim",
-    opts = true,
-    dependencies = "twilight.nvim",
-    cmd = { "ZenMode" },
-  },
-  {
-    "hiphish/rainbow-delimiters.nvim",
-    config = function()
-      local rainbow_delimiters = require("rainbow-delimiters")
-
-      vim.g.rainbow_delimiters = {
-        strategy = {
-          [""] = rainbow_delimiters.strategy["global"],
-        },
-        query = {
-          [""] = "rainbow-delimiters",
-        },
-        highlight = {
-          "RainbowDelimiterRed",
-          "RainbowDelimiterYellow",
-          "RainbowDelimiterBlue",
-          "RainbowDelimiterOrange",
-          "RainbowDelimiterGreen",
-          "RainbowDelimiterViolet",
-          "RainbowDelimiterCyan",
-        },
-      }
-    end,
-    event = "BufRead",
-    enabled = dots.UI.rainbow_delimiters,
   },
 }

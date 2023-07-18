@@ -1,53 +1,29 @@
-return dots.languages.svelte ~= true and {}
+return not dots.languages.svelte.enable and {}
   or {
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        table.insert(opts.ensure_installed, {
+          dots.languages.svelte.treesitter.base and "svelte",
+          dots.languages.svelte.treesitter.javascript and "javascript",
+          dots.languages.svelte.treesitter.typescript and "typescript",
+          dots.languages.svelte.treesitter.rust and "rust",
+        })
+      end,
+    },
     {
       "neovim/nvim-lspconfig",
       opts = {
         servers = {
-          svelte = {
-            settings = {
-              svelte = {
-                plugin = {
-                  css = {
-                    diagnostics = {
-                      enable = false,
-                    },
-                  },
-                },
-              },
-            },
-          },
+          svelte = dots.languages.svelte.LSP.enable and {} or nil,
         },
       },
     },
     {
-      "nvim-treesitter/nvim-treesitter",
-      opts = function(_, opts)
-        if type(opts.ensure_installed) == "table" then
-          vim.list_extend(opts.ensure_installed, { "svelte", "typescript", "javascript", "css", "scss" })
-        end
-      end,
-    },
-    {
-      "L3MON4D3/LuaSnip",
-      dependencies = {
-        "fivethree-team/vscode-svelte-snippets",
-      },
-    },
-    {
-      "CKolkey/ts-node-action",
-      opts = function(_, opts)
-        opts.svelte = {
-          ["attribute_value"] = require("ts-node-action.actions").conceal_string(),
-        }
-      end,
-    },
-    {
-      "mfussenegger/nvim-dap",
+      "jay-babu/mason-nvim-dap.nvim",
       opts = {
-        adapters = {
-          "js-debug-adapter",
-        },
+        ensure_installed = { dots.languages.svelte.DAP.enable and "js" },
+        handlers = {},
       },
     },
   }

@@ -8,10 +8,6 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map({ "n", "x", "o" }, "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
 map({ "n", "x", "o" }, "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
--- A couple Helix/Kakoune keymaps
-map({ "n", "o", "x" }, "gl", "$", { desc = "Go to the last character in the line" })
-map({ "n", "o", "x" }, "gh", "0", { desc = "Go to the first character in the line" })
-
 -- Code action
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Open the current buffer's code actions" })
 
@@ -23,5 +19,32 @@ local openterm = function(command)
 end
 
 map("n", "<leader>tt", openterm())
-map("n", "<leader>gg", "<cmd>Neogit<CR>")
+map("n", "<leader>gg", openterm("lazygit"))
 map("n", "<leader>g<CR>", openterm("lazygit"))
+
+---@type table?
+local id
+for _, key in ipairs({ "h", "j", "k", "l", "+", "-" }) do
+  local count = 0
+  local timer = assert(vim.loop.new_timer())
+  vim.keymap.set("n", key, function()
+    if vim.v.count > 0 then
+      count = 0
+    end
+    if count >= 10 then
+      id = vim.notify("Hold it Cowboy!", vim.log.levels.WARN, {
+        icon = "🤠",
+        replace = id,
+        keep = function()
+          return count >= 10
+        end,
+      })
+    else
+      count = count + 1
+      timer:start(2000, 0, function()
+        count = 0
+      end)
+      return key
+    end
+  end, { expr = true, silent = true })
+end

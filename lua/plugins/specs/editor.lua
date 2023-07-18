@@ -1,260 +1,275 @@
---
---  ┌
---  │             Plugins for enhancing the editor
---  └
+return not dots.editor.enabled and {}
+  or {
+    {
+      "chrisgrieser/nvim-spider",
+      opts = {
+        skipInsignificantPunctuation = false,
+      },
+      enabled = dots.editor.spider.enabled,
+      event = "VeryLazy",
+      keys = {
+        { mode = { "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" } },
+        { mode = { "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" } },
+        { mode = { "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" } },
+        { mode = { "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" } },
+        {
+          mode = { "n", "o", "x" },
+          "W",
+          "<cmd>lua require('spider').motion('w', { skipInsignificantPunctuation = true })<CR>",
+          { desc = "Spider-W" },
+        },
+        {
+          mode = { "n", "o", "x" },
+          "E",
+          "<cmd>lua require('spider').motion('e', { skipInsignificantPunctuation = true })<CR>",
+          { desc = "Spider-E" },
+        },
+        {
+          mode = { "n", "o", "x" },
+          "B",
+          "<cmd>lua require('spider').motion('b', { skipInsignificantPunctuation = true } )<CR>",
+          { desc = "Spider-B" },
+        },
+        {
+          mode = { "n", "o", "x" },
+          "gB",
+          "<cmd>lua require('spider').motion('ge', { skipInsignificantPunctuation = true })<CR>",
+          { desc = "Spider-W" },
+        },
+      },
+    },
+    {
+      "chrisgrieser/nvim-various-textobjs",
+      opts = {},
+      event = "VeryLazy",
+      enabled = dots.editor.textobjs.enabled,
+      keys = {
+        {
+          mode = { "x", "o" },
+          "iw",
+          "<cmd>lua require('various-textobjs').subword(true)<cr>",
+          { desc = "inner subword" },
+        },
+        {
+          mode = { "x", "o" },
+          "aw",
+          "<cmd>lua require('various-textobjs').subword(false)<cr>",
+          { desc = "outer subword" },
+        },
+        {
+          mode = { "x", "o" },
+          "iW",
+          "<cmd>lua require('various-textobjs').subword(true)<cr>",
+          { desc = "inner subword" },
+        },
+        {
+          mode = { "x", "o" },
+          "aW",
+          "<cmd>lua require('various-textobjs').subword(false)<cr>",
+          { desc = "outer subword" },
+        },
+      },
+    },
+    {
+      "kylechui/nvim-surround",
+      opts = true,
+      event = "VeryLazy",
+      enabled = dots.editor.surround.enabled,
+    },
+    {
+      "lewis6991/gitsigns.nvim",
+      enabled = dots.editor.gitsigns.enabled,
+      event = "VeryLazy",
+      opts = {
+        signs = {
+          add = { text = dots.UI.icons.Git.Signs.add },
+          change = { text = dots.UI.icons.Git.Signs.change },
+          delete = { text = dots.UI.icons.Git.Signs.delete },
+          topdelete = { text = dots.UI.icons.Git.Signs.topdelete },
+          changedelete = { text = dots.UI.icons.Git.Signs.changedelete },
+          untracked = { text = dots.UI.icons.Git.Signs.untracked },
+        },
+        on_attach = function(bufnr)
+          local gs = package.loaded.gitsigns
 
-return {
-  {
-    "kevinhwang91/nvim-ufo",
-    opts = {
-      provider_selector = function()
+          local function map(mode, l, r, desc)
+            vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
+          end
+
+          -- stylua: ignore start
+          map("n", "]h", gs.next_hunk, "Next Hunk")
+          map("n", "[h", gs.prev_hunk, "Prev Hunk")
+        end,
+      },
+    },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        auto_install = true,
+        ensure_installed = {},
+        highlight = {
+          enable = true,
+        },
+      },
+      config = function(_, opts)
+        require("nvim-treesitter.configs").setup(opts)
+      end,
+      event = {
+        "BufRead",
+        "BufWinEnter",
+        "BufNewFile",
+      },
+      enabled = dots.treesitter.enabled,
+      dependencies = {
+        {
+          "nvim-treesitter/nvim-treesitter-textobjects",
+          init = function()
+            require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
+          end,
+        },
+      },
+    },
+    {
+      "folke/flash.nvim",
+      opts = {
+        label = {
+          rainbow = {
+            enabled = true,
+            shade = 3,
+          },
+        },
+        modes = {
+          char = {
+            search = {
+              wrap = true,
+            },
+            config = function(opts)
+              opts.autohide = vim.fn.mode(true):find("o")
+              opts.jump_labels = true
+            end,
+          },
+        },
+      },
+      enabled = dots.editor.flash.enabled,
+      keys = {
+        {
+          "r",
+          mode = "o",
+          function()
+            require("flash").remote()
+          end,
+          desc = "Remote Flash",
+        },
+        { "f", mode = { "x", "n", "o" } },
+        { "F", mode = { "x", "n", "o" } },
+        { "t", mode = { "x", "n", "o" } },
+        { "T", mode = { "x", "n", "o" } },
+      },
+    },
+    {
+      "gbprod/yanky.nvim",
+      dependencies = { { "kkharji/sqlite.lua", enabled = not jit.os:find("Windows") } },
+      opts = function()
         return {
-          "treesitter",
-          "indent",
+          highlight = { timer = 200 },
+          ring = { storage = jit.os:find("Windows") and "shada" or "sqlite" },
         }
       end,
-    },
-    dependencies = {
-      "kevinhwang91/promise-async",
-    },
-    init = function()
-      vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile", "WinEnter" }, {
-        callback = function()
-          vim.schedule(function()
-            require("lazy").load({ plugins = "nvim-ufo" })
-          end)
-        end,
-      })
-    end,
-  },
-  {
-    "lewis6991/gitsigns.nvim",
-    opts = {
-      signs = {
-        add = { text = "▎" },
-        change = { text = "▎" },
-        delete = { text = "" },
-        topdelete = { text = "" },
-        changedelete = { text = "▎" },
-        untracked = { text = "▎" },
+      keys = {
+        -- stylua: ignore
+        { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
+        { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
+        { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
+        { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after selection" },
+        { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before selection" },
+        { "[y", "<Plug>(YankyCycleForward)", desc = "Cycle forward through yank history" },
+        { "]y", "<Plug>(YankyCycleBackward)", desc = "Cycle backward through yank history" },
+        { "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
+        { "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
+        { "]P", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
+        { "[P", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
+        { ">p", "<Plug>(YankyPutIndentAfterShiftRight)", desc = "Put and indent right" },
+        { "<p", "<Plug>(YankyPutIndentAfterShiftLeft)", desc = "Put and indent left" },
+        { ">P", "<Plug>(YankyPutIndentBeforeShiftRight)", desc = "Put before and indent right" },
+        { "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)", desc = "Put before and indent left" },
+        { "=p", "<Plug>(YankyPutAfterFilter)", desc = "Put after applying a filter" },
+        { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
       },
-      current_line_blame = true,
-      current_line_blame_formatter = "󰧮 <author>, <author_time:%Y-%m-%d> - <summary>",
-      trouble = dots.lsp.diagnostics.trouble.properly_lazyload,
-      on_attach = function(buffer)
-        local gs = package.loaded.gitsigns
+    },
+    {
+      "echasnovski/mini.ai",
+      opts = function()
+        local ai = require("mini.ai")
+        return {
+          n_lines = 500,
+          custom_textobjects = {
+            f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+          },
+        }
+      end,
+      event = "VeryLazy",
+    },
+    {
+      "RRethy/vim-illuminate",
+      opts = {
+        delay = 200,
+        large_file_cutoff = 2000,
+        large_file_overrides = {
+          providers = { "lsp" },
+        },
+      },
+      config = function(_, opts)
+        require("illuminate").configure(opts)
 
-        local function map(mode, l, r, desc)
-          vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+        local function map(key, dir, buffer)
+          vim.keymap.set("n", key, function()
+            require("illuminate")["goto_" .. dir .. "_reference"](false)
+          end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
         end
 
-        -- stylua: ignore start
-        map("n", "]h", gs.next_hunk, "Next Hunk")
-        map("n", "[h", gs.prev_hunk, "Prev Hunk")
-        map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
-        map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
-        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
+        map("]]", "next")
+        map("[[", "prev")
+
+        -- also set it after loading ftplugins, since a lot overwrite [[ and ]]
+        vim.api.nvim_create_autocmd("FileType", {
+          callback = function()
+            local buffer = vim.api.nvim_get_current_buf()
+            map("]]", "next", buffer)
+            map("[[", "prev", buffer)
+          end,
+        })
+      end,
+      event = "VeryLazy",
+    },
+    {
+      "echasnovski/mini.files",
+      opts = true,
+      init = function()
+        if vim.fn.argc() == 1 then
+          local stat = vim.loop.fs_stat(vim.fn.argv(0))
+          if stat and stat.type == "directory" then
+            require("mini.files")
+          end
+        end
       end,
     },
-    config = true,
-    init = function()
-      require("core.utils.lazy")("gitsigns.nvim")
-    end,
-  },
-  {
-    "olimorris/persisted.nvim",
-    opts = true,
-    config = function(_, opts)
-      require("persisted").setup(opts)
-
-      vim.cmd("SessionStart")
-    end,
-    cmd = {
-      "SessionLoad",
-      -- Load all other Session commands when, "Session" is typed.
-      -- Thus, providing autocompletion for other commands.
-      "Session",
-    },
-    event = { "VeryLazy" },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      -- NOTE: Install all of these.
-      ensure_installed = {
-        -- NOTE: You may think that you don't need the Vimscript parser if you mainly use Lua.
-        -- But, that's simply not true (unless you don't use `vim.cmd` or something similar).
-        -- It actually shows syntax highlighting in `vim.cmd`!
-        "vim",
-        -- Enable highlighting for Vim help files.
-        -- EG: :h LSP
-        "vimdoc",
-        "query",
-        "regex",
-        "bash",
-        -- NOTE: If you don't do Markdown stuff (I bet you do Markdown stuff though), you still don't want to remove this.
-        -- Noice.nvim requires this parser so, we have some Markdown-highighting in some other places! 🤯
-        "markdown",
-        "markdown_inline",
-        -- HACK: Since, we override filetypes for NEOGITCOMMITMESSAGE filetypes, so Treesitter might not install these.
-        "git_rebase",
-        "gitcommit",
-        -- NOTE: Diff is needed for LSPsaga.
-        "diff",
-      },
-
-      -- Auto install parsers once we enter a buffer.
-      -- BUG: This is super buggy and WILL show like a billion errors.
-      -- More information in the README.
-      auto_install = true,
-
-      -- Enable highlighting.
-      -- Otherwise, the whole plugin will be disabled.
-      highlight = {
-        enable = true,
-        -- NOTE: If you want to use Vim's regex highlighting (which is really unrecommended,
-        -- since, it's resource intensive and, will show wrong highlights),
-        -- You can still enable it via un-commenting the following line at L32.
-        -- It'll NEVER BE SUPPORTED.
-
-        -- additional_vim_regex_highlighting = true
-      },
-
-      -- indent = {
-      --   -- Enable Treesitter-based indentation.
-      --   -- It'll override the `=` operator and, others.
-      --   enable = true,
-      -- },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
-      vim.schedule(function()
-        require("nvim-treesitter.configs").setup({
-          indent = {
-            enable = true,
-          },
-        })
-      end)
-    end,
-    init = function()
-      require("core.utils.lazy")("nvim-treesitter")
-    end,
-    build = ":TSUpdate",
-  },
-  {
-    "andymass/vim-matchup",
-    opts = {
-      matchup = {
-        enable = true,
-        enable_quotes = true,
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
-      vim.g.matchup_matchparen_offscreen = {}
-
-      vim.cmd("silent! do FileType")
-    end,
-    dependencies = {
-      "nvim-treesitter",
-    },
-    init = function()
-      require("core.utils.lazy")("vim-matchup")
-    end,
-  },
-  {
-    "folke/twilight.nvim",
-    opts = true,
-  },
-  {
-    "anuvyklack/hydra.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("plugins.configs.editor.hydra")
-    end,
-  },
-  {
-    "ThePrimeagen/refactoring.nvim",
-    opts = true,
-    keys = {
-      { "<leader>rr", "<cmd>lua require('refactoring').select_refactor()<CR>", mode = "x" },
-    },
-  },
-  {
-    "GCBallesteros/NotebookNavigator.nvim",
-    keys = {
-      {
-        "]n",
-        function()
-          require("notebook-navigator").move_cell("d")
-        end,
-      },
-      {
-        "[n",
-        function()
-          require("notebook-navigator").move_cell("u")
-        end,
-      },
-      { "<leader>X", "<cmd>lua require('notebook-navigator').run_cell()<cr>" },
-      { "<leader>x", "<cmd>lua require('notebook-navigator').run_and_move()<cr>" },
-    },
-    dependencies = {
-      "mini.comment",
-      "hkupty/iron.nvim",
-      "hydra.nvim",
-    },
-    event = "VeryLazy",
-    config = function()
-      local nn = require("notebook-navigator")
-      nn.setup({ activate_hydra_keys = "<leader>n" })
-    end,
-  },
-  {
-    "abecodes/tabout.nvim",
-    opts = true,
-    event = "InsertEnter",
-  },
-  {
-    "max397574/better-escape.nvim",
-    opts = true,
-    event = "InsertEnter",
-  },
-  {
-    "mg979/vim-visual-multi",
-    event = "VeryLazy",
-  },
-  {
-    "uga-rosa/ccc.nvim",
-    opts = function()
-      local RgbHslCmykInput = require("plugins.configs.editor.ccc")
-      return {
-        highlighter = {
-          auto_enable = false,
-          lsp = true,
+    {
+      "nvim-pack/nvim-spectre",
+      opts = true,
+      keys = {
+        { "<leader>s", "<cmd>lua require('spectre').open()<CR>", desc = "Open Spectr" },
+        {
+          "<leader>sw",
+          "<cmd>lua require('spectre').open_visual({ select_word=true })<CR>",
+          desc = "Search current word",
         },
-        inputs = {
-          RgbHslCmykInput,
+        { "<leader>sw", "<cmd>lua require('spectre').open_visual()<CR>", mode = "x", desc = "Search current word" },
+        {
+          "<leader>sp",
+          "<cmd>lua require('spectre').open_file_search({ select_word=true })CR>",
+          mode = "n",
+          desc = "Search on current word",
         },
-      }
-    end,
-    cmd = { "CccPick", "CccConvert", "CccHighlighterEnable", "CccHighlighterDisable", "CccHighlighterToggle" },
-    keys = {
-      { "<leader>zp", "<cmd>CccPick<cr>", desc = "Pick" },
-      { "<leader>zc", "<cmd>CccConvert<cr>", desc = "Convert" },
-      { "<leader>zh", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle Highlighter" },
+      },
     },
-  },
-  {
-    "mrjones2014/smart-splits.nvim",
-    opts = true,
-    build = "./kitty/install-kittens.bash",
-  },
-  {
-    "smjonas/inc-rename.nvim",
-    keys = {
-      { "gr", ":IncRename " },
-    },
-  },
-}
+  }

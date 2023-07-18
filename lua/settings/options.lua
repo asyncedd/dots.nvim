@@ -356,11 +356,6 @@ o.relativenumber = true
 o.cursorline = true
 
 -- Set sign column to be 4.
---
--- At max, I'm planing to have four items in my statuscolumn:
---    Line/Relnumbers.
---    Git
---
 -- So, if I have a new diff, It'll not feel weird, by the signcolumn expanding
 
 o.signcolumn = "yes:1"
@@ -370,25 +365,6 @@ o.signcolumn = "yes:1"
 -- Enables 24-bit RGB colors in the TUI. Uses "gui" :highlight attributes instead of "cterm" attributes. BUT, requires an ISO-8613-3 compatible terminal. (most terminals)
 
 o.termguicolors = true
-
--- Blinking cursor.
---
--- I've found in https://github.com/vsedov/nvim
--- I find it cool :)
---
--- This is from the help docs, it enables mode shapes, "Cursor" highlight, and blinking
-o.guicursor = {
-  [[n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50]],
-  [[a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor]],
-  [[sm:block-blinkwait175-blinkoff150-blinkon175]],
-}
-
--- Pum options. (Popup menu)
---
--- Making the pum menu a bit transparent.
--- NOTE: This is pseudo-transparent.
-
-o.pumblend = 25
 
 -- Making pum menu a bit limited in the terms of screen real estate.
 -- Basically it only shows 10 items into a popup menu.
@@ -431,12 +407,6 @@ o.emoji = false
 -- If there are two windows, it'll always and ONLY show the one window last accessed.
 
 o.laststatus = 3
-
--- Set GUI font to Cartograph CF.
---
--- It doesn't really matter for the TUI but, it does on GUI versions.
-
-o.guifont = "Cartograph CF:h10"
 
 -- Set scrolloff to be at the max.
 --

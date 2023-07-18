@@ -1,29 +1,20 @@
--- Enable the experimental Lua loader.
+-- init.lua
 vim.loader.enable()
 
--- Set some options.
+require("settings")
+
+-- Setup some options
 require("settings.options")
 
--- Require lazy.nvim.
+-- Setup the plugins
 require("plugins")
 
--- Set up autocmds.
+vim.cmd("colorscheme " .. (dots.colorscheme.enabled or "habamax"))
+
 require("settings.autocmds")
+require("settings.keymaps")
 
--- Set the colorscheme.
-local colorscheme = dots.colorscheme.current
-
-local ok = pcall(vim.cmd.colorscheme, colorscheme)
-
-if not ok then
-  vim.notify("Hey, there's no colorscheme named " .. colorscheme, vim.log.levels.ERROR, {})
-  require("catppuccin").load()
+for name, icon in pairs(dots.UI.icons.LSP) do
+  name = "DiagnosticSign" .. name
+  vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 end
-
--- Execute "Colorscheme" autocommands.
-vim.api.nvim_exec_autocmds("Colorscheme", {})
-
--- Schedule the keymaps to improve responsiveness.
-vim.schedule(function()
-  require("keymaps")
-end)
