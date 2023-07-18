@@ -3,14 +3,11 @@ return not (dots.languages.lua or dots.languages.lua.enable) and {}
     {
       "nvim-treesitter/nvim-treesitter",
       opts = function(_, opts)
-        table.insert(
-          opts.ensure_installed,
-          {
-            dots.languages.lua.treesitter.base and "lua",
-            dots.languages.lua.treesitter.luadoc and "luadoc",
-            dots.languages.lua.treesitter.patterns and "luap",
-          }
-        )
+        table.insert(opts.ensure_installed, {
+          dots.languages.lua.treesitter.base and "lua",
+          dots.languages.lua.treesitter.luadoc and "luadoc",
+          dots.languages.lua.treesitter.patterns and "luap",
+        })
       end,
     },
     dots.languages.lua.LSP.enable and {
