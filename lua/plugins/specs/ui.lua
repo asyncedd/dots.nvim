@@ -12,6 +12,7 @@ return {
         telescope = { style = "nvchad" },
         illuminate = true,
         notify = true,
+        mini = true,
       },
     },
     name = "catppuccin",
