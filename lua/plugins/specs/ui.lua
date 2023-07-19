@@ -685,26 +685,6 @@ return {
       }
 
       local init = function(self)
-        local gitsigns_avail = pcall(require, "gitsigns")
-        self.signs = {}
-
-        self.handlers.signs = function(args)
-          return vim.schedule(vim.diagnostic.open_float)
-        end
-
-        self.handlers.line_number = function(args)
-          local dap_avail, dap = pcall(require, "dap")
-          if dap_avail then
-            vim.schedule(dap.toggle_breakpoint)
-          end
-        end
-
-        self.handlers.git_signs = function(args)
-          if gitsigns_avail then
-            vim.schedule(gitsigns.preview_hunk)
-          end
-        end
-
         self.handlers.fold = function(args)
           local lnum = args.mousepos.line
           if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then
@@ -744,6 +724,7 @@ return {
         line_numbers,
         Align,
         gitsigns,
+        Space,
       }
 
       return {
