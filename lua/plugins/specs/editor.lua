@@ -279,6 +279,7 @@ return not dots.editor.enabled and {}
       "andymass/vim-matchup",
       dependencies = "nvim-treesitter/nvim-treesitter",
       config = function()
+        vim.g.matchup_matchparen_offscreen = {} -- empty = disables
         vim.cmd("silent! do FileType")
       end,
       event = "VeryLazy",
