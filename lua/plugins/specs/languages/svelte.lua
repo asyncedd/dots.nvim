@@ -26,4 +26,14 @@ return not dots.languages.svelte.enable and {}
         handlers = {},
       },
     },
+    {
+      "jose-elias-alvarez/null-ls.nvim",
+      opts = {
+        sources = {
+          prettierd = {
+            extra_filetypes = { "svelte" },
+          },
+        },
+      },
+    },
   }
