@@ -402,7 +402,9 @@ return {
       }
 
       local LSPActive = {
-        condition = conditions.lsp_attached,
+        condition = function()
+          return next(vim.lsp.get_active_clients()) ~= nil
+        end,
         update = { "LspAttach", "LspDetach" },
 
         {
@@ -416,7 +418,7 @@ return {
         {
           provider = function()
             local names = {}
-            for i, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
+            for _, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
               table.insert(names, server.name)
             end
             return " " .. table.concat(names, " ")
@@ -533,7 +535,7 @@ return {
         statusline = StatusLines,
       }
     end,
-    event = "VeryLazy",
+    event = "UIEnter",
     dependencies = "nvim-tree/nvim-web-devicons",
   },
   {
