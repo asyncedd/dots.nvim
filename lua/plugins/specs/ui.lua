@@ -684,41 +684,37 @@ return {
         },
       }
 
-      local init = function(self)
-        self.handlers.fold = function(args)
-          local lnum = args.mousepos.line
-          if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then
-            return
-          end
-          vim.cmd.execute("'" .. lnum .. "fold" .. (vim.fn.foldclosed(lnum) == -1 and "close" or "open") .. "'")
-        end
-      end
-
-      local static = {
-        click_args = function(self, minwid, clicks, button, mods)
-          local args = {
-            minwid = minwid,
-            clicks = clicks,
-            button = button,
-            mods = mods,
-            mousepos = vim.fn.getmousepos(),
-          }
-          local sign = vim.fn.screenstring(args.mousepos.screenrow, args.mousepos.screencol)
-          if sign == " " then
-            sign = vim.fn.screenstring(args.mousepos.screenrow, args.mousepos.screencol - 1)
-          end
-          args.sign = self.signs[sign]
-          vim.api.nvim_set_current_win(args.mousepos.winid)
-          vim.api.nvim_win_set_cursor(0, { args.mousepos.line, 0 })
-
-          return args
-        end,
-        handlers = {},
-      }
-
       local StatusColumn = {
-        static = static,
-        init = init,
+        static = {
+          click_args = function(self, minwid, clicks, button, mods)
+            local args = {
+              minwid = minwid,
+              clicks = clicks,
+              button = button,
+              mods = mods,
+              mousepos = vim.fn.getmousepos(),
+            }
+            local sign = vim.fn.screenstring(args.mousepos.screenrow, args.mousepos.screencol)
+            if sign == " " then
+              sign = vim.fn.screenstring(args.mousepos.screenrow, args.mousepos.screencol - 1)
+            end
+            args.sign = self.signs[sign]
+            vim.api.nvim_set_current_win(args.mousepos.winid)
+            vim.api.nvim_win_set_cursor(0, { args.mousepos.line, 0 })
+
+            return args
+          end,
+          handlers = {},
+        },
+        init = function(self)
+          self.handlers.fold = function(args)
+            local lnum = args.mousepos.line
+            if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then
+              return
+            end
+            vim.cmd.execute("'" .. lnum .. "fold" .. (vim.fn.foldclosed(lnum) == -1 and "close" or "open") .. "'")
+          end
+        end,
         folds,
         Space,
         line_numbers,
@@ -765,7 +761,6 @@ return {
     "echasnovski/mini.indentscope",
     opts = {
       symbol = "│",
-      options = { try_as_border = true },
     },
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
