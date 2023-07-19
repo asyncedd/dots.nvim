@@ -89,16 +89,14 @@ return not dots.editor.enabled and {}
           changedelete = { text = dots.UI.icons.Git.Signs.changedelete },
           untracked = { text = dots.UI.icons.Git.Signs.untracked },
         },
-        on_attach = function(bufnr)
-          local gs = package.loaded.gitsigns
+        on_attach = function()
+          local gs = require("gitsigns")
 
-          local function map(mode, l, r, desc)
-            vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
-          end
+          local map = vim.keymap.set
 
           -- stylua: ignore start
-          map("n", "]h", gs.next_hunk, "Next Hunk")
-          map("n", "[h", gs.prev_hunk, "Prev Hunk")
+          map("n", "]h", gs.next_hunk, { desc = "Next Hunk" })
+          map("n", "[h", gs.prev_hunk, { desc= "Prev Hunk" })
         end,
       },
     },
