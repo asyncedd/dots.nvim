@@ -213,6 +213,37 @@ return not dots.editor.enabled and {}
           },
         }
       end,
+      config = function(_, opts)
+        require("mini.ai").setup(opts)
+
+        local mini_ai = require("mini.ai")
+        mini_ai.setup({
+          custom_textobjects = {
+            F = mini_ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
+          },
+        })
+
+        local map_previous = function(lhs, side, textobj_id)
+          for _, mode in ipairs({ "n", "x", "o" }) do
+            vim.keymap.set(mode, lhs, function()
+              MiniAi.move_cursor(side, "a", textobj_id, { search_method = "prev" })
+            end)
+          end
+        end
+
+        local map_next = function(lhs, side, textobj_id)
+          for _, mode in ipairs({ "n", "x", "o" }) do
+            vim.keymap.set(mode, lhs, function()
+              MiniAi.move_cursor(side, "a", textobj_id, { search_method = "next" })
+            end)
+          end
+        end
+
+        map_previous("[f", "left", "F")
+        map_previous("[F", "right", "F")
+        map_next("]f", "left", "F")
+        map_next("]F", "right", "F")
+      end,
       event = "VeryLazy",
     },
     {
