@@ -326,4 +326,9 @@ return not dots.editor.enabled and {}
       end,
       event = "VeryLazy",
     },
+    {
+      "echasnovski/mini.bracketed",
+      opts = true,
+      event = "VeryLazy",
+    },
   }
