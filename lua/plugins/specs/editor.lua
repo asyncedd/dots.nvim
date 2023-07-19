@@ -258,6 +258,14 @@ return not dots.editor.enabled and {}
           end
         end
       end,
+      keys = {
+        {
+          "<leader>to",
+          function()
+            require("mini.files").open()
+          end,
+        },
+      },
     },
     {
       "nvim-pack/nvim-spectre",
