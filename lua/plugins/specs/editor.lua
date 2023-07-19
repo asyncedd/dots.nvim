@@ -110,6 +110,9 @@ return not dots.editor.enabled and {}
         highlight = {
           enable = true,
         },
+        matchup = {
+          enable = true,
+        },
       },
       config = function(_, opts)
         require("nvim-treesitter.configs").setup(opts)
@@ -271,5 +274,13 @@ return not dots.editor.enabled and {}
           desc = "Search on current word",
         },
       },
+    },
+    {
+      "andymass/vim-matchup",
+      dependencies = "nvim-treesitter/nvim-treesitter",
+      config = function()
+        vim.cmd("silent! do FileType")
+      end,
+      event = "VeryLazy",
     },
   }
