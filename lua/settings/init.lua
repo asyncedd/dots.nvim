@@ -93,7 +93,7 @@ M.languages = {
       base = true,
       javascript = true,
       typescript = true,
-      rust = true,
+      rust = false,
       css = true,
     },
     LSP = {
