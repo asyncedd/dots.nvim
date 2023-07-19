@@ -67,7 +67,6 @@ return {
           function(...)
             local opts = stages[1](...)
             if opts then
-              opts.border = "solid"
               opts.row = opts.row + 1
             end
             return opts
