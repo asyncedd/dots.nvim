@@ -328,7 +328,10 @@ return not dots.editor.enabled and {}
     },
     {
       "echasnovski/mini.bracketed",
-      opts = true,
+      opts = {
+        yank = { suffix = "" },
+        indent = { suffix = "" },
+      },
       event = "VeryLazy",
     },
   }
