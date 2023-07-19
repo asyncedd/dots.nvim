@@ -19,6 +19,11 @@ return {
   },
   {
     "rcarriga/nvim-notify",
+    opts = {
+      render = "minimal",
+      stages = "slide",
+      fps = 60,
+    },
     init = function()
       vim.notify = function(...)
         require("lazy").load({ plugins = "nvim-notify" })
