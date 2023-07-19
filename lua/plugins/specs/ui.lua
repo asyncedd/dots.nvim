@@ -542,34 +542,6 @@ return {
       }
 
       local StatusLines = {
-        static = {
-          mode_colors_map = {
-            n = "blue",
-            i = "green",
-            v = "pink",
-            V = "pink",
-            ["\22"] = "pink",
-            c = "yellow",
-            s = "purple",
-            S = "purple",
-            ["\19"] = "purple",
-            R = "orange",
-            r = "orange",
-            ["!"] = "red",
-            t = "green",
-          },
-          mode_color = function(self)
-            local mode = conditions.is_active() and vim.fn.mode() or "n"
-            return self.mode_colors_map[mode]
-          end,
-          icon_color = function(self)
-            local filename = self.filename
-            local extension = vim.fn.fnamemodify(filename, ":e")
-            local _, icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
-
-            return icon_color
-          end,
-        },
         hl = function()
           if conditions.is_active() then
             return "Normal"
@@ -657,7 +629,7 @@ return {
             if self.has_sign then
               return self.sign.name
             end
-            return "HeirlineStatusColumn"
+            return "bright_bg"
           end,
         },
       }
