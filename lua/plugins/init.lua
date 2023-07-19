@@ -28,6 +28,8 @@ require("lazy").setup({
         "tutor",
         "zipPlugin",
         "spellfile",
+        "matchit",
+        "matchparen",
       },
     },
   },
