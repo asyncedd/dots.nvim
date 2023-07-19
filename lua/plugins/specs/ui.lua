@@ -454,9 +454,6 @@ return {
       }
 
       local LSPActive = {
-        condition = function()
-          return next(vim.lsp.get_clients()) ~= nil
-        end,
         update = { "LspAttach", "LspDetach" },
 
         {
@@ -469,11 +466,15 @@ return {
         },
         {
           provider = function()
-            local names = {}
-            for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
-              table.insert(names, server.name)
+            if rawget(vim, "lsp") then
+              local names = {}
+              for _, server in pairs(vim.lsp.get_clients()) do
+                if server.attached_buffers[vim.api.nvim_get_current_buf()] then
+                  table.insert(names, server.name)
+                end
+              end
+              return " " .. table.concat(names, " ")
             end
-            return " " .. table.concat(names, " ")
           end,
           hl = { fg = "green", bg = "bright_bg", bold = true },
         },
