@@ -5,14 +5,14 @@
 
 ** Big goals
    - (-) Make it prettier
-   - (!) Make it minimal
+   - (x) Make it minimal
    - ( ) Improve nvim-cmp sorting to be super cool
    - (-) Make the README better in general
-   - (-) Optimize the configuration in general
-   - (-) Optimize startup time
+   - (x) Optimize the configuration in general
+   - (x) Optimize startup time
    - ( ) Make LSP servers smarter in general
-   - ( ) Make heirline prettier
-   - ( ) Make the heirline configuration better
+   - (x) Make heirline prettier
+   - (x) Make the heirline configuration better
 
 ** feat
    - (x) Add glow.nvim
