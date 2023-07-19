@@ -16,7 +16,7 @@ return not dots.coding.enabled and {}
           local kind_icons = dots.UI.icons
           local s = {}
           for i, _ in ipairs(sources) do
-            table.insert(s, { name = sources[i].name })
+            table.insert(s, { name = sources[i].name, priority = sources[i].priority or nil })
           end
 
           return {

@@ -144,6 +144,7 @@ M.coding = {
   cmp = {
     enabled = true,
     sources = {
+      { name = "emoji", source = "hrsh7th/cmp-emoji", priority = 99999 },
       { name = "luasnip", source = "saadparwaiz1/cmp_luasnip" },
       { name = "nvim_lsp", source = "hrsh7th/cmp-nvim-lsp" },
       { name = "buffer", source = "hrsh7th/cmp-buffer" },
