@@ -34,6 +34,13 @@ M.UI = {
         untracked = "▎",
       },
     },
+    Folds = {
+      eob = "",
+      fold = "",
+      foldopen = "",
+      foldsep = "",
+      foldclose = "",
+    },
     Text = "󰉿",
     Method = "󰆧",
     Function = "󰊕",
