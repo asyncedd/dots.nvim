@@ -589,4 +589,14 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        always_show_bufferline = false,
+        enforce_regular_tabs = true,
+      },
+    },
+    event = "VeryLazy",
+  },
 }
