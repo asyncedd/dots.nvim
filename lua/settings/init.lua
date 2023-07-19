@@ -158,6 +158,9 @@ M.coding = {
       { name = "buffer", source = "hrsh7th/cmp-buffer" },
       { name = "path", source = "hrsh7th/cmp-path" },
     },
+    cmd = {
+      enabled = true,
+    },
     ghost_text = true,
     snippet = function(args)
       require("luasnip").lsp_expand(args.body)
