@@ -219,17 +219,11 @@ return {
             update = {
               "ModeChanged",
               pattern = "*:*",
-              callback = vim.schedule_wrap(function()
-                vim.cmd("redrawstatus")
-              end),
             },
           },
           update = {
             "ModeChanged",
             pattern = "*:*",
-            callback = vim.schedule_wrap(function()
-              vim.cmd("redrawstatus")
-            end),
           },
         },
         {
@@ -262,13 +256,9 @@ return {
                 bold = true,
               }
             end,
-
             update = {
               "ModeChanged",
               pattern = "*:*",
-              callback = vim.schedule_wrap(function()
-                vim.cmd("redrawstatus")
-              end),
             },
           },
           {
@@ -279,17 +269,11 @@ return {
             update = {
               "ModeChanged",
               pattern = "*:*",
-              callback = vim.schedule_wrap(function()
-                vim.cmd("redrawstatus")
-              end),
             },
           },
           update = {
             "ModeChanged",
             pattern = "*:*",
-            callback = vim.schedule_wrap(function()
-              vim.cmd("redrawstatus")
-            end),
           },
         },
       }
