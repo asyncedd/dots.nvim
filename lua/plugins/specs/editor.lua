@@ -68,6 +68,11 @@ return not dots.editor.enabled and {}
           "<cmd>lua require('various-textobjs').subword(false)<cr>",
           { desc = "outer subword" },
         },
+        {
+          "gG",
+          "<cmd>lua require('various-textobjs').entireBuffer()<CR>",
+          mode = { "x", "o" },
+        },
       },
     },
     {
