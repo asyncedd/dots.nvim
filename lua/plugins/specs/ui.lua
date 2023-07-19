@@ -61,7 +61,6 @@ return {
           priority = 50,
         })
       end,
-      stages = "slide",
       fps = 60,
     },
     init = function()
