@@ -126,6 +126,26 @@ M.languages = {
       },
     },
   },
+  python = {
+    enable = true,
+    treesitter = {
+      base = true,
+    },
+    LSP = {
+      config = {
+        enable = true,
+        servers = {
+          pyright = {},
+        },
+      },
+      null = {
+        enable = true,
+        servers = {
+          ruff = {},
+        },
+      },
+    },
+  },
 }
 
 M.colorscheme = {
