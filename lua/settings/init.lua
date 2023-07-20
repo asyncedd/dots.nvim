@@ -142,6 +142,7 @@ M.languages = {
         enable = true,
         servers = {
           ruff = {},
+          black = {},
         },
       },
     },
