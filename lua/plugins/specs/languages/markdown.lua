@@ -4,10 +4,8 @@ return not dots.languages.markdown.enable and {}
       "nvim-treesitter/nvim-treesitter",
       opts = function(_, opts)
         local grammars = {}
-        if #dots.languages.markdown.treesitter.additional_parsers > 0 then
-          for i, grammar in ipairs(dots.languages.markdown.treesitter.additional_parsers) do
-            table.insert(grammars, grammar)
-          end
+        for i, grammar in ipairs(dots.languages.markdown.treesitter.additional_parsers) do
+          table.insert(grammars, grammar)
         end
 
         table.insert(opts.ensure_installed, {
@@ -15,6 +13,14 @@ return not dots.languages.markdown.enable and {}
           dots.languages.markdown.treesitter.markdown_inline and "markdown_inline",
           grammars,
         })
+      end,
+    },
+    not dots.languages.markdown.LSP.enable and {} or {
+      "neovim/nvim-lspconfig",
+      opts = function(_, opts)
+        for k, v in pairs(dots.languages.markdown.LSP.providers) do
+          opts.servers[k] = v
+        end
       end,
     },
   }

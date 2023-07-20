@@ -117,6 +117,14 @@ M.languages = {
       markdown_inline = true,
       additional_parsers = {},
     },
+    LSP = {
+      enable = true,
+      providers = {
+        marksman = {},
+        -- You can add more servers as you please.
+        -- prosemd = {}
+      },
+    },
   },
 }
 
