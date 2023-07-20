@@ -110,6 +110,14 @@ M.languages = {
       enable = true,
     },
   },
+  markdown = {
+    enable = true,
+    treesitter = {
+      markdown = true,
+      markdown_inline = true,
+      additional_parsers = {},
+    },
+  },
 }
 
 M.colorscheme = {
