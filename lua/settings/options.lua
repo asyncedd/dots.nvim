@@ -303,6 +303,10 @@ o.smartcase = true
 -- Set the timeout length to be a little shorter
 o.timeoutlen = 500
 
+-- Folds
+o.foldmethod = "expr"
+o.foldexpr = dots.Folds.provider == "treesitter" and "nvim_treesitter#foldexpr()"
+
 -- CODE: hFy
 --
 --  ╭──────────────────────────────────────────────────────────╮
