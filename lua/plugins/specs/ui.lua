@@ -78,7 +78,9 @@ return {
     end,
     init = function()
       vim.notify = function(...)
-        require("lazy").load({ plugins = "nvim-notify" })
+        if not require("lazy.core.config").plugins["oil.nvim"]._.loaded then
+          require("lazy").load({ plugins = "nvim-notify" })
+        end
         require("notify")(...)
       end
     end,
