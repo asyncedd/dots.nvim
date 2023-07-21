@@ -344,7 +344,7 @@ return {
           self.icon, self.icon_color =
             require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
         end,
-        FileNameBlock,
+
         FileIcon,
         { Space, hl = { bg = "bright_bg" } },
         utils.insert(FileName, FileFlags),
