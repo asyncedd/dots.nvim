@@ -117,7 +117,7 @@ return {
       local U = require("core.utils.colors")
       local conditions = require("heirline.conditions")
       local utils = require("heirline.utils")
-      local Normal = string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true)["foreground"], 0.3) or 0
+      local Normal = string.format("#%06x", utils.get_highlight("Normal").fg)
       local Align = { provider = "%=" }
       local Space = { provider = " " }
 
