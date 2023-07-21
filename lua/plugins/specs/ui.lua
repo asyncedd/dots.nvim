@@ -453,15 +453,24 @@ return {
         },
       }
 
+      local lsp_attached = function()
+        return next(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })) ~= nil
+      end
+
       local LSPActive = {
+        condition = lsp_attached(),
         update = { "LspAttach", "LspDetach" },
 
         {
-          provider = "",
+          provider = function()
+            return lsp_attached() and "" or ""
+          end,
           hl = { fg = "green" },
         },
         {
-          provider = " ",
+          provider = function()
+            return lsp_attached() and " " or ""
+          end,
           hl = { bg = "green", fg = "Normal" },
         },
         {
@@ -473,13 +482,15 @@ return {
                   table.insert(names, server.name)
                 end
               end
-              return " " .. table.concat(names, " ")
+              return lsp_attached() and " " .. table.concat(names, " ") or ""
             end
           end,
           hl = { fg = "green", bg = "bright_bg", bold = true },
         },
         {
-          provider = "",
+          provider = function()
+            return lsp_attached() and "" or ""
+          end,
           hl = { fg = "bright_bg" },
         },
       }
