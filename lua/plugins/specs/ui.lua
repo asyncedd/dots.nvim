@@ -453,9 +453,6 @@ return {
         init = function(self)
           self.lsp_attached = lsp_attached()
         end,
-        condition = function(self)
-          return self.lsp_attached
-        end,
         update = { "LspAttach", "LspDetach" },
 
         {
