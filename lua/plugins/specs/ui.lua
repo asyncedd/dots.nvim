@@ -599,6 +599,7 @@ return {
           "lazyterm",
           "toggleterm",
           "noice",
+          "python",
           "",
         },
         callback = function()
