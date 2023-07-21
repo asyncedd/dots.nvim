@@ -458,23 +458,28 @@ return {
       end
 
       local LSPActive = {
-        condition = lsp_attached(),
+        init = function(self)
+          self.lsp_attached = lsp_attached()
+        end,
+        condition = function(self)
+          return self.lsp_attached
+        end,
         update = { "LspAttach", "LspDetach" },
 
         {
-          provider = function()
-            return lsp_attached() and "" or ""
+          provider = function(self)
+            return self.lsp_attached and "" or ""
           end,
           hl = { fg = "green" },
         },
         {
-          provider = function()
-            return lsp_attached() and " " or ""
+          provider = function(self)
+            return self.lsp_attached and " " or ""
           end,
           hl = { bg = "green", fg = "Normal" },
         },
         {
-          provider = function()
+          provider = function(self)
             if rawget(vim, "lsp") then
               local names = {}
               for _, server in pairs(vim.lsp.get_clients()) do
@@ -482,14 +487,14 @@ return {
                   table.insert(names, server.name)
                 end
               end
-              return lsp_attached() and " " .. table.concat(names, " ") or ""
+              return self.lsp_attached and " " .. table.concat(names, " ") or ""
             end
           end,
           hl = { fg = "green", bg = "bright_bg", bold = true },
         },
         {
-          provider = function()
-            return lsp_attached() and "" or ""
+          provider = function(self)
+            return self.lsp_attached and "" or ""
           end,
           hl = { fg = "bright_bg" },
         },
