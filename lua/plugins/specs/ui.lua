@@ -289,18 +289,6 @@ return {
         },
       }
 
-      local FileNameBlock = {
-        -- let's first set up some attributes needed by this component and it's children
-        init = function(self)
-          self.filename = vim.api.nvim_buf_get_name(0)
-          local filename = self.filename
-          local extension = vim.fn.fnamemodify(filename, ":e")
-          self.icon, self.icon_color =
-            require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
-        end,
-      }
-      -- We can now define some children separately and add them later
-
       local FileIcon = {
         {
           provider = "",
@@ -348,7 +336,14 @@ return {
       }
 
       -- let's add the children to our FileNameBlock component
-      FileNameBlock = utils.insert(
+      local FileNameBlock = {
+        init = function(self)
+          self.filename = vim.api.nvim_buf_get_name(0)
+          local filename = self.filename
+          local extension = vim.fn.fnamemodify(filename, ":e")
+          self.icon, self.icon_color =
+            require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+        end,
         FileNameBlock,
         FileIcon,
         { Space, hl = { bg = "bright_bg" } },
@@ -359,8 +354,8 @@ return {
           hl = function()
             return { fg = "bright_bg", bold = true }
           end,
-        }
-      )
+        },
+      }
 
       local Git = {
         condition = conditions.is_git_repo,
