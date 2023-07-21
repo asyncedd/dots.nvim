@@ -35,10 +35,10 @@ M.UI = {
       },
     },
     Folds = {
-      eob = "",
-      fold = "",
+      eob = " ",
+      fold = " ",
       foldopen = "",
-      foldsep = "",
+      foldsep = " ",
       foldclose = "",
     },
     Text = "󰉿",
