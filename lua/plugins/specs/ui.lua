@@ -555,13 +555,7 @@ return {
       }
 
       local StatusLines = {
-        hl = function()
-          if conditions.is_active() then
-            return "Normal"
-          else
-            return "Normal"
-          end
-        end,
+        hl = "Normal",
 
         StatusLine,
       }
