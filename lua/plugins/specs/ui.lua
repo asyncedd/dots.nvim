@@ -6,6 +6,7 @@ return {
         return {
           ["@variable"] = { fg = C.flamingo },
           Pmenu = { bg = C.mantle },
+          PmenuSel = { bg = C.blue, fg = C.base, style = { "bold" } },
         }
       end,
       integrations = {
