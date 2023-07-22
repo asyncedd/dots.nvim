@@ -2,9 +2,9 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local modules_dir = vim.fn.stdpath("config") .. "/lua/plugins"
 
 if not vim.uv.fs_stat(lazypath) then
-  print(" Bootstrapping lazy.nvim!")
+  vim.notify(" Bootstrapping lazy.nvim!")
   vim.cmd("!git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable " .. lazypath)
-  print(" Done!")
+  vim.notify(" Done!")
 end
 
 vim.opt.rtp:prepend(lazypath)
