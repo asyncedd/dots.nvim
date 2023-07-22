@@ -52,8 +52,9 @@ return not dots.coding.enabled and {}
             }),
             formatting = {
               fields = { "abbr", "kind", "menu" },
-              format = function(_, vim_item)
+              format = function(entry, vim_item)
                 local item = vim_item.kind
+                vim_item = require("cmp-tailwind-colors").format(entry, vim_item)
                 vim_item.kind = string.format("%s %s", kind_icons[item], item)
                 vim_item.kind = " " .. vim_item.kind .. " "
 
@@ -66,7 +67,7 @@ return not dots.coding.enabled and {}
           }
         end,
         event = "InsertEnter",
-        dependencies = ret,
+        dependencies = { ret, "js-everts/cmp-tailwind-colors" },
         enabled = dots.coding.cmp.enabled,
       },
     },

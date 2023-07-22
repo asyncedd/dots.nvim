@@ -105,6 +105,11 @@ M.languages = {
     },
     LSP = {
       enable = true,
+      servers = {
+        svelte = {},
+        emmet_ls = {},
+        tailwindcss = {},
+      },
     },
     DAP = {
       enable = true,
