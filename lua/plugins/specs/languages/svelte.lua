@@ -29,12 +29,15 @@ return not dots.languages.svelte.enable and {}
     },
     {
       "jose-elias-alvarez/null-ls.nvim",
-      opts = {
-        sources = {
-          prettierd = {
-            extra_filetypes = { "svelte" },
-          },
-        },
-      },
+      opts = function(_, opts)
+        if opts.sources.prettierd == nil then
+          opts.sources.prettierd = {}
+        end
+        if opts.sources.prettierd.extra_filetypes == nil then
+          opts.sources.prettierd = { extra_filetypes = {} }
+        end
+
+        table.insert(opts.sources.prettierd.extra_filetypes, "svelte")
+      end,
     },
   }

@@ -152,11 +152,6 @@ M.languages = {
     LSP = {
       null = {
         enable = true,
-        servers = {
-          prettierd = {
-            extra_filetypes = { "toml" },
-          },
-        },
       },
       config = {
         enable = true,
