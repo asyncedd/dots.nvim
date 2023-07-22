@@ -235,6 +235,9 @@ M.editor = {
   treesitter = {
     enabled = true,
   },
+  dial = {
+    enabled = true,
+  },
 }
 
 M.tools = {

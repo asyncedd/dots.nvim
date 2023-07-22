@@ -316,4 +316,77 @@ return not dots.editor.enabled and {}
       dependencies = "kevinhwang91/promise-async",
       event = "VeryLazy",
     },
+    {
+      "monaqa/dial.nvim",
+      opts = function()
+        local augend = require("dial.augend")
+        return {
+          default = {
+            augend.integer.alias.decimal,
+            augend.integer.alias.hex,
+            augend.date.alias["%Y/%m/%d"],
+          },
+          lua = {
+            augend.integer.alias.decimal,
+            augend.constant.new({
+              elements = { "and", "or" },
+              word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
+              cyclic = true, -- "or" is incremented into "and".
+            }),
+          },
+        }
+      end,
+      config = function(_, opts)
+        local default = opts.default
+        local ret = {}
+
+        for key, value in pairs(opts) do
+          ret[key] = {}
+
+          if key ~= "default" then
+            -- Merge values from the "default" table into the current table
+            for _, name in ipairs(default) do
+              table.insert(ret[key], name)
+            end
+          end
+
+          -- Add the values specific to the current table
+          for _, name in ipairs(value) do
+            table.insert(ret[key], name)
+          end
+        end
+
+        require("dial.config").augends:register_group(ret)
+
+        local exists_ft = function()
+          local ft = vim.bo.filetype
+
+          if ret[ft] ~= nil then
+            return ft
+          else
+            return "default"
+          end
+        end
+
+        local map = vim.api.nvim_buf_set_keymap
+
+        local maps = function()
+          map(0, "n", "<C-a>", require("dial.map").inc_normal(exists_ft()), { noremap = true })
+          map(0, "n", "<C-x>", require("dial.map").dec_normal(exists_ft()), { noremap = true })
+          map(0, "n", "g<C-a>", require("dial.map").inc_gnormal(exists_ft()), { noremap = true })
+          map(0, "n", "g<C-x>", require("dial.map").dec_gnormal(exists_ft()), { noremap = true })
+          map(0, "v", "<C-a>", require("dial.map").inc_visual(exists_ft()), { noremap = true })
+          map(0, "v", "<C-x>", require("dial.map").dec_visual(exists_ft()), { noremap = true })
+          map(0, "v", "g<C-a>", require("dial.map").inc_gvisual(exists_ft()), { noremap = true })
+          map(0, "v", "g<C-x>", require("dial.map").dec_gvisual(exists_ft()), { noremap = true })
+        end
+        maps()
+        vim.api.nvim_create_autocmd("FileType", {
+          callback = function()
+            maps()
+          end,
+        })
+      end,
+      event = "VeryLazy",
+    },
   }
