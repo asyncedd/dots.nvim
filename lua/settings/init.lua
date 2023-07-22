@@ -158,6 +158,12 @@ M.languages = {
           },
         },
       },
+      config = {
+        enable = true,
+        servers = {
+          taplo = {},
+        },
+      },
     },
   },
 }
