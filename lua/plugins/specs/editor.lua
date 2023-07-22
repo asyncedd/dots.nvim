@@ -382,4 +382,18 @@ return not dots.editor.enabled and {}
       end,
       event = "VeryLazy",
     },
+    {
+      "Wansmer/treesj",
+      opts = {
+        use_default_keymaps = false,
+      },
+      keys = {
+        {
+          "gS",
+          function()
+            require("treesj").toggle()
+          end,
+        },
+      },
+    },
   }
