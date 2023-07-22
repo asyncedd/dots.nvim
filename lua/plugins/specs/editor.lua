@@ -128,7 +128,7 @@ return not dots.editor.enabled and {}
         "BufWinEnter",
         "BufNewFile",
       },
-      enabled = dots.treesitter.enabled,
+      enabled = dots.editor.treesitter.enabled,
       dependencies = {
         {
           "nvim-treesitter/nvim-treesitter-textobjects",

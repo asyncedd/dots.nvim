@@ -153,11 +153,6 @@ M.colorscheme = {
   enabled = "catppuccin",
 }
 
-M.treesitter = {
-  enabled = true,
-  provider = "nvim-treesitter",
-}
-
 M.LSP = {
   enabled = true,
   config = {
@@ -235,6 +230,9 @@ M.editor = {
     enabled = true,
   },
   illuminate = {
+    enabled = true,
+  },
+  treesitter = {
     enabled = true,
   },
 }
