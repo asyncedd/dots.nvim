@@ -216,4 +216,18 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "stevearc/dressing.nvim",
+    opts = {
+      input = {
+        border = "solid",
+      },
+      nui = {
+        border = "solid",
+      },
+      builtin = {
+        border = "solid",
+      },
+    },
+  },
 }
