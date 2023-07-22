@@ -199,4 +199,20 @@ return {
     end,
     event = "UIEnter",
   },
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = {
+      user_default_options = {
+        rgb_fn = true,
+        hsl_fn = true,
+        css = true,
+        css_fn = true,
+      },
+    },
+    config = function(_, opts)
+      require("colorizer").setup(opts)
+      require("colorizer").attach_to_buffer()
+    end,
+    event = "VeryLazy",
+  },
 }
