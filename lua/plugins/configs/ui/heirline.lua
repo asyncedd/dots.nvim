@@ -106,11 +106,6 @@ local ViMode = {
         local mode = self.mode:sub(1, 1) -- get only the first mode character
         return { bg = self.mode_colors[mode], fg = "Normal", bold = true }
       end,
-
-      update = {
-        "ModeChanged",
-        pattern = "*:*",
-      },
     },
     update = {
       "ModeChanged",
