@@ -337,54 +337,47 @@ return not dots.editor.enabled and {}
         }
       end,
       config = function(_, opts)
-        local default = opts.default
-        local ret = {}
+        local function exists_ft()
+          local ft = vim.bo.filetype
+          return opts[ft] and ft or "default"
+        end
 
-        for key, value in pairs(opts) do
-          ret[key] = {}
+        local function register_dial_group()
+          local ret = {}
 
-          if key ~= "default" then
-            -- Merge values from the "default" table into the current table
-            for _, name in ipairs(default) do
+          for key, value in pairs(opts) do
+            ret[key] = key ~= "default" and { unpack(opts.default) } or {}
+            for _, name in ipairs(value) do
               table.insert(ret[key], name)
             end
           end
 
-          -- Add the values specific to the current table
-          for _, name in ipairs(value) do
-            table.insert(ret[key], name)
+          require("dial.config").augends:register_group(ret)
+        end
+
+        local function create_keymaps()
+          local map = vim.api.nvim_buf_set_keymap
+          local dial_map = require("dial.map")
+
+          local function set_keymap(mode, lhs, rhs)
+            map(0, mode, lhs, dial_map[rhs](exists_ft()), { noremap = true })
           end
+
+          set_keymap("n", "<C-a>", "inc_normal")
+          set_keymap("n", "<C-x>", "dec_normal")
+          set_keymap("n", "g<C-a>", "inc_gnormal")
+          set_keymap("n", "g<C-x>", "dec_gnormal")
+          set_keymap("v", "<C-a>", "inc_visual")
+          set_keymap("v", "<C-x>", "dec_visual")
+          set_keymap("v", "g<C-a>", "inc_gvisual")
+          set_keymap("v", "g<C-x>", "dec_gvisual")
         end
 
-        require("dial.config").augends:register_group(ret)
+        register_dial_group()
+        create_keymaps()
 
-        local exists_ft = function()
-          local ft = vim.bo.filetype
-
-          if ret[ft] ~= nil then
-            return ft
-          else
-            return "default"
-          end
-        end
-
-        local map = vim.api.nvim_buf_set_keymap
-
-        local maps = function()
-          map(0, "n", "<C-a>", require("dial.map").inc_normal(exists_ft()), { noremap = true })
-          map(0, "n", "<C-x>", require("dial.map").dec_normal(exists_ft()), { noremap = true })
-          map(0, "n", "g<C-a>", require("dial.map").inc_gnormal(exists_ft()), { noremap = true })
-          map(0, "n", "g<C-x>", require("dial.map").dec_gnormal(exists_ft()), { noremap = true })
-          map(0, "v", "<C-a>", require("dial.map").inc_visual(exists_ft()), { noremap = true })
-          map(0, "v", "<C-x>", require("dial.map").dec_visual(exists_ft()), { noremap = true })
-          map(0, "v", "g<C-a>", require("dial.map").inc_gvisual(exists_ft()), { noremap = true })
-          map(0, "v", "g<C-x>", require("dial.map").dec_gvisual(exists_ft()), { noremap = true })
-        end
-        maps()
         vim.api.nvim_create_autocmd("FileType", {
-          callback = function()
-            maps()
-          end,
+          callback = create_keymaps,
         })
       end,
       event = "VeryLazy",
