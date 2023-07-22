@@ -147,6 +147,19 @@ M.languages = {
       },
     },
   },
+  toml = {
+    enable = true,
+    LSP = {
+      null = {
+        enable = true,
+        servers = {
+          prettierd = {
+            extra_filetypes = { "toml" },
+          },
+        },
+      },
+    },
+  },
 }
 
 M.colorscheme = {
