@@ -116,6 +116,13 @@ return not dots.editor.enabled and {}
         matchup = {
           enable = true,
         },
+        autotag = {
+          enable = true,
+          enable_rename = true,
+          enable_close = true,
+          enable_close_on_slash = true,
+          filetypes = {},
+        },
         indent = {
           enable = true,
         },
@@ -395,5 +402,10 @@ return not dots.editor.enabled and {}
           end,
         },
       },
+    },
+    {
+      "windwp/nvim-ts-autotag",
+      opts = {},
+      event = "VeryLazy",
     },
   }

@@ -40,4 +40,10 @@ return not dots.languages.svelte.enable and {}
         table.insert(opts.sources.prettierd.extra_filetypes, "svelte")
       end,
     },
+    {
+      "windwp/nvim-ts-autotag",
+      opts = function(_, opts)
+        table.insert(opts.filetypes, "svelte")
+      end,
+    },
   }
