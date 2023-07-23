@@ -194,6 +194,7 @@ return not dots.coding.enabled and {}
           callback = create_keymaps,
         })
       end,
+      enabled = dots.coding.dial.enabled,
       event = "VeryLazy",
     },
     {

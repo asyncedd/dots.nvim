@@ -235,6 +235,9 @@ M.coding = {
       "svelte",
     },
   },
+  dial = {
+    enabled = true,
+  },
 }
 
 M.editor = {
@@ -258,9 +261,6 @@ M.editor = {
     enabled = true,
   },
   treesitter = {
-    enabled = true,
-  },
-  dial = {
     enabled = true,
   },
 }
