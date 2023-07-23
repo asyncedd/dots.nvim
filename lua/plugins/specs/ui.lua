@@ -229,5 +229,6 @@ return {
         border = "solid",
       },
     },
+    event = "VeryLazy",
   },
 }
