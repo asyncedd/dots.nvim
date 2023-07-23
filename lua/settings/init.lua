@@ -14,9 +14,6 @@ M.UI = {
   noice = {
     enabled = true,
   },
-  tint = {
-    enabled = true,
-  },
   icons = {
     LSP = {
       Error = " ",
