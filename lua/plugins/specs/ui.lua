@@ -231,4 +231,10 @@ return {
     },
     event = "VeryLazy",
   },
+  {
+    "levouh/tint.nvim",
+    opts = true,
+    event = "VeryLazy",
+    enabled = dots.UI.tint.enabled,
+  },
 }
