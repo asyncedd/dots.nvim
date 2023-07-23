@@ -262,6 +262,10 @@ M.editor = {
   },
   treesitter = {
     enabled = true,
+    parsers = {},
+  },
+  undotree = {
+    enabled = true,
   },
 }
 

@@ -109,7 +109,7 @@ return not dots.editor.enabled and {}
       "nvim-treesitter/nvim-treesitter",
       opts = {
         auto_install = true,
-        ensure_installed = {},
+        ensure_installed = dots.editor.treesitter.parsers,
         highlight = {
           enable = true,
         },
@@ -315,5 +315,15 @@ return not dots.editor.enabled and {}
       },
       dependencies = "kevinhwang91/promise-async",
       event = "VeryLazy",
+    },
+    {
+      "mbbill/undotree",
+      keys = {
+        { "<leader>u", "<cmd>UndotreeToggle<CR>" },
+      },
+      init = function()
+        table.insert(dots.editor.treesitter.parsers, "diff")
+      end,
+      enabled = dots.editor.undotree.enabled,
     },
   }
