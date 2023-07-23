@@ -6,6 +6,27 @@ return {
         return {
           Pmenu = { bg = C.mantle },
           PmenuSel = { bg = C.blue, fg = C.base, style = { "bold" } },
+
+          DiagnosticVirtualTextError = {
+            fg = C.red,
+            bg = C.none,
+            style = { "italic" },
+          },
+          DiagnosticVirtualTextWarn = {
+            fg = C.yellow,
+            bg = C.none,
+            style = { "italic" },
+          },
+          DiagnosticVirtualTextInfo = {
+            fg = C.sky,
+            bg = C.none,
+            style = { "italic" },
+          },
+          DiagnosticVirtualTextHint = {
+            fg = C.teal,
+            bg = C.none,
+            style = { "italic" },
+          },
         }
       end,
       integrations = {
