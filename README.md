@@ -6,11 +6,9 @@
 - [👋 Introduction](#-introduction)
 - [Wow, a really good place to put: ⚠️ DISCLAIMER! ⚠️](#wow-a-really-good-place-to-put-️-disclaimer-️)
 - [🤨 Crash course: Installing](#-crash-course-installing)
-  - [🐧 For \*Nix (Linux/MacOS) systems:](#for-nix-linuxmacos-systems)
-  - [🪟 For Windows systems:](#for-windows-systems)
 - [⚡ Performance](#-performance)
 - [😰 Quitting Nvim.](#-quitting-nvim)
-- [Inspirations / Credits](#inspirations-credits)
+- [Inspirations / Credits](#inspirations--credits)
 <!--toc:end-->
 
 ## 🏗️ DotsDotNvim (dots.nvim)
