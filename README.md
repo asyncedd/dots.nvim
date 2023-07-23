@@ -87,8 +87,8 @@ Just run a `nvim` in your terminal :D
 
 | Context                           | Screenshot                                              |
 | --------------------------------- | ------------------------------------------------------- |
-| No arguments (`nvim`)             | ![blank buffer](https://files.catbox.moe/cu021z.png)    |
-| With Arguments (`nvim some.file`) | ![a normal buffer](https://files.catbox.moe/07huta.png) |
+| No arguments (`nvim`)             | ![blank buffer](https://files.catbox.moe/ckipl3.png)    |
+| With Arguments (`nvim some.file`) | ![a normal buffer](https://files.catbox.moe/rlchtc.png) |
 
 </details>
 
