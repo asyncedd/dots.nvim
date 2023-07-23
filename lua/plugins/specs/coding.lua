@@ -2,7 +2,7 @@ local sources = dots.coding.cmp.sources
 local ret = {}
 
 for i, _ in ipairs(sources) do
-  table.insert(ret, sources[i].source)
+  table.insert(ret, sources[i].source or nil)
 end
 
 return not dots.coding.enabled and {}
