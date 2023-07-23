@@ -166,6 +166,14 @@ M.languages = {
       },
     },
   },
+  rust = {
+    enable = true,
+    LSP = {
+      config = {
+        enable = true,
+      },
+    },
+  },
 }
 
 M.colorscheme = {
