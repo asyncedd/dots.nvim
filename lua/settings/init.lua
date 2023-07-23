@@ -229,6 +229,12 @@ M.coding = {
   comment = {
     enabled = true,
   },
+  autotag = {
+    enabled = true,
+    ft = {
+      "svelte",
+    },
+  },
 }
 
 M.editor = {

@@ -210,4 +210,12 @@ return not dots.coding.enabled and {}
         },
       },
     },
+    {
+      "windwp/nvim-ts-autotag",
+      opts = {
+        filetypes = dots.coding.autotag.ft,
+      },
+      enabled = dots.coding.autotag.enabled,
+      event = "VeryLazy",
+    },
   }
