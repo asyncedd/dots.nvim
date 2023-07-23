@@ -4,7 +4,6 @@ return {
     opts = {
       custom_highlights = function(C)
         return {
-          ["@variable"] = { fg = C.flamingo },
           Pmenu = { bg = C.mantle },
           PmenuSel = { bg = C.blue, fg = C.base, style = { "bold" } },
         }
