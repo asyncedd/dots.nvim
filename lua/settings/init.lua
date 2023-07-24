@@ -294,4 +294,22 @@ M.DAP = {
   },
 }
 
+M.notes = {
+  enabled = true,
+  neorg = {
+    enabled = true,
+    modules = {
+      ["core.defaults"] = {},
+      ["core.dirman"] = {
+        config = {
+          workspaces = {
+            work = "~/notes/work",
+            home = "~/notes/home",
+          },
+        },
+      },
+    },
+  },
+}
+
 _G.dots = M
