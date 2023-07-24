@@ -129,14 +129,6 @@ return not dots.editor.enabled and {}
         "BufNewFile",
       },
       enabled = dots.editor.treesitter.enabled,
-      dependencies = {
-        {
-          "nvim-treesitter/nvim-treesitter-textobjects",
-          init = function()
-            require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-          end,
-        },
-      },
     },
     {
       "folke/flash.nvim",
@@ -216,6 +208,12 @@ return not dots.editor.enabled and {}
           },
         }
       end,
+      dependencies = {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        init = function()
+          require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
+        end,
+      },
       event = "VeryLazy",
     },
     {
