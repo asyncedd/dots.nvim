@@ -21,3 +21,11 @@ end
 map("n", "<leader>tt", openterm())
 map("n", "<leader>gg", openterm("lazygit"))
 map("n", "<leader>g<CR>", openterm("lazygit"))
+
+map("n", "dd", function()
+  if vim.fn.getline(".") == "" then
+    return '"_dd'
+  end
+
+  return "dd"
+end, { expr = true })
