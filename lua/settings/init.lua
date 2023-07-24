@@ -294,8 +294,4 @@ M.DAP = {
   },
 }
 
-M.Folds = {
-  provider = "treesitter",
-}
-
 _G.dots = M
