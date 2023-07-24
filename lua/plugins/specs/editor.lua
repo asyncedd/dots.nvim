@@ -326,4 +326,8 @@ return not dots.editor.enabled and {}
       end,
       enabled = dots.editor.undotree.enabled,
     },
+    {
+      "mg979/vim-visual-multi",
+      event = "VeryLazy",
+    },
   }
