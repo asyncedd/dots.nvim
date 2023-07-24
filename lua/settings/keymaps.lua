@@ -29,3 +29,5 @@ map("n", "dd", function()
 
   return "dd"
 end, { expr = true })
+
+vim.keymap.set("x", "V", "j")
