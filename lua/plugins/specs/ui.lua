@@ -285,7 +285,9 @@ return {
           }),
         },
         cursor = {
-          subscroll = animate.gen_path.spiral(),
+          timing = function(_, n)
+            return 150 / n
+          end,
         },
         open = {
           winconfig = animate.gen_winconfig.wipe({
