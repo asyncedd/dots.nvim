@@ -158,7 +158,6 @@ return {
         "lazyterm",
         "toggleterm",
         "noice",
-        "undotree",
         "",
       },
       buftype_exclude = { "terminal" },
@@ -187,6 +186,7 @@ return {
           "noice",
           "python",
           "undotree",
+          "norg",
           "",
         },
         callback = function()
