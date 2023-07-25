@@ -311,6 +311,7 @@ M.notes = {
           },
         },
       },
+      ["core.concealer"] = {},
     },
   },
 }
