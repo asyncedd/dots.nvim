@@ -25,14 +25,8 @@ My personal Neovim configuration
 
 ## 👋 Introduction
 
-This is my personal Neovim configuration as, I said. In the configuration I
-prioritize the editing experience rather than speed and making it simple.
-Really, the thing that matters for Neovim configs are:
-
-- The overall editing experience
-
-Not gonna lie, startup time doesn't really matter for Neovim configurations. Especially for when we're talking about the miliseconds.
-But, it's about the overall editing experience of the editor.
+This is my personal Neovim configuration.
+You can yank/put but you can only yank/put **ONLY** what you now!
 
 ## Wow, a really good place to put: ⚠️ DISCLAIMER! ⚠️
 
