@@ -246,6 +246,9 @@ M.coding = {
   dial = {
     enabled = true,
   },
+  codeium = {
+    enabled = true,
+  },
 }
 
 M.editor = {

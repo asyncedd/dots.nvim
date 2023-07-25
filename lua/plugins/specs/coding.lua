@@ -18,6 +18,7 @@ return not dots.coding.enabled and {}
           for i, _ in ipairs(sources) do
             table.insert(s, { name = sources[i].name, priority = sources[i].priority or nil })
           end
+          table.insert(s, { name = "codeium", priority = 10 })
 
           return {
             snippet = {
@@ -217,6 +218,16 @@ return not dots.coding.enabled and {}
         filetypes = dots.coding.autotag.ft,
       },
       enabled = dots.coding.autotag.enabled,
+      event = "VeryLazy",
+    },
+    {
+      "jcdickinson/codeium.nvim",
+      opts = true,
+      enabled = dots.coding.codeium.enabled,
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+      },
       event = "VeryLazy",
     },
   }

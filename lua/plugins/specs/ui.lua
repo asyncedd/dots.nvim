@@ -6,6 +6,7 @@ return {
         return {
           Pmenu = { bg = C.mantle },
           PmenuSel = { bg = C.blue, fg = C.base, style = { "bold" } },
+          CmpItemKindCodeium = { fg = C.green },
 
           DiagnosticVirtualTextError = {
             fg = C.red,
