@@ -26,7 +26,7 @@ vim.diagnostic.config({
   severity_sort = true,
   virtual_text = {
     source = "if_many", -- Or "if_many"
-    prefix = "", -- Could be '●', '▎', 'x'
+    prefix = "",
   },
   float = {
     source = "if_many", -- Or "if_many"
