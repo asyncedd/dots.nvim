@@ -608,12 +608,11 @@ local signs = {
 }
 
 local Statuscolumns = {
-  folds,
-  Align,
-  Space,
   signs,
-  Space,
+  Align,
   line_numbers,
+  Space,
+  folds,
   Space,
   git_signs,
   Space,
