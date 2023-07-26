@@ -140,9 +140,16 @@ return not dots.coding.enabled and {}
             augend.integer.alias.decimal,
             augend.integer.alias.hex,
             augend.date.alias["%Y/%m/%d"],
+            augend.constant.new({
+              elements = {
+                "true",
+                "false",
+              },
+              word = true,
+              cyclic = true,
+            }),
           },
           lua = {
-            augend.integer.alias.decimal,
             augend.constant.new({
               elements = { "and", "or" },
               word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
