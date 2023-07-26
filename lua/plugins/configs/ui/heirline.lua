@@ -608,13 +608,14 @@ local signs = {
 }
 
 local Statuscolumns = {
+  folds,
+  Space,
   signs,
   Align,
   line_numbers,
   Space,
-  folds,
-  Space,
   git_signs,
+  Space,
   hl = "Normal",
   static = {
     click_args = function(self, minwid, clicks, button, mods)
