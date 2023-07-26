@@ -31,3 +31,4 @@ map("n", "dd", function()
 end, { expr = true })
 
 vim.keymap.set("x", "V", "j")
+vim.keymap.set("x", "v", "k")
