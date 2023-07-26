@@ -161,6 +161,37 @@ return not dots.editor.enabled and {}
           end,
           desc = "Remote Flash",
         },
+        {
+          "M",
+          mode = { "n", "o", "x" },
+          function()
+            require("flash").treesitter()
+          end,
+        },
+        {
+          "H",
+          mode = { "n", "x", "o" },
+          function()
+            require("flash").jump()
+          end,
+          desc = "Flash",
+        },
+        {
+          "L",
+          function()
+            local state = require("flash").jump({
+              remote_op = { restore = false },
+            })
+
+            vim.api.nvim_create_autocmd("TextChanged", {
+              once = true,
+              buffer = vim.api.nvim_get_current_buf(),
+              callback = function()
+                state:restore()
+              end,
+            })
+          end,
+        },
         { "f", mode = { "x", "n", "o" } },
         { "F", mode = { "x", "n", "o" } },
         { "t", mode = { "x", "n", "o" } },
