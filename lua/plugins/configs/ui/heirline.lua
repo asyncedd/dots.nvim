@@ -504,7 +504,7 @@ local git_signs = {
       return not conditions.is_git_repo() or vim.v.virtnum ~= 0
     end,
     provider = "┃",
-    hl = { fg = "brightest_bg" },
+    hl = { fg = "Normal" },
   },
   {
     condition = function()
@@ -530,7 +530,7 @@ local git_signs = {
       if self.has_sign then
         return self.sign.name
       end
-      return { fg = "brightest_bg" }
+      return { fg = "Normal" }
     end,
     on_click = {
       name = "gitsigns_click",
@@ -615,7 +615,6 @@ local Statuscolumns = {
   folds,
   Space,
   git_signs,
-  Space,
   hl = "Normal",
   static = {
     click_args = function(self, minwid, clicks, button, mods)
