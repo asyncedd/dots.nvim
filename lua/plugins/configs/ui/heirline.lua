@@ -498,10 +498,57 @@ local line_numbers = {
   end,
 }
 
+local git_signs = {
+  {
+    condition = function()
+      return not conditions.is_git_repo() or vim.v.virtnum ~= 0
+    end,
+    provider = "┃",
+    hl = { fg = "brightest_bg" },
+  },
+  {
+    condition = function()
+      return conditions.is_git_repo() and vim.v.virtnum == 0
+    end,
+    init = function(self)
+      local signs = vim.fn.sign_getplaced(vim.api.nvim_get_current_buf(), {
+        group = "gitsigns_vimfn_signs_",
+        id = vim.v.lnum,
+        lnum = vim.v.lnum,
+      })
+
+      if #signs == 0 or signs[1].signs == nil or #signs[1].signs == 0 or signs[1].signs[1].name == nil then
+        self.sign = nil
+      else
+        self.sign = signs[1].signs[1]
+      end
+
+      self.has_sign = self.sign ~= nil
+    end,
+    provider = "┃",
+    hl = function(self)
+      if self.has_sign then
+        return self.sign.name
+      end
+      return { fg = "brightest_bg" }
+    end,
+    on_click = {
+      name = "gitsigns_click",
+      callback = function(self, ...)
+        if self.handlers.git_signs then
+          self.handlers.git_signs(self.click_args(self, ...))
+        end
+      end,
+    },
+  },
+}
+
 local Statuscolumns = {
   folds,
   Align,
   line_numbers,
+  Space,
+  git_signs,
   Space,
   hl = "Normal",
   static = {
