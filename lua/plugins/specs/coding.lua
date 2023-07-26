@@ -165,16 +165,16 @@ return not dots.coding.enabled and {}
         end
 
         local function register_dial_group()
-          local ret = {}
+          local dials = {}
 
           for key, value in pairs(opts) do
-            ret[key] = key ~= "default" and { unpack(opts.default) } or {}
+            dials[key] = key ~= "default" and { unpack(opts.default) } or {}
             for _, name in ipairs(value) do
-              table.insert(ret[key], name)
+              table.insert(dials[key], name)
             end
           end
 
-          require("dial.config").augends:register_group(ret)
+          require("dial.config").augends:register_group(dials)
         end
 
         local function create_keymaps()
