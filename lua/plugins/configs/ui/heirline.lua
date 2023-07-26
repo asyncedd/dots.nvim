@@ -8,6 +8,8 @@ local Space = { provider = " " }
 local colors = {
   bright_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.7),
   brighter_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.5),
+  brightest_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.3),
+  cursorline = utils.get_highlight("CursorLineNr").fg,
   Normal = utils.get_highlight("Normal").bg,
   red = utils.get_highlight("DiagnosticError").fg,
   green = utils.get_highlight("String").fg,
@@ -424,9 +426,126 @@ local StatusLines = {
   StatusLine,
 }
 
+local folds = {
+  condition = function()
+    return vim.v.virtnum == 0
+  end,
+  init = function(self)
+    self.lnum = vim.v.lnum
+    self.folded = vim.fn.foldlevel(self.lnum) > vim.fn.foldlevel(self.lnum - 1)
+  end,
+  {
+    condition = function(self)
+      return self.folded
+    end,
+    {
+      provider = function(self)
+        if vim.fn.foldclosed(self.lnum) == -1 then
+          return ""
+        end
+      end,
+      hl = { fg = "brightest_bg" },
+    },
+    {
+      provider = function(self)
+        if vim.fn.foldclosed(self.lnum) ~= -1 then
+          return ""
+        end
+      end,
+      hl = { fg = "yellow" },
+    },
+  },
+  {
+    condition = function(self)
+      return not self.folded
+    end,
+    provider = " ",
+  },
+  on_click = {
+    name = "fold_click",
+    callback = function(self, ...)
+      if self.handlers.fold then
+        self.handlers.fold(self.click_args(self, ...))
+      end
+    end,
+  },
+}
+
+local line_numbers = {
+  provider = function()
+    if vim.v.virtnum ~= 0 then
+      return ""
+    end
+
+    if vim.v.relnum == 0 then
+      return vim.v.lnum
+    end
+
+    return vim.v.relnum
+  end,
+  on_click = {
+    name = "line_number_click",
+    callback = function(self, ...)
+      if self.handlers.line_number then
+        self.handlers.line_number(self.click_args(self, ...))
+      end
+    end,
+  },
+  hl = function()
+    return {
+      fg = vim.v.relnum == 0 and "cursorline" or "brightest_bg",
+    }
+  end,
+}
+
+local Statuscolumns = {
+  folds,
+  Align,
+  line_numbers,
+  Space,
+  hl = "Normal",
+  static = {
+    click_args = function(self, minwid, clicks, button, mods)
+      local args = {
+        minwid = minwid,
+        clicks = clicks,
+        button = button,
+        mods = mods,
+        mousepos = vim.fn.getmousepos(),
+      }
+      local sign = vim.fn.screenstring(args.mousepos.screenrow, args.mousepos.screencol)
+      if sign == " " then
+        sign = vim.fn.screenstring(args.mousepos.screenrow, args.mousepos.screencol - 1)
+      end
+      args.sign = self.signs[sign]
+      vim.api.nvim_set_current_win(args.mousepos.winid)
+      vim.api.nvim_win_set_cursor(0, { args.mousepos.line, 0 })
+
+      return args
+    end,
+    handlers = {},
+  },
+  init = function(self)
+    self.signs = {}
+
+    self.handlers.signs = function(args)
+      return vim.schedule(vim.diagnostic.open_float)
+    end
+
+    self.handlers.fold = function(args)
+      local lnum = args.mousepos.line
+      if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then
+        return
+      end
+      vim.cmd.execute("'" .. lnum .. "fold" .. (vim.fn.foldclosed(lnum) == -1 and "close" or "open") .. "'")
+    end
+  end,
+}
+
 return {
   opts = {
     colors = colors,
   },
   statusline = StatusLines,
+  statuscolumn = Statuscolumns,
 }

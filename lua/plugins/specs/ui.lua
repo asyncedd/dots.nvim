@@ -207,22 +207,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "luukvbaal/statuscol.nvim",
-    opts = function()
-      local builtin = require("statuscol.builtin")
-      return {
-        relculright = true,
-        segments = {
-          { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-          { text = { " " } },
-          { text = { "%s" }, click = "v:lua.ScSa" },
-          { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-        },
-      }
-    end,
-    event = "UIEnter",
-  },
-  {
     "NvChad/nvim-colorizer.lua",
     opts = {
       user_default_options = {
