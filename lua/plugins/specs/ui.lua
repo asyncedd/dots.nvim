@@ -251,9 +251,6 @@ return {
 
       local animate = require("mini.animate")
       return {
-        resize = {
-          enable = false,
-        },
         scroll = {
           timing = animate.gen_timing.exponential({ duration = 50, unit = "total" }),
           subscroll = animate.gen_subscroll.equal({
@@ -271,18 +268,17 @@ return {
             return 150 / n
           end,
         },
-        open = {
-          winconfig = animate.gen_winconfig.wipe({
-            direction = "from_edge",
-          }),
-        },
-        close = {
-          winconfig = animate.gen_winconfig.wipe({
-            direction = "to_edge",
-          }),
-        },
       }
     end,
+    event = "VeryLazy",
+  },
+  {
+    "anuvyklack/windows.nvim",
+    dependencies = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim",
+    },
+    opts = true,
     event = "VeryLazy",
   },
 }
