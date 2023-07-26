@@ -225,7 +225,28 @@ return not dots.coding.enabled and {}
         filetypes = dots.coding.autotag.ft,
       },
       enabled = dots.coding.autotag.enabled,
-      event = "VeryLazy",
+      init = function()
+        vim.api.nvim_create_autocmd("BufReadPost", {
+          callback = function()
+            local function hasValueInArray(array, value)
+              for _, v in ipairs(array) do
+                if v == value then
+                  return true
+                end
+              end
+              return false
+            end
+
+            if hasValueInArray(dots.coding.autotag.ft, vim.bo.filetype) then
+              vim.schedule(function()
+                require("lazy").load({
+                  plugins = "nvim-ts-autotag",
+                })
+              end)
+            end
+          end,
+        })
+      end,
     },
     {
       "jcdickinson/codeium.nvim",
