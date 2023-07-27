@@ -321,7 +321,7 @@ local Diagnostics = {
 
 local LSPActive = {
   condition = function()
-    return next(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })) ~= nil
+    return false
   end,
   update = { "LspAttach", "LspDetach" },
 
