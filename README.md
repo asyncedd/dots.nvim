@@ -64,6 +64,8 @@ favorite package manager or,
 [Install from source](https://dev.to/asyncedd/building-neovim-from-source-1794).
 Then clone this repository.
 
+> Install requires Neovim 0.10 (Latest nightly). Always review the code before installing a configuration.
+
 | Operation    | Command                                                                                                                                            |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Installation | <pre lang="sh">git clone https://github.com/asyncedd/dots.nvim ~/.config/dots.nvim NVIM_APPNAME=dots.nvim/ nvim --headless +"Lazy! sync" +qa</pre> |
