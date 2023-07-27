@@ -1,6 +1,6 @@
-<a href="https://dotfyle.com/asyncedd/dotsnvim"><img src="https://dotfyle.com/asyncedd/dotsnvim/badges/plugins?style=flat" /></a>
-<a href="https://dotfyle.com/asyncedd/dotsnvim"><img src="https://dotfyle.com/asyncedd/dotsnvim/badges/leaderkey?style=flat" /></a>
-<a href="https://dotfyle.com/asyncedd/dotsnvim"><img src="https://dotfyle.com/asyncedd/dotsnvim/badges/plugin-manager?style=flat" /></a>
+<a href="https://dotfyle.com/asyncedd/dotsnvim"><img src="https://dotfyle.com/asyncedd/dotsnvim/badges/plugins?style=for-the-badge" /></a>
+<a href="https://dotfyle.com/asyncedd/dotsnvim"><img src="https://dotfyle.com/asyncedd/dotsnvim/badges/leaderkey?style=for-the-badge" /></a>
+<a href="https://dotfyle.com/asyncedd/dotsnvim"><img src="https://dotfyle.com/asyncedd/dotsnvim/badges/plugin-manager?style=for-the-badge" /></a>
 
 <!--toc:start-->
 
