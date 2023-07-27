@@ -321,20 +321,16 @@ local Diagnostics = {
 
 local LSPActive = {
   condition = function()
-    return false
+    return next(vim.lsp.get_clients({ buffer = 0 })) ~= nil
   end,
   update = { "LspAttach", "LspDetach" },
 
   {
-    provider = function()
-      return ""
-    end,
+    provider = "",
     hl = { fg = "green" },
   },
   {
-    provider = function()
-      return " "
-    end,
+    provider = " ",
     hl = { bg = "green", fg = "Normal" },
   },
   {
@@ -352,9 +348,7 @@ local LSPActive = {
     hl = { fg = "green", bg = "bright_bg", bold = true },
   },
   {
-    provider = function()
-      return ""
-    end,
+    provider = "",
     hl = { fg = "bright_bg" },
   },
 }
