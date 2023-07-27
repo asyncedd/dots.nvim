@@ -30,5 +30,21 @@ map("n", "dd", function()
   return "dd"
 end, { expr = true })
 
-vim.keymap.set("x", "V", "j")
-vim.keymap.set("x", "v", "k")
+map("x", "V", "j")
+map("x", "v", "k")
+
+map("n", "h", function()
+  local onIndentOrFirstNonBlank = vim.fn.virtcol(".") <= vim.fn.indent(".") + 1
+
+  local shouldCloseFold = vim.tbl_contains(vim.opt_local.foldopen:get(), "hor")
+
+  if onIndentOrFirstNonBlank and shouldCloseFold then
+    local wasFolded = pcall(vim.cmd.normal, "zc")
+
+    if wasFolded then
+      return
+    end
+  end
+
+  vim.cmd.normal({ "h", bang = true })
+end, { desc = "h (+ close fold at BoL)" })
