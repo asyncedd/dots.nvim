@@ -325,7 +325,7 @@ end
 
 local LSPActive = {
   init = function(self)
-    self.lsp_attached = lsp_attached()
+    self.lsp_attached = lsp_attached
   end,
   update = { "LspAttach", "LspDetach" },
 
