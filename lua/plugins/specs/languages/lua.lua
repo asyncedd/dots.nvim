@@ -2,6 +2,7 @@ return not (dots.languages.lua or dots.languages.lua.enable) and {}
   or {
     {
       "nvim-treesitter/nvim-treesitter",
+      optional = true,
       opts = function(_, opts)
         table.insert(opts.ensure_installed, {
           dots.languages.lua.treesitter.base and "lua",
@@ -12,6 +13,7 @@ return not (dots.languages.lua or dots.languages.lua.enable) and {}
     },
     dots.languages.lua.LSP.enable and {
       "neovim/nvim-lspconfig",
+      optional = true,
       opts = {
         servers = {
           lua_ls = {
@@ -56,6 +58,7 @@ return not (dots.languages.lua or dots.languages.lua.enable) and {}
     },
     {
       "jose-elias-alvarez/null-ls.nvim",
+      optional = true,
       opts = {
         sources = {
           stylua = {
@@ -68,6 +71,7 @@ return not (dots.languages.lua or dots.languages.lua.enable) and {}
     },
     {
       "mfussenegger/nvim-dap",
+      optional = true,
       enabled = dots.languages.lua.DAP.enabled,
       dependencies = {
         {

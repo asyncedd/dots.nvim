@@ -2,6 +2,7 @@ return not dots.languages.svelte.enable and {}
   or {
     {
       "nvim-treesitter/nvim-treesitter",
+      optional = true,
       opts = function(_, opts)
         table.insert(opts.ensure_installed, {
           dots.languages.svelte.treesitter.base and "svelte",
@@ -14,12 +15,14 @@ return not dots.languages.svelte.enable and {}
     },
     {
       "neovim/nvim-lspconfig",
+      optional = true,
       opts = {
         servers = dots.languages.svelte.LSP.servers,
       },
     },
     {
       "jay-babu/mason-nvim-dap.nvim",
+      optional = true,
       opts = {
         ensure_installed = { dots.languages.svelte.DAP.enable and "js" },
         handlers = {},
@@ -27,6 +30,7 @@ return not dots.languages.svelte.enable and {}
     },
     {
       "jose-elias-alvarez/null-ls.nvim",
+      optional = true,
       opts = function(_, opts)
         if opts.sources.prettierd == nil then
           opts.sources.prettierd = {}

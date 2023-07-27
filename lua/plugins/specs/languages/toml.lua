@@ -2,6 +2,7 @@ return not dots.languages.toml.enable and {}
   or {
     not dots.languages.toml.LSP.null.enable and {} or {
       "jose-elias-alvarez/null-ls.nvim",
+      optional = true,
       opts = function(_, opts)
         if opts.sources.prettierd == nil then
           opts.sources.prettierd = {}
@@ -14,6 +15,7 @@ return not dots.languages.toml.enable and {}
     },
     not dots.languages.toml.LSP.config.enable and {} or {
       "neovim/nvim-lspconfig",
+      optional = true,
       opts = {
         servers = dots.languages.toml.LSP.config.servers,
       },

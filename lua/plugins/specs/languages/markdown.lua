@@ -2,6 +2,7 @@ return not dots.languages.markdown.enable and {}
   or {
     {
       "nvim-treesitter/nvim-treesitter",
+      optional = true,
       opts = function(_, opts)
         local grammars = {}
         for i, grammar in ipairs(dots.languages.markdown.treesitter.additional_parsers) do
@@ -17,6 +18,7 @@ return not dots.languages.markdown.enable and {}
     },
     not dots.languages.markdown.LSP.enable and {} or {
       "neovim/nvim-lspconfig",
+      optional = true,
       opts = function(_, opts)
         for k, v in pairs(dots.languages.markdown.LSP.providers) do
           opts.servers[k] = v
