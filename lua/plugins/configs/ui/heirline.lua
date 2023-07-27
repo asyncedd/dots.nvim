@@ -319,40 +319,6 @@ local Diagnostics = {
   },
 }
 
-local LSPActive = {
-  condition = function()
-    return next(vim.lsp.get_clients({ buffer = 0 })) ~= nil
-  end,
-  update = { "LspAttach", "LspDetach" },
-
-  {
-    provider = "",
-    hl = { fg = "green" },
-  },
-  {
-    provider = " ",
-    hl = { bg = "green", fg = "Normal" },
-  },
-  {
-    provider = function()
-      if rawget(vim, "lsp") then
-        local names = {}
-        for _, server in pairs(vim.lsp.get_clients()) do
-          if server.attached_buffers[vim.api.nvim_get_current_buf()] then
-            table.insert(names, server.name)
-          end
-        end
-        return " " .. table.concat(names, " ")
-      end
-    end,
-    hl = { fg = "green", bg = "bright_bg", bold = true },
-  },
-  {
-    provider = "",
-    hl = { fg = "bright_bg" },
-  },
-}
-
 local WorkDir = {
   {
     provider = "",
@@ -403,7 +369,6 @@ local StatusLine = {
   Align,
   Diagnostics,
   Space,
-  LSPActive,
   Space,
   WorkDir,
   Space,
