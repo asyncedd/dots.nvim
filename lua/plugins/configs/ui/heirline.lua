@@ -5,6 +5,22 @@ local Normal = string.format("#%06x", utils.get_highlight("Normal").fg)
 local Align = { provider = "%=" }
 local Space = { provider = " " }
 
+local mode_colors = {
+  n = "blue",
+  i = "green",
+  v = "pink",
+  V = "pink",
+  ["\22"] = "pink",
+  c = "yellow",
+  s = "purple",
+  S = "purple",
+  ["\19"] = "purple",
+  R = "orange",
+  r = "orange",
+  ["!"] = "red",
+  t = "green",
+}
+
 local colors = {
   bright_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.7),
   brighter_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.5),
@@ -70,21 +86,6 @@ local ViMode = {
       ["!"] = "!",
       t = "TERM",
     },
-    mode_colors = {
-      n = "blue",
-      i = "green",
-      v = "pink",
-      V = "pink",
-      ["\22"] = "pink",
-      c = "yellow",
-      s = "purple",
-      S = "purple",
-      ["\19"] = "purple",
-      R = "orange",
-      r = "orange",
-      ["!"] = "red",
-      t = "green",
-    },
   },
   -- We can now access the value of mode() that, by now, would have been
   -- computed by `init()` and use it to index our strings dictionary.
@@ -98,7 +99,7 @@ local ViMode = {
       provider = "",
       hl = function(self)
         local mode = self.mode:sub(1, 1)
-        return { fg = self.mode_colors[mode], bold = true }
+        return { fg = mode_colors[mode], bold = true }
       end,
     },
     {
@@ -106,7 +107,7 @@ local ViMode = {
       -- Same goes for the highlight. Now the foreground will change according to the current mode.
       hl = function(self)
         local mode = self.mode:sub(1, 1) -- get only the first mode character
-        return { bg = self.mode_colors[mode], fg = "Normal", bold = true }
+        return { bg = mode_colors[mode], fg = "Normal", bold = true }
       end,
     },
     update = {
@@ -139,7 +140,7 @@ local ViMode = {
       hl = function(self)
         local mode = self.mode:sub(1, 1)
         return {
-          fg = self.mode_colors[mode],
+          fg = mode_colors[mode],
           bg = "bright_bg",
           bold = true,
         }
@@ -448,7 +449,7 @@ local line_numbers = {
   },
   hl = function()
     return {
-      fg = vim.v.relnum == 0 and "cursorline" or "brightest_bg",
+      fg = vim.v.relnum == 0 and mode_colors[vim.fn.mode()] or "brightest_bg",
     }
   end,
 }
