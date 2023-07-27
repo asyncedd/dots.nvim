@@ -146,7 +146,6 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
-      indentLine_enabled = 1,
       filetype_exclude = {
         "help",
         "terminal",
