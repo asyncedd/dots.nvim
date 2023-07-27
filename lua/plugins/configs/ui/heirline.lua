@@ -319,30 +319,26 @@ local Diagnostics = {
   },
 }
 
-local lsp_attached = function()
-  return next(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })) ~= nil
-end
-
 local LSPActive = {
-  init = function(self)
-    self.lsp_attached = lsp_attached
+  condition = function()
+    return next(vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })) ~= nil
   end,
   update = { "LspAttach", "LspDetach" },
 
   {
-    provider = function(self)
-      return self.lsp_attached and "" or ""
+    provider = function()
+      return ""
     end,
     hl = { fg = "green" },
   },
   {
-    provider = function(self)
-      return self.lsp_attached and " " or ""
+    provider = function()
+      return " "
     end,
     hl = { bg = "green", fg = "Normal" },
   },
   {
-    provider = function(self)
+    provider = function()
       if rawget(vim, "lsp") then
         local names = {}
         for _, server in pairs(vim.lsp.get_clients()) do
@@ -350,14 +346,14 @@ local LSPActive = {
             table.insert(names, server.name)
           end
         end
-        return self.lsp_attached and " " .. table.concat(names, " ") or ""
+        return " " .. table.concat(names, " ")
       end
     end,
     hl = { fg = "green", bg = "bright_bg", bold = true },
   },
   {
-    provider = function(self)
-      return self.lsp_attached and "" or ""
+    provider = function()
+      return ""
     end,
     hl = { fg = "bright_bg" },
   },
