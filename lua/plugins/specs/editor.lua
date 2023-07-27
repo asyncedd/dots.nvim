@@ -359,9 +359,4 @@ return not dots.editor.enabled and {}
       "mg979/vim-visual-multi",
       event = "VeryLazy",
     },
-    {
-      "echasnovski/mini.move",
-      opts = true,
-      event = "VeryLazy",
-    },
   }
