@@ -478,7 +478,7 @@ local line_numbers = {
     end
 
     if vim.v.relnum == 0 then
-      return vim.v.lnum
+      return vim.v.lnum .. " "
     end
 
     return vim.v.relnum
