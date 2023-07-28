@@ -133,12 +133,6 @@ return not dots.editor.enabled and {}
     {
       "folke/flash.nvim",
       opts = {
-        label = {
-          rainbow = {
-            enabled = true,
-            shade = 3,
-          },
-        },
         modes = {
           char = {
             search = {

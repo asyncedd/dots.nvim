@@ -36,6 +36,7 @@ return {
         illuminate = true,
         notify = true,
         mini = true,
+        flash = true,
       },
     },
     name = "catppuccin",
