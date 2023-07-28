@@ -44,15 +44,16 @@ You can yank/put but you can only yank/put **ONLY** what you now!
 
 **Dependencies**:
 
-| Programs  | The why                                                       |
-| --------- | ------------------------------------------------------------- |
-| `nvim`    | because, yes.                                                 |
-| `fd`      | for Telescope.nvim                                            |
-| `rg`      | for Telescope.nvim                                            |
-| `sqlite3` | for sqlite.lua                                                |
-| `npm`     | for some LSP servers written in a Javascript related language |
-| `cargo`   | For LSPs written in Rust.                                     |
-| `go`      | For LSPs writte in Go.                                        |
+| Programs  | The why                                               |
+| --------- | ----------------------------------------------------- |
+| `nvim`    | because, yes.                                         |
+| `fd`      | for Telescope.nvim                                    |
+| `rg`      | for Telescope.nvim                                    |
+| `sqlite3` | for sqlite.lua                                        |
+| `gcc`     | For Tressitter                                        |
+| `npm`     | for some LSP servers written in a Javascript language |
+| `cargo`   | For LSPs written in Rust.                             |
+| `go`      | For LSPs writte in Go.                                |
 
 **Other Dependencies**:
 
