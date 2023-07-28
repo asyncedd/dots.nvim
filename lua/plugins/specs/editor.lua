@@ -124,7 +124,7 @@ return not dots.editor.enabled and {}
         require("nvim-treesitter.configs").setup(opts)
       end,
       event = {
-        "BufRead",
+        "BufReadPost",
         "BufWinEnter",
         "BufNewFile",
       },
