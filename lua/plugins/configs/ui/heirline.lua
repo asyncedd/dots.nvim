@@ -571,7 +571,6 @@ local Statuscolumns = {
   line_numbers,
   Space,
   git_signs,
-  Space,
   hl = "Normal",
   static = {
     click_args = function(self, minwid, clicks, button, mods)
