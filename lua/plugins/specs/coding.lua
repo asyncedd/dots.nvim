@@ -209,7 +209,16 @@ return not dots.coding.enabled and {}
         })
       end,
       enabled = dots.coding.dial.enabled,
-      event = "VeryLazy",
+      keys = {
+        { "<C-a>", desc = "Increment" },
+        { "<C-x>", desc = "Decrement" },
+        { "g<C-a>", desc = "gIncrement" },
+        { "g<C-x>", desc = "gDecrement" },
+        { "<C-a>", desc = "Increment", mode = "v" },
+        { "<C-x>", desc = "Decrement", mode = "v" },
+        { "g<C-a>", desc = "gIncrement", mode = "v" },
+        { "g<C-x>", desc = "gDecrement", mode = "v" },
+      },
     },
     {
       "Wansmer/treesj",
