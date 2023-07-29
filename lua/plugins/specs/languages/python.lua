@@ -24,6 +24,9 @@ return not dots.languages.python.enable and {}
       opts = function(_, opts)
         table.insert(opts.ensure_installed, {
           dots.languages.python.treesitter.base and "python",
+          dots.languages.python.treesitter.ninja and "ninja",
+          dots.languages.python.treesitter.rst and "rst",
+          dots.languages.python.treesitter.toml and "toml",
         })
       end,
     },

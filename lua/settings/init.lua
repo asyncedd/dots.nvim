@@ -135,6 +135,9 @@ M.languages = {
     enable = true,
     treesitter = {
       base = true,
+      ninja = false,
+      rst = false,
+      toml = false,
     },
     LSP = {
       config = {
