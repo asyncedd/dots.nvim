@@ -144,12 +144,12 @@ M.languages = {
         enable = true,
         servers = {
           pyright = {},
+          ruff_lsp = {},
         },
       },
       null = {
         enable = true,
         servers = {
-          ruff = {},
           black = {},
         },
       },
