@@ -116,13 +116,12 @@ return not dots.coding.enabled and {}
       opts = {
         space2 = {
           enable = true,
-          multi = true,
         },
         bs = {
           indent_ignore = true,
         },
       },
-      event = "InsertEnter",
+      event = { "InsertEnter", "CmdlineEnter" },
       enabled = dots.coding.ultimate_autopairs,
     },
     {
