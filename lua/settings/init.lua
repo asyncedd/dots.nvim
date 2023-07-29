@@ -154,6 +154,9 @@ M.languages = {
         },
       },
     },
+    semshi = {
+      enable = true,
+    },
   },
   toml = {
     enable = true,
