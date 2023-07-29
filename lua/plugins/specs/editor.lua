@@ -119,6 +119,10 @@ return not dots.editor.enabled and {}
         indent = {
           enable = true,
         },
+        context_commentstring = {
+          enable = true,
+          enable_autocmd = false,
+        },
       },
       config = function(_, opts)
         require("nvim-treesitter.configs").setup(opts)
