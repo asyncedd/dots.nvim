@@ -29,6 +29,7 @@ vim.diagnostic.config({
     prefix = "",
   },
   float = {
-    source = "if_many", -- Or "if_many"
+    source = "always", -- Or "if_many"
+    header = "NoiceMini",
   },
 })
