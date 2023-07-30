@@ -42,4 +42,13 @@ return not dots.languages.svelte.enable and {}
         table.insert(opts.sources.prettierd.extra_filetypes, "svelte")
       end,
     },
+    {
+      "pmizio/typescript-tools.nvim",
+      optional = true,
+      opts = {
+        tsserver_plugins = {
+          "typescript-svelte-plugin",
+        },
+      },
+    },
   }

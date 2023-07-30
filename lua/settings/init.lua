@@ -110,8 +110,18 @@ M.languages = {
         emmet_ls = {},
         tailwindcss = {},
       },
+      typescript = {
+        -- This requires the Typescript intregation!
+        enable = true,
+      },
     },
     DAP = {
+      enable = true,
+    },
+  },
+  typescript = {
+    enable = true,
+    tools = {
       enable = true,
     },
   },
