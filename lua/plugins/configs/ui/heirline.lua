@@ -434,7 +434,7 @@ local line_numbers = {
     end
 
     if vim.v.relnum == 0 then
-      return vim.v.lnum
+      return vim.v.lnum .. " "
     end
 
     return vim.v.relnum
@@ -564,13 +564,12 @@ local signs = {
 }
 
 local Statuscolumns = {
-  folds,
-  Space,
   signs,
   Align,
   line_numbers,
   Space,
   git_signs,
+  folds,
   hl = "Normal",
   static = {
     click_args = function(self, minwid, clicks, button, mods)
