@@ -357,4 +357,9 @@ return not dots.editor.enabled and {}
       "mg979/vim-visual-multi",
       event = "VeryLazy",
     },
+    {
+      "chrisgrieser/nvim-origami",
+      opts = true,
+      event = "BufReadPost",
+    },
   }
