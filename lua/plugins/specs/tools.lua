@@ -31,7 +31,16 @@ return not dots.tools.enabled and {}
           },
         }
       end,
-      dependencies = "nvim-lua/plenary.nvim",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        {
+          "nvim-telescope/telescope-fzf-native.nvim",
+          build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+          setup = function()
+            require("telescope").load_extension("fzf")
+          end,
+        },
+      },
       keys = {
         { "<leader>ff", "<cmd>Telescope find_files<CR>" },
         { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
