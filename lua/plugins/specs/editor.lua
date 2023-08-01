@@ -86,14 +86,7 @@ return not dots.editor.enabled and {}
       enabled = dots.editor.gitsigns.enabled,
       event = "VeryLazy",
       opts = {
-        signs = {
-          add = { text = dots.UI.icons.Git.Signs.add },
-          change = { text = dots.UI.icons.Git.Signs.change },
-          delete = { text = dots.UI.icons.Git.Signs.delete },
-          topdelete = { text = dots.UI.icons.Git.Signs.topdelete },
-          changedelete = { text = dots.UI.icons.Git.Signs.changedelete },
-          untracked = { text = dots.UI.icons.Git.Signs.untracked },
-        },
+        signs = dots.UI.icons.Git.Signs,
         on_attach = function()
           local gs = require("gitsigns")
 

@@ -26,12 +26,12 @@ M.UI = {
       del = "",
       mod = "",
       Signs = {
-        add = "▎",
-        change = "▎",
-        delete = "",
-        topdelete = "",
-        changedelete = "▎",
-        untracked = "▎",
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
+        changedelete = { text = "▎" },
+        untracked = { text = "▎" },
       },
     },
     Folds = {
