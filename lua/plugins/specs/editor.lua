@@ -374,4 +374,133 @@ return not dots.editor.enabled and {}
       end,
       event = "BufReadPost",
     },
+    {
+      "echasnovski/mini.clue",
+      opts = function()
+        local miniclue = require("mini.clue")
+        return {
+          triggers = {
+            -- [] triggers
+            { mode = "n", keys = "]" },
+            { mode = "n", keys = "[" },
+            -- Leader triggers
+            { mode = "n", keys = "<Leader>" },
+            { mode = "x", keys = "<Leader>" },
+
+            -- Built-in completion
+            { mode = "i", keys = "<C-x>" },
+
+            -- `g` key
+            { mode = "n", keys = "g" },
+            { mode = "x", keys = "g" },
+
+            -- Marks
+            { mode = "n", keys = "'" },
+            { mode = "n", keys = "`" },
+            { mode = "x", keys = "'" },
+            { mode = "x", keys = "`" },
+
+            -- Registers
+            { mode = "n", keys = '"' },
+            { mode = "x", keys = '"' },
+            { mode = "i", keys = "<C-r>" },
+            { mode = "c", keys = "<C-r>" },
+
+            -- Window commands
+            { mode = "n", keys = "<C-w>" },
+
+            -- `z` key
+            { mode = "n", keys = "z" },
+            { mode = "x", keys = "z" },
+          },
+
+          clues = {
+            -- Enhance this by adding descriptions for <Leader> mapping groups
+            miniclue.gen_clues.builtin_completion(),
+            miniclue.gen_clues.g(),
+            miniclue.gen_clues.marks(),
+            miniclue.gen_clues.registers(),
+            miniclue.gen_clues.windows(),
+            miniclue.gen_clues.z(),
+
+            { mode = "n", keys = "]B", postkeys = "]" },
+            { mode = "n", keys = "]b", postkeys = "]" },
+            { mode = "n", keys = "]C", postkeys = "]" },
+            { mode = "n", keys = "]c", postkeys = "]" },
+            { mode = "n", keys = "]d", postkeys = "]" },
+            { mode = "n", keys = "]D", postkeys = "]" },
+            { mode = "n", keys = "]F", postkeys = "]" },
+            { mode = "n", keys = "]f", postkeys = "]" },
+            { mode = "n", keys = "]h", postkeys = "]" },
+            { mode = "n", keys = "]i", postkeys = "]" },
+            { mode = "n", keys = "]J", postkeys = "]" },
+            { mode = "n", keys = "]j", postkeys = "]" },
+            { mode = "n", keys = "]L", postkeys = "]" },
+            { mode = "n", keys = "]l", postkeys = "]" },
+            { mode = "n", keys = "]O", postkeys = "]" },
+            { mode = "n", keys = "]o", postkeys = "]" },
+            { mode = "n", keys = "]P", postkeys = "]" },
+            { mode = "n", keys = "]p", postkeys = "]" },
+            { mode = "n", keys = "]Q", postkeys = "]" },
+            { mode = "n", keys = "]q", postkeys = "]" },
+            { mode = "n", keys = "]T", postkeys = "]" },
+            { mode = "n", keys = "]t", postkeys = "]" },
+            { mode = "n", keys = "]U", postkeys = "]" },
+            { mode = "n", keys = "]u", postkeys = "]" },
+            { mode = "n", keys = "]W", postkeys = "]" },
+            { mode = "n", keys = "]w", postkeys = "]" },
+            { mode = "n", keys = "]X", postkeys = "]" },
+            { mode = "n", keys = "]x", postkeys = "]" },
+            { mode = "n", keys = "]y", postkeys = "]" },
+            { mode = "n", keys = "]Y", postkeys = "]" },
+            { mode = "n", keys = "]%", postkeys = "]" },
+            { mode = "n", keys = "]]", postkeys = "]" },
+
+            { mode = "n", keys = "[B", postkeys = "[" },
+            { mode = "n", keys = "[b", postkeys = "[" },
+            { mode = "n", keys = "[C", postkeys = "[" },
+            { mode = "n", keys = "[c", postkeys = "[" },
+            { mode = "n", keys = "[d", postkeys = "[" },
+            { mode = "n", keys = "[D", postkeys = "[" },
+            { mode = "n", keys = "[F", postkeys = "[" },
+            { mode = "n", keys = "[f", postkeys = "[" },
+            { mode = "n", keys = "[h", postkeys = "[" },
+            { mode = "n", keys = "[i", postkeys = "[" },
+            { mode = "n", keys = "[J", postkeys = "[" },
+            { mode = "n", keys = "[j", postkeys = "[" },
+            { mode = "n", keys = "[L", postkeys = "[" },
+            { mode = "n", keys = "[l", postkeys = "[" },
+            { mode = "n", keys = "[O", postkeys = "[" },
+            { mode = "n", keys = "[o", postkeys = "[" },
+            { mode = "n", keys = "[P", postkeys = "[" },
+            { mode = "n", keys = "[p", postkeys = "[" },
+            { mode = "n", keys = "[Q", postkeys = "[" },
+            { mode = "n", keys = "[q", postkeys = "[" },
+            { mode = "n", keys = "[T", postkeys = "[" },
+            { mode = "n", keys = "[t", postkeys = "[" },
+            { mode = "n", keys = "[U", postkeys = "[" },
+            { mode = "n", keys = "[u", postkeys = "[" },
+            { mode = "n", keys = "[W", postkeys = "[" },
+            { mode = "n", keys = "[w", postkeys = "[" },
+            { mode = "n", keys = "[X", postkeys = "[" },
+            { mode = "n", keys = "[x", postkeys = "[" },
+            { mode = "n", keys = "[y", postkeys = "[" },
+            { mode = "n", keys = "[Y", postkeys = "[" },
+            { mode = "n", keys = "[%", postkeys = "[" },
+            { mode = "n", keys = "[[", postkeys = "[" },
+
+            miniclue.gen_clues.windows({
+              submode_move = true,
+              submode_navigate = true,
+              submode_resize = true,
+            }),
+          },
+          window = {
+            -- Show window immediately
+            delay = 0,
+          },
+        }
+      end,
+      event = "VeryLazy",
+    },
   }
