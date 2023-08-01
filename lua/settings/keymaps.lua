@@ -18,9 +18,8 @@ local openterm = function(command)
   end
 end
 
-map("n", "<leader>tt", openterm())
-map("n", "<leader>gg", openterm("lazygit"))
-map("n", "<leader>g<CR>", openterm("lazygit"))
+map("n", "<leader>tt", openterm(), { desc = "Open the terminal" })
+map("n", "<leader>gg", openterm("lazygit"), { desc = "Open LazyGit" })
 
 map("n", "dd", function()
   if vim.fn.getline(".") == "" then
