@@ -374,6 +374,7 @@ return not dots.editor.enabled and {}
         local hints = {}
         -- stylua: ignore
         local keys = { "B", "b", "C", "c", "D", "d", "F", "f", "h", "i", "J", "j", "L", "l", "O", "o", "P", "p", "Q", "q", "T", "t", "U", "u", "W", "w", "X", "x", "y", "%", "" }
+        -- stylua: ignore end
 
         for _, br in ipairs({ "[", "]" }) do
           for _, v in ipairs(keys) do
