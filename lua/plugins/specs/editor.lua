@@ -371,6 +371,16 @@ return not dots.editor.enabled and {}
       "echasnovski/mini.clue",
       opts = function()
         local miniclue = require("mini.clue")
+        local hints = {}
+        -- stylua: ignore
+        local keys = { "B", "b", "C", "c", "D", "d", "F", "f", "h", "i", "J", "j", "L", "l", "O", "o", "P", "p", "Q", "q", "T", "t", "U", "u", "W", "w", "X", "x", "y", "%", "" }
+
+        for _, br in ipairs({ "[", "]" }) do
+          for _, v in ipairs(keys) do
+            table.insert(hints, { mode = "n", keys = br .. (v ~= "" and v or br), postkeys = br })
+          end
+        end
+
         return {
           triggers = {
             -- [] triggers
@@ -416,71 +426,7 @@ return not dots.editor.enabled and {}
             miniclue.gen_clues.windows(),
             miniclue.gen_clues.z(),
 
-            { mode = "n", keys = "]B", postkeys = "]" },
-            { mode = "n", keys = "]b", postkeys = "]" },
-            { mode = "n", keys = "]C", postkeys = "]" },
-            { mode = "n", keys = "]c", postkeys = "]" },
-            { mode = "n", keys = "]d", postkeys = "]" },
-            { mode = "n", keys = "]D", postkeys = "]" },
-            { mode = "n", keys = "]F", postkeys = "]" },
-            { mode = "n", keys = "]f", postkeys = "]" },
-            { mode = "n", keys = "]h", postkeys = "]" },
-            { mode = "n", keys = "]i", postkeys = "]" },
-            { mode = "n", keys = "]J", postkeys = "]" },
-            { mode = "n", keys = "]j", postkeys = "]" },
-            { mode = "n", keys = "]L", postkeys = "]" },
-            { mode = "n", keys = "]l", postkeys = "]" },
-            { mode = "n", keys = "]O", postkeys = "]" },
-            { mode = "n", keys = "]o", postkeys = "]" },
-            { mode = "n", keys = "]P", postkeys = "]" },
-            { mode = "n", keys = "]p", postkeys = "]" },
-            { mode = "n", keys = "]Q", postkeys = "]" },
-            { mode = "n", keys = "]q", postkeys = "]" },
-            { mode = "n", keys = "]T", postkeys = "]" },
-            { mode = "n", keys = "]t", postkeys = "]" },
-            { mode = "n", keys = "]U", postkeys = "]" },
-            { mode = "n", keys = "]u", postkeys = "]" },
-            { mode = "n", keys = "]W", postkeys = "]" },
-            { mode = "n", keys = "]w", postkeys = "]" },
-            { mode = "n", keys = "]X", postkeys = "]" },
-            { mode = "n", keys = "]x", postkeys = "]" },
-            { mode = "n", keys = "]y", postkeys = "]" },
-            { mode = "n", keys = "]Y", postkeys = "]" },
-            { mode = "n", keys = "]%", postkeys = "]" },
-            { mode = "n", keys = "]]", postkeys = "]" },
-
-            { mode = "n", keys = "[B", postkeys = "[" },
-            { mode = "n", keys = "[b", postkeys = "[" },
-            { mode = "n", keys = "[C", postkeys = "[" },
-            { mode = "n", keys = "[c", postkeys = "[" },
-            { mode = "n", keys = "[d", postkeys = "[" },
-            { mode = "n", keys = "[D", postkeys = "[" },
-            { mode = "n", keys = "[F", postkeys = "[" },
-            { mode = "n", keys = "[f", postkeys = "[" },
-            { mode = "n", keys = "[h", postkeys = "[" },
-            { mode = "n", keys = "[i", postkeys = "[" },
-            { mode = "n", keys = "[J", postkeys = "[" },
-            { mode = "n", keys = "[j", postkeys = "[" },
-            { mode = "n", keys = "[L", postkeys = "[" },
-            { mode = "n", keys = "[l", postkeys = "[" },
-            { mode = "n", keys = "[O", postkeys = "[" },
-            { mode = "n", keys = "[o", postkeys = "[" },
-            { mode = "n", keys = "[P", postkeys = "[" },
-            { mode = "n", keys = "[p", postkeys = "[" },
-            { mode = "n", keys = "[Q", postkeys = "[" },
-            { mode = "n", keys = "[q", postkeys = "[" },
-            { mode = "n", keys = "[T", postkeys = "[" },
-            { mode = "n", keys = "[t", postkeys = "[" },
-            { mode = "n", keys = "[U", postkeys = "[" },
-            { mode = "n", keys = "[u", postkeys = "[" },
-            { mode = "n", keys = "[W", postkeys = "[" },
-            { mode = "n", keys = "[w", postkeys = "[" },
-            { mode = "n", keys = "[X", postkeys = "[" },
-            { mode = "n", keys = "[x", postkeys = "[" },
-            { mode = "n", keys = "[y", postkeys = "[" },
-            { mode = "n", keys = "[Y", postkeys = "[" },
-            { mode = "n", keys = "[%", postkeys = "[" },
-            { mode = "n", keys = "[[", postkeys = "[" },
+            hints,
 
             miniclue.gen_clues.windows({
               submode_move = true,

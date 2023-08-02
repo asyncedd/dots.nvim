@@ -224,6 +224,7 @@ return not dots.coding.enabled and {}
       "Wansmer/treesj",
       opts = {
         use_default_keymaps = false,
+        max_join_length = 69420,
       },
       keys = {
         {
