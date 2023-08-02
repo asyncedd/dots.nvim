@@ -491,6 +491,9 @@ return not dots.editor.enabled and {}
           window = {
             -- Show window immediately
             delay = 0,
+            config = {
+              border = "solid",
+            },
           },
         }
       end,
