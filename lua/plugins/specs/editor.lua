@@ -353,19 +353,15 @@ return not dots.editor.enabled and {}
     {
       "chrisgrieser/nvim-origami",
       opts = {
-        init = {
-          keepFoldsAcrossSessions = true,
-        },
+        keepFoldsAcrossSessions = false,
         pauseFoldsOnSearch = true,
         setupFoldKeymaps = true,
       },
-      config = function(_, opts)
-        require("origami").setup(opts.init)
-        vim.schedule(function()
-          require("origami").setup(opts)
-        end)
-      end,
-      event = "BufReadPost",
+      keys = {
+        { "h", expr = true },
+        { "l", expr = true },
+      },
+      event = "VeryLazy",
     },
     {
       "echasnovski/mini.clue",
