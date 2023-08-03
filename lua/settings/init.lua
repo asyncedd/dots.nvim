@@ -120,7 +120,7 @@ M.languages = {
     },
   },
   typescript = {
-    enable = true,
+    enable = false,
     tools = {
       enable = true,
     },
@@ -142,7 +142,7 @@ M.languages = {
     },
   },
   python = {
-    enable = true,
+    enable = false,
     treesitter = {
       base = true,
       ninja = false,
@@ -169,7 +169,7 @@ M.languages = {
     },
   },
   toml = {
-    enable = true,
+    enable = false,
     LSP = {
       null = {
         enable = true,
@@ -183,10 +183,29 @@ M.languages = {
     },
   },
   rust = {
-    enable = true,
+    enable = false,
     LSP = {
       config = {
         enable = true,
+      },
+    },
+  },
+  go = {
+    enable = false,
+    LSP = {
+      config = {
+        enable = true,
+        servers = {
+          gopls = {},
+        },
+      },
+      null = {
+        enable = true,
+        sources = {
+          gofumpt = {},
+          goimports_reviser = {},
+          golines = {},
+        },
       },
     },
   },
