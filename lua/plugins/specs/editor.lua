@@ -168,6 +168,14 @@ return not dots.editor.enabled and {}
           desc = "Flash",
         },
         {
+          "s",
+          mode = { "n", "x" },
+          function()
+            require("flash").jump()
+          end,
+          desc = "Flash",
+        },
+        {
           "L",
           function()
             local state = require("flash").jump({
