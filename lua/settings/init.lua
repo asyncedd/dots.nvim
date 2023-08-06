@@ -252,6 +252,7 @@ M.coding = {
   autotag = {
     ft = {
       "svelte",
+      "html",
     },
   },
 }
