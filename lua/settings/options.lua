@@ -373,6 +373,11 @@ o.termguicolors = true
 
 o.pumheight = 10
 
+-- Making the pum menu a bit transparent so it looks fancy :)
+-- I really really like it :D
+
+o.pumblend = 20
+
 -- Command line options.
 
 -- Cmdheight to zero.
