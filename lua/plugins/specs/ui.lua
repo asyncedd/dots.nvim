@@ -49,6 +49,26 @@ return {
     name = "catppuccin",
   },
   {
+    "folke/tokyonight.nvim",
+    opts = {
+      on_highlights = function(hl, C)
+        hl.CmpItemKindCodeium = { fg = C.green }
+
+        hl.TelescopeBorder = { fg = C.bg_dark, bg = C.bg_dark }
+        hl.TelescopeMatching = { fg = C.blue }
+        hl.TelescopeNormal = { bg = C.bg_dark }
+        hl.TelescopePromptBorder = { fg = C.comment, bg = C.comment }
+        hl.TelescopePromptNormal = { fg = C.bg_dark, bg = C.comment }
+        hl.TelescopePromptPrefix = { fg = C.magenta }
+        hl.TelescopePreviewTitle = { fg = C.bg_dark, bg = C.green }
+        hl.TelescopePromptTitle = { fg = C.bg_dark, bg = C.red }
+        hl.TelescopeResultsTitle = { fg = C.bg_dark, bg = C.purple }
+        hl.TelescopeSelection = { fg = C.fg, bg = C.comment }
+        hl.TelescopeSelectionCaret = { fg = C.purple }
+      end,
+    },
+  },
+  {
     "rcarriga/nvim-notify",
     opts = function()
       local api = vim.api
