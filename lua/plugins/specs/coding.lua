@@ -264,14 +264,4 @@ return not dots.coding.enabled and {}
         })
       end,
     },
-    {
-      "jcdickinson/codeium.nvim",
-      opts = true,
-      enabled = dots.coding.codeium.enabled,
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "hrsh7th/nvim-cmp",
-      },
-      event = "VeryLazy",
-    },
   }
