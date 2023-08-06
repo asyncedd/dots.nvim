@@ -69,7 +69,6 @@ return not dots.coding.enabled and {}
         end,
         event = "InsertEnter",
         dependencies = { ret, "js-everts/cmp-tailwind-colors" },
-        enabled = dots.coding.cmp.enabled,
       },
     },
     {
@@ -102,13 +101,12 @@ return not dots.coding.enabled and {}
         "L3MON4D3/LuaSnip",
         opts = {},
         dependencies = {
-          dots.coding.luasnip.snippets.friendly_snippets and "rafamadriz/friendly-snippets",
+          "rafamadriz/friendly-snippets",
         },
         config = function(_, opts)
           require("luasnip.loaders.from_vscode").lazy_load()
           require("luasnip").setup(opts)
         end,
-        enabled = dots.coding.luasnip.enabled,
       },
     },
     {
@@ -132,7 +130,6 @@ return not dots.coding.enabled and {}
         }
       end,
       event = "VeryLazy",
-      enabled = dots.coding.comment.enabled,
       dependencies = {
         "JoosepAlviste/nvim-ts-context-commentstring",
       },
@@ -208,7 +205,6 @@ return not dots.coding.enabled and {}
           callback = create_keymaps,
         })
       end,
-      enabled = dots.coding.dial.enabled,
       keys = {
         { "<C-a>", desc = "Increment" },
         { "<C-x>", desc = "Decrement" },
@@ -240,7 +236,6 @@ return not dots.coding.enabled and {}
       opts = {
         filetypes = dots.coding.autotag.ft,
       },
-      enabled = dots.coding.autotag.enabled,
       init = function()
         vim.api.nvim_create_autocmd("BufReadPost", {
           callback = function()

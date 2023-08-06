@@ -8,7 +8,6 @@ return not dots.LSP.enabled and {}
           servers = dots.LSP.config.opts.servers or {},
           setup = dots.LSP.config.opts.setup or {},
         },
-        enabled = dots.LSP.config.enabled,
         event = "VeryLazy",
         config = function(_, opts)
           require("plugins.configs.lsp.config")(opts)
@@ -31,7 +30,6 @@ return not dots.LSP.enabled and {}
       opts = {
         sources = {},
       },
-      enabled = dots.LSP.null.enabled,
       event = "VeryLazy",
       config = function(_, opts)
         require("plugins.configs.lsp.null")(opts)

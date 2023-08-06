@@ -45,6 +45,5 @@ return not dots.tools.enabled and {}
         { "<leader>ff", "<cmd>Telescope find_files<CR>" },
         { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
       },
-      enabled = dots.tools.telescope.enabled,
     },
   }

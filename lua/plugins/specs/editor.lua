@@ -5,7 +5,6 @@ return not dots.editor.enabled and {}
       opts = {
         skipInsignificantPunctuation = false,
       },
-      enabled = dots.editor.spider.enabled,
       event = "VeryLazy",
       keys = {
         { mode = { "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" } },
@@ -42,7 +41,6 @@ return not dots.editor.enabled and {}
       "chrisgrieser/nvim-various-textobjs",
       opts = {},
       event = "VeryLazy",
-      enabled = dots.editor.textobjs.enabled,
       keys = {
         {
           mode = { "x", "o" },
@@ -79,11 +77,9 @@ return not dots.editor.enabled and {}
       "kylechui/nvim-surround",
       opts = true,
       event = "VeryLazy",
-      enabled = dots.editor.surround.enabled,
     },
     {
       "lewis6991/gitsigns.nvim",
-      enabled = dots.editor.gitsigns.enabled,
       event = "VeryLazy",
       opts = {
         signs = dots.UI.icons.Git.Signs,
@@ -125,7 +121,6 @@ return not dots.editor.enabled and {}
         "BufWinEnter",
         "BufNewFile",
       },
-      enabled = dots.editor.treesitter.enabled,
     },
     {
       "folke/flash.nvim",
@@ -142,7 +137,6 @@ return not dots.editor.enabled and {}
           },
         },
       },
-      enabled = dots.editor.flash.enabled,
       keys = {
         {
           "r",
@@ -352,7 +346,6 @@ return not dots.editor.enabled and {}
       init = function()
         table.insert(dots.editor.treesitter.parsers, "diff")
       end,
-      enabled = dots.editor.undotree.enabled,
     },
     {
       "mg979/vim-visual-multi",

@@ -8,12 +8,6 @@ M.lazy = {
 }
 
 M.UI = {
-  notify = {
-    enabled = true,
-  },
-  noice = {
-    enabled = true,
-  },
   icons = {
     LSP = {
       Error = " ",
@@ -218,15 +212,11 @@ M.colorscheme = {
 M.LSP = {
   enabled = true,
   config = {
-    enabled = true,
     opts = {
       servers_to_not_setup = {},
       servers = {},
       setup = {},
     },
-  },
-  null = {
-    enabled = true,
   },
   on_attach = function()
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -244,7 +234,6 @@ M.LSP = {
 M.coding = {
   enabled = true,
   cmp = {
-    enabled = true,
     sources = {
       { name = "emoji", source = "hrsh7th/cmp-emoji", priority = 99999 },
       { name = "luasnip", source = "saadparwaiz1/cmp_luasnip" },
@@ -260,73 +249,26 @@ M.coding = {
       require("luasnip").lsp_expand(args.body)
     end,
   },
-  luasnip = {
-    enabled = true,
-    snippets = {
-      friendly_snippets = true,
-    },
-  },
-  ultimate_autopairs = {
-    enabled = true,
-  },
-  comment = {
-    enabled = true,
-  },
   autotag = {
-    enabled = true,
     ft = {
       "svelte",
     },
-  },
-  dial = {
-    enabled = true,
   },
 }
 
 M.editor = {
   enabled = true,
-  spider = {
-    enabled = true,
-  },
-  textobjs = {
-    enabled = true,
-  },
-  surround = {
-    enabled = true,
-  },
-  flash = {
-    enabled = true,
-  },
-  gitsigns = {
-    enabled = true,
-  },
-  illuminate = {
-    enabled = true,
-  },
   treesitter = {
-    enabled = true,
     parsers = {},
-  },
-  undotree = {
-    enabled = true,
   },
 }
 
 M.tools = {
   enabled = true,
-  telescope = {
-    enabled = true,
-  },
 }
 
 M.DAP = {
   enabled = true,
-  UI = {
-    enabled = true,
-  },
-  virtual = {
-    enabled = true,
-  },
 }
 
 M.notes = {

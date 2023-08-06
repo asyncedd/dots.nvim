@@ -16,7 +16,6 @@ return not dots.DAP.enabled and {}
         {
           "theHamsta/nvim-dap-virtual-text",
           opts = {},
-          enabled = dots.DAP.virtual.enabled,
         },
         {
           "rcarriga/nvim-dap-ui",
@@ -25,7 +24,6 @@ return not dots.DAP.enabled and {}
           { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
           { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
         },
-          enabled = dots.DAP.UI.enabled,
           opts = {},
           config = function(_, opts)
             local dap = require("dap")

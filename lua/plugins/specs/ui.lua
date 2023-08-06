@@ -135,7 +135,6 @@ return {
         require("notify")(...)
       end
     end,
-    enabled = dots.UI.notify.enabled,
   },
   {
     "folke/noice.nvim",
@@ -159,7 +158,6 @@ return {
       },
     },
     event = "VeryLazy",
-    enabled = dots.UI.noice.enabled,
     dependencies = {
       "MunifTanjim/nui.nvim",
     },
