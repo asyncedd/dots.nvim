@@ -341,7 +341,7 @@ return not dots.editor.enabled and {}
     {
       "mbbill/undotree",
       keys = {
-        { "<leader>u", "<cmd>UndotreeToggle<CR>" },
+        { "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "Toggle Undotree" },
       },
       init = function()
         table.insert(dots.editor.treesitter.parsers, "diff")
