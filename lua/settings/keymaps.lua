@@ -31,3 +31,24 @@ end, { expr = true })
 
 map("x", "V", "j")
 map("x", "v", "k")
+
+local cache_empty_line = {}
+
+_G.put_empty_line = function(put_above)
+  -- This has a typical workflow for enabling dot-repeat:
+  -- - On first call it sets `operatorfunc`, caches data, and calls
+  --   `operatorfunc` on current cursor position.
+  -- - On second call it performs task: puts `v:count1` empty lines
+  --   above/below current line.
+  if type(put_above) == "boolean" then
+    vim.o.operatorfunc = "v:lua.put_empty_line"
+    cache_empty_line = { put_above = put_above }
+    return "g@l"
+  end
+
+  local target_line = vim.fn.line(".") - (cache_empty_line.put_above and 1 or 0)
+  vim.fn.append(target_line, vim.fn["repeat"]({ "" }, vim.v.count1))
+end
+
+map("n", "gO", "v:lua.put_empty_line(v:true)", { expr = true, desc = "Put empty line above" })
+map("n", "go", "v:lua.put_empty_line(v:false)", { expr = true, desc = "Put empty line below" })
