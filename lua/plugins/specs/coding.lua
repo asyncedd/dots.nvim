@@ -99,7 +99,30 @@ return not dots.coding.enabled and {}
     {
       {
         "L3MON4D3/LuaSnip",
-        opts = {},
+        opts = function()
+          local types = require("luasnip.util.types")
+          return {
+            -- Display a cursor-like placeholder in unvisited nodes
+            -- of the snippet.
+            ext_opts = {
+              [types.insertNode] = {
+                unvisited = {
+                  virt_text = { { "│", "Conceal" } },
+                  virt_text_pos = "inline",
+                },
+              },
+              -- This is needed because LuaSnip differentiates between $0 and other
+              -- placeholders (exitNode and insertNode). So this will highlight the last
+              -- jump node.
+              [types.exitNode] = {
+                unvisited = {
+                  virt_text = { { "│", "Conceal" } },
+                  virt_text_pos = "inline",
+                },
+              },
+            },
+          }
+        end,
         dependencies = {
           "rafamadriz/friendly-snippets",
         },
