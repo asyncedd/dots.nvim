@@ -59,3 +59,5 @@ map(
   '"`[" . strpart(getregtype(), 0, 1) . "`]"',
   { expr = true, replace_keycodes = false, desc = "Visually select changed text" }
 )
+
+map("x", "g/", "<esc>/\\%V", { silent = false, desc = "Search inside visual selection" })
