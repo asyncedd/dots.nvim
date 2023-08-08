@@ -9,7 +9,7 @@ require("settings.options")
 -- Setup the plugins
 require("plugins")
 
-vim.cmd("colorscheme " .. (dots.colorscheme.enabled or "habamax"))
+vim.cmd("colorscheme " .. (dots.UI.colorscheme.enabled or "habamax"))
 
 require("settings.autocmds")
 require("settings.keymaps")

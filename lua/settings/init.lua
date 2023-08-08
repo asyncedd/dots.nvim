@@ -8,6 +8,9 @@ M.lazy = {
 }
 
 M.UI = {
+  colorscheme = {
+    enabled = "catppuccin",
+  },
   icons = {
     LSP = {
       Error = " ",
@@ -214,10 +217,6 @@ M.languages = {
       },
     },
   },
-}
-
-M.colorscheme = {
-  enabled = "catppuccin",
 }
 
 M.LSP = {
