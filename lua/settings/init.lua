@@ -203,6 +203,17 @@ M.languages = {
       },
     },
   },
+  html = {
+    enable = false,
+    LSP = {
+      config = {
+        enable = true,
+        servers = {
+          html = {},
+        },
+      },
+    },
+  },
 }
 
 M.colorscheme = {
