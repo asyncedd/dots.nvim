@@ -191,16 +191,6 @@ o.shiftwidth = 2
 
 o.tabstop = 2
 
--- Enable Expandtab.
---
--- In Insert Mode: Use the appropriate number of spaces to insert a <Tab>.
--- Spaces will also be used in indents too!
---
--- TIP: To insert a real tab when, "expandtab" is turned on, use <C-v><Tab>!
---
-
-o.expandtab = true
-
 -- Jumplist options for <C-i> and <C-o> jump motions.
 -- The following option allows you to modify how jumplist works in Neovim.
 
