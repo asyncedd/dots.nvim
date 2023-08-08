@@ -52,3 +52,10 @@ end
 
 map("n", "gO", "v:lua.put_empty_line(v:true)", { expr = true, desc = "Put empty line above" })
 map("n", "go", "v:lua.put_empty_line(v:false)", { expr = true, desc = "Put empty line below" })
+
+map(
+  "n",
+  "gV",
+  '"`[" . strpart(getregtype(), 0, 1) . "`]"',
+  { expr = true, replace_keycodes = false, desc = "Visually select changed text" }
+)
