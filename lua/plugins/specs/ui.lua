@@ -306,4 +306,18 @@ return {
     opts = true,
     event = "VeryLazy",
   },
+  {
+    "Bekaboo/dropbar.nvim",
+    event = "VeryLazy",
+    keys = {
+      {
+        "<leader>wp",
+        function()
+          require("dropbar.api").pick()
+        end,
+        desc = "winbar: pick",
+      },
+    },
+    opts = true,
+  },
 }
