@@ -134,7 +134,8 @@ M.languages = {
       providers = {
         marksman = {},
         -- You can add more servers as you please.
-        -- prosemd = {}
+        prosemd_lsp = {},
+        -- mdformat = {},
       },
     },
   },
