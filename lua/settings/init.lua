@@ -9,7 +9,9 @@ M.lazy = {
 
 M.UI = {
   colorscheme = {
-    enabled = "catppuccin",
+    -- enabled = "catppuccin",
+    -- enabled = "tokyonight",
+    enabled = "oxocarbon",
   },
   icons = {
     LSP = {
