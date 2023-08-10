@@ -52,6 +52,7 @@
   "nvim-various-textobjs": { "branch": "main", "commit": "461a6ef9141e64bb9d7ffe8d26c79e15bccc1a71" },
   "nvim-web-devicons": { "branch": "master", "commit": "ab899311f8ae00a47eae8e0879506cead8eb1561" },
   "one-small-step-for-vimkind": { "branch": "main", "commit": "5cacc816153c66a50de92c9cee29077b4a380254" },
+  "oxocarbon.nvim": { "branch": "main", "commit": "12a7507f1cd5ac6edb890d12268e4444a35956f2" },
   "plenary.nvim": { "branch": "master", "commit": "267282a9ce242bbb0c5dc31445b6d353bed978bb" },
   "promise-async": { "branch": "main", "commit": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },

@@ -68,6 +68,7 @@ return {
       end,
     },
   },
+  "nyoom-engineering/oxocarbon.nvim",
   {
     "rcarriga/nvim-notify",
     opts = function()
