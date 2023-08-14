@@ -44,6 +44,24 @@ return {
         nvimtree = false,
         ts_rainbow2 = false,
         ts_rainbow = false,
+        native_lsp = {
+          enabled = true,
+          virtual_text = {
+            errors = { "italic" },
+            hints = { "italic" },
+            warnings = { "italic" },
+            information = { "italic" },
+          },
+          underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+          },
+          inlay_hints = {
+            background = true,
+          },
+        },
       },
     },
     name = "catppuccin",
