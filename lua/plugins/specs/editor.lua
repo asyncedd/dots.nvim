@@ -443,4 +443,9 @@ return not dots.editor.enabled and {}
       end,
       event = "VeryLazy",
     },
+    {
+      "echasnovski/mini.operators",
+      opts = true,
+      event = "VeryLazy",
+    },
   }

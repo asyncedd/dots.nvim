@@ -29,6 +29,7 @@
   "mini.clue": { "branch": "main", "commit": "cb78022181ee92d0f033ed6fb0626b625d776284" },
   "mini.files": { "branch": "main", "commit": "dea80a8147aa4e3025c34d2e2aaa6f2aeb7b21dd" },
   "mini.indentscope": { "branch": "main", "commit": "f60e9b51a6214c73a170ffc5445ce91560981031" },
+  "mini.operators": { "branch": "main", "commit": "6820ae46ee0eef111eae3ac7fe690b9ebe9cc1cf" },
   "neodev.nvim": { "branch": "main", "commit": "81a893eb94d502b2cbb08ed3871eeaadfd240131" },
   "noice.nvim": { "branch": "main", "commit": "894db25ec726d32047799d4d0a982b701bec453b" },
   "nui.nvim": { "branch": "main", "commit": "9e3916e784660f55f47daa6f26053ad044db5d6a" },
