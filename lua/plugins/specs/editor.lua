@@ -352,19 +352,6 @@ return not dots.editor.enabled and {}
       event = "VeryLazy",
     },
     {
-      "chrisgrieser/nvim-origami",
-      opts = {
-        keepFoldsAcrossSessions = false,
-        pauseFoldsOnSearch = true,
-        setupFoldKeymaps = true,
-      },
-      keys = {
-        { "h", expr = true },
-        { "l", expr = true },
-      },
-      event = "VeryLazy",
-    },
-    {
       "echasnovski/mini.clue",
       opts = function()
         local miniclue = require("mini.clue")
