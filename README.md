@@ -2,6 +2,8 @@
 <a href="https://dotfyle.com/asyncedd/dotsnvim"><img src="https://dotfyle.com/asyncedd/dotsnvim/badges/leaderkey?style=for-the-badge" /></a>
 <a href="https://dotfyle.com/asyncedd/dotsnvim"><img src="https://dotfyle.com/asyncedd/dotsnvim/badges/plugin-manager?style=for-the-badge" /></a>
 
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
+
 <!--toc:start-->
 
 ## 📜 TOC
