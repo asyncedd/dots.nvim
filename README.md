@@ -65,6 +65,7 @@ favorite package manager or,
 [Install from source](https://dev.to/asyncedd/building-neovim-from-source-1794).
 Then clone this repository.
 
+> [!IMPORTANT]  
 > Install requires Neovim 0.10 (Latest nightly). Always review the code before installing a configuration.
 
 | Operation    | Command                                                                                                                                            |
