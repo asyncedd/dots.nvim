@@ -10,7 +10,7 @@ return not dots.coding.enabled and {}
     {
       {
         "hrsh7th/nvim-cmp",
-        opts = function(_, opts)
+        opts = function()
           local luasnip = require("luasnip")
           local cmp = require("cmp")
           local kind_icons = dots.UI.icons
