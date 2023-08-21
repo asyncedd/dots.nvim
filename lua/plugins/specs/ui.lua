@@ -316,12 +316,4 @@ return {
     end,
     event = "VeryLazy",
   },
-  {
-    "anuvyklack/windows.nvim",
-    dependencies = {
-      "anuvyklack/middleclass",
-    },
-    opts = true,
-    event = "VeryLazy",
-  },
 }
