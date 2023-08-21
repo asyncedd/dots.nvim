@@ -266,21 +266,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "stevearc/dressing.nvim",
-    opts = {
-      input = {
-        border = "solid",
-      },
-      nui = {
-        border = "solid",
-      },
-      builtin = {
-        border = "solid",
-      },
-    },
-    event = "VeryLazy",
-  },
-  {
     "echasnovski/mini.animate",
     opts = function()
       -- don't use animate when scrolling with the mouse
