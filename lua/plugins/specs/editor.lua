@@ -1,43 +1,6 @@
 return not dots.editor.enabled and {}
   or {
     {
-      "chrisgrieser/nvim-spider",
-      opts = {
-        skipInsignificantPunctuation = false,
-      },
-      event = "VeryLazy",
-      keys = {
-        { mode = { "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" } },
-        { mode = { "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" } },
-        { mode = { "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" } },
-        { mode = { "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" } },
-        {
-          mode = { "n", "o", "x" },
-          "W",
-          "<cmd>lua require('spider').motion('w', { skipInsignificantPunctuation = true })<CR>",
-          { desc = "Spider-W" },
-        },
-        {
-          mode = { "n", "o", "x" },
-          "E",
-          "<cmd>lua require('spider').motion('e', { skipInsignificantPunctuation = true })<CR>",
-          { desc = "Spider-E" },
-        },
-        {
-          mode = { "n", "o", "x" },
-          "B",
-          "<cmd>lua require('spider').motion('b', { skipInsignificantPunctuation = true } )<CR>",
-          { desc = "Spider-B" },
-        },
-        {
-          mode = { "n", "o", "x" },
-          "gB",
-          "<cmd>lua require('spider').motion('ge', { skipInsignificantPunctuation = true })<CR>",
-          { desc = "Spider-W" },
-        },
-      },
-    },
-    {
       "chrisgrieser/nvim-various-textobjs",
       opts = {},
       event = "VeryLazy",
