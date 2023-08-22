@@ -96,16 +96,14 @@ return not dots.coding.enabled and {}
       enabld = dots.coding.cmp.cmd,
     },
     {
-      {
-        "L3MON4D3/LuaSnip",
-        dependencies = {
-          "rafamadriz/friendly-snippets",
-        },
-        config = function(_, opts)
-          require("luasnip.loaders.from_vscode").lazy_load()
-          require("luasnip").setup(opts)
-        end,
+      "L3MON4D3/LuaSnip",
+      dependencies = {
+        "rafamadriz/friendly-snippets",
       },
+      config = function(_, opts)
+        require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip").setup(opts)
+      end,
     },
     {
       "altermo/ultimate-autopair.nvim",
