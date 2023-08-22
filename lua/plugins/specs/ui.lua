@@ -34,7 +34,6 @@ return {
       end,
       integrations = {
         telescope = { style = "nvchad" },
-        illuminate = true,
         notify = true,
         mini = true,
         flash = true,
