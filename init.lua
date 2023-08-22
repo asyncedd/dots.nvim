@@ -13,6 +13,7 @@ vim.cmd("colorscheme " .. (dots.UI.colorscheme.enabled or "habamax"))
 
 require("settings.autocmds")
 require("settings.keymaps")
+require("settings.filetype")
 
 for name, icon in pairs(dots.UI.icons.LSP) do
   name = "DiagnosticSign" .. name

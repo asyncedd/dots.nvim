@@ -61,3 +61,12 @@ map(
 )
 
 map("x", "g/", "<esc>/\\%V", { silent = false, desc = "Search inside visual selection" })
+
+map({ "x", "o" }, "gG", function()
+  vim.api.nvim_win_set_cursor(0, { 1, 0 })
+  if not vim.fn.mode():find("V") ~= nil then
+    vim.cmd("normal! V")
+  end
+  vim.cmd("normal! o")
+  vim.api.nvim_win_set_cursor(0, { vim.fn.line("$"), 0 })
+end)
