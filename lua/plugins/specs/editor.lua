@@ -1,42 +1,6 @@
 return not dots.editor.enabled and {}
   or {
     {
-      "chrisgrieser/nvim-various-textobjs",
-      opts = {},
-      event = "VeryLazy",
-      keys = {
-        {
-          mode = { "x", "o" },
-          "iw",
-          "<cmd>lua require('various-textobjs').subword(true)<cr>",
-          { desc = "inner subword" },
-        },
-        {
-          mode = { "x", "o" },
-          "aw",
-          "<cmd>lua require('various-textobjs').subword(false)<cr>",
-          { desc = "outer subword" },
-        },
-        {
-          mode = { "x", "o" },
-          "iW",
-          "<cmd>lua require('various-textobjs').subword(true)<cr>",
-          { desc = "inner subword" },
-        },
-        {
-          mode = { "x", "o" },
-          "aW",
-          "<cmd>lua require('various-textobjs').subword(false)<cr>",
-          { desc = "outer subword" },
-        },
-        {
-          "gG",
-          "<cmd>lua require('various-textobjs').entireBuffer()<CR>",
-          mode = { "x", "o" },
-        },
-      },
-    },
-    {
       "kylechui/nvim-surround",
       opts = true,
       event = "VeryLazy",
