@@ -88,7 +88,7 @@ M.languages = {
       },
     },
     DAP = {
-      enabled = true,
+      enabled = false,
     },
   },
   svelte = {
