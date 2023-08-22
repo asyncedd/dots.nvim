@@ -1,4 +1,4 @@
-return not (dots.languages.lua or dots.languages.lua.enable) and {}
+return not dots.languages.lua.enable and {}
   or {
     {
       "nvim-treesitter/nvim-treesitter",
