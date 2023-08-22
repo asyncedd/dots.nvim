@@ -44,7 +44,6 @@
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "e9062e2dfb9854e6a927370f2d720de354c88524" },
   "nvim-ufo": { "branch": "main", "commit": "5be5b800b4f3512bca128f345e9c98574b5637c0" },
   "nvim-web-devicons": { "branch": "master", "commit": "ab899311f8ae00a47eae8e0879506cead8eb1561" },
-  "one-small-step-for-vimkind": { "branch": "main", "commit": "5cacc816153c66a50de92c9cee29077b4a380254" },
   "plenary.nvim": { "branch": "master", "commit": "267282a9ce242bbb0c5dc31445b6d353bed978bb" },
   "promise-async": { "branch": "main", "commit": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },

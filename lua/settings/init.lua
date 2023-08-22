@@ -109,7 +109,7 @@ M.languages = {
       },
       typescript = {
         -- This requires the Typescript intregation!
-        enable = true,
+        enable = false,
       },
     },
     DAP = {
