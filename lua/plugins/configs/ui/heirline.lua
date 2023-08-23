@@ -22,7 +22,8 @@ local mode_colors = {
 }
 
 local colors = {
-  bright_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.7),
+  -- bright_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.7),
+  bright_bg = U.lighten(string.format("#%06x", utils.get_highlight("Comment").fg), 2.5, Normal),
   brighter_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.5),
   brightest_bg = U.blend(string.format("#%06x", utils.get_highlight("Comment").fg, 0.3), Normal, 1.3),
   cursorline = utils.get_highlight("CursorLineNr").fg,
