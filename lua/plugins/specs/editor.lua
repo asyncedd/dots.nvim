@@ -334,6 +334,30 @@ return not dots.editor.enabled and {}
       "chrisgrieser/nvim-spider",
       opts = true,
       keys = {
+        {
+          "w",
+          mode = { "n", "o", "x" },
+          "<cmd>lua require('spider').motion('w', { skipInsignificantPunctuation = false })<CR>",
+          desc = "Spider-w",
+        },
+        {
+          "e",
+          mode = { "n", "o", "x" },
+          "<cmd>lua require('spider').motion('e', { skipInsignificantPunctuation = false })<CR>",
+          desc = "Spider-e",
+        },
+        {
+          "b",
+          mode = { "n", "o", "x" },
+          "<cmd>lua require('spider').motion('b', { skipInsignificantPunctuation = false })<CR>",
+          desc = "Spider-b",
+        },
+        {
+          "ge",
+          mode = { "n", "o", "x" },
+          "<cmd>lua require('spider').motion('ge', { skipInsignificantPunctuation = false })<CR>",
+          desc = "Spider-ge",
+        },
         { "W", mode = { "n", "o", "x" }, "<cmd>lua require('spider').motion('w')<CR>", desc = "Spider-w" },
         { "E", mode = { "n", "o", "x" }, "<cmd>lua require('spider').motion('e')<CR>", desc = "Spider-e" },
         { "B", mode = { "n", "o", "x" }, "<cmd>lua require('spider').motion('b')<CR>", desc = "Spider-b" },
