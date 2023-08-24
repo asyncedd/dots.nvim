@@ -136,8 +136,6 @@ return {
     "folke/tokyonight.nvim",
     opts = {
       on_highlights = function(hl, C)
-        hl.CmpItemKindCodeium = { fg = C.green }
-
         hl.TelescopeBorder = { fg = C.bg_dark, bg = C.bg_dark }
         hl.TelescopeMatching = { fg = C.blue }
         hl.TelescopeNormal = { bg = C.bg_dark }
@@ -150,6 +148,29 @@ return {
         hl.TelescopeSelection = { fg = C.fg, bg = C.comment }
         hl.TelescopeSelectionCaret = { fg = C.purple }
       end,
+    },
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    opts = {
+      highlight_groups = {
+        MiniIndentscopeSymbol = { fg = "rose" },
+
+        PmenuSel = { bg = "rose", fg = "base" },
+
+        TelescopeBorder = { fg = "base", bg = "base" },
+        TelescopeMatching = { fg = "rose" },
+        TelescopeNormal = { bg = "base" },
+        TelescopePromptBorder = { fg = "surface", bg = "surface" },
+        TelescopePromptNormal = { fg = "text", bg = "surface" },
+        TelescopePromptPrefix = { fg = "rose" },
+        TelescopePreviewTitle = { fg = "base", bg = "foam" },
+        TelescopePromptTitle = { fg = "base", bg = "rose" },
+        TelescopeResultsTitle = { fg = "base", bg = "iris" },
+        TelescopeSelection = { fg = "text", bg = "surface" },
+        TelescopeSelectionCaret = { fg = "love" },
+      },
     },
   },
   {
