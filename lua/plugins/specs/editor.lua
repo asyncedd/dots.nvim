@@ -330,4 +330,14 @@ return not dots.editor.enabled and {}
       opts = true,
       event = "VeryLazy",
     },
+    {
+      "chrisgrieser/nvim-spider",
+      opts = true,
+      keys = {
+        { "W", mode = { "n", "o", "x" }, "<cmd>lua require('spider').motion('w')<CR>", desc = "Spider-w" },
+        { "E", mode = { "n", "o", "x" }, "<cmd>lua require('spider').motion('e')<CR>", desc = "Spider-e" },
+        { "B", mode = { "n", "o", "x" }, "<cmd>lua require('spider').motion('b')<CR>", desc = "Spider-b" },
+        { "gE", mode = { "n", "o", "x" }, "<cmd>lua require('spider').motion('ge')<CR>", desc = "Spider-ge" },
+      },
+    },
   }
