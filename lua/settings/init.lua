@@ -246,7 +246,15 @@ M.coding = {
   enabled = true,
   cmp = {
     sources = {
-      { name = "emoji", source = "hrsh7th/cmp-emoji", priority = 99999 },
+      {
+        name = "emoji",
+        source = "hrsh7th/cmp-emoji",
+        priority = 99999,
+        entry_filter = function()
+          local context = require("cmp.config.context")
+          return not context.in_treesitter_capture("string") and not context.in_syntax_group("String")
+        end,
+      },
       { name = "luasnip", source = "saadparwaiz1/cmp_luasnip" },
       { name = "nvim_lsp", source = "hrsh7th/cmp-nvim-lsp" },
       { name = "buffer", source = "hrsh7th/cmp-buffer" },
