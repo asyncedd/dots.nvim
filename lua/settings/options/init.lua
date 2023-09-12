@@ -6,3 +6,6 @@ opt.relativenumber = true
 
 -- Tabs
 opt.shiftwidth = 2
+
+-- Clipboard
+opt.clipboard = "unnamedplus"
