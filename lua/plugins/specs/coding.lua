@@ -11,4 +11,17 @@ return {
       "CmdlineEnter"
     },
   },
+  {
+    "windwp/nvim-ts-autotag",
+    opts = {
+      filetypes = {
+	"html",
+	"xml",
+	"svelte"
+      },
+    },
+    event = {
+      "InsertEnter",
+    },
+  },
 }
