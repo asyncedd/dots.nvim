@@ -8,4 +8,6 @@ opt.relativenumber = true
 opt.shiftwidth = 2
 
 -- Clipboard
-opt.clipboard = "unnamedplus"
+vim.schedule(function()
+  opt.clipboard = "unnamedplus"
+end)
