@@ -51,6 +51,16 @@ return {
           TelescopePreviewBorder = { fg = "${telescope_preview}", bg = "${telescope_preview}" },
           PmenuSel = { bg = "${blue}", fg = "${bg}" },
         },
+        options = {
+          bold = true,
+          italic = true,
+          undercurl = true,
+          window_unfocussed_color = true,
+        },
+        styles = {
+          comments = "italic",
+          keywords = "italic",
+        },
       }
     end,
   },
@@ -68,6 +78,9 @@ return {
           "RainbowViolet",
           "RainbowCyan",
         },
+      },
+      indent = {
+        highlight = "IndentBlanklineChar",
       },
     },
     config = function(_, opts)
