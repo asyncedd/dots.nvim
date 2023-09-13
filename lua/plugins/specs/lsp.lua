@@ -25,9 +25,7 @@ return {
   {
     "jose-elias-alvarez/null-ls.nvim",
     opts = {
-      sources = {
-        stylua = {},
-      },
+      sources = {},
     },
     event = "VeryLazy",
     config = function(_, opts)
