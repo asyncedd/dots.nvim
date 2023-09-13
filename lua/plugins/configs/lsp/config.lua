@@ -11,7 +11,7 @@ return function(opts)
         end
       end,
     })
-  end 
+  end
 
   M.setup = function()
     local servers_to_not_setup = opts.servers_to_not_setup
@@ -110,4 +110,3 @@ return function(opts)
     end,
   })
 end
-

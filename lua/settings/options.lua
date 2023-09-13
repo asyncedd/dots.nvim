@@ -19,3 +19,5 @@ end)
 -- So, if I have a new diff, It'll not feel weird, by the signcolumn expanding
 
 o.signcolumn = "yes:1"
+
+vim.g.mapleader = " "
