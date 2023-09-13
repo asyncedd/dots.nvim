@@ -56,4 +56,31 @@ return {
       "CmdlineEnter",
     },
   },
+  {
+    "numToStr/Comment.nvim",
+    opts = function()
+      return {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup({
+        context_commentstring = {
+          enable = true,
+        },
+      })
+
+      require("Comment").setup(opts)
+    end,
+    keys = {
+      { "gc", mode = { "x", "n" } },
+      { "gb", mode = { "x", "n" } },
+    },
+    dependencies = {
+      {
+        "nvim-treesitter",
+        dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+      },
+    },
+  },
 }
