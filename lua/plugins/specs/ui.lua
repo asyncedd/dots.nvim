@@ -49,4 +49,9 @@ return {
     end,
     event = "BufReadPost",
   },
+  {
+    "echasnovski/mini.animate",
+    opts = true,
+    event = "VeryLazy",
+  },
 }
