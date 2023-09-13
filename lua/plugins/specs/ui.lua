@@ -53,12 +53,6 @@ return {
         },
       }
     end,
-    config = function(_, opts)
-      require("onedarkpro").setup(opts)
-
-      vim.cmd("colorscheme onedark")
-    end,
-    lazy = false,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
