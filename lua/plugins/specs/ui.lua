@@ -120,4 +120,18 @@ return {
     },
     event = "VeryLazy",
   },
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        always_show_bufferline = false,
+      },
+    },
+    init = function()
+      if vim.fn.argc() > 1 then
+        require("bufferline")
+      end
+    end,
+    event = "VeryLazy",
+  },
 }
