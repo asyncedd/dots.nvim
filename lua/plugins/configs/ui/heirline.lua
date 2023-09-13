@@ -20,7 +20,7 @@ local mode_colors = {
 }
 
 local colors = {
-  comment = utils.get_highlight("CursorLineNrNC").fg,
+  gray = utils.get_highlight("LineNr").fg,
   cursorline = utils.get_highlight("CursorLineNr").fg,
   Normal = utils.get_highlight("Normal").bg,
   red = utils.get_highlight("DiagnosticError").fg,
@@ -53,7 +53,7 @@ local folds = {
           return ""
         end
       end,
-      hl = { fg = "comment" },
+      hl = { fg = "gray" },
     },
     {
       provider = function(self)
@@ -102,7 +102,7 @@ local line_numbers = {
   },
   hl = function()
     return {
-      fg = vim.v.relnum == 0 and mode_colors[vim.fn.mode()] or "comment",
+      fg = vim.v.relnum == 0 and mode_colors[vim.fn.mode()] or "gray",
     }
   end,
 }

@@ -8,6 +8,7 @@
   "flash.nvim": { "branch": "main", "commit": "8a8e74922a383c253b7f92e042b749150140c8d1" },
   "gitsigns.nvim": { "branch": "main", "commit": "907ae8636016aab2f283576fc60d46ca3427e579" },
   "heirline.nvim": { "branch": "master", "commit": "7f1e805dfc001d5dbb7d894105063f463f6c7dcc" },
+  "horizon.nvim": { "branch": "main", "commit": "a0f83da967c7b84e85723a6672c94e9d1333b31e" },
   "indent-blankline.nvim": { "branch": "v3", "commit": "9af80aad70b7963e183103be309181bd034aa285" },
   "lazy.nvim": { "branch": "main", "commit": "2a9354c7d2368d78cbd5575a51a2af5bd8a6ad01" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "01b4b6724ebcf5b43fc021486f6a260f1d09311e" },
