@@ -83,4 +83,27 @@ return {
       },
     },
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "VeryLazy",
+    opts = {
+      signs = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
+        changedelete = { text = "▎" },
+        untracked = { text = "▎" },
+      },
+      on_attach = function()
+        local gs = require("gitsigns")
+
+        local map = vim.keymap.set
+
+          -- stylua: ignore start
+          map("n", "]h", gs.next_hunk, { desc = "Next Hunk" })
+          map("n", "[h", gs.prev_hunk, { desc= "Prev Hunk" })
+      end,
+    },
+  },
 }
