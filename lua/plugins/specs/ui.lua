@@ -55,16 +55,6 @@ return {
     end,
   },
   {
-    "akinsho/horizon.nvim",
-    opts = {
-      overrides = {
-        colors = {
-          CursorLine = { bg = "#1e1e1e", fg = "#ffffff", underline = true },
-        },
-      },
-    },
-  },
-  {
     "lukas-reineke/indent-blankline.nvim",
     branch = "v3",
     opts = {
