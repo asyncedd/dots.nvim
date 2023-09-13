@@ -20,7 +20,7 @@ local mode_colors = {
 }
 
 local colors = {
-  comment = utils.get_highlight("Comment").fg,
+  comment = utils.get_highlight("CursorLineNrNC").fg,
   cursorline = utils.get_highlight("CursorLineNr").fg,
   Normal = utils.get_highlight("Normal").bg,
   red = utils.get_highlight("DiagnosticError").fg,
@@ -112,7 +112,7 @@ local git_signs = {
     condition = function()
       return not conditions.is_git_repo() or vim.v.virtnum ~= 0
     end,
-    provider = "┃",
+    provider = "▎",
     hl = { fg = "Normal" },
   },
   {
@@ -134,7 +134,7 @@ local git_signs = {
 
       self.has_sign = self.sign ~= nil
     end,
-    provider = "┃",
+    provider = "▎",
     hl = function(self)
       if self.has_sign then
         return self.sign.name
