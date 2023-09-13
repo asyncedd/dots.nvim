@@ -103,7 +103,11 @@ return {
   },
   {
     "echasnovski/mini.animate",
-    opts = true,
+    opts = {
+      scroll = {
+        enable = false,
+      },
+    },
     event = "VeryLazy",
   },
 }
