@@ -7,6 +7,9 @@ return {
       highlight = {
         enable = true,
       },
+      indent = {
+        enable = true,
+      },
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
@@ -118,5 +121,15 @@ return {
     end,
     event = "VeryLazy",
     dependencies = "nvim-treesitter",
+  },
+  {
+    "Wansmer/treesj",
+    opts = {
+      use_default_keymaps = false,
+      max_join_length = 1000,
+    },
+    keys = {
+      { "gS", "<cmd>lua require('treesj').toggle()<CR>", desc = "TreeSJ - toggle" },
+    },
   },
 }
