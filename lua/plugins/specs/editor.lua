@@ -77,10 +77,8 @@ return {
       { "gb", mode = { "x", "n" } },
     },
     dependencies = {
-      {
-        "nvim-treesitter",
-        dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
-      },
+      "nvim-treesitter",
+      "JoosepAlviste/nvim-ts-context-commentstring",
     },
   },
   {

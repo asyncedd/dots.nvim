@@ -40,7 +40,7 @@ return {
     opts = {
       symbol = "",
     },
-    event = "BufReadPost",
+    event = "VeryLazy",
   },
   {
     "rebelot/heirline.nvim",
