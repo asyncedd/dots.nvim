@@ -25,5 +25,6 @@
   "onedarkpro.nvim": { "branch": "main", "commit": "fa861b992471d55f653751f1fea8769ca536a554" },
   "plenary.nvim": { "branch": "master", "commit": "4cd4c29e39dd02efd906f98c03d2879237f50956" },
   "telescope.nvim": { "branch": "master", "commit": "a19770625aed49ad2a9f591a5e3946707f7359f6" },
-  "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "860baee62204815b281b9ee29a95f8d2b4eb5874" }
+  "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "860baee62204815b281b9ee29a95f8d2b4eb5874" },
+  "vim-matchup": { "branch": "master", "commit": "6dbe108230c7dbbf00555b7d4d9f6a891837ef07" }
 }
