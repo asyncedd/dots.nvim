@@ -49,4 +49,11 @@ return {
       { "<leader>to", "<cmd>lua require('mini.files').open()<CR>", desc = "mini.files: Open" },
     },
   },
+  {
+    "nvim-pack/nvim-spectre",
+    opts = true,
+    keys = {
+      { "<leader>s", "<Cmd>lua require('spectre').toggle()<CR>" },
+    },
+  },
 }
