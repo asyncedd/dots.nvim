@@ -185,4 +185,73 @@ return {
     dependencies = "kevinhwang91/promise-async",
     event = "VeryLazy",
   },
+  {
+    "gbprod/substitute.nvim",
+    opts = true,
+    keys = {
+      {
+        "gx",
+        function(...)
+          require("substitute").operator(...)
+        end,
+      },
+      {
+        "gxx",
+        function(...)
+          require("substitute").line(...)
+        end,
+      },
+      {
+        "gX",
+        function(...)
+          require("substitute").eol(...)
+        end,
+      },
+      {
+        "X",
+        function(...)
+          require("substitute").visual(...)
+        end,
+        mode = "x",
+      },
+      {
+        "<leader>x",
+        function(...)
+          require("substitute.range").operator(...)
+        end,
+      },
+      {
+        "<leader>x",
+        function(...)
+          require("substitute.range").visual(...)
+        end,
+        mode = "x",
+      },
+      {
+        "zx",
+        function(...)
+          require("substitute.exchange").operator(...)
+        end,
+      },
+      {
+        "zxx",
+        function(...)
+          require("substitute.exchange").line(...)
+        end,
+      },
+      {
+        "zX",
+        function(...)
+          require("substitute.exchange").visual(...)
+        end,
+        mode = "x",
+      },
+      {
+        "zxc",
+        function()
+          require("substitute.exchange").cancel()
+        end,
+      },
+    },
+  },
 }
