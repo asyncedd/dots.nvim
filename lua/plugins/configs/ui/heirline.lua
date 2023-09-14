@@ -509,6 +509,7 @@ local Statuscolumns = {
   signs,
   Align,
   line_numbers,
+  Space,
   folds,
   Space,
   hl = "Normal",

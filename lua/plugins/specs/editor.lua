@@ -175,4 +175,14 @@ return {
       { "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>", mode = { "x", "o" } },
     },
   },
+  {
+    "kevinhwang91/nvim-ufo",
+    opts = {
+      provider_selector = function()
+        return { "treesitter", "indent" }
+      end,
+    },
+    dependencies = "kevinhwang91/promise-async",
+    event = "VeryLazy",
+  },
 }
