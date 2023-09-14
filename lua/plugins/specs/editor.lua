@@ -162,4 +162,11 @@ return {
       { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
     },
   },
+  {
+    "kylechui/nvim-surround",
+    opts = true,
+    keys = {
+      { "s", mode = { "x", "o" } },
+    },
+  },
 }
