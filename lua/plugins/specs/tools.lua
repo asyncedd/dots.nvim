@@ -35,11 +35,18 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     keys = {
-      { "<leader>ff", "<cmd>Telescope find_files<CR>" },
-      { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
+      { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "telescope: find_files" },
+      { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "telescope: live_grep" },
     },
     cmd = {
       "Telescope",
+    },
+  },
+  {
+    "echasnovski/mini.files",
+    opts = true,
+    keys = {
+      { "<leader>to", "<cmd>lua require('mini.files').open()<CR>", desc = "mini.files: Open" },
     },
   },
 }
