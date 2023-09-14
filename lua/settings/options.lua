@@ -21,3 +21,6 @@ end)
 o.signcolumn = "yes:1"
 
 vim.g.mapleader = " "
+
+-- Statusline
+o.cmdheight = 0
