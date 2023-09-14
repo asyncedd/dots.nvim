@@ -189,68 +189,26 @@ return {
     "gbprod/substitute.nvim",
     opts = true,
     keys = {
-      {
-        "gx",
-        function(...)
-          require("substitute").operator(...)
-        end,
+      -- stylua: ignore start
+      { "gx", function(...) require("substitute").operator(...) end, desc = "Substitute: Operator" },
+      { "gxx", function(...) require("substitute").line(...) end, desc = "Substitute: Line" },
+      { "gX", function(...) require("substitute").eol(...) end, desc = "Substitute: EOL" },
+      { "X", function(...) require("substitute").visual(...) end, mode = "x", desc = "Substitute: Visual" },
+      { "<leader>x", function(...) require("substitute.range").operator(...) end, desc = "Substitute: Range-Operator" },
+      { "<leader>x", function(...) require("substitute.range").visual(...) end, mode = "x", desc = "Substitute: Range-Visual" },
+      { "zx", function(...) require("substitute.exchange").operator(...) end, desc = "Substitute: Exchange-Operator" },
+      { "zxx", function(...) require("substitute.exchange").line(...) end, desc = "Substitute: Exchange-Line" },
+      { "zX", function(...) require("substitute.exchange").visual(...) end, mode = "x", desc = "Substitute: Exchange-Visual" },
+      { "zxc", function() require("substitute.exchange").cancel() end, desc = "Substitute: Exchange-Cancel" },
+      -- stylua: ignore stop
+    },
+    {
+      "smjonas/duplicate.nvim",
+      opts = {
+        operator = {},
       },
-      {
-        "gxx",
-        function(...)
-          require("substitute").line(...)
-        end,
-      },
-      {
-        "gX",
-        function(...)
-          require("substitute").eol(...)
-        end,
-      },
-      {
-        "X",
-        function(...)
-          require("substitute").visual(...)
-        end,
-        mode = "x",
-      },
-      {
-        "<leader>x",
-        function(...)
-          require("substitute.range").operator(...)
-        end,
-      },
-      {
-        "<leader>x",
-        function(...)
-          require("substitute.range").visual(...)
-        end,
-        mode = "x",
-      },
-      {
-        "zx",
-        function(...)
-          require("substitute.exchange").operator(...)
-        end,
-      },
-      {
-        "zxx",
-        function(...)
-          require("substitute.exchange").line(...)
-        end,
-      },
-      {
-        "zX",
-        function(...)
-          require("substitute.exchange").visual(...)
-        end,
-        mode = "x",
-      },
-      {
-        "zxc",
-        function()
-          require("substitute.exchange").cancel()
-        end,
+      keys = {
+        "yd",
       },
     },
   },
