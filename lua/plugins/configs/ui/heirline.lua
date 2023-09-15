@@ -469,9 +469,9 @@ local signs = {
   end,
   provider = function(self)
     if self.has_sign then
-      return vim.fn.sign_getdefined(self.sign.name)[1].text
+      return "%s "
     end
-    return "  "
+    return "   "
   end,
   hl = function(self)
     if self.has_sign then

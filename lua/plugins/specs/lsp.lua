@@ -33,4 +33,28 @@ return {
     end,
     dependencies = "nvim-lua/plenary.nvim",
   },
+  {
+    "weilbith/nvim-code-action-menu",
+    cmd = "CodeActionMenu",
+    config = function()
+      local g = vim.g
+
+      g.code_action_menu_show_details = true
+      g.code_action_menu_show_diff = true
+      g.code_action_menu_show_action_kind = true
+    end,
+    keys = {
+      { "<leader>ca", "<cmd>CodeActionMenu<CR>", desc = "Open the code action menu" },
+    },
+  },
+  {
+    "kosayoda/nvim-lightbulb",
+    opts = {
+      priority = 40,
+      autocmd = {
+        enabled = true,
+      },
+    },
+    event = "LspAttach",
+  },
 }

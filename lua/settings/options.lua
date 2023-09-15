@@ -6,6 +6,7 @@ o.relativenumber = true
 
 -- Tabs
 o.shiftwidth = 2
+o.tabstop = 2
 
 -- Clipboard
 vim.schedule(function()
