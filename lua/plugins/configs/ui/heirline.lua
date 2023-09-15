@@ -511,7 +511,7 @@ local Statuscolumns = {
   line_numbers,
   Space,
   folds,
-  Space,
+  { provider = "  " },
   hl = "Normal",
   static = {
     click_args = function(self, minwid, clicks, button, mods)

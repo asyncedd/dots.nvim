@@ -33,9 +33,24 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
+      {
+        "danielfalk/smart-open.nvim",
+        dependencies = {
+          "kkharji/sqlite.lua",
+          { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+          "nvim-telescope/telescope-fzy-native.nvim",
+        },
+        config = function()
+          require("telescope").load_extension("smart_open")
+        end,
+      },
     },
     keys = {
-      { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "telescope: find_files" },
+      {
+        "<leader>ff",
+        "<cmd>lua require('telescope').extensions.smart_open.smart_open({ cwd_only = true, filename_first = false })<CR>",
+        desc = "telescope: find_files",
+      },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "telescope: live_grep" },
     },
     cmd = {
