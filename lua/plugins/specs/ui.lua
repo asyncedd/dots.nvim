@@ -116,6 +116,7 @@ return {
       return require("plugins.configs.ui.heirline")
     end,
     event = "BufReadPost",
+    dependencies = "nvim-web-devicons",
   },
   {
     "echasnovski/mini.animate",
@@ -153,7 +154,6 @@ return {
         require("notify")(...)
       end
     end,
-    event = "VeryLazy",
   },
   {
     "folke/noice.nvim",

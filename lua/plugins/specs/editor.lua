@@ -54,9 +54,8 @@ return {
       { "F", mode = { "n", "x", "o" } },
       { "t", mode = { "n", "x", "o" } },
       { "T", mode = { "n", "x", "o" } },
-    },
-    event = {
-      "CmdlineEnter",
+      "/",
+      "?",
     },
   },
   {
