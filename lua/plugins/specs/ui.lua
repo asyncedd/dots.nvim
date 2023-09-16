@@ -134,6 +134,10 @@ return {
         always_show_bufferline = false,
       },
     },
+    keys = {
+      { "]b", "<cmd>BufferLineCycleNext<CR>", desc = "bufferline: cycle next" },
+      { "[b", "<cmd>BufferLineCyclePrev<CR>", desc = "bufferline: cycle prev" },
+    },
     init = function()
       if vim.fn.argc() > 1 then
         require("bufferline")

@@ -196,4 +196,11 @@ return {
       },
     },
   },
+  {
+    "echasnovski/mini.clue",
+    opts = function()
+      return require("plugins.configs.editor.mini-clue")
+    end,
+    event = "VeryLazy",
+  },
 }

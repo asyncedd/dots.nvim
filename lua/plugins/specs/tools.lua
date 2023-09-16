@@ -68,7 +68,7 @@ return {
     "nvim-pack/nvim-spectre",
     opts = true,
     keys = {
-      { "<leader>s", "<Cmd>lua require('spectre').toggle()<CR>" },
+      { "<leader>s", "<Cmd>lua require('spectre').toggle()<CR>", desc = "Spectre: toggle" },
     },
   },
 }
