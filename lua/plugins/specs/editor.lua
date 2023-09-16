@@ -220,6 +220,9 @@ return {
         require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
       end,
     },
-    event = "VeryLazy",
+    keys = {
+      { "i", mode = { "x", "o" } },
+      { "a", mode = { "x", "o" } },
+    },
   },
 }
