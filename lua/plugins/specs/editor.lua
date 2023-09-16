@@ -203,4 +203,23 @@ return {
     end,
     event = "VeryLazy",
   },
+  {
+    "echasnovski/mini.ai",
+    opts = function()
+      local ai = require("mini.ai")
+      return {
+        n_lines = 500,
+        custom_textobjects = {
+          f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+        },
+      }
+    end,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      init = function()
+        require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
+      end,
+    },
+    event = "VeryLazy",
+  },
 }
