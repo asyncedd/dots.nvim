@@ -6,8 +6,8 @@ local enabled = {
   "flash.nvim",
   "lazy.nvim",
   "mini.ai",
-  "mini.comment",
-  "ultimate-autopairs.nvim",
+  "Comment.nvim",
+  "ultimate-autopair.nvim",
   "nvim-surround",
   "mini.indentscope",
   "nvim-treesitter",
@@ -16,6 +16,9 @@ local enabled = {
   "vim-repeat",
   "nvim-spider",
   "treesj",
+  "substitute.nvim",
+  "duplicate.nvim",
+  "nvim-ts-autotag",
 }
 
 local Config = require("lazy.core.config")
@@ -39,11 +42,5 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = { highlight = { enable = false } },
-  },
-  {
-    "echasnovski/mini.indentscope",
-    opts = {
-      symbol = "",
-    },
   },
 }
