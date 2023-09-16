@@ -39,6 +39,10 @@ local colors = {
 }
 
 local ViMode = {
+  init = function(self)
+    local mode = conditions.is_active() and vim.fn.mode() or "n"
+    self.mode_color = mode_colors[mode]
+  end,
   static = {
     mode_names = {
       n = "NORMAL",
@@ -82,14 +86,14 @@ local ViMode = {
       return "  %2(" .. self.mode_names[vim.fn.mode(1)] .. "%) "
     end,
     hl = function(self)
-      local color = self:mode_color() -- here!
+      local color = self.mode_color
       return { bg = color, fg = "Normal", bold = true }
     end,
   },
   {
     provider = "",
     hl = function(self)
-      local color = self:mode_color()
+      local color = self.mode_color
       return { fg = color, bg = "gray", bold = true }
     end,
   },
@@ -112,14 +116,6 @@ local MacroRec = {
   },
 }
 
-local FileNameBlock = {
-  -- let's first set up some attributes needed by this component and it's children
-  init = function(self)
-    self.filename = vim.api.nvim_buf_get_name(0)
-  end,
-}
--- We can now define some children separately and add them later
-
 local FileIcon = {
   init = function(self)
     local filename = self.filename
@@ -136,15 +132,10 @@ local FileIcon = {
 
 local FileName = {
   provider = function(self)
-    -- first, trim the pattern relative to the current directory. For other
-    -- options, see :h filename-modifers
     local filename = vim.fn.fnamemodify(self.filename, ":t")
     if filename == "" then
       return "Scratch"
     end
-    -- now, if the filename would occupy more than 1/4th of the available
-    -- space, we trim the file path to its initials
-    -- See Flexible Components section below for dynamic truncation
     if not conditions.width_percent_below(#filename, 0.25) then
       filename = vim.fn.pathshorten(filename)
     end
@@ -169,20 +160,16 @@ local FileFlags = {
   },
 }
 
--- Now, let's say that we want the filename color to change if the buffer is
--- modified. Of course, we could do that directly using the FileName.hl field,
--- but we'll see how easy it is to alter existing components using a "modifier"
--- component
-
--- let's add the children to our FileNameBlock component
-FileNameBlock = utils.insert(
-  FileNameBlock,
+local FileNameBlock = {
+  init = function(self)
+    self.filename = vim.api.nvim_buf_get_name(0)
+  end,
   FileIcon,
-  utils.insert(FileName), -- a new table where FileName is a child of FileNameModifier
+  FileName,
   Space,
   FileFlags,
-  { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
-)
+  { provider = "%<" },
+}
 
 local WorkDir = {
   {
@@ -203,7 +190,7 @@ local WorkDir = {
       end
       return cwd .. " "
     end,
-    hl = { bg = "Normal", fg = "blue", bold = true },
+    hl = { fg = "blue", bold = true },
   },
 }
 local cursor_position = {
@@ -218,7 +205,7 @@ local cursor_position = {
   Space,
   {
     provider = "%l/%c ",
-    hl = { bg = "Normal", fg = "blue", bold = true },
+    hl = { fg = "blue", bold = true },
   },
 }
 
@@ -232,13 +219,12 @@ local Git = {
 
   hl = { fg = "gray" },
 
-  { -- git branch name
+  {
     provider = function(self)
       return "󰊤 " .. self.status_dict.head .. " "
     end,
     hl = { bold = true },
   },
-  -- You could handle delimiters, icons and counts similar to Diagnostics
   {
     provider = function(self)
       local count = self.status_dict.added or 0
@@ -314,13 +300,6 @@ local StatusLine = {
   Space,
   WorkDir,
   cursor_position,
-  static = {
-    mode_colors_map = mode_colors,
-    mode_color = function(self)
-      local mode = conditions.is_active() and vim.fn.mode() or "n"
-      return self.mode_colors_map[mode]
-    end,
-  },
 }
 
 local folds = {
@@ -338,7 +317,7 @@ local folds = {
     {
       provider = function(self)
         if vim.fn.foldclosed(self.lnum) == -1 then
-          return ""
+          return " "
         end
       end,
       hl = { fg = "gray" },
@@ -346,7 +325,7 @@ local folds = {
     {
       provider = function(self)
         if vim.fn.foldclosed(self.lnum) ~= -1 then
-          return ""
+          return " "
         end
       end,
       hl = { fg = "yellow" },
@@ -356,7 +335,7 @@ local folds = {
     condition = function(self)
       return not self.folded
     end,
-    provider = " ",
+    provider = "  ",
   },
   on_click = {
     name = "fold_click",
@@ -441,7 +420,6 @@ local git_signs = {
 }
 
 local signs = {
-  -- condition = function() return conditions.has_diagnostics() end,
   init = function(self)
     local signs = vim.fn.sign_getplaced(vim.api.nvim_get_current_buf(), {
       group = "*",
@@ -454,7 +432,6 @@ local signs = {
       return
     end
 
-    -- Filter out git signs
     signs = vim.tbl_filter(function(sign)
       return not vim.startswith(sign.group, "gitsigns")
     end, signs[1].signs)
@@ -468,14 +445,10 @@ local signs = {
     self.has_sign = self.sign ~= nil
   end,
   provider = function(self)
-    if self.has_sign then
-      return "%s "
-    end
-    return "   "
+    return self.has_sign and "%s " or "   "
   end,
   hl = function(self)
     if self.has_sign then
-      -- Neotest signs
       if self.sign.group == "neotest-status" then
         if self.sign.name == "neotest_running" then
           return "NeotestRunning"
@@ -489,7 +462,6 @@ local signs = {
         return "NeotestSkipped"
       end
 
-      -- Everything else
       local hl = self.sign.name
       return (vim.fn.hlexists(hl) ~= 0 and hl)
     end
@@ -511,7 +483,7 @@ local Statuscolumns = {
   line_numbers,
   Space,
   folds,
-  { provider = "  " },
+  Space,
   hl = "Normal",
   static = {
     click_args = function(self, minwid, clicks, button, mods)
