@@ -105,7 +105,10 @@ return {
     opts = {
       symbol = "",
     },
-    event = "VeryLazy",
+    keys = {
+      { "ai", mode = { "x", "o" } },
+      { "ii", mode = { "x", "o" } },
+    },
   },
   {
     "rebelot/heirline.nvim",
