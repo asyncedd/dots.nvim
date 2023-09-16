@@ -108,21 +108,6 @@ return {
     },
   },
   {
-    "andymass/vim-matchup",
-    opts = {
-      matchup = {
-        enable = true,
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
-      vim.g.matchup_matchparen_offscreen = {}
-    end,
-    event = "VeryLazy",
-    dependencies = "nvim-treesitter",
-  },
-  {
     "Wansmer/treesj",
     opts = {
       use_default_keymaps = false,
