@@ -1,100 +1,58 @@
-return not dots.languages.lua.enable and {}
-  or {
-    {
-      "nvim-treesitter/nvim-treesitter",
-      optional = true,
-      opts = function(_, opts)
-        table.insert(opts.ensure_installed, {
-          dots.languages.lua.treesitter.base and "lua",
-          dots.languages.lua.treesitter.luadoc and "luadoc",
-          dots.languages.lua.treesitter.patterns and "luap",
-        })
-      end,
-    },
-    dots.languages.lua.LSP.enable and {
-      "neovim/nvim-lspconfig",
-      optional = true,
-      opts = {
-        servers = {
-          lua_ls = {
-            settings = {
-              Lua = {
-                hint = {
-                  enable = true,
-                  arrayIndex = "Disable",
+return {
+  {
+    "neovim/nvim-lspconfig",
+    optional = true,
+    opts = {
+      servers = {
+        lua_ls = {
+          settings = {
+            Lua = {
+              hint = {
+                enable = true,
+                arrayIndex = "Disable",
+              },
+              runtime = {
+                pathStrict = true,
+              },
+              completion = {
+                callSnippet = "Both",
+              },
+              diagnostics = {
+                globals = {
+                  "vim",
                 },
-                runtime = {
-                  pathStrict = true,
+              },
+              workspace = {
+                library = {
+                  [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                  -- [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+                  [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
                 },
-                completion = {
-                  callSnippet = "Both",
-                },
-                diagnostics = {
-                  globals = {
-                    "vim",
-                  },
-                },
-                workspace = {
-                  library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    -- [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
-                    [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
-                  },
-                  maxPreload = 100000,
-                  preloadFileSize = 10000,
-                  checkThirdParty = false,
-                },
+                maxPreload = 100000,
+                preloadFileSize = 10000,
+                checkThirdParty = false,
               },
             },
           },
         },
       },
-      dependencies = dots.languages.lua.LSP.neodev.enable and {
-        {
-          "folke/neodev.nvim",
-          opts = dots.languages.lua.LSP.neodev.opts or {},
+    },
+    dependencies = {
+      "folke/neodev.nvim",
+      opts = {},
+    },
+  },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    optional = true,
+    opts = {
+      sources = {
+        stylua = {
+          condition = function(utils)
+            return utils.root_has_file({ "stylua.toml" })
+          end,
         },
       },
     },
-    {
-      "jose-elias-alvarez/null-ls.nvim",
-      optional = true,
-      opts = {
-        sources = {
-          stylua = {
-            condition = function(utils)
-              return utils.root_has_file({ "stylua.toml" })
-            end,
-          },
-        },
-      },
-    },
-    not dots.languages.lua.DAP.enabled and {}
-      or {
-        "mfussenegger/nvim-dap",
-        optional = true,
-        dependencies = {
-          {
-            "jbyuki/one-small-step-for-vimkind",
-          -- stylua: ignore
-          keys = {
-            { "<leader>daL", function() require("osv").launch({ port = 8086 }) end, desc = "Adapter Lua Server" },
-            { "<leader>dal", function() require("osv").run_this() end, desc = "Adapter Lua" },
-          },
-            config = function()
-              local dap = require("dap")
-              dap.adapters.nlua = function(callback, config)
-                callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 })
-              end
-              dap.configurations.lua = {
-                {
-                  type = "nlua",
-                  request = "attach",
-                  name = "Attach to running Neovim instance",
-                },
-              }
-            end,
-          },
-        },
-      },
-  }
+  },
+}

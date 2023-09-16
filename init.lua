@@ -1,36 +1,19 @@
--- init.lua
-vim.loader.enable()
-
-require("settings")
-
--- Setup some options
 require("settings.options")
 
--- Setup the plugins
+require("settings.keymap")
+
 require("plugins")
 
-vim.cmd("colorscheme " .. (dots.UI.colorscheme.enabled or "habamax"))
+if not vim.g.vscode then
+  vim.cmd("colorscheme onedark")
+end
 
-require("settings.autocmds")
-require("settings.keymaps")
-require("settings.filetype")
-
-for name, icon in pairs(dots.UI.icons.LSP) do
+for name, icon in pairs({
+  Error = " ",
+  Warn = " ",
+  Hint = "󰌵 ",
+  Info = " ",
+}) do
   name = "DiagnosticSign" .. name
   vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 end
-
-vim.diagnostic.config({
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = true,
-  virtual_text = {
-    source = "if_many", -- Or "if_many"
-    prefix = "",
-  },
-  float = {
-    source = "always", -- Or "if_many"
-    header = "NoiceMini",
-  },
-})

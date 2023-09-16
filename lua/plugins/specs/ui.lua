@@ -1,70 +1,5 @@
 return {
   {
-    "catppuccin/nvim",
-    opts = {
-      custom_highlights = function(C)
-        return {
-          Pmenu = { bg = C.mantle },
-          PmenuSel = { bg = C.blue, fg = C.base, style = { "bold" } },
-          CmpItemMenu = { fg = C.overlay0 },
-          MatchParen = { fg = C.peach, bg = C.none, style = { "bold" } },
-
-          DiagnosticVirtualTextError = {
-            fg = C.red,
-            bg = C.none,
-            style = { "italic" },
-          },
-          DiagnosticVirtualTextWarn = {
-            fg = C.yellow,
-            bg = C.none,
-            style = { "italic" },
-          },
-          DiagnosticVirtualTextInfo = {
-            fg = C.sky,
-            bg = C.none,
-            style = { "italic" },
-          },
-          DiagnosticVirtualTextHint = {
-            fg = C.teal,
-            bg = C.none,
-            style = { "italic" },
-          },
-        }
-      end,
-      integrations = {
-        telescope = { style = "nvchad" },
-        notify = true,
-        mini = true,
-        flash = true,
-        barbecue = false,
-        dashboard = false,
-        alpha = false,
-        nvimtree = false,
-        ts_rainbow2 = false,
-        ts_rainbow = false,
-        native_lsp = {
-          enabled = true,
-          virtual_text = {
-            errors = { "italic" },
-            hints = { "italic" },
-            warnings = { "italic" },
-            information = { "italic" },
-          },
-          underlines = {
-            errors = { "undercurl" },
-            hints = { "undercurl" },
-            warnings = { "undercurl" },
-            information = { "undercurl" },
-          },
-          inlay_hints = {
-            background = true,
-          },
-        },
-      },
-    },
-    name = "catppuccin",
-  },
-  {
     "olimorris/onedarkpro.nvim",
     opts = function()
       return {
@@ -116,9 +51,6 @@ return {
           TelescopePreviewBorder = { fg = "${telescope_preview}", bg = "${telescope_preview}" },
           PmenuSel = { bg = "${blue}", fg = "${bg}" },
         },
-        plugins = {
-          all = true,
-        },
         options = {
           bold = true,
           italic = true,
@@ -133,83 +65,93 @@ return {
     end,
   },
   {
-    "folke/tokyonight.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    branch = "v3",
     opts = {
-      on_highlights = function(hl, C)
-        hl.CmpItemKindCodeium = { fg = C.green }
-
-        hl.TelescopeBorder = { fg = C.bg_dark, bg = C.bg_dark }
-        hl.TelescopeMatching = { fg = C.blue }
-        hl.TelescopeNormal = { bg = C.bg_dark }
-        hl.TelescopePromptBorder = { fg = C.comment, bg = C.comment }
-        hl.TelescopePromptNormal = { fg = C.bg_dark, bg = C.comment }
-        hl.TelescopePromptPrefix = { fg = C.magenta }
-        hl.TelescopePreviewTitle = { fg = C.bg_dark, bg = C.green }
-        hl.TelescopePromptTitle = { fg = C.bg_dark, bg = C.red }
-        hl.TelescopeResultsTitle = { fg = C.bg_dark, bg = C.purple }
-        hl.TelescopeSelection = { fg = C.fg, bg = C.comment }
-        hl.TelescopeSelectionCaret = { fg = C.purple }
-      end,
+      scope = {
+        highlight = {
+          "RainbowRed",
+          "RainbowYellow",
+          "RainbowBlue",
+          "RainbowOrange",
+          "RainbowGreen",
+          "RainbowViolet",
+          "RainbowCyan",
+        },
+      },
+      indent = {
+        highlight = "IndentBlanklineChar",
+      },
     },
+    config = function(_, opts)
+      local hooks = require("ibl.hooks")
+      hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+        vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+        vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+        vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+        vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+        vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+        vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+        vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+      end)
+      require("ibl").setup(opts)
+
+      hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+    end,
+    event = "BufReadPost",
+  },
+  {
+    "echasnovski/mini.indentscope",
+    opts = {
+      symbol = "",
+    },
+    keys = {
+      { "ai", mode = { "x", "o" } },
+      { "ii", mode = { "x", "o" } },
+    },
+  },
+  {
+    "rebelot/heirline.nvim",
+    opts = function()
+      return require("plugins.configs.ui.heirline")
+    end,
+    event = "BufReadPost",
+    dependencies = "nvim-web-devicons",
+  },
+  {
+    "echasnovski/mini.animate",
+    opts = {
+      scroll = {
+        enable = false,
+      },
+    },
+    event = "VeryLazy",
+  },
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        always_show_bufferline = false,
+      },
+    },
+    keys = {
+      { "]b", "<cmd>BufferLineCycleNext<CR>", desc = "bufferline: cycle next" },
+      { "[b", "<cmd>BufferLineCyclePrev<CR>", desc = "bufferline: cycle prev" },
+    },
+    init = function()
+      if vim.fn.argc() > 1 then
+        require("bufferline")
+      end
+    end,
+    event = "VeryLazy",
   },
   {
     "rcarriga/nvim-notify",
     opts = function()
-      local api = vim.api
-      local stages = require("notify.stages.fade_in_slide_out")("top_down")
-      local base = require("notify.render.base")
-      return {
-        render = function(bufnr, notif, highlights, config)
-          local max_message_width = math.max(math.max(unpack(vim.tbl_map(function(line)
-            return vim.fn.strchars(line)
-          end, notif.message))))
-          local title = notif.title[1]
-          local title_accum = vim.str_utfindex(title)
-
-          local title_buffer =
-            string.rep(" ", (math.max(max_message_width, title_accum, config.minimum_width()) - title_accum) / 2)
-
-          local namespace = base.namespace()
-
-          api.nvim_buf_set_lines(bufnr, 0, 1, false, { "", "" })
-          api.nvim_buf_set_extmark(bufnr, namespace, 0, 0, {
-            virt_text = {
-              { title_buffer .. notif.icon .. " " .. title .. title_buffer, highlights.title },
-            },
-            virt_text_win_col = 0,
-            priority = 10,
-          })
-          api.nvim_buf_set_extmark(bufnr, namespace, 1, 0, {
-            virt_text = {
-              {
-                string.rep("━", math.max(max_message_width, title_accum, config.minimum_width())),
-                highlights.border,
-              },
-            },
-            virt_text_win_col = 0,
-            priority = 10,
-          })
-          api.nvim_buf_set_lines(bufnr, 2, -1, false, notif.message)
-
-          api.nvim_buf_set_extmark(bufnr, namespace, 2, 0, {
-            hl_group = highlights.body,
-            end_line = 1 + #notif.message,
-            end_col = #notif.message[#notif.message],
-            priority = 50,
-          })
-        end,
-        stages = {
-          function(...)
-            local opts = stages[1](...)
-            if opts then
-              opts.row = opts.row + 1
-            end
-            return opts
-          end,
-          unpack(stages, 2),
-        },
-        fps = 60,
-      }
+      return require("plugins.configs.ui.notify")
+    end,
+    config = function()
+      vim.notify = require("notify")
     end,
     init = function()
       vim.notify = function(...)
@@ -231,11 +173,11 @@ return {
         },
       },
       presets = {
-        bottom_search = true, -- use a classic bottom cmdline for search
-        command_palette = true, -- position the cmdline and popupmenu together
-        long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false, -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false, -- add a border to hover docs and signature help
+        bottom_search = true,
+        command_palette = true,
+        long_message_to_split = true,
+        inc_rename = false,
+        lsp_doc_border = false,
       },
       cmdline = {
         view = "cmdline",
@@ -244,74 +186,7 @@ return {
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     },
-  },
-  {
-    "rebelot/heirline.nvim",
-    opts = function()
-      return require("plugins.configs.ui.heirline")
-    end,
-    event = "UIEnter",
-    dependencies = "nvim-tree/nvim-web-devicons",
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      filetype_exclude = {
-        "help",
-        "terminal",
-        "lazy",
-        "lspinfo",
-        "TelescopePrompt",
-        "TelescopeResults",
-        "mason",
-        "lazyterm",
-        "toggleterm",
-        "noice",
-        "",
-      },
-      buftype_exclude = { "terminal" },
-    },
-    event = "VeryLazy",
-  },
-  {
-    "echasnovski/mini.indentscope",
-    opts = {
-      symbol = "│",
-    },
-    init = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = {
-          "help",
-          "terminal",
-          "lazy",
-          "lspinfo",
-          "TelescopePrompt",
-          "TelescopeResults",
-          "mason",
-          "lazyterm",
-          "toggleterm",
-          "noice",
-          "python",
-          "undotree",
-          "norg",
-          "",
-        },
-        callback = function()
-          vim.b.miniindentscope_disable = true
-        end,
-      })
-    end,
-    event = "VeryLazy",
-  },
-  {
-    "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-        always_show_bufferline = false,
-        enforce_regular_tabs = true,
-      },
-    },
-    event = "VeryLazy",
   },
 }

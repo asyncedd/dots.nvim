@@ -1,11 +1,14 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
-if not vim.uv.fs_stat(lazypath) then
-  vim.notify(" Bootstrapping lazy.nvim!")
-  vim.cmd("!git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable " .. lazypath)
-  vim.notify(" Done!")
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
-
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
@@ -13,10 +16,7 @@ require("lazy").setup({
   { import = "plugins.specs.languages" },
 }, {
   defaults = {
-    lazy = dots.lazy.defaults.lazy,
-  },
-  install = {
-    colorscheme = { dots.lazy.default_to_current_colorscheme and dots.UI.colorscheme.enabled },
+    lazy = true,
   },
   performance = {
     rtp = {
@@ -25,11 +25,8 @@ require("lazy").setup({
         "netrwPlugin",
         "tarPlugin",
         "tohtml",
-        "tutor",
         "zipPlugin",
-        "spellfile",
-        "matchit",
-        "matchparen",
+        "tutor",
       },
     },
   },
