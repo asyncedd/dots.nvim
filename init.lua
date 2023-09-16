@@ -1,5 +1,7 @@
 require("settings.options")
 
+require("settings.keymap")
+
 require("plugins")
 
 if not vim.g.vscode then

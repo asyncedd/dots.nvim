@@ -154,12 +154,6 @@ return {
     },
   },
   {
-    "chrisgrieser/nvim-various-textobjs",
-    keys = {
-      { "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>", mode = { "x", "o" } },
-    },
-  },
-  {
     "kevinhwang91/nvim-ufo",
     opts = {
       provider_selector = function()
