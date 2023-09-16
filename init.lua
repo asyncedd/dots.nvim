@@ -4,9 +4,7 @@ require("settings.keymap")
 
 require("plugins")
 
-if not vim.g.vscode then
-  vim.cmd("colorscheme onedark")
-end
+vim.cmd("colorscheme " .. (vim.g.vscode and "habamax" or "onedark"))
 
 for name, icon in pairs({
   Error = " ",
