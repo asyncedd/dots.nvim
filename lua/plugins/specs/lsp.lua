@@ -45,7 +45,7 @@ return {
       g.code_action_menu_show_action_kind = false
     end,
     keys = {
-      { "<leader>ca", "<cmd>CodeActionMenu<CR>", desc = "Open the code action menu" },
+      { "<leader>ca", "<cmd>CodeActionMenu<CR>", desc = "Open the code action menu", mode = { "x", "n" } },
     },
   },
   {
