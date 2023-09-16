@@ -39,9 +39,10 @@ return {
     config = function()
       local g = vim.g
 
+      g.code_action_menu_window_border = "solid"
       g.code_action_menu_show_details = true
       g.code_action_menu_show_diff = true
-      g.code_action_menu_show_action_kind = true
+      g.code_action_menu_show_action_kind = false
     end,
     keys = {
       { "<leader>ca", "<cmd>CodeActionMenu<CR>", desc = "Open the code action menu" },
