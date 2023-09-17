@@ -1,7 +1,7 @@
 local miniclue = require("mini.clue")
 local hints = {}
 -- stylua: ignore
-local keys = { "b", "h", "P", "p", "y" }
+local keys = { "b", "h", "P", "p", "y", "d" }
 -- stylua: ignore end
 
 for _, br in ipairs({ "[", "]" }) do
