@@ -180,15 +180,6 @@ return {
       { "zxc", function() require("substitute.exchange").cancel() end, desc = "Substitute: Exchange-Cancel" },
       -- stylua: ignore stop
     },
-    {
-      "smjonas/duplicate.nvim",
-      opts = {
-        operator = {},
-      },
-      keys = {
-        "yd",
-      },
-    },
   },
   {
     "echasnovski/mini.clue",
