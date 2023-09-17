@@ -63,6 +63,14 @@ return {
     keys = {
       { "<leader>to", "<cmd>lua require('mini.files').open()<CR>", desc = "mini.files: Open" },
     },
+    init = function()
+      if vim.fn.argc() == 1 then
+        local stat = vim.loop.fs_stat(vim.fn.argv(0))
+        if stat and stat.type == "directory" then
+          require("mini.files")
+        end
+      end
+    end,
   },
   {
     "nvim-pack/nvim-spectre",

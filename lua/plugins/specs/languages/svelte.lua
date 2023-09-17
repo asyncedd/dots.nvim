@@ -5,7 +5,9 @@ return {
     opts = function(_, opts)
       table.insert(opts.ensure_installed, {
         "svelte",
+        "html",
         "css",
+        "scss",
         "javascript",
         "typescript",
         "rust",
