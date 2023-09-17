@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 require("settings.options")
 
 require("settings.keymap")
