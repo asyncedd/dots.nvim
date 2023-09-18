@@ -5,6 +5,7 @@ return {
       return {
         colors = {
           dark = {
+            bg = "#23272e",
             telescope_prompt = "require('onedarkpro.helpers').darken('bg', 1, 'onedark')",
             telescope_results = "require('onedarkpro.helpers').darken('bg', 4, 'onedark')",
             telescope_preview = "require('onedarkpro.helpers').darken('bg', 6, 'onedark')",
