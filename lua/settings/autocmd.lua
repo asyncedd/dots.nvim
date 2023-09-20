@@ -1,30 +1,16 @@
 local autocmd = vim.api.nvim_create_autocmd
 
--- REMEMBER FOLDS (AND CURSOR LOCATION)
-local function remember(mode)
-	-- stylua: ignore
-	local ignoredFts = { "TelescopePrompt", "DressingSelect", "DressingInput", "toggleterm", "gitcommit", "replacer", "harpoon", "help", "qf" }
-  if vim.tbl_contains(ignoredFts, vim.bo.filetype) or vim.bo.buftype ~= "" or not vim.bo.modifiable then
-    return
-  end
-  if mode == "save" then
-    vim.cmd.mkview(1)
-  else
-    pcall(function()
-      vim.cmd.loadview(1)
-    end)
-  end
-end
-
-autocmd("BufWinLeave", {
-  pattern = "?*",
+autocmd("BufReadPost", {
   callback = function()
-    remember("save")
-  end,
-})
-autocmd("BufWinEnter", {
-  pattern = "?*",
-  callback = function()
-    remember("load")
+    local exclude = { "gitcommit" }
+    local buf = vim.api.nvim_get_current_buf()
+    if vim.tbl_contains(exclude, vim.bo[buf].filetype) then
+      return
+    end
+    local mark = vim.api.nvim_buf_get_mark(buf, '"')
+    local lcount = vim.api.nvim_buf_line_count(buf)
+    if mark[1] > 0 and mark[1] <= lcount then
+      pcall(vim.api.nvim_win_set_cursor, 0, mark)
+    end
   end,
 })
