@@ -148,15 +148,35 @@ local FileFlags = {
     condition = function()
       return vim.bo.modified
     end,
-    provider = "[+]",
+    provider = dots.UI.icons.buffers.modified,
     hl = { fg = "green" },
   },
   {
     condition = function()
       return not vim.bo.modifiable or vim.bo.readonly
     end,
-    provider = "",
+    provider = dots.UI.icons.buffers.readonly,
     hl = { fg = "orange" },
+  },
+  {
+    condition = function()
+      local buffers = vim.api.nvim_list_bufs()
+      if not (buffers == 1) then
+        for _, buf in pairs(buffers) do
+          if vim.api.nvim_get_current_buf() == buf then
+            goto continue
+          end
+          if vim.api.nvim_buf_get_option(buf, "modified") then
+            return true
+          end
+          ::continue::
+        end
+      end
+
+      return false
+    end,
+    provider = dots.UI.icons.buffers.unsaved_others,
+    hl = { fg = "blue" },
   },
 }
 

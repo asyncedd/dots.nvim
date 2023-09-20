@@ -10,6 +10,11 @@ M.UI = {
         Info = " ",
       },
     },
+    buffers = {
+      readonly = "󰌾 ",
+      modified = "● ",
+      unsaved_others = "○ ",
+    },
   },
 }
 
