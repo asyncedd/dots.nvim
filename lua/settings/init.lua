@@ -2,10 +2,10 @@ local M = {}
 
 M.UI = {
   colorscheme = {
-    name = "material",
+    name = "onedark",
     themes = {
-      -- { import = "plugins.specs.themes.onedarkpro" },
-      { import = "plugins.specs.themes.material" },
+      { import = "plugins.specs.themes.onedarkpro" },
+      -- { import = "plugins.specs.themes.material" },
     },
   },
   icons = {
