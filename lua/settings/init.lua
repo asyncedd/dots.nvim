@@ -8,6 +8,7 @@ M.UI = {
       -- { import = "plugins.specs.themes.material" },
       { import = "plugins.specs.themes.astrotheme" },
       -- { import = "plugins.specs.themes.kanagawa" },
+      -- { import = "plugins.specs.themes.catppuccin" },
     },
   },
   icons = {
