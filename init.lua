@@ -7,7 +7,7 @@ require("settings.autocmd")
 
 require("plugins")
 
-vim.cmd("colorscheme " .. (vim.g.vscode and "habamax" or "onedark"))
+vim.cmd("colorscheme " .. (vim.g.vscode and "habamax" or dots.UI.colorscheme.name))
 
 for name, icon in pairs(dots.UI.icons.LSP.diagnostics) do
   name = "DiagnosticSign" .. name

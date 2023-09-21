@@ -1,6 +1,9 @@
 local M = {}
 
 M.UI = {
+  colorscheme = {
+    name = "material",
+  },
   icons = {
     LSP = {
       diagnostics = {

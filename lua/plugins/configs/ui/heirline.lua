@@ -320,6 +320,9 @@ local StatusLine = {
   Space,
   WorkDir,
   cursor_position,
+  hl = {
+    bg = "Normal",
+  },
 }
 
 local folds = {
