@@ -3,6 +3,10 @@ local M = {}
 M.UI = {
   colorscheme = {
     name = "material",
+    themes = {
+      -- { import = "plugins.specs.themes.onedarkpro" },
+      { import = "plugins.specs.themes.material" },
+    },
   },
   icons = {
     LSP = {
