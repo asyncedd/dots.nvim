@@ -2,11 +2,12 @@ local M = {}
 
 M.UI = {
   colorscheme = {
-    name = "astrodark",
+    name = "astrotheme",
     themes = {
       -- { import = "plugins.specs.themes.onedarkpro" },
       -- { import = "plugins.specs.themes.material" },
       { import = "plugins.specs.themes.astrotheme" },
+      -- { import = "plugins.specs.themes.kanagawa" },
     },
   },
   icons = {
