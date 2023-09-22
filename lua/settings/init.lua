@@ -60,6 +60,11 @@ M.UI = {
       modified = "● ",
       unsaved_others = "○ ",
     },
+    Git = {
+      added = " ",
+      remove = " ",
+      changed = "󰣕 ",
+    },
   },
 }
 

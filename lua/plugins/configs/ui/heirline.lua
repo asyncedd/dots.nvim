@@ -248,19 +248,19 @@ local Git = {
   {
     provider = function(self)
       local count = self.status_dict.added or 0
-      return count > 0 and (" " .. count .. " ")
+      return count > 0 and (dots.UI.icons.Git.added .. count .. " ")
     end,
   },
   {
     provider = function(self)
       local count = self.status_dict.removed or 0
-      return count > 0 and (" " .. count .. " ")
+      return count > 0 and (dots.UI.icons.Git.remove .. count .. " ")
     end,
   },
   {
     provider = function(self)
       local count = self.status_dict.changed or 0
-      return count > 0 and (" " .. count .. " ")
+      return count > 0 and (dots.UI.icons.Git.changed .. count .. " ")
     end,
   },
 }
