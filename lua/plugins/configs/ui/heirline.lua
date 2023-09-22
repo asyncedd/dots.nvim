@@ -148,15 +148,35 @@ local FileFlags = {
     condition = function()
       return vim.bo.modified
     end,
-    provider = "[+]",
+    provider = dots.UI.icons.buffers.modified,
     hl = { fg = "green" },
   },
   {
     condition = function()
       return not vim.bo.modifiable or vim.bo.readonly
     end,
-    provider = "",
+    provider = dots.UI.icons.buffers.readonly,
     hl = { fg = "orange" },
+  },
+  {
+    condition = function()
+      local buffers = vim.api.nvim_list_bufs()
+      if not (buffers == 1) then
+        for _, buf in pairs(buffers) do
+          if vim.api.nvim_get_current_buf() == buf then
+            goto continue
+          end
+          if vim.api.nvim_buf_get_option(buf, "modified") then
+            return true
+          end
+          ::continue::
+        end
+      end
+
+      return false
+    end,
+    provider = dots.UI.icons.buffers.unsaved_others,
+    hl = { fg = "blue" },
   },
 }
 
@@ -228,19 +248,19 @@ local Git = {
   {
     provider = function(self)
       local count = self.status_dict.added or 0
-      return count > 0 and (" " .. count .. " ")
+      return count > 0 and (dots.UI.icons.Git.added .. count .. " ")
     end,
   },
   {
     provider = function(self)
       local count = self.status_dict.removed or 0
-      return count > 0 and (" " .. count .. " ")
+      return count > 0 and (dots.UI.icons.Git.remove .. count .. " ")
     end,
   },
   {
     provider = function(self)
       local count = self.status_dict.changed or 0
-      return count > 0 and (" " .. count .. " ")
+      return count > 0 and (dots.UI.icons.Git.changed .. count .. " ")
     end,
   },
 }
@@ -250,10 +270,10 @@ local Diagnostics = {
     return #vim.diagnostic.get(0) > 0
   end,
   static = {
-    error_icon = vim.fn.sign_getdefined("DiagnosticSignError")[1].text,
-    warn_icon = vim.fn.sign_getdefined("DiagnosticSignWarn")[1].text,
-    info_icon = vim.fn.sign_getdefined("DiagnosticSignInfo")[1].text,
-    hint_icon = vim.fn.sign_getdefined("DiagnosticSignHint")[1].text,
+    error_icon = dots.UI.icons.LSP.diagnostics.Error,
+    warn_icon = dots.UI.icons.LSP.diagnostics.Warn,
+    info_icon = dots.UI.icons.LSP.diagnostics.Info,
+    hint_icon = dots.UI.icons.LSP.diagnostics.Hint,
   },
   init = function(self)
     self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
@@ -300,6 +320,9 @@ local StatusLine = {
   Space,
   WorkDir,
   cursor_position,
+  hl = {
+    bg = "Normal",
+  },
 }
 
 local folds = {

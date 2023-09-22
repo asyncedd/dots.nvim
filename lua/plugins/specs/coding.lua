@@ -1,33 +1,3 @@
-local icons = {
-  Text = "󰉿",
-  Method = "󰆧",
-  Function = "󰊕",
-  Constructor = "",
-  Field = "󰜢",
-  Variable = "󰀫",
-  Class = "󰠱",
-  Interface = "",
-  Module = "",
-  Property = "󰜢",
-  Unit = "󰑭",
-  Value = "󰎠",
-  Enum = "",
-  Keyword = "󰌋",
-  Snippet = "",
-  Color = "󰏘",
-  File = "󰈙",
-  Reference = "󰈇",
-  Folder = "󰉋",
-  EnumMember = "",
-  Constant = "󰏿",
-  Struct = "󰙅",
-  Event = "",
-  Operator = "󰆕",
-  TypeParameter = "",
-  Codeium = "",
-  TabNine = "",
-}
-
 return {
   {
     "altermo/ultimate-autopair.nvim",
@@ -108,7 +78,7 @@ return {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
           local item = vim_item.kind
-          vim_item.kind = icons[item]
+          vim_item.kind = dots.UI.icons.LSP.kind[item]
           vim_item.menu = "(" .. item .. ")"
 
           return vim_item
