@@ -134,24 +134,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "gbprod/substitute.nvim",
-    opts = true,
-    keys = {
-      -- stylua: ignore start
-      { "gx", function(...) require("substitute").operator(...) end, desc = "Substitute: Operator" },
-      { "gxx", function(...) require("substitute").line(...) end, desc = "Substitute: Line" },
-      { "gX", function(...) require("substitute").eol(...) end, desc = "Substitute: EOL" },
-      { "X", function(...) require("substitute").visual(...) end, mode = "x", desc = "Substitute: Visual" },
-      { "<leader>x", function(...) require("substitute.range").operator(...) end, desc = "Substitute: Range-Operator" },
-      { "<leader>x", function(...) require("substitute.range").visual(...) end, mode = "x", desc = "Substitute: Range-Visual" },
-      { "zx", function(...) require("substitute.exchange").operator(...) end, desc = "Substitute: Exchange-Operator" },
-      { "zxx", function(...) require("substitute.exchange").line(...) end, desc = "Substitute: Exchange-Line" },
-      { "zX", function(...) require("substitute.exchange").visual(...) end, mode = "x", desc = "Substitute: Exchange-Visual" },
-      { "zxc", function() require("substitute.exchange").cancel() end, desc = "Substitute: Exchange-Cancel" },
-      -- stylua: ignore stop
-    },
-  },
-  {
     "echasnovski/mini.clue",
     opts = function()
       return require("plugins.configs.editor.mini-clue")
@@ -189,6 +171,36 @@ return {
       { "gm", mode = { "x", "o", "n" }, desc = "Multiply (duplicate) text" },
       { "gr", mode = { "x", "o", "n" }, desc = "Replace text with register" },
       { "gs", mode = { "x", "o", "n" }, desc = "Sort text" },
+    },
+  },
+  {
+    "gbprod/yanky.nvim",
+    dependencies = { { "kkharji/sqlite.lua", enabled = not jit.os:find("Windows") } },
+    opts = function()
+      return {
+        highlight = { timer = 200 },
+        ring = { storage = jit.os:find("Windows") and "shada" or "sqlite" },
+      }
+    end,
+    keys = {
+      -- stylua: ignore
+      { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after selection" },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before selection" },
+      { "[y", "<Plug>(YankyCycleForward)", desc = "Cycle forward through yank history" },
+      { "]y", "<Plug>(YankyCycleBackward)", desc = "Cycle backward through yank history" },
+      { "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
+      { "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
+      { "]P", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
+      { "[P", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
+      { ">p", "<Plug>(YankyPutIndentAfterShiftRight)", desc = "Put and indent right" },
+      { "<p", "<Plug>(YankyPutIndentAfterShiftLeft)", desc = "Put and indent left" },
+      { ">P", "<Plug>(YankyPutIndentBeforeShiftRight)", desc = "Put before and indent right" },
+      { "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)", desc = "Put before and indent left" },
+      { "=p", "<Plug>(YankyPutAfterFilter)", desc = "Put after applying a filter" },
+      { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
     },
   },
 }

@@ -6,6 +6,8 @@ local enabled = {
   "flash.nvim",
   "lazy.nvim",
   "mini.ai",
+  "mini.operators",
+  "nvim-ufo",
   "Comment.nvim",
   "ultimate-autopair.nvim",
   "nvim-surround",
