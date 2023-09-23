@@ -68,7 +68,7 @@ return {
         require("bufferline")
       end
     end,
-    event = "VeryLazy",
+    event = "BufAdd",
   },
   {
     "rcarriga/nvim-notify",
