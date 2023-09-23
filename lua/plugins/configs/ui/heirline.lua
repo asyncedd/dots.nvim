@@ -416,10 +416,12 @@ local git_signs = {
         lnum = vim.v.lnum,
       })
 
-      if #signs == 0 or signs[1].signs == nil or #signs[1].signs == 0 or signs[1].signs[1].name == nil then
-        self.sign = nil
-      else
-        self.sign = signs[1].signs[1]
+      if signs then
+        if #signs == 0 or signs[1].signs == nil or #signs[1].signs == 0 or signs[1].signs[1].name == nil then
+          self.sign = nil
+        else
+          self.sign = signs[1].signs[1]
+        end
       end
 
       self.has_sign = self.sign ~= nil
