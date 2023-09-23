@@ -71,7 +71,7 @@ return {
         require("bufferline")
       end
     end,
-    event = "BufAdd",
+    event = { "BufAdd", "TabNew" },
   },
   {
     "rcarriga/nvim-notify",

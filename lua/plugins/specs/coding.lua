@@ -51,6 +51,7 @@ return {
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "buffer" },
+        { name = "crates" },
       }
       opts.mapping = cmp.mapping.preset.insert({
         ["<Tab>"] = cmp.mapping(function(fallback)
