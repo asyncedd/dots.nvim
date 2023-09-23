@@ -19,6 +19,9 @@ require("lazy").setup({
   defaults = {
     lazy = true,
   },
+  install = {
+    colorscheme = { dots.UI.colorscheme.name, "habamax" },
+  },
   performance = {
     rtp = {
       disabled_plugins = {
