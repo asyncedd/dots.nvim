@@ -68,6 +68,13 @@ M.UI = {
   },
 }
 
+M.languages = {
+  enable = {
+    { import = "plugins.specs.languages.lua" },
+    { import = "plugins.specs.languages.svelte" },
+  },
+}
+
 _G.dots = M
 
 return M
