@@ -50,10 +50,7 @@ return {
         enable = false,
       },
     },
-		-- stylua: ignore
-    event = {
-      "CursorMoved", "WinScrolled", "TermEnter", "WinEnter", "WinNew", "WinClosed",
-		},
+    event = "VeryLazy",
   },
   {
     "akinsho/bufferline.nvim",
