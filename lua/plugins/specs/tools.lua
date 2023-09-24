@@ -37,7 +37,6 @@ return {
         "danielfalk/smart-open.nvim",
         dependencies = {
           "kkharji/sqlite.lua",
-          { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
           "nvim-telescope/telescope-fzy-native.nvim",
         },
         config = function()
