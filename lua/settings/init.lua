@@ -72,6 +72,7 @@ M.languages = {
   enable = {
     { import = "plugins.specs.languages.lua" },
     { import = "plugins.specs.languages.svelte" },
+    { import = "plugins.specs.languages.rust" },
   },
 }
 

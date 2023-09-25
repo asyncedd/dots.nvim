@@ -106,10 +106,16 @@ local MacroRec = {
   condition = function()
     return vim.fn.reg_recording() ~= ""
   end,
-  provider = function()
-    return "  " .. vim.fn.reg_recording()
-  end,
-  hl = { fg = "orange", bold = true },
+  {
+    provider = "  " .. vim.fn.reg_recording(),
+    hl = { fg = "orange", bold = true },
+  },
+  {
+    provider = function()
+      return vim.fn.reg_recording()
+    end,
+    hl = { fg = "green", bold = true },
+  },
   update = {
     "RecordingEnter",
     "RecordingLeave",
