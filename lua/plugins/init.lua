@@ -23,7 +23,6 @@ require("lazy").setup({
     colorscheme = { dots.UI.colorscheme.name, "habamax" },
   },
   performance = {
-    reset_packpath = false,
     rtp = {
       disabled_plugins = {
         "gzip",
