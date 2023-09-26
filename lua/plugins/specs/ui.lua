@@ -107,6 +107,13 @@ return {
       cmdline = {
         view = "cmdline",
       },
+      views = {
+        mini = {
+          win_options = {
+            winblend = 0,
+          },
+        },
+      },
     },
     event = "VeryLazy",
     dependencies = {
