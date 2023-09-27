@@ -40,7 +40,7 @@ return {
     opts = function()
       return require("plugins.configs.ui.heirline")
     end,
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = "nvim-web-devicons",
   },
   {
