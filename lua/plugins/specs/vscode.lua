@@ -22,10 +22,10 @@ local enabled = {
   "nvim-ts-autotag",
 }
 
-local Config = require("lazy.core.config")
-Config.options.checker.enabled = false
-Config.options.change_detection.enabled = false
-Config.options.defaults.cond = function(plugin)
+local Config = require("lazy.core.config").options
+Config.checker.enabled = false
+Config.change_detection.enabled = false
+Config.defaults.cond = function(plugin)
   return vim.tbl_contains(enabled, plugin.name) or plugin.vscode
 end
 
