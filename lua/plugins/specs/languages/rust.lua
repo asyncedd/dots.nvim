@@ -9,15 +9,6 @@ return {
     },
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    optional = true,
-    opts = {
-      sources = {
-        rustfmt = {},
-      },
-    },
-  },
-  {
     "Saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
     dependencies = { "nvim-lua/plenary.nvim" },

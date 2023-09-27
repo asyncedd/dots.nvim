@@ -26,17 +26,19 @@ return {
     },
   },
   {
-    "null-ls.nvim",
-    optional = true,
-    opts = function(_, opts)
-      if opts.sources.prettierd == nil then
-        opts.sources.prettierd = {}
-      end
-      if opts.sources.prettierd.extra_filetypes == nil then
-        opts.sources.prettierd = { extra_filetypes = {} }
-      end
-
-      table.insert(opts.sources.prettierd.extra_filetypes, "svelte")
-    end,
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        svelte = { { "prettierd", "prettier" } },
+      },
+    },
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "prettierd",
+      },
+    },
   },
 }
