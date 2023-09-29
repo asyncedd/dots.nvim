@@ -38,7 +38,6 @@ return {
                 properties = { "documentation", "detail", "additionalTextEdits", "sortText", "filterText", "insertText", "textEdit", "insertTextFormat", "insertTextMode" },
               },
               insertTextModeSupport = {
-								-- stylua: ignore
                 valueSet = { 1, 2 },
               },
               labelDetailsSupport = true,
