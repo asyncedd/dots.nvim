@@ -9,15 +9,6 @@ return {
     },
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    optional = true,
-    opts = {
-      sources = {
-        rustfmt = {},
-      },
-    },
-  },
-  {
     "Saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -25,6 +16,14 @@ return {
       null_ls = {
         enabled = true,
         name = "crates.nvim",
+      },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        rust = { "rustfmt" },
       },
     },
   },

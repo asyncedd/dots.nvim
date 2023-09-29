@@ -40,7 +40,7 @@ return {
     opts = function()
       return require("plugins.configs.ui.heirline")
     end,
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = "nvim-web-devicons",
   },
   {
@@ -106,6 +106,13 @@ return {
       },
       cmdline = {
         view = "cmdline",
+      },
+      views = {
+        mini = {
+          win_options = {
+            winblend = 0,
+          },
+        },
       },
     },
     event = "VeryLazy",

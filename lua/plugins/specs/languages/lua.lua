@@ -43,15 +43,18 @@ return {
     },
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    optional = true,
+    "stevearc/conform.nvim",
     opts = {
-      sources = {
-        stylua = {
-          condition = function(utils)
-            return utils.root_has_file({ "stylua.toml" })
-          end,
-        },
+      formatters_by_ft = {
+        lua = { "stylua" },
+      },
+    },
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "stylua",
       },
     },
   },
