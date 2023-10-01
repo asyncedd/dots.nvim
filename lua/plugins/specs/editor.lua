@@ -65,22 +65,27 @@ return {
         pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
       }
     end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup({
-        context_commentstring = {
-          enable = true,
-        },
-      })
-
-      require("Comment").setup(opts)
-    end,
     keys = {
       { "gc", mode = { "x", "n" } },
       { "gb", mode = { "x", "n" } },
     },
     dependencies = {
-      "nvim-treesitter",
-      "JoosepAlviste/nvim-ts-context-commentstring",
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        opts = function()
+          return {
+            context_commentstring = {
+              enable = true,
+            },
+          }
+        end,
+        config = function(_, opts)
+          require("nvim-treesitter.configs").setup(opts)
+        end,
+        dependencies = {
+          "nvim-treesitter/nvim-treesitter",
+        },
+      },
     },
   },
   {

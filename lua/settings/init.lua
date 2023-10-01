@@ -76,6 +76,7 @@ M.languages = {
     { import = "plugins.specs.languages.svelte" },
     { import = "plugins.specs.languages.rust" },
     { import = "plugins.specs.languages.markdown" },
+    { import = "plugins.specs.languages.css" },
   },
 }
 
