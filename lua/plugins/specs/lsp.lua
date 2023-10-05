@@ -95,7 +95,9 @@ return {
 
       vim.cmd("silent! do FileType")
       vim.api.nvim_create_autocmd("WinEnter", {
+        group = vim.api.nvim_create_augroup("LSP_FileType_Reset", {}),
         callback = function()
+          vim.api.nvim_del_augroup_by_name("LSP_FileType_Reset")
           vim.cmd("silent! do FileType")
         end,
       })
@@ -124,6 +126,21 @@ return {
         end,
       })
     end,
+  },
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {},
+      linters = {},
+    },
+    config = function(_, opts)
+      local lint = require("lint")
+      lint.linters_by_ft = opts.linters_by_ft
+      for k, v in pairs(opts.linters) do
+        lint.linters[k] = v
+      end
+    end,
+    event = "VeryLazy",
   },
   {
     "weilbith/nvim-code-action-menu",
