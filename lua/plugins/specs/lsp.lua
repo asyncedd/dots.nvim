@@ -126,6 +126,7 @@ return {
         end,
       })
     end,
+    cmd = "ConformInfo",
   },
   {
     "mfussenegger/nvim-lint",
