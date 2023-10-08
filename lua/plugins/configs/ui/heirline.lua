@@ -403,6 +403,16 @@ local line_numbers = {
   end,
 }
 
+local Gitsigns = dots.UI.icons.Gitsigns
+local git_signs_hl = {
+  GitSignsAdd = Gitsigns.add.text,
+  GitSignsChange = Gitsigns.change.text,
+  GitSignsDelete = Gitsigns.delete.text,
+  GitSignsTopdelte = Gitsigns.topdelete.text,
+  GitSignsChangedelete = Gitsigns.changedelete.text,
+  GitSignsUntracked = Gitsigns.untracked.text,
+}
+
 local git_signs = {
   {
     condition = function()
@@ -430,7 +440,9 @@ local git_signs = {
 
       self.has_sign = self.sign ~= nil
     end,
-    provider = "▎",
+    provider = function(self)
+      return (self.has_sign and (git_signs_hl[self.sign.name] or "▎")) or "▎"
+    end,
     hl = function(self)
       if self.has_sign then
         return self.sign.name

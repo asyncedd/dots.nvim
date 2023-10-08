@@ -65,6 +65,14 @@ M.UI = {
       remove = " ",
       changed = "󰣕 ",
     },
+    Gitsigns = {
+      add = { text = "▎" },
+      change = { text = "▎" },
+      delete = { text = "" },
+      topdelete = { text = "" },
+      changedelete = { text = "▎" },
+      untracked = { text = "▎" },
+    },
   },
 }
 
@@ -78,6 +86,7 @@ M.languages = {
     { import = "plugins.specs.languages.markdown" },
     { import = "plugins.specs.languages.css" },
     { import = "plugins.specs.languages.c" },
+    { import = "plugins.specs.languages.fish" },
   },
 }
 
