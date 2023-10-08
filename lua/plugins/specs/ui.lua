@@ -121,4 +121,12 @@ return {
       "rcarriga/nvim-notify",
     },
   },
+  {
+    "folke/zen-mode.nvim",
+    opts = true,
+    dependencies = {
+      "folke/twilight.nvim",
+    },
+    cmd = "ZenMode",
+  },
 }

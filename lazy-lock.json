@@ -48,7 +48,9 @@
   "telescope-fzy-native.nvim": { "branch": "master", "commit": "282f069504515eec762ab6d6c89903377252bf5b" },
   "telescope.nvim": { "branch": "master", "commit": "5a747a9587e4bfc4ae086a38cc679fe54f983b69" },
   "treesj": { "branch": "main", "commit": "81d0ae51b84143e228d27b6cf79d09012d2021cb" },
+  "twilight.nvim": { "branch": "main", "commit": "8b7b50c0cb2dc781b2f4262a5ddd57571556d1e4" },
   "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "7f9a91c025bdc1a87556be5281d91da7665e640d" },
   "vscode-svelte-snippets": { "branch": "master", "commit": "564ac3300bfeda01ff0bf6b89152cef43f85a4ce" },
-  "yanky.nvim": { "branch": "main", "commit": "636632d70ac00c45bdc1751d7b35c83d47081f36" }
+  "yanky.nvim": { "branch": "main", "commit": "636632d70ac00c45bdc1751d7b35c83d47081f36" },
+  "zen-mode.nvim": { "branch": "main", "commit": "cb73b8bd0ef9d765b942db09dc762c603a89ae44" }
 }
