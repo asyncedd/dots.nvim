@@ -37,56 +37,61 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
+    opts = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
 
-      opts.snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end,
-      }
-      opts.sources = {
-        { name = "luasnip" },
-        { name = "nvim_lsp" },
-        { name = "path" },
-        { name = "buffer" },
-        { name = "crates" },
-      }
-      opts.mapping = cmp.mapping.preset.insert({
-        ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
+      return {
+        completion = {
+          completeopt = "menu,menuone,noinsert",
+        },
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+          { name = "buffer" },
+          { name = "path" },
+          { name = "crates" },
+        }),
+        mapping = cmp.mapping.preset.insert({
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
 
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif luasnip.jumpable(-1) then
-            luasnip.jump(-1)
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-      })
-      opts.formatting = {
-        fields = { "kind", "abbr", "menu" },
-        format = function(entry, vim_item)
-          local item = vim_item.kind
-          vim_item.kind = dots.UI.icons.LSP.kind[item]
-          vim_item.menu = "(" .. item .. ")"
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
+        formatting = {
+          fields = { "kind", "abbr", "menu" },
+          format = function(_, vim_item)
+            local item = vim_item.kind
+            vim_item.kind = dots.UI.icons.LSP.kind[item]
+            vim_item.menu = "(" .. item .. ")"
 
-          return vim_item
-        end,
-      }
-      opts.experimental = {
-        ghost_text = true,
+            return vim_item
+          end,
+        },
+        experimental = {
+          ghost_text = true,
+        },
       }
     end,
     dependencies = {
@@ -98,6 +103,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
     },
     event = "InsertEnter",
+    cmd = "CmpStatus",
   },
   {
     "hrsh7th/cmp-cmdline",
@@ -113,7 +119,6 @@ return {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
           { name = "path" },
-        }, {
           { name = "cmdline" },
         }),
       })
@@ -121,6 +126,7 @@ return {
     dependencies = {
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
     },
     event = "CmdlineEnter",
   },

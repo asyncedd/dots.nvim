@@ -23,34 +23,25 @@ return {
       end
 
       local servers = opts.servers
-      local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), {
-        textDocument = {
-          completion = {
-            dynamicRegistration = true,
-            completionItem = {
-              snippetSupport = true,
-              commitCharactersSupport = true,
-              deprecatedSupport = true,
-              preselectSupport = true,
-              insertReplaceSupport = true,
-              resolveSupport = {
-								-- stylua: ignore
-                properties = { "documentation", "detail", "additionalTextEdits", "sortText", "filterText", "insertText", "textEdit", "insertTextFormat", "insertTextMode" },
-              },
-              insertTextModeSupport = {
-                valueSet = { 1, 2 },
-              },
-              labelDetailsSupport = true,
-            },
-            contextSupport = true,
-            insertTextMode = 1,
-            completionList = {
-							-- stylua: ignore
-              itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" },
-            },
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+      capabilities.textDocument.completion.completionItem = {
+        documentationFormat = { "markdown", "plaintext" },
+        snippetSupport = true,
+        preselectSupport = true,
+        insertReplaceSupport = true,
+        labelDetailsSupport = true,
+        deprecatedSupport = true,
+        commitCharactersSupport = true,
+        tagSupport = { valueSet = { 1 } },
+        resolveSupport = {
+          properties = {
+            "documentation",
+            "detail",
+            "additionalTextEdits",
           },
         },
-      }, opts.capabilities or {})
+      }
 
       local setup = function(server)
         local server_opts = vim.tbl_deep_extend("force", {
