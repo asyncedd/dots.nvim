@@ -44,15 +44,6 @@ return {
     dependencies = "nvim-web-devicons",
   },
   {
-    "echasnovski/mini.animate",
-    opts = {
-      scroll = {
-        enable = false,
-      },
-    },
-    event = "VeryLazy",
-  },
-  {
     "akinsho/bufferline.nvim",
     opts = {
       options = {
