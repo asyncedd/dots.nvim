@@ -11,10 +11,20 @@ return {
         enable = true,
       },
     },
+    -- CREDIT: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/treesitter.lua
+    init = function(plugin)
+      -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
+      -- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
+      -- no longer trigger the **nvim-treeitter** module to be loaded in time.
+      -- Luckily, the only thins that those plugins need are the custom queries, which we make available
+      -- during startup.
+      require("lazy.core.loader").add_to_rtp(plugin)
+      require("nvim-treesitter.query_predicates")
+    end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end,
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "LazyFile", "VeryLazy" },
   },
   {
     "folke/flash.nvim",
@@ -87,7 +97,7 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
-    event = "VeryLazy",
+    event = "LazyFile",
     opts = {
       signs = dots.UI.icons.Gitsigns,
       -- TODO: Fix use extmarks after figuring out on how to get extmarks in the heirline statuscol
@@ -136,7 +146,7 @@ return {
       end,
     },
     dependencies = "kevinhwang91/promise-async",
-    event = "VeryLazy",
+    event = "LazyFile",
   },
   {
     "echasnovski/mini.clue",

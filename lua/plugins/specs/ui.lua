@@ -23,7 +23,7 @@ return {
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
       require("ibl").setup(opts)
     end,
-    event = "BufReadPost",
+    event = { "LazyFile", "VeryLazy" },
   },
   {
     "echasnovski/mini.indentscope",
@@ -40,7 +40,7 @@ return {
     opts = function()
       return require("plugins.configs.ui.heirline")
     end,
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "LazyFile", "BufReadPost" },
     dependencies = "nvim-web-devicons",
   },
   {
@@ -109,7 +109,7 @@ return {
         },
       },
     },
-    event = "VeryLazy",
+    event = "LazyFile",
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",

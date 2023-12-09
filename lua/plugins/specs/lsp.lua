@@ -6,7 +6,7 @@ return {
       servers = {},
       setup = {},
     },
-    event = "VeryLazy",
+    event = "LazyFile",
     config = function(_, opts)
       require("plugins.configs.lsp.config")(opts)
     end,
@@ -49,7 +49,7 @@ return {
         lint.linters[k] = v
       end
     end,
-    event = "VeryLazy",
+    event = "LspAttach",
   },
   {
     "weilbith/nvim-code-action-menu",
