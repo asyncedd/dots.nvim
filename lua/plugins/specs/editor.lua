@@ -79,9 +79,6 @@ return {
             },
           }
         end,
-        config = function(_, opts)
-          require("nvim-treesitter.configs").setup(opts)
-        end,
         dependencies = {
           "nvim-treesitter/nvim-treesitter",
         },
