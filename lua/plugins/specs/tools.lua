@@ -51,6 +51,7 @@ return {
         desc = "telescope: find_files",
       },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "telescope: live_grep" },
+      { "<leader>f;", "<cmd>Telescope resume<CR>", desc = "telescope: resume" },
     },
     cmd = {
       "Telescope",
