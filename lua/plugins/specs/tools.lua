@@ -52,6 +52,7 @@ return {
       },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "telescope: live_grep" },
       { "<leader>f;", "<cmd>Telescope resume<CR>", desc = "telescope: resume" },
+      { "<leader>fx", "<cmd>Telescope diagnostics<CR>", desc = "telescope: diagnostics" },
     },
     cmd = {
       "Telescope",
