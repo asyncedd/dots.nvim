@@ -2,9 +2,16 @@ vim.loader.enable()
 
 require("settings")
 require("settings.options")
-require("settings.keymap")
 require("settings.autocmd")
 require("plugins")
+
+vim.api.nvim_create_autocmd("User", {
+  group = vim.api.nvim_create_augroup("LazyVim", { clear = true }),
+  pattern = "VeryLazy",
+  callback = function()
+    require("settings.keymap")
+  end,
+})
 
 vim.cmd("colorscheme " .. (vim.g.vscode and "habamax" or dots.UI.colorscheme.name))
 
