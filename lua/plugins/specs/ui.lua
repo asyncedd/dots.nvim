@@ -53,6 +53,9 @@ return {
     keys = {
       { "]b", "<cmd>BufferLineCycleNext<CR>", desc = "bufferline: cycle next" },
       { "[b", "<cmd>BufferLineCyclePrev<CR>", desc = "bufferline: cycle prev" },
+
+      { "<Tab>", "<cmd>BufferLineCycleNext<CR>", desc = "bufferline: cycle next" },
+      { "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", desc = "bufferline: cycle prev" },
     },
     init = function()
       if vim.fn.argc() > 1 then
