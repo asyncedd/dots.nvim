@@ -13,7 +13,10 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
-vim.cmd("colorscheme " .. (vim.g.vscode and "habamax" or dots.UI.colorscheme.name))
+local colorscheme = dots.UI.colorscheme.value
+vim.cmd(
+  "colorscheme " .. (vim.g.vscode and "habamax" or type(colorscheme) == "function" and colorscheme() or colorscheme)
+)
 
 for name, icon in pairs(dots.UI.icons.LSP.diagnostics) do
   name = "DiagnosticSign" .. name

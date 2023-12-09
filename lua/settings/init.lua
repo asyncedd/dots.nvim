@@ -2,12 +2,16 @@ local M = {}
 
 M.UI = {
   colorscheme = {
-    name = "onedark",
-    -- name = "material",
-    -- name = "astrotheme",
-    -- name = "kanagawa",
-    -- name = "catppuccin",
-    -- name = "tokyonight",
+    --- BETA: You can use functions that returns a string to determine the colorscheme as well!
+    -- value = function()
+    --   return "onedark"
+    -- end,
+    value = "onedark",
+    -- value = "material",
+    -- value = "astrotheme",
+    -- value = "kanagawa",
+    -- value = "catppuccin",
+    -- value = "tokyonight",
     themes = {
       { import = "plugins.specs.themes.onedarkpro" },
       -- { import = "plugins.specs.themes.material" },

@@ -20,7 +20,7 @@ require("lazy").setup({
     lazy = true,
   },
   install = {
-    colorscheme = { dots.UI.colorscheme.name, "habamax" },
+    colorscheme = { dots.UI.colorscheme.value, "habamax" },
   },
   performance = {
     rtp = {
