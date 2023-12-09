@@ -1,8 +1,11 @@
 local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+require("asyncedd.cowboy")()
 
 -- better up/down
-map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 if not vim.g.vscode then
   map("n", "<leader>tt", function()

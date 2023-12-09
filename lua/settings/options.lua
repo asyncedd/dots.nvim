@@ -40,3 +40,6 @@ o.scrolloff = 15
 -- Searching
 o.ignorecase = true
 o.smartcase = true
+
+-- Disable line-wrapping
+o.wrap = false
