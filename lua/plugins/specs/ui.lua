@@ -1,7 +1,6 @@
 return {
   {
     "lukas-reineke/indent-blankline.nvim",
-    branch = "v3",
     opts = {
       scope = {
         highlight = {
