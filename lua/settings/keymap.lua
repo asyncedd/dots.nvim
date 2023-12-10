@@ -46,3 +46,6 @@ end, { desc = "Prev diagnostic" })
 map("n", "]d", function()
   vim.diagnostic.goto_next()
 end, { desc = "Next diagnostic" })
+
+-- Clear search with <esc>
+map("n", "<esc>", "<cmd>noh<CR>", { desc = "Escape and clear hlsearch" })
