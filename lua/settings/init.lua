@@ -1,5 +1,9 @@
 local M = {}
 
+M.sqlite = {
+	 path = vim.env.sqlite,
+}
+
 M.UI = {
   colorscheme = {
     --- BETA: You can use functions that returns a string to determine the colorscheme as well!

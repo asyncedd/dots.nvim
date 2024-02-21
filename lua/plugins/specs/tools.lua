@@ -1,4 +1,12 @@
 return {
+	{
+		"kkharji/sqlite.lua",
+		config = function()
+			if dots.sqlite.path then
+				vim.g.sqlite_clib_path = dots.sqlite.path .. "/lib/libsqlite3.so"
+			end
+		end,
+  },
   {
     "nvim-telescope/telescope.nvim",
     opts = function()
