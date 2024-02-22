@@ -1,7 +1,7 @@
 local M = {}
 
 M.sqlite = {
-	 path = vim.env.sqlite,
+	 path = vim.env.sqlite_nix_path,
 }
 
 M.UI = {
