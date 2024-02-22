@@ -24,7 +24,7 @@ My personal Neovim configuration
 ## 👋 Introduction
 
 This is my personal Neovim configuration.
-You can yank/put but you can only yank/put **ONLY** what you now!
+You can yank/put but you can only yank/put **ONLY** what you know!
 
 ## Wow, a really good place to put: ⚠️ DISCLAIMER! ⚠️
 
@@ -78,6 +78,9 @@ Just run a `nvim` in your terminal :D
 
 <details>
 <summary>Expand to see screenshots!</summary>
+
+> [!WARNING]
+> These screenshots are very ancient and outdated; Even the default colorscheme ain't Catppuccin no more!
 
 | Context                           | Screenshot                                              |
 | --------------------------------- | ------------------------------------------------------- |
