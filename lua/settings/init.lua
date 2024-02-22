@@ -93,6 +93,7 @@ M.languages = {
     { import = "plugins.specs.languages.rust" },
     { import = "plugins.specs.languages.markdown" },
     { import = "plugins.specs.languages.css" },
+    { import = "plugins.specs.languages.nix" },
     -- { import = "plugins.specs.languages.c" },
     -- { import = "plugins.specs.languages.fish" },
     -- { import = "plugins.specs.languages.haskell" },
