@@ -53,26 +53,9 @@ return function(opts)
     end
   end
 
-  local have_mason, mlsp = pcall(require, "mason-lspconfig")
-  local all_mlsp_servers = {}
-  if have_mason then
-    all_mlsp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
-  end
-
-  local ensure_installed = {}
   for server, server_opts in pairs(servers) do
-    if server_opts then
-      server_opts = server_opts == true and {} or server_opts
-      if server_opts.mason == false or not vim.tbl_contains(all_mlsp_servers, server) then
-        setup(server)
-      else
-        ensure_installed[#ensure_installed + 1] = server
-      end
-    end
-  end
-
-  if have_mason then
-    mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
+    server_opts = server_opts == true and {} or server_opts
+    setup(server)
   end
 
   vim.cmd("silent! do FileType")

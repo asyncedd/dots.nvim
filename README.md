@@ -72,15 +72,32 @@ Then you can get a cup of [mocha ☕](https://github.com/catppuccin/nvim) while
 you wait. (Not that long btw) Then once it finished, you're done for! ([actually](https://github.com/asyncedd/dots.nvim#-quitting-nvim))
 Just run a `nvim` in your terminal :D
 
+### LSP servers
+
+With newer versions of this dotfiles, I'm removing `mason.nvim`. Use your package manager to install them.
+
+<details>
+<summary>Expand to see more!</summary>
+
+| Language   | Name                                                                     |
+| ---------- | ------------------------------------------------------------------------ |
+| `C/C++`    | [clang](https://clangd.llvm.org/installation.html)                       |
+| `CSS`      | prettierd                                                                |
+| `Haskell`  | Haskell-language-server (HLS)                                            |
+| `Lua`      | LuaLS, Sumneko lua                                                       |
+| `Markdown` | Marksman, prettierd                                                      |
+| `Rust`     | Rust analyzer, RustFMT                                                   |
+| `Svelte`   | Svelte language server, prettierd, Emmet-LS, TailwindCSS-language-server |
+| `TOML`     | Taplo                                                                    |
+
+</details>
+
 ## ⚡ Performance
 
 **⚠️ Super outdated!**
 
 <details>
 <summary>Expand to see screenshots!</summary>
-
-> [!WARNING]
-> These screenshots are very ancient and outdated; Even the default colorscheme ain't Catppuccin no more!
 
 | Context                           | Screenshot                                              |
 | --------------------------------- | ------------------------------------------------------- |
