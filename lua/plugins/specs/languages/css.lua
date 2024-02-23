@@ -4,7 +4,9 @@ return {
     optional = true,
     opts = {
       servers = {
-        cssls = {},
+        cssls = {
+          cmd = { "css-languageserver", "--stdio" },
+        },
       },
     },
   },
