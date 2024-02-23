@@ -124,14 +124,6 @@ return {
     },
   },
   {
-    "folke/zen-mode.nvim",
-    opts = true,
-    dependencies = {
-      "folke/twilight.nvim",
-    },
-    cmd = "ZenMode",
-  },
-  {
     "echasnovski/mini.animate",
     event = "VeryLazy",
     opts = {
