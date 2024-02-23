@@ -22,7 +22,7 @@ return {
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
       require("ibl").setup(opts)
     end,
-    event = { "LazyFile", "VeryLazy" },
+    event = { "LazyFile" },
   },
   {
     "echasnovski/mini.indentscope",
