@@ -85,7 +85,7 @@ With newer versions of this dotfiles, I'm removing `mason.nvim`. Use your packag
 | `C/C++`    | [clang](https://clangd.llvm.org/installation.html)                       |
 | `CSS`      | prettierd                                                                |
 | `Haskell`  | Haskell-language-server (HLS)                                            |
-| `Lua`      | LuaLS, Sumneko lua                                                       |
+| `Lua`      | LuaLS, Stylua                                                            |
 | `Markdown` | Marksman, prettierd                                                      |
 | `Rust`     | Rust analyzer, RustFMT                                                   |
 | `Svelte`   | Svelte language server, prettierd, Emmet-LS, TailwindCSS-language-server |
