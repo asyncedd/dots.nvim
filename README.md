@@ -45,6 +45,7 @@ You can yank/put but you can only yank/put **ONLY** what you know!
 | `rg`      | for Telescope.nvim                    |
 | `sqlite3` | for sqlite.lua                        |
 | `gcc`     | For Tressitter                        |
+| `git`     | For Tressitter                        |
 | `npm`     | for LSP servers written in Javascript |
 | `cargo`   | For LSPs written in Rust.             |
 | `go`      | For LSPs writte in Go.                |
