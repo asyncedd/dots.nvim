@@ -5,6 +5,8 @@ require("settings.options")
 require("settings.autocmd")
 require("plugins")
 
+require("utils.intro")
+
 vim.api.nvim_create_autocmd("User", {
   group = vim.api.nvim_create_augroup("LazyVim", { clear = true }),
   pattern = "VeryLazy",
