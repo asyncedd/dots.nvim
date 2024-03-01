@@ -1,7 +1,7 @@
 local M = {}
 
 M.sqlite = {
-	 path = vim.env.sqlite_nix_path,
+  path = vim.env.sqlite_nix_path,
 }
 
 M.Editor = {
@@ -99,6 +99,7 @@ M.languages = {
     { import = "plugins.specs.languages.markdown" },
     { import = "plugins.specs.languages.css" },
     { import = "plugins.specs.languages.nix" },
+    { import = "plugins.specs.languages.javascript" },
     -- { import = "plugins.specs.languages.c" },
     -- { import = "plugins.specs.languages.fish" },
     -- { import = "plugins.specs.languages.haskell" },
