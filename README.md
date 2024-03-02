@@ -32,7 +32,6 @@ You can yank/put but you can only yank/put **ONLY** what you know!
 
 - If want to exit Neovim, just plug out your computer (or for laptop users...
   :) You don't want to). I meant, that'll never work.
-- Enabling colorschemes via `:colorscheme` somehow doesn't work.
 
 ## 🤨 Crash course: Installing
 
