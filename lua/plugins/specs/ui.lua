@@ -123,15 +123,6 @@ return {
       "rcarriga/nvim-notify",
     },
   },
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    opts = {
-      scroll = {
-        enable = false,
-      },
-    },
-  },
   -- CREDITS TO: https://www.lazyvim.org/plugins/ui#dressingnvim
   {
     "stevearc/dressing.nvim",
