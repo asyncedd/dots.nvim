@@ -49,3 +49,6 @@ end, { desc = "Next diagnostic" })
 
 -- Clear search with <esc>
 map("n", "<esc>", "<cmd>noh<CR>", { desc = "Escape and clear hlsearch" })
+
+-- Remap capital "U" to redo
+map("n", "U", "<C-R>", { desc = "Redo [count] change which was undone" })
