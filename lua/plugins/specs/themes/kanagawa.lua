@@ -30,4 +30,8 @@ return {
     end,
   },
   build = ":KanagawaCompile",
+  event = "CmdlineEnter",
+  cmd = {
+    "KanagawaCompile",
+  },
 }

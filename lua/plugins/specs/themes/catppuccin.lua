@@ -27,4 +27,5 @@ return {
     },
   },
   name = "catppuccin",
+  event = "CmdlineEnter",
 }

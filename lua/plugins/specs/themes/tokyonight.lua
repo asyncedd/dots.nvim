@@ -40,4 +40,5 @@ return {
       hl.RainbowCyan = { fg = c.cyan }
     end,
   },
+  event = "CmdlineEnter",
 }

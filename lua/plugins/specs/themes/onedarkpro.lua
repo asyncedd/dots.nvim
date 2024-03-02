@@ -59,4 +59,5 @@ return {
       PmenuSel = { bg = "${blue}", fg = "${bg}" },
     },
   },
+  event = "CmdlineEnter",
 }
