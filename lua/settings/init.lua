@@ -23,9 +23,9 @@ M.UI = {
     -- value = "tokyonight",
     themes = {
       { import = "plugins.specs.themes.onedarkpro" },
-      -- { import = "plugins.specs.themes.kanagawa" },
-      -- { import = "plugins.specs.themes.catppuccin" },
-      -- { import = "plugins.specs.themes.tokyonight" },
+      { import = "plugins.specs.themes.kanagawa" },
+      { import = "plugins.specs.themes.catppuccin" },
+      { import = "plugins.specs.themes.tokyonight" },
     },
   },
   icons = {
