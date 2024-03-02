@@ -41,6 +41,5 @@ o.scrolloff = 15
 o.ignorecase = true
 o.smartcase = true
 
-o.wrap = false -- disable line-wrapping
 o.pumblend = 10 -- Popup blend
 o.pumheight = 10 -- Maximum number of entries in a popup
