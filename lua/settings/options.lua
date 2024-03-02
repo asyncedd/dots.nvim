@@ -30,6 +30,7 @@ vim.g.mapleader = " "
 
 -- Statusline
 o.cmdheight = 0
+o.laststatus = 3
 
 -- Folds
 
