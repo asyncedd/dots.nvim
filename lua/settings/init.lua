@@ -107,6 +107,12 @@ M.languages = {
   },
 }
 
+M.goodies = {
+  enable = {
+    { import = "plugins.specs.goodies.telescope.diagnostics" },
+  },
+}
+
 _G.dots = M
 
 return M

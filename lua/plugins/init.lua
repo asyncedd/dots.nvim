@@ -16,6 +16,7 @@ require("lazy").setup({
   { import = "plugins.specs" },
   dots.languages.enable,
   dots.UI.colorscheme.themes,
+  dots.goodies.enable,
 }, {
   defaults = {
     lazy = true,
