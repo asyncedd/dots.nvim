@@ -18,13 +18,11 @@ M.UI = {
     --   return "onedark"
     -- end,
     value = "onedark",
-    -- value = "material",
     -- value = "kanagawa",
     -- value = "catppuccin",
     -- value = "tokyonight",
     themes = {
       { import = "plugins.specs.themes.onedarkpro" },
-      -- { import = "plugins.specs.themes.material" },
       -- { import = "plugins.specs.themes.kanagawa" },
       -- { import = "plugins.specs.themes.catppuccin" },
       -- { import = "plugins.specs.themes.tokyonight" },
