@@ -64,6 +64,10 @@ return {
         completion = {
           completeopt = "menu,menuone,noinsert",
         },
+        performance = {
+          max_view_entries = 20,
+          debounce = 150,
+        },
         snippet = {
           expand = function(args)
             require("luasnip").lsp_expand(args.body)
@@ -77,6 +81,8 @@ return {
           -- https://github.com/hrsh7th/cmp-buffer
           {
             name = "buffer",
+            keyword_length = 4,
+            max_item_count = 10,
             option = {
               get_bufnrs = function()
                 local buf = vim.api.nvim_get_current_buf()
