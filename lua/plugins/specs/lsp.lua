@@ -38,18 +38,17 @@ return {
     event = "LspAttach",
   },
   {
-    "weilbith/nvim-code-action-menu",
-    cmd = "CodeActionMenu",
-    config = function()
-      local g = vim.g
-
-      g.code_action_menu_window_border = "solid"
-      g.code_action_menu_show_details = true
-      g.code_action_menu_show_diff = true
-      g.code_action_menu_show_action_kind = false
+    "aznhe21/actions-preview.nvim",
+    opts = function()
+      return {
+        diff = {
+          algorithm = "histogram",
+        },
+        telescope = require("telescope.themes").get_cursor(),
+      }
     end,
     keys = {
-      { "<leader>ca", "<cmd>CodeActionMenu<CR>", desc = "Open the code action menu", mode = { "x", "n" } },
+      { "<leader>ca", '<cmd>lua require("actions-preview").code_actions()<CR>' },
     },
   },
   {
