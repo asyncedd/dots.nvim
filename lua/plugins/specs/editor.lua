@@ -76,13 +76,11 @@ return {
     dependencies = {
       {
         "JoosepAlviste/nvim-ts-context-commentstring",
-        opts = function()
-          return {
-            context_commentstring = {
-              enable = true,
-            },
-          }
-        end,
+        opts = {
+          context_commentstring = {
+            enable = true,
+          },
+        },
         dependencies = {
           "nvim-treesitter/nvim-treesitter",
         },
