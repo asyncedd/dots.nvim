@@ -10,12 +10,19 @@ return {
         RainbowGreen = { fg = C.green },
         RainbowViolet = { fg = C.mauve },
         RainbowCyan = { fg = C.teal },
+
+        IndentBlanklineChar = { link = "IblIndent" },
       }
     end,
     integrations = {
       telescope = {
         enabled = true,
         style = "nvchad",
+      },
+      indent_blankline = {
+        enabled = true,
+        -- scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+        colored_indent_levels = true,
       },
     },
   },
