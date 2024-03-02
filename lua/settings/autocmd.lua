@@ -15,13 +15,18 @@ autocmd("BufReadPost", {
   end,
 })
 
-autocmd({ "BufWritePre" }, {
+-- https://www.reddit.com/r/neovim/comments/17m2a8z/comment/k7hxwt5/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+-- Auto create dir when saving a file, in case some intermediate directory does not exist
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  group = vim.api.nvim_create_augroup("auto_create_dir", { clear = true }),
   callback = function(event)
+    if event.match:match("^%w%w+://") then
+      return
+    end
     local file = vim.loop.fs_realpath(event.match) or event.match
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
-
 -- https://www.reddit.com/r/neovim/comments/wlkq0e/neovim_configuration_to_backup_files_with/
 -- Add timestamp as extension for backup files
 autocmd({ "BufWritePre" }, {
