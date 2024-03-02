@@ -247,6 +247,7 @@ local Git = {
     "User",
     pattern = "GitSignsUpdate",
   },
+
   hl = { fg = "gray" },
 
   {
@@ -568,15 +569,17 @@ local Statuscolumns = {
   end,
 }
 
-vim.schedule(function()
-  vim.api.nvim_create_augroup("Heirline", { clear = true })
-  vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function()
-      utils.on_colorscheme(colors)
-    end,
-    group = "Heirline",
-  })
-end)
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.api.nvim_create_augroup("Heirline", { clear = true })
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = function()
+        utils.on_colorscheme(colors)
+      end,
+      group = "Heirline",
+    })
+  end,
+})
 
 return {
   opts = {
