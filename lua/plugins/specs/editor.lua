@@ -34,32 +34,24 @@ return {
     keys = {
       {
         "s",
-        function()
-          require("flash").jump()
-        end,
+        '<cmd>lua require("flash").jump()<CR>',
         desc = "Flash",
       },
       {
         "S",
-        function()
-          require("flash").treesitter()
-        end,
+        '<cmd>lua require("flash").treesitter()<CR>',
         desc = "Flash tree-sitter",
       },
       {
         "r",
         mode = "o",
-        function()
-          require("flash").remote()
-        end,
+        '<cmd>lua require("flash").remote()<CR>',
         desc = "Remote Flash",
       },
       {
         "R",
         mode = { "o", "x" },
-        function()
-          require("flash").treesitter_search()
-        end,
+        '<cmd>lua require("flash").treesitter_search()<CR>',
         desc = "Treesitter Search",
       },
       { "f", mode = { "n", "x", "o" } },
