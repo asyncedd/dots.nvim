@@ -60,11 +60,6 @@ return {
 
     hints,
 
-    -- {
-    --   { mode = "n", keys = "<leader>ga", desc = "Grapple: Toggle" },
-    --   { mode = "n", keys = "<leader>gt", desc = "Grapple: Open Tags" },
-    -- },
-
     miniclue.gen_clues.windows({
       submode_move = true,
       submode_navigate = true,
