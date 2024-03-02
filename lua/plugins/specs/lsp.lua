@@ -48,7 +48,7 @@ return {
       }
     end,
     keys = {
-      { "<leader>ca", '<cmd>lua require("actions-preview").code_actions()<CR>' },
+      { "<leader>ca", '<cmd>lua require("actions-preview").code_actions()<CR>', desc = "Code action: open menu" },
     },
   },
   {
