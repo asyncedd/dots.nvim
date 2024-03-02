@@ -21,3 +21,14 @@ autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
+
+-- https://www.reddit.com/r/neovim/comments/wlkq0e/neovim_configuration_to_backup_files_with/
+-- Add timestamp as extension for backup files
+autocmd({ "BufWritePre" }, {
+  group = vim.api.nvim_create_augroup("timestamp_backupext", { clear = true }),
+  desc = "Add timestamp to backup extension",
+  pattern = "*",
+  callback = function()
+    vim.opt.backupext = "-" .. vim.fn.strftime("%Y%m%d%H%M")
+  end,
+})

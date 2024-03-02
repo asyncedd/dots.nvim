@@ -12,6 +12,11 @@ o.tabstop = 2
 vim.schedule(function()
   o.clipboard = "unnamedplus"
   o.undofile = true
+  o.undodir = vim.fn.stdpath("data") .. "/backup//"
+
+  -- https://www.reddit.com/r/neovim/comments/wlkq0e/neovim_configuration_to_backup_files_with/
+  o.backup = true
+  o.backupdir = vim.fn.stdpath("data") .. "/backup//"
 end)
 
 -- Statuscolumn
