@@ -11,7 +11,7 @@
 
 ## 🏗️ DotsDotNvim (dots.nvim)
 
-:warning: This README is really really outdated since, I'm too lazy.
+:warning: This README is really really outdated since I'm too lazy.
 
 My personal Neovim configuration
 
@@ -32,7 +32,7 @@ You can yank/put but you can only yank/put **ONLY** what you know!
 
 - If want to exit Neovim, just plug out your computer (or for laptop users...
   :) You don't want to). I meant, that'll never work.
-- Auto-installing parsers via `auto_install = true` will send out a bunch of errors. Check: [this](https://github.com/nvim-treesitter/nvim-treesitter/issues/4250)
+- Enabling colorschemes via `:colorscheme` somehow doesn't work.
 
 ## 🤨 Crash course: Installing
 
