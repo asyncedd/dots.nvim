@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("asyncedd.utils").lazy_file()
+require("asyncedd.utils").event("LazyFile")
 require("lazy").setup({
   { import = "plugins.specs" },
   dots.languages.enable,

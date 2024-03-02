@@ -26,7 +26,7 @@ return {
       require("nvim-treesitter.install").prefer_git = dots.Editor.Treesitter.prefer_git
     end,
     priority = 1000,
-    event = { "LazyFile", "VeryLazy" },
+    event = { "User LazyFile", "VeryLazy" },
   },
   {
     "folke/flash.nvim",
@@ -99,7 +99,7 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
-    event = "LazyFile",
+    event = "User LazyFile",
     opts = {
       signs = dots.UI.icons.Gitsigns,
       -- TODO: Fix use extmarks after figuring out on how to get extmarks in the heirline statuscol
@@ -148,7 +148,7 @@ return {
       end,
     },
     dependencies = "kevinhwang91/promise-async",
-    event = "LazyFile",
+    event = "User LazyFile",
   },
   {
     "echasnovski/mini.clue",
@@ -222,7 +222,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
-    event = "LazyFile",
+    event = "User LazyFile",
     opts = { mode = "cursor", max_lines = 3 },
   },
 }

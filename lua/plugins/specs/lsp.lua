@@ -6,7 +6,7 @@ return {
       servers = {},
       setup = {},
     },
-    event = "LazyFile",
+    event = "User LazyFile",
     config = function(_, opts)
       require("plugins.configs.lsp.config")(opts)
     end,
