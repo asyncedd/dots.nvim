@@ -243,6 +243,10 @@ local Git = {
     self.has_changes = self.status_dict.added ~= 0 or self.status_dict.removed ~= 0 or self.status_dict.changed ~= 0
   end,
 
+  update = {
+    "User",
+    pattern = "GitSignsUpdate",
+  },
   hl = { fg = "gray" },
 
   {
