@@ -44,6 +44,9 @@ return {
     -- `z` key
     { mode = "n", keys = "z" },
     { mode = "x", keys = "z" },
+
+    -- plugin stuff
+    { mode = "n", keys = "<leader>" },
   },
 
   clues = {
@@ -56,6 +59,11 @@ return {
     miniclue.gen_clues.z(),
 
     hints,
+
+    -- {
+    --   { mode = "n", keys = "<leader>ga", desc = "Grapple: Toggle" },
+    --   { mode = "n", keys = "<leader>gt", desc = "Grapple: Open Tags" },
+    -- },
 
     miniclue.gen_clues.windows({
       submode_move = true,

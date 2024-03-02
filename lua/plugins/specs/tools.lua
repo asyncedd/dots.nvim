@@ -1,11 +1,11 @@
 return {
-	{
-		"kkharji/sqlite.lua",
-		config = function()
-			if dots.sqlite.path then
-				vim.g.sqlite_clib_path = dots.sqlite.path .. "/lib/libsqlite3.so"
-			end
-		end,
+  {
+    "kkharji/sqlite.lua",
+    config = function()
+      if dots.sqlite.path then
+        vim.g.sqlite_clib_path = dots.sqlite.path .. "/lib/libsqlite3.so"
+      end
+    end,
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -114,5 +114,38 @@ return {
         mappings = { n = { s = flash }, i = { ["<c-s>"] = flash } },
       })
     end,
+  },
+  {
+    "cbochs/grapple.nvim",
+    opts = {
+      win_opts = {
+        border = "solid",
+      },
+    },
+    keys = {
+      {
+        "<leader>ga",
+        "<cmd>Grapple toggle<CR>",
+        desc = "Grapple: Toggle",
+      },
+      {
+        "<leader>gt",
+        "<cmd>Grapple open_tags<CR>",
+        desc = "Grapple: Open Tags",
+      },
+      {
+        "<leader>gs",
+        "<cmd>Grapple open_scopes<CR>",
+        desc = "Grapple: Open scopes",
+      },
+      {
+        "<leader>gl",
+        "<cmd>Grapple open_loaded<CR>",
+        desc = "Grapple: Open loaded",
+      },
+    },
+    cmd = {
+      "Grapple",
+    },
   },
 }
