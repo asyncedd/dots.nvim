@@ -9,15 +9,15 @@ o.shiftwidth = 2
 o.tabstop = 2
 
 -- Clipboard
-vim.schedule(function()
-  o.clipboard = "unnamedplus"
-  o.undofile = true
-  o.undodir = vim.fn.stdpath("data") .. "/backup//"
+-- vim.schedule(function()
+o.clipboard = "unnamedplus"
+o.undofile = true
+o.undodir = vim.fn.stdpath("data") .. "/undo//"
 
-  -- https://www.reddit.com/r/neovim/comments/wlkq0e/neovim_configuration_to_backup_files_with/
-  o.backup = true
-  o.backupdir = vim.fn.stdpath("data") .. "/backup//"
-end)
+-- https://www.reddit.com/r/neovim/comments/wlkq0e/neovim_configuration_to_backup_files_with/
+o.backup = true
+o.backupdir = vim.fn.stdpath("data") .. "/backup//"
+-- end)
 
 -- Statuscolumn
 
