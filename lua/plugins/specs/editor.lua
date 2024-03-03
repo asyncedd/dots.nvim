@@ -200,9 +200,4 @@ return {
       { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
     },
   },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    event = "User FilePost",
-    opts = { mode = "cursor", max_lines = 3 },
-  },
 }
