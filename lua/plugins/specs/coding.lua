@@ -31,7 +31,7 @@ return {
       end
 
       vim.api.nvim_create_autocmd("User", {
-        pattern = "LazyFile",
+        pattern = "FilePost",
         callback = function()
           local plugin = require("lazy.core.config").plugins["nvim-ts-autotag"]
           if stringExistsInArray(require("lazy.core.plugin").values(plugin, "opts", false), vim.bo.filetype) then

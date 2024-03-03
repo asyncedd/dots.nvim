@@ -22,7 +22,7 @@ return {
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
       require("ibl").setup(opts)
     end,
-    event = { "User LazyFile" },
+    event = { "User FilePost" },
   },
   {
     "echasnovski/mini.indentscope",
@@ -39,7 +39,7 @@ return {
     opts = function()
       return require("plugins.configs.ui.heirline")
     end,
-    event = { "User LazyFile", "BufReadPost" },
+    event = { "User FilePost", "BufReadPost" },
     dependencies = "nvim-web-devicons",
   },
   {
