@@ -57,13 +57,4 @@ return function(opts)
     server_opts = server_opts == true and {} or server_opts
     setup(server)
   end
-
-  vim.cmd("silent! do FileType")
-  vim.api.nvim_create_autocmd("WinEnter", {
-    group = vim.api.nvim_create_augroup("LSP_FileType_Reset", {}),
-    callback = function()
-      vim.api.nvim_del_augroup_by_name("LSP_FileType_Reset")
-      vim.cmd("silent! do FileType")
-    end,
-  })
 end
