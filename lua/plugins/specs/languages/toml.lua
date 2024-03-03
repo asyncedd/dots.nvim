@@ -2,10 +2,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     optional = true,
-    opts = {
-      servers = {
-        taplo = {},
-      },
-    },
+    config = function()
+      require("lspconfig").taplo.setup({
+        capabilities = require("plugins.configs.lsp.config").capabilities,
+      })
+    end,
   },
 }

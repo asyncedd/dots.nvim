@@ -2,13 +2,12 @@ return {
   {
     "neovim/nvim-lspconfig",
     optional = true,
-    opts = {
-      servers = {
-        cssls = {
-          cmd = { "css-languageserver", "--stdio" },
-        },
-      },
-    },
+    config = function()
+      require("lspconfig").cssls.setup({
+        capabilities = require("plugins.configs.lsp.config").capabilities,
+        cmd = { "css-languageserver", "--stdio" },
+      })
+    end,
   },
   {
     "stevearc/conform.nvim",

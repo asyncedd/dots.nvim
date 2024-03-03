@@ -2,13 +2,12 @@ return {
   {
     "neovim/nvim-lspconfig",
     optional = true,
-    opts = {
-      servers = {
-        ["nil_ls"] = {
-          ["nil"] = {},
-        },
-      },
-    },
+    config = function()
+      require("lspconfig").nil_ls.setup({
+        capabilities = require("plugins.configs.lsp.config").capabilities,
+        settings = { ["nil"] = {} },
+      })
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",

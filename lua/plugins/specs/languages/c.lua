@@ -2,11 +2,11 @@ return {
   {
     "neovim/nvim-lspconfig",
     optional = true,
-    opts = {
-      servers = {
-        clangd = {},
-      },
-    },
+    config = function()
+      require("lspconfig").clangd.setup({
+        capabilities = require("plugins.configs.lsp.config").capabilities,
+      })
+    end,
   },
   {
     "stevearc/conform.nvim",

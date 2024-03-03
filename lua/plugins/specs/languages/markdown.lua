@@ -2,11 +2,11 @@ return {
   {
     "neovim/nvim-lspconfig",
     optional = true,
-    opts = {
-      servers = {
-        marksman = {},
-      },
-    },
+    config = function()
+      require("lspconfig").marksman.setup({
+        capabilities = require("plugins.configs.lsp.config").capabilities,
+      })
+    end,
   },
   {
     "stevearc/conform.nvim",
