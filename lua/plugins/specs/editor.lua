@@ -131,16 +131,6 @@ return {
     },
   },
   {
-    "kevinhwang91/nvim-ufo",
-    opts = {
-      provider_selector = function()
-        return { "treesitter", "indent" }
-      end,
-    },
-    dependencies = "kevinhwang91/promise-async",
-    event = "User FilePost",
-  },
-  {
     "echasnovski/mini.clue",
     opts = function()
       return require("plugins.configs.editor.mini-clue")
