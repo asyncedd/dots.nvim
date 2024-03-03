@@ -23,7 +23,6 @@ return {
     end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
-      require("nvim-treesitter.install").prefer_git = dots.Editor.Treesitter.prefer_git
     end,
     priority = 1000,
     event = { "BufReadPost" },

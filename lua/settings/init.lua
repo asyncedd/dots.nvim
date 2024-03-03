@@ -4,13 +4,6 @@ M.sqlite = {
   path = vim.env.sqlite_nix_path,
 }
 
-M.Editor = {
-  Treesitter = {
-    -- if false it would use curl instead of git
-    prefer_git = true,
-  },
-}
-
 M.UI = {
   colorscheme = {
     --- BETA: You can use functions that returns a string to determine the colorscheme as well!
