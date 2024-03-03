@@ -113,6 +113,9 @@ way out! >:D
 
 ## Inspirations / Credits
 
+Most parts of this configuration is either mine or it's from some configuration I forgot to credit.  
+If you fell victim to this "asyncedd"'s barbaric actions and feel that you deserve to be more credited, feel free to open an issue.
+
 | Repo                                       | Why?                                                                                                |
 | ------------------------------------------ | --------------------------------------------------------------------------------------------------- |
 | [NvChad](https://github.com/nvchad/nvchad) | For some various "systemaitic stuff" lets say, and some plugins configurations, kudos to them!      |
