@@ -17,11 +17,13 @@ return {
   {
     "nvim-lspconfig",
     optional = true,
-    config = function()
-      require("lspconfig").svelte.setup({ capabilities = require("plugins.configs.lsp.config").capabilities })
-      require("lspconfig").emmet_ls.setup({ capabilities = require("plugins.configs.lsp.config").capabilities })
-      require("lspconfig").tailwindcss.setup({ capabilities = require("plugins.configs.lsp.config").capabilities })
-    end,
+    opts = {
+      servers = {
+        svelte = {},
+        emmet_ls = {},
+        tailwindcss = {},
+      },
+    },
   },
   {
     "stevearc/conform.nvim",
