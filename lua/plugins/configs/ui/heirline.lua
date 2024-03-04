@@ -751,7 +751,7 @@ return {
               self.sign = extmark and extmark[4]["sign_hl_group"]
             end,
             {
-              provider = "▏",
+              provider = "│",
               hl = function(self)
                 return self.sign or { fg = "bg" }
               end,
