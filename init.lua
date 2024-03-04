@@ -25,6 +25,7 @@ for name, icon in pairs(dots.UI.icons.LSP.diagnostics) do
   vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 end
 
+-- https://www.reddit.com/r/neovim/comments/1ayx62p/config_for_diagnostics/
 vim.diagnostic.config({
   virtual_text = {
     source = "if_many",
