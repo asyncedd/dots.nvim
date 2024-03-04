@@ -433,28 +433,19 @@ local git_signs = {
       return conditions.is_git_repo() and vim.v.virtnum == 0
     end,
     init = function(self)
-      local signs = vim.fn.sign_getplaced(vim.api.nvim_get_current_buf(), {
-        group = "gitsigns_vimfn_signs_",
-        id = vim.v.lnum,
-        lnum = vim.v.lnum,
-      })
+      local extmark = vim.api.nvim_buf_get_extmarks(
+        0,
+        self.git_ns,
+        { vim.v.lnum - 1, 0 },
+        { vim.v.lnum - 1, -1 },
+        { limit = 1, details = true }
+      )[1]
 
-      if #signs == 0 or signs[1].signs == nil or #signs[1].signs == 0 or signs[1].signs[1].name == nil then
-        self.sign = nil
-      else
-        self.sign = signs[1].signs[1]
-      end
-
-      self.has_sign = self.sign ~= nil
+      self.sign = extmark and extmark[4]["sign_hl_group"]
     end,
-    provider = function(self)
-      return (self.has_sign and (git_signs_hl[self.sign.name] or "▎")) or "▎"
-    end,
+    provider = "▎",
     hl = function(self)
-      if self.has_sign then
-        return self.sign.name
-      end
-      return { fg = "Normal" }
+      return { fg = self.sign or "bg" }
     end,
     on_click = {
       name = "gitsigns_click",
@@ -583,5 +574,203 @@ return {
     colors = colors,
   },
   statusline = StatusLine,
-  statuscolumn = Statuscolumns,
+  statuscolumn = {
+    {
+      {
+        condition = function()
+          return not conditions.buffer_matches({
+            buftype = { "nofile", "prompt", "help", "quickfix", "terminal" },
+            filetype = { "alpha", "codecompanion", "harpoon", "oil", "lspinfo", "toggleterm" },
+          })
+        end,
+        static = {
+          get_signs = function(self, bufnr, lnum)
+            local signs = {}
+
+            local extmarks = vim.api.nvim_buf_get_extmarks(
+              0,
+              bufnr,
+              { lnum - 1, 0 },
+              { lnum - 1, -1 },
+              { details = true, type = "sign" }
+            )
+
+            for _, extmark in pairs(extmarks) do
+              -- Exclude gitsigns
+              if extmark[4].ns_id ~= self.git_ns then
+                signs[#signs + 1] = {
+                  name = extmark[4].sign_hl_group or "",
+                  text = extmark[4].sign_text,
+                  sign_hl_group = extmark[4].sign_hl_group,
+                  priority = extmark[4].priority,
+                }
+              end
+            end
+
+            table.sort(signs, function(a, b)
+              return (a.priority or 0) > (b.priority or 0)
+            end)
+
+            return signs
+          end,
+          git_ns = vim.api.nvim_create_namespace("gitsigns_extmark_signs_"),
+          click_args = function(self, minwid, clicks, button, mods)
+            local args = {
+              minwid = minwid,
+              clicks = clicks,
+              button = button,
+              mods = mods,
+              mousepos = vim.fn.getmousepos(),
+            }
+            local sign = vim.fn.screenstring(args.mousepos.screenrow, args.mousepos.screencol)
+            if sign == " " then
+              sign = vim.fn.screenstring(args.mousepos.screenrow, args.mousepos.screencol - 1)
+            end
+            args.sign = self.signs[sign]
+            vim.api.nvim_set_current_win(args.mousepos.winid)
+            vim.api.nvim_win_set_cursor(0, { args.mousepos.line, 0 })
+
+            return args
+          end,
+          resolve = function(self, name)
+            for pattern, callback in pairs(self.handlers.Signs) do
+              if name:match(pattern) then
+                return vim.defer_fn(callback, 100)
+              end
+            end
+          end,
+          handlers = {
+            Signs = {
+              ["Neotest.*"] = function()
+                require("neotest").run.run()
+              end,
+              -- ["Debug.*"] = function()
+              --   require("dap").continue()
+              -- end,
+              ["Diagnostic.*"] = function()
+                vim.diagnostic.open_float()
+              end,
+              ["LspLightBulb"] = function()
+                vim.lsp.buf.code_action()
+              end,
+            },
+            Dap = function()
+              require("dap").toggle_breakpoint()
+            end,
+            Fold = function(args)
+              local line = args.mousepos.line
+              if vim.fn.foldlevel(line) <= vim.fn.foldlevel(line - 1) then
+                return
+              end
+              vim.cmd.execute("'" .. line .. "fold" .. (vim.fn.foldclosed(line) == -1 and "close" or "open") .. "'")
+            end,
+            GitSigns = function()
+              vim.defer_fn(function()
+                require("gitsigns").blame_line({ full = true })
+              end, 100)
+            end,
+          },
+        },
+        init = function(self)
+          self.signs = {}
+        end,
+        -- Signs (except for GitSigns)
+        {
+          init = function(self)
+            local signs = self.get_signs(self, -1, vim.v.lnum)
+            self.sign = signs[1]
+          end,
+          provider = function(self)
+            return self.sign and self.sign.text or "  "
+          end,
+          hl = function(self)
+            return self.sign and self.sign.sign_hl_group
+          end,
+          on_click = {
+            name = "sc_sign_click",
+            update = true,
+            callback = function(self, ...)
+              local line = self.click_args(self, ...).mousepos.line
+              local sign = self.get_signs(self, -1, line)[1]
+              if sign then
+                self:resolve(sign.name)
+              end
+            end,
+          },
+        },
+        Align,
+        -- Line Numbers
+        {
+          provider = "%=%4{v:virtnum ? '' : &nu ? (&rnu && v:relnum ? v:relnum : v:lnum) . ' ' : ''}",
+          on_click = {
+            name = "sc_linenumber_click",
+            callback = function(self, ...)
+              self.handlers.Dap(self.click_args(self, ...))
+            end,
+          },
+        },
+        -- Folds
+        {
+          init = function(self)
+            self.can_fold = vim.fn.foldlevel(vim.v.lnum) > vim.fn.foldlevel(vim.v.lnum - 1)
+          end,
+          {
+            condition = function(self)
+              return vim.v.virtnum == 0 and self.can_fold
+            end,
+            provider = "%C",
+          },
+          {
+            condition = function(self)
+              return not self.can_fold
+            end,
+            Space,
+          },
+          on_click = {
+            name = "sc_fold_click",
+            callback = function(self, ...)
+              self.handlers.Fold(self.click_args(self, ...))
+            end,
+          },
+        },
+        -- Git Signs
+        {
+          {
+            condition = function()
+              return conditions.is_git_repo()
+            end,
+            init = function(self)
+              local extmark = vim.api.nvim_buf_get_extmarks(
+                0,
+                self.git_ns,
+                { vim.v.lnum - 1, 0 },
+                { vim.v.lnum - 1, -1 },
+                { limit = 1, details = true }
+              )[1]
+
+              self.sign = extmark and extmark[4]["sign_hl_group"]
+            end,
+            {
+              provider = "▏",
+              hl = function(self)
+                return self.sign or { fg = "bg" }
+              end,
+              on_click = {
+                name = "sc_gitsigns_click",
+                callback = function(self, ...)
+                  self.handlers.GitSigns(self.click_args(self, ...))
+                end,
+              },
+            },
+          },
+          {
+            condition = function()
+              return not conditions.is_git_repo()
+            end,
+            Space,
+          },
+        },
+      },
+    },
+  },
 }

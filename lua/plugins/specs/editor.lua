@@ -91,8 +91,6 @@ return {
     event = "User FilePost",
     opts = {
       signs = dots.UI.icons.Gitsigns,
-      -- TODO: Fix use extmarks after figuring out on how to get extmarks in the heirline statuscol
-      _extmark_signs = false,
       on_attach = function()
         local gs = require("gitsigns")
 
