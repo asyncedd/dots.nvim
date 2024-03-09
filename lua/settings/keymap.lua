@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-require("asyncedd.cowboy")()
+-- require("asyncedd.cowboy")()
 
 -- better up/down
 -- map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
