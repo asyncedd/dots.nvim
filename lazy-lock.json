@@ -2,6 +2,7 @@
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "f3b3d3446bcbfa62d638b1903ff00a78b2b730a1" },
   "actions-preview.nvim": { "branch": "master", "commit": "5c240e6356156b72cfbf7c05feefadae61d7a06f" },
+  "auto-session": { "branch": "main", "commit": "29a8c77a0579636d5520aebd38bdbc2e6079f2f5" },
   "bufferline.nvim": { "branch": "main", "commit": "b15c6daf5a64426c69732b31a951f4e438cb6590" },
   "catppuccin": { "branch": "main", "commit": "c0de3b46811fe1ce3912e2245a9dfbea6b41c300" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
@@ -48,7 +49,6 @@
   "tokyonight.nvim": { "branch": "main", "commit": "610179f7f12db3d08540b6cc61434db2eaecbcff" },
   "treesj": { "branch": "main", "commit": "60e27280030f9cd8dfb6ceb335922c6ff76682cc" },
   "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "6ecf7461d44513af89f8257f057fcc99e9297612" },
-  "vim-nix": { "branch": "master", "commit": "048c71f1ed2c679cd55acd2c807c2c96aea82e65" },
   "vscode-svelte-snippets": { "branch": "master", "commit": "564ac3300bfeda01ff0bf6b89152cef43f85a4ce" },
   "yanky.nvim": { "branch": "main", "commit": "7c5cbf0122ff2dfbb6a92f14885894f65949cc8b" }
 }
