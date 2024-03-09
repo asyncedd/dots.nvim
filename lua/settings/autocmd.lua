@@ -40,7 +40,7 @@ autocmd({ "BufWritePre" }, {
 
 -- thx to nvchad
 -- user event that loads after UIEnter + only if file buf is there
-autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
+vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
   group = vim.api.nvim_create_augroup("DotsFilePost", { clear = true }),
   callback = function(args)
     local file = vim.api.nvim_buf_get_name(args.buf)
@@ -60,7 +60,7 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
         if vim.g.editorconfig then
           require("editorconfig").config(args.buf)
         end
-      end)
+      end, 0)
     end
   end,
 })
