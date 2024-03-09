@@ -25,7 +25,7 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
     priority = 1000,
-    event = { "BufReadPost" },
+    event = { "BufReadPost", "User FilePost" },
   },
   {
     "folke/flash.nvim",
