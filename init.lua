@@ -1,4 +1,5 @@
 vim.loader.enable()
+vim.g.base46_cache = vim.fn.stdpath("data") .. "/nvchad/base46/"
 
 require("settings")
 require("settings.options")
@@ -13,11 +14,6 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
-local colorscheme = dots.UI.colorscheme.value
-vim.cmd(
-  "colorscheme " .. (vim.g.vscode and "habamax" or type(colorscheme) == "function" and colorscheme() or colorscheme)
-)
-
 for name, icon in pairs(dots.UI.icons.LSP.diagnostics) do
   name = "DiagnosticSign" .. name
   vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
@@ -27,8 +23,8 @@ end
 vim.diagnostic.config({
   virtual_text = {
     source = "if_many",
-    format = function()
-      return ""
-    end,
   },
 })
+
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")

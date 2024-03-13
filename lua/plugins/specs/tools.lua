@@ -40,6 +40,11 @@ return {
         end,
       },
     },
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "telescope")
+
+      require("telescope").setup(opts)
+    end,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
@@ -70,7 +75,11 @@ return {
   },
   {
     "echasnovski/mini.files",
-    opts = true,
+    opts = {
+      windows = {
+        preview = true,
+      },
+    },
     keys = {
       { "<leader>to", "<cmd>lua require('mini.files').open()<CR>", desc = "mini.files: Open" },
     },
@@ -81,6 +90,14 @@ return {
           require("mini.files")
         end
       end
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "MiniFilesWindowOpen",
+        callback = function(args)
+          local win_id = args.data.win_id
+
+          vim.api.nvim_win_set_config(win_id, { border = "solid" })
+        end,
+      })
     end,
   },
   {

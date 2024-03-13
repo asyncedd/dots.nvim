@@ -5,22 +5,6 @@ M.sqlite = {
 }
 
 M.UI = {
-  colorscheme = {
-    --- BETA: You can use functions that returns a string to determine the colorscheme as well!
-    -- value = function()
-    --   return "onedark"
-    -- end,
-    value = "onedark",
-    -- value = "kanagawa",
-    -- value = "catppuccin",
-    -- value = "tokyonight",
-    themes = {
-      { import = "plugins.specs.themes.onedarkpro" },
-      { import = "plugins.specs.themes.kanagawa" },
-      { import = "plugins.specs.themes.catppuccin" },
-      { import = "plugins.specs.themes.tokyonight" },
-    },
-  },
   icons = {
     LSP = {
       diagnostics = {

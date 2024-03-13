@@ -14,14 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "plugins.specs" },
   dots.languages.enable,
-  dots.UI.colorscheme.themes,
   dots.goodies.enable,
 }, {
   defaults = {
     lazy = true,
   },
   install = {
-    colorscheme = { dots.UI.colorscheme.value, "habamax" },
+    colorscheme = { "nvchad", "habamax" },
   },
   performance = {
     rtp = {

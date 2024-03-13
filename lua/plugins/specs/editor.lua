@@ -22,6 +22,9 @@ return {
       require("nvim-treesitter.query_predicates")
     end,
     config = function(_, opts)
+      dofile(vim.g.base46_cache .. "syntax")
+      dofile(vim.g.base46_cache .. "treesitter")
+
       require("nvim-treesitter.configs").setup(opts)
     end,
     priority = 1000,
@@ -101,6 +104,10 @@ return {
           map("n", "[h", gs.prev_hunk, { desc= "Prev Hunk" })
       end,
     },
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "git")
+      require("gitsigns").setup(opts)
+    end,
   },
   {
     "Wansmer/treesj",

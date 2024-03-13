@@ -51,3 +51,20 @@ map("n", "<esc>", "<cmd>noh<CR>", { desc = "Escape and clear hlsearch" })
 
 -- Remap capital "U" to redo
 map("n", "U", "<C-R>", { desc = "Redo [count] change which was undone" })
+
+map("n", "<tab>", function()
+  require("nvchad.tabufline").next()
+end, { desc = "Buffer Goto next" })
+
+map("n", "<S-tab>", function()
+  require("nvchad.tabufline").prev()
+end, { desc = "Buffer Goto prev" })
+
+map("n", "<leader>x", function()
+  require("nvchad.tabufline").close_buffer()
+end, { desc = "Buffer Close" })
+
+-- Comment
+map("n", "<leader>/", function()
+  require("Comment.api").toggle.linewise.current()
+end, { desc = "Comment Toggle" })
