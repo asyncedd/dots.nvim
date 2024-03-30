@@ -1,4 +1,7 @@
 local o = vim.opt
+local g = vim.g
+
+g.toggle_theme_icon = "   "
 
 -- Line numbers
 o.number = true

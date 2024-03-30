@@ -28,6 +28,8 @@ return {
       local hooks = require("ibl.hooks")
       hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
       require("ibl").setup(opts)
+
+      dofile(vim.g.base46_cache .. "blankline")
     end,
   },
   {
@@ -94,15 +96,6 @@ return {
           },
         },
       },
-      routes = {
-        filter = {
-          event = "notify",
-          find = "No information available",
-        },
-        opts = {
-          skip = true,
-        },
-      },
     },
     event = "VeryLazy",
     dependencies = {
@@ -113,7 +106,6 @@ return {
   -- CREDITS TO: https://www.lazyvim.org/plugins/ui#dressingnvim
   {
     "stevearc/dressing.nvim",
-    lazy = true,
     init = function()
       ---@diagnostic disable-next-line: duplicate-set-field
       vim.ui.select = function(...)
