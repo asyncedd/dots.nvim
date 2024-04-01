@@ -123,13 +123,17 @@ return {
           format = function(_, vim_item)
             local item = vim_item.kind
             vim_item.kind = dots.UI.icons.LSP.kind[item]
-            vim_item.menu = "(" .. item .. ")"
 
             return vim_item
           end,
         },
         experimental = {
           ghost_text = true,
+        },
+        view = {
+          entries = {
+            follow_cursor = true,
+          },
         },
       }
     end,
