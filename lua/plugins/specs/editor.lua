@@ -255,4 +255,18 @@ return {
       })
     end,
   },
+  {
+    "gbprod/cutlass.nvim",
+    opts = {
+      exclude = { "ns", "nS", "or", "oR", "xR" },
+    },
+    keys = {
+      { "c", mode = { "n", "x", "o" } },
+      { "C", mode = { "n", "x", "o" } },
+      { "d", mode = { "n", "x", "o" } },
+      { "D", mode = { "n", "x", "o" } },
+      "x",
+      "X",
+    },
+  },
 }
