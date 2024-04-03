@@ -60,6 +60,50 @@ return {
       local cmp = require("cmp")
       local luasnip = require("luasnip")
 
+      local function entry_has_key(entry, key)
+        if not entry.completion_item then
+          return
+        end
+        if entry.completion_item.textEdit then
+          return entry.completion_item.textEdit.newText:find(key, 1, true)
+        end
+        if entry.completion_item.insertText then
+          return entry.completion_item.insertText:find(key, 1, true)
+        end
+      end
+      local function fast_cmp_visible()
+        -- NOTE: cmp:visible() is quite slow, and we use it on a fairly
+        -- hot path. This hack reaches in to speed up the check
+        if not (cmp.core.view and cmp.core.view.custom_entries_view) then
+          return false
+        end
+        return cmp.core.view.custom_entries_view:visible()
+      end
+      local function try_accept_completion(key_or_config)
+        local key = key_or_config
+        local cmdwin = nil
+        if type(key_or_config) == "table" then
+          key = key_or_config.key
+          cmdwin = key_or_config.cmdwin
+        end
+
+        return cmp.mapping(function(fallback)
+          if fast_cmp_visible() and cmp.get_active_entry() then
+            local entry = cmp.get_active_entry()
+
+            cmp.confirm()
+
+            if key and not entry_has_key(entry, key) then
+              vim.api.nvim_feedkeys(key, "nt", false)
+            end
+          elseif cmdwin and vim.fn.getcmdwintype() ~= "" then
+            local to_feed = vim.api.nvim_replace_termcodes(cmdwin, true, false, true)
+            vim.api.nvim_feedkeys(to_feed, "nt", true)
+          else
+            fallback()
+          end
+        end, { "i", "c" })
+      end
       return {
         completion = {
           completeopt = "menu,menuone,noinsert",
@@ -98,7 +142,7 @@ return {
         }),
         mapping = cmp.mapping.preset.insert({
           ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
+            if fast_cmp_visible() then
               cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()
@@ -108,7 +152,7 @@ return {
           end, { "i", "s" }),
 
           ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
+            if fast_cmp_visible() then
               cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
               luasnip.jump(-1)
@@ -117,6 +161,15 @@ return {
             end
           end, { "i", "s" }),
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+          ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+          ["<Space>"] = try_accept_completion(" "),
+          ["("] = try_accept_completion("("),
+          ["."] = try_accept_completion("."),
+          -- NOTE: The enter key is a bit special here; if we use the normal fallback
+          -- from the cmdline window, we will end up performing a bunch of edits due to
+          -- the fallback mappings from endwise (which would run *after* the cmdline
+          -- window gets closed)
+          ["<CR>"] = try_accept_completion({ cmdwin = "<CR>" }),
         }),
         formatting = {
           fields = { "kind", "abbr", "menu" },
