@@ -18,6 +18,8 @@ o.undodir = vim.fn.stdpath("data") .. "/undo//"
 o.backup = true
 o.backupdir = vim.fn.stdpath("data") .. "/backup//"
 
+o.clipboard = "unnamedplus"
+
 -- Statuscolumn
 
 -- Set sign column to be 4.
