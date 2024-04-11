@@ -22,17 +22,37 @@ return {
     event = { "BufReadPost", "User FilePost" },
   },
   {
-    "woosaaahh/sj.nvim",
-    opts = {
-      auto_jump = true,
-    },
+    "folke/flash.nvim",
+    opts = {},
     keys = {
       {
         "s",
-        function(...)
-          require("sj").run(...)
-        end,
+        '<cmd>lua require("flash").jump()<CR>',
+        desc = "Flash",
       },
+      {
+        "S",
+        '<cmd>lua require("flash").treesitter()<CR>',
+        desc = "Flash tree-sitter",
+      },
+      {
+        "r",
+        mode = "o",
+        '<cmd>lua require("flash").remote()<CR>',
+        desc = "Remote Flash",
+      },
+      {
+        "R",
+        mode = { "o", "x" },
+        '<cmd>lua require("flash").treesitter_search()<CR>',
+        desc = "Treesitter Search",
+      },
+      { "f", mode = { "n", "x", "o" } },
+      { "F", mode = { "n", "x", "o" } },
+      { "t", mode = { "n", "x", "o" } },
+      { "T", mode = { "n", "x", "o" } },
+      "/",
+      "?",
     },
   },
   {
