@@ -19,7 +19,7 @@ My personal Neovim configuration
 
 <!-- ![ss](https://i.imgur.com/5pSbIS4.png) -->
 
-![ss](https://files.catbox.moe/jg1ks8.png)
+![ss](https://files.catbox.moe/fu4l57.png)
 
 ## 👋 Introduction
 
