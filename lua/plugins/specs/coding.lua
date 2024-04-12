@@ -31,7 +31,7 @@ return {
       end
 
       vim.api.nvim_create_autocmd("User", {
-        pattern = "LazyFile",
+        pattern = "FilePost",
         callback = function()
           local plugin = require("lazy.core.config").plugins["nvim-ts-autotag"]
           if stringExistsInArray(require("lazy.core.plugin").values(plugin, "opts", false), vim.bo.filetype) then
@@ -123,13 +123,17 @@ return {
           format = function(_, vim_item)
             local item = vim_item.kind
             vim_item.kind = dots.UI.icons.LSP.kind[item]
-            vim_item.menu = "(" .. item .. ")"
 
             return vim_item
           end,
         },
         experimental = {
           ghost_text = true,
+        },
+        view = {
+          entries = {
+            follow_cursor = true,
+          },
         },
       }
     end,

@@ -1,28 +1,36 @@
 return {
   {
+    "NvChad/base46",
+    branch = "v2.5",
+    build = function()
+      require("base46").load_all_highlights()
+    end,
+  },
+
+  {
+    "NvChad/ui",
+    branch = "v2.5",
+    lazy = false,
+    config = function()
+      require("nvchad")
+    end,
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
+    event = "User FilePost",
     opts = {
-      scope = {
-        highlight = {
-          "RainbowRed",
-          "RainbowYellow",
-          "RainbowBlue",
-          "RainbowOrange",
-          "RainbowGreen",
-          "RainbowViolet",
-          "RainbowCyan",
-        },
-      },
-      indent = {
-        highlight = "IndentBlanklineChar",
-      },
+      indent = { highlight = "IblChar" },
+      scope = { highlight = "IblScopeChar" },
     },
     config = function(_, opts)
+      dofile(vim.g.base46_cache .. "blankline")
+
       local hooks = require("ibl.hooks")
-      hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+      hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
       require("ibl").setup(opts)
+
+      dofile(vim.g.base46_cache .. "blankline")
     end,
-    event = { "User LazyFile" },
   },
   {
     "echasnovski/mini.indentscope",
@@ -35,33 +43,14 @@ return {
     },
   },
   {
-    "rebelot/heirline.nvim",
+    "nvim-tree/nvim-web-devicons",
     opts = function()
-      return require("plugins.configs.ui.heirline")
+      return { override = require("nvchad.icons.devicons") }
     end,
-    event = { "User LazyFile", "BufReadPost" },
-    dependencies = "nvim-web-devicons",
-  },
-  {
-    "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-        always_show_bufferline = false,
-      },
-    },
-    keys = {
-      { "]b", "<cmd>BufferLineCycleNext<CR>", desc = "bufferline: cycle next" },
-      { "[b", "<cmd>BufferLineCyclePrev<CR>", desc = "bufferline: cycle prev" },
-
-      { "<Tab>", "<cmd>BufferLineCycleNext<CR>", desc = "bufferline: cycle next" },
-      { "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", desc = "bufferline: cycle prev" },
-    },
-    init = function()
-      if vim.fn.argc() > 1 then
-        require("bufferline")
-      end
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "devicons")
+      require("nvim-web-devicons").setup(opts)
     end,
-    event = { "BufAdd", "TabNew" },
   },
   {
     "rcarriga/nvim-notify",
@@ -107,15 +96,6 @@ return {
           },
         },
       },
-      routes = {
-        filter = {
-          event = "notify",
-          find = "No information available",
-        },
-        opts = {
-          skip = true,
-        },
-      },
     },
     event = "VeryLazy",
     dependencies = {
@@ -126,7 +106,6 @@ return {
   -- CREDITS TO: https://www.lazyvim.org/plugins/ui#dressingnvim
   {
     "stevearc/dressing.nvim",
-    lazy = true,
     init = function()
       ---@diagnostic disable-next-line: duplicate-set-field
       vim.ui.select = function(...)

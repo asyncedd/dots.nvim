@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    tag = "v0.9.2",
     opts = {
       ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
       auto_install = true,
@@ -11,22 +12,14 @@ return {
         enable = true,
       },
     },
-    -- CREDIT: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/treesitter.lua
-    init = function(plugin)
-      -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
-      -- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
-      -- no longer trigger the **nvim-treeitter** module to be loaded in time.
-      -- Luckily, the only thins that those plugins need are the custom queries, which we make available
-      -- during startup.
-      require("lazy.core.loader").add_to_rtp(plugin)
-      require("nvim-treesitter.query_predicates")
-    end,
     config = function(_, opts)
+      dofile(vim.g.base46_cache .. "syntax")
+      dofile(vim.g.base46_cache .. "treesitter")
+
       require("nvim-treesitter.configs").setup(opts)
-      require("nvim-treesitter.install").prefer_git = dots.Editor.Treesitter.prefer_git
     end,
     priority = 1000,
-    event = { "User LazyFile", "VeryLazy" },
+    event = { "BufReadPost", "User FilePost" },
   },
   {
     "folke/flash.nvim",
@@ -89,11 +82,9 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
-    event = "User LazyFile",
+    event = "User FilePost",
     opts = {
       signs = dots.UI.icons.Gitsigns,
-      -- TODO: Fix use extmarks after figuring out on how to get extmarks in the heirline statuscol
-      _extmark_signs = false,
       on_attach = function()
         local gs = require("gitsigns")
 
@@ -104,6 +95,10 @@ return {
           map("n", "[h", gs.prev_hunk, { desc= "Prev Hunk" })
       end,
     },
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "git")
+      require("gitsigns").setup(opts)
+    end,
   },
   {
     "Wansmer/treesj",
@@ -117,28 +112,34 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    opts = true,
-    keys = {
-      "ys",
-      "yS",
-      "yss",
-      "ySS",
-      { "S", mode = "x" },
-      "cs",
-      "ds",
-      "css",
-      "dss",
-    },
-  },
-  {
-    "kevinhwang91/nvim-ufo",
     opts = {
-      provider_selector = function()
-        return { "treesitter", "indent" }
-      end,
+      keymaps = {
+        insert = "<C-g>m",
+        insert_line = "<C-g>M",
+        normal = "ms",
+        normal_cur = "mss",
+        normal_line = "mS",
+        normal_cur_line = "mSS",
+        visual = "M",
+        visual_line = "gM",
+        delete = "md",
+        change = "mc",
+        change_line = "mS",
+      },
     },
-    dependencies = "kevinhwang91/promise-async",
-    event = "User LazyFile",
+    keys = {
+      { "<C-g>m", mode = "i" },
+      { "<C-g>M", mode = "i" },
+      "ms",
+      "mss",
+      "mS",
+      "mSS",
+      { "M", mode = "x" },
+      { "gM", mode = "x" },
+      "md",
+      "mc",
+      "mS",
+    },
   },
   {
     "echasnovski/mini.clue",
@@ -211,8 +212,62 @@ return {
     },
   },
   {
-    "nvim-treesitter/nvim-treesitter-context",
-    event = "User LazyFile",
-    opts = { mode = "cursor", max_lines = 3 },
+    "rmagatti/auto-session",
+    event = "BufReadPre",
+    opts = {
+      session_lens = {
+        load_on_setup = false,
+      },
+    },
+    init = function()
+      local function restore()
+        if vim.fn.argc(-1) > 0 then
+          return
+        end
+
+        vim.schedule(function()
+          require("auto-session").AutoRestoreSession()
+        end)
+      end
+
+      local lazy_view_win = nil
+
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "VeryLazy",
+        callback = function()
+          local lazy_view = require("lazy.view")
+
+          if lazy_view.visible() then
+            lazy_view_win = lazy_view.view.win
+          else
+            restore()
+          end
+        end,
+      })
+
+      vim.api.nvim_create_autocmd("WinClosed", {
+        callback = function(event)
+          if not lazy_view_win or event.match ~= tostring(lazy_view_win) then
+            return
+          end
+
+          restore()
+        end,
+      })
+    end,
+  },
+  {
+    "gbprod/cutlass.nvim",
+    opts = {
+      exclude = { "ns", "nS", "or", "oR", "xR" },
+    },
+    keys = {
+      { "c", mode = { "n", "x", "o" } },
+      { "C", mode = { "n", "x", "o" } },
+      { "d", mode = { "n", "x", "o" } },
+      { "D", mode = { "n", "x", "o" } },
+      "x",
+      "X",
+    },
   },
 }

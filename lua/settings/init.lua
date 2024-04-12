@@ -4,30 +4,7 @@ M.sqlite = {
   path = vim.env.sqlite_nix_path,
 }
 
-M.Editor = {
-  Treesitter = {
-    -- if false it would use curl instead of git
-    prefer_git = true,
-  },
-}
-
 M.UI = {
-  colorscheme = {
-    --- BETA: You can use functions that returns a string to determine the colorscheme as well!
-    -- value = function()
-    --   return "onedark"
-    -- end,
-    value = "onedark",
-    -- value = "kanagawa",
-    -- value = "catppuccin",
-    -- value = "tokyonight",
-    themes = {
-      { import = "plugins.specs.themes.onedarkpro" },
-      { import = "plugins.specs.themes.kanagawa" },
-      { import = "plugins.specs.themes.catppuccin" },
-      { import = "plugins.specs.themes.tokyonight" },
-    },
-  },
   icons = {
     LSP = {
       diagnostics = {
@@ -98,6 +75,7 @@ M.languages = {
     { import = "plugins.specs.languages.css" },
     { import = "plugins.specs.languages.nix" },
     { import = "plugins.specs.languages.javascript" },
+    -- { import = "plugins.specs.languages.dot" },
     -- { import = "plugins.specs.languages.c" },
     -- { import = "plugins.specs.languages.fish" },
     -- { import = "plugins.specs.languages.haskell" },

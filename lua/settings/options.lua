@@ -1,4 +1,7 @@
 local o = vim.opt
+local g = vim.g
+
+g.toggle_theme_icon = "   "
 
 -- Line numbers
 o.number = true
@@ -8,16 +11,14 @@ o.relativenumber = true
 o.shiftwidth = 2
 o.tabstop = 2
 
--- Clipboard
-vim.schedule(function()
-  o.clipboard = "unnamedplus"
-  o.undofile = true
-  o.undodir = vim.fn.stdpath("data") .. "/backup//"
+o.undofile = true
+o.undodir = vim.fn.stdpath("data") .. "/undo//"
 
-  -- https://www.reddit.com/r/neovim/comments/wlkq0e/neovim_configuration_to_backup_files_with/
-  o.backup = true
-  o.backupdir = vim.fn.stdpath("data") .. "/backup//"
-end)
+-- https://www.reddit.com/r/neovim/comments/wlkq0e/neovim_configuration_to_backup_files_with/
+o.backup = true
+o.backupdir = vim.fn.stdpath("data") .. "/backup//"
+
+o.clipboard = "unnamedplus"
 
 -- Statuscolumn
 
@@ -49,3 +50,6 @@ o.smartcase = true
 
 o.pumblend = 10 -- Popup blend
 o.pumheight = 10 -- Maximum number of entries in a popup
+
+-- Sessions
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
