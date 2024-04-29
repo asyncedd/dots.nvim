@@ -15,17 +15,6 @@ return {
     end,
   },
   {
-    "nvim-lspconfig",
-    optional = true,
-    opts = {
-      servers = {
-        svelte = {},
-        emmet_ls = {},
-        tailwindcss = {},
-      },
-    },
-  },
-  {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
