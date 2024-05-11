@@ -12,38 +12,6 @@ return {
     },
   },
   {
-    "windwp/nvim-ts-autotag",
-    opts = {
-      filetypes = {
-        "html",
-        "xml",
-        "svelte",
-      },
-    },
-    init = function()
-      local function stringExistsInArray(array, searchString)
-        for _, value in ipairs(array) do
-          if value == searchString then
-            return true
-          end
-        end
-        return false
-      end
-
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "FilePost",
-        callback = function()
-          local plugin = require("lazy.core.config").plugins["nvim-ts-autotag"]
-          if stringExistsInArray(require("lazy.core.plugin").values(plugin, "opts", false), vim.bo.filetype) then
-            if not plugin._.loaded then
-              require("lazy").load({ plugins = "nvim-ts-autotag" })
-            end
-          end
-        end,
-      })
-    end,
-  },
-  {
     "L3MON4D3/LuaSnip",
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load()
