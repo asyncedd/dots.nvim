@@ -65,6 +65,7 @@ return {
         "<cmd>lua require('telescope').extensions.smart_open.smart_open({ cwd_only = true, filename_first = false })<CR>",
         desc = "telescope: find_files",
       },
+      { "<leader>fb", "<cmd>Telescope buffers<CR>" },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "telescope: live_grep" },
       { "<leader>f;", "<cmd>Telescope resume<CR>", desc = "telescope: resume" },
       { "<leader>fx", "<cmd>Telescope diagnostics<CR>", desc = "telescope: diagnostics" },
