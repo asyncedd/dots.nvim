@@ -170,4 +170,26 @@ return {
       { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
     },
   },
+  {
+    "echasnovski/mini.move",
+    opts = true,
+    keys = {
+      {
+        "<M-h>",
+        mode = { "n", "x" },
+      },
+      {
+        "<M-j>",
+        mode = { "n", "x" },
+      },
+      {
+        "<M-k>",
+        mode = { "n", "x" },
+      },
+      {
+        "<M-l>",
+        mode = { "n", "x" },
+      },
+    },
+  },
 }
