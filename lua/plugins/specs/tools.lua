@@ -136,36 +136,15 @@ return {
     end,
   },
   {
-    "cbochs/grapple.nvim",
-    opts = {
-      win_opts = {
-        border = "solid",
-      },
-    },
+    "echasnovski/mini.visits",
+    opts = true,
     keys = {
       {
-        "<leader>ga",
-        "<cmd>Grapple toggle<CR>",
-        desc = "Grapple: Toggle",
+        "<leader>pp",
+        function()
+          require("mini.visits").select_path()
+        end,
       },
-      {
-        "<leader>gt",
-        "<cmd>Grapple open_tags<CR>",
-        desc = "Grapple: Open Tags",
-      },
-      {
-        "<leader>gs",
-        "<cmd>Grapple open_scopes<CR>",
-        desc = "Grapple: Open scopes",
-      },
-      {
-        "<leader>gl",
-        "<cmd>Grapple open_loaded<CR>",
-        desc = "Grapple: Open loaded",
-      },
-    },
-    cmd = {
-      "Grapple",
     },
   },
 }
