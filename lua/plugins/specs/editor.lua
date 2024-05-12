@@ -112,18 +112,24 @@ return {
     "echasnovski/mini.ai",
     opts = function()
       local ai = require("mini.ai")
+
+      local gen_ai_spec = require("mini.extra").gen_ai_spec
       return {
         n_lines = 500,
         custom_textobjects = {
           f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+          i = gen_ai_spec.indent(),
         },
       }
     end,
     dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      init = function()
-        require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-      end,
+      {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        init = function()
+          require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
+        end,
+      },
+      { "echasnovski/mini.extra", opts = true },
     },
     keys = {
       { "i", mode = { "x", "o" } },

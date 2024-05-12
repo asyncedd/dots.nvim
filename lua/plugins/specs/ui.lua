@@ -33,16 +33,6 @@ return {
     end,
   },
   {
-    "echasnovski/mini.indentscope",
-    opts = {
-      symbol = "",
-    },
-    keys = {
-      { "ai", mode = { "x", "o" } },
-      { "ii", mode = { "x", "o" } },
-    },
-  },
-  {
     "nvim-tree/nvim-web-devicons",
     opts = function()
       return { override = require("nvchad.icons.devicons") }
