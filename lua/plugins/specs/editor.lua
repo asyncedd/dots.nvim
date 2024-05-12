@@ -76,14 +76,9 @@ return {
     end,
   },
   {
-    "Wansmer/treesj",
-    opts = {
-      use_default_keymaps = false,
-      max_join_length = 1000,
-    },
-    keys = {
-      { "gS", "<cmd>lua require('treesj').toggle()<CR>", desc = "TreeSJ - toggle" },
-    },
+    "echasnovski/mini.splitjoin",
+    opts = true,
+    keys = { "gS" },
   },
   {
     "echasnovski/mini.surround",
