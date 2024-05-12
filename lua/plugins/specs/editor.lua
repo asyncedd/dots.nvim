@@ -55,13 +55,6 @@ return {
     },
   },
   {
-    "echasnovski/mini.comment",
-    opts = true,
-    keys = {
-      { "gc", mode = { "x", "n" } },
-    },
-  },
-  {
     "echasnovski/mini.diff",
     event = "User FilePost",
     opts = {
