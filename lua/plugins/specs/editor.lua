@@ -55,45 +55,15 @@ return {
     },
   },
   {
-    "numToStr/Comment.nvim",
-    opts = function()
-      return {
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-      }
-    end,
+    "echasnovski/mini.comment",
+    opts = true,
     keys = {
       { "gc", mode = { "x", "n" } },
-      { "gb", mode = { "x", "n" } },
-    },
-    dependencies = {
-      {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        opts = {
-          context_commentstring = {
-            enable = true,
-          },
-        },
-        dependencies = {
-          "nvim-treesitter/nvim-treesitter",
-        },
-      },
     },
   },
   {
     "echasnovski/mini.diff",
     event = "User FilePost",
-    -- opts = {
-    --   signs = dots.UI.icons.Gitsigns,
-    --   on_attach = function()
-    --     local gs = require("gitsigns")
-    --
-    --     local map = vim.keymap.set
-    --
-    --       -- stylua: ignore start
-    --       map("n", "]h", gs.next_hunk, { desc = "Next Hunk" })
-    --       map("n", "[h", gs.prev_hunk, { desc= "Prev Hunk" })
-    --   end,
-    -- },
     opts = {
       view = {
         style = "sign",
@@ -115,37 +85,6 @@ return {
       { "gS", "<cmd>lua require('treesj').toggle()<CR>", desc = "TreeSJ - toggle" },
     },
   },
-  -- {
-  --   "kylechui/nvim-surround",
-  --   opts = {
-  --     keymaps = {
-  --       insert = "<C-g>m",
-  --       insert_line = "<C-g>M",
-  --       normal = "ms",
-  --       normal_cur = "mss",
-  --       normal_line = "mS",
-  --       normal_cur_line = "mSS",
-  --       visual = "M",
-  --       visual_line = "gM",
-  --       delete = "md",
-  --       change = "mc",
-  --       change_line = "mS",
-  --     },
-  --   },
-  --   keys = {
-  --     { "<C-g>m", mode = "i" },
-  --     { "<C-g>M", mode = "i" },
-  --     "ms",
-  --     "mss",
-  --     "mS",
-  --     "mSS",
-  --     { "M", mode = "x" },
-  --     { "gM", mode = "x" },
-  --     "md",
-  --     "mc",
-  --     "mS",
-  --   },
-  -- },
   {
     "echasnovski/mini.surround",
     opts = {
