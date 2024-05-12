@@ -80,23 +80,29 @@ return {
     },
   },
   {
-    "lewis6991/gitsigns.nvim",
+    "echasnovski/mini.diff",
     event = "User FilePost",
+    -- opts = {
+    --   signs = dots.UI.icons.Gitsigns,
+    --   on_attach = function()
+    --     local gs = require("gitsigns")
+    --
+    --     local map = vim.keymap.set
+    --
+    --       -- stylua: ignore start
+    --       map("n", "]h", gs.next_hunk, { desc = "Next Hunk" })
+    --       map("n", "[h", gs.prev_hunk, { desc= "Prev Hunk" })
+    --   end,
+    -- },
     opts = {
-      signs = dots.UI.icons.Gitsigns,
-      on_attach = function()
-        local gs = require("gitsigns")
-
-        local map = vim.keymap.set
-
-          -- stylua: ignore start
-          map("n", "]h", gs.next_hunk, { desc = "Next Hunk" })
-          map("n", "[h", gs.prev_hunk, { desc= "Prev Hunk" })
-      end,
+      view = {
+        style = "sign",
+        signs = dots.UI.icons.Gitsigns,
+      },
     },
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "git")
-      require("gitsigns").setup(opts)
+      require("mini.diff").setup(opts)
     end,
   },
   {
