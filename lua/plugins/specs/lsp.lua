@@ -2,7 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = "LazyFile",
-    config = function(_, opts)
+    config = function()
       dofile(vim.g.base46_cache .. "lsp")
       local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
 
@@ -106,13 +106,13 @@ return {
       require("lspconfig")["svelte"].setup({ capabilities = capabilities })
       require("lspconfig")["emmet_ls"].setup({ capabilities = capabilities })
       require("lspconfig")["tailwindcss"].setup({ capabilities = capabilities })
-      require("lspconfig")["taplo"].setup({ capabilities = capabilities })
+      -- require("lspconfig")["taplo"].setup({ capabilities = capabilities })
       require("lspconfig")["cssls"].setup({
         capabilities = capabilities,
         cmd = { "css-languageserver", "--stdio" },
       })
       require("lspconfig")["marksman"].setup({ capabilities = capabilities })
-      require("lspconfig")["hls"].setup({ capabilities = capabilities })
+      -- require("lspconfig")["hls"].setup({ capabilities = capabilities })
     end,
   },
   {
