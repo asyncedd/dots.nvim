@@ -35,10 +35,21 @@ o.laststatus = 3
 
 -- Folds
 
-o.foldcolumn = "1"
+o.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
 o.foldlevel = 99
-o.foldlevelstart = 99
-o.foldenable = true
+
+o.foldmethod = "expr"
+o.foldexpr = "v:lua.require'utils.ui'.foldexpr()"
+o.foldtext = ""
+o.fillchars = "fold: "
+o.statuscolumn = [[%!v:lua.require'utils.ui'.statuscolumn()]]
 
 -- Scrolloff
 
