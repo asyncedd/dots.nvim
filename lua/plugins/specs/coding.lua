@@ -85,6 +85,7 @@ return {
             end
           end, { "i", "s" }),
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+          ["<CR>"] = cmp.mapping.confirm({ select = false }),
         }),
         formatting = {
           fields = { "kind", "abbr", "menu" },
