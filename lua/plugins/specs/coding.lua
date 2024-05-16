@@ -23,7 +23,7 @@ return {
     event = "InsertEnter",
   },
   {
-    "hrsh7th/nvim-cmp",
+    "xzbdmw/nvim-cmp",
     opts = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
@@ -89,9 +89,16 @@ return {
         }),
         formatting = {
           fields = { "kind", "abbr", "menu" },
-          format = function(_, vim_item)
-            local item = vim_item.kind
-            vim_item.kind = dots.UI.icons.LSP.kind[item]
+          format = function(entry, vim_item)
+            local kind = require("lspkind").cmp_format({
+              mode = "symbol_text",
+              maxwidth = 50,
+              ellipsis_char = "...",
+            })(entry, vim_item)
+            -- vim_item.kind = dots.UI.icons.LSP.kind[item]
+            local strings = vim.split(kind.kind, "%s", { trimempty = true })
+            kind.kind = (strings[1] or "")
+            kind.concat = kind.abbr
 
             return vim_item
           end,
@@ -113,6 +120,7 @@ return {
       "hrsh7th/cmp-path",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
+      "onsails/lspkind.nvim",
     },
     event = "InsertEnter",
     cmd = "CmpStatus",
@@ -136,7 +144,7 @@ return {
       })
     end,
     dependencies = {
-      "hrsh7th/nvim-cmp",
+      "xzbdmw/nvim-cmp",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-buffer",
     },
