@@ -38,27 +38,33 @@ autocmd({ "BufWritePre" }, {
   end,
 })
 
--- thx to nvchad
--- user event that loads after UIEnter + only if file buf is there
-vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
-  group = vim.api.nvim_create_augroup("DotsFilePost", { clear = true }),
-  callback = function(args)
-    local file = vim.api.nvim_buf_get_name(args.buf)
-    local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
-
-    if not vim.g.ui_entered and args.event == "UIEnter" then
-      vim.g.ui_entered = true
+-- This autocmd will only trigger when a file was loaded from the cmdline.
+-- It will render the file as quickly as possible.
+vim.api.nvim_create_autocmd("BufReadPost", {
+  once = true,
+  callback = function(event)
+    -- Skip if we already entered vim
+    if vim.v.vim_did_enter == 1 then
+      return
     end
 
-    if file ~= "" and buftype ~= "nofile" and vim.g.ui_entered then
-      vim.api.nvim_exec_autocmds("User", { pattern = "FilePost", modeline = false })
-      vim.api.nvim_del_augroup_by_name("DotsFilePost")
+    -- Try to guess the filetype (may change later on during Neovim startup)
+    local ft = vim.filetype.match({ buf = event.buf })
+    if ft then
+      -- Add treesitter highlights and fallback to syntax
+      local lang = vim.treesitter.language.get_lang(ft)
+      if not (lang and pcall(vim.treesitter.start, event.buf, lang)) then
+        vim.bo[event.buf].syntax = ft
+      end
+
+      -- Trigger early redraw
+      vim.cmd([[redraw]])
 
       vim.schedule(function()
         vim.api.nvim_exec_autocmds("FileType", {})
 
         if vim.g.editorconfig then
-          require("editorconfig").config(args.buf)
+          require("editorconfig").config(event.buf)
         end
       end)
     end
@@ -97,6 +103,6 @@ autocmd("BufWritePost", {
     end
 
     require("base46").load_all_highlights()
-    -- vim.cmd("redraw!")
+    vim.cmd("redraw!")
   end,
 })

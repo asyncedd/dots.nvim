@@ -18,7 +18,7 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
     priority = 1000,
-    event = { "BufReadPost", "User FilePost" },
+    event = "LazyFile",
   },
   {
     "folke/flash.nvim",
@@ -56,7 +56,7 @@ return {
   },
   {
     "echasnovski/mini.diff",
-    event = "User FilePost",
+    event = "LazyFile",
     opts = {
       view = {
         style = "sign",

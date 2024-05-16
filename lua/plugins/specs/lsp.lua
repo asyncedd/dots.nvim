@@ -1,7 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    event = "User FilePost",
+    event = "LazyFile",
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "lsp")
       local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
