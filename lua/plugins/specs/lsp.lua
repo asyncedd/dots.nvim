@@ -141,28 +141,4 @@ return {
     end,
     event = "LspAttach",
   },
-  {
-    "aznhe21/actions-preview.nvim",
-    opts = function()
-      return {
-        diff = {
-          algorithm = "histogram",
-        },
-        telescope = require("telescope.themes").get_cursor(),
-      }
-    end,
-    keys = {
-      { "<leader>ca", '<cmd>lua require("actions-preview").code_actions()<CR>', desc = "Code action: open menu" },
-    },
-  },
-  {
-    "kosayoda/nvim-lightbulb",
-    opts = {
-      priority = 40,
-      autocmd = {
-        enabled = true,
-      },
-    },
-    event = "LspAttach",
-  },
 }
