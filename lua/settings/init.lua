@@ -49,9 +49,9 @@ M.UI = {
       unsaved_others = "○ ",
     },
     Git = {
-      added = " ",
-      remove = " ",
-      changed = "󰣕 ",
+      added = " ",
+      changed = " ",
+      remove = " ",
     },
     Gitsigns = {
       add = "▎",
