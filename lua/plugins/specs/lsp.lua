@@ -69,7 +69,7 @@ return {
         },
       })
 
-      require("lspconfig")["nil_ls"].setup({ capabilities = capabilities })
+      require("lspconfig")["nixd"].setup({ capabilities = capabilities })
       require("lspconfig")["lua_ls"].setup({
         capabilities = capabilities,
         settings = {
