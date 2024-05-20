@@ -134,8 +134,8 @@ return {
       return {
         n_lines = 500,
         custom_textobjects = {
-          f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
-          i = gen_ai_spec.indent(),
+          F = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+          -- i = gen_ai_spec.indent(),
         },
       }
     end,
@@ -150,6 +150,139 @@ return {
     keys = {
       { "i", mode = { "x", "o" } },
       { "a", mode = { "x", "o" } },
+    },
+  },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    keys = {
+      {
+        "gG",
+        function()
+          require("various-textobjs").entireBuffer()
+        end,
+        mode = { "x", "o" },
+      },
+      {
+        "ii",
+        function()
+          if vim.fn.indent(".") == 0 then
+            require("various-textobjs").entireBuffer()
+          else
+            require("various-textobjs").indentation("inner", "inner")
+          end
+        end,
+        mode = { "x", "o" },
+        desc = "in an indent block",
+      },
+      {
+        "ai",
+        function()
+          require("various-textobjs").indentation("outer", "inner")
+        end,
+        mode = { "x", "o" },
+        desc = "around an indent block",
+      },
+      {
+        "iI",
+        function()
+          require("various-textobjs").indentation("inner", "inner")
+        end,
+        mode = { "x", "o" },
+        desc = "in an indent block",
+      },
+      {
+        "aI",
+        function()
+          require("various-textobjs").indentation("outer", "outer")
+        end,
+        mode = { "x", "o" },
+        desc = "around an indent block",
+      },
+      {
+        "n",
+        function()
+          require("various-textobjs").nearEoL()
+        end,
+        mode = { "x", "o" },
+        desc = "to the eol, excluding the last char",
+      },
+      {
+        "gn",
+        function()
+          require("various-textobjs").diagnostic()
+        end,
+        mode = { "x", "o" },
+        desc = "next diagnostics",
+      },
+      { -- delete surrounding indentation
+        "dsi",
+        function()
+          -- select outer indentation
+          require("various-textobjs").indentation("outer", "outer")
+
+          -- plugin only switches to visual mode when a textobj has been found
+          local indentationFound = vim.fn.mode():find("V")
+          if not indentationFound then
+            return
+          end
+
+          -- dedent indentation
+          vim.cmd.normal({ "<", bang = true })
+
+          -- delete surrounding lines
+          local endBorderLn = vim.api.nvim_buf_get_mark(0, ">")[1]
+          local startBorderLn = vim.api.nvim_buf_get_mark(0, "<")[1]
+          vim.cmd(tostring(endBorderLn) .. " delete") -- delete end first so line index is not shifted
+          vim.cmd(tostring(startBorderLn) .. " delete")
+        end,
+        desc = "delete surrounding indent",
+      },
+      { -- yank surrounding inner indentation
+        "ysii", -- `ysi` would conflict with `ysib` and other textobs
+        function()
+          local startPos = vim.api.nvim_win_get_cursor(0)
+
+          -- identify start- and end-border
+          require("various-textobjs").indentation("outer", "outer")
+          local indentationFound = vim.fn.mode():find("V")
+          if not indentationFound then
+            return
+          end
+          vim.cmd.normal({ "V", bang = true }) -- leave visual mode so the `'<` `'>` marks are set
+
+          -- copy them into the + register
+          local startLn = vim.api.nvim_buf_get_mark(0, "<")[1] - 1
+          local endLn = vim.api.nvim_buf_get_mark(0, ">")[1] - 1
+          local startLine = vim.api.nvim_buf_get_lines(0, startLn, startLn + 1, false)[1]
+          local endLine = vim.api.nvim_buf_get_lines(0, endLn, endLn + 1, false)[1]
+          vim.fn.setreg("+", startLine .. "\n" .. endLine .. "\n")
+
+          -- highlight yanked text
+          local ns = vim.api.nvim_create_namespace("ysi")
+          vim.highlight.range(0, ns, "IncSearch", { startLn, 0 }, { startLn, -1 })
+          vim.highlight.range(0, ns, "IncSearch", { endLn, 0 }, { endLn, -1 })
+          vim.defer_fn(function()
+            vim.api.nvim_buf_clear_namespace(0, ns, 0, -1)
+          end, 1000)
+
+          -- restore cursor position
+          vim.api.nvim_win_set_cursor(0, startPos)
+        end,
+        desc = "pank surrounding indent",
+      },
+      {
+        "rp",
+        "<cmd>lua require('various-textobjs').restOfParagraph()<CR>",
+        mode = { "o", "x" },
+        desc = "rest of paragraph",
+      },
+      {
+        "ri",
+        "<cmd>lua require('various-textobjs').restOfIndentation()<CR>",
+        mode = { "o", "x" },
+        desc = "rest of indentation",
+      },
+      { "rg", "G", mode = { "o", "x" }, desc = "rest of buffer" },
     },
   },
   {

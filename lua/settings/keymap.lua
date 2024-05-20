@@ -30,15 +30,6 @@ map(
   { expr = true, replace_keycodes = false, desc = "Visually select changed text" }
 )
 
-map({ "x", "o" }, "gG", function()
-  vim.api.nvim_win_set_cursor(0, { 1, 0 })
-  if not vim.fn.mode():find("V") ~= nil then
-    vim.cmd("normal! V")
-  end
-  vim.cmd("normal! o")
-  vim.api.nvim_win_set_cursor(0, { vim.fn.line("$"), 0 })
-end)
-
 map("n", "[d", function()
   vim.diagnostic.goto_prev()
 end, { desc = "Prev diagnostic" })
