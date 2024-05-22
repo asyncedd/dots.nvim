@@ -1,8 +1,7 @@
 local M = {}
 local utils = require("nvchad.stl.utils")
-require("utils.mini.git")
 
-local format_summary = function(data)
+local diff_format_summary = function(data)
   local summary = vim.b[data.buf].minidiff_summary
   if summary == nil then
     vim.b[data.buf].minidiff_summary_string = ""
@@ -20,8 +19,16 @@ local format_summary = function(data)
   end
   vim.b[data.buf].minidiff_summary_string = table.concat(t, " ")
 end
-local au_opts = { pattern = "MiniDiffUpdated", callback = format_summary }
-vim.api.nvim_create_autocmd("User", au_opts)
+vim.api.nvim_create_autocmd("User", { pattern = "MiniDiffUpdated", callback = diff_format_summary })
+
+-- Use only HEAD name as summary string
+local git_format_summary = function(data)
+  -- Utilize buffer-local table summary
+  local summary = vim.b[data.buf].minigit_summary
+  vim.b[data.buf].minigit_summary_string = (summary ~= nil and summary.head_name or "") or ""
+end
+
+vim.api.nvim_create_autocmd("User", { pattern = "MiniGitUpdated", callback = git_format_summary })
 
 M.ui = {
   theme = "onedark",
@@ -37,15 +44,11 @@ M.ui = {
     },
     modules = {
       git = function()
-        if not vim.b[utils.stbufnr()].git_branch or not vim.b[utils.stbufnr()].minidiff_summary_string then
-          return ""
-        end
-
-        local git_status = vim.b[utils.stbufnr()].git_branch
+        local git_status = vim.b[utils.stbufnr()].minigit_summary_string or ""
 
         local branch_name = " " .. git_status
 
-        return "%#St_gitIcons# " .. branch_name .. " " .. vim.b[utils.stbufnr()].minidiff_summary_string
+        return "%#St_gitIcons# " .. branch_name .. " " .. (vim.b[utils.stbufnr()].minidiff_summary_string or "")
       end,
     },
   },

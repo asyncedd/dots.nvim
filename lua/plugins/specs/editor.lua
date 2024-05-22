@@ -93,6 +93,12 @@ return {
     end,
   },
   {
+    "echasnovski/mini-git",
+    opts = true,
+    name = "mini.git",
+    event = "LazyFile",
+  },
+  {
     "echasnovski/mini.splitjoin",
     opts = true,
     keys = { "gS" },
