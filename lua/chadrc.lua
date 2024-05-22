@@ -8,13 +8,13 @@ local diff_format_summary = function(data)
     return
   end
   local t = {}
-  if summary.add > 0 then
+  if summary.add ~= nil and summary.add > 0 then
     table.insert(t, dots.UI.icons.Git.added .. summary.add)
   end
-  if summary.change > 0 then
+  if summary.change ~= nil and summary.change > 0 then
     table.insert(t, dots.UI.icons.Git.changed .. summary.change)
   end
-  if summary.delete > 0 then
+  if summary.delete ~= nil and summary.delete > 0 then
     table.insert(t, dots.UI.icons.Git.remove .. summary.delete)
   end
   vim.b[data.buf].minidiff_summary_string = table.concat(t, " ")
@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd("User", { pattern = "MiniDiffUpdated", callback = di
 local git_format_summary = function(data)
   -- Utilize buffer-local table summary
   local summary = vim.b[data.buf].minigit_summary
-  vim.b[data.buf].minigit_summary_string = (summary ~= nil and summary.head_name or "") or ""
+  vim.b[data.buf].minigit_summary_string = (summary ~= nil and summary.head_name) or ""
 end
 
 vim.api.nvim_create_autocmd("User", { pattern = "MiniGitUpdated", callback = git_format_summary })
