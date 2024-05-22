@@ -44,5 +44,11 @@ vim.diagnostic.config({
   },
 })
 
+vim.filetype.add({
+  extension = {
+    postcss = "css",
+  },
+})
+
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
