@@ -10,6 +10,7 @@ o.relativenumber = true
 -- Tabs
 o.shiftwidth = 2
 o.tabstop = 2
+o.expandtab = true
 
 o.undofile = true
 o.undodir = vim.fn.stdpath("data") .. "/undo//"
