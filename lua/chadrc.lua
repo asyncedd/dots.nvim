@@ -31,7 +31,7 @@ end
 vim.api.nvim_create_autocmd("User", { pattern = "MiniGitUpdated", callback = git_format_summary })
 
 M.ui = {
-  theme = "onedark",
+  theme = "everblush",
   statusline = {
     order = {
       "mode",
