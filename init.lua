@@ -5,10 +5,6 @@ require("settings")
 require("settings.options")
 require("plugins")
 
--- for name, icon in pairs(dots.UI.icons.LSP.diagnostics) do
---   name = "DiagnosticSign" .. name
---   vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
--- end
 require("settings.autocmd")
 require("settings.keymap")
 
