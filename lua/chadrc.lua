@@ -1,3 +1,4 @@
+---@type ChadrcConfig
 local M = {}
 local utils = require("nvchad.stl.utils")
 
@@ -51,6 +52,15 @@ M.ui = {
         return "%#St_gitIcons# " .. branch_name .. " " .. (vim.b[utils.stbufnr()].minidiff_summary_string or "")
       end,
     },
+  },
+  hl_override = {
+    DiffAdd = { fg = "green" },
+    DiffModified = { fg = "yellow" },
+  },
+  hl_add = {
+    MiniDiffSignAdd = { fg = "green" },
+    MiniDiffSignChange = { fg = "yellow" },
+    MiniDiffSignDelete = { fg = "red" },
   },
 }
 

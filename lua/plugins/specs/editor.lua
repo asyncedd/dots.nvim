@@ -3,46 +3,22 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
-      auto_install = true,
       highlight = {
         enable = true,
+        use_languagetree = true,
       },
       indent = {
         enable = true,
       },
     },
-    lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
-    init = function(plugin)
-      -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
-      -- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
-      -- no longer trigger the **nvim-treesitter** module to be loaded in time.
-      -- Luckily, the only things that those plugins need are the custom queries, which we make available
-      -- during startup.
-      require("lazy.core.loader").add_to_rtp(plugin)
-      require("nvim-treesitter.query_predicates")
-    end,
     build = ":TSUpdate",
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "syntax")
       dofile(vim.g.base46_cache .. "treesitter")
 
-      if type(opts.ensure_installed) == "table" then
-        ---@type table<string, boolean>
-        local added = {}
-        opts.ensure_installed = vim.tbl_filter(function(lang)
-          if added[lang] then
-            return false
-          end
-          added[lang] = true
-          return true
-        end, opts.ensure_installed)
-      end
       require("nvim-treesitter.configs").setup(opts)
-      vim.schedule(function()
-        require("lazy").load({ plugins = { "nvim-treesitter-textobjects" } })
-      end)
     end,
-    event = "LazyFile",
+    event = "User LazyFile",
   },
   {
     "folke/flash.nvim",
@@ -80,7 +56,7 @@ return {
   },
   {
     "echasnovski/mini.diff",
-    event = "LazyFile",
+    event = "User LazyFile",
     opts = {
       view = {
         style = "sign",
@@ -96,7 +72,7 @@ return {
     "echasnovski/mini-git",
     opts = true,
     name = "mini.git",
-    event = "LazyFile",
+    event = "User LazyFile",
   },
   {
     "echasnovski/mini.splitjoin",
@@ -353,5 +329,10 @@ return {
         mode = { "n", "x" },
       },
     },
+  },
+  {
+    "folke/ts-comments.nvim",
+    opts = {},
+    event = "VeryLazy",
   },
 }
