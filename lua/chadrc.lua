@@ -56,11 +56,16 @@ M.ui = {
   hl_override = {
     DiffAdd = { fg = "green" },
     DiffModified = { fg = "yellow" },
+
+    FloatBorder = { fg = "darker_black", bg = "darker_black" },
+    NormalFloat = { bg = "darker_black" },
   },
   hl_add = {
     MiniDiffSignAdd = { fg = "green" },
     MiniDiffSignChange = { fg = "yellow" },
     MiniDiffSignDelete = { fg = "red" },
+
+    MiniNotifyNormal = { link = "Normal" },
   },
 }
 
