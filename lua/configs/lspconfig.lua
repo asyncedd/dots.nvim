@@ -60,7 +60,7 @@ capabilities.textDocument.completion.completionItem = {
 local lspconfig = require("lspconfig")
 
 local servers = {
-  -- "nixd",
+  "nixd",
   -- "clangd",
   -- "svelte",
   -- "emmet_ls",
