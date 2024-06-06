@@ -43,21 +43,33 @@ return {
     end,
   },
   {
-    "rcarriga/nvim-notify",
-    opts = function()
-      return require("plugins.configs.ui.notify")
-    end,
-    config = function()
-      vim.notify = require("notify")
+    "echasnovski/mini.notify",
+    opts = {
+      window = {
+        config = {
+          border = "none",
+        },
+        winblend = 0,
+      },
+    },
+    config = function(_, opts)
+      local notify = require("mini.notify")
+      notify.setup(opts)
+      vim.notify = notify.make_notify({
+        ERROR = { duration = 5000 },
+        WARN = { duration = 4000 },
+        INFO = { duration = 3000 },
+      })
     end,
     init = function()
       vim.notify = function(...)
-        if not require("lazy.core.config").plugins["nvim-notify"]._.loaded then
-          require("lazy").load({ plugins = "nvim-notify" })
+        if not require("lazy.core.config").plugins["mini.notify"]._.loaded then
+          require("lazy").load({ plugins = "mini.notify" })
         end
-        require("notify")(...)
+        vim.notify(...)
       end
     end,
+    event = "LspAttach",
   },
   -- CREDITS TO: https://www.lazyvim.org/plugins/ui#dressingnvim
   {
