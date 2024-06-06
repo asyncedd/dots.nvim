@@ -28,8 +28,6 @@ o.clipboard = "unnamedplus"
 
 o.signcolumn = "yes:1"
 
-vim.g.mapleader = " "
-
 -- Statusline
 o.cmdheight = 0
 o.laststatus = 3
