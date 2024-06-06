@@ -18,7 +18,7 @@ return {
 
       require("nvim-treesitter.configs").setup(opts)
     end,
-    event = "User LazyFile",
+    event = "BufReadPost",
   },
   {
     "folke/flash.nvim",
