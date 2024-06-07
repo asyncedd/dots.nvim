@@ -11,8 +11,8 @@ if not vim.g.vscode then
     require("utils.float_term")(nil, { ctrl_hjkl = false })
   end, { desc = "Open the terminal" })
   map("n", "<leader>gg", function()
-    require("utils.float_term")("lazygit", { ctrl_hjkl = false })
-  end, { desc = "Open LazyGit" })
+    require("utils.float_term")("gitui", { ctrl_hjkl = false })
+  end, { desc = "Open GitUI" })
 end
 
 map("n", "dd", function()
