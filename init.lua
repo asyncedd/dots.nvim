@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("settings")
 
-vim.deprecate = function() end ---@diagnostic disable-line: duplicate-set-field
 require("lazy").setup({
   { import = "plugins.specs" },
   dots.languages.enable,
