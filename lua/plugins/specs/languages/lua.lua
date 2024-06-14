@@ -12,11 +12,10 @@ return {
     ft = "lua", -- only load on lua files
     opts = {
       library = {
-        vim.env.LAZY .. "/luvit-meta/library", -- see below
-        vim.env.LAZY .. "/ui/nvchad_types",
-        -- You can also add plugins you always want to have loaded.
-        -- Useful if the plugin has globals or types you want to use
-        -- vim.env.LAZY .. "/LazyVim", -- see below
+        "/luvit-meta/library", -- see below
+        "/ui/nvchad_types",
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
+        "lazy.nvim",
       },
     },
   },

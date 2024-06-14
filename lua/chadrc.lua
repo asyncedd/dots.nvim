@@ -5,15 +5,15 @@ local utils = require("nvchad.stl.utils")
 M.ui = {
   theme = "everblush",
   statusline = {
-    order = {
-      "mode",
-      "file",
-      "git",
-      "%=",
-      "diagnostics",
-      "cwd",
-      "cursor",
-    },
+    -- order = {
+    --   "mode",
+    --   "file",
+    --   "git",
+    --   "%=",
+    --   "diagnostics",
+    --   "cwd",
+    --   "cursor",
+    -- },
     modules = {
       git = function()
         local git_status = vim.b[utils.stbufnr()].minigit_summary_string or ""

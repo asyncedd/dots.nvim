@@ -23,7 +23,7 @@ return {
     event = "InsertEnter",
   },
   {
-    "xzbdmw/nvim-cmp",
+    "hrsh7th/nvim-cmp",
     opts = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
@@ -42,7 +42,14 @@ return {
           end,
         },
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },
+          {
+            name = "nvim_lsp",
+            option = {
+              markdown_oxide = {
+                keyword_pattern = [[\(\k\| \|\/\|#\)\+]],
+              },
+            },
+          },
           { name = "luasnip" },
           { name = "path" },
           { name = "crates" },
@@ -144,7 +151,7 @@ return {
       })
     end,
     dependencies = {
-      "xzbdmw/nvim-cmp",
+      "nvim-cmp",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-buffer",
     },

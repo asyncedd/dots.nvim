@@ -60,7 +60,6 @@ capabilities.textDocument.completion.completionItem = {
 local lspconfig = require("lspconfig")
 
 local servers = {
-  "nixd",
   -- "clangd",
   -- "svelte",
   -- "emmet_ls",
@@ -75,6 +74,47 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   })
 end
+
+require("lspconfig")["nil_ls"].setup({
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+
+  settings = {
+    ["nil"] = {
+      nix = { flake = { autoArchive = true } },
+    },
+  },
+})
+
+require("lspconfig")["markdown_oxide"].setup({
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+
+    vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave", "CursorHold", "LspAttach" }, {
+      buffer = bufnr,
+      callback = vim.lsp.codelens.refresh,
+    })
+    vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
+
+    -- setup Markdown Oxide daily note commands
+    if client.name == "markdown_oxide" then
+      vim.api.nvim_create_user_command("Daily", function(args)
+        local input = args.args
+
+        vim.lsp.buf.execute_command({ command = "jump", arguments = { input } })
+      end, { desc = "Open daily note", nargs = "*" })
+    end
+  end,
+  on_init = on_init,
+  capabilities = vim.tbl_deep_extend("force", capabilities, {
+    workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      },
+    },
+  }),
+})
 
 require("lspconfig")["rust_analyzer"].setup({
   capabilities = capabilities,

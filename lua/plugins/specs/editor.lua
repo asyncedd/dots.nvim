@@ -1,22 +1,80 @@
+local function patch()
+  local parsers = require("nvim-treesitter.parsers")
+  parsers.get_parser_configs = setmetatable({}, {
+    __call = function()
+      return parsers
+    end,
+  })
+end
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
-      highlight = {
-        enable = true,
-        use_languagetree = true,
-      },
-      indent = {
-        enable = true,
-      },
-    },
+    version = false, -- last release is way too old and doesn't work on Windows
+    branch = "main",
     build = ":TSUpdate",
+    cmd = {},
+    opts = function()
+      patch()
+      return {
+        ensure_installed = {
+          "c",
+          "lua",
+          "vim",
+          "vimdoc",
+          "query",
+          "gitcommit",
+          "gitignore",
+          "git_config",
+          "git_rebase",
+          "git_attributes",
+          "nix",
+          "css",
+        },
+        highlight = { enable = true, use_languagetree = true },
+        indent = { enable = true },
+      }
+    end,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "syntax")
       dofile(vim.g.base46_cache .. "treesitter")
 
-      require("nvim-treesitter.configs").setup(opts)
+      local function norm(ensure)
+        return ensure == nil and {} or type(ensure) == "string" and { ensure } or ensure
+      end
+
+      ---@generic T
+      ---@param list T[]
+      ---@return T[]
+      local function dedup(list)
+        local ret = {}
+        local seen = {}
+        for _, v in ipairs(list) do
+          if not seen[v] then
+            table.insert(ret, v)
+            seen[v] = true
+          end
+        end
+        return ret
+      end
+
+      opts.ensure_install = dedup(vim.list_extend(norm(opts.ensure_install), norm(opts.ensure_installed)))
+      require("nvim-treesitter").setup(opts)
+      patch()
+
+      -- backwards compatibility with the old treesitter config for indent
+      if vim.tbl_get(opts, "indent", "enable") then
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end
+
+      -- backwards compatibility with the old treesitter config for highlight
+      if vim.tbl_get(opts, "highlight", "enable") then
+        vim.api.nvim_create_autocmd("FileType", {
+          callback = function()
+            pcall(vim.treesitter.start)
+          end,
+        })
+      end
     end,
     event = "BufReadPost",
   },
@@ -124,6 +182,7 @@ return {
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
+        branch = "main",
         dependencies = {
           { "echasnovski/mini.extra", opts = true },
         },
