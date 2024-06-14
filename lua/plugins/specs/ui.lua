@@ -88,15 +88,16 @@ return {
     end,
   },
   {
-    "NvChad/nvim-colorizer.lua",
+    "echasnovski/mini.hipatterns",
     event = "User LazyFile",
-    opts = { user_default_options = { names = false } },
+    opts = function()
+      return require("configs.hipatterns")
+    end,
     config = function(_, opts)
-      require("colorizer").setup(opts)
+      require("mini.hipatterns").setup(opts)
 
-      -- execute colorizer as soon as possible
       vim.defer_fn(function()
-        require("colorizer").attach_to_buffer(0)
+        require("mini.hipatterns").enable()
       end, 0)
     end,
   },
