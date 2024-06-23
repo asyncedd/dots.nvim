@@ -79,7 +79,7 @@ return {
         })
       end
     end,
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
   },
   {
     "folke/flash.nvim",
