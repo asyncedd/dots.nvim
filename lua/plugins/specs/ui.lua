@@ -17,7 +17,7 @@ return {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = "User FilePost",
+    event = "User LazyFile",
     opts = {
       indent = { highlight = "IblChar" },
       scope = { highlight = "IblScopeChar" },
@@ -43,55 +43,33 @@ return {
     end,
   },
   {
-    "rcarriga/nvim-notify",
-    opts = function()
-      return require("plugins.configs.ui.notify")
-    end,
-    config = function()
-      vim.notify = require("notify")
+    "echasnovski/mini.notify",
+    opts = {
+      window = {
+        config = {
+          border = "none",
+        },
+        winblend = 0,
+      },
+    },
+    config = function(_, opts)
+      local notify = require("mini.notify")
+      notify.setup(opts)
+      vim.notify = notify.make_notify({
+        ERROR = { duration = 5000 },
+        WARN = { duration = 4000 },
+        INFO = { duration = 3000 },
+      })
     end,
     init = function()
       vim.notify = function(...)
-        if not require("lazy.core.config").plugins["nvim-notify"]._.loaded then
-          require("lazy").load({ plugins = "nvim-notify" })
+        if not require("lazy.core.config").plugins["mini.notify"]._.loaded then
+          require("lazy").load({ plugins = "mini.notify" })
         end
-        require("notify")(...)
+        vim.notify(...)
       end
     end,
-  },
-  {
-    "folke/noice.nvim",
-    opts = {
-      lsp = {
-        override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
-        },
-      },
-      presets = {
-        bottom_search = true,
-        command_palette = true,
-        long_message_to_split = true,
-        inc_rename = false,
-        lsp_doc_border = false,
-      },
-      cmdline = {
-        view = "cmdline",
-      },
-      views = {
-        mini = {
-          win_options = {
-            winblend = 0,
-          },
-        },
-      },
-    },
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
+    event = "LspAttach",
   },
   -- CREDITS TO: https://www.lazyvim.org/plugins/ui#dressingnvim
   {
@@ -107,6 +85,20 @@ return {
         require("lazy").load({ plugins = { "dressing.nvim" } })
         return vim.ui.input(...)
       end
+    end,
+  },
+  {
+    "echasnovski/mini.hipatterns",
+    event = "User LazyFile",
+    opts = function()
+      return require("configs.hipatterns")
+    end,
+    config = function(_, opts)
+      require("mini.hipatterns").setup(opts)
+
+      vim.defer_fn(function()
+        require("mini.hipatterns").enable()
+      end, 0)
     end,
   },
 }

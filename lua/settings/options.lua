@@ -10,6 +10,7 @@ o.relativenumber = true
 -- Tabs
 o.shiftwidth = 2
 o.tabstop = 2
+o.expandtab = true
 
 o.undofile = true
 o.undodir = vim.fn.stdpath("data") .. "/undo//"
@@ -27,18 +28,27 @@ o.clipboard = "unnamedplus"
 
 o.signcolumn = "yes:1"
 
-vim.g.mapleader = " "
-
 -- Statusline
 o.cmdheight = 0
 o.laststatus = 3
 
 -- Folds
 
-o.foldcolumn = "1"
+o.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
 o.foldlevel = 99
-o.foldlevelstart = 99
-o.foldenable = true
+
+o.foldmethod = "expr"
+o.foldexpr = "v:lua.require'utils.ui'.foldexpr()"
+o.foldtext = ""
+o.fillchars = "fold: "
+o.statuscolumn = [[%!v:lua.require'utils.ui'.statuscolumn()]]
 
 -- Scrolloff
 
@@ -48,7 +58,6 @@ o.scrolloff = 15
 o.ignorecase = true
 o.smartcase = true
 
-o.pumblend = 10 -- Popup blend
 o.pumheight = 10 -- Maximum number of entries in a popup
 
 -- Sessions

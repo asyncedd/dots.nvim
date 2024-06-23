@@ -49,9 +49,9 @@ M.UI = {
       unsaved_others = "○ ",
     },
     Git = {
-      added = " ",
-      remove = " ",
-      changed = "󰣕 ",
+      added = " ",
+      changed = " ",
+      remove = " ",
     },
     Gitsigns = {
       add = "▎",
@@ -64,25 +64,7 @@ M.UI = {
 M.languages = {
   enable = {
     -- Use this to enable all language support.
-    -- { import = "plugins.specs.languages" },
-    { import = "plugins.specs.languages.lua" },
-    { import = "plugins.specs.languages.svelte" },
-    { import = "plugins.specs.languages.rust" },
-    { import = "plugins.specs.languages.markdown" },
-    { import = "plugins.specs.languages.css" },
-    { import = "plugins.specs.languages.nix" },
-    { import = "plugins.specs.languages.javascript" },
-    -- { import = "plugins.specs.languages.dot" },
-    -- { import = "plugins.specs.languages.c" },
-    -- { import = "plugins.specs.languages.fish" },
-    -- { import = "plugins.specs.languages.haskell" },
-    -- { import = "plugins.specs.languages.toml" },
-  },
-}
-
-M.goodies = {
-  enable = {
-    { import = "plugins.specs.goodies.telescope.diagnostics" },
+    { import = "plugins.specs.languages" },
   },
 }
 

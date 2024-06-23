@@ -1,30 +1,30 @@
 vim.loader.enable()
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/nvchad/base46/"
+vim.g.mapleader = " "
 
-require("settings")
-require("settings.options")
-require("settings.autocmd")
-require("plugins")
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-vim.api.nvim_create_autocmd("User", {
-  group = vim.api.nvim_create_augroup("LazyVim", { clear = true }),
-  pattern = "VeryLazy",
-  callback = function()
-    require("settings.keymap")
-  end,
-})
-
-for name, icon in pairs(dots.UI.icons.LSP.diagnostics) do
-  name = "DiagnosticSign" .. name
-  vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
+if not vim.loop.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system({ "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath })
 end
 
--- https://www.reddit.com/r/neovim/comments/1ayx62p/config_for_diagnostics/
-vim.diagnostic.config({
-  virtual_text = {
-    source = "if_many",
-  },
-})
+vim.opt.rtp:prepend(lazypath)
+
+require("settings")
+
+require("lazy").setup({
+  { import = "plugins.specs" },
+  dots.languages.enable,
+}, require("configs.lazy"))
 
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
+
+require("settings.options")
+require("settings.autocmd")
+
+vim.schedule(function()
+  require("settings.keymap")
+end)

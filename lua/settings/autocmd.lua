@@ -38,33 +38,6 @@ autocmd({ "BufWritePre" }, {
   end,
 })
 
--- thx to nvchad
--- user event that loads after UIEnter + only if file buf is there
-vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
-  group = vim.api.nvim_create_augroup("DotsFilePost", { clear = true }),
-  callback = function(args)
-    local file = vim.api.nvim_buf_get_name(args.buf)
-    local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
-
-    if not vim.g.ui_entered and args.event == "UIEnter" then
-      vim.g.ui_entered = true
-    end
-
-    if file ~= "" and buftype ~= "nofile" and vim.g.ui_entered then
-      vim.api.nvim_exec_autocmds("User", { pattern = "FilePost", modeline = false })
-      vim.api.nvim_del_augroup_by_name("DotsFilePost")
-
-      vim.schedule(function()
-        vim.api.nvim_exec_autocmds("FileType", {})
-
-        if vim.g.editorconfig then
-          require("editorconfig").config(args.buf)
-        end
-      end)
-    end
-  end,
-})
-
 -- reload some chadrc options on-save
 autocmd("BufWritePost", {
   pattern = vim.tbl_map(function(path)
@@ -79,24 +52,38 @@ autocmd("BufWritePost", {
 
     require("plenary.reload").reload_module("nvconfig")
     require("plenary.reload").reload_module("base46")
+    require("plenary.reload").reload_module("nvchad")
     require("plenary.reload").reload_module(module)
 
-    local config = require("nvconfig")
-
-    -- statusline
-    if config.ui.statusline.theme ~= "custom" then
-      require("plenary.reload").reload_module("nvchad.stl.utils")
-      require("plenary.reload").reload_module("nvchad.stl." .. config.ui.statusline.theme)
-      vim.opt.statusline = "%!v:lua.require('nvchad.stl." .. config.ui.statusline.theme .. "')()"
-    end
-
-    -- tabufline
-    if config.ui.tabufline.enabled then
-      require("plenary.reload").reload_module("nvchad.tabufline.modules")
-      vim.opt.tabline = "%!v:lua.require('nvchad.tabufline.modules')()"
-    end
+    require("nvchad")
 
     require("base46").load_all_highlights()
     -- vim.cmd("redraw!")
+  end,
+})
+
+-- user event that loads after UIEnter + only if file buf is there
+autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
+  group = vim.api.nvim_create_augroup("NvLazyFile", { clear = true }),
+  callback = function(args)
+    local file = vim.api.nvim_buf_get_name(args.buf)
+    local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
+
+    if not vim.g.ui_entered and args.event == "UIEnter" then
+      vim.g.ui_entered = true
+    end
+
+    if file ~= "" and buftype ~= "nofile" and vim.g.ui_entered then
+      vim.api.nvim_exec_autocmds("User", { pattern = "LazyFile", modeline = false })
+      vim.api.nvim_del_augroup_by_name("NvLazyFile")
+
+      vim.schedule(function()
+        vim.api.nvim_exec_autocmds("FileType", {})
+
+        if vim.g.editorconfig then
+          require("editorconfig").config(args.buf)
+        end
+      end, 0)
+    end
   end,
 })
