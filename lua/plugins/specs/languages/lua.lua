@@ -12,8 +12,7 @@ return {
     ft = "lua", -- only load on lua files
     opts = {
       library = {
-        "/luvit-meta/library", -- see below
-        "/ui/nvchad_types",
+        "ui/nvchad_types",
         { path = "luvit-meta/library", words = { "vim%.uv" } },
         "lazy.nvim",
       },
