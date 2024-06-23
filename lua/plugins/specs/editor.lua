@@ -130,6 +130,14 @@ return {
     end,
   },
   {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      signcolumn = false,
+      current_line_blame = true,
+    },
+    event = "VeryLazy",
+  },
+  {
     "echasnovski/mini-git",
     opts = true,
     name = "mini.git",
