@@ -60,6 +60,7 @@ capabilities.textDocument.completion.completionItem = {
 local lspconfig = require("lspconfig")
 
 local servers = {
+  "basedpyright",
   -- "clangd",
   -- "svelte",
   -- "emmet_ls",
@@ -184,5 +185,16 @@ require("lspconfig")["cssls"].setup({
   capabilities = capabilities,
   cmd = { "css-languageserver", "--stdio" },
   on_attach = on_attach,
+  on_init = on_init,
+})
+
+require("lspconfig")["ruff_lsp"].setup({
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+
+    -- Disable hover in favor of Pyright
+    client.server_capabilities.hoverProvider = false
+  end,
   on_init = on_init,
 })

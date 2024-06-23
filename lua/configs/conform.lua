@@ -11,6 +11,7 @@ local options = {
     markdown = { { "prettierd", "prettier" } },
     lua = { "stylua" },
     svelte = { { "prettierd", "prettier" } },
+    python = { "black" },
   },
 }
 

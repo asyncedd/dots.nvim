@@ -30,9 +30,12 @@ return {
           "git_attributes",
           "nix",
           "css",
+          "ninja",
+          "rst",
+          "python",
         },
         highlight = { enable = true, use_languagetree = true },
-        indent = { enable = true },
+        -- indent = { enable = true },
       }
     end,
     config = function(_, opts)
