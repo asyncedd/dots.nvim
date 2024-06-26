@@ -35,6 +35,21 @@ local on_init = function(client, _)
   if client.supports_method("textDocument/semanticTokens") then
     client.server_capabilities.semanticTokensProvider = nil
   end
+
+  if conf.inlay_hints then
+    vim.b.inlay_hints_enabled = true
+    vim.lsp.inlay_hint.enable(true)
+    vim.api.nvim_create_autocmd("InsertEnter", {
+      callback = function()
+        vim.lsp.inlay_hint.enable(false)
+      end,
+    })
+    vim.api.nvim_create_autocmd("InsertLeave", {
+      callback = function()
+        vim.lsp.inlay_hint.enable(vim.b.inlay_hints_enabled or false)
+      end,
+    })
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -86,6 +101,16 @@ require("lspconfig")["nil_ls"].setup({
       nix = { flake = { autoArchive = true } },
     },
   },
+})
+
+require("lspconfig")["nixd"].setup({
+  on_attach = on_attach,
+  on_init = function(client, _)
+    on_init(client, _)
+
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+  capabilities = capabilities,
 })
 
 require("lspconfig")["markdown_oxide"].setup({

@@ -66,6 +66,7 @@ M.ui = {
   lsp = {
     signature = true,
     semantic_tokens = false,
+    inlay_hints = true,
   },
 
   term = {
