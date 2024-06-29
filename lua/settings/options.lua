@@ -29,6 +29,7 @@ o.clipboard = "unnamedplus"
 o.signcolumn = "yes:1"
 
 -- Statusline
+o.cmdheight = 0
 o.laststatus = 3
 
 -- Folds
