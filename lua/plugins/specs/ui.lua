@@ -41,35 +41,6 @@ return {
       require("nvim-web-devicons").setup(opts)
     end,
   },
-  {
-    "echasnovski/mini.notify",
-    opts = {
-      window = {
-        config = {
-          border = "none",
-        },
-        winblend = 0,
-      },
-    },
-    config = function(_, opts)
-      local notify = require("mini.notify")
-      notify.setup(opts)
-      vim.notify = notify.make_notify({
-        ERROR = { duration = 5000 },
-        WARN = { duration = 4000 },
-        INFO = { duration = 3000 },
-      })
-    end,
-    init = function()
-      vim.notify = function(...)
-        if not require("lazy.core.config").plugins["mini.notify"]._.loaded then
-          require("lazy").load({ plugins = "mini.notify" })
-        end
-        vim.notify(...)
-      end
-    end,
-    event = "LspAttach",
-  },
   -- CREDITS TO: https://www.lazyvim.org/plugins/ui#dressingnvim
   {
     "stevearc/dressing.nvim",
@@ -99,5 +70,36 @@ return {
         require("mini.hipatterns").enable()
       end, 0)
     end,
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("noice").setup({
+        lsp = {
+          hover = {
+            enabled = false,
+          },
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true,
+          },
+          signature = { enabled = false },
+        },
+        notify = { view = "mini" },
+        cmdline = { view = "cmdline" },
+        presets = {
+          bottom_search = true, -- use a classic bottom cmdline for search
+          command_palette = false, -- position the cmdline and popupmenu together
+          long_message_to_split = true, -- long messages will be sent to a split
+          inc_rename = false, -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = false, -- add a border to hover docs and signature help
+        },
+      })
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
   },
 }
